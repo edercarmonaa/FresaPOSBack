@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/auth",
+    "description": "Módulo Auth de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Auth\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Auth\\Tests\\": "tests/"}
+    }
+}

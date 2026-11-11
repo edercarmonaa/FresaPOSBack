@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/tickets",
+    "description": "Módulo Tickets de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Tickets\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Tickets\\Tests\\": "tests/"}
+    }
+}

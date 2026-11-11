@@ -1,0 +1,7 @@
+.git
+.env
+.env.*
+.tools
+vendor
+storage/logs/*
+docker/data

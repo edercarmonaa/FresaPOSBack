@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/audit",
+    "description": "Módulo Audit de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Audit\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Audit\\Tests\\": "tests/"}
+    }
+}

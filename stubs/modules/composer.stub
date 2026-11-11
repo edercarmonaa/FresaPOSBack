@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/$LOWER_NAME$",
+    "description": "Módulo $STUDLY_NAME$ de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\$STUDLY_NAME$\\": "$APP_FOLDER_NAME$"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\$STUDLY_NAME$\\Tests\\": "tests/"}
+    }
+}

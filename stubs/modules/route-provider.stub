@@ -1,0 +1,18 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
+
+class $CLASS$ extends ServiceProvider
+{
+    public function boot(): void
+    {
+        parent::boot();
+
+        $this->routes(function (): void {
+            Route::middleware('web')->group(module_path('$MODULE$', '$WEB_ROUTES_PATH$'));
+        });
+    }
+}

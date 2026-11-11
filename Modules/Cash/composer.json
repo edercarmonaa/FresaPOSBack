@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/cash",
+    "description": "Módulo Cash de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Cash\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Cash\\Tests\\": "tests/"}
+    }
+}

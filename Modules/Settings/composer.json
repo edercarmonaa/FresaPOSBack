@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/settings",
+    "description": "Módulo Settings de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Settings\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Settings\\Tests\\": "tests/"}
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/core",
+    "description": "Módulo Core de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Core\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Core\\Tests\\": "tests/"}
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "Core": true,
+    "Auth": true,
+    "Users": true,
+    "Catalog": true,
+    "Sales": true,
+    "Cash": true,
+    "Tickets": true,
+    "Reports": true,
+    "Audit": true,
+    "Notifications": true,
+    "Devices": true,
+    "Settings": true,
+    "System": true
+}

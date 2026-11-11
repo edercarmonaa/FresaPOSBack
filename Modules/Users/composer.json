@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/users",
+    "description": "Módulo Users de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Users\\": "app/", "Modules\\Users\\Database\\Seeders\\": "database/seeders/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Users\\Tests\\": "tests/"}
+    }
+}

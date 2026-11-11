@@ -1,0 +1,16 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Support\ServiceProvider;
+use Nwidart\Modules\Support\ModuleServiceProvider;
+
+class $CLASS$ extends ModuleServiceProvider
+{
+    protected string $name = '$MODULE$';
+
+    protected string $nameLower = '$LOWER_NAME$';
+
+    /** @var array<class-string<ServiceProvider>> */
+    protected array $providers = [$PROVIDERS$];
+}

@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/sales",
+    "description": "Módulo Sales de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Sales\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Sales\\Tests\\": "tests/"}
+    }
+}

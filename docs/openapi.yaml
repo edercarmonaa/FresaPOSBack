@@ -1,0 +1,473 @@
+﻿openapi: 3.1.0
+info:
+  title: FresaPOSBack API
+  version: 1.0.0
+  description: >-
+    REST v1 de 1.2c y autenticación Sanctum de 1.3b. Ping y login son públicos.
+    Los endpoints de negocio y la aprobación de dispositivos son futuros.
+    Archivo manual: validación con parser YAML y esquema OpenAPI pendiente.
+servers:
+  - url: http://127.0.0.1:8080/api/v1
+    description: Desarrollo local; los servidores de staging y producción quedan pendientes.
+security: []
+tags:
+  - name: Core
+    description: Infraestructura técnica sin acceso a tablas de negocio.
+  - name: Auth
+    description: Credenciales por username y contraseña; API exclusivamente bearer.
+paths:
+  /auth/login:
+    post:
+      tags: [Auth]
+      operationId: apiV1AuthLogin
+      summary: Inicia un acceso API con contraseña.
+      description: >-
+        Requiere HTTPS fuera del entorno local/testing. Credenciales incorrectas,
+        inactividad y borrado reciben el mismo error. El token se devuelve una vez.
+        Si mustChangePassword es true, solo permite me, logout y password.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                  maxLength: 64
+                  description: Nombre de usuario; no se autentica por email.
+                password:
+                  type: string
+                  format: password
+                  writeOnly: true
+                  maxLength: 72
+                device_name:
+                  type: string
+                  maxLength: 64
+                  description: Etiqueta del token; no constituye aprobación de Devices.
+      responses:
+        '200':
+          $ref: '#/components/responses/TokenIssued'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /auth/me:
+    get:
+      tags: [Auth]
+      operationId: apiV1AuthMe
+      summary: Consulta la identidad del token actual.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Identidad propia, roles y permisos actuales del servidor.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        required: [user]
+                        properties:
+                          user:
+                            $ref: '#/components/schemas/Identity'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+  /auth/logout:
+    post:
+      tags: [Auth]
+      operationId: apiV1AuthLogout
+      summary: Revoca exclusivamente el token bearer presentado.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Token revocado; sobre de éxito con data null.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+  /auth/password:
+    post:
+      tags: [Auth]
+      operationId: apiV1AuthPassword
+      summary: Cambia la contraseña propia y renueva el acceso API.
+      description: >-
+        Requiere contraseña actual y confirmación. Rechaza las tres últimas claves.
+        Revoca accesos anteriores y devuelve un nuevo token. No es un reset administrativo.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [current_password, password, password_confirmation]
+              properties:
+                current_password:
+                  type: string
+                  format: password
+                  writeOnly: true
+                password:
+                  type: string
+                  format: password
+                  writeOnly: true
+                  description: Ocho caracteres mínimo, máximo 72 bytes y política de 1.3a.
+                password_confirmation:
+                  type: string
+                  format: password
+                  writeOnly: true
+      responses:
+        '200':
+          $ref: '#/components/responses/TokenIssued'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /ping:
+    get:
+      tags: [Core]
+      operationId: apiV1CorePing
+      summary: Comprueba que la API responde.
+      description: No consulta SQL ni sustituye un futuro diagnóstico autenticado.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: API disponible.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Success'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        additionalProperties: false
+                        required: [status]
+                        properties:
+                          status:
+                            type: string
+                            const: ok
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Laravel Sanctum implementado en 1.3b. Token opaco, sin JWT; SHA-256 en SQL,
+        con expiración y revocación. Nunca en URLs. Las cookies Web no autentican esta API.
+  parameters:
+    RequestId:
+      name: X-Request-Id
+      in: header
+      required: false
+      description: >-
+        Identificador opcional del cliente. Un valor inválido se descarta y se
+        sustituye por un ULID nativo. No autentica ni proporciona idempotencia.
+      schema:
+        $ref: '#/components/schemas/RequestId'
+  headers:
+    RequestId:
+      description: Siempre presente en respuestas de API; coincide con meta.request_id.
+      required: true
+      schema:
+        $ref: '#/components/schemas/RequestId'
+    RetryAfter:
+      description: Segundos hasta un nuevo intento; se conserva en 429 y si el 503 lo proporciona.
+      schema:
+        type: string
+    Allow:
+      description: Métodos HTTP admitidos por la ruta.
+      schema:
+        type: string
+  schemas:
+    Identity:
+      type: object
+      additionalProperties: false
+      required: [id, name, username, isActive, mustChangePassword, roles, permissions]
+      properties:
+        id:
+          type: string
+          minLength: 26
+          maxLength: 26
+        name:
+          type: string
+        username:
+          type: string
+        isActive:
+          type: boolean
+        mustChangePassword:
+          type: boolean
+        roles:
+          type: array
+          items:
+            type: string
+        permissions:
+          type: array
+          items:
+            type: string
+          description: Capacidades actuales; siempre se verifican además en el servidor.
+    TokenData:
+      type: object
+      additionalProperties: false
+      required: [token, token_type, expires_at, user]
+      properties:
+        token:
+          type: string
+          readOnly: true
+          description: Secreto devuelto una vez tras verificar credenciales. No registrarlo.
+        token_type:
+          type: string
+          const: Bearer
+        expires_at:
+          type: string
+          format: date-time
+          description: Fecha UTC fija; por defecto ocho horas, configurable.
+        user:
+          $ref: '#/components/schemas/Identity'
+    RequestId:
+      type: string
+      minLength: 1
+      maxLength: 64
+      pattern: '^[A-Za-z0-9_-]{1,64}$'
+      description: Sin espacios ni saltos de línea; la validación del servidor exige coincidencia completa.
+    Meta:
+      type: object
+      required: [request_id]
+      properties:
+        request_id:
+          $ref: '#/components/schemas/RequestId'
+      additionalProperties: true
+    Code:
+      type: string
+      description: Código estable independiente del mensaje localizado y del estado HTTP.
+      enum:
+        - OPERATION_SUCCESS
+        - BAD_REQUEST
+        - VALIDATION_ERROR
+        - UNAUTHENTICATED
+        - FORBIDDEN
+        - NOT_FOUND
+        - METHOD_NOT_ALLOWED
+        - CONFLICT
+        - TOO_MANY_REQUESTS
+        - INTERNAL_ERROR
+        - SERVICE_UNAVAILABLE
+        - INVALID_CREDENTIALS
+        - SESSION_EXPIRED
+        - PIN_INVALID
+        - PASSWORD_CHANGE_REQUIRED
+    Success:
+      type: object
+      additionalProperties: false
+      required: [success, code, message, data, meta]
+      properties:
+        success:
+          type: boolean
+          const: true
+        code:
+          type: string
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+          description: Mensaje según el idioma configurado de la aplicación.
+        data: {}
+        meta:
+          $ref: '#/components/schemas/Meta'
+    Error:
+      type: object
+      additionalProperties: false
+      required: [success, code, message, meta]
+      properties:
+        success:
+          type: boolean
+          const: false
+        code:
+          allOf:
+            - $ref: '#/components/schemas/Code'
+            - not:
+                const: OPERATION_SUCCESS
+        message:
+          type: string
+          description: Mensaje público localizado, sin detalles internos incluso con debug activo.
+        meta:
+          $ref: '#/components/schemas/Meta'
+        errors:
+          type: object
+          minProperties: 1
+          description: Solo aparece cuando existen detalles estructurados públicos.
+          additionalProperties: true
+    ValidationError:
+      allOf:
+        - $ref: '#/components/schemas/Error'
+        - type: object
+          required: [errors]
+          properties:
+            code:
+              const: VALIDATION_ERROR
+            errors:
+              type: object
+              minProperties: 1
+              description: Claves de campos, incluidos nombres anidados como items.0.name.
+              additionalProperties:
+                type: array
+                minItems: 1
+                items:
+                  type: string
+  responses:
+    TokenIssued:
+      description: Acceso emitido. Cache-Control no-store; nunca almacenar el token en logs o URLs.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Success'
+              - type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/TokenData'
+    BadRequest:
+      description: Solicitud inválida; BAD_REQUEST (400).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthenticated:
+      description: Acceso rechazado (401), sin redirección. INVALID_CREDENTIALS en login; UNAUTHENTICATED para bearer ausente o inválido; SESSION_EXPIRED para registro no vigente.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Permiso insuficiente; FORBIDDEN (403).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Recurso o ruta inexistente; NOT_FOUND (404).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    MethodNotAllowed:
+      description: Método no admitido; METHOD_NOT_ALLOWED (405).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+        Allow:
+          $ref: '#/components/headers/Allow'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Conflict:
+      description: Conflicto de aplicación o dominio mapeado; CONFLICT (409).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ValidationError:
+      description: Validación HTTP; VALIDATION_ERROR (422).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    TooManyRequests:
+      description: Límite excedido; TOO_MANY_REQUESTS (429).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InternalError:
+      description: Fallo interno; INTERNAL_ERROR (500). Detalles técnicos solo en el log.
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServiceUnavailable:
+      description: Servicio temporalmente indisponible; SERVICE_UNAVAILABLE (503).
+      headers:
+        X-Request-Id:
+          $ref: '#/components/headers/RequestId'
+        Retry-After:
+          $ref: '#/components/headers/RetryAfter'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+

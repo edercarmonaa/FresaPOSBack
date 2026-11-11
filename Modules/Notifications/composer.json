@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/notifications",
+    "description": "Módulo Notifications de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Notifications\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Notifications\\Tests\\": "tests/"}
+    }
+}

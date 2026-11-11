@@ -1,0 +1,11 @@
+{
+    "name": "fresapos/reports",
+    "description": "Módulo Reports de FresaPOS",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {"Modules\\Reports\\": "app/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Modules\\Reports\\Tests\\": "tests/"}
+    }
+}
