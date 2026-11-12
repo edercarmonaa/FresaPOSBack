@@ -1,5 +1,16 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.4a
+
+- Catalog: categorías/productos ULID, decimal(19,4), relaciones SQL, SoftDeletes e índices de consulta.
+- Servicios autorizados, repositorios específicos, DTOs inmutables y contrato de producto vendible para Sales.
+- Restauración activa con categoría válida y búsquedas por prefijo de palabra con collation CI_AI_SC.
+- Referencia opcional disk/key WebP, sin subida de archivos ni endpoints de catálogo.
+- Auditoría existente ampliada con metadatos cerrados de campos/precios y migración aditiva nullable.
+- Respaldo operativo verificado antes de aplicar las dos migraciones; datos y credenciales anteriores conservados.
+- 200 pruebas, 1516 aserciones; Pint, Larastan nivel 5 y Composer correctos. [Informe](docs/entrega-1.4a.md).
+
+
 ## [Sin publicar] — Etapa 1.3c validada el 12 de noviembre de 2026
 
 - Validación real Windows/SQL Server: 135 pruebas, 1256 aserciones, Pint y Larastan nivel 5 correctos.

@@ -55,7 +55,8 @@ class ModuleRegistrationTest extends TestCase
                 match ($name) {
                     'Users' => ['2026_11_11_000001_create_user_security_tables.php'],
                     'Auth' => ['2026_11_11_000002_create_auth_access_tables.php'],
-                    'Audit' => ['2026_11_11_000003_create_security_events.php'],
+                    'Audit' => ['2026_11_11_000003_create_security_events.php', '2026_11_12_000004_add_catalog_change_data_to_security_events.php'],
+                    'Catalog' => ['2026_11_12_000005_create_catalog_tables.php'],
                     default => [],
                 },
                 array_map(fn ($file) => $file->getFilename(), $migrations),

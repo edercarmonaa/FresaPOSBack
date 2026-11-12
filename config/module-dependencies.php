@@ -5,7 +5,7 @@ return [
     'Core' => [],
     'Auth' => ['Core', 'Users'],
     'Users' => ['Core'],
-    'Catalog' => ['Core'],
+    'Catalog' => ['Core', 'Users'],
     'Sales' => ['Core'],
     'Cash' => ['Core'],
     'Tickets' => ['Core'],

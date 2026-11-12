@@ -62,3 +62,9 @@ La migración aborta antes de crear si ya existe una tabla de seguridad; no inte
 La migración incremental 2026_11_11_000002_create_auth_access_tables crea personal_access_tokens, auth_access_sessions y auth_employee_pins. Utiliza ULID nchar(26), FK reales sin cascada hacia usuarios, índices únicos filtrados para referencias opcionales y CHECK de canal/tipo. La eliminación de un token pone a NULL su referencia en el registro de acceso y conserva el metadato revocado. Los tokens se guardan como SHA-256; PIN como hash de contraseña. No se almacena el payload de sesión ni su identificador reutilizable: solo SHA-256.
 
 La reversión de esta migración rechaza bases cuyo nombre no termina en _test; no se probó ni ejecutó rollback operativo. El esquema está aplicado en fresapos conservando roles/permisos y sin crear cuentas. Compatibilidad real verificada en SQL Server Express; Azure SQL sigue pendiente. [Detalle y resultados](entrega-1.3b.md).
+
+## Catálogo — 1.4a
+
+catalog_categories y catalog_products usan ULID nchar(26), FK NO ACTION, SoftDeletes y precios decimal(19,4) manejados como strings. Los nombres usan Latin1_General_100_CI_AI_SC por columna, sin alterar la base; categorías con nombre único incluso tras eliminación lógica. Índices de nombre, categoría/estado/eliminación, orden de categoría y precio. Las escrituras pasan por los servicios y repositorios de Catalog.
+
+Audit incorpora change_data nvarchar(1000) nullable con CHECK ISJSON para una proyección cerrada: nombres de campos y precios anterior/nuevo. No acepta texto libre ni credenciales. Las dos migraciones incrementales se probaron en fresapos_test y se aplicaron en lote 4 tras respaldo COPY_ONLY/CHECKSUM verificado fuera del repositorio. No se añadieron ventas ni inventario; Azure SQL real sigue pendiente. [Informe y respaldo](entrega-1.4a.md).

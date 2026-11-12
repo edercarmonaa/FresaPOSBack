@@ -97,3 +97,9 @@ No se añaden rutas administrativas. Las escrituras autorizadas usan el contrato
 Auth depende de Core y de los contratos públicos IdentityAccess, UserSnapshot y UserAccessChanged de Users. Users sigue dependiendo solo de Core: no importa servicios ni modelos de Auth. La raíz compone el proveedor nativo y Sanctum; el trait oficial de tokens se integra en User. No se exportan modelos privados entre módulos ni se duplica la matriz de permisos.
 
 Auth contiene Application (autenticación, registro de accesos y PIN), Domain (errores), Infrastructure/Models (tokens y metadatos), Http (controladores, middleware, Livewire y saneamiento de errores sensibles), Providers, recursos, idiomas y migración real. Las operaciones se coordinan con TransactionManager de Core; los cambios de estado de Users notifican después del commit para revocar accesos. Core conserva contratos y catálogo compartidos, sin lógica de identidad. Véase [autenticación](autenticacion.md).
+
+## Actualización 1.4a — Catalog
+
+Catalog incorpora Domain (precio/texto/conflictos), Contracts (administración, consulta operativa y DTOs readonly), Application/Services, puertos de repositorio, Infrastructure/Persistence y modelos privados, más CatalogPolicy. No agrega Http ni endpoints. Su dependencia declarada es Core/Users, por TransactionManager, SecurityEvent e IdentityAccess; Users y Audit siguen dependiendo de Core. No existe dependencia hacia Sales ni modelos privados de otros módulos.
+
+El contrato operativo devuelve una instantánea inmutable del producto/categoría/precio vigentes. Sales deberá persistir valores por línea; el catálogo no recalcula operaciones históricas. Se reutiliza la coordinación SQL de identidad para que los cambios de permisos no se intercalen con escrituras autorizadas; los repositorios no abren transacciones propias. La auditoría mínima se integra en la transacción existente. Véase [entrega-1.4a.md](entrega-1.4a.md).

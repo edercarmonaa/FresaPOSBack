@@ -1,6 +1,6 @@
 # FresaPOSBack
 
-Etapa actual: **1.3c aceptada localmente: bloqueos, administración de sesiones y auditoría de seguridad**. [Informe de validación](docs/entrega-1.3c.md), [autenticación](docs/autenticacion.md), [permisos](docs/seguridad-permisos.md) y [API](docs/api.md).
+Etapa actual: **1.4a, fundamentos de productos y categorías, completada y validada localmente**. [Informe de catálogo](docs/entrega-1.4a.md), [seguridad](docs/entrega-1.3c.md), [autenticación](docs/autenticacion.md) y [API](docs/api.md).
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas. Entrega 1.1, versión 0.1.0: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Sin funcionalidades POS, Node, npm ni Vite.
 
@@ -39,7 +39,7 @@ Antes de ejecutar la suite completa por primera vez, preparar la base independie
 .\scripts\local.cmd php artisan optimize:clear
 ```
 
-Las migraciones incrementales de Users y Auth están aplicadas; `migrate:status` permite revisarlas. `db:show` comprueba la conexión real. Larastan usa nivel 5 y Pint preset Laravel.
+Las migraciones incrementales de Users, Auth, Audit y Catalog están aplicadas; `migrate:status` permite revisarlas. `db:show` comprueba la conexión real. Larastan usa nivel 5 y Pint preset Laravel.
 
 Reinstalar dependencias: repetir `composer install`. Restablecer la configuración local: editar `.env` y ejecutar `artisan optimize:clear`. No hay reinicio destructivo de la base automatizado; las demás bases de tu SQL Express se conservan.
 
@@ -75,4 +75,4 @@ APP_PORT se conserva como referencia del flujo Docker histórico; `local.cmd ser
 
 [Entorno Windows](docs/entorno-desarrollo.md) · [Validación local](docs/validacion-local.md) · [Versiones](docs/versiones.md) · [Arquitectura](docs/arquitectura.md) · [SQL y Azure](docs/base-datos-azure.md) · [Módulos](docs/modulos.md) · [Frontend](docs/frontend.md) · [Hosting](docs/hosting.md).
 
-Se conservaron los archivos Docker de la propuesta anterior como referencia, sin ejecutarlos ni requerirlos. [Informe histórico](docs/validacion.md). La instrucción posterior de usar Windows/SQL Express sustituye los criterios Docker para este entorno local. Las etapas 1.2a–1.2c y 1.3a–1.3c están implementadas y validadas localmente. No se avanza a 1.4.
+Se conservaron los archivos Docker de la propuesta anterior como referencia, sin ejecutarlos ni requerirlos. [Informe histórico](docs/validacion.md). La instrucción posterior de usar Windows/SQL Express sustituye los criterios Docker para este entorno local. Las etapas 1.2a–1.2c, 1.3a–1.3c y 1.4a están implementadas y validadas localmente. No se avanza a 1.4b.

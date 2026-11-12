@@ -82,3 +82,9 @@ AuthenticationTest prueba cookies, CSRF, timeout, middleware, Sanctum, permisos,
 Las fixtures de Auth/Users incluyen también la migración real Audit y eliminan ese esquema primero al terminar. AdvancedSecurityTest y SecurityDiagnosticsTest incorporan los 22 escenarios de la entrega; la aceptación añade dos regresiones de permisos PIN y restricciones/UTC del esquema de auditoría.
 
 El 12 de noviembre de 2026 la suite completa terminó satisfactoriamente con **135 pruebas y 1256 aserciones**, sin omisiones. Se conservan los 85 métodos históricos y sus datasets. La prueba negativa real con TEST_DB_DATABASE=fresapos rechazó el nombre antes de conexión/DDL; la variable se restauró antes de la suite final. fresapos_test terminó vacía. Se mantienen nivel 5 y ejecución SQL secuencial. Véase [entrega-1.3c.md](entrega-1.3c.md).
+
+## Integración del catálogo — 1.4a
+
+CatalogSqlServerTestCase hereda las salvaguardas de AuthSqlServerTestCase y añade, en la base segura _test, la extensión Audit y las tablas Catalog. Retira únicamente estos objetos en orden inverso antes de la limpieza del padre. Los repositorios rechazan escrituras sin transacción externa. No ejecutar dos suites SQL simultáneas en fresapos_test.
+
+CatalogDomainTest aporta 37 escenarios con datasets y CatalogTest 28 integraciones: 65 casos nuevos. La suite final pasó con **200 pruebas y 1516 aserciones**, preservando los 135 escenarios previos; fresapos_test quedó vacía. Solo ModuleRegistrationTest actualizó la expectativa de migraciones nuevas. [Entrega 1.4a](entrega-1.4a.md).

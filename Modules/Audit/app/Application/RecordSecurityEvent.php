@@ -17,7 +17,7 @@ final class RecordSecurityEvent
             $request->attributes->set('_core_request_id', $requestId);
         }
         // Lista cerrada de campos. Fallos de persistencia se propagan; no hay éxito sin auditoría.
-        DB::table('audit_security_events')->insert([
+        $values = [
             'id' => strtolower((string) Str::ulid()),
             'event_type' => $event->type,
             'actor_id' => $event->actorId,
@@ -27,6 +27,14 @@ final class RecordSecurityEvent
             'client' => $request ? ($request->is('api', 'api/*') ? 'api' : 'web') : 'console',
             'request_id' => $requestId,
             'occurred_at' => now()->utc(),
-        ]);
+        ];
+        if ($event->changedFields !== [] || $event->priceBefore !== null) {
+            $values['change_data'] = json_encode([
+                'changed_fields' => $event->changedFields,
+                'price_before' => $event->priceBefore,
+                'price_after' => $event->priceAfter,
+            ], JSON_THROW_ON_ERROR);
+        }
+        DB::table('audit_security_events')->insert($values);
     }
 }
