@@ -98,7 +98,11 @@ class ApiConventionsTest extends TestCase
         $this->app->setLocale('en');
         $this->get('/api/v1/ping')->assertJsonPath('message', 'Operation completed successfully.');
         $routes = collect(Route::getRoutes())->filter(fn ($route) => str_starts_with($route->uri(), 'api/') && ! str_contains($route->uri(), '_test'));
-        $this->assertEqualsCanonicalizing(['api.v1.core.ping', 'api.v1.auth.login', 'api.v1.auth.logout', 'api.v1.auth.me', 'api.v1.auth.password'], $routes->map(fn ($route) => $route->getName())->values()->all());
+        $this->assertEqualsCanonicalizing([
+            'api.v1.core.ping', 'api.v1.auth.login', 'api.v1.auth.logout', 'api.v1.auth.me', 'api.v1.auth.password',
+            'api.v1.auth.sessions', 'api.v1.auth.sessions.revoke', 'api.v1.auth.sessions.revoke-all',
+            'api.v1.auth.users.sessions', 'api.v1.auth.users.sessions.revoke',
+        ], $routes->map(fn ($route) => $route->getName())->values()->all());
     }
 
     public static function errorStatuses(): array
@@ -204,7 +208,17 @@ class ApiConventionsTest extends TestCase
         $records = $this->logs->getRecords();
         $this->assertCount(1, $records);
         $this->assertSame($id, $records[0]->context['request_id']);
-        $this->assertInstanceOf($kind === 'query' ? QueryException::class : RuntimeException::class, $records[0]->context['exception']);
+        if ($kind === 'query') {
+            $this->assertArrayNotHasKey('exception', $records[0]->context);
+            $this->assertSame(QueryException::class, $records[0]->context['exception_type']);
+            $this->assertArrayHasKey('source_line', $records[0]->context);
+            $context = json_encode($records[0]->context, JSON_THROW_ON_ERROR);
+            foreach (['SQLSTATE_PRIVATE', 'private_connection', 'private_table', 'SECRET_BINDING'] as $secret) {
+                $this->assertStringNotContainsString($secret, $context);
+            }
+        } else {
+            $this->assertInstanceOf(RuntimeException::class, $records[0]->context['exception']);
+        }
     }
 
     public function test_direct_error_responses_and_response_exceptions_are_sanitized(): void

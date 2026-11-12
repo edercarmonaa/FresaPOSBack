@@ -75,9 +75,11 @@ Para habilitar una terminal Web se requiere una sesión completa vigente, permis
 
 El empleado entrante debe tener PIN válido, estar activo, haber completado su cambio de contraseña y tener sales.create o cash.open. Se rechaza el acceso por PIN a identidades con capacidades administrativas users.* o roles.*, sin depender del nombre de rol. Para esos contextos se necesita un login completo con contraseña.
 
-El cambio revoca el registro Web previo, autentica al empleado entrante en el guard, destruye/regenera la sesión y CSRF, y crea un registro con su identidad, método pin y propietario del contexto de terminal. La autorización posterior usa únicamente al nuevo empleado: no mezcla permisos ni conserva los del administrador o empleado anterior. No se emiten ni transfieren tokens API. El contexto se comprueba en servidor antes de cada cambio; no basta manipular IDs o controles de la interfaz.
+El cambio revoca el registro Web previo, autentica al empleado entrante en el guard, destruye/regenera la sesión y CSRF, y crea un registro con su identidad, método pin y propietario del contexto de terminal. La identidad, el propietario de terminal y el alcance del empleado se revalidan bajo el lock SQL antes del cambio; una sesión PIN pierde acceso si se retiran sus permisos operativos. La autorización posterior usa únicamente al nuevo empleado: no mezcla permisos ni conserva los del administrador o empleado anterior. No se emiten ni transfieren tokens API. El contexto se comprueba en servidor antes de cada cambio; no basta manipular IDs o controles de la interfaz.
 
 La atribución de futuras operaciones deberá tomar el actor del guard/contrato confiable del servidor, nunca de un user_id enviado por el cliente. Esta entrega registra el acceso y su identidad efectiva; la auditoría detallada de operaciones sigue pendiente y no hay operaciones POS implementadas.
+
+La variable AUDIT_SECURITY_RETENTION_DAYS se lee en config/audit_security.php y se expone también como audit.security_retention_days en la configuración modular.
 
 ## Configuración y controles base
 
@@ -101,11 +103,11 @@ PHP debe omitir argumentos de excepciones: Auth habilita zend.exception_ignore_a
 
 ## Verificación y pendientes
 
-Las pruebas positivas usan SQL Server en fresapos_test con las salvaguardas existentes. La prueba de Livewire usa su protocolo HTTP real con cookies/middleware; no se dejó sin sesión el componente para adaptar el producto a un helper de pruebas. Los 86 casos previos se conservan; las expectativas de rutas/migraciones se amplían de forma explícita.
+Las pruebas positivas usan SQL Server en fresapos_test con las salvaguardas existentes. La prueba de Livewire usa su protocolo HTTP real con cookies/middleware; no se dejó sin sesión el componente para adaptar el producto a un helper de pruebas. Se conservan los 111 escenarios históricos de 1.3b; la validación definitiva de 1.3c pasó con 135 pruebas y 1256 aserciones. Las expectativas de rutas/migraciones se amplían de forma explícita.
 
 El [informe 1.3b](entrega-1.3b.md) contiene resultados, migración operativa e integridad. [OpenAPI](openapi.yaml) se actualizó manualmente; en 1.3c se comprobó sintaxis YAML y referencias internas con Ruby/Psych; sigue pendiente validar el esquema OpenAPI. No se instalaron dependencias para ese fin.
 
-La implementación 1.3c y sus límites de verificación están descritos en [entrega-1.3c.md](entrega-1.3c.md). Su aceptación requiere ejecutar la suite y los controles funcionales en Windows/SQL Server. Azure SQL y cPanel requieren sus comprobaciones reales de TLS, red, drivers/ODBC y PHP web. No se conectó a Azure ni se desplegó en hosting.
+La implementación 1.3c y sus límites de verificación están descritos en [entrega-1.3c.md](entrega-1.3c.md). La aceptación local se verificó ejecutando la suite y los controles funcionales en Windows/SQL Server el 12 de noviembre de 2026. Azure SQL y cPanel requieren sus comprobaciones reales de TLS, red, drivers/ODBC y PHP web. No se conectó a Azure ni se desplegó en hosting.
 
 Referencias primarias consultadas: [Sanctum para Laravel 13](https://laravel.com/docs/13.x/sanctum) y [manifest oficial](https://github.com/laravel/sanctum/blob/4.x/composer.json); se inspeccionó también el código instalado de Laravel, Sanctum y Livewire.
 

@@ -23,6 +23,7 @@ use Modules\Auth\Http\Middleware\EnsureApiAccess;
 use Modules\Auth\Http\Middleware\EnsureWebAccess;
 use Modules\Auth\Http\Middleware\NoStore;
 use Modules\Auth\Http\SensitiveErrors;
+use Modules\Auth\Infrastructure\Models\AccessSession;
 use Modules\Auth\Infrastructure\Models\AccessToken;
 use Modules\Auth\Infrastructure\Models\EmployeePin;
 use Modules\Core\Contracts\ApiCode;
@@ -83,7 +84,7 @@ class AuthServiceProvider extends ModuleServiceProvider
                     $this->app->make(SessionRegistry::class)->revokeAll($event->userId, $event->actorId);
                     if (in_array($event->reason, ['user.deactivated', 'user.deleted'], true)) {
                         EmployeePin::query()->whereKey($event->userId)->delete();
-                        \Modules\Auth\Infrastructure\Models\AccessSession::query()->where('terminal_owner_id', $event->userId)->whereNull('revoked_at')->update(['revoked_at' => now()]);
+                        AccessSession::query()->where('terminal_owner_id', $event->userId)->whereNull('revoked_at')->update(['revoked_at' => now()]);
                     }
                 });
             }

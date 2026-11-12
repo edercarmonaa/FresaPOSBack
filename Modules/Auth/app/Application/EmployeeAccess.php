@@ -92,13 +92,16 @@ final class EmployeeAccess
                 $this->attempts->failed($key, 'pin', $current->user_id);
                 throw new InvalidPin;
             }
-            // Un PIN nunca eleva a administración; se exige contraseña completa para ese contexto.
-            abort_if(count(array_filter($target->permissions, fn (string $permission) => str_starts_with($permission, 'users.') || str_starts_with($permission, 'roles.'))) > 0, 403);
-            abort_unless(in_array('sales.create', $target->permissions, true) || in_array('cash.open', $target->permissions, true), 403);
+            $this->assertEmployeeScope($target);
             $this->attempts->clear($key);
-            $this->transactions->run(function () use ($request, $current, $target, $pin): void {
+
+            return $this->transactions->run(function () use ($request, $current, $target, $pin): UserSnapshot {
                 $this->sessions->lock();
                 $this->sessions->web($request);
+                $owner = $this->identities->inspect($current->terminal_owner_id);
+                abort_unless($owner && in_array('cash.open', $owner->permissions, true), 403);
+                $target = $this->identities->inspect($target->id) ?? throw new InvalidPin;
+                $this->assertEmployeeScope($target);
                 $freshPin = EmployeePin::query()->find($target->id);
                 if (! $freshPin || ! Hash::check($pin, $freshPin->pin_hash)) {
                     throw new InvalidPin;
@@ -111,9 +114,19 @@ final class EmployeeAccess
                 $request->session()->regenerate(true);
                 $request->session()->regenerateToken();
                 $this->sessions->createWeb($request, $target, $current->terminal_owner_id, 'pin');
-            });
 
-            return $target;
+                return $target;
+            });
         });
+    }
+
+    private function assertEmployeeScope(UserSnapshot $target): void
+    {
+        if ($target->mustChangePassword) {
+            throw new InvalidPin;
+        }
+        // Un PIN nunca eleva a administración; se exige contraseña completa para ese contexto.
+        abort_if(count(array_filter($target->permissions, fn (string $permission) => str_starts_with($permission, 'users.') || str_starts_with($permission, 'roles.'))) > 0, 403);
+        abort_unless(in_array('sales.create', $target->permissions, true) || in_array('cash.open', $target->permissions, true), 403);
     }
 }

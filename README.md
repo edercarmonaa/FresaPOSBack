@@ -1,6 +1,6 @@
-﻿# FresaPOSBack
+# FresaPOSBack
 
-Etapa actual: **1.3b, autenticación Web/API, PIN y sesiones**. Laravel Sanctum, acceso por username y permisos existentes. [Informe 1.3b](docs/entrega-1.3b.md), [autenticación](docs/autenticacion.md), [matriz](docs/seguridad-permisos.md) y [API](docs/api.md).
+Etapa actual: **1.3c aceptada localmente: bloqueos, administración de sesiones y auditoría de seguridad**. [Informe de validación](docs/entrega-1.3c.md), [autenticación](docs/autenticacion.md), [permisos](docs/seguridad-permisos.md) y [API](docs/api.md).
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas. Entrega 1.1, versión 0.1.0: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Sin funcionalidades POS, Node, npm ni Vite.
 
@@ -75,6 +75,4 @@ APP_PORT se conserva como referencia del flujo Docker histórico; `local.cmd ser
 
 [Entorno Windows](docs/entorno-desarrollo.md) · [Validación local](docs/validacion-local.md) · [Versiones](docs/versiones.md) · [Arquitectura](docs/arquitectura.md) · [SQL y Azure](docs/base-datos-azure.md) · [Módulos](docs/modulos.md) · [Frontend](docs/frontend.md) · [Hosting](docs/hosting.md).
 
-Se conservaron los archivos Docker de la propuesta anterior como referencia, sin ejecutarlos ni requerirlos. [Informe histórico](docs/validacion.md). La instrucción posterior de usar Windows/SQL Express sustituye los criterios Docker para este entorno local. Las etapas 1.2a–1.2c y 1.3a–1.3b están implementadas localmente. No se avanza a 1.3c.
-
-
+Se conservaron los archivos Docker de la propuesta anterior como referencia, sin ejecutarlos ni requerirlos. [Informe histórico](docs/validacion.md). La instrucción posterior de usar Windows/SQL Express sustituye los criterios Docker para este entorno local. Las etapas 1.2a–1.2c y 1.3a–1.3c están implementadas y validadas localmente. No se avanza a 1.4.

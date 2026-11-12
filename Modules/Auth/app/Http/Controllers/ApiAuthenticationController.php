@@ -40,6 +40,7 @@ final class ApiAuthenticationController
 
         return $this->responses->success($request, $this->authentication->changePassword($request, $data['current_password'], $data['password'], true));
     }
+
     public function sessions(Request $request, SessionRegistry $sessions, ?string $userId = null): JsonResponse
     {
         $actor = (string) $request->user()->getAuthIdentifier();

@@ -1,4 +1,15 @@
-﻿# Registro de cambios
+# Registro de cambios
+
+## [Sin publicar] — Etapa 1.3c validada el 12 de noviembre de 2026
+
+- Validación real Windows/SQL Server: 135 pruebas, 1256 aserciones, Pint y Larastan nivel 5 correctos.
+- Bloqueos recuperables de cinco intentos/cinco minutos y administración de sesiones API/Livewire existentes comprobados.
+- Respaldo COPY_ONLY/CHECKSUM verificado antes de aplicar la migración incremental Audit.
+- Corregida la vigencia de sesiones PIN tras perder permisos operativos y la revalidación bajo lock durante el cambio de empleado.
+- Configuración de retención centralizada en config y expectativas de rutas/diagnósticos actualizadas sin retirar pruebas.
+- Administrador, credenciales, roles, permisos y datos existentes conservados; sin commits/pushes de esta validación.
+- [Informe de aceptación](docs/entrega-1.3c.md).
+
 
 ## [Sin publicar] — Etapa 1.3b
 
@@ -98,4 +109,3 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 - Construcción y ejecución Docker, salud de contenedores y conexión real SQL, por ausencia de Docker en el equipo de implementación.
 - Capacidades de hosting y conectividad Azure.
-

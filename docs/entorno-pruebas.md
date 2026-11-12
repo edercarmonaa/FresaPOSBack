@@ -76,3 +76,9 @@ La suite final de 1.3a pasó con 86 pruebas y 703 aserciones; fresapos_test qued
 AuthSqlServerTestCase reutiliza la salvaguarda SQL y crea los esquemas reales Users/Auth exclusivamente en fresapos_test. Rechaza tablas preexistentes, usa fixtures sin credenciales operativas y retira solo el esquema del caso al terminar. No ejecutar dos procesos de integración simultáneos sobre esta base. No hay SQLite, migrate:fresh ni db:wipe.
 
 AuthenticationTest prueba cookies, CSRF, timeout, middleware, Sanctum, permisos, PIN y protocolo HTTP Livewire real. AdminBootstrapAuthenticationTest ejecuta el servicio y el comando reales con entrada de prueba controlada, verificando que las preguntas secretas están ocultas y no admiten fallback visible. La interacción física del terminal queda pendiente; no se creó ningún administrador operativo. [Informe con cifras finales](entrega-1.3b.md).
+
+## Aceptación de seguridad avanzada — 1.3c
+
+Las fixtures de Auth/Users incluyen también la migración real Audit y eliminan ese esquema primero al terminar. AdvancedSecurityTest y SecurityDiagnosticsTest incorporan los 22 escenarios de la entrega; la aceptación añade dos regresiones de permisos PIN y restricciones/UTC del esquema de auditoría.
+
+El 12 de noviembre de 2026 la suite completa terminó satisfactoriamente con **135 pruebas y 1256 aserciones**, sin omisiones. Se conservan los 85 métodos históricos y sus datasets. La prueba negativa real con TEST_DB_DATABASE=fresapos rechazó el nombre antes de conexión/DDL; la variable se restauró antes de la suite final. fresapos_test terminó vacía. Se mantienen nivel 5 y ejecución SQL secuencial. Véase [entrega-1.3c.md](entrega-1.3c.md).

@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\SensitiveErrors;
@@ -23,7 +24,7 @@ class SecurityDiagnosticsTest extends TestCase
         $exception = new QueryException('sqlsrv', 'INSERT INTO private_table (pin_hash) VALUES (?)', ['SecretCredential!123'], $previous);
         Route::get('/api/v1/_security/diagnostic', fn () => throw $exception)->middleware('api');
         $this->getJson('/api/v1/_security/diagnostic')->assertStatus(500)->assertJsonPath('code', 'INTERNAL_ERROR')->assertDontSee('SecretCredential!123');
-        app(SensitiveErrors::class)->report($exception, \Illuminate\Http\Request::create('/login'));
+        app(SensitiveErrors::class)->report($exception, Request::create('/login'));
         $records = $handler->getRecords();
         $this->assertCount(2, $records);
         foreach ($records as $record) {

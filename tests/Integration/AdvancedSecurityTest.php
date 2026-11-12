@@ -2,9 +2,14 @@
 
 namespace Tests\Integration;
 
+use Carbon\CarbonImmutable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 use Illuminate\Testing\TestResponse;
 use Livewire\Livewire;
 use Modules\Auth\Application\AttemptGuard;
@@ -20,6 +25,7 @@ use Modules\Users\Contracts\IdentityAccess;
 use Modules\Users\Contracts\UserAdministration;
 use Modules\Users\Infrastructure\Persistence\Models\User;
 use Tests\Support\AuthSqlServerTestCase;
+use Tests\Support\TestDatabaseGuard;
 
 class AdvancedSecurityTest extends AuthSqlServerTestCase
 {
@@ -256,7 +262,7 @@ class AdvancedSecurityTest extends AuthSqlServerTestCase
     public function test_audit_failure_rolls_back_user_deactivation_and_revocation_together(): void
     {
         $token = $this->login();
-        \Illuminate\Support\Facades\Event::listen(SecurityEvent::class, function (SecurityEvent $event): void {
+        Event::listen(SecurityEvent::class, function (SecurityEvent $event): void {
             if ($event->type === 'user.deactivated') {
                 throw new \RuntimeException('Synthetic audit failure');
             }
@@ -309,14 +315,14 @@ class AdvancedSecurityTest extends AuthSqlServerTestCase
         $configuration = config('database.connections.sqlsrv_testing');
         config(['database.connections.security_competitor' => $configuration]);
         $competitor = DB::connection('security_competitor');
-        \Tests\Support\TestDatabaseGuard::assertConnected($competitor);
+        TestDatabaseGuard::assertConnected($competitor);
         try {
             app(TransactionManager::class)->run(function () use ($competitor): void {
                 app(SessionRegistry::class)->assertCapacity($this->employee, 'api');
                 try {
                     $competitor->select('SET LOCK_TIMEOUT 1000; SELECT id FROM user_security_locks WITH (UPDLOCK, HOLDLOCK) WHERE id = 1');
                     $this->fail('La segunda conexión debe quedar excluida.');
-                } catch (\Illuminate\Database\QueryException $exception) {
+                } catch (QueryException $exception) {
                     $this->assertSame(1222, (int) ($exception->errorInfo[1] ?? 0));
                 }
             });
@@ -353,6 +359,61 @@ class AdvancedSecurityTest extends AuthSqlServerTestCase
             ->set('userId', $this->employee)->call('consult')->assertSee('Test employee')
             ->call('revokeAll')->assertSet('status', 'Accesos revocados. Es necesario autenticarse nuevamente.');
         $this->api('GET', '/api/v1/auth/me', [], $token)->assertUnauthorized();
+    }
+
+    public function test_pin_session_loses_access_when_operational_permissions_are_removed(): void
+    {
+        $this->webLogin();
+        $this->web('POST', '/auth/pin', ['current_password' => 'EmployeeChanged!123', 'pin' => '0042', 'pin_confirmation' => '0042'])->assertRedirect();
+        $this->web('POST', '/auth/terminal', ['current_password' => 'EmployeeChanged!123'])->assertRedirect();
+        $this->web('POST', '/auth/employee', ['username' => 'security.employee', 'pin' => '0042'])->assertRedirect(route('auth.account'));
+        // El propietario conserva cash.open; solo el empleado pierde su alcance operativo.
+        $this->database->table('auth_access_sessions')->where('user_id', $this->employee)->whereNull('revoked_at')->update(['terminal_owner_id' => $this->admin]);
+        app(UserAdministration::class)->setRolePermissions($this->admin, 'cashier', ['tickets.view']);
+        $this->web('GET', '/account')->assertRedirect(route('login'));
+    }
+
+    public function test_audit_migration_enforces_sql_constraints_indexes_utc_and_eloquent_round_trip(): void
+    {
+        $columns = $this->database->getSchemaBuilder()->getColumns('audit_security_events');
+        $id = collect($columns)->firstWhere('name', 'id');
+        $this->assertSame('nchar', $id['type_name']);
+        $physical = $this->database->selectOne("SELECT max_length FROM sys.columns WHERE object_id = OBJECT_ID('audit_security_events') AND name = 'id'");
+        $this->assertSame(52, (int) $physical->max_length);
+        $foreignKeys = $this->database->getSchemaBuilder()->getForeignKeys('audit_security_events');
+        $this->assertCount(2, $foreignKeys);
+        foreach ($foreignKeys as $foreignKey) {
+            $this->assertSame('users', $foreignKey['foreign_table']);
+            $this->assertSame('no action', $foreignKey['on_delete']);
+        }
+        $indexes = $this->database->getSchemaBuilder()->getIndexes('audit_security_events');
+        foreach ([['id'], ['event_type'], ['subject_id'], ['occurred_at'], ['subject_id', 'occurred_at']] as $expected) {
+            $this->assertContains($expected, array_column($indexes, 'columns'));
+        }
+        $this->travelTo(CarbonImmutable::parse('2026-11-12 12:00:00', 'America/Mexico_City'));
+        event(new SecurityEvent('login', $this->employee, $this->employee));
+        $row = $this->database->table('audit_security_events')->where('event_type', 'login')->first();
+        $this->assertSame('2026-11-12 18:00:00', substr($row->occurred_at, 0, 19));
+        $model = new class extends Model
+        {
+            protected $table = 'audit_security_events';
+
+            public $timestamps = false;
+
+            public $incrementing = false;
+
+            protected $keyType = 'string';
+        };
+        $this->assertSame($this->employee, $model->newQuery()->findOrFail($row->id)->getAttribute('actor_id'));
+        $valid = (array) $row;
+        foreach ([['actor_id' => strtolower((string) Str::ulid())], ['subject_id' => strtolower((string) Str::ulid())], ['result' => 'unknown'], ['client' => 'unknown']] as $invalid) {
+            try {
+                $this->database->table('audit_security_events')->insert(array_replace($valid, ['id' => strtolower((string) Str::ulid())], $invalid));
+                $this->fail('SQL Server debe rechazar la referencia o valor no permitido.');
+            } catch (QueryException $exception) {
+                $this->assertSame(547, (int) ($exception->errorInfo[1] ?? 0));
+            }
+        }
     }
 
     public function test_real_livewire_update_rejects_a_remotely_revoked_web_session(): void

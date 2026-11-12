@@ -20,7 +20,7 @@ final class SessionRegistry
     public function assertCapacity(string $userId, string $channel): void
     {
         $this->lock();
-        abort_unless($this->identities->inspect($userId), 401);
+        abort_unless($this->identities->inspect($userId) !== null, 401);
         $sessions = AccessSession::query()->where('user_id', $userId)->lockForUpdate()->get();
         $count = $sessions->filter(fn ($session) => $session->channel === $channel && ! $session->revoked_at && $session->expires_at->isFuture())->count();
         abort_if($count >= max(1, (int) config('auth_access.max_'.$channel.'_sessions')), 429, 'Alcanzaste el límite de sesiones. Cierra un acceso existente para continuar.');
@@ -85,6 +85,7 @@ final class SessionRegistry
             $identity = $this->identities->inspect($session->user_id);
             $owner = $session->terminal_owner_id ? $this->identities->inspect($session->terminal_owner_id) : null;
             if (! $identity || ! $owner || ! in_array('cash.open', $owner->permissions, true)
+                || (! in_array('sales.create', $identity->permissions, true) && ! in_array('cash.open', $identity->permissions, true))
                 || count(array_filter($identity->permissions, fn (string $permission) => str_starts_with($permission, 'users.') || str_starts_with($permission, 'roles.'))) > 0) {
                 throw new ExpiredSession;
             }

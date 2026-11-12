@@ -1,178 +1,184 @@
-# FresaPOSBack — Bloque 02, etapa 1.3c
+# FresaPOSBack — Validación y aceptación definitiva de 1.3c
 
-Fecha de trabajo: 11 de noviembre de 2026, America/Mexico_City.
+Fecha: **12 de noviembre de 2026**, America/Mexico_City.
 
-**Estado: implementación local y documentación entregadas; aceptación pendiente por falta del entorno de ejecución.** No se afirma que la etapa haya superado PHPUnit, Pint, Larastan, integración SQL Server ni comprobaciones HTTP. No se avanzó a otra etapa.
+**ETAPA 1.3c: ACEPTADA en el entorno local Windows/SQL Server Express.** Este informe sustituye el estado pendiente de ejecución anterior. No se avanzó a 1.4 ni se realizaron commits o pushes.
 
-## A. Línea base e inspección
+## A. Entorno de validación
 
-Git estaba limpio. Se revisaron los informes 1.3a/1.3b, Auth, Users, Core, Audit, servicios, rutas Web/API, PIN, middleware, modelos Sanctum, registro de accesos, Policies, permisos, excepciones, migraciones y salvaguardas de pruebas.
+Raíz: C:\Repos\FresaPOSBack. Windows 11 Home Single Language, versión 10.0.26200; PHP CLI 8.3.36 NTS x64 y Composer 2.9.2 mediante scripts/local.cmd. SQL Server Express 17.0.1155.3, instancia .\AUDITORIA, Windows Authentication; drivers sqlsrv/pdo_sqlsrv 5.13.3. Se verificaron extensiones y requisitos de plataforma sin reinstalar herramientas ni dependencias.
 
-La referencia histórica de 1.3b es **111 pruebas y 1,016 aserciones**, con Pint, Larastan nivel 5 y Composer correctos. Es evidencia del informe anterior, **no una ejecución reproducida aquí**. Hay 85 métodos de prueba previos en los archivos rastreados; los datasets explican que ese número no equivalga al total de ejecuciones PHPUnit.
+Dependencias reales: Laravel 13.42.0, Livewire 4.4.8, Sanctum 4.4.0, laravel-modules 13.3.0, Spatie Permission 8.5.0, PHPUnit 12.5.43, Pint 1.32.2 y Larastan 3.14.0, nivel 5. No se cambió composer.json ni composer.lock.
 
-Diferencias del entorno: esta copia está en macOS, carece de `php`, `composer`, `vendor` y `.env`. No contiene la instancia Windows `.\AUDITORIA` ni una conexión operativa verificable. Los comandos de línea base y finales devolvieron salida 127 (ejecutable inexistente). No se instalaron herramientas ni se cambió la plataforma del proyecto para ocultar esta diferencia.
+## B. Línea base
 
-Ya existían autenticación, timebox/hashes, proveedor de usuarios activos, sesiones con ULID propio, revocación, límites de cinco sesiones por canal, historial de tres contraseñas, CSRF/regeneración, middleware de vigencia y consulta de permisos actuales. Audit solo tenía el esqueleto modular. Los limitadores anteriores eran de un minuto; la invalidación de estado se despachaba después del commit.
+Git estaba limpio sobre bac3444, implementación existente de 1.3c. Se inspeccionaron informes previos, Auth/Users/Core/Audit, contratos, proveedores, modelos, rutas, middleware, migraciones, políticas, configuración y pruebas. La referencia histórica de 1.3b era 111 pruebas y 1016 aserciones satisfactorias; no se confundió esa cifra con una ejecución actual.
 
-## B. Implementación y archivos
+Se identificaron **22 pruebas nuevas**: 21 métodos en AdvancedSecurityTest y uno en SecurityDiagnosticsTest. Las modificaciones existentes de 1.3c ya incorporaban bloqueos, gestión API/Livewire de sesiones, coordinación SQL y auditoría.
 
-Se extendieron los componentes existentes; no hay otro autenticador, gestor de sesiones ni gestor transaccional.
+Estado inicial real: fresapos con doce tablas, un usuario administrador activo, un historial de contraseña, cuatro roles, 44 permisos, 81 asignaciones rol-permiso y una asignación usuario-rol. Cero tokens, registros de acceso y PIN. Users y Auth estaban migrados; Audit pendiente. fresapos_test estaba vacía. No se mostraron credenciales ni hashes del administrador.
 
-| Componente | Cambio |
+Primera ejecución: **133 pruebas, 1216 aserciones, dos errores y un fallo**, en 270,603 s. Pint señaló cuatro archivos. Larastan detectó dos errores. Los hallazgos y las correcciones se detallan en J.
+
+## C. Verificaciones ejecutadas
+
+Comandos ejecutados desde PowerShell en la raíz:
+
+```powershell
+.\scripts\local.cmd php -v
+.\scripts\local.cmd php -m
+.\scripts\local.cmd composer --version
+.\scripts\local.cmd composer show --direct --format=json
+.\scripts\local.cmd composer validate --strict
+.\scripts\local.cmd composer check-platform-reqs
+.\scripts\local.cmd composer test
+.\scripts\local.cmd composer lint
+.\scripts\local.cmd composer analyse
+.\scripts\local.cmd php artisan --version
+.\scripts\local.cmd php artisan route:list --except-vendor
+.\scripts\local.cmd php artisan migrate:status
+```
+
+Se inspeccionaron también git status, historial, diff, diff --check, procesos y puerto 8080. Las consultas SQL verificaron DB_NAME(), servicio Express, tablas, metadatos de esquema, catálogo de migraciones y huellas privadas de los datos existentes. Las comprobaciones HTTP usaron HttpClient sin enviar credenciales.
+
+Los logs/evidencias locales de esta validación se conservan en .tools/acceptance-1.3c-*, directorio ignorado por Git. Las evidencias no se presentan como sustituto de los comandos reproducibles ni se incorporan secretos al informe.
+
+## D. Pruebas
+
+| Ejecución | Resultado real |
 | --- | --- |
-| `Modules/Auth/app/Application/AttemptGuard.php` | RateLimiter, locks de caché, fallos consecutivos y bloqueos recuperables. |
-| `Authenticate.php`, `EmployeeAccess.php` en la misma carpeta | Integración de bloqueos, revalidación bajo coordinación transaccional, auditoría y PIN de terminal. |
-| `SessionRegistry.php` | Consulta/revocación autorizada, cierres masivos, expiración detectable y coordinación de emisión/revocación. |
-| `Modules/Auth/app/Policies/SessionPolicy.php` | Actor activo, cambio obligatorio completado y alcance propio/administrativo. |
-| `Modules/Auth/app/Infrastructure/Models/AccessSession.php` | Relación Sanctum para etiqueta de cliente disponible, sin serializar el token. |
-| `Modules/Auth/app/Http/Controllers/ApiAuthenticationController.php` | Cinco operaciones de sesiones adicionales en el controlador existente. |
-| `Modules/Auth/routes/api/v1.php` | Rutas de administración con Sanctum, middleware, validación ULID y permisos. |
-| `Modules/Auth/app/Http/Livewire/Sessions.php` | Consulta y revocación, autorización en servicio y selección protegida mediante Locked. |
-| `Modules/Auth/resources/views/livewire-sessions.blade.php`, `account.blade.php`, `admin.blade.php` | Interfaz mínima integrada en el diseño existente. |
-| `Modules/Auth/app/Providers/AuthServiceProvider.php` | Registro Livewire y consumo síncrono de cambios de identidad. |
-| `Modules/Auth/app/Http/SensitiveErrors.php` | Incluye auth.sessions en saneamiento de errores sensibles. |
-| `Modules/Users/app/Contracts/IdentityAccess.php`, `UserAccessChanged.php` | Expone coordinación existente; evento incorpora actor y motivo. |
-| `Modules/Users/app/Application/Services/UserIdentityAccess.php` | Delegación del lock al SecurityStore existente; cambio de clave invalida accesos y audita dentro de la transacción. |
-| `ManageUsers.php` en la misma carpeta | Invalidación síncrona de estado/borrado y auditoría de estado, roles y permisos. |
-| `Modules/Users/app/Application/BootstrapAdministrator.php` | Audita futuros aprovisionamientos autorizados; no se ejecutó el comando operativo. |
-| `Modules/Core/app/Contracts/ExceptionDiagnostic.php`, `Modules/Core/app/Http/ApiExceptionHandler.php` | Diagnóstico SQL sin mensajes, consultas ni bindings potencialmente sensibles. |
-| `Modules/Core/app/Contracts/SecurityEvent.php` | Contrato transversal, catálogo cerrado, resultado permitido y referencias exclusivamente ULID. |
-| `Modules/Audit/app/Application/RecordSecurityEvent.php`, proveedor Audit | Listener síncrono con proyección explícita de campos, sin payload libre. |
-| `Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php` | Única migración nueva. |
-| `config/auth_access.php`, `Modules/Audit/config/config.php` | Política configurable de fallos/bloqueo y retención. |
-| `tests/Integration/AdvancedSecurityTest.php`, `tests/Feature/SecurityDiagnosticsTest.php` | 22 métodos nuevos: 21 de integración y uno de diagnóstico sin base de datos. |
-| Fixtures Auth/Users y pruebas de registro/autenticación | Incorporan Audit y adaptan la duración esperada del bloqueo; no eliminan métodos anteriores. |
-| `docs/autenticacion.md`, `docs/api.md`, `docs/openapi.yaml` | Actualización de políticas y contratos. |
+| Primera suite sobre implementación recibida | 133 pruebas, 1216 aserciones; dos errores y un fallo. |
+| Regresión PIN antes de corregir producto | Un fallo reproducido: acceso Web 200 tras perder permisos operativos. |
+| Regresión PIN corregida | Una prueba, ocho aserciones, satisfactoria. |
+| Migración Audit aislada, comprobación final | Una prueba, 18 aserciones, satisfactoria. |
+| Suite completa tras correcciones | **135 pruebas, 1256 aserciones**, satisfactoria; 124,670 s. |
+| Suite completa posterior a migración operativa | **135 pruebas, 1256 aserciones**, satisfactoria; 125,940 s, 78 MB. |
 
-Se conserva la matriz modular: Auth consume contratos Users/Core; Users y Audit consumen Core. El contrato de evento evita dependencias de Users hacia Auth/Audit. Auth obtiene el lock mediante IdentityAccess, que delega al SecurityStore original; no importa modelos privados de Users ni implementa otro gestor de transacciones.
+La ejecución final no tuvo errores, fallos, pruebas omitidas ni advertencias PHPUnit. Se conservaron los 85 métodos históricos de prueba, comprobados contra 65a0e15; sus datasets explican los 111 escenarios originales. Se ejecutaron las 22 pruebas de 1.3c y dos regresiones adicionales de aceptación.
 
-## C. Intentos, bloqueo y recuperación
+La prueba nueva de migración verifica nchar(26) mediante sus 52 bytes físicos, dos FK NO ACTION a users, índices, rechazo SQL 547 de referencias/resultados/clientes inválidos, inserción UTC y recuperación con un modelo Eloquent de prueba. Se ejecutó el up real de la migración en las fixtures aisladas; no se creó un modelo productivo innecesario.
 
-Valores iniciales: `AUTH_FAILED_ATTEMPTS=5`, `AUTH_LOCK_SECONDS=300`. Son variables opcionales; no se modificó `.env`. El mismo límite rige contraseña, reautenticación y PIN, con claves independientes por mecanismo.
+La primera versión de esa comprobación usó dos expectativas incorrectas del helper: longitud expresada en bytes y texto no action con espacio. Se corrigieron contrastando sys.columns y los metadatos del driver, sin cambiar el esquema ni debilitar las restricciones.
 
-Se cuentan fallos consecutivos dentro de una ventana de 300 segundos. El quinto fallo crea un bloqueo de **300 segundos completos desde ese fallo**. Un éxito previo al bloqueo limpia el contador. Durante el bloqueo se rechazan también credenciales correctas, con HTTP 429 y Retry-After; al expirar se admite otra verificación y se registra el desbloqueo cuando se detecta. El marcador de desbloqueo se conserva hasta 24 horas; si no llega otra solicitud en ese plazo, no se reconstruye artificialmente ese evento.
+Una invocación focalizada inicial con un filtro que contenía una tubería fue interpretada por el lanzador CMD y terminó antes de ejecutar pruebas. Se repitió con filtros individuales; no se contó como cobertura. La prueba negativa de salvaguarda descrita en F produce un error intencional y se distingue de la suite final satisfactoria.
 
-Las claves contienen SHA-256 de identidad normalizada y origen IP; no se guardan username o IP en claro en el limitador ni en auditoría. Login Web/API comparten política. El PIN no depende del componente, cookies o ID Web: recargar la pantalla o iniciar otro navegador desde el mismo origen no elimina el bloqueo. Se comprueba el contexto de terminal en el servidor. El PIN no autentica API ni habilita administración Users/Roles; cada petición de una sesión PIN vuelve a comprobar su alcance y la autorización del propietario de terminal.
+## E. Calidad
 
-El alcance identidad/origen evita imponer un bloqueo global sobre una cuenta ajena desde otra IP. Continúa el limitador general API existente. Esto no impide ataques distribuidos ni sustituye la configuración de proxies confiables. Los locks nativos serializan comprobar/verificar/contar para una clave. El caché file existente es persistente en un servidor; varios nodos requieren caché compartido con locks. Borrar o perder ese caché reinicia los contadores. No existe bloqueo permanente de cuentas.
+- Pint final: **passed**. Se aplicó únicamente el formato señalado por la herramienta.
+- Larastan final: **138 archivos, nivel 5, sin errores**. No hay nuevas supresiones, baseline ni reducción del nivel.
+- Composer validate --strict: **válido**.
+- Composer check-platform-reqs: **todos los requisitos satisfechos**, incluidos ambos drivers SQL Server.
+- git diff --check: correcto.
 
-Los fallos y bloqueos se auditan sin usuario afectado cuando no se ha verificado identidad; así no se introduce una consulta diferencial ni se revela existencia de cuentas. Los mensajes Web/Livewire y API conservan el contrato seguro existente. La reautenticación de PIN también aplica el bloqueo; se conserva el throttle adicional de cambios de contraseña.
+La nota informativa de PHPStan en stderr aparece como NativeCommandError al capturar salida con Windows PowerShell 5.1; no se trató como fallo de análisis cuando el proceso terminó con salida 0 y No errors. Los errores reales iniciales sí se registraron y corrigieron.
 
-## D. Sesiones: consulta, límites y revocación
+## F. Base de datos y migración
 
-Se reutilizan `auth_access_sessions`, los tokens Sanctum y el driver Web existente. El ULID público identifica un **registro administrativo**, no autentica y no es el ID de cookie/token. No se devuelve session_hash, token_id, secreto, hash de token ni IP. Se muestra usuario, canal, etiqueta del token cuando todavía existe, fechas UTC, expiración y estado active/expired/revoked. Después de eliminar un token su etiqueta puede quedar indisponible.
+La configuración de PHPUnit fuerza testing/sqlsrv_testing y usa .env.testing independiente. SqlServerTestCase retira las demás conexiones solo en memoria. TestDatabaseGuard valida nombre propio _test, driver sqlsrv, host explícito y DB_NAME() efectivo antes de DDL. Se revisaron estas reglas antes de la primera integración.
 
-El listado limita a 50 registros, priorizando no revocados y vigencia descendente; no es un historial paginado completo. Las revocaciones masivas operan sobre todos los registros, sin ese límite. No existe listado global de todos los usuarios.
+Se ejecutó además una prueba negativa real: TEST_DB_DATABASE=fresapos únicamente en el entorno del proceso, con el caso de conexión de PersistenceTest. Abortó con RuntimeException y salida 2 **antes de abrir la conexión o ejecutar DDL**, como exige assertConfigured. La variable se restauró en finally y la suite completa posterior usó fresapos_test. No se cambió ningún archivo de entorno para forzarla.
 
-Se conservan `AUTH_MAX_WEB_SESSIONS=5` y `AUTH_MAX_API_SESSIONS=5`: límites independientes por canal, no una nueva regla global de negocio. Revocados y expirados no consumen capacidad. Al alcanzarla se devuelve 429, conservando dispositivos existentes. La interfaz permite liberar capacidad explícitamente. No hay expulsión silenciosa.
+Migración revisada: Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php. Crea únicamente audit_security_events: PK ULID nchar(26); tipo de evento; actor/afectado y referencia administrativa opcionales; resultado, cliente, correlación y fecha UTC. Incluye FK NO ACTION, índices y CHECK de resultado/cliente. No altera Users, contraseñas, permisos, tokens ni registros previos. Su down rechaza bases que no terminan en _test. No se ejecutó rollback operativo.
 
-La emisión, revocación y cambios de identidad usan la misma fila de coordinación SQL de Users mediante su contrato y TransactionManager de Core. Esto cubre también la primera emisión sin sesiones previas. Se vuelve a verificar la contraseña dentro de la coordinación de emisión para evitar emitir con una verificación anterior a un cambio de credenciales. El cambio de empleado comprueba de nuevo contexto y PIN bajo coordinación; la retirada del acceso anterior se revierte si falla la emisión.
+Tras las pruebas aisladas, calidad correcta y respaldo verificado se ejecutó:
 
-Revocar Web marca el registro como revocado; no necesita conocer ni devolver el ID físico del driver. La siguiente petición protegida pierde acceso aunque sobreviva el payload físico. Revocar API marca el registro y elimina el token. Un registro revocado nunca se vuelve a marcar activo. Una petición que ya pasó la autorización puede estar en curso: esto no cancela ni deshace operaciones financieras confirmadas.
+```powershell
+.\scripts\local.cmd php artisan migrate --path=Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php --no-interaction
+.\scripts\local.cmd php artisan migrate:status
+```
 
-La revocación individual es idempotente sobre un registro existente; la solicitud administrativa repetida queda trazada. Para repetir una petición autenticada el actor debe conservar otro contexto válido. Un token que acaba de revocarse no puede autorizar su propia repetición.
+Resultado real: **Audit [3] Ran**, junto a Users [1] y Auth [2]. fresapos tiene trece tablas; auditoría consultable y vacía tras las comprobaciones sin credenciales. La suite posterior volvió a probar inserción/consulta/restricciones en fresapos_test, que terminó con **cero tablas de usuario**.
 
-## E. Acceso, credenciales y permisos
+No hubo migrate:fresh, db:wipe, migrate:reset, migrate:refresh ni SQLite. Las fixtures retiran únicamente sus esquemas tras comprobar la base; no se ejecutaron suites SQL simultáneas sobre fresapos_test.
 
-Consultar/cerrar accesos propios es una capacidad inherente al actor autenticado, activo y con cambio obligatorio completado. Administrar otros usuarios exige `users.status`, reutilizando el permiso que ya aplicaba a la revocación individual. SessionPolicy y los servicios verifican el alcance incluso fuera de HTTP; las rutas administrativas agregan `can:users.status`. No se añadieron permisos ni se ampliaron roles operativos.
+## G. Respaldo operativo
 
-Desactivar/eliminar mediante UserAdministration modifica el estado, revoca accesos/tokens, elimina el PIN e invalida terminales dependientes **dentro de la transacción original**. Reactivar no recupera sesiones anteriores. El proveedor y middleware siguen rechazando identidades inactivas/eliminadas en cada petición, incluso si tenían acceso emitido previamente.
+Antes de migrar se obtuvo InstanceDefaultBackupPath y se confirmó que la carpeta estaba fuera del repositorio y que SQL Server podía acceder al directorio padre. Se eligió un nombre único con fecha/hora UTC y sufijo aleatorio; xp_fileexist confirmó que el archivo no existía.
 
-IdentityAccess::changePassword revoca accesos anteriores centralmente, incluso fuera del controlador HTTP. El flujo HTTP Web crea otro contexto actual; API emite un nuevo token y elimina los anteriores. Se conserva el historial existente y el cambio obligatorio, sin restablecimientos administrativos.
+Respaldo creado: **fresapos_pre_1_3c_20261112_161205Z_ff84278f.bak**. Conjunto de respaldo de 5 718 016 bytes, finalizado a las 10:12:05 locales; verificación concluida a las 16:12:05 UTC. Se conserva en la carpeta predeterminada protegida de Backup de la instancia, fuera de Git; no se sobrescribieron ni borraron respaldos anteriores.
 
-Los cambios de roles/permisos conservan los servicios, locks y limpieza de PermissionRegistrar existentes. Se consulta autorización vigente en servidor; no se almacena un snapshot de permisos como autoridad en navegador/Android. Quitar permisos no requiere invalidar todos los dispositivos. Una sesión PIN pierde su contexto si adquiere capacidades administrativas de Users/Roles o su propietario deja de autorizar terminales.
+Procedimiento ejecutado mediante PDO SQL Server, manteniendo Windows Authentication:
 
-Si la auditoría falla durante una modificación sensible de base de datos, se propaga el error y se revierte esa misma transacción. Ya no existe la ventana entre commit de desactivación y callback de revocación. La regeneración de cookie/CSRF y los contadores de caché no son transaccionales con SQL: ante un fallo la petición no informa éxito y la ausencia/vigencia del registro impide acceso posterior; puede ser necesario autenticarse nuevamente. Los errores se reportan mediante el manejo existente y no se silencian.
+```sql
+-- @path: archivo único en la carpeta de respaldo accesible por SQL Server.
+-- @name: identificador fechado del conjunto.
+BACKUP DATABASE [fresapos] TO DISK = @path
+WITH COPY_ONLY, CHECKSUM, NOINIT, NOFORMAT, NAME = @name, STOP_ON_ERROR;
+RESTORE VERIFYONLY FROM DISK = @path WITH CHECKSUM, STOP_ON_ERROR;
+```
 
-## F. Auditoría y retención
+Se drenaron los resultados del driver y se verificaron: archivo existente con xp_fileexist después de BACKUP, lectura mediante RESTORE VERIFYONLY y registro msdb.backupset/backupmediafamily para fresapos, is_copy_only=1, has_backup_checksums=1 y tamaño positivo. La ruta exacta se conserva en la evidencia privada .tools/acceptance-1.3c-backup.json, sin publicarla aquí.
 
-Audit persiste eventos de login, autenticación fallida, logout, bloqueo/desbloqueo detectable, expiración detectable, cambio de contraseña/PIN, revocación de sesión/token, desactivación/reactivación/borrado, roles, permisos y aprovisionamiento futuro autorizado.
+Una comprobación adicional Get-Item de PowerShell fue denegada por los permisos de la carpeta de SQL Server. No se alteraron ACL: la comprobación efectiva de existencia y lectura se realizó con el servicio SQL y terminó satisfactoriamente. **No se afirma haber restaurado una copia ni validado toda su estructura mediante una restauración**; VERIFYONLY verifica legibilidad/conjunto/checksums. Referencias: [BACKUP oficial](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver17) y [VERIFYONLY oficial](https://learn.microsoft.com/en-us/sql/t-sql/statements/restore-statements-verifyonly-transact-sql?view=sql-server-ver17).
 
-Tabla `audit_security_events`: ULID, event_type, actor_id, subject_id, record_id administrativo opcional, result, client (web/api/console), request_id cuando existe y occurred_at UTC. La correlación API usa el ID de Core; Web genera uno por solicitud si falta. Cambios de rol/permisos conservan el ULID de rol como referencia. Revocaciones iniciadas por un actor registran su identidad.
+## H. Seguridad comprobada
 
-El contrato rechaza tipos/resultados no previstos y referencias que no sean ULID. El listener inserta una lista cerrada; no recibe cuerpos, encabezados, contraseñas, PIN, hashes, cookies, tokens, secretos ni conexiones. No almacena IP completa. Los errores del registro no incluyen valores rechazados en sus mensajes. ExceptionDiagnostic sanea también los logs de QueryException de API y Auth: conserva tipo, SQLSTATE, código de driver y ubicación, excluyendo mensajes del driver, SQL y bindings que podrían contener hashes. Las excepciones siguen propagándose y las respuestas mantienen su contrato. No se construyó una API pública de auditoría ni un purgador.
-
-Política inicial: retención mínima de eventos de seguridad durante **365 días**, configurable mediante AUDIT_SECURITY_RETENTION_DAYS. No hay borrado automático; pueden conservarse por más tiempo. Antes de eliminación autorizada, el responsable debe revisar retención aplicable, preservación por incidentes y archivo verificable. Esta configuración declara la política; no programa una eliminación al vencerla. No afecta ni elimina auditoría financiera. El despliegue deberá limitar permisos SQL sobre auditoría y controlar acceso a logs y respaldos.
-
-La expiración Web se registra cuando el registro vencido llega a validación. Sanctum puede rechazar un token ya vencido antes de llegar al middleware de Auth; no se promete un evento de expiración para cada token ni sesiones que nunca vuelven a usarse. No se añadió un barrido automático ni se recorren tokens inválidos para reconstruir usuarios desde secretos.
-
-## G. API y contratos
-
-Prefijo `/api/v1/auth`. Todas las rutas de sesiones requieren Sanctum y auth.access.api; cambio obligatorio pendiente produce 403.
-
-| Método | Ruta relativa | Resultado |
-| --- | --- | --- |
-| GET | /sessions | data.sessions propios. |
-| DELETE | /sessions/{id} | Revoca un registro propio o ajeno autorizado. |
-| DELETE | /sessions | Revoca todos los accesos propios; `{ "others": true }` conserva únicamente el contexto API actual, cerrando también Web. |
-| GET | /users/{userId}/sessions | Lista del usuario; requiere users.status. |
-| DELETE | /users/{userId}/sessions | Revoca todos los accesos del usuario; requiere users.status. No acepta others=true. |
-
-Respuesta de revocación: sobre Core habitual con success=true, code=OPERATION_SUCCESS, data=null, message y meta.request_id; HTTP 200. Listado incluye id, user_id, channel, client_name, created_at, last_activity_at, expires_at, revoked_at y state. La cabecera X-Request-Id coincide con el identificador del sobre.
-
-Sin token/contexto válido: 401. Sin autorización: 403. ULID mal formado en ruta o registro inexistente: 404. Cuerpo others inválido: 422. Bloqueo/exceso: 429; el bloqueo de autenticación incluye Retry-After. Se conserva la normalización JSON de Core. Los IDs no sustituyen autorización por propietario.
-
-## H. Interfaz Web
-
-`/account` integra auth.sessions para el actor actual. Un usuario con users.status puede consultar otro ULID desde el mismo componente; `/admin` conserva su requisito users.view y también integra la gestión. No hay rediseño del panel ni CRUD de usuarios.
-
-La vista muestra identidad, canal/cliente disponible, fechas UTC y estado. Permite revocar uno, los demás propios o todos del usuario consultado. Las acciones destructivas presentan wire:confirm; una consulta valida ULID y autorización antes de fijar el usuario seleccionado en una propiedad Locked. El servidor vuelve a autorizar cada acción y muestra su resultado. El middleware Web persiste en actualizaciones Livewire, con CSRF, vigencia y usuario activo; ocultar controles no se considera autorización.
-
-## I. Resultados reales y pruebas
-
-| Comprobación ejecutada | Resultado |
+| Control | Evidencia y comportamiento |
 | --- | --- |
-| Git inicial | Limpio. |
-| composer test, lint, analyse, validate, check-platform-reqs | No ejecutables: salida 127, composer inexistente. |
-| php -v, artisan route:list y migrate:status | No ejecutables: salida 127, php inexistente. |
-| PHPUnit/aserciones finales | **Sin resultado**; no se ejecutó ninguna prueba en este entorno. |
-| SQL Server/Azure SQL | Sin conexión; migración y compatibilidad runtime pendientes. |
-| /up, /api/v1/ping, login, interfaz Web/Livewire | Sin servidor de aplicación disponible; verificación funcional pendiente. |
-| git diff --check | Correcto, sin errores de espacios. |
-| Comparación de métodos previos contra HEAD | Se conservan los 85 métodos previos; no equivale a aprobar sus ejecuciones/datasets. |
-| Nuevos casos declarados | 22 métodos: 21 en AdvancedSecurityTest y uno en SecurityDiagnosticsTest; no se presentan como aprobados. |
-| Escaneo textual de imports | Sin nuevas violaciones en Core/Auth/Users/Audit; suite arquitectónica AST pendiente. |
-| composer.json y composer.lock | JSON válido y bytes iguales a HEAD; no sustituye composer validate. |
-| YAML OpenAPI mediante Ruby/Psych | Sintaxis válida, 8 paths, 102 referencias internas resueltas. No es validación formal OpenAPI. |
-| Configuración SQL, sesiones, módulos y Larastan | Iguales a HEAD; nivel 5 conservado. |
+| Contraseña y bloqueos | Quinto fallo, bloqueo completo de 300 segundos desde ese fallo, 429/Retry-After, recuperación y limpieza de contadores; aislamiento por identidad/origen sin enumerar cuentas. |
+| PIN | Hash, cambio/deshabilitación, bloqueo recuperable entre navegadores y contexto autorizado; no autentica API ni habilita administración. La pérdida de permisos operativos invalida el acceso vigente. |
+| Sesiones | Revocación individual Web/API y masiva, rechazo en siguiente petición, idempotencia, cierre de otros accesos y aislamiento horizontal. |
+| Vigencia/capacidad | Inactividad Web de 30 minutos, vencimiento fijo API y liberación de capacidad al expirar/revocar; límites por canal conservados sin expulsión silenciosa. |
+| Usuarios/permisos | Desactivación/reactivación/borrado lógico, cambio de clave por contrato y permisos efectivos actuales Web/API; reactivar no recupera accesos anteriores. |
+| Consistencia | Misma fila de coordinación de Users para identidad/emisión/revocación; dos conexiones SQL prueban exclusión incluso sin sesiones. Rollback real de estado/revocación ante fallo de auditoría. |
+| Auditoría | Tipos/resultados permitidos, actor y sujeto cuando corresponden, referencias ULID, UTC, cliente y request_id; sin payload libre, contraseñas, PIN, tokens, hashes, IP completa, consultas ni conexiones. |
+| Diagnóstico | QueryException conserva clase, SQLSTATE, código de driver y ubicación, excluyendo SQL/bindings/mensajes del driver. Respuestas y logs probados sin secretos; saneamiento Auth/Livewire conservado. |
 
-Las pruebas nuevas cubren quinto fallo y duración completa, desbloqueo y limpieza del contador, separación por origen, PIN tras cambio de navegador, revocación remota Web, tokens y cierres por usuario, acceso horizontal, idempotencia, cierre de otros contextos, capacidad tras expiración/revocación, desactivación/reactivación, borrado lógico, cambio de clave a través del contrato, permisos vigentes Web/API, rollback ante fallo de auditoría, campos permitidos/ausencia de secretos, saneamiento de diagnósticos SQL, acciones Livewire autorizadas/denegadas y protocolo HTTP Livewire tras revocación.
+Auth depende de los contratos Users/Core; Users y Audit dependen de Core. SecurityEvent no crea dependencia inversa ni ciclo. La auditoría sensible es síncrona dentro de la transacción, no un evento secundario que intente revertir una operación ya confirmada.
 
-La prueba de concurrencia utiliza dos conexiones SQL reales y timeout 1222 sobre el lock compartido, aun sin sesiones previas. Es una prueba de exclusión, no carga simultánea de clientes completos ni un benchmark. Usa TestDatabaseGuard antes de actuar y copia únicamente la configuración sqlsrv_testing. Las fixtures siguen exigiendo entorno testing y base propia _test, y desinstalan únicamente el esquema que ellas crearon. No ejecutar suites simultáneas contra la misma fresapos_test.
+Límites explícitos: caché file y locks cubren este servidor; varios nodos requieren almacén compartido/proxies confiables. La coordinación SQL no convierte cookies/caché en una transacción distribuida. Una revocación no cancela peticiones previamente autorizadas. Expiraciones/desbloqueos se registran cuando se detectan; no hay barrido universal de tokens/sesiones abandonados. Los listados muestran hasta 50 registros; la revocación masiva no usa ese límite.
 
-Únicos ajustes en pruebas previas: instalar/desinstalar el nuevo esquema Audit en fixtures de Auth/Users, registrar la migración adicional esperada y cambiar de 61 a 301 segundos el avance de tiempo del bloqueo PIN. No se eliminó ningún método ni se bajó Larastan.
+Retención mínima declarada de auditoría: 365 días, configurable; sin purga automática. Alertas, exportación, archivo e inmutabilidad deben tratarse en la operación/despliegue. No se presenta esta validación como certificación OWASP ni prueba de carga distribuida.
 
-### Verificación requerida en el entorno Windows existente
+## I. Web, API y Livewire
 
-Con la configuración aislada de pruebas ya autorizada, ejecutar secuencialmente `composer test`, `composer lint`, `composer analyse`, `composer validate` y `composer check-platform-reqs` mediante scripts/local.cmd. Comprobar primero las salvaguardas y el estado de fresapos_test. Si Pint indica diferencias, aplicar formato y repetir los controles pertinentes. No usar SQLite para presentar compatibilidad SQL ni pruebas aprobadas.
+No había un proceso escuchando en 8080; se inició una única instancia de artisan serve en 127.0.0.1:8080 y se dejó disponible. route:list --except-vendor registra **23 rutas propias**, diez de ellas API (ping, cuatro de autenticación y cinco de sesiones).
 
-Consultar migrate:status en el entorno existente. Tras verificar la integración, aplicar únicamente la migración incremental de Audit con el path `Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php`, antes de habilitar este código de escritura, pues la auditoría falla de forma cerrada si falta la tabla. No ejecutar el aprovisionamiento de administrador ni seeders operativos para esta entrega.
+Comprobaciones HTTP reales, con 18 solicitudes:
 
-Finalmente comprobar rutas reales, /up, /api/v1/ping, login, JavaScript y acciones Livewire, revocación Web/API y estados 401/403 con identidades autorizadas. Documentar conteos/aserciones y resultados reales en este informe. No ejecutar operaciones de limpieza contra fresapos.
+- GET /, /up, /api/v1/ping, /login y JavaScript local de Livewire: **200**.
+- GET /account, /admin y /auth/password sin identidad: **302 a login**.
+- Auth me/logout/password y las cinco operaciones de sesiones sin token: **401**.
+- POST /api/v1/auth/login con cuerpo vacío: **422**.
+- Ruta técnica exclusiva de pruebas ausente en servidor: **404**.
+- Sobres API y X-Request-Id/meta.request_id consistentes; formulario con CSRF, snapshot Livewire, username y password; sin diagnósticos sensibles.
 
-## J. Riesgos y revisión OWASP
+Los flujos positivos/negativos 200/401/403/422/429 con credenciales se comprobaron exclusivamente en fresapos_test mediante las rutas reales, SQL Server, cookies y tokens Sanctum. Incluyen login/logout, revocación, administración autorizada/denegada y protocolo HTTP Livewire tras revocación remota. No se usó el administrador operativo para login, bloqueo, cambio de clave o desactivación.
 
-| Riesgo revisado | Medida concreta y límite |
+## J. Cambios correctivos
+
+| Archivo | Hallazgo y solución |
 | --- | --- |
-| Acceso horizontal/escalada | Actor del guard, SessionPolicy, users.status, autorización por servicio y selección Livewire Locked. Pendiente ejecución HTTP/SQL. |
-| Autenticación/fuerza bruta | Fallos limitados por identidad/origen, ventana y bloqueo completos, hashes/timebox existentes. No resuelve ataques distribuidos ni proxy mal configurado. |
-| Sesiones y tokens | Revocación central, comprobación por petición, límites deterministas, coordinación SQL y ningún ID autenticante en listados. Peticiones ya autorizadas pueden estar en curso. |
-| Cambios de identidad | Invalidación síncrona con auditoría atómica; reactivación no restaura accesos. Deben usarse los contratos de Users; SQL manual está fuera del flujo soportado. |
-| Criptografía/datos sensibles | Hashes y tokens nativos conservados; esquema y contrato de auditoría sin payload libre. TLS, acceso a SQL/logs y respaldos requieren revisión del despliegue. |
-| Configuración | No se altera .env, drivers, HTTPS/CSRF ni nivel de análisis. Caché compartido y proxies confiables pendientes según topología. |
-| Registro/monitoreo | Eventos de seguridad con correlación y fallos propagados. Alertas, exportación protegida, inmutabilidad SQL y archivo/retención operativa quedan pendientes. |
-| Disponibilidad | Lock de seguridad existente compartido para consistencia; serializa emisiones y cambios sensibles. Medir contención y doble verificación de credenciales antes de ampliar carga. |
+| tests/Feature/ApiConventionsTest.php | Lista antigua de cinco rutas y acceso al objeto SQL eliminado del log. Se exigen las diez rutas reales y diagnóstico seguro sin objeto/mensaje/bindings; se preservan y amplían las aserciones de privacidad. |
+| Modules/Auth/app/Application/SessionRegistry.php | Argumento no booleano en abort_unless: comparación explícita con null. Se añade rechazo de sesión PIN cuando ya no hay sales.create ni cash.open, aun con propietario válido. |
+| Modules/Auth/app/Application/EmployeeAccess.php | El cambio de empleado solo revisaba permisos antes de adquirir el lock. Se reconsulta identidad/propietario y verifica el alcance actual dentro de la coordinación, devolviendo el snapshot actualizado. Se eliminó una condición redundante detectada por Larastan, sin suprimir el diagnóstico. |
+| config/audit_security.php y Modules/Audit/config/config.php | env en configuración modular señalado por Larastan. La lectura se centraliza en config raíz y el módulo conserva su clave pública de retención. |
+| tests/Integration/AdvancedSecurityTest.php | Dos regresiones nuevas: retirada de permisos PIN y esquema/UTC/FK/CHECK/índices/Eloquent de Audit. Ningún caso anterior eliminado. |
+| ApiAuthenticationController, AuthServiceProvider, SecurityDiagnosticsTest y AdvancedSecurityTest | Ajustes de formato/imports exigidos por Pint. |
+| Documentación | Informe definitivo y actualización de referencias de etapa/validación y permisos PIN. |
 
-También quedan pendientes PHP 8.3/SQL Server Express reales, migración aplicada, aprobación de calidad, esquema OpenAPI formal, Azure SQL y hosting. No se simularon resultados ni se afirma protección completa frente a OWASP Top 10.
+No se modificó la migración recibida: superó las pruebas SQL. No se alteraron contratos públicos, matriz de permisos ni arquitectura general. Se consultó la [explicación oficial de tipos de PHPStan](https://phpstan.org/error-identifiers/argument.type) y se inspeccionó la regla instalada de Larastan; no se añadieron exclusiones.
 
-## K. Base de datos e integridad
+## K. Integridad
 
-La migración nueva crea únicamente audit_security_events con ULID nchar(26) mediante el soporte SQL Server existente, FK NO ACTION a users, índices por tipo/fecha/usuario y CHECK de resultado/cliente. No altera tablas operativas, usuarios, roles, permisos, historial, tokens ni datos financieros existentes. Su down destructivo está limitado a una base terminada en _test.
+La comparación privada por tabla de todas las filas previas confirma **once tablas existentes idénticas**, incluyendo usuarios, contraseña/historial, roles, permisos y asignaciones; se excluye de esa comparación únicamente migrations, que añade la fila Audit prevista. La nueva tabla se mantiene vacía; no se generaron eventos ficticios operativos.
 
-**La migración no se aplicó en esta sesión.** No se pudo inspeccionar qué migraciones están aplicadas en la instancia Windows ni sus sesiones activas. No se ejecutaron migrate:fresh, db:wipe, limpieza operativa, aprovisionamiento, resets, seeders, commits ni pushes.
+Resultado: un administrador activo, un usuario, un historial, cuatro roles y 44 permisos conservados. No se ejecutaron aprovisionamiento, seeders, cambios de contraseña/estado del administrador ni eliminación de usuarios operativos.
 
-Esta copia no tenía .env; no se creó ni modificó. config/database.php, config/session.php, composer.json, composer.lock, modules_statuses.json y phpstan.neon conservan exactamente los bytes de HEAD. No se cambió conexión SQL, Windows Authentication, hosting ni Docker.
+Huellas inicial/final idénticas para ocho archivos protegidos: .env, .env.testing, config/database.php, config/session.php, composer.json, composer.lock, phpstan.neon y phpunit.xml. El driver de sesión y Windows Authentication se conservan. No hubo instalación ni cambio de motor.
 
-No se abrió conexión con fresapos ni se consultaron credenciales del primer administrador. Por ausencia de acceso a esa instancia, no puede certificarse su estado actual; **ninguna acción de esta sesión afectó esa cuenta o contraseña**.
+Git conserva HEAD bac3444; los cambios correctivos/documentales quedan sin commit. Las evidencias privadas y respaldos no se añaden al control de versiones.
 
-La etapa se detiene aquí. El impedimento para declararla completada es la validación ejecutable y operativa ausente, no una aprobación pendiente del usuario ni el inicio de otra funcionalidad.
+## L. Pendientes
+
+**Ningún bloqueo crítico local de 1.3c.** Comprobaciones que siguen fuera de lo verificado:
+
+- Azure SQL y cPanel: drivers/ODBC/PHP web/ionCube, firewall, TLS, proxy y configuración según topología; no hay credenciales/despliegue autorizados para probarlos.
+- Validación formal contra el esquema OpenAPI: no hay validador/parser instalado en este entorno Windows; no se añadió una dependencia solo para documentar aceptación. La sintaxis/referencias comprobadas con Ruby en la implementación anterior son evidencia histórica, no una ejecución repetida aquí.
+- Restauración de ensayo del respaldo a otro destino, carga simultánea de clientes completos y controles operativos distribuidos: no ejecutados; no se presentan como comprobados.
+
+Estos límites no sustituyen ni invalidan las pruebas SQL, respaldo verificable y controles funcionales ejecutados. No se abrió la etapa 1.4 para resolverlos.
+
+## M. Estado final
+
+**ETAPA 1.3c: ACEPTADA.** Las comprobaciones críticas locales se ejecutaron satisfactoriamente, el respaldo fue creado/verificado antes del cambio, Audit quedó migrado, la suite final pasó y el administrador/datos operativos permanecen intactos. Se detiene esta entrega sin commits ni pushes.

@@ -2,5 +2,5 @@
 
 return [
     'name' => 'Audit',
-    'security_retention_days' => max(1, (int) env('AUDIT_SECURITY_RETENTION_DAYS', 365)),
+    'security_retention_days' => config('audit_security.retention_days', 365),
 ];

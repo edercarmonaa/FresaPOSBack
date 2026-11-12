@@ -1,4 +1,4 @@
-﻿# API REST v1
+# API REST v1
 
 La etapa 1.3b incorpora autenticación Sanctum, conservando el transporte de 1.2c y sin funcionalidades POS. El endpoint técnico público es `GET /api/v1/ping`; no consulta la base, responde `data: {"status":"ok"}` y no sustituye un futuro diagnóstico autenticado. `/up`, la página principal y Livewire conservan sus rutas.
 
@@ -86,4 +86,4 @@ Todas estas rutas requieren Sanctum, auth.access.api y contraseña obligatoria c
 
 Las respuestas usan el mismo sobre y X-Request-Id. Listados devuelven data.sessions; revocaciones devuelven data null. Los IDs son ULID de registros administrativos, nunca cookies ni IDs de token. La lista contiene hasta 50 registros, priorizando no revocados y vigencia descendente; incluye channel, client_name cuando está disponible, user_id, created_at, last_activity_at, expires_at, revoked_at y state (active/expired/revoked). No devuelve IP, hashes ni secretos. Identificadores mal formados en la ruta producen 404, cuerpo inválido 422, actor sin autorización 403, contexto inválido 401 y exceso 429 con Retry-After cuando corresponde al bloqueo de autenticación. Revocar de nuevo un registro ya revocado conserva 200 mientras el actor mantenga otro contexto válido.
 
-Implementación y verificaciones pendientes: [entrega-1.3c.md](entrega-1.3c.md). OpenAPI incluye estas rutas; su sintaxis YAML se verificó con Ruby/Psych disponible en este entorno, sin sustituir la validación formal del esquema OpenAPI ni pruebas HTTP.
+Implementación y validación local definitiva: [entrega-1.3c.md](entrega-1.3c.md). OpenAPI incluye estas rutas; su sintaxis YAML se verificó con Ruby/Psych durante la implementación anterior. Esa comprobación no se repitió en Windows ni sustituye la validación formal del esquema OpenAPI, aún pendiente. Las rutas sí se probaron mediante HTTP/SQL en esta aceptación.
