@@ -4,39 +4,44 @@ namespace Modules\Auth\Application;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\RateLimiter;
 use Modules\Auth\Contracts\Authenticator;
 use Modules\Auth\Domain\InvalidCredentials;
 use Modules\Auth\Infrastructure\Models\AccessToken;
+use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Users\Contracts\IdentityAccess;
 use Modules\Users\Contracts\UserSnapshot;
 
 final class Authenticate implements Authenticator
 {
-    public function __construct(private readonly IdentityAccess $identities, private readonly SessionRegistry $sessions, private readonly TransactionManager $transactions) {}
+    public function __construct(private readonly IdentityAccess $identities, private readonly SessionRegistry $sessions, private readonly TransactionManager $transactions, private readonly AttemptGuard $attempts) {}
 
     private function verify(Request $request, string $username, #[\SensitiveParameter] string $password): UserSnapshot
     {
         abort_if(! app()->environment('local', 'testing') && ! $request->isSecure(), 400);
-        $key = 'auth-login:'.hash('sha256', $request->ip().'|'.strtolower(trim($username)));
-        abort_if(RateLimiter::tooManyAttempts($key, (int) config('auth_access.login_attempts_per_minute')), 429);
-        RateLimiter::hit($key, 60);
-        $user = $this->identities->verify($username, $password);
-        if (! $user) {
-            throw new InvalidCredentials;
-        }
-        RateLimiter::clear($key);
+        $key = $this->attempts->key('login', $username, (string) $request->ip());
 
-        return $user;
+        return $this->attempts->run($key, function () use ($key, $username, $password): UserSnapshot {
+            $this->attempts->check($key);
+            $user = $this->identities->verify($username, $password);
+            if (! $user) {
+                $this->attempts->failed($key, 'password');
+                throw new InvalidCredentials;
+            }
+            $this->attempts->clear($key);
+
+            return $user;
+        });
     }
 
     public function loginWeb(Request $request, string $username, #[\SensitiveParameter] string $password): UserSnapshot
     {
         $user = $this->verify($request, $username, $password);
-        $this->transactions->run(function () use ($request, $user): void {
+        $this->transactions->run(function () use ($request, $user, $username, $password): void {
+            $this->sessions->lock();
             $this->sessions->retireWebContext($request);
             $this->sessions->assertCapacity($user->id, 'web');
+            $user = $this->identities->verify($username, $password) ?? throw new InvalidCredentials;
             if (! Auth::guard('web')->loginUsingId($user->id, false)) {
                 throw new InvalidCredentials;
             }
@@ -52,8 +57,9 @@ final class Authenticate implements Authenticator
     {
         $user = $this->verify($request, $username, $password);
 
-        return $this->transactions->run(function () use ($user, $deviceName): array {
+        return $this->transactions->run(function () use ($user, $deviceName, $username, $password): array {
             $this->sessions->assertCapacity($user->id, 'api');
+            $user = $this->identities->verify($username, $password) ?? throw new InvalidCredentials;
 
             return $this->issueToken($user, $deviceName);
         });
@@ -79,7 +85,10 @@ final class Authenticate implements Authenticator
     public function logoutWeb(Request $request): void
     {
         $record = $this->sessions->web($request, false);
-        $this->transactions->run(fn () => $this->sessions->revoke($record));
+        $this->transactions->run(function () use ($record): void {
+            $this->sessions->revoke($record, $record->user_id);
+            event(new SecurityEvent('logout', $record->user_id, $record->user_id));
+        });
         $this->clearWeb($request);
     }
 
@@ -93,7 +102,10 @@ final class Authenticate implements Authenticator
     public function logoutApi(Request $request): void
     {
         $record = $this->sessions->api($request);
-        $this->transactions->run(fn () => $this->sessions->revoke($record));
+        $this->transactions->run(function () use ($record): void {
+            $this->sessions->revoke($record, $record->user_id);
+            event(new SecurityEvent('logout', $record->user_id, $record->user_id));
+        });
     }
 
     public function changePassword(Request $request, #[\SensitiveParameter] string $current, #[\SensitiveParameter] string $next, bool $api): array
@@ -102,7 +114,6 @@ final class Authenticate implements Authenticator
 
         return $this->transactions->run(function () use ($request, $current, $next, $api, $id): array {
             $user = $this->identities->changePassword($id, $current, $next);
-            $this->sessions->revokeAll($id);
             if ($api) {
                 return $this->issueToken($user, 'password-change');
             }

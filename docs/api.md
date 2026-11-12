@@ -66,8 +66,24 @@ Los permisos se consultan en servidor con Spatie/Gate, conservando cuatro roles 
 
 ## OpenAPI y verificación
 
-[openapi.yaml](openapi.yaml) documenta ping y las cuatro rutas de autenticación, esquemas, códigos, cabeceras y respuestas comunes. BearerAuth se aplica a las rutas protegidas; no a ping ni login. Se escribió manualmente sin paquetes adicionales. No hay parser YAML disponible en el proyecto: **validación sintáctica con parser y validación contra el esquema OpenAPI pendientes**. Las pruebas HTTP sí verifican el comportamiento real; no se presenta el YAML como validado automáticamente.
+[openapi.yaml](openapi.yaml) documenta ping, autenticación y administración de sesiones, esquemas, códigos, cabeceras y respuestas comunes. BearerAuth se aplica a las rutas protegidas; no a ping ni login. Se escribió manualmente sin paquetes adicionales. En 1.3c se verificaron sintaxis YAML y 102 referencias internas mediante Ruby/Psych, sin instalar dependencias; **validación formal contra el esquema OpenAPI pendiente**. Las pruebas HTTP sí verifican el comportamiento real; no se presenta el YAML como validado automáticamente.
 
 Ejecutar desde PowerShell: `.\scripts\local.cmd composer test`, `composer lint`, `composer analyse` y `composer validate --strict` con el mismo lanzador. La suite completa requiere acceso Windows a `fresapos_test`; no utiliza `fresapos` para las pruebas. [El informe](entrega-1.2c.md) contiene los comandos y resultados ejecutados.
 
 
+
+## Sesiones — implementación 1.3c
+
+Todas estas rutas requieren Sanctum, auth.access.api y contraseña obligatoria completada:
+
+| Método | Ruta bajo /api/v1/auth | Operación |
+| --- | --- | --- |
+| GET | /sessions | Lista propia. |
+| DELETE | /sessions/{id} | Revoca un registro; ajeno requiere users.status. |
+| DELETE | /sessions | Revoca todos los accesos propios; JSON `{"others":true}` conserva el actual. |
+| GET | /users/{userId}/sessions | Consulta autorizada con users.status. |
+| DELETE | /users/{userId}/sessions | Revoca accesos Web/API del usuario con users.status. |
+
+Las respuestas usan el mismo sobre y X-Request-Id. Listados devuelven data.sessions; revocaciones devuelven data null. Los IDs son ULID de registros administrativos, nunca cookies ni IDs de token. La lista contiene hasta 50 registros, priorizando no revocados y vigencia descendente; incluye channel, client_name cuando está disponible, user_id, created_at, last_activity_at, expires_at, revoked_at y state (active/expired/revoked). No devuelve IP, hashes ni secretos. Identificadores mal formados en la ruta producen 404, cuerpo inválido 422, actor sin autorización 403, contexto inválido 401 y exceso 429 con Retry-After cuando corresponde al bloqueo de autenticación. Revocar de nuevo un registro ya revocado conserva 200 mientras el actor mantenga otro contexto válido.
+
+Implementación y verificaciones pendientes: [entrega-1.3c.md](entrega-1.3c.md). OpenAPI incluye estas rutas; su sintaxis YAML se verificó con Ruby/Psych disponible en este entorno, sin sustituir la validación formal del esquema OpenAPI ni pruebas HTTP.

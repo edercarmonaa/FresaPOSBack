@@ -3,6 +3,7 @@
 namespace Modules\Users\Application;
 
 use Illuminate\Support\Facades\Validator;
+use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Users\Application\Ports\SecurityStore;
 use Modules\Users\Domain\SecurityConflict;
@@ -35,6 +36,7 @@ final class BootstrapAdministrator
             $user->must_change_password = true;
             $this->passwords->replace($user, $password);
             $user->assignRole($role);
+            event(new SecurityEvent('administrator.provisioned', $user->id, $user->id));
 
             return $user->id;
         });

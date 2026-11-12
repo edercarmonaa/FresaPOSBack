@@ -20,6 +20,7 @@ abstract class AuthSqlServerTestCase extends SqlServerTestCase
         $this->authSchemas = [
             require base_path('Modules/Users/database/migrations/2026_11_11_000001_create_user_security_tables.php'),
             require base_path('Modules/Auth/database/migrations/2026_11_11_000002_create_auth_access_tables.php'),
+            require base_path('Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php'),
         ];
         $this->database->transaction(function (): void {
             foreach ($this->authSchemas as $schema) {

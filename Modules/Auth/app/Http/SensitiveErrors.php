@@ -4,6 +4,7 @@ namespace Modules\Auth\Http;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Modules\Core\Contracts\ExceptionDiagnostic;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Throwable;
@@ -33,7 +34,7 @@ final class SensitiveErrors
                 continue;
             }
             $snapshot = json_decode($component['snapshot'], true);
-            if (is_array($snapshot) && ($snapshot['memo']['name'] ?? null) === 'auth.login') {
+            if (is_array($snapshot) && in_array($snapshot['memo']['name'] ?? null, ['auth.login', 'auth.sessions'], true)) {
                 return true;
             }
         }
@@ -48,7 +49,7 @@ final class SensitiveErrors
         }
         $status = $exception instanceof HttpExceptionInterface ? $exception->getStatusCode() : 500;
         if ($status >= 500 && ! isset($this->reported[$exception])) {
-            Log::error('Authentication request failed.', ['exception' => $exception]);
+            Log::error('Authentication request failed.', ExceptionDiagnostic::context($exception));
             $this->reported[$exception] = true;
         }
 

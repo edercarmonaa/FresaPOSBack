@@ -5,10 +5,12 @@ namespace Modules\Users\Application\Services;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Timebox;
 use Illuminate\Validation\ValidationException;
+use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Users\Application\PasswordHistoryService;
 use Modules\Users\Application\Ports\SecurityStore;
 use Modules\Users\Contracts\IdentityAccess;
+use Modules\Users\Contracts\UserAccessChanged;
 use Modules\Users\Contracts\UserSnapshot;
 use Modules\Users\Domain\Username;
 use Modules\Users\Infrastructure\Persistence\Models\User;
@@ -19,6 +21,11 @@ final class UserIdentityAccess implements IdentityAccess
     private const DUMMY_HASH = '$2y$12$goDt1fVqJ2cvE9LKb0fcJOP8GDnyWZh4JQFQ3vVZY7gR54CdA9E8G';
 
     public function __construct(private readonly TransactionManager $transactions, private readonly SecurityStore $store, private readonly PasswordHistoryService $passwords) {}
+
+    public function lock(): void
+    {
+        $this->store->lock();
+    }
 
     public function verify(string $username, #[\SensitiveParameter] string $password): ?UserSnapshot
     {
@@ -63,6 +70,8 @@ final class UserIdentityAccess implements IdentityAccess
             $user->refresh();
             $user->must_change_password = false;
             $user->save();
+            event(new UserAccessChanged($id, $id, 'password.changed'));
+            event(new SecurityEvent('password.changed', $id, $id));
 
             return $this->snapshot($user);
         });

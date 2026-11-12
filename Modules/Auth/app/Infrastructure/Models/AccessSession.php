@@ -4,6 +4,7 @@ namespace Modules\Auth\Infrastructure\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -12,6 +13,7 @@ use Illuminate\Support\Carbon;
  * @property ?string $token_id
  * @property ?string $terminal_owner_id
  * @property ?string $session_hash
+ * @property ?AccessToken $accessToken
  * @property string $channel
  * @property Carbon $created_at
  * @property Carbon $last_activity_at
@@ -27,6 +29,12 @@ class AccessSession extends Model
     protected $guarded = [];
 
     protected $hidden = ['session_hash', 'token_id'];
+
+    /** @return BelongsTo<AccessToken, $this> */
+    public function accessToken(): BelongsTo
+    {
+        return $this->belongsTo(AccessToken::class, 'token_id');
+    }
 
     protected function casts(): array
     {

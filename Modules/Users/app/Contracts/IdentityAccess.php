@@ -4,6 +4,9 @@ namespace Modules\Users\Contracts;
 
 interface IdentityAccess
 {
+    /** Serializa cambios de identidad y emisión/revocación dentro de una transacción Core. */
+    public function lock(): void;
+
     public function verify(string $username, #[\SensitiveParameter] string $password): ?UserSnapshot;
 
     public function inspect(string $id): ?UserSnapshot;

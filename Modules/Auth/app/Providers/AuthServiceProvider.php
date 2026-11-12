@@ -18,11 +18,13 @@ use Modules\Auth\Domain\InvalidCredentials;
 use Modules\Auth\Domain\InvalidPin;
 use Modules\Auth\Domain\PasswordChangeRequired;
 use Modules\Auth\Http\Livewire\Login;
+use Modules\Auth\Http\Livewire\Sessions;
 use Modules\Auth\Http\Middleware\EnsureApiAccess;
 use Modules\Auth\Http\Middleware\EnsureWebAccess;
 use Modules\Auth\Http\Middleware\NoStore;
 use Modules\Auth\Http\SensitiveErrors;
 use Modules\Auth\Infrastructure\Models\AccessToken;
+use Modules\Auth\Infrastructure\Models\EmployeePin;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Core\Contracts\TransactionManager;
@@ -60,6 +62,7 @@ class AuthServiceProvider extends ModuleServiceProvider
         $router->aliasMiddleware('auth.access.api', EnsureApiAccess::class);
         $router->aliasMiddleware('auth.no-store', NoStore::class);
         Livewire::component('auth.login', Login::class);
+        Livewire::component('auth.sessions', Sessions::class);
         Livewire::addPersistentMiddleware([EnsureWebAccess::class]);
         Sanctum::usePersonalAccessTokenModel(AccessToken::class);
         Sanctum::authenticateAccessTokensUsing(fn ($token, bool $valid) => $valid && $this->app->make(IdentityAccess::class)->inspect((string) $token->tokenable_id) !== null);
@@ -74,9 +77,15 @@ class AuthServiceProvider extends ModuleServiceProvider
         $mappings->register(InvalidPin::class, ApiCode::PIN_INVALID);
         $mappings->register(PasswordChangeRequired::class, ApiCode::PASSWORD_CHANGE_REQUIRED);
         Event::listen(UserAccessChanged::class, function ($event): void {
-            // Permite migrar/probar Users independientemente, antes de instalar el esquema Auth.
+            // Users puede existir antes del esquema Auth. Una vez instalado, la invalidación es síncrona.
             if (Schema::hasTable('auth_access_sessions')) {
-                $this->app->make(TransactionManager::class)->run(fn () => $this->app->make(SessionRegistry::class)->revokeAll($event->userId));
+                $this->app->make(TransactionManager::class)->run(function () use ($event): void {
+                    $this->app->make(SessionRegistry::class)->revokeAll($event->userId, $event->actorId);
+                    if (in_array($event->reason, ['user.deactivated', 'user.deleted'], true)) {
+                        EmployeePin::query()->whereKey($event->userId)->delete();
+                        \Modules\Auth\Infrastructure\Models\AccessSession::query()->where('terminal_owner_id', $event->userId)->whereNull('revoked_at')->update(['revoked_at' => now()]);
+                    }
+                });
             }
         });
     }

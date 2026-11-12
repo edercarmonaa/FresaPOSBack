@@ -4,6 +4,7 @@ namespace Modules\Auth\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Modules\Auth\Application\SessionRegistry;
 use Modules\Auth\Contracts\Authenticator;
 use Modules\Auth\Http\InputMessages;
 use Modules\Core\Contracts\ApiResponder;
@@ -38,5 +39,29 @@ final class ApiAuthenticationController
         $data = $request->validate(['current_password' => ['required', 'string', 'max:72'], 'password' => ['required', 'string', 'confirmed', 'max:72']], InputMessages::get());
 
         return $this->responses->success($request, $this->authentication->changePassword($request, $data['current_password'], $data['password'], true));
+    }
+    public function sessions(Request $request, SessionRegistry $sessions, ?string $userId = null): JsonResponse
+    {
+        $actor = (string) $request->user()->getAuthIdentifier();
+
+        return $this->responses->success($request, ['sessions' => $sessions->listAuthorized($actor, $userId ?? $actor)]);
+    }
+
+    public function revokeSession(Request $request, string $id, SessionRegistry $sessions): JsonResponse
+    {
+        $sessions->revokeAuthorized((string) $request->user()->getAuthIdentifier(), $id);
+
+        return $this->responses->success($request, null);
+    }
+
+    public function revokeSessions(Request $request, SessionRegistry $sessions, ?string $userId = null): JsonResponse
+    {
+        $actor = (string) $request->user()->getAuthIdentifier();
+        $data = $request->validate(['others' => ['sometimes', 'boolean']]);
+        abort_if($userId !== null && ($data['others'] ?? false), 422);
+        $except = ($data['others'] ?? false) ? $sessions->api($request)->id : null;
+        $sessions->revokeUser($actor, $userId ?? $actor, $except);
+
+        return $this->responses->success($request, null);
     }
 }

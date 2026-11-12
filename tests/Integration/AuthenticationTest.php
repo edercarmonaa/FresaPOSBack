@@ -371,7 +371,7 @@ class AuthenticationTest extends AuthSqlServerTestCase
             $this->web('POST', '/auth/employee', ['username' => 'cashier.test', 'pin' => '1111'])->assertSessionHasErrors('pin');
         }
         $this->web('POST', '/auth/employee', ['username' => 'cashier.test', 'pin' => '0042'])->assertStatus(429);
-        $this->travel(61)->seconds();
+        $this->travel(301)->seconds();
         $permissions = array_merge(config('users.security.initial_roles.cashier'), ['users.view']);
         app(UserAdministration::class)->setRolePermissions($this->admin, 'cashier', $permissions);
         $this->web('POST', '/auth/employee', ['username' => 'cashier.test', 'pin' => '0042'])->assertForbidden();

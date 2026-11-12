@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Users\Application\PasswordHistoryService;
 use Modules\Users\Application\Ports\SecurityStore;
@@ -77,7 +78,8 @@ final class ManageUsers implements UserAdministration
             $user->is_active = $active;
             $user->save();
             $this->assertAdministratorRemains();
-            $this->transactions->afterCommit(fn () => event(new UserAccessChanged($userId)));
+            event(new UserAccessChanged($userId, $actorId, $active ? 'user.reactivated' : 'user.deactivated'));
+            event(new SecurityEvent($active ? 'user.reactivated' : 'user.deactivated', $actorId, $userId));
 
             return $this->snapshot($user);
         });
@@ -106,6 +108,7 @@ final class ManageUsers implements UserAdministration
             } else {
                 $user->removeRole($record);
             }
+            event(new SecurityEvent('roles.changed', $actorId, $userId, recordId: $record->id));
             $this->assertAdministratorRemains();
 
             return $this->snapshot($user);
@@ -119,7 +122,8 @@ final class ManageUsers implements UserAdministration
             $this->authorize($actorId, 'delete', $user);
             $user->delete();
             $this->assertAdministratorRemains();
-            $this->transactions->afterCommit(fn () => event(new UserAccessChanged($userId)));
+            event(new UserAccessChanged($userId, $actorId, 'user.deleted'));
+            event(new SecurityEvent('user.deleted', $actorId, $userId));
         });
     }
 
@@ -160,6 +164,7 @@ final class ManageUsers implements UserAdministration
             }
             $records = Permission::query()->where('guard_name', 'web')->whereIn('name', $permissions)->get();
             $record->syncPermissions($records);
+            event(new SecurityEvent('permissions.changed', $actorId, recordId: $record->id));
             $this->assertAdministratorRemains();
         });
     }

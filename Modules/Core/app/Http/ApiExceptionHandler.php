@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
+use Modules\Core\Contracts\ExceptionDiagnostic;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
@@ -35,7 +36,7 @@ final class ApiExceptionHandler
         if ($this->classify($exception)[1] >= 500 && ! isset($this->reported[$exception])) {
             Log::error('API request failed.', [
                 'request_id' => ApiRequestContext::requestId($request),
-                'exception' => $exception,
+                ...ExceptionDiagnostic::context($exception),
             ]);
             $this->reported[$exception] = true;
         }

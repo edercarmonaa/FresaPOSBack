@@ -29,6 +29,8 @@ class UserSecurityTest extends SqlServerTestCase
 {
     private Migration $securitySchema;
 
+    private Migration $auditSchema;
+
     private bool $ownsSchema = false;
 
     private UserAdministration $users;
@@ -40,13 +42,18 @@ class UserSecurityTest extends SqlServerTestCase
         parent::setUp();
         config(['hashing.bcrypt.rounds' => 4]); // Solo rendimiento de fixtures, no configuración operativa.
         $this->securitySchema = require base_path('Modules/Users/database/migrations/2026_11_11_000001_create_user_security_tables.php');
-        $this->database->transaction(fn () => $this->securitySchema->up());
+        $this->auditSchema = require base_path('Modules/Audit/database/migrations/2026_11_11_000003_create_security_events.php');
+        $this->database->transaction(function (): void {
+            $this->securitySchema->up();
+            $this->auditSchema->up();
+        });
         $this->ownsSchema = true;
         try {
             app(SecuritySeeder::class)->run();
             $this->adminId = app(BootstrapAdministrator::class)->create('Administrador de prueba', 'test.admin', 'TestAdmin!123');
             $this->users = app(UserAdministration::class);
         } catch (\Throwable $exception) {
+            $this->auditSchema->down();
             $this->securitySchema->down();
             $this->ownsSchema = false;
             throw $exception;
@@ -60,6 +67,7 @@ class UserSecurityTest extends SqlServerTestCase
                 $this->database->rollBack();
             }
             if ($this->ownsSchema) {
+                $this->auditSchema->down();
                 $this->securitySchema->down();
             }
             app(PermissionRegistrar::class)->forgetCachedPermissions();

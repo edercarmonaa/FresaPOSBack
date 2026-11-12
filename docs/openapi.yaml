@@ -1,11 +1,11 @@
-﻿openapi: 3.1.0
+openapi: 3.1.0
 info:
   title: FresaPOSBack API
   version: 1.0.0
   description: >-
-    REST v1 de 1.2c y autenticación Sanctum de 1.3b. Ping y login son públicos.
+    REST v1 de 1.2c y autenticación y sesiones de 1.3b/1.3c. Ping y login son públicos.
     Los endpoints de negocio y la aprobación de dispositivos son futuros.
-    Archivo manual: validación con parser YAML y esquema OpenAPI pendiente.
+    Archivo manual: sintaxis YAML y referencias internas comprobadas; esquema OpenAPI pendiente.
 servers:
   - url: http://127.0.0.1:8080/api/v1
     description: Desarrollo local; los servidores de staging y producción quedan pendientes.
@@ -151,6 +151,177 @@ paths:
           $ref: '#/components/responses/TokenIssued'
         '401':
           $ref: '#/components/responses/Unauthenticated'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /auth/sessions:
+    get:
+      tags: [Auth]
+      operationId: apiV1AuthSessions
+      summary: Consulta accesos propios.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Sobre estándar; data.sessions para listados y data null para revocaciones.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+    delete:
+      tags: [Auth]
+      operationId: apiV1AuthRevokeSessions
+      summary: Revoca todos los accesos propios; others conserva el actual.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                others:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Sobre estándar; data.sessions para listados y data null para revocaciones.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /auth/sessions/{id}:
+    delete:
+      tags: [Auth]
+      operationId: apiV1AuthRevokeSession
+      summary: Revoca un acceso propio o ajeno con users.status.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$'
+      responses:
+        '200':
+          description: Sobre estándar; data.sessions para listados y data null para revocaciones.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /auth/users/{userId}/sessions:
+    get:
+      tags: [Auth]
+      operationId: apiV1AuthUserSessions
+      summary: Consulta accesos de un usuario con users.status.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$'
+      responses:
+        '200':
+          description: Sobre estándar; data.sessions para listados y data null para revocaciones.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+    delete:
+      tags: [Auth]
+      operationId: apiV1AuthRevokeUserSessions
+      summary: Revoca todos los accesos de un usuario con users.status.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{26}$'
+      responses:
+        '200':
+          description: Sobre estándar; data.sessions para listados y data null para revocaciones.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Success'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':

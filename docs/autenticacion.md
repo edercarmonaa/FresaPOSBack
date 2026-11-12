@@ -1,4 +1,4 @@
-# Autenticación Web y API — 1.3b
+# Autenticación Web y API — 1.3b/1.3c
 
 La autenticación vive en Auth; identidad, estados y contraseñas siguen en Users. Auth consume el contrato público IdentityAccess y el DTO UserSnapshot. La matriz permite Auth → Users/Core y no la relación inversa. El proveedor nativo de Laravel se adapta en Users para rechazar identidades inactivas o eliminadas; Spatie conserva el guard canónico web y los 44 permisos existentes.
 
@@ -61,11 +61,11 @@ Laravel conserva el payload Web en su driver existente, file en este equipo. San
 
 El ID Web se almacena únicamente como SHA-256, nunca se devuelve. La referencia a token es una FK y se oculta en listados. El ID público del registro es un ULID independiente que no autentica. Tras borrar un token se conserva su registro revocado mediante FK SET NULL; todas las referencias a users son NO ACTION.
 
-SessionRegistry permite consultar accesos propios y cerrar uno. Para cerrar accesos ajenos exige la capacidad existente users.status y un actor activo con cambio de clave completado; no se creó otro permiso ni un bypass por rol. La pantalla solo lista los accesos propios y no implementa la interfaz administrativa avanzada de revocación remota de 1.3c. El cierre Web impide la siguiente petición aun cuando el payload físico aún no haya sido recogido por el driver.
+SessionRegistry permite consultar accesos propios y cerrar uno. Para cerrar accesos ajenos exige la capacidad existente users.status y un actor activo con cambio de clave completado; no se creó otro permiso ni un bypass por rol. El componente auth.sessions permite consultar accesos propios y ajenos autorizados, cerrar uno, cerrar los demás propios o todos los del usuario consultado, con confirmación previa. El cierre Web impide la siguiente petición aun cuando el payload físico aún no haya sido recogido por el driver.
 
-La emisión se coordina transaccionalmente en SQL con bloqueo de los registros por usuario y límites configurables. Valores predeterminados: cinco accesos Web y cinco API. Un nuevo login Web en el mismo contexto retira el registro anterior. Se rechaza el exceso sin sustituir silenciosamente otro dispositivo.
+La emisión se coordina transaccionalmente en SQL mediante IdentityAccess::lock y la coordinación SQL existente de Users, incluso sin registros de sesión y límites configurables. Valores predeterminados: cinco accesos Web y cinco API. Un nuevo login Web en el mismo contexto retira el registro anterior. Se rechaza el exceso sin sustituir silenciosamente otro dispositivo.
 
-Users emite UserAccessChanged después del commit de activación/desactivación o borrado lógico; Auth revoca sus accesos y tokens. El proveedor y los middleware también verifican el estado en cada petición. Los callbacks no son una entrega durable ante caída abrupta entre commit y consumidor: en 1.3c se deberá evaluar versión de seguridad/entrega durable y recuperación; no se afirma haber probado ese escenario.
+Users emite UserAccessChanged dentro de la transacción de activación/desactivación, borrado lógico y cambio de contraseña. Auth invalida accesos y tokens sincrónicamente; desactivar/eliminar también elimina el PIN e invalida contextos de terminal asociados. La auditoría se persiste en esa misma transacción: un fallo revierte la operación. El proveedor y los middleware conservan la comprobación de estado en cada petición.
 
 ## PIN y cambio rápido
 
@@ -89,10 +89,13 @@ Variables opcionales, leídas en config/auth_access.php, sin modificar .env oper
 | AUTH_API_TOKEN_MINUTES | 480 |
 | AUTH_MAX_WEB_SESSIONS | 5 |
 | AUTH_MAX_API_SESSIONS | 5 |
+| AUTH_FAILED_ATTEMPTS | 5 |
+| AUTH_LOCK_SECONDS | 300 |
+| AUDIT_SECURITY_RETENTION_DAYS | 365 |
 
 Usar enteros positivos. Auth aplica el timeout Web al valor de session.lifetime en memoria; el SESSION_LIFETIME=120 del .env existente queda conservado como archivo y ya no determina el acceso autenticado. El driver file y su cifrado existentes se mantienen. Se fuerzan HttpOnly y SameSite=Lax; fuera de local/testing se exige cookie Secure y HTTPS para las rutas/servicios de credenciales. Un proxy TLS deberá configurarse como confiable de forma explícita, sin aceptar cabeceras de cualquier origen.
 
-Se limita el login fallido a cinco intentos/minuto por username/IP, la reautenticación a cinco por identidad/IP y el PIN a cinco/minuto por username global para que variar terminal/IP no lo eluda. Hay además un límite para cambios de clave. Son controles base, sin un sistema persistente de bloqueo de cuentas ni auditoría avanzada. El caché existente se conserva; su estrategia distribuida y la política final pertenecen a 1.3c/despliegue.
+AttemptGuard cuenta fallos consecutivos por identidad y origen, con ventana configurable de 300 segundos y bloqueo de 300 segundos completos desde el quinto fallo. Login Web y API comparten contador; PIN y reautenticación tienen claves independientes. El éxito limpia el contador; la expiración permite nuevos intentos. El PIN exige terminal autorizada y el contador no depende de la cookie ni del estado de la interfaz. Se usan RateLimiter y locks nativos del caché existente. En varios nodos debe existir un almacén compartido con locks; limpiar el caché reinicia los contadores. El límite adicional de cambios de clave se conserva.
 
 PHP debe omitir argumentos de excepciones: Auth habilita zend.exception_ignore_args en el proceso y falla si no puede protegerlos. Esto evita que contraseñas, PIN o tokens aparezcan en trazas de errores, sin modificar php.ini ni .env; mantiene mensaje técnico, archivo y líneas del error. El hosting puede habilitar la opción de antemano si restringe ini_set. Nunca introducir secretos deliberadamente en mensajes de excepciones ni logs.
 
@@ -100,12 +103,16 @@ PHP debe omitir argumentos de excepciones: Auth habilita zend.exception_ignore_a
 
 Las pruebas positivas usan SQL Server en fresapos_test con las salvaguardas existentes. La prueba de Livewire usa su protocolo HTTP real con cookies/middleware; no se dejó sin sesión el componente para adaptar el producto a un helper de pruebas. Los 86 casos previos se conservan; las expectativas de rutas/migraciones se amplían de forma explícita.
 
-El [informe 1.3b](entrega-1.3b.md) contiene resultados, migración operativa e integridad. [OpenAPI](openapi.yaml) se actualizó manualmente; sigue pendiente su validación formal porque no existe parser YAML en el proyecto. No se instalaron dependencias para ese fin.
+El [informe 1.3b](entrega-1.3b.md) contiene resultados, migración operativa e integridad. [OpenAPI](openapi.yaml) se actualizó manualmente; en 1.3c se comprobó sintaxis YAML y referencias internas con Ruby/Psych; sigue pendiente validar el esquema OpenAPI. No se instalaron dependencias para ese fin.
 
-Quedan para 1.3c los controles avanzados de bloqueo/intentos, auditoría, política detallada de revocación y su interfaz administrativa, refinamiento de contextos de terminal y seguridad ante fallos abruptos. Azure SQL y cPanel requieren sus comprobaciones reales de TLS, red, drivers/ODBC y PHP web. No se conectó a Azure ni se desplegó en hosting.
+La implementación 1.3c y sus límites de verificación están descritos en [entrega-1.3c.md](entrega-1.3c.md). Su aceptación requiere ejecutar la suite y los controles funcionales en Windows/SQL Server. Azure SQL y cPanel requieren sus comprobaciones reales de TLS, red, drivers/ODBC y PHP web. No se conectó a Azure ni se desplegó en hosting.
 
 Referencias primarias consultadas: [Sanctum para Laravel 13](https://laravel.com/docs/13.x/sanctum) y [manifest oficial](https://github.com/laravel/sanctum/blob/4.x/composer.json); se inspeccionó también el código instalado de Laravel, Sanctum y Livewire.
 
 ### Errores de formularios y Livewire
 
-SensitiveErrors sanea los errores 5xx de login, account, admin y auth/* y del componente auth.login. Aunque APP_DEBUG esté activo, la respuesta solo contiene un mensaje genérico, sin cuerpo de petición, credenciales, SQL ni trazas. El detalle técnico se conserva una sola vez en el log, con argumentos de excepciones deshabilitados. Los errores API conservan el contrato de Core; las demás vistas y componentes Livewire mantienen su comportamiento nativo. Las pruebas provocan un error SQL real únicamente en fresapos_test para comprobar ambas respuestas sensibles.
+SensitiveErrors sanea los errores 5xx de login, account, admin y auth/* y de los componentes auth.login y auth.sessions. Aunque APP_DEBUG esté activo, la respuesta solo contiene un mensaje genérico, sin cuerpo de petición, credenciales, SQL ni trazas. El detalle técnico se conserva una sola vez en el log, con argumentos de excepciones deshabilitados. Los errores API conservan el contrato de Core; las demás vistas y componentes Livewire mantienen su comportamiento nativo. Las pruebas provocan un error SQL real únicamente en fresapos_test para comprobar ambas respuestas sensibles.
+
+## Administración y auditoría — 1.3c
+
+Los endpoints de sesiones y el contrato JSON se detallan en [entrega-1.3c.md](entrega-1.3c.md). Audit consume el contrato SecurityEvent de Core mediante un listener síncrono; no se agrega dependencia de Users hacia Auth ni Audit. La tabla audit_security_events conserva únicamente datos permitidos, con fechas UTC y referencias que no autentican. Retención mínima de seguridad: 365 días; no existe purga automática ni modificación de auditoría financiera.

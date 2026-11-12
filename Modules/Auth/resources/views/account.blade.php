@@ -26,9 +26,6 @@
         <label>PIN <input name="pin" type="password" inputmode="numeric" autocomplete="off" required class="border p-2"></label>
         <button class="border px-3 py-2">Cambiar empleado</button>
     </form>
-    <h2 class="text-xl mt-6 mb-3">Tus accesos recientes</h2>
-    <ul class="space-y-2">@foreach ($sessions as $access)<li>{{ $access['channel'] }} · última actividad {{ $access['last_activity_at'] }} · {{ $access['revoked_at'] ? 'Cerrado' : 'Vigencia hasta '.$access['expires_at'] }}
-        @if (! $access['revoked_at'])<form method="POST" action="{{ route('auth.session.revoke', $access['id']) }}" class="inline">@csrf<button class="underline">Cerrar este acceso</button></form>@endif
-    </li>@endforeach</ul>
+    <livewire:auth.sessions />
     <form method="POST" action="{{ route('auth.web.logout') }}" class="mt-6">@csrf<button class="bg-slate-900 text-white rounded px-4 py-2">Cerrar sesión</button></form>
 @endsection
