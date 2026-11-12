@@ -6,6 +6,8 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\Controllers\ApiAuthenticationController;
 use Modules\Auth\Http\Controllers\WebAuthenticationController;
+use Modules\Catalog\Http\Controllers\CategoryController;
+use Modules\Catalog\Http\Controllers\ProductController;
 use Tests\Support\ModuleDependencies;
 use Tests\TestCase;
 
@@ -40,6 +42,8 @@ class ModuleRegistrationTest extends TestCase
             $this->assertContains(explode('@', $route->getActionName())[0], [
                 WebAuthenticationController::class,
                 ApiAuthenticationController::class,
+                CategoryController::class,
+                ProductController::class,
             ]);
         }
     }

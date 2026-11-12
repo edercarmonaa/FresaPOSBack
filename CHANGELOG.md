@@ -1,5 +1,14 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.4b
+
+- Trece operaciones REST de categorías/productos con Sanctum, Form Requests, Resources y sobres Core existentes.
+- Pantallas Blade/Livewire en el layout actual, navegación Catálogo por capacidades, filtros y paginación SQL de 10/25/50/100.
+- Creación, edición, estados, eliminación lógica y papelera/restauración de productos; confirmaciones y precios sin floats.
+- Políticas y servicios de 1.4a reutilizados; auditoría exclusivamente en el servicio, sin cambios de esquema o dependencias.
+- Pruebas SQL Server de HTTP/API/Livewire, CSRF, sesiones revocadas, permisos, decimales y confidencialidad con ambos modos de debug.
+- OpenAPI existente actualizado y [entrega documentada](docs/entrega-1.4b.md). Procesamiento de imágenes reservado para 1.4c.
+
 ## [Sin publicar] — Etapa 1.4a
 
 - Catalog: categorías/productos ULID, decimal(19,4), relaciones SQL, SoftDeletes e índices de consulta.

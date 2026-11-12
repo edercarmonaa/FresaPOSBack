@@ -87,3 +87,29 @@ Todas estas rutas requieren Sanctum, auth.access.api y contraseña obligatoria c
 Las respuestas usan el mismo sobre y X-Request-Id. Listados devuelven data.sessions; revocaciones devuelven data null. Los IDs son ULID de registros administrativos, nunca cookies ni IDs de token. La lista contiene hasta 50 registros, priorizando no revocados y vigencia descendente; incluye channel, client_name cuando está disponible, user_id, created_at, last_activity_at, expires_at, revoked_at y state (active/expired/revoked). No devuelve IP, hashes ni secretos. Identificadores mal formados en la ruta producen 404, cuerpo inválido 422, actor sin autorización 403, contexto inválido 401 y exceso 429 con Retry-After cuando corresponde al bloqueo de autenticación. Revocar de nuevo un registro ya revocado conserva 200 mientras el actor mantenga otro contexto válido.
 
 Implementación y validación local definitiva: [entrega-1.3c.md](entrega-1.3c.md). OpenAPI incluye estas rutas; su sintaxis YAML se verificó con Ruby/Psych durante la implementación anterior. Esa comprobación no se repitió en Windows ni sustituye la validación formal del esquema OpenAPI, aún pendiente. Las rutas sí se probaron mediante HTTP/SQL en esta aceptación.
+# Catálogo administrativo — 1.4b
+
+Rutas protegidas por bearer Sanctum y acceso vigente bajo `/api/v1/catalog`:
+
+| Recurso | Operaciones |
+| --- | --- |
+| `categories` | GET/POST colección; GET/PUT/DELETE `{id}`; PATCH `{id}/status`. |
+| `products` | GET/POST colección; GET/PUT/DELETE `{id}`; PATCH `{id}/status`; POST `{id}/restore`. |
+
+Los identificadores son ULID. DELETE es exclusivamente lógico y responde con `data: null`. No hay restauración de categorías, borrado definitivo ni operaciones de imágenes. Se preservan las reglas de los servicios de 1.4a.
+
+Lectura de productos exige `catalog.products.view`; categorías permite este permiso o `catalog.categories.manage`. Escribir categorías exige manage. Escribir productos exige view más create/update/deactivate/restore según la acción; enviar `is_active` en PUT también exige deactivate. `deleted=with|only` exige restore para productos y manage para categorías. La identidad debe estar activa y haber cambiado su contraseña inicial. Las cookies de la Web no autentican la API.
+
+POST/PUT categoría requiere `name`, admite description/is_active/display_order. POST/PUT producto requiere name/category_id/price, admite description/is_active. En PUT los opcionales omitidos se conservan. La validación reutiliza CatalogInput y SQL CI_AI_SC: espacios normalizados y nombres de categorías únicos, incluidos los eliminados. No hay unicidad inventada para productos. Precio recomendado como **texto decimal**, por ejemplo `"25.5000"`; se aceptan enteros JSON exactos, se rechazan números JSON fraccionarios, exponentes, negativos, separadores ambiguos y más de cuatro decimales. Máximo `999999999999999.9999`. La salida siempre conserva cuatro decimales. Campos adicionales se rechazan con 422.
+
+Filtros: `search` (100 unidades UTF-16, máximo ocho palabras), `is_active` (true/false/1/0), `deleted=without|with|only`, page 1..1000000 y per_page **10/25/50/100** (25 predeterminado). Productos: category_id, sort=name|price y direction=asc|desc. Categorías conserva el orden de 1.4a: prioridad, nombre e id ascendentes; solo acepta sort=display_order y direction=asc. Filtros y columnas desconocidas reciben 422. `is_active` representa el estado propio del registro; la futura venta debe usar CatalogReader::forSale para exigir también categoría disponible.
+
+Los Resources exponen DTOs públicos, categoría id/nombre y, cuando existe, imagen como `{url, version}`, sin disk/key ni rutas de servidor. No verifican ni crean archivos. Si una referencia existente usa un almacenamiento público mal configurado, se devuelve un error genérico, nunca una ruta interna.
+
+Se reutiliza el sobre Core con `success`, `code`, `message`, `data`, `meta.request_id`; los listados usan `data.categories` o `data.products` y `meta.pagination`. Ejemplo de colección vacía:
+
+```json
+{"success":true,"code":"OPERATION_SUCCESS","message":"Operación completada correctamente.","data":{"products":[]},"meta":{"request_id":"catalog-example","pagination":{"current_page":1,"per_page":25,"total":0,"last_page":1,"from":null,"to":null}}}
+```
+
+Creación: 201; restantes operaciones: 200. Errores públicos: 400/401/403/404/409/422/429/500. La consulta de un borrado sin modo administrativo es 404; categoría inactiva/restauración inconsistente es 409; duplicado detectado en formulario es 422 y una carrera de unicidad sigue siendo 409 transaccional. Se mantienen X-Request-Id y no-store. No se devuelven detalles internos, incluso con APP_DEBUG activo. La [especificación existente](openapi.yaml) incluye las operaciones y esquemas; validación formal YAML/OpenAPI pendiente por falta de herramienta instalada, sin dependencias nuevas.

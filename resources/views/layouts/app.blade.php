@@ -10,6 +10,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <main class="mx-auto max-w-4xl p-8">
+        @include('catalog::navigation')
         @yield('content')
     </main>
     @livewireScripts

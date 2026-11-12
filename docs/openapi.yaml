@@ -3,9 +3,9 @@ info:
   title: FresaPOSBack API
   version: 1.0.0
   description: >-
-    REST v1 de 1.2c y autenticación y sesiones de 1.3b/1.3c. Ping y login son públicos.
-    Los endpoints de negocio y la aprobación de dispositivos son futuros.
-    Archivo manual: sintaxis YAML y referencias internas comprobadas; esquema OpenAPI pendiente.
+    REST v1, autenticación y sesiones de 1.3b/1.3c y catálogo administrativo de 1.4b. Ping y login son públicos.
+    Ventas y aprobación de dispositivos son futuros. No hay carga de imágenes de catálogo en 1.4b.
+    Archivo manual; rutas y referencias internas comprobadas. Validación formal YAML/OpenAPI pendiente.
 servers:
   - url: http://127.0.0.1:8080/api/v1
     description: Desarrollo local; los servidores de staging y producción quedan pendientes.
@@ -15,6 +15,8 @@ tags:
     description: Infraestructura técnica sin acceso a tablas de negocio.
   - name: Auth
     description: Credenciales por username y contraseña; API exclusivamente bearer.
+  - name: Catalog
+    description: Categorías y productos administrativos; permisos actuales y precios decimales exactos.
 paths:
   /auth/login:
     post:
@@ -364,6 +366,584 @@ paths:
           $ref: '#/components/responses/InternalError'
         '503':
           $ref: '#/components/responses/ServiceUnavailable'
+  /catalog/categories:
+    get:
+      tags: [Catalog]
+      operationId: catalogCategoryIndex
+      summary: Lista con filtros y paginación SQL
+      description: >-
+        Requiere catalog.products.view o catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+        Orden fijo aprobado en 1.4a por display_order, nombre e id ascendentes.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: deleted
+          in: query
+          description: with y only requieren catalog.categories.manage.
+          schema: {type: string, enum: [without, with, only], default: without}
+        - name: search
+          in: query
+          description: Prefijos de hasta ocho palabras; espacios normalizados y collation CI_AI_SC.
+          schema: {type: string, maxLength: 100}
+        - name: is_active
+          in: query
+          description: Estado propio del registro.
+          schema: {type: boolean}
+        - name: sort
+          in: query
+          description: Solo columnas autorizadas; desempate estable.
+          schema: {type: string, enum: [display_order], default: display_order}
+        - name: direction
+          in: query
+          description: Dirección permitida por el contrato de 1.4a.
+          schema: {type: string, enum: [asc], default: asc}
+        - name: page
+          in: query
+          description: Página solicitada.
+          schema: {type: integer, minimum: 1, maximum: 1000000, default: 1}
+        - name: per_page
+          in: query
+          description: Registros por página.
+          schema: {type: integer, enum: [10, 25, 50, 100], default: 25}
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    post:
+      tags: [Catalog]
+      operationId: catalogCategoryStore
+      summary: Crea un registro
+      description: >-
+        Requiere catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryInput'
+      responses:
+        '201':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/categories/{id}:
+    get:
+      tags: [Catalog]
+      operationId: catalogCategoryShow
+      summary: Consulta un registro por ULID
+      description: >-
+        Requiere catalog.products.view o catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+        - name: deleted
+          in: query
+          description: with y only requieren catalog.categories.manage.
+          schema: {type: string, enum: [without, with, only], default: without}
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    put:
+      tags: [Catalog]
+      operationId: catalogCategoryUpdate
+      summary: Edita un registro
+      description: >-
+        Requiere catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryInput'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    delete:
+      tags: [Catalog]
+      operationId: catalogCategoryDestroy
+      summary: Elimina lógicamente sin borrar referencias
+      description: >-
+        Requiere catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+        No existe operación de restauración de categorías. Nombres eliminados siguen reservados.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogDeleted'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/categories/{id}/status:
+    patch:
+      tags: [Catalog]
+      operationId: catalogCategoryStatus
+      summary: Activa o desactiva
+      description: >-
+        Requiere catalog.categories.manage. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogStatus'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/products:
+    get:
+      tags: [Catalog]
+      operationId: catalogProductIndex
+      summary: Lista con filtros y paginación SQL
+      description: >-
+        Requiere catalog.products.view. Identidad activa, contraseña cambiada y acceso vigente.
+        Consulta administrativa; is_active filtra el estado propio del producto, no su vendibilidad.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - name: deleted
+          in: query
+          description: with y only requieren catalog.products.restore además de lectura.
+          schema: {type: string, enum: [without, with, only], default: without}
+        - name: search
+          in: query
+          description: Prefijos de hasta ocho palabras; espacios normalizados y collation CI_AI_SC.
+          schema: {type: string, maxLength: 100}
+        - name: is_active
+          in: query
+          description: Estado propio del registro.
+          schema: {type: boolean}
+        - name: category_id
+          in: query
+          description: Filtra por categoría.
+          schema: {$ref: '#/components/schemas/CatalogUlid'}
+        - name: sort
+          in: query
+          description: Solo columnas autorizadas; desempate estable.
+          schema: {type: string, enum: [name, price], default: name}
+        - name: direction
+          in: query
+          description: Dirección permitida por el contrato de 1.4a.
+          schema: {type: string, enum: [asc, desc], default: asc}
+        - name: page
+          in: query
+          description: Página solicitada.
+          schema: {type: integer, minimum: 1, maximum: 1000000, default: 1}
+        - name: per_page
+          in: query
+          description: Registros por página.
+          schema: {type: integer, enum: [10, 25, 50, 100], default: 25}
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPage'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    post:
+      tags: [Catalog]
+      operationId: catalogProductStore
+      summary: Crea un registro
+      description: >-
+        Requiere catalog.products.view y catalog.products.create. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '201':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/products/{id}:
+    get:
+      tags: [Catalog]
+      operationId: catalogProductShow
+      summary: Consulta un registro por ULID
+      description: >-
+        Requiere catalog.products.view. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+        - name: deleted
+          in: query
+          description: with y only requieren catalog.products.restore además de lectura.
+          schema: {type: string, enum: [without, with, only], default: without}
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    put:
+      tags: [Catalog]
+      operationId: catalogProductUpdate
+      summary: Edita un registro
+      description: >-
+        Requiere catalog.products.view y catalog.products.update; enviar is_active también exige catalog.products.deactivate. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    delete:
+      tags: [Catalog]
+      operationId: catalogProductDestroy
+      summary: Elimina lógicamente sin borrar referencias
+      description: >-
+        Requiere catalog.products.view y catalog.products.deactivate. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogDeleted'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/products/{id}/status:
+    patch:
+      tags: [Catalog]
+      operationId: catalogProductStatus
+      summary: Activa o desactiva
+      description: >-
+        Requiere catalog.products.view y catalog.products.deactivate. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogStatus'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+  /catalog/products/{id}/restore:
+    post:
+      tags: [Catalog]
+      operationId: catalogProductRestore
+      summary: Restaura y activa si la categoría sigue disponible
+      description: >-
+        Requiere catalog.products.view y catalog.products.restore. Identidad activa, contraseña cambiada y acceso vigente.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      responses:
+        '200':
+          description: Operación confirmada; Cache-Control no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
 components:
   securitySchemes:
     BearerAuth:
@@ -373,6 +953,12 @@ components:
         Laravel Sanctum implementado en 1.3b. Token opaco, sin JWT; SHA-256 en SQL,
         con expiración y revocación. Nunca en URLs. Las cookies Web no autentican esta API.
   parameters:
+    CatalogId:
+      name: id
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/CatalogUlid'
     RequestId:
       name: X-Request-Id
       in: header
@@ -397,6 +983,168 @@ components:
       schema:
         type: string
   schemas:
+    CatalogUlid:
+      type: string
+      pattern: '^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$'
+      description: ULID nativo serializado como texto de 26 caracteres.
+      example: 01arz3ndektsv4rrffq69g5fav
+    CatalogPrice:
+      type: string
+      pattern: '^[0-9]{1,15}(\.[0-9]{1,4})?$'
+      description: Decimal exacto no negativo; salida canónica con cuatro decimales. Sin miles ni exponentes.
+      example: '25.5000'
+    CatalogStatus:
+      type: object
+      additionalProperties: false
+      required: [is_active]
+      properties:
+        is_active:
+          type: boolean
+    CategoryInput:
+      type: object
+      additionalProperties: false
+      required: [name]
+      properties:
+        name: {type: string, maxLength: 150, description: 'Normalizado, único incluso entre eliminados; comparación CI_AI_SC.'}
+        description: {type: [string, 'null'], maxLength: 1000}
+        is_active: {type: boolean, default: true}
+        display_order: {type: integer, minimum: 0, maximum: 2147483647, default: 0}
+    ProductInput:
+      type: object
+      additionalProperties: false
+      required: [name, category_id, price]
+      description: >-
+        POST y PUT exigen nombre, categoría y precio; campos opcionales omitidos en PUT se conservan.
+        La categoría debe existir y estar disponible para nuevas asignaciones.
+        image, image_disk e image_key no se aceptan en 1.4b.
+      properties:
+        name: {type: string, maxLength: 150}
+        description: {type: [string, 'null'], maxLength: 2000}
+        category_id: {$ref: '#/components/schemas/CatalogUlid'}
+        price:
+          oneOf:
+            - $ref: '#/components/schemas/CatalogPrice'
+            - {type: integer, minimum: 0, maximum: 999999999999999}
+          description: Se recomienda texto decimal; números JSON fraccionarios se rechazan para evitar floats.
+        is_active: {type: boolean, description: 'En edición requiere también permiso de cambio de estado.'}
+    Category:
+      type: object
+      additionalProperties: false
+      required: [id, name, description, is_active, display_order, created_at, updated_at, deleted_at]
+      properties:
+        id: {$ref: '#/components/schemas/CatalogUlid'}
+        name: {type: string}
+        description: {type: [string, 'null']}
+        is_active: {type: boolean}
+        display_order: {type: integer}
+        created_at: {type: string, format: date-time}
+        updated_at: {type: string, format: date-time}
+        deleted_at: {type: [string, 'null'], format: date-time}
+    Product:
+      type: object
+      additionalProperties: false
+      required: [id, name, description, category_id, category, price, is_active, image, created_at, updated_at, deleted_at]
+      properties:
+        id: {$ref: '#/components/schemas/CatalogUlid'}
+        name: {type: string}
+        description: {type: [string, 'null']}
+        category_id: {$ref: '#/components/schemas/CatalogUlid'}
+        category:
+          type: object
+          required: [id, name]
+          properties:
+            id: {$ref: '#/components/schemas/CatalogUlid'}
+            name: {type: string}
+        price: {$ref: '#/components/schemas/CatalogPrice'}
+        is_active: {type: boolean}
+        image:
+          type: [object, 'null']
+          additionalProperties: false
+          required: [url, version]
+          description: Solo URL pública y versión inmutable; sin discos ni rutas de servidor. Sin subida de imágenes.
+          properties:
+            url: {type: string, format: uri-reference}
+            version: {$ref: '#/components/schemas/CatalogUlid'}
+        created_at: {type: string, format: date-time}
+        updated_at: {type: string, format: date-time}
+        deleted_at: {type: [string, 'null'], format: date-time}
+    CatalogPagination:
+      type: object
+      required: [current_page, per_page, total, last_page, from, to]
+      properties:
+        current_page: {type: integer, minimum: 1}
+        per_page: {type: integer, enum: [10, 25, 50, 100]}
+        total: {type: integer, minimum: 0}
+        last_page: {type: integer, minimum: 1}
+        from: {type: [integer, 'null']}
+        to: {type: [integer, 'null']}
+    CatalogDeleted:
+      allOf:
+        - $ref: '#/components/schemas/Success'
+        - properties:
+            data: {type: 'null'}
+    CategoryResponse:
+      allOf:
+        - $ref: '#/components/schemas/Success'
+        - properties:
+            data: {$ref: '#/components/schemas/Category'}
+    CategoryPage:
+      examples:
+        - success: true
+          code: OPERATION_SUCCESS
+          message: Operación completada correctamente.
+          data: {categories: []}
+          meta:
+            request_id: catalog-example
+            pagination: {current_page: 1, per_page: 25, total: 0, last_page: 1, from: null, to: null}
+      allOf:
+        - $ref: '#/components/schemas/Success'
+        - properties:
+            data:
+              type: object
+              required: [categories]
+              properties:
+                categories:
+                  type: array
+                  items: {$ref: '#/components/schemas/Category'}
+            meta:
+              allOf:
+                - $ref: '#/components/schemas/Meta'
+                - required: [pagination]
+                  properties:
+                    pagination: {$ref: '#/components/schemas/CatalogPagination'}
+
+    ProductResponse:
+      allOf:
+        - $ref: '#/components/schemas/Success'
+        - properties:
+            data: {$ref: '#/components/schemas/Product'}
+    ProductPage:
+      examples:
+        - success: true
+          code: OPERATION_SUCCESS
+          message: Operación completada correctamente.
+          data: {products: []}
+          meta:
+            request_id: catalog-example
+            pagination: {current_page: 1, per_page: 25, total: 0, last_page: 1, from: null, to: null}
+      allOf:
+        - $ref: '#/components/schemas/Success'
+        - properties:
+            data:
+              type: object
+              required: [products]
+              properties:
+                products:
+                  type: array
+                  items: {$ref: '#/components/schemas/Product'}
+            meta:
+              allOf:
+                - $ref: '#/components/schemas/Meta'
+                - required: [pagination]
+                  properties:
+                    pagination: {$ref: '#/components/schemas/CatalogPagination'}
+
     Identity:
       type: object
       additionalProperties: false
