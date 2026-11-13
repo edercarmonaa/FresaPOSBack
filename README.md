@@ -1,6 +1,6 @@
 # FresaPOSBack
 
-Etapa actual: **1.4a, fundamentos de productos y categorías, completada y validada localmente**. [Informe de catálogo](docs/entrega-1.4a.md), [seguridad](docs/entrega-1.3c.md), [autenticación](docs/autenticacion.md) y [API](docs/api.md).
+Etapa actual: **1.5b, API REST de mesas y ventas**. [Informe de Sales](docs/entrega-1.5b.md), [catálogo](docs/entrega-1.4d.md), [seguridad](docs/entrega-1.3c.md), [autenticación](docs/autenticacion.md) y [API](docs/api.md). La apertura y el agregado operativo requieren Cash e idempotencia durable; retirada/cancelación requieren motivos autorizados. Estas operaciones siguen bloqueadas mientras falten sus dependencias. Aún no hay pantalla POS.
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas. Entrega 1.1, versión 0.1.0: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Sin funcionalidades POS, Node, npm ni Vite.
 
@@ -72,6 +72,8 @@ APP_PORT se conserva como referencia del flujo Docker histórico; `local.cmd ser
 - Sin estilos al perder conexión: limitación del CDN, descrita en docs/frontend.md.
 
 ## Documentación
+
+La etapa [1.5a](docs/entrega-1.5a.md) prepara el dominio y persistencia de ventas de mostrador/mesas, líneas con precios históricos, cantidades enteras (máximo inicial 100), notas, transacciones y concurrencia SQL. **Todavía no añade una pantalla POS ni API de ventas. La apertura operativa requiere Cash funcional y permanece bloqueada mientras no exista esa integración.** No se crean ventas ni mesas ficticias en la base real.
 
 [Entorno Windows](docs/entorno-desarrollo.md) · [Validación local](docs/validacion-local.md) · [Versiones](docs/versiones.md) · [Arquitectura](docs/arquitectura.md) · [SQL y Azure](docs/base-datos-azure.md) · [Módulos](docs/modulos.md) · [Frontend](docs/frontend.md) · [Hosting](docs/hosting.md).
 

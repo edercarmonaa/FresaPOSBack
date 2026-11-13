@@ -107,6 +107,10 @@ class ApiConventionsTest extends TestCase
             'api.v1.catalog.products.index', 'api.v1.catalog.products.show', 'api.v1.catalog.products.store',
             'api.v1.catalog.products.update', 'api.v1.catalog.products.status', 'api.v1.catalog.products.destroy', 'api.v1.catalog.products.restore',
             'api.v1.catalog.products.image.store', 'api.v1.catalog.products.image.destroy',
+            'api.v1.sales.tables.index', 'api.v1.sales.tables.store', 'api.v1.sales.tables.show', 'api.v1.sales.tables.update', 'api.v1.sales.tables.status',
+            'api.v1.sales.index', 'api.v1.sales.store', 'api.v1.sales.show', 'api.v1.sales.items', 'api.v1.sales.items.store',
+            'api.v1.sales.items.quantity', 'api.v1.sales.items.note', 'api.v1.sales.items.destroy', 'api.v1.sales.note',
+            'api.v1.sales.pause', 'api.v1.sales.resume', 'api.v1.sales.cancel',
         ], $routes->map(fn ($route) => $route->getName())->values()->all());
     }
 

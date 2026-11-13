@@ -1,5 +1,13 @@
 # API REST v1
 
+## Sales — 1.5b
+
+La API de mesas y ventas está definida en [OpenAPI](openapi.yaml) y en el [informe 1.5b](entrega-1.5b.md). Se reutiliza bearer Sanctum vigente y los permisos actuales; una cookie web/PIN no sustituye el token. Consultas en `/api/v1/sales`, `/{id}`, `/{id}/items` y `/api/v1/sales/tables`. Mesas permiten administración con `settings.update`.
+
+Al editar un recurso existente, consultar su detalle y enviar `If-Match: "<data.revision>"`. Una revisión ausente o antigua devuelve 409; volver a consultar antes de decidir cómo reconciliar. No usar `*`. Apertura y agregado requieren además `Idempotency-Key` de 16–128 caracteres. **Permanecen bloqueados con 503 hasta disponer de idempotencia durable y Cash real**; no se habilitan mediante un header. Cancelación y retirada requieren catálogos autorizados de motivos. No hay UI de ventas ni operaciones de cobro/cierre en esta entrega.
+
+Los importes se serializan como strings de cuatro decimales. No enviar precios, totales, folio, actor o caja. Los filtros/paginación, notas y cantidades se validan en el servidor; cantidad debe ser un entero JSON positivo, máximo inicial 100. Listados Sales: `data.sales`/`data.tables` con `meta.page`, `meta.per_page`, `meta.total` y `meta.request_id`; detalle de venta incluye líneas históricas y revisión.
+
 La etapa 1.3b incorpora autenticación Sanctum, conservando el transporte de 1.2c y sin funcionalidades POS. El endpoint técnico público es `GET /api/v1/ping`; no consulta la base, responde `data: {"status":"ok"}` y no sustituye un futuro diagnóstico autenticado. `/up`, la página principal y Livewire conservan sus rutas.
 
 ## Rutas y versiones

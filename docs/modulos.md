@@ -1,5 +1,7 @@
 # Registro y mantenimiento de módulos
 
+Actualización 1.5a: Sales incorpora contenido real en Domain, Contracts, Application, Infrastructure y Policies, una migración incremental y pruebas SQL concurrentes. Su matriz autoriza Core/Users/Catalog/Cash exclusivamente por superficie pública. Cash aporta solo ActiveCashSession, sin negocio/tablas ficticios. No se crea Http de Sales ni se agregan rutas hasta 1.5b. [Implementación y límites](entrega-1.5a.md).
+
 Actualización 1.2b: Core tiene un contrato productivo TransactionManager y un adaptador en Infrastructure/Persistence, registrados en su proveedor. Las carpetas se crearon con contenido real. La suite Integration de la raíz utiliza fresapos_test, con guardas y tablas efímeras; por eso la suite completa ahora requiere preparar esa base. Las pruebas modulares originales conservan su aislamiento sin SQL. No se modificó la matriz de dependencias.
 
 Se usa laravel-modules 13.3.0 con Laravel 13.42.0 y PHP 8.3.36. El manifiesto instalado requiere PHP ^8.3, DOM, JSON, SimpleXML y merge-plugin; su rama y dependencias de desarrollo corresponden a Laravel ^13.0. Las pruebas de integración verifican la combinación real. No fue necesario actualizar paquetes. Fuente: [manifest oficial v13.3.0](https://github.com/nWidart/laravel-modules/blob/v13.3.0/composer.json).

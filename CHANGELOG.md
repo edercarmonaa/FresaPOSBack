@@ -1,5 +1,26 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5b
+
+- API de Sales: 17 operaciones de mesas, consulta de ventas/líneas, cantidades, notas, pausa/recuperación y cancelación no financiera condicionada.
+- Requests estrictos, Resources sobre DTOs, filtros/paginación SQL, permisos actuales y bearer vigente; sin precios/totales/actor del cliente.
+- Precondición If-Match atómica mediante huella de contenido y transacción existente, sin rowversion ni cambios de esquema; mesa ocupada no desactivable.
+- Apertura/agregado bloqueados sin idempotencia durable y Cash real; contratos de integración y motivos sin implementaciones ficticias productivas.
+- OpenAPI ampliado y contrastado con respuestas reales; pruebas de kernels HTTP/SPID independientes y regresión existente.
+- [Informe, resultados y límites operativos](docs/entrega-1.5b.md). Sin UI de ventas, cobros, commits o avances a 1.5c.
+
+## [Sin publicar] — Etapa 1.5a
+
+- Fundamentos de Sales: ventas de mostrador/mesas, líneas históricas, DTOs, contratos y repositorios Eloquent; sin POS ni endpoints nuevos.
+- Cantidades enteras con máximo global inicial de 100 confirmado por el usuario, notas normalizadas y aritmética decimal exacta sin float.
+- Instantáneas/consolidación por precio, nombre, categoría y nota; estados abiertos/pausados, cancelación sin cierre y retirada condicionada a motivos autorizados.
+- Contrato público de Cash con adaptador que rechaza operaciones hasta disponer de sesión real; sin caja ficticia ni folios/pagos anticipados.
+- Tres tablas incrementales con siete FK NO ACTION e índices filtrados; concurrencia verificada con dos procesos/sesiones SQL y bloqueo real.
+- Auditoría existente ampliada de forma aditiva y eventos secundarios después de commit; permisos/credenciales intactos.
+- Respaldo COPY_ONLY/CHECKSUM verificado y migración operativa lote 5 aplicada, tres tablas vacías y datos anteriores conservados.
+- Calidad: **343 pruebas / 2736 aserciones**, Pint, Larastan nivel 5 y Composer correctos; OpenAPI y 40 rutas propias conservados.
+- [Informe técnico y límites para 1.5b](docs/entrega-1.5a.md). No se avanza a la siguiente etapa.
+
 ## [Sin publicar] — Etapa 1.4d
 
 - Validación formal OpenAPI 3.1 reproducible con openapi-spec-validator 0.9.0, rutas reales y esquemas de respuestas de aceptación.

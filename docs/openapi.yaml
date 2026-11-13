@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: >-
     REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
-    Ventas y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
+    Sales 1.5b incluye API condicionada a Cash, motivos e idempotencia; aprobación de dispositivos es futura. Imágenes administradas mediante endpoints dedicados multipart.
     Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
 servers:
   - url: http://127.0.0.1:8080/api/v1
@@ -17,6 +17,8 @@ tags:
     description: Credenciales por username y contraseña; API exclusivamente bearer.
   - name: Catalog
     description: Categorías y productos administrativos; permisos actuales y precios decimales exactos.
+  - name: Sales
+    description: Mesas, consulta y operaciones no financieras sobre ventas; dependencias explícitas.
 paths:
   /auth/login:
     post:
@@ -1036,6 +1038,1009 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalError'
+  /sales/tables:
+    get:
+      tags:
+      - Sales
+      operationId: salesGetSalesTables
+      summary: Lista mesas por nombre y disponibilidad derivada.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 100
+      - name: is_active
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: is_occupied
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+          default: 25
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTablesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSalesTables
+      summary: Crea mesa administrativa.
+      description: Permiso settings.update. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      responses:
+        '201':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTableResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesTableCreate'
+  /sales/tables/{id}:
+    get:
+      tags:
+      - Sales
+      operationId: salesGetSalesTablesId
+      summary: Consulta mesa y venta activa autorizada.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTableResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    put:
+      tags:
+      - Sales
+      operationId: salesPutSalesTablesId
+      summary: Edita mesa con revisión vigente.
+      description: Permiso settings.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTableResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesTableUpdate'
+  /sales/tables/{id}/status:
+    patch:
+      tags:
+      - Sales
+      operationId: salesPatchSalesTablesIdStatus
+      summary: Activa o desactiva conservando relaciones.
+      description: Permiso settings.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTableResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogStatus'
+  /sales:
+    get:
+      tags:
+      - Sales
+      operationId: salesGetSales
+      summary: Consulta ventas con filtros y paginación SQL.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: state
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - open
+          - paused
+          - closed
+          - cancelled
+          - reopened
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - counter
+          - table
+      - name: table_id
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: created_by
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: date
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+          description: Día completo UTC; límites inclusivo/exclusivo.
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+          default: desc
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+          default: 25
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesListResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSales
+      summary: Apertura condicionada a Cash e idempotencia.
+      description: 'Permiso sales.create. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC. Bloqueada operativamente (503): requiere idempotencia durable
+        y Cash real. La clave por sí sola no habilita la operación. No se crean registros parciales. table_id obligatorio para
+        table; prohibido para counter. No acepta usuario, caja, precios, folio ni totales del cliente.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9_-]{16,128}$
+      responses:
+        '201':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesOpen'
+  /sales/{id}:
+    get:
+      tags:
+      - Sales
+      operationId: salesGetSalesId
+      summary: Consulta venta e historia de líneas.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/items:
+    get:
+      tags:
+      - Sales
+      operationId: salesGetSalesIdItems
+      summary: Consulta líneas históricas.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
+        del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesItemsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSalesIdItems
+      summary: Incorpora producto desde Catalog; condicionada.
+      description: 'Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC. Bloqueada operativamente (503): requiere idempotencia
+        durable y Cash real. La clave por sí sola no habilita la operación. No se crean registros parciales. Precio y snapshot
+        desde Catalog. Máximo global inicial 100 unidades; consolidación en Sales.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9_-]{16,128}$
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesAddItem'
+  /sales/{id}/items/{itemId}/quantity:
+    patch:
+      tags:
+      - Sales
+      operationId: salesPatchSalesIdItemsItemidQuantity
+      summary: Cambia cantidad entera positiva.
+      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: itemId
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesQuantity'
+  /sales/{id}/items/{itemId}/note:
+    patch:
+      tags:
+      - Sales
+      operationId: salesPatchSalesIdItemsItemidNote
+      summary: Cambia nota de línea.
+      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: itemId
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesItemNote'
+  /sales/{id}/items/{itemId}:
+    delete:
+      tags:
+      - Sales
+      operationId: salesDeleteSalesIdItemsItemid
+      summary: Retira línea autorizada; condicionada a motivos.
+      description: Permiso sales.open.update y sales.view y sales.special.authorize. Bearer propio vigente, sin herencia de
+        privilegios del navegador/PIN. Actor derivado del token. No-store; importes como texto decimal; UTC. Requiere además
+        sales.special.authorize, Cash real y LineRemovalApproval funcional; sin catálogo rechaza (409). Baja lógica, no borrado.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: itemId
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesReason'
+  /sales/{id}/note:
+    patch:
+      tags:
+      - Sales
+      operationId: salesPatchSalesIdNote
+      summary: Cambia nota de venta.
+      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesNote'
+  /sales/{id}/pause:
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSalesIdPause
+      summary: Pausa mostrador.
+      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC. Solo mostrador; conserva notas, líneas e importes;
+        no genera folio.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/resume:
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSalesIdResume
+      summary: Recupera mostrador.
+      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC. Solo mostrador; conserva notas, líneas e importes;
+        no genera folio.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/cancel:
+    post:
+      tags:
+      - Sales
+      operationId: salesPostSalesIdCancel
+      summary: Cancelación no financiera; condicionada a motivos.
+      description: Permiso sales.cancel y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
+        Actor derivado del token. No-store; importes como texto decimal; UTC. Cancelación no financiera bloqueada (503) hasta
+        catálogo autorizado de motivos y Cash real; no acepta texto libre.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesReason'
 components:
   securitySchemes:
     BearerAuth:
@@ -1075,6 +2080,539 @@ components:
       schema:
         type: string
   schemas:
+    SalesRevision:
+      type: string
+      pattern: ^[a-f0-9]{64}$
+      description: Token opaco del estado leído. Enviar entre comillas en If-Match; no es rowversion.
+    SalesMoney:
+      type: string
+      pattern: ^(0|[1-9][0-9]{0,14})\.[0-9]{4}$
+    SalesTable:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - name
+      - is_active
+      - display_order
+      - availability
+      - active_sale_id
+      - revision
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        name:
+          type: string
+        is_active:
+          type: boolean
+        display_order:
+          type: integer
+          minimum: 0
+        availability:
+          type: string
+          enum:
+          - free
+          - occupied
+          - inactive
+        active_sale_id:
+          anyOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
+        revision:
+          $ref: '#/components/schemas/SalesRevision'
+    SalesItem:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - product_id
+      - name
+      - category
+      - unit_price
+      - quantity
+      - note
+      - line_total
+      - position
+      - removed_at
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        product_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        name:
+          type: string
+        category:
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - name
+          properties:
+            id:
+              $ref: '#/components/schemas/CatalogUlid'
+            name:
+              type: string
+        unit_price:
+          $ref: '#/components/schemas/SalesMoney'
+        quantity:
+          type: integer
+          minimum: 1
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+        line_total:
+          $ref: '#/components/schemas/SalesMoney'
+        position:
+          type: integer
+          minimum: 1
+        removed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    SalesTableCreate:
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          maxLength: 150
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+    SalesTableUpdate:
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      - is_active
+      properties:
+        name:
+          type: string
+          maxLength: 150
+        is_active:
+          type: boolean
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+    SalesOpen:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      allOf:
+        - if:
+            properties:
+              type: {const: table}
+          then:
+            required: [table_id]
+        - if:
+            properties:
+              type: {const: counter}
+          then:
+            not:
+              required: [table_id]
+      properties:
+        type:
+          type: string
+          enum:
+          - counter
+          - table
+        table_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+    SalesAddItem:
+      type: object
+      additionalProperties: false
+      required:
+      - product_id
+      - quantity
+      properties:
+        product_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 100
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+    SalesQuantity:
+      type: object
+      additionalProperties: false
+      required:
+      - quantity
+      properties:
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 100
+    SalesNote:
+      type: object
+      additionalProperties: false
+      required:
+      - note
+      properties:
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+    SalesItemNote:
+      type: object
+      additionalProperties: false
+      required:
+      - note
+      properties:
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 100
+    SalesReason:
+      type: object
+      additionalProperties: false
+      required:
+      - reason_code
+      properties:
+        reason_code:
+          type: string
+          pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+    SalesSummary:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - type
+      - state
+      - table_id
+      - created_by
+      - note
+      - subtotal
+      - discount
+      - total
+      - created_at
+      - updated_at
+      - closed_at
+      - cancelled_at
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        type:
+          type: string
+          enum:
+          - counter
+          - table
+        state:
+          type: string
+          enum:
+          - open
+          - paused
+          - closed
+          - cancelled
+          - reopened
+        table_id:
+          anyOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
+        created_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+        subtotal:
+          $ref: '#/components/schemas/SalesMoney'
+        discount:
+          $ref: '#/components/schemas/SalesMoney'
+        total:
+          $ref: '#/components/schemas/SalesMoney'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        closed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelled_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+    SalesDetail:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - type
+      - state
+      - table_id
+      - created_by
+      - note
+      - subtotal
+      - discount
+      - total
+      - created_at
+      - updated_at
+      - closed_at
+      - cancelled_at
+      - revision
+      - items
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        type:
+          type: string
+          enum:
+          - counter
+          - table
+        state:
+          type: string
+          enum:
+          - open
+          - paused
+          - closed
+          - cancelled
+          - reopened
+        table_id:
+          anyOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
+        created_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        note:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+        subtotal:
+          $ref: '#/components/schemas/SalesMoney'
+        discount:
+          $ref: '#/components/schemas/SalesMoney'
+        total:
+          $ref: '#/components/schemas/SalesMoney'
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        closed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelled_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        revision:
+          $ref: '#/components/schemas/SalesRevision'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SalesItem'
+    SalesTableResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/SalesTable'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SalesDetailResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/SalesDetail'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SalesItemsResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - items
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/SalesItem'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SalesListResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - sales
+          properties:
+            sales:
+              type: array
+              items:
+                $ref: '#/components/schemas/SalesSummary'
+        meta:
+          type: object
+          additionalProperties: false
+          required:
+          - request_id
+          - page
+          - per_page
+          - total
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+            page:
+              type: integer
+              minimum: 1
+            per_page:
+              type: integer
+              enum:
+              - 10
+              - 25
+              - 50
+              - 100
+            total:
+              type: integer
+              minimum: 0
+    SalesTablesResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - tables
+          properties:
+            tables:
+              type: array
+              items:
+                $ref: '#/components/schemas/SalesTable'
+        meta:
+          type: object
+          additionalProperties: false
+          required:
+          - request_id
+          - page
+          - per_page
+          - total
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+            page:
+              type: integer
+              minimum: 1
+            per_page:
+              type: integer
+              enum:
+              - 10
+              - 25
+              - 50
+              - 100
+            total:
+              type: integer
+              minimum: 0
     CatalogUlid:
       type: string
       pattern: '^[0-7][0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{25}$'

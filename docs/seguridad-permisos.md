@@ -30,15 +30,15 @@ Los roles son admin (Administrador), supervisor (Supervisor), cashier (Cajero) y
 | reports.view | Sí | Sí | — | — | Etapa posterior |
 | roles.permissions.manage | Sí | — | — | — | Servicio 1.3a |
 | roles.view | Sí | — | — | — | Servicio 1.3a |
-| sales.cancel | Sí | Sí | — | — | Etapa posterior |
+| sales.cancel | Sí | Sí | — | — | 1.5a: cancelación sin cierre financiero, condicionada a caja |
 | sales.close | Sí | Sí | Sí | — | Etapa posterior |
-| sales.create | Sí | Sí | Sí | Sí | Etapa posterior |
+| sales.create | Sí | Sí | Sí | Sí | 1.5a: apertura condicionada al contrato real de Cash |
 | sales.discounts.apply | Sí | Sí | — | — | Etapa posterior |
-| sales.open.update | Sí | Sí | Sí | Sí | Etapa posterior |
+| sales.open.update | Sí | Sí | Sí | Sí | 1.5a: consumos/notas/pausa, condicionados a caja |
 | sales.reopen | Sí | — | — | — | Etapa posterior |
-| sales.special.authorize | Sí | Sí | — | — | Etapa posterior |
-| sales.view | Sí | Sí | Sí | Sí | Etapa posterior |
-| settings.update | Sí | — | — | — | Etapa posterior |
+| sales.special.authorize | Sí | Sí | — | — | 1.5a: retirada además requiere motivo/aprobación funcional |
+| sales.view | Sí | Sí | Sí | Sí | 1.5a: consultas de ventas/mesas por servicios; sin endpoints |
+| settings.update | Sí | — | — | — | 1.5a: configuración de mesas por servicios, sin UI nueva |
 | settings.view | Sí | — | — | — | Etapa posterior |
 | system.administrative.execute | Sí | — | — | — | Etapa posterior |
 | system.view | Sí | — | — | — | Etapa posterior |
