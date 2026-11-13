@@ -25,6 +25,7 @@ final readonly class SecurityEvent
             'catalog.category.deactivated', 'catalog.category.deleted',
             'catalog.product.created', 'catalog.product.updated', 'catalog.product.price_changed',
             'catalog.product.activated', 'catalog.product.deactivated', 'catalog.product.deleted', 'catalog.product.restored',
+            'catalog.product.image_added', 'catalog.product.image_replaced', 'catalog.product.image_removed',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }

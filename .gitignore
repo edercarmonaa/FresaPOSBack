@@ -5,6 +5,7 @@
 !/.env.production.example
 !/.env.testing.example
 /vendor/
+/public/storage/
 /.tools/
 /.phpunit.cache/
 /.phpunit.result.cache

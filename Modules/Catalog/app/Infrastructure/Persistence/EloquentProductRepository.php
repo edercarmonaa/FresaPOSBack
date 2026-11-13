@@ -95,4 +95,11 @@ final class EloquentProductRepository implements ProductRepository
         return new ProductSnapshot($model->id, $model->category_id, $model->name, $model->description, $model->price,
             $model->is_active, $image, $model->created_at->toISOString(), $model->updated_at->toISOString(), $model->deleted_at?->toISOString());
     }
+
+    public function referencesImage(ImageReference $reference): bool
+    {
+        CatalogQueries::requireTransaction();
+
+        return Product::withTrashed()->where('image_disk', $reference->disk)->where('image_key', $reference->key)->exists();
+    }
 }

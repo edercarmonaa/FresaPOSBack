@@ -3,9 +3,9 @@ info:
   title: FresaPOSBack API
   version: 1.0.0
   description: >-
-    REST v1, autenticación y sesiones de 1.3b/1.3c y catálogo administrativo de 1.4b. Ping y login son públicos.
-    Ventas y aprobación de dispositivos son futuros. No hay carga de imágenes de catálogo en 1.4b.
-    Archivo manual; rutas y referencias internas comprobadas. Validación formal YAML/OpenAPI pendiente.
+    REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
+    Ventas y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
+    Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
 servers:
   - url: http://127.0.0.1:8080/api/v1
     description: Desarrollo local; los servidores de staging y producción quedan pendientes.
@@ -944,6 +944,98 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalError'
+  /catalog/products/{id}/image:
+    post:
+      tags: [Catalog]
+      operationId: catalogProductImageStore
+      summary: Sube o sustituye la imagen principal del producto.
+      description: >-
+        Requiere catalog.products.view y catalog.products.update, identidad activa,
+        contraseña cambiada y acceso vigente. Producto existente no eliminado.
+        Solo JPEG, PNG o WebP de contenido real válido, hasta 5242880 bytes.
+        Se convierte una sola vez a WebP, máximo 1200 píxeles por lado mayor;
+        límites de entrada 8000000 píxeles y 12000 por lado. No admite animaciones.
+        No se aceptan disco, ruta ni actor del cliente. La versión y URL cambian en cada sustitución.
+        Conserva la imagen anterior ante fallo previo al commit; limpieza posterior recuperable.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [image]
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: Archivo original de hasta 5 MiB; se valida MIME real y decodificación, no solo el nombre.
+            encoding:
+              image:
+                contentType: image/jpeg, image/png, image/webp
+      responses:
+        '200':
+          description: Producto con image.url pública y nueva image.version; no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    delete:
+      tags: [Catalog]
+      operationId: catalogProductImageDestroy
+      summary: Retira la imagen principal sin eliminar el producto.
+      description: >-
+        Requiere catalog.products.view y catalog.products.update, acceso vigente
+        y producto no eliminado. Sin cuerpo ni rutas de archivo proporcionadas por el cliente.
+        La referencia se retira en SQL antes de limpiar el archivo; se conservan referencias
+        de otros productos, incluidos los eliminados lógicamente. Idempotente si no hay imagen.
+      security: [{BearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/RequestId'
+        - $ref: '#/components/parameters/CatalogId'
+      responses:
+        '200':
+          description: Producto conservado con image igual a null; no-store y X-Request-Id.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
 components:
   securitySchemes:
     BearerAuth:
@@ -1016,7 +1108,7 @@ components:
       description: >-
         POST y PUT exigen nombre, categoría y precio; campos opcionales omitidos en PUT se conservan.
         La categoría debe existir y estar disponible para nuevas asignaciones.
-        image, image_disk e image_key no se aceptan en 1.4b.
+        image, image_disk e image_key no se aceptan aquí; usar POST dedicado de imagen multipart.
       properties:
         name: {type: string, maxLength: 150}
         description: {type: [string, 'null'], maxLength: 2000}
@@ -1061,7 +1153,7 @@ components:
           type: [object, 'null']
           additionalProperties: false
           required: [url, version]
-          description: Solo URL pública y versión inmutable; sin discos ni rutas de servidor. Sin subida de imágenes.
+          description: Solo URL pública y versión inmutable; sin discos ni rutas de servidor. Administración por endpoint dedicado.
           properties:
             url: {type: string, format: uri-reference}
             version: {$ref: '#/components/schemas/CatalogUlid'}

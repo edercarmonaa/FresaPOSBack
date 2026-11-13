@@ -106,6 +106,7 @@ class ApiConventionsTest extends TestCase
             'api.v1.catalog.categories.update', 'api.v1.catalog.categories.status', 'api.v1.catalog.categories.destroy',
             'api.v1.catalog.products.index', 'api.v1.catalog.products.show', 'api.v1.catalog.products.store',
             'api.v1.catalog.products.update', 'api.v1.catalog.products.status', 'api.v1.catalog.products.destroy', 'api.v1.catalog.products.restore',
+            'api.v1.catalog.products.image.store', 'api.v1.catalog.products.image.destroy',
         ], $routes->map(fn ($route) => $route->getName())->values()->all());
     }
 

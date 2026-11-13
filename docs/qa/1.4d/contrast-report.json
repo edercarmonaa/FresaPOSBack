@@ -1,0 +1,2002 @@
+{
+  "samples": 105,
+  "minimum_text_ratio": 6.42,
+  "below_4_5": [],
+  "measurements": [
+    {
+      "element": "A",
+      "id": "",
+      "text": "Productos",
+      "foreground": [
+        20,
+        71,
+        230,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 6.53,
+      "outline": "none"
+    },
+    {
+      "element": "A",
+      "id": "",
+      "text": "Categorías",
+      "foreground": [
+        20,
+        71,
+        230,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 6.53,
+      "outline": "none"
+    },
+    {
+      "element": "A",
+      "id": "",
+      "text": "Mi cuenta",
+      "foreground": [
+        20,
+        71,
+        230,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 6.53,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Buscar producto",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "INPUT",
+      "id": "",
+      "text": "",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Estado\nTodos\nActivos\nInactivos",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "Todos\nActivos\nInactivos",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Por página\n10\n25\n50\n100",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "10\n25\n50\n100",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Crear producto",
+      "foreground": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "background": [
+        20,
+        71,
+        230,
+        255
+      ],
+      "ratio": 6.83,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Buscar categoría",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "INPUT",
+      "id": "",
+      "text": "",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Categoría\nTodas\nBebidas y especialidades de temporada\nCategoría t",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "Todas\nBebidas y especialidades de temporada\nCategoría temporal 01",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Ordenar por\nNombre\nPrecio",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "Nombre\nPrecio",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Dirección\nAscendente\nDescendente",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "Ascendente\nDescendente",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "LABEL",
+      "id": "",
+      "text": "Vista\nProductos vigentes\nPapelera (solo eliminados)",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "SELECT",
+      "id": "",
+      "text": "Productos vigentes\nPapelera (solo eliminados)",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Imagen",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Producto",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Categoría",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Precio",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Estado",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "TH",
+      "id": "",
+      "text": "Acciones",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        241,
+        245,
+        249,
+        255
+      ],
+      "ratio": 16.28,
+      "outline": "none"
+    },
+    {
+      "element": "P",
+      "id": "",
+      "text": "Descripción extensa de prueba para comprobar el ajuste de texto, ",
+      "foreground": [
+        69,
+        85,
+        108,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 7.58,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "P",
+      "id": "",
+      "text": "Formulario conservado al validar y subir imagen.",
+      "foreground": [
+        69,
+        85,
+        108,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 7.58,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Activar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Editar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Desactivar",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 17.83,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Eliminar",
+      "foreground": [
+        193,
+        0,
+        7,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 6.42,
+      "outline": "none"
+    },
+    {
+      "element": "P",
+      "id": "",
+      "text": "1–25 de 31 · Página 1 de 2",
+      "foreground": [
+        69,
+        85,
+        108,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 7.25,
+      "outline": "none"
+    },
+    {
+      "element": "BUTTON",
+      "id": "",
+      "text": "Siguiente",
+      "foreground": [
+        15,
+        23,
+        43,
+        255
+      ],
+      "background": [
+        248,
+        250,
+        252,
+        255
+      ],
+      "ratio": 17.04,
+      "outline": "none"
+    }
+  ]
+}

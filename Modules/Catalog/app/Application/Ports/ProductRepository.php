@@ -3,6 +3,7 @@
 namespace Modules\Catalog\Application\Ports;
 
 use Modules\Catalog\Contracts\CatalogPage;
+use Modules\Catalog\Contracts\ImageReference;
 use Modules\Catalog\Contracts\ProductQuery;
 use Modules\Catalog\Contracts\ProductSnapshot;
 use Modules\Catalog\Contracts\SaleProductSnapshot;
@@ -22,4 +23,7 @@ interface ProductRepository
     public function search(ProductQuery $query): CatalogPage;
 
     public function forSale(string $id): SaleProductSnapshot;
+
+    /** Incluye productos eliminados lógicamente. Se consulta bajo el lock de coordinación. */
+    public function referencesImage(ImageReference $reference): bool;
 }

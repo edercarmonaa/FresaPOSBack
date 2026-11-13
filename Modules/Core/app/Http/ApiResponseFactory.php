@@ -43,7 +43,8 @@ final class ApiResponseFactory implements ApiResponder
             $payload['errors'] = $errors;
         }
 
-        return $this->response($request, $payload, $status, $this->safeHeaders($headers));
+        // El render de excepciones puede ocurrir fuera del middleware de no-store.
+        return $this->response($request, $payload, $status, $this->safeHeaders($headers) + ['Cache-Control' => 'no-store, private']);
     }
 
     public function normalize(Request $request, Response $response): Response

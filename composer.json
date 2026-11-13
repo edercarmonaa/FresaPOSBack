@@ -28,7 +28,8 @@
         ],
         "test": "@php vendor/phpunit/phpunit/phpunit",
         "lint": "@php vendor/laravel/pint/builds/pint --test",
-        "analyse": "@php vendor/phpstan/phpstan/phpstan analyse --memory-limit=512M"
+        "analyse": "@php vendor/phpstan/phpstan/phpstan analyse --memory-limit=512M",
+        "openapi": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/validate-openapi.ps1"
     },
     "extra": {
         "laravel": {"dont-discover": []},

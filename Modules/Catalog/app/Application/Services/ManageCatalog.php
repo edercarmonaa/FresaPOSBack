@@ -116,7 +116,14 @@ final class ManageCatalog implements CatalogAdministration, CatalogReader
                 $this->availableCategory($values['category_id'] ?? $before->categoryId);
             }
             $record = $this->productRepository->update($before->id, $values);
-            $this->audit('product.updated', $actorId, $record->id, array_keys($values));
+            $otherFields = array_diff(array_keys($values), ['image_disk', 'image_key']);
+            if ($otherFields !== []) {
+                $this->audit('product.updated', $actorId, $record->id, array_values($otherFields));
+            }
+            if ($before->image != $record->image) {
+                $operation = $record->image === null ? 'image_removed' : ($before->image === null ? 'image_added' : 'image_replaced');
+                $this->audit('product.'.$operation, $actorId, $record->id, ['image']);
+            }
             $this->auditPrice($actorId, $before, $record);
 
             return $record;

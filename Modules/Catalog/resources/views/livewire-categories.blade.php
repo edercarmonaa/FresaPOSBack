@@ -11,10 +11,14 @@
     @if($formOpen)
         <form wire:submit="save" class="space-y-4 rounded border border-slate-200 bg-white p-5" aria-label="Formulario de categoría">
             <h2 class="text-lg font-semibold">{{ $editingId ? 'Editar categoría' : 'Nueva categoría' }}</h2>
-            <label class="block">Nombre<input wire:model="name" required maxlength="150" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
-            <label class="block">Descripción<textarea wire:model="description" maxlength="1000" rows="3" class="mt-1 block w-full rounded border border-slate-300 p-2"></textarea></label>
-            <label class="block">Prioridad de visualización<input type="number" wire:model="displayOrder" min="0" max="2147483647" required class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
-            <label class="flex items-center gap-2"><input type="checkbox" wire:model="isActive"> Categoría activa</label>
+            <label class="block">Nombre<input id="category-name" wire:model="name" required maxlength="150" aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" aria-describedby="category-name-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
+            @include('catalog::field-error', ['field' => 'name', 'id' => 'category-name-errors'])
+            <label class="block">Descripción<textarea id="category-description" wire:model="description" maxlength="1000" rows="3" aria-invalid="{{ $errors->has('description') ? 'true' : 'false' }}" aria-describedby="category-description-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></textarea></label>
+            @include('catalog::field-error', ['field' => 'description', 'id' => 'category-description-errors'])
+            <label class="block">Prioridad de visualización<input id="category-order" type="number" wire:model="displayOrder" min="0" max="2147483647" required aria-invalid="{{ $errors->hasAny(['displayOrder', 'display_order']) ? 'true' : 'false' }}" aria-describedby="category-order-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
+            @include('catalog::field-error', ['field' => 'displayOrder', 'aliases' => ['display_order'], 'id' => 'category-order-errors'])
+            <label class="flex items-center gap-2"><input id="category-active" type="checkbox" wire:model="isActive" aria-invalid="{{ $errors->hasAny(['isActive', 'is_active']) ? 'true' : 'false' }}" aria-describedby="category-active-errors"> Categoría activa</label>
+            @include('catalog::field-error', ['field' => 'isActive', 'aliases' => ['is_active'], 'id' => 'category-active-errors'])
             <div class="flex gap-3"><button type="submit" wire:loading.attr="disabled" class="rounded bg-blue-700 px-4 py-2 text-white disabled:opacity-50">Guardar categoría</button><button type="button" wire:click="closeForm" wire:loading.attr="disabled" class="rounded border px-4 py-2">Cancelar</button></div>
         </form>
     @endif

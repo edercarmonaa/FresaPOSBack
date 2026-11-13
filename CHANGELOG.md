@@ -1,5 +1,25 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.4d
+
+- Validación formal OpenAPI 3.1 reproducible con openapi-spec-validator 0.9.0, rutas reales y esquemas de respuestas de aceptación.
+- Tooling Python aislado y fijado para desarrollo; comando composer openapi, sin paquetes nuevos del backend.
+- Corregida pérdida de no-store en errores JSON renderizados por excepciones, manteniendo sobres y códigos existentes.
+- Errores de formularios Catalog asociados a sus inputs mediante ARIA, incluidos aliases de validación del dominio.
+- Cinco casos nuevos de aceptación: ciclo API, permisos/revocación, auditoría UTC, contratos para Sales y accesibilidad del HTML.
+- Cierre local: 273 pruebas / 2454 aserciones; Pint, Larastan nivel 5 y Composer correctos. OpenAPI: 25 operaciones coincidentes y 34 respuestas reales de Catalog, sin errores ni advertencias.
+- Revisión visual completada mediante Chrome headless tras fallar el runtime interactivo: cuatro tamaños, 44 capturas, teclado/foco, carga/vista previa, doble clic y confirmaciones. Datos operativos intactos y fixtures retirados. [Informe de cierre](docs/entrega-1.4d.md).
+
+## [Sin publicar] — Etapa 1.4c
+
+- Imágenes principales opcionales de catálogo: contenido JPEG/PNG/WebP hasta 5 MiB, WebP optimizado con GD, transparencia y ocho orientaciones EXIF.
+- Versiones ULID nuevas por sustitución; URLs mediante Filesystem y referencias disk/key existentes, sin migraciones ni nuevas librerías Composer.
+- Coordinador de imagen/SQL con auditoría centralizada, rollback seguro, limpieza tras commit y journal privado con reconciliación controlada.
+- API multipart POST y DELETE de imagen; formulario Livewire con vista previa privada, permisos, validación y conservación de valores.
+- Extensiones locales GD/EXIF habilitadas y límites PHP documentados; publicación Windows comprobada y reglas Apache preparadas.
+- Validación final: 268 pruebas / 2209 aserciones, Pint, Larastan nivel 5 y Composer correctos; datos y diez archivos protegidos intactos.
+- [Informe técnico](docs/entrega-1.4c.md). No se avanza a 1.4d.
+
 ## [Sin publicar] — Etapa 1.4b
 
 - Trece operaciones REST de categorías/productos con Sanctum, Form Requests, Resources y sobres Core existentes.

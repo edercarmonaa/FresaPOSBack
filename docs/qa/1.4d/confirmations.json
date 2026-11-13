@@ -1,0 +1,22 @@
+﻿[
+    {
+        "type":  "confirm",
+        "message":  "¿Enviar este producto a la papelera? Se conservarán sus referencias históricas."
+    },
+    {
+        "type":  "confirm",
+        "message":  "¿Cambiar el estado de este producto?"
+    },
+    {
+        "type":  "confirm",
+        "message":  "¿Cambiar el estado de este producto?"
+    },
+    {
+        "type":  "confirm",
+        "message":  "¿Enviar este producto a la papelera? Se conservarán sus referencias históricas."
+    },
+    {
+        "type":  "confirm",
+        "message":  "¿Restaurar y activar este producto? Su categoría debe estar disponible."
+    }
+]

@@ -14,4 +14,6 @@ Route::prefix('catalog')->middleware(['auth.no-store', 'auth:sanctum', 'auth.acc
         Route::delete($resource.'/{id}', [$controller, 'destroy'])->whereUlid('id')->name($resource.'.destroy');
     }
     Route::post('products/{id}/restore', [ProductController::class, 'restore'])->whereUlid('id')->name('products.restore');
+    Route::post('products/{id}/image', [ProductController::class, 'uploadImage'])->whereUlid('id')->name('products.image.store');
+    Route::delete('products/{id}/image', [ProductController::class, 'removeImage'])->whereUlid('id')->name('products.image.destroy');
 });

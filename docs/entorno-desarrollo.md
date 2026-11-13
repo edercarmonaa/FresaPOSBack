@@ -32,3 +32,10 @@ Para invocar PHP: `local.cmd php ...`; para Composer: `local.cmd composer ...`. 
 No existe un comando de reinicio destructivo de SQL. Repetir setup es seguro respecto a la base existente; para eliminar datos se requiere una decisión explícita del responsable. Respaldar `.env` y base por separado. Las bases ajenas no se modifican.
 
 `APP_KEY` es secreto y `.env` permanece ignorado. Para Azure se mantienen ejemplos propios con `APP_DEBUG=false`, puerto 1433, credenciales SQL, Encrypt=yes y TrustServerCertificate=no. El cambio no requiere código.
+# Imágenes de catálogo (1.4c)
+
+El PHP portátil del proyecto requiere **GD con JPEG/PNG/WebP y EXIF** además de las extensiones SQL existentes. Las DLL ya incluidas se habilitan en `.tools/php/php.ini`; setup-local.ps1 conserva esta configuración para nuevas instalaciones. No se modifican `.env`, autenticación de Windows ni la conexión SQL. No hace falta una librería de imágenes Composer ni un ejecutable externo.
+
+Valores locales: upload_max_filesize=8M, post_max_size=16M y memory_limit=256M. El límite funcional sigue en 5 MiB; se deja margen al cuerpo multipart y PHP. Reiniciar el proceso del servidor tras cambiar php.ini. Verificar con `local.cmd php --ri gd`, `local.cmd php --ri exif` y `local.cmd php -i`; los requisitos de GD/EXIF se verifican explícitamente y mediante las pruebas, además del check-platform-reqs de los requisitos Composer existentes.
+
+La publicación del disco público en Windows se prepara con `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\publish-catalog-storage.ps1`; comprueba el enlace/junction antes de crear y se detiene si existe otra ubicación o reglas distintas. En Linux/cPanel comprobar primero public/storage y su contenido y usar storage:link o equivalente autorizado. No publicar storage/app/private, donde permanecen los temporales y el journal de recuperación. Reglas Apache, adaptadores remotos y límites del hosting requieren validación propia; ver [informe de imágenes](entrega-1.4c.md).

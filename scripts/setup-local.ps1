@@ -51,11 +51,16 @@ extension=mbstring
 extension=openssl
 extension=zip
 extension=intl
+extension=gd
+extension=exif
 extension=php_sqlsrv_83_nts_x64.dll
 extension=php_pdo_sqlsrv_83_nts_x64.dll
 curl.cainfo="$ca"
 openssl.cafile="$ca"
 date.timezone=America/Mexico_City
+upload_max_filesize=8M
+post_max_size=16M
+memory_limit=256M
 "@
 [IO.File]::WriteAllText((Join-Path $phpDir 'php.ini'), $ini, $utf8)
 

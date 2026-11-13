@@ -4,12 +4,14 @@ namespace Modules\Catalog\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Modules\Catalog\Application\Services\ManageProductImages;
 use Modules\Catalog\Contracts\CatalogAdministration;
 use Modules\Catalog\Contracts\ProductSnapshot;
 use Modules\Catalog\Http\CatalogAccess;
 use Modules\Catalog\Http\CatalogFilters;
 use Modules\Catalog\Http\CatalogPresentation;
 use Modules\Catalog\Http\Requests\CatalogListRequest;
+use Modules\Catalog\Http\Requests\ProductImageRequest;
 use Modules\Catalog\Http\Requests\ProductRequest;
 use Modules\Catalog\Http\Requests\StatusRequest;
 use Modules\Core\Contracts\ApiResponder;
@@ -83,5 +85,22 @@ final class ProductController
         $actor = $this->access->requireAny(['catalog.products.restore'], $request);
 
         return $this->respond($request, $actor, $this->catalog->restoreProduct($actor, $id));
+    }
+
+    public function uploadImage(ProductImageRequest $request, string $id): JsonResponse
+    {
+        $actor = $this->actor($request);
+        $product = app(ManageProductImages::class)->replace($actor, $id, $request->file('image'));
+
+        return $this->respond($request, $actor, $product);
+    }
+
+    public function removeImage(Request $request, string $id): JsonResponse
+    {
+        $actor = $this->actor($request);
+        $this->access->requireAny(['catalog.products.update'], $request);
+        $product = app(ManageProductImages::class)->remove($actor, $id);
+
+        return $this->respond($request, $actor, $product);
     }
 }

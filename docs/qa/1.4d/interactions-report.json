@@ -1,0 +1,345 @@
+{
+  "browser": "Chrome/157.0.8103.51",
+  "screens": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 456,
+      "images": [],
+      "errors": [],
+      "requests": [],
+      "file": "categories-actions-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 482,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "keyboard-focus-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 983,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "product-price-error-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 1241,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "image-upload-loading-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 1208,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Vista previa de la imagen seleccionada"
+        },
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "image-upload-preview-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 1609,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Vista previa de la imagen seleccionada"
+        },
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "save-loading-disabled-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 0,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Bebida de fresa con crema y especialidad de temporada"
+        },
+        {
+          "loaded": true,
+          "alt": "Producto creado desde navegador QA"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "product-created-message-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "page": [
+        375,
+        375
+      ],
+      "scrollY": 448,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Producto creado desde navegador QA"
+        }
+      ],
+      "errors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8082/livewire-4aeeedbb/update",
+          "status": 200
+        }
+      ],
+      "file": "trash-restore-390x844.png"
+    }
+  ],
+  "checks": [
+    {
+      "keyboard_sequence": [
+        {
+          "tag": "A",
+          "text": "Productos",
+          "type": "",
+          "outline": "auto"
+        },
+        {
+          "tag": "A",
+          "text": "Categorías",
+          "type": "",
+          "outline": "auto"
+        },
+        {
+          "tag": "A",
+          "text": "Mi cuenta",
+          "type": "",
+          "outline": "auto"
+        },
+        {
+          "tag": "INPUT",
+          "text": "",
+          "type": "search",
+          "outline": "auto"
+        },
+        {
+          "tag": "SELECT",
+          "text": "TodosActivosInactivos",
+          "type": "select-one",
+          "outline": "auto"
+        },
+        {
+          "tag": "SELECT",
+          "text": "102550100",
+          "type": "select-one",
+          "outline": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Crear producto",
+          "type": "button",
+          "outline": "auto"
+        }
+      ],
+      "tabbed_form_field": "product-description",
+      "price_error_preserves_fields": true,
+      "upload_preview": true,
+      "double_click_submit_disabled": true,
+      "confirmed_activate_delete_restore": true,
+      "dismissed_delete": true
+    }
+  ]
+}

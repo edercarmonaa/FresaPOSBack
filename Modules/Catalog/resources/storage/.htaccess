@@ -1,0 +1,13 @@
+# Copiar solo a la carpeta pública de imágenes, nunca a todo storage/app.
+Options -Indexes -ExecCGI
+<FilesMatch "(?i)^(?![0-7][0-9a-hjkmnp-tv-z]{25}\.webp$).+">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(?i)^[0-7][0-9a-hjkmnp-tv-z]{25}\.webp$">
+    SetHandler default-handler
+    ForceType image/webp
+    <IfModule mod_headers.c>
+        Header set X-Content-Type-Options "nosniff"
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </IfModule>
+</FilesMatch>

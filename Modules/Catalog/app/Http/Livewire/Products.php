@@ -3,15 +3,93 @@
 namespace Modules\Catalog\Http\Livewire;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\Renderless;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Livewire\WithFileUploads;
+use Modules\Catalog\Application\Services\ManageProductImages;
 use Modules\Catalog\Contracts\ProductSnapshot;
 use Modules\Catalog\Http\CatalogAccess;
 use Modules\Catalog\Http\CatalogFilters;
 use Modules\Catalog\Http\CatalogPresentation;
 use Modules\Catalog\Http\CatalogValidation;
+use Modules\Catalog\Http\Resources\ProductResource;
 
 class Products extends CatalogScreen
 {
+    use WithFileUploads {
+        _startUpload as protected startImageUpload;
+        _finishUpload as protected finishImageUpload;
+    }
+
+    #[Renderless]
+    public function _startUpload($name, $fileInfo, $isMultiple)
+    {
+        $this->requireAction('catalog.products.update');
+        abort_unless($name === 'image' && $isMultiple === false, 422);
+        $this->startImageUpload($name, $fileInfo, $isMultiple);
+    }
+
+    public function _finishUpload($name, $tmpPath, $isMultiple, $append = true)
+    {
+        $this->requireAction('catalog.products.update');
+        abort_unless($name === 'image' && $isMultiple === false, 422);
+        $this->finishImageUpload($name, $tmpPath, $isMultiple, $append);
+    }
+
+    public ?TemporaryUploadedFile $image = null;
+
+    #[Locked]
+    public ?string $imagePreview = null;
+
+    #[Locked]
+    public ?string $currentImageUrl = null;
+
+    public function updatedImage(): void
+    {
+        $this->requireAction('catalog.products.update');
+        $this->imagePreview = null;
+        $this->validateOnly('image', ['image' => ['nullable', 'file', 'max:'.intdiv((int) config('catalog.images.max_bytes'), 1024), 'mimes:jpg,jpeg,png,webp']], [
+            'image.max' => 'La imagen no puede superar 5 MB.', 'image.mimes' => 'Solo se admite JPEG, PNG o WebP.',
+        ]);
+        $this->imagePreview = $this->image?->temporaryUrl();
+    }
+
+    public function clearUpload(): void
+    {
+        $this->actor();
+        $temporary = $this->image;
+        $this->image = null;
+        $this->imagePreview = null;
+        if ($temporary !== null) {
+            try {
+                if (! $temporary->delete()) {
+                    Log::warning('Catalog temporary upload cleanup pending.');
+                }
+            } catch (\Throwable $exception) {
+                Log::warning('Catalog temporary upload cleanup pending.', ['exception_type' => $exception::class]);
+            }
+        }
+    }
+
+    public function removeImage(): void
+    {
+        $actor = $this->requireAction('catalog.products.update');
+        abort_if($this->editingId === null, 404);
+        app(ManageProductImages::class)->remove($actor, $this->editingId);
+        $this->clearUpload();
+        $this->currentImageUrl = null;
+        $this->status = 'Imagen eliminada. Los demás campos del formulario se conservan.';
+    }
+
+    public function closeForm(): void
+    {
+        parent::closeForm();
+        $this->clearUpload();
+        $this->currentImageUrl = null;
+    }
+
     public string $categoryId = '';
 
     public string $price = '';
@@ -45,6 +123,8 @@ class Products extends CatalogScreen
     public function create(): void
     {
         $this->requireAction('catalog.products.create');
+        $this->clearUpload();
+        $this->currentImageUrl = null;
         $this->resetErrorBag();
         $this->editingId = $this->originalCategoryId = null;
         $this->name = $this->description = $this->categoryId = $this->price = $this->status = '';
@@ -55,6 +135,8 @@ class Products extends CatalogScreen
     public function edit(string $id): void
     {
         $record = $this->catalog()->product($this->requireAction('catalog.products.update'), $id);
+        $this->clearUpload();
+        $this->currentImageUrl = ProductResource::image($record->image)['url'] ?? null;
         $this->resetErrorBag();
         $this->editingId = $record->id;
         $this->originalCategoryId = $record->categoryId;
@@ -83,7 +165,9 @@ class Products extends CatalogScreen
                 }
             }
             $values = CatalogValidation::data($values, true, $this->editingId);
-            if ($this->editingId === null) {
+            if ($this->image !== null) {
+                app(ManageProductImages::class)->saveProduct($actor, $this->editingId, $values, $this->image);
+            } elseif ($this->editingId === null) {
                 $this->catalog()->createProduct($actor, $values);
             } else {
                 $this->catalog()->updateProduct($actor, $this->editingId, $values);

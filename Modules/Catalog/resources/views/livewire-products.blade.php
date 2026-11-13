@@ -17,16 +17,30 @@
     @if($formOpen)
         <form wire:submit="save" class="space-y-4 rounded border border-slate-200 bg-white p-5" aria-label="Formulario de producto">
             <h2 class="text-lg font-semibold">{{ $editingId ? 'Editar producto' : 'Nuevo producto' }}</h2>
-            <label class="block">Nombre<input wire:model="name" required maxlength="150" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
-            <label class="block">Descripción<textarea wire:model="description" maxlength="2000" rows="3" class="mt-1 block w-full rounded border border-slate-300 p-2"></textarea></label>
-            <label class="block">Categoría (activa para nuevas asignaciones)<select wire:model="categoryId" required class="mt-1 block w-full rounded border border-slate-300 p-2"><option value="">Selecciona una categoría</option>@foreach($activeCategories as $category)<option value="{{ $category->id }}">{{ $category->name }}</option>@endforeach
+            <label class="block">Nombre<input id="product-name" wire:model="name" required maxlength="150" aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" aria-describedby="product-name-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
+            @include('catalog::field-error', ['field' => 'name', 'id' => 'product-name-errors'])
+            <label class="block">Descripción<textarea id="product-description" wire:model="description" maxlength="2000" rows="3" aria-invalid="{{ $errors->has('description') ? 'true' : 'false' }}" aria-describedby="product-description-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></textarea></label>
+            @include('catalog::field-error', ['field' => 'description', 'id' => 'product-description-errors'])
+            <label class="block">Categoría (activa para nuevas asignaciones)<select id="product-category" wire:model="categoryId" required aria-invalid="{{ $errors->hasAny(['categoryId', 'category_id']) ? 'true' : 'false' }}" aria-describedby="product-category-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"><option value="">Selecciona una categoría</option>@foreach($activeCategories as $category)<option value="{{ $category->id }}">{{ $category->name }}</option>@endforeach
                 @if($originalCategory && !collect($activeCategories)->contains('id', $originalCategory->id))<option value="{{ $originalCategory->id }}">{{ $originalCategory->name }} (actual)</option>@endif
             </select></label>
+            @include('catalog::field-error', ['field' => 'categoryId', 'aliases' => ['category_id'], 'id' => 'product-category-errors'])
             <p class="text-sm text-slate-600">Usa «Buscar categoría» para acotar las opciones de asignación.</p>
-            <label class="block">Precio<input type="text" inputmode="decimal" wire:model="price" required placeholder="0.0000" aria-describedby="price-help" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
+            <label class="block">Precio<input id="product-price" type="text" inputmode="decimal" wire:model="price" required placeholder="0.0000" aria-invalid="{{ $errors->has('price') ? 'true' : 'false' }}" aria-describedby="price-help product-price-errors" class="mt-1 block w-full rounded border border-slate-300 p-2"></label>
+            @include('catalog::field-error', ['field' => 'price', 'id' => 'product-price-errors'])
             <p id="price-help" class="text-sm text-slate-600">Punto decimal, hasta 4 decimales y sin separadores de miles.</p>
-            @if(!$editingId || auth('web')->user()->can('catalog.products.deactivate'))<label class="flex items-center gap-2"><input type="checkbox" wire:model="isActive"> Producto activo</label>@endif
-            <p class="text-sm text-slate-600">Las imágenes existentes se conservan. Su carga estará disponible en una entrega posterior.</p>
+            @if(!$editingId || auth('web')->user()->can('catalog.products.deactivate'))<label class="flex items-center gap-2"><input id="product-active" type="checkbox" wire:model="isActive" aria-invalid="{{ $errors->hasAny(['isActive', 'is_active']) ? 'true' : 'false' }}" aria-describedby="product-active-errors"> Producto activo</label>
+                @include('catalog::field-error', ['field' => 'isActive', 'aliases' => ['is_active'], 'id' => 'product-active-errors'])
+            @endif
+            @can('catalog.products.update')
+                <label class="block">Imagen principal (opcional)<input id="product-image" type="file" wire:model="image" accept="image/jpeg,image/png,image/webp" class="mt-1 block w-full rounded border border-slate-300 p-2" aria-invalid="{{ $errors->has('image') ? 'true' : 'false' }}" aria-describedby="image-help product-image-errors"></label>
+                @include('catalog::field-error', ['field' => 'image', 'id' => 'product-image-errors'])
+                <p id="image-help" class="text-sm text-slate-600">JPEG, PNG o WebP, máximo 5 MB. Se optimiza al guardar. Seleccionar otra imagen sustituirá la actual.</p>
+                @if($imagePreview)<img src="{{ $imagePreview }}" alt="Vista previa de la imagen seleccionada" class="h-40 w-40 rounded object-contain"><button type="button" wire:click="clearUpload" wire:loading.attr="disabled" class="rounded border px-3 py-2">Descartar selección</button>
+                @elseif($currentImageUrl)<img src="{{ $currentImageUrl }}" alt="Imagen actual de {{ $name }}" class="h-40 w-40 rounded object-contain">@endif
+                @if($currentImageUrl && $editingId)<button type="button" wire:click="removeImage" wire:confirm="¿Eliminar la imagen de este producto? Los otros campos del formulario no se guardarán con esta acción." wire:loading.attr="disabled" class="rounded border px-3 py-2 text-red-700">Eliminar imagen</button>@endif
+                <span wire:loading wire:target="image" role="status">Subiendo imagen…</span>
+            @endcan
             <div class="flex gap-3"><button type="submit" wire:loading.attr="disabled" class="rounded bg-blue-700 px-4 py-2 text-white disabled:opacity-50">Guardar producto</button><button type="button" wire:click="closeForm" wire:loading.attr="disabled" class="rounded border px-4 py-2">Cancelar</button></div>
         </form>
     @endif
