@@ -1,0 +1,26 @@
+{
+  "browser": "Chrome/157.0.8103.51",
+  "fixture_database": "fresapos_test",
+  "screens": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "session-expired-390x844.png"
+    }
+  ],
+  "checks": []
+}

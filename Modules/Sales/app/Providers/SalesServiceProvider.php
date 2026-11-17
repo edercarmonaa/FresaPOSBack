@@ -3,6 +3,7 @@
 namespace Modules\Sales\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Modules\Cash\Contracts\ActiveCashSession;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
@@ -16,6 +17,8 @@ use Modules\Sales\Contracts\SalesOperations;
 use Modules\Sales\Domain\CashUnavailable;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SalesDependencyUnavailable;
+use Modules\Sales\Http\Livewire\PointOfSale;
+use Modules\Sales\Http\Middleware\PosAccess;
 use Modules\Sales\Infrastructure\GlobalQuantityLimits;
 use Modules\Sales\Infrastructure\Persistence\EloquentSalesStore;
 use Modules\Sales\Infrastructure\UnavailableCancellationApproval;
@@ -41,6 +44,8 @@ class SalesServiceProvider extends ModuleServiceProvider
     public function boot(): void
     {
         parent::boot();
+        Livewire::component('sales.pos', PointOfSale::class);
+        Livewire::addPersistentMiddleware([PosAccess::class]);
         $this->app->make(ApiExceptionMappings::class)->register(SalesConflict::class, ApiCode::CONFLICT);
         $this->app->make(ApiExceptionMappings::class)->register(SalesDependencyUnavailable::class, ApiCode::SERVICE_UNAVAILABLE);
         $this->app->make(ApiExceptionMappings::class)->register(CashUnavailable::class, ApiCode::SERVICE_UNAVAILABLE);

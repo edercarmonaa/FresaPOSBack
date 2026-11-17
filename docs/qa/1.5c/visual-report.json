@@ -1,0 +1,458 @@
+{
+  "browser": "Chrome/157.0.8103.51",
+  "fixture_database": "fresapos_test",
+  "screens": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "counter-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "catalog-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "image-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "sale-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "tables-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "images": [],
+      "smallButtons": 0,
+      "file": "empty-1440x900.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "counter-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "catalog-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "image-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "sale-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "tables-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "images": [],
+      "smallButtons": 0,
+      "file": "empty-1024x768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "counter-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "catalog-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "image-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "sale-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "tables-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "images": [],
+      "smallButtons": 0,
+      "file": "empty-768x1024.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "counter-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "catalog-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "image-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "sale-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [
+        {
+          "alt": "Fresa con crema de temporada",
+          "loaded": true
+        }
+      ],
+      "smallButtons": 0,
+      "file": "tables-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "images": [],
+      "smallButtons": 0,
+      "file": "empty-390x844.png"
+    }
+  ],
+  "checks": [
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "keyboard_focus_trapped": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "keyboard_focus_trapped": true
+    }
+  ]
+}

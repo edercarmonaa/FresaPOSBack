@@ -20,6 +20,7 @@ final readonly class ProductQuery
         public string $direction = 'asc',
         public int $page = 1,
         public int $perPage = 20,
+        public bool $availableForSale = false,
     ) {
         $this->name = CatalogText::normalize($name, 100, false);
         $this->categoryId = $categoryId === null ? null : CatalogText::id($categoryId);

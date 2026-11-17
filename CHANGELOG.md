@@ -1,5 +1,14 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5c
+
+- Punto de venta Web en /pos con Blade/Livewire, navegación y empleado activo; catálogo paginado, búsqueda/categorías e imágenes.
+- Mostrador abierto/pausado, mesas y panel de venta con importes históricos; formularios delegados a Sales, sin carrito ni cálculos financieros de navegador.
+- Revisión atómica existente, bloqueo de objetivos del snapshot, sesión web/CSRF/PIN y permisos actuales. Apertura y edición siguen condicionadas a Cash; idempotencia y motivos no se simulan.
+- Diseño de escritorio/tablets/móvil con panel táctil, foco accesible, avisos de conflicto/conexión/sesión y conservación de notas.
+- Pruebas SQL/Livewire y revisión real en Chrome con 29 capturas privadas de datos de fixture, publicadas en docs/qa/1.5c.
+- [Informe y límites operativos](docs/entrega-1.5c.md). Sin nuevas tablas, pagos, cierres, commits o avance a 1.5d.
+
 ## [Sin publicar] — Etapa 1.5b
 
 - API de Sales: 17 operaciones de mesas, consulta de ventas/líneas, cantidades, notas, pausa/recuperación y cancelación no financiera condicionada.

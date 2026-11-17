@@ -64,6 +64,10 @@ final class EloquentProductRepository implements ProductRepository
         $builder = Product::query();
         CatalogQueries::deleted($builder, $query->deleted);
         CatalogQueries::names($builder, $query->name);
+        if ($query->availableForSale) {
+            $builder->where('is_active', true)->whereNull('deleted_at')
+                ->whereHas('category', fn ($category) => $category->where('is_active', true)->whereNull('deleted_at'));
+        }
         if ($query->categoryId !== null) {
             $builder->where('category_id', $query->categoryId);
         }
