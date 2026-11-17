@@ -39,6 +39,11 @@ final class RecordSecurityEvent
             $values['change_data'] = json_encode(['cash_session_id' => $event->cashMovement->cashSessionId,
                 'movement_type' => $event->cashMovement->type, 'amount' => $event->cashMovement->amount], JSON_THROW_ON_ERROR);
         }
+        if ($event->checkout !== null) {
+            $values['change_data'] = json_encode(['cash_session_id' => $event->checkout->cashSessionId, 'folio' => $event->checkout->folio,
+                'total' => $event->checkout->total, 'cash_applied' => $event->checkout->cashApplied, 'payment_count' => $event->checkout->paymentCount,
+                'sale_closed' => true], JSON_THROW_ON_ERROR);
+        }
         DB::table('audit_security_events')->insert($values);
     }
 }

@@ -10,6 +10,7 @@ use Modules\Sales\Contracts\AddProduct;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
 use Modules\Sales\Contracts\OpenSale;
+use Modules\Sales\Contracts\SaleCheckout;
 use Modules\Sales\Contracts\SaleQuery;
 use Modules\Sales\Contracts\SaleSnapshot;
 use Modules\Sales\Contracts\SalesOperations;
@@ -29,7 +30,7 @@ final class SaleController
         $data = $request->validated();
         $page = $this->sales->sales($request->actor(), new SaleQuery(isset($data['state']) ? SaleState::from($data['state']) : null,
             isset($data['type']) ? SaleType::from($data['type']) : null, $data['table_id'] ?? null, $data['created_by'] ?? null,
-            (int) ($data['page'] ?? 1), (int) ($data['per_page'] ?? 25), $data['date'] ?? null, $data['order'] ?? 'desc'));
+            (int) ($data['page'] ?? 1), (int) ($data['per_page'] ?? 25), $data['date'] ?? null, $data['order'] ?? 'desc', $data['folio'] ?? null));
 
         return $this->responses->success($request, ['sales' => array_map(fn ($sale) => (new SaleResource($sale))->resolve($request), $page->items)],
             ['page' => $page->page, 'per_page' => $page->perPage, 'total' => $page->total]);
@@ -38,6 +39,12 @@ final class SaleController
     public function show(SalesRequest $request, string $id): JsonResponse
     {
         return $this->respond($request, $this->sales->sale($request->actor(), $id));
+    }
+
+    public function checkout(SalesRequest $request, string $id): JsonResponse
+    {
+        return $this->respond($request, app(SaleCheckout::class)->confirm($request->actor(), $id,
+            $request->validated('payments'), (string) $request->header('Idempotency-Key'), $request->header('If-Match')));
     }
 
     public function items(SalesRequest $request, string $id): JsonResponse

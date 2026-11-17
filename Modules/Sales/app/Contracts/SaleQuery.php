@@ -14,7 +14,11 @@ final readonly class SaleQuery
         public ?string $tableId = null, public ?string $createdBy = null,
         public int $page = 1, public int $perPage = 25,
         public ?string $date = null, public string $order = 'desc',
+        public ?string $folio = null,
     ) {
+        if ($folio !== null && preg_match('/\A[0-9]{12}\z/', $folio) !== 1) {
+            throw new InvalidArgumentException('Folio inválido.');
+        }
         if ($page < 1 || $page > 1000000 || ! in_array($perPage, [10, 25, 50, 100], true)) {
             throw new InvalidArgumentException('Paginación no permitida.');
         }

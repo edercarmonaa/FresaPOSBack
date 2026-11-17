@@ -5,7 +5,7 @@ namespace Modules\Sales\Infrastructure\Persistence\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
 
-/** Persistencia reservada. Ningún transporte ni servicio operativo crea pagos. */
+/** Persistencia financiera exclusiva del coordinador de checkout. */
 final class SalePayment extends Model
 {
     use HasUlids;

@@ -1,6 +1,6 @@
 # FresaPOSBack
 
-Etapa actual: **1.5d.2b, métodos de pago y movimientos de efectivo, aceptada localmente**. [Caja](http://127.0.0.1:8080/cash) y [POS](http://127.0.0.1:8080/pos), con sesión y permisos. [Informe y límites](docs/entrega-1.5d.2b.md), [evidencia visual](docs/qa/1.5d.2b/README.md). Entradas/salidas autorizadas, saldo exacto e idempotencia durable; métodos efectivo, tarjeta, transferencia y otro autorizado. Sales conserva las operaciones habilitadas en [1.5d.2a](docs/entrega-1.5d.2a.md). Los cobros definitivos, folios y cierres permanecen bloqueados; retirada/cancelación requieren motivos autorizados.
+Etapa actual: **1.5d.3, cobro transaccional y folios diarios, aceptada localmente**. [POS](http://127.0.0.1:8080/pos) y [Caja](http://127.0.0.1:8080/cash), con sesión y permisos. [Informe y límites](docs/entrega-1.5d.3.md), [evidencia visual](docs/qa/1.5d.3/README.md). Cobro en efectivo, tarjeta, transferencia, otro autorizado y mezclas; cambio exacto, cierre de venta atómico y folio diario según America/Mexico_City. Caja integra el efectivo neto confirmado, sin duplicarlo como movimiento manual. Descuentos operativos, reaperturas/reembolsos, tickets, arqueo y cierre de caja siguen pendientes; retirada/cancelación requieren motivos autorizados.
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Interfaz Blade/Livewire sin Node, npm ni Vite.
 

@@ -86,7 +86,10 @@
             @else
                 <div class="pos-ticket-empty"><span aria-hidden="true">＋</span><h3>Selecciona una venta</h3><p>Consulta una venta de mostrador o elige una mesa ocupada. Aquí verás sus productos e importes.</p></div>
             @endif
-            <div class="pos-future pos-spaced"><h3>Próximas operaciones</h3><p id="pos-future-help" class="pos-muted pos-small">Cobros, cierre, descuentos y tickets requieren etapas posteriores. Retirar o cancelar requiere motivos autorizados.</p><div class="pos-future-buttons">@foreach(['Cobrar','Cerrar venta','Descuento especial','Cancelar venta','Retirar línea','Imprimir ticket'] as $action)<button type="button" disabled aria-describedby="pos-future-help">{{ $action }}</button>@endforeach</div></div>
+            @if($saleId && in_array('sales.close', $actor->permissions, true) && in_array('cash.view', $actor->permissions, true) && \Illuminate\Support\Facades\Schema::hasTable('sales_daily_sequences'))
+                <livewire:sales.checkout :sale-id="$saleId" :key="'checkout-'.$saleId" />
+            @endif
+            <div class="pos-future pos-spaced"><h3>Próximas operaciones</h3><p id="pos-future-help" class="pos-muted pos-small">Descuentos, correcciones financieras y tickets requieren etapas posteriores. Retirar o cancelar requiere motivos autorizados.</p><div class="pos-future-buttons">@foreach(['Descuento especial','Cancelar venta','Retirar línea','Imprimir ticket'] as $action)<button type="button" disabled aria-describedby="pos-future-help">{{ $action }}</button>@endforeach</div></div>
         </aside>
     </div>
     <button type="button" class="pos-mobile-ticket" x-ref="ticketButton" @click="ticket = true; $nextTick(() => $refs.panelHeading?.focus())" :aria-expanded="ticket" aria-controls="pos-sale-title">Ver venta actual <strong>${{ $currentSale['total'] ?? '0.0000' }}</strong></button>

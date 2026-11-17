@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Modules\Cash\Contracts\CashSessionUnavailable;
 use Modules\Catalog\Contracts\CatalogAdministration;
@@ -222,6 +223,15 @@ class PointOfSale extends Component
     public function refreshSale(): void
     {
         $this->resolveIntent();
+    }
+
+    #[On('sale-checked-out')]
+    public function checkoutFinished(string $saleId): void
+    {
+        $this->actor();
+        if ($this->saleId === $saleId) {
+            $this->refreshSale();
+        }
     }
 
     public function resolveIntent(): void

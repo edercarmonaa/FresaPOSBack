@@ -57,6 +57,11 @@ class Sale extends Model
 
     protected static function booted(): void
     {
+        static::updating(function (Sale $sale): void {
+            if ($sale->getRawOriginal('folio') !== null) {
+                throw new LogicException('El cierre financiero es inmutable.');
+            }
+        });
         static::deleting(fn () => throw new LogicException('No se permite eliminar físicamente ventas.'));
     }
 }

@@ -7,6 +7,8 @@ use Modules\Cash\Application\Services\ManagePaymentMethods;
 use Modules\Cash\Application\Services\ProvisionCashRegister;
 use Modules\Cash\Contracts\CashMovements;
 use Modules\Cash\Contracts\CashOperations;
+use Modules\Cash\Contracts\ConfirmedSalesCash;
+use Modules\Sales\Infrastructure\Persistence\ConfirmedCashIncome;
 use Modules\Users\Application\BootstrapAdministrator;
 use Modules\Users\Contracts\IdentityAccess;
 
@@ -23,6 +25,8 @@ abstract class FinanceSqlServerTestCase extends CashSqlServerTestCase
         parent::setUp();
         $this->paymentSchema = require base_path('Modules/Sales/database/migrations/2026_11_17_000011_create_prepared_sale_payments.php');
         $this->database->transaction(fn () => $this->paymentSchema->up());
+        $this->app->forgetInstance(ConfirmedSalesCash::class);
+        $this->app->bind(ConfirmedSalesCash::class, ConfirmedCashIncome::class);
         $this->actor = app(BootstrapAdministrator::class)->create('Finance fixture', 'finance.fixture', 'FinanceInitial!123');
         app(IdentityAccess::class)->changePassword($this->actor, 'FinanceInitial!123', 'FinanceChanged!123');
         app(ManagePaymentMethods::class)->provision();

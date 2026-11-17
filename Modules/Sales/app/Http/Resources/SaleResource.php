@@ -26,6 +26,13 @@ class SaleResource extends JsonResource
             $result['revision'] = SalesRevision::of($this->sale);
             $result['items'] = array_map(fn ($item) => (new SaleItemResource($item))->resolve($request), $this->sale->items);
         }
+        if ($sale->folio !== null) {
+            $result['folio'] = $sale->folio;
+            $result['closed_by'] = $sale->closedBy;
+            if ($this->sale instanceof SaleSnapshot) {
+                $result['payments'] = $this->sale->payments;
+            }
+        }
 
         return $result;
     }

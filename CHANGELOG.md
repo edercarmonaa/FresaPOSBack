@@ -1,5 +1,16 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5d.3
+
+- Checkout transaccional con Core, pagos confirmados, cierre y auditoría atómicos, UUID v4 y revisión vigente.
+- Efectivo/cambio, tarjeta, transferencia, otro autorizado y mezclas exactas; efectivo neto integrado en Cash sin entradas manuales duplicadas.
+- Folios globales diarios YYYYMMDD0001 con contador SQL transaccional y zona comercial America/Mexico_City.
+- Historial por folio, checkout REST y panel dentro del POS existente; conservación de contexto y recuperación de respuesta perdida.
+- Suite completa: **547 pruebas / 5831 aserciones**; doce carreras SQL independientes, deadlock 1205 recuperado y 32 capturas Chrome aisladas.
+- OpenAPI: 52 operaciones y 281 respuestas reales validadas, cero errores/advertencias.
+- Respaldo verificado, migración 000012 aplicada y 23 tablas de datos anteriores intactas respecto al despliegue, conservando actividad operativa previa.
+- [Informe](docs/entrega-1.5d.3.md). Sin arqueo/cierre de caja, reembolsos, tickets, commits/pushes o avance a 1.5d.4.
+
 ## [Sin publicar] — Etapa 1.5d.2b
 
 - Cuatro métodos persistentes con ULID estable, provisión idempotente y desactivación con historial.

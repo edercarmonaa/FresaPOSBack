@@ -1,0 +1,22 @@
+{
+    "database": "fresapos",
+    "unchanged_prior_data_tables": 23,
+    "changed_prior_data_tables": [],
+    "comparison": "Original column projection, including historical sale values",
+    "prior_migrations_intact": true,
+    "protected_files": 10,
+    "changed_protected_files": [],
+    "new_tables": [
+        "sales_daily_sequences"
+    ],
+    "operative_tables": 25,
+    "sales": 2,
+    "items": 3,
+    "closed_sales": 0,
+    "payments": 0,
+    "movements": 2,
+    "sequences": 0,
+    "sale_closed_by_null": true,
+    "new_fk_trusted": 2,
+    "new_triggers_enabled": 3
+}

@@ -33,11 +33,14 @@ class SalesRequest extends FormRequest
         $operation = $this->operation();
         $permission = in_array($operation, ['index', 'show', 'items'], true) ? 'sales.view'
             : ($this->tables() ? 'settings.update' : match ($operation) {
-                'store' => 'sales.create', 'cancel' => 'sales.cancel', default => 'sales.open.update',
+                'store' => 'sales.create', 'cancel' => 'sales.cancel', 'checkout' => 'sales.close', default => 'sales.open.update',
             });
         $actor = app(IdentityAccess::class)->inspect($this->actor());
         $policy = app(SalesPolicy::class);
         if ($actor === null || ! $policy->allows($actor, $permission)) {
+            return false;
+        }
+        if ($operation === 'checkout' && (! $policy->allows($actor, 'sales.view') || ! $policy->allows($actor, 'cash.view'))) {
             return false;
         }
 
@@ -68,7 +71,7 @@ class SalesRequest extends FormRequest
             return $page + ($this->tables()
                 ? ['search' => ['nullable', 'string', 'max:100'], 'is_active' => ['sometimes', 'boolean'], 'is_occupied' => ['sometimes', 'boolean']]
                 : ['state' => ['sometimes', Rule::enum(SaleState::class)], 'type' => ['sometimes', 'in:counter,table'], 'table_id' => ['sometimes', 'ulid'],
-                    'created_by' => ['sometimes', 'ulid'], 'date' => ['sometimes', 'date_format:Y-m-d'], 'order' => ['sometimes', 'in:asc,desc']]);
+                    'created_by' => ['sometimes', 'ulid'], 'date' => ['sometimes', 'date_format:Y-m-d'], 'order' => ['sometimes', 'in:asc,desc'], 'folio' => ['sometimes', 'regex:/\A[0-9]{12}\z/']]);
         }
         if ($this->tables()) {
             return match ($this->operation()) {
@@ -79,6 +82,9 @@ class SalesRequest extends FormRequest
         }
 
         return match ($this->operation()) {
+            'checkout' => ['payments' => ['present', 'array', 'list', 'max:20'], 'payments.*' => ['required', 'array:payment_method_id,applied_amount,received_cash,reference'],
+                'payments.*.payment_method_id' => ['required', 'ulid'], 'payments.*.applied_amount' => ['required', 'string', 'max:20'],
+                'payments.*.received_cash' => ['sometimes', 'nullable', 'string', 'max:20'], 'payments.*.reference' => ['sometimes', 'nullable', 'string', 'max:64']],
             'store' => ['type' => ['required', 'in:counter,table'], 'table_id' => ['required_if:type,table', 'prohibited_if:type,counter', 'ulid'], 'note' => ['sometimes', 'nullable', 'string', 'max:150']],
             'addItem' => ['product_id' => ['required', 'ulid'], 'quantity' => $quantity, 'note' => ['sometimes', 'nullable', 'string', 'max:100']],
             'quantity' => ['quantity' => $quantity], 'itemNote', 'note' => ['note' => $note],
@@ -92,7 +98,7 @@ class SalesRequest extends FormRequest
             if (array_diff(array_keys($this->all()), array_keys($this->rules())) !== []) {
                 $validator->errors()->add('data', 'La solicitud contiene campos no permitidos.');
             }
-            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume'], true) && ! $this->tables()
+            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume', 'checkout'], true) && ! $this->tables()
                 && $validator->errors()->isEmpty()) {
                 OperationIntent::key((string) $this->header('Idempotency-Key'));
             }

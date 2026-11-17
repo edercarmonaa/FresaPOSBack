@@ -17,6 +17,7 @@ Route::prefix('sales')->middleware(['auth.no-store', 'auth:sanctum', 'auth.acces
     Route::get('{id}', [SaleController::class, 'show'])->whereUlid('id')->name('show');
     Route::get('{id}/items', [SaleController::class, 'items'])->whereUlid('id')->name('items');
     Route::post('{id}/items', [SaleController::class, 'addItem'])->whereUlid('id')->name('items.store');
+    Route::post('{id}/checkout', [SaleController::class, 'checkout'])->whereUlid('id')->name('checkout');
     Route::patch('{id}/items/{itemId}/quantity', [SaleController::class, 'quantity'])->whereUlid(['id', 'itemId'])->name('items.quantity');
     Route::patch('{id}/items/{itemId}/note', [SaleController::class, 'itemNote'])->whereUlid(['id', 'itemId'])->name('items.note');
     Route::delete('{id}/items/{itemId}', [SaleController::class, 'removeItem'])->whereUlid(['id', 'itemId'])->name('items.destroy');

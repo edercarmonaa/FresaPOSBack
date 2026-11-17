@@ -1,0 +1,57 @@
+﻿[
+    {
+        "method":  "GET",
+        "path":  "/",
+        "status":  200
+    },
+    {
+        "method":  "GET",
+        "path":  "/up",
+        "status":  200
+    },
+    {
+        "method":  "GET",
+        "path":  "/api/v1/ping",
+        "status":  200
+    },
+    {
+        "method":  "GET",
+        "path":  "/login",
+        "status":  200
+    },
+    {
+        "method":  "GET",
+        "path":  "/livewire-ba99715c/livewire.js",
+        "status":  200
+    },
+    {
+        "method":  "GET",
+        "path":  "/pos",
+        "status":  302
+    },
+    {
+        "method":  "GET",
+        "path":  "/cash",
+        "status":  302
+    },
+    {
+        "method":  "GET",
+        "path":  "/admin/catalog/products",
+        "status":  302
+    },
+    {
+        "method":  "GET",
+        "path":  "/api/v1/sales",
+        "status":  401
+    },
+    {
+        "method":  "GET",
+        "path":  "/api/v1/cash/movements",
+        "status":  401
+    },
+    {
+        "method":  "POST",
+        "path":  "/api/v1/sales/{id}/checkout",
+        "status":  401
+    }
+]

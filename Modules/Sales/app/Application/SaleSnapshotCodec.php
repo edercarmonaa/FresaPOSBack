@@ -17,7 +17,7 @@ final class SaleSnapshotCodec
         $sale['type'] = $snapshot->sale->type->value;
         $sale['state'] = $snapshot->sale->state->value;
 
-        return ['sale' => $sale, 'items' => array_map(get_object_vars(...), $snapshot->items)];
+        return ['sale' => $sale, 'items' => array_map(get_object_vars(...), $snapshot->items), 'payments' => $snapshot->payments];
     }
 
     public static function decode(array $data): SaleSnapshot
@@ -26,6 +26,6 @@ final class SaleSnapshotCodec
         $sale['type'] = SaleType::from($sale['type']);
         $sale['state'] = SaleState::from($sale['state']);
 
-        return new SaleSnapshot(new SaleSummary(...$sale), array_map(fn ($item) => new SaleItemSnapshot(...$item), $data['items']));
+        return new SaleSnapshot(new SaleSummary(...$sale), array_map(fn ($item) => new SaleItemSnapshot(...$item), $data['items']), $data['payments'] ?? []);
     }
 }

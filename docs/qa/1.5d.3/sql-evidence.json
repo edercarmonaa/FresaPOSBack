@@ -1,0 +1,63 @@
+{
+    "database": "fresapos_test",
+    "fixture_only": true,
+    "sales": 8,
+    "closed_sales": 5,
+    "folios": [
+        "202611170001",
+        "202611170002",
+        "202611170003",
+        "202611170004",
+        "202611170005"
+    ],
+    "payments": 6,
+    "payment_methods": [
+        {
+            "method_code": "card",
+            "applied_amount": "180.0000",
+            "received_cash": null,
+            "change_cash": null
+        },
+        {
+            "method_code": "card",
+            "applied_amount": "100.0000",
+            "received_cash": null,
+            "change_cash": null
+        },
+        {
+            "method_code": "cash",
+            "applied_amount": "180.0000",
+            "received_cash": "180.0000",
+            "change_cash": ".0000"
+        },
+        {
+            "method_code": "cash",
+            "applied_amount": "180.0000",
+            "received_cash": "200.0000",
+            "change_cash": "20.0000"
+        },
+        {
+            "method_code": "cash",
+            "applied_amount": "80.0000",
+            "received_cash": "100.0000",
+            "change_cash": "20.0000"
+        },
+        {
+            "method_code": "transfer",
+            "applied_amount": "180.0000",
+            "received_cash": null,
+            "change_cash": null
+        }
+    ],
+    "manual_movements": 0,
+    "balance": {
+        "cash_session_id": "01m7nj33q88tczr6jnwcpt6xjj",
+        "opening_fund": "100.0000",
+        "cash_in": "0.0000",
+        "cash_out": "0.0000",
+        "confirmed_sales_cash": "440.0000",
+        "expected_cash": "540.0000"
+    },
+    "checkout_audits": 5,
+    "table_occupied": false
+}

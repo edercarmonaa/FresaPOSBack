@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: >-
     REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
-    Sales 1.5d.2a protege apertura y modificaciones con Cash real e idempotencia durable; motivos y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
+    Sales 1.5d.3 incorpora checkout transaccional, pagos mixtos y folios diarios con Cash real e idempotencia durable. Motivos y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
     Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
 servers:
   - url: http://127.0.0.1:8080/api/v1
@@ -18,9 +18,9 @@ tags:
   - name: Catalog
     description: Categorías y productos administrativos; permisos actuales y precios decimales exactos.
   - name: Sales
-    description: Mesas, consulta y operaciones no financieras sobre ventas; dependencias explícitas.
+    description: Mesas, operaciones de venta, checkout financiero e historial autorizado por folio.
   - name: Cash
-    description: Caja única, apertura y consulta autorizadas; sin pagos ni cierre.
+    description: Caja única, apertura, métodos de pago, movimientos y saldo con efectivo neto confirmado; sin cierre de caja.
 paths:
   /operations/{idempotencyKey}/status:
     get:
@@ -1852,6 +1852,13 @@ paths:
           - 50
           - 100
           default: 25
+      - name: folio
+        in: query
+        required: false
+        schema:
+          type: string
+          pattern: ^[0-9]{12}$
+        description: Coincidencia exacta de folio histórico.
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -2672,6 +2679,88 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SalesReason'
+  /sales/{id}/checkout:
+    post:
+      tags:
+      - Sales
+      operationId: salesCheckout
+      summary: Confirma pagos, asigna folio diario y cierra la venta atómicamente.
+      description: Requiere sales.view, sales.close y cash.view vigentes; other exige
+        cash.administrative.execute. Venta open con líneas válidas y sesión Cash original
+        abierta. Total y cambio calculados en el servidor; suma aplicada exacta. UUID
+        v4 e If-Match vigentes. Replay devuelve el cierre original, incluso con métodos
+        posteriormente inactivos, tras reautorizar. Cero pagos solo para descuento total
+        con autorización previa; su aplicación operativa sigue pendiente. Folio YYYYMMDD0001
+        según POS_BUSINESS_TIMEZONE; límite diario 9999. Sin reaperturas, reembolsos
+        ni cierre de caja.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
+      responses:
+        '200':
+          description: Venta cerrada y pagos confirmados; mismo resultado para replay,
+            sin duplicar efectos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesCheckout'
 components:
   securitySchemes:
     BearerAuth:
@@ -3312,6 +3401,83 @@ components:
         reason_code:
           type: string
           pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+    SalesPayment:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - sale_id
+      - cash_session_id
+      - payment_method_id
+      - method_code
+      - applied_amount
+      - received_cash
+      - change_cash
+      - reference
+      - created_by
+      - confirmed_at
+      - status
+      properties:
+        id: &checkout2_id001
+          $ref: '#/components/schemas/CatalogUlid'
+        sale_id: *checkout2_id001
+        cash_session_id: *checkout2_id001
+        payment_method_id: *checkout2_id001
+        method_code:
+          type: string
+          enum:
+          - cash
+          - card
+          - transfer
+          - other
+        applied_amount: &checkout2_id002
+          $ref: '#/components/schemas/SalesMoney'
+        received_cash: &checkout2_id003
+          anyOf:
+          - *checkout2_id002
+          - type: 'null'
+        change_cash: *checkout2_id003
+        reference:
+          type:
+          - string
+          - 'null'
+          maxLength: 64
+        created_by: *checkout2_id001
+        confirmed_at:
+          type: string
+          format: date-time
+        status:
+          const: confirmed
+    SalesCheckout:
+      type: object
+      additionalProperties: false
+      required:
+      - payments
+      properties:
+        payments:
+          type: array
+          maxItems: 20
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - payment_method_id
+            - applied_amount
+            properties:
+              payment_method_id: *checkout2_id001
+              applied_amount: &checkout2_id004
+                type: string
+                pattern: ^(0|[1-9][0-9]{0,14})(\.[0-9]{1,4})?$
+                maxLength: 20
+              received_cash:
+                anyOf:
+                - *checkout2_id004
+                - type: 'null'
+              reference:
+                type:
+                - string
+                - 'null'
+                maxLength: 64
     SalesSummary:
       type: object
       additionalProperties: false
@@ -3378,6 +3544,13 @@ components:
           - string
           - 'null'
           format: date-time
+        folio:
+          type: string
+          pattern: ^[0-9]{12}$
+        closed_by:
+          anyOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
     SalesDetail:
       type: object
       additionalProperties: false
@@ -3452,6 +3625,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SalesItem'
+        folio:
+          type: string
+          pattern: ^[0-9]{12}$
+        closed_by:
+          anyOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
+        payments:
+          type: array
+          maxItems: 20
+          items:
+            $ref: '#/components/schemas/SalesPayment'
     SalesTableResponse:
       type: object
       additionalProperties: false

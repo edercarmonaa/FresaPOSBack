@@ -119,3 +119,11 @@ Cash publica PaymentMethods y CashMovements con DTOs inmutables; Application coo
 Sales prepara cotizaciones mediante PreparePayments y PaymentAllocation, utilizando métodos activos y sesión original por contratos públicos de Cash. No importa sus modelos. DecimalAmount de Core reúne la aritmética exacta antes contenida en Sales; Amount conserva la interfaz anterior. Cash no depende de Sales y Core no depende de módulos funcionales. Audit recibe el DTO cerrado CashMovementAudit y usa su registro existente.
 
 sales_payments conserva FK reales y solo admite borradores; una CHECK impide confirmaciones en esta etapa. Confirmación, folios y cierres requieren la siguiente entrega. No existe integración anticipada de cobro en POS. [Reglas, pruebas y límites](entrega-1.5d.2b.md).
+
+## Actualización 1.5d.3 — Checkout y cierre financiero
+
+SaleCheckout coordina pagos, folio y cierre con IdempotentOperations y TransactionManager de Core. Reutiliza SalesStore, los cálculos y los contratos Cash vigentes; CheckoutStore y DailyFolios exigen transacción externa. Folios y pagos no se confirman por separado. El contador diario usa la zona comercial de config/pos.php; fechas persistidas en UTC.
+
+Cash consume su puerto ConfirmedSalesCash, implementado por Sales con pagos confirmados. Esta inversión de control mantiene Cash independiente de Sales en PHP y evita entradas manuales duplicadas. SaleCheckoutAudit amplía el DTO cerrado del registro Audit existente, sin payload libre ni modelos compartidos.
+
+La migración 000012 amplía deliberadamente la barrera de 1.5d.2b y protege cierres/pagos/líneas históricos. CheckoutPanel usa el mismo servicio autorizado desde POS; el transporte API añade checkout e historial por folio. DiscountApproval conserva bloqueada la aplicación operativa de descuentos mientras falta su autorización funcional. [Flujo y evidencia de la entrega](entrega-1.5d.3.md).

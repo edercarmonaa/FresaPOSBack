@@ -4,6 +4,7 @@ namespace Tests\Support;
 
 use Modules\Cash\Application\Services\ManageCash;
 use Modules\Cash\Contracts\ActiveCashSession;
+use Modules\Cash\Contracts\ConfirmedSalesCash;
 
 abstract class CashSqlServerTestCase extends SalesSqlServerTestCase
 {
@@ -24,6 +25,14 @@ abstract class CashSqlServerTestCase extends SalesSqlServerTestCase
             }
         });
         $this->app->bind(ActiveCashSession::class, ManageCash::class);
+        // Fixture histórica de Cash anterior a la tabla de pagos; sin ingresos Sales.
+        $this->app->instance(ConfirmedSalesCash::class, new class implements ConfirmedSalesCash
+        {
+            public function total(string $sessionId): string
+            {
+                return '0.0000';
+            }
+        });
     }
 
     protected function tearDown(): void

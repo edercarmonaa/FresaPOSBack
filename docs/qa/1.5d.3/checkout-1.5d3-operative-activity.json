@@ -1,0 +1,27 @@
+﻿[
+    {
+        "table":  "audit_security_events",
+        "initial_count":  41,
+        "predeploy_count":  47
+    },
+    {
+        "table":  "auth_access_sessions",
+        "initial_count":  9,
+        "predeploy_count":  10
+    },
+    {
+        "table":  "cash_movements",
+        "initial_count":  1,
+        "predeploy_count":  2
+    },
+    {
+        "table":  "idempotency_records",
+        "initial_count":  6,
+        "predeploy_count":  9
+    },
+    {
+        "table":  "sales_sales",
+        "initial_count":  2,
+        "predeploy_count":  2
+    }
+]

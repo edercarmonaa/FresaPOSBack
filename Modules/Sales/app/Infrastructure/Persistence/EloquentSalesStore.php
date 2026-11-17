@@ -31,7 +31,9 @@ final class EloquentSalesStore implements SalesStore
         }
         $model = $query->findOrFail($id);
 
-        return new SaleSnapshot($this->summary($model), $model->items()->get()->map(fn (SaleItem $item) => $this->item($item))->all());
+        $payments = $model->getAttribute('closed_by') === null ? [] : app(CheckoutStore::class)->payments($id);
+
+        return new SaleSnapshot($this->summary($model), $model->items()->get()->map(fn (SaleItem $item) => $this->item($item))->all(), $payments);
     }
 
     public function createSale(array $values): SaleSnapshot
@@ -66,6 +68,9 @@ final class EloquentSalesStore implements SalesStore
     public function sales(SaleQuery $query): SalesPage
     {
         $builder = Sale::query();
+        if ($query->folio !== null) {
+            $builder->where('folio', $query->folio);
+        }
         foreach (['status' => $query->state?->value, 'type' => $query->type?->value, 'table_id' => $query->tableId, 'created_by' => $query->createdBy] as $column => $value) {
             if ($value !== null) {
                 $builder->where($column, $value);
@@ -142,7 +147,7 @@ final class EloquentSalesStore implements SalesStore
         return new SaleSummary($sale->id, SaleType::from($sale->type), SaleState::from($sale->status), $sale->table_id,
             $sale->created_by, $sale->cash_session_id, $sale->note, $sale->subtotal, $sale->discount_amount, $sale->total,
             $sale->folio, $sale->closed_at?->toISOString(), $sale->cancelled_at?->toISOString(), $sale->cancelled_by,
-            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString());
+            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString(), $sale->getAttribute('closed_by'));
     }
 
     private function item(SaleItem $item): SaleItemSnapshot
