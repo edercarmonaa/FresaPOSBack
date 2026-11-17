@@ -4,7 +4,7 @@ namespace Modules\Sales\Contracts;
 
 use Closure;
 
-/** Adaptador futuro durable: misma transacción, actor/operación/clave, fingerprint,
+/** Coordinación durable: misma transacción, actor/operación/clave UUID v4, fingerprint,
  * exclusión concurrente, rechazo de reutilización incompatible y replay autorizado.
  * Nunca usar cache, memoria de proceso ni una bandera de configuración en producción.
  */

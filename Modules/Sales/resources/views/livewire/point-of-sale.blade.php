@@ -4,7 +4,9 @@
         <div><p class="pos-eyebrow">FresaPOS · Punto de venta</p><h1 id="pos-title">Tu espacio de venta</h1><p class="pos-muted">Catálogo, mesas y ventas en un solo lugar.</p></div>
         <div class="pos-employee"><span class="pos-dot"></span><div><span class="pos-muted">Empleado activo</span><strong>{{ $actor->name }}</strong><a href="{{ route('auth.account') }}">Cambiar empleado</a></div></div>
     </header>
-    @if(!$cash)
+    @if($intentPending)
+        <div class="pos-notice" role="status"><strong>Operación en proceso.</strong><p>Conservamos la misma intención. Consulta su estado antes de preparar otra.</p><button type="button" wire:click="resolveIntent" wire:loading.attr="disabled">Consultar intención pendiente</button></div>
+    @elseif(!$cash)
         <div class="pos-notice" role="status"><strong>No hay sesión de caja abierta válida para esta operación.</strong><p>Puedes consultar productos, mesas y ventas. La escritura requiere una sesión de caja real vigente.</p>@can('cash.view')<a href="{{ route('cash.desk') }}">Consultar caja</a>@endcan</div>
     @elseif(!$critical)
         <div class="pos-notice" role="status"><strong>Apertura y agregado temporalmente no disponibles.</strong><p>Estas operaciones requieren la integración de idempotencia durable.</p></div>

@@ -6,8 +6,11 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Modules\Core\Application\Services\DurableOperations;
+use Modules\Core\Console\CompactOperations;
 use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Core\Contracts\ApiResponder;
+use Modules\Core\Contracts\IdempotentOperations;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Core\Http\ApiExceptionHandler;
 use Modules\Core\Http\ApiResponseFactory;
@@ -29,6 +32,7 @@ class CoreServiceProvider extends ModuleServiceProvider
     public function boot(): void
     {
         parent::boot();
+        $this->commands([CompactOperations::class]);
         RateLimiter::for('api-v1', fn (Request $request) => Limit::perMinute(60)->by($request->ip()));
     }
 
@@ -41,5 +45,6 @@ class CoreServiceProvider extends ModuleServiceProvider
         $this->app->singleton(ApiExceptionHandler::class);
 
         $this->app->singleton(TransactionManager::class, LaravelTransactionManager::class);
+        $this->app->bind(IdempotentOperations::class, DurableOperations::class);
     }
 }

@@ -1,0 +1,12 @@
+{
+    "mode": "different",
+    "database": "fresapos_test",
+    "first_spid": 54,
+    "first_status": 201,
+    "second_status": 409,
+    "movement_count": 1,
+    "expected_cash": "110.0000",
+    "pending_records": 0,
+    "connection_killed": false,
+    "final_first_spid": 54
+}

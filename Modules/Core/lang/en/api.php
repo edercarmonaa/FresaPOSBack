@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'OPERATION_IN_PROGRESS' => 'The operation is in progress. Check its status and keep the same key.',
+    'IDEMPOTENCY_KEY_CONFLICT' => 'The key was used for another intent or its response expired. Check the operation status before continuing.',
     'INVALID_CREDENTIALS' => 'The credentials could not be verified.',
     'SESSION_EXPIRED' => 'The session is no longer available. Please sign in again.',
     'PIN_INVALID' => 'The PIN could not be verified.',

@@ -1,8 +1,8 @@
 # FresaPOSBack
 
-Etapa actual: **1.5d.1, fundamentos de Cash**, [Caja](http://127.0.0.1:8080/cash) y [POS](http://127.0.0.1:8080/pos), con sesión y permisos. [Informe Cash](docs/entrega-1.5d.1.md), [POS](docs/entrega-1.5c.md), [API Sales](docs/entrega-1.5b.md). Caja única, apertura explícita con fondo exacto, reintentos durables y adaptador real para Sales. **Apertura/agregado de ventas siguen bloqueados por idempotencia durable de Sales pendiente**, aun con caja abierta; retirada/cancelación requieren motivos autorizados. Sin pagos, movimientos, arqueo ni cierre.
+Etapa actual: **1.5d.2b, métodos de pago y movimientos de efectivo, aceptada localmente**. [Caja](http://127.0.0.1:8080/cash) y [POS](http://127.0.0.1:8080/pos), con sesión y permisos. [Informe y límites](docs/entrega-1.5d.2b.md), [evidencia visual](docs/qa/1.5d.2b/README.md). Entradas/salidas autorizadas, saldo exacto e idempotencia durable; métodos efectivo, tarjeta, transferencia y otro autorizado. Sales conserva las operaciones habilitadas en [1.5d.2a](docs/entrega-1.5d.2a.md). Los cobros definitivos, folios y cierres permanecen bloqueados; retirada/cancelación requieren motivos autorizados.
 
-Backend modular de FresaPOS para establecimientos de alimentos y bebidas. Entrega 1.1, versión 0.1.0: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Sin funcionalidades POS, Node, npm ni Vite.
+Backend modular de FresaPOS para establecimientos de alimentos y bebidas: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Interfaz Blade/Livewire sin Node, npm ni Vite.
 
 ## Entorno local Windows, sin Docker
 
@@ -84,3 +84,5 @@ La entrega [1.4b](docs/entrega-1.4b.md) incorpora la API `/api/v1/catalog` y las
 Para publicar el disco local en Windows, ejecutar `powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\publish-catalog-storage.ps1`. El script comprueba rutas existentes y no sobrescribe enlaces o reglas distintos. La subida temporal requiere sesión y permiso de edición; las imágenes finales son públicas. Consultar el informe antes de desplegar reglas Apache, GD/EXIF o un adaptador remoto.
 
 Validación OpenAPI de desarrollo (Python 3.12, sin Node/Docker ni paquetes PHP nuevos): preparar una vez con `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/setup-openapi.ps1 -PythonPath RUTA_AL_PYTHON_EXE`; después ejecutar `.\scripts\local.cmd composer openapi`. El entorno y las dependencias fijadas permanecen en `.tools/openapi`, fuera del hosting y de Git. Para contrastar respuestas reales, ejecutar la suite y el comando ampliado del [informe 1.4d](docs/entrega-1.4d.md).
+
+La entrega [1.5d.2a](docs/entrega-1.5d.2a.md) añade idempotencia durable SQL Server y habilita apertura/agregado y mutaciones de Sales con Cash real. Cada intención Sales protegida exige UUID v4; consulta de estado y compactación segura mantienen referencias tras el vencimiento. Cobros, cierres, folios y motivos pendientes conservan su bloqueo. [Revisión visual aislada](docs/qa/1.5d.2a/README.md).

@@ -1,0 +1,96 @@
+{
+    "columns": [
+        {
+            "name": "id",
+            "type": "nchar",
+            "max_length": "52"
+        },
+        {
+            "name": "owner_context",
+            "type": "nchar",
+            "max_length": "128"
+        },
+        {
+            "name": "idempotency_key",
+            "type": "uniqueidentifier",
+            "max_length": "16"
+        },
+        {
+            "name": "operation",
+            "type": "nvarchar",
+            "max_length": "192"
+        },
+        {
+            "name": "resource_id",
+            "type": "nvarchar",
+            "max_length": "256"
+        },
+        {
+            "name": "request_hash",
+            "type": "nchar",
+            "max_length": "128"
+        },
+        {
+            "name": "state",
+            "type": "nvarchar",
+            "max_length": "32"
+        },
+        {
+            "name": "http_status",
+            "type": "smallint",
+            "max_length": "2"
+        },
+        {
+            "name": "response",
+            "type": "nvarchar",
+            "max_length": "-1"
+        },
+        {
+            "name": "created_at",
+            "type": "datetime",
+            "max_length": "8"
+        },
+        {
+            "name": "completed_at",
+            "type": "datetime",
+            "max_length": "8"
+        },
+        {
+            "name": "expires_at",
+            "type": "datetime",
+            "max_length": "8"
+        }
+    ],
+    "checks": [
+        {
+            "name": "idempotency_state_check",
+            "is_disabled": "0",
+            "is_not_trusted": "0"
+        },
+        {
+            "name": "idempotency_json_check",
+            "is_disabled": "0",
+            "is_not_trusted": "0"
+        },
+        {
+            "name": "idempotency_uuid_v4_check",
+            "is_disabled": "0",
+            "is_not_trusted": "0"
+        }
+    ],
+    "indexes": [
+        {
+            "name": "idempotency_records_id_primary",
+            "is_unique": "1"
+        },
+        {
+            "name": "idempotency_owner_key_unique",
+            "is_unique": "1"
+        },
+        {
+            "name": "idempotency_cleanup_index",
+            "is_unique": "0"
+        }
+    ],
+    "records": 0
+}

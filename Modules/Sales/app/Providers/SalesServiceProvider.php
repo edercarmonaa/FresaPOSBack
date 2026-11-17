@@ -8,6 +8,7 @@ use Modules\Cash\Contracts\ActiveCashSession;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Sales\Application\Ports\SalesStore;
+use Modules\Sales\Application\Services\DurableSalesWrites;
 use Modules\Sales\Application\Services\ManageSales;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
@@ -23,7 +24,6 @@ use Modules\Sales\Infrastructure\GlobalQuantityLimits;
 use Modules\Sales\Infrastructure\Persistence\EloquentSalesStore;
 use Modules\Sales\Infrastructure\UnavailableCancellationApproval;
 use Modules\Sales\Infrastructure\UnavailableCashSession;
-use Modules\Sales\Infrastructure\UnavailableCriticalSalesWrites;
 use Modules\Sales\Infrastructure\UnavailableLineRemoval;
 use Nwidart\Modules\Support\ModuleServiceProvider;
 
@@ -37,7 +37,7 @@ class SalesServiceProvider extends ModuleServiceProvider
         $this->app->bind(QuantityLimits::class, GlobalQuantityLimits::class);
         $this->app->bindIf(ActiveCashSession::class, UnavailableCashSession::class);
         $this->app->bindIf(LineRemovalApproval::class, UnavailableLineRemoval::class);
-        $this->app->bindIf(CriticalSalesWrites::class, UnavailableCriticalSalesWrites::class);
+        $this->app->bind(CriticalSalesWrites::class, DurableSalesWrites::class);
         $this->app->bindIf(CancellationApproval::class, UnavailableCancellationApproval::class);
     }
 

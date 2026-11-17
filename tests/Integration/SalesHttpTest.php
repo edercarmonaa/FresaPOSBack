@@ -17,6 +17,7 @@ use Modules\Sales\Domain\SaleType;
 use Modules\Users\Application\BootstrapAdministrator;
 use Modules\Users\Contracts\IdentityAccess;
 use Modules\Users\Contracts\UserAdministration;
+use Tests\Fixtures\Sales\IdempotencyKeys;
 use Tests\Fixtures\Sales\TestCancellationApproval;
 use Tests\Fixtures\Sales\TestCashSession;
 use Tests\Fixtures\Sales\TestCriticalSalesWrites;
@@ -63,6 +64,11 @@ class SalesHttpTest extends SalesSqlServerTestCase
 
     private function api(string $method, string $path, array $data = [], ?string $revision = null, ?string $key = null, ?string $token = null): TestResponse
     {
+        if ($key !== null) {
+            $key = IdempotencyKeys::fromLabel($key);
+        } elseif ($method !== 'GET' && preg_match('~/(quantity|note|pause|resume)$~', $path)) {
+            $key = (string) Str::uuid();
+        }
         Auth::forgetGuards();
         // Una app de test vive entre requests; renovar controladores al sustituir
         // contratos de fixtures igual que en el arranque de una petición nativa.
@@ -140,7 +146,7 @@ class SalesHttpTest extends SalesSqlServerTestCase
         foreach ([['type' => 'other'], ['type' => 'table'], ['type' => 'counter', 'table_id' => (string) Str::ulid()], ['type' => 'counter', 'total' => '0.0000'], ['type' => 'counter', 'user_id' => $this->admin], ['type' => 'counter', 'cash_session_id' => (string) Str::ulid()]] as $data) {
             $this->api('POST', '', $data, key: 'validation-key-00001')->assertUnprocessable();
         }
-        $this->api('POST', '', ['type' => 'counter'])->assertUnprocessable();
+        $this->api('POST', '', ['type' => 'counter'])->assertBadRequest();
         $this->fixtures();
         $sale = $this->open();
         $id = $sale->json('data.id');

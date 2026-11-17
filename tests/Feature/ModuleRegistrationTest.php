@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Route;
 use Modules\Auth\Http\Controllers\ApiAuthenticationController;
 use Modules\Auth\Http\Controllers\WebAuthenticationController;
 use Modules\Cash\Http\Controllers\CashController;
+use Modules\Cash\Http\Controllers\CashFinanceController;
 use Modules\Catalog\Http\Controllers\CategoryController;
 use Modules\Catalog\Http\Controllers\ProductController;
+use Modules\Core\Http\OperationStatusController;
 use Modules\Sales\Http\Controllers\SaleController;
 use Modules\Sales\Http\Controllers\TableController;
 use Tests\Support\ModuleDependencies;
@@ -49,7 +51,8 @@ class ModuleRegistrationTest extends TestCase
                 ProductController::class,
                 SaleController::class,
                 TableController::class,
-                CashController::class,
+                CashController::class, CashFinanceController::class,
+                OperationStatusController::class,
             ]);
         }
     }
@@ -63,12 +66,13 @@ class ModuleRegistrationTest extends TestCase
             $migrations = (new Filesystem)->files(module_path($name, 'database/migrations'));
             $this->assertSame(
                 match ($name) {
+                    'Core' => ['2026_11_17_000009_create_idempotency_records.php'],
                     'Users' => ['2026_11_11_000001_create_user_security_tables.php'],
                     'Auth' => ['2026_11_11_000002_create_auth_access_tables.php'],
                     'Audit' => ['2026_11_11_000003_create_security_events.php', '2026_11_12_000004_add_catalog_change_data_to_security_events.php'],
                     'Catalog' => ['2026_11_12_000005_create_catalog_tables.php'],
-                    'Sales' => ['2026_11_13_000006_create_sales_tables.php', '2026_11_17_000008_link_sales_to_cash_sessions.php'],
-                    'Cash' => ['2026_11_17_000007_create_cash_tables.php'],
+                    'Sales' => ['2026_11_13_000006_create_sales_tables.php', '2026_11_17_000008_link_sales_to_cash_sessions.php', '2026_11_17_000011_create_prepared_sale_payments.php'],
+                    'Cash' => ['2026_11_17_000007_create_cash_tables.php', '2026_11_17_000010_create_cash_financial_tables.php'],
                     default => [],
                 },
                 array_map(fn ($file) => $file->getFilename(), $migrations),

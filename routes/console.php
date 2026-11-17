@@ -1,3 +1,5 @@
 <?php
 
-// Los comandos de infraestructura se incorporan cuando son necesarios.
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::command('operations:compact')->hourly()->withoutOverlapping();

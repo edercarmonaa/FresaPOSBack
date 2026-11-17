@@ -7,7 +7,6 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Livewire\Attributes\Locked;
@@ -17,6 +16,8 @@ use Modules\Catalog\Contracts\CatalogAdministration;
 use Modules\Catalog\Contracts\CatalogReader;
 use Modules\Catalog\Contracts\CategoryQuery;
 use Modules\Catalog\Contracts\ProductQuery;
+use Modules\Core\Contracts\ApiCode;
+use Modules\Core\Contracts\OperationRejected;
 use Modules\Sales\Application\SalesRevision;
 use Modules\Sales\Application\Services\CoordinateSalesWrite;
 use Modules\Sales\Application\Services\SalesAvailability;
@@ -33,6 +34,7 @@ use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Domain\SalesText;
 use Modules\Sales\Domain\SaleType;
 use Modules\Sales\Http\PosAccess;
+use Modules\Sales\Http\PosIntentRegistry;
 use Modules\Sales\Http\Resources\SaleResource;
 use Modules\Users\Contracts\UserSnapshot;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
@@ -77,6 +79,14 @@ class PointOfSale extends Component
     public string $addKey = '';
 
     #[Locked]
+    public string $mutationKey = '';
+
+    #[Locked]
+    public bool $intentPending = false;
+
+    private bool $mutatedThisRequest = false;
+
+    #[Locked]
     public string $categoryFilter = '';
 
     #[Locked]
@@ -107,7 +117,13 @@ class PointOfSale extends Component
     public function mount(): void
     {
         $this->actorContext = $this->actor()->id;
-        $this->openKey = (string) Str::ulid();
+        $registry = app(PosIntentRegistry::class);
+        $this->openKey = $registry->key($this->actorContext, 'open');
+        $this->mutationKey = $registry->key($this->actorContext, 'mutation');
+        $selection = $registry->selection($this->actorContext);
+        $this->mode = $selection['mode'];
+        $this->tableId = $selection['table_id'];
+        $this->resolveIntent();
     }
 
     private function actor(string $permission = 'sales.view'): UserSnapshot
@@ -136,8 +152,12 @@ class PointOfSale extends Component
     {
         $this->actor();
         abort_unless(in_array($mode, ['counter', 'table'], true), 422);
-        $this->mode = $mode;
         $this->clearSale();
+        if ($this->intentPending) {
+            return;
+        }
+        $this->mode = $mode;
+        app(PosIntentRegistry::class)->target($this->actor()->id, $mode, null);
     }
 
     public function selectCounterState(string $state): void
@@ -150,9 +170,19 @@ class PointOfSale extends Component
 
     public function clearSale(): void
     {
-        $this->actor();
+        $actor = $this->actor();
+        try {
+            app(PosIntentRegistry::class)->resolved($actor->id);
+        } catch (OperationRejected $exception) {
+            $this->intentPending = true;
+            $this->addError('operation', $exception->getMessage());
+
+            return;
+        }
+        $this->intentPending = false;
         $this->reset('saleId', 'tableId', 'currentSale', 'revision', 'productId', 'itemId', 'productName', 'quantity', 'itemNote', 'saleNote', 'status');
-        $this->openKey = (string) Str::ulid();
+        $this->openKey = app(PosIntentRegistry::class)->key($actor->id, 'open', true);
+        app(PosIntentRegistry::class)->target($actor->id, $this->mode, null);
         $this->resetErrorBag();
     }
 
@@ -180,35 +210,68 @@ class PointOfSale extends Component
                 throw new SalesConflict('Esta mesa está inactiva.');
             }
             $this->clearSale();
+            if ($this->intentPending) {
+                return;
+            }
             $this->tableId = $table->id;
+            app(PosIntentRegistry::class)->target($actor->id, 'table', $table->id);
             $this->status = 'Mesa seleccionada: '.$table->name.'. La apertura requiere caja e idempotencia disponibles.';
         });
     }
 
     public function refreshSale(): void
     {
+        $this->resolveIntent();
+    }
+
+    public function resolveIntent(): void
+    {
         $actor = $this->actor();
         $this->attempt(function () use ($actor): void {
-            if ($this->saleId !== null) {
-                $note = $this->saleNote;
-                $this->capture($this->sales()->sale($actor->id, $this->saleId));
-                $this->saleNote = $note;
+            $registry = app(PosIntentRegistry::class);
+            $last = $registry->last($actor->id);
+            $this->intentPending = $last->state === 'pending';
+            if ($this->intentPending) {
+                $this->status = 'La intención sigue en proceso. Consulta su estado antes de crear otra.';
+
+                return;
             }
-            $this->status = 'Vista actualizada. Tus notas pendientes se conservan.';
+            $selection = $registry->selection($actor->id);
+            $id = $this->saleId ?? $selection['sale_id'] ?? ($last->state === 'completed' && str_starts_with($last->operation ?? '', 'sales.') ? $last->resourceId : null);
+            if ($id !== null) {
+                $note = $this->saleId === null ? null : $this->saleNote;
+                $this->capture($this->sales()->sale($actor->id, $id));
+                if ($note !== null) {
+                    $this->saleNote = $note;
+                }
+                $this->status = 'Venta recuperada del servidor. La intención anterior no se ejecutó de nuevo.';
+            } elseif ($last->state === 'failed') {
+                $this->status = 'La intención anterior fue rechazada. Prepara una nueva intención de venta antes de cambiar sus datos.';
+            }
+            if (in_array($last->state, ['completed', 'failed'], true)) {
+                $this->mutationKey = $registry->key($actor->id, 'mutation', true);
+            }
         });
     }
 
     public function startSale(): void
     {
         $actor = $this->actor('sales.create');
+        if ($this->mutatedThisRequest) {
+            $this->status = 'La intención ya fue confirmada.';
+
+            return;
+        }
         $this->attempt(function () use ($actor): void {
             if ($this->saleId !== null) {
                 throw new SalesConflict('Ya seleccionaste una venta.');
             }
             $payload = ['type' => $this->mode, 'table_id' => $this->mode === 'table' ? $this->tableId : null];
+            app(PosIntentRegistry::class)->begin($actor->id, $this->openKey, 'sales.open', null);
             $sale = app(CriticalSalesWrites::class)->run($actor->id, 'sales.open', $this->openKey, $payload,
                 fn () => $this->sales()->open($actor->id, new OpenSale(SaleType::from($this->mode), $payload['table_id'])));
             $this->capture($sale);
+            $this->mutatedThisRequest = true;
             $this->status = 'Venta iniciada.';
         });
     }
@@ -251,21 +314,28 @@ class PointOfSale extends Component
             $this->itemId = null;
             $this->quantity = '1';
             $this->itemNote = '';
-            $this->addKey = (string) Str::ulid();
+            $this->addKey = app(PosIntentRegistry::class)->key($actor->id, 'add', true);
         });
     }
 
     public function addProduct(): void
     {
         $actor = $this->actor('sales.open.update');
+        if ($this->mutatedThisRequest) {
+            $this->status = 'La intención ya fue confirmada.';
+
+            return;
+        }
         $this->attempt(function () use ($actor): void {
             $this->validate(['quantity' => ['required', 'regex:/\A[1-9][0-9]{0,9}\z/', 'integer', 'min:1', 'max:'.config('sales.max_quantity')], 'itemNote' => ['string', 'max:100']], $this->messages());
             abort_if($this->productId === null || $this->saleId === null, 422);
-            $payload = ['product_id' => $this->productId, 'quantity' => (int) $this->quantity, 'note' => $this->itemNote];
+            $payload = ['product_id' => $this->productId, 'quantity' => (int) $this->quantity, 'note' => $this->itemNote, 'revision' => '"'.$this->revision.'"'];
+            app(PosIntentRegistry::class)->begin($actor->id, $this->addKey, 'sales.'.$this->saleId.'.add', $this->saleId);
             $sale = app(CriticalSalesWrites::class)->run($actor->id, 'sales.'.$this->saleId.'.add', $this->addKey, $payload,
                 fn () => app(CoordinateSalesWrite::class)->run($actor->id, $this->saleId, false, '"'.$this->revision.'"',
                     fn () => $this->sales()->addProduct($actor->id, $this->saleId, new AddProduct($this->productId, (int) $this->quantity, $this->itemNote))));
             $this->capture($sale);
+            $this->mutatedThisRequest = true;
             $this->productId = null;
             $this->status = 'Producto agregado.';
         });
@@ -292,6 +362,11 @@ class PointOfSale extends Component
     public function adjustQuantity(string $id, int $delta): void
     {
         $this->actor('sales.open.update');
+        if ($this->mutatedThisRequest) {
+            $this->addError('operation', 'Espera la confirmación antes de enviar otra modificación.');
+
+            return;
+        }
         abort_unless(in_array($delta, [-1, 1], true), 422);
         $this->editItem($id);
         $next = (int) $this->quantity + $delta;
@@ -310,7 +385,7 @@ class PointOfSale extends Component
         $this->attempt(function (): void {
             $this->validate(['quantity' => ['required', 'regex:/\A[1-9][0-9]{0,9}\z/', 'integer', 'min:1', 'max:'.config('sales.max_quantity')]], $this->messages());
             abort_if($this->itemId === null, 422);
-            $this->mutate(fn ($actor) => $this->sales()->changeQuantity($actor, $this->saleId, $this->itemId, (int) $this->quantity));
+            $this->mutate('quantity.'.$this->itemId, ['quantity' => (int) $this->quantity], fn ($actor) => $this->sales()->changeQuantity($actor, $this->saleId, $this->itemId, (int) $this->quantity));
         });
     }
 
@@ -320,7 +395,7 @@ class PointOfSale extends Component
         $this->attempt(function (): void {
             $this->validate(['itemNote' => ['string', 'max:100']], $this->messages());
             abort_if($this->itemId === null, 422);
-            $this->mutate(fn ($actor) => $this->sales()->editItemNote($actor, $this->saleId, $this->itemId, $this->itemNote));
+            $this->mutate('item-note.'.$this->itemId, ['note' => $this->itemNote], fn ($actor) => $this->sales()->editItemNote($actor, $this->saleId, $this->itemId, $this->itemNote));
         });
     }
 
@@ -329,7 +404,7 @@ class PointOfSale extends Component
         $this->actor('sales.open.update');
         $this->attempt(function (): void {
             $this->validate(['saleNote' => ['string', 'max:150']], $this->messages());
-            $this->mutate(fn ($actor) => $this->sales()->editNote($actor, $this->saleId, $this->saleNote));
+            $this->mutate('note', ['note' => $this->saleNote], fn ($actor) => $this->sales()->editNote($actor, $this->saleId, $this->saleNote));
             $this->saleNote = $this->currentSale['note'] ?? '';
         });
     }
@@ -337,28 +412,39 @@ class PointOfSale extends Component
     public function pauseSale(): void
     {
         $this->actor('sales.open.update');
-        $this->attempt(fn () => $this->mutate(fn ($actor) => $this->sales()->pause($actor, $this->saleId)));
+        $this->attempt(fn () => $this->mutate('pause', [], fn ($actor) => $this->sales()->pause($actor, $this->saleId)));
     }
 
     public function resumeSale(): void
     {
         $this->actor('sales.open.update');
-        $this->attempt(fn () => $this->mutate(fn ($actor) => $this->sales()->resume($actor, $this->saleId)));
+        $this->attempt(fn () => $this->mutate('resume', [], fn ($actor) => $this->sales()->resume($actor, $this->saleId)));
     }
 
     /** @param Closure(string): SaleSnapshot $operation */
-    private function mutate(Closure $operation): void
+    private function mutate(string $name, array $payload, Closure $operation): void
     {
         $actor = $this->actor('sales.open.update');
         abort_if($this->saleId === null, 422);
-        $sale = app(CoordinateSalesWrite::class)->run($actor->id, $this->saleId, false, '"'.$this->revision.'"', fn () => $operation($actor->id));
+        if ($this->mutatedThisRequest) {
+            $this->addError('operation', 'Espera la confirmación antes de enviar otra modificación.');
+
+            return;
+        }
+        $scope = 'sales.'.$this->saleId.'.'.$name;
+        app(PosIntentRegistry::class)->begin($actor->id, $this->mutationKey, $scope, $this->saleId);
+        $sale = app(CriticalSalesWrites::class)->run($actor->id, $scope, $this->mutationKey, $payload + ['revision' => '"'.$this->revision.'"'],
+            fn () => app(CoordinateSalesWrite::class)->run($actor->id, $this->saleId, false, '"'.$this->revision.'"', fn () => $operation($actor->id)));
+        $this->mutatedThisRequest = true;
         $this->capture($sale, false);
+        $this->mutationKey = app(PosIntentRegistry::class)->key($actor->id, 'mutation', true);
         $this->status = 'Venta actualizada.';
     }
 
     private function capture(SaleSnapshot $sale, bool $replaceNote = true): void
     {
         $this->saleId = $sale->sale->id;
+        app(PosIntentRegistry::class)->sale($this->actor()->id, $sale->sale->id);
         $this->tableId = $sale->sale->tableId;
         $this->revision = SalesRevision::of($sale);
         $this->currentSale = (new SaleResource($sale))->resolve(request());
@@ -386,6 +472,15 @@ class PointOfSale extends Component
                 foreach ($messages as $message) {
                     $this->addError($field, $message);
                 }
+            }
+        } catch (OperationRejected $exception) {
+            $this->intentPending = $exception->apiCode === ApiCode::OPERATION_IN_PROGRESS;
+            if ($exception->apiCode === ApiCode::VALIDATION_ERROR) {
+                foreach ($exception->errors as $field => $messages) {
+                    $this->addError($field, $messages[0]);
+                }
+            } else {
+                $this->addError('operation', $exception->getMessage());
             }
         } catch (CashSessionUnavailable $exception) {
             $this->addError('operation', 'No hay una sesión de caja válida. Actualiza la venta y el estado de caja.');
@@ -416,6 +511,9 @@ class PointOfSale extends Component
         $cash = $critical = $editable = $stale = false;
         $cashSessionId = null;
         $this->attempt(function () use ($actor, &$products, &$categories, &$tables, &$sales, &$cash, &$critical, &$editable, &$stale, &$cashSessionId): void {
+            if ($this->intentPending) {
+                return;
+            }
             $catalog = app(CatalogAdministration::class);
             $products = $catalog->products($actor->id, new ProductQuery(name: $this->search, categoryId: $this->categoryFilter === '' ? null : $this->categoryFilter, page: $this->productPage, perPage: 10, availableForSale: true));
             $categories = $catalog->categories($actor->id, new CategoryQuery(isActive: true, page: $this->categoryPage, perPage: 10));

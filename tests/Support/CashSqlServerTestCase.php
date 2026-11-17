@@ -16,6 +16,7 @@ abstract class CashSqlServerTestCase extends SalesSqlServerTestCase
         $this->cashSchemas = [
             require base_path('Modules/Cash/database/migrations/2026_11_17_000007_create_cash_tables.php'),
             require base_path('Modules/Sales/database/migrations/2026_11_17_000008_link_sales_to_cash_sessions.php'),
+            require base_path('Modules/Cash/database/migrations/2026_11_17_000010_create_cash_financial_tables.php'),
         ];
         $this->database->transaction(function (): void {
             foreach ($this->cashSchemas as $schema) {

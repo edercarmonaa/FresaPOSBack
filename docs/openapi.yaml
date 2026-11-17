@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: >-
     REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
-    Sales 1.5b incluye API condicionada a Cash, motivos e idempotencia; aprobación de dispositivos es futura. Imágenes administradas mediante endpoints dedicados multipart.
+    Sales 1.5d.2a protege apertura y modificaciones con Cash real e idempotencia durable; motivos y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
     Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
 servers:
   - url: http://127.0.0.1:8080/api/v1
@@ -22,6 +22,336 @@ tags:
   - name: Cash
     description: Caja única, apertura y consulta autorizadas; sin pagos ni cierre.
 paths:
+  /operations/{idempotencyKey}/status:
+    get:
+      tags:
+      - Core
+      operationId: apiV1OperationStatus
+      summary: Consulta el estado propio de una intención UUID v4.
+      description: 'Autenticación bearer vigente. Contexto derivado del actor; clave
+        ajena o desconocida devuelve 404. Sin permisos de consulta de datos financieros
+        implícitos: no devuelve el cuerpo almacenado, hash ni contexto interno. Pending
+        devuelve metadatos nulos cuando la primera transacción aún no confirmó. Expired
+        devuelve solo referencia histórica para reconciliar mediante los endpoints autorizados
+        del módulo; nunca vuelve a ejecutar la intención. La consulta no modifica idempotency_records.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: path
+        name: idempotencyKey
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+      responses:
+        '200':
+          description: Estado seguro pending/completed/failed/expired, sin respuesta
+            financiera.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationStatusResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/payment-methods:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashPaymentMethods
+      summary: Métodos activos con códigos estables; cash.view.
+      security:
+      - BearerAuth: []
+      parameters:
+      - &id001
+        $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Resultado autorizado; el replay reproduce el mismo recurso.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentMethodsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/payment-methods/{id}:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashPaymentMethod
+      summary: Detalle de método activo; cash.view. Inactivo devuelve 404.
+      security:
+      - BearerAuth: []
+      parameters:
+      - *id001
+      - &id002
+        name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Resultado autorizado; el replay reproduce el mismo recurso.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentMethodResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/movements:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashMovements
+      summary: Historial paginado y saldo de sesión actual; cash.view. Historia de otras sesiones y filtros de otro usuario
+        requieren cash.administrative.execute.
+      security:
+      - BearerAuth: []
+      parameters:
+      - *id001
+      - name: cash_session_id
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - cash_in
+          - cash_out
+      - name: date
+        in: query
+        required: false
+        schema:
+          type: string
+          format: date
+      - name: created_by
+        in: query
+        required: false
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+      responses:
+        '200':
+          description: Resultado autorizado; el replay reproduce el mismo recurso.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashMovementsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags:
+      - Cash
+      operationId: apiV1CashMovementRecord
+      summary: Entrada/salida manual atómica; cash.view y cash.movements.create. No es cobro de venta.
+      security:
+      - BearerAuth: []
+      parameters:
+      - *id001
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+      responses:
+        '201':
+          description: Resultado autorizado; el replay reproduce el mismo recurso.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashMovementResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      description: UUID v4 obligatorio por intención; mismo contenido reproduce recurso, datos distintos devuelven IDEMPOTENCY_KEY_CONFLICT
+        y ejecución concurrente OPERATION_IN_PROGRESS (409). Reautoriza antes de replay. Sesión explícita debe seguir abierta
+        para un movimiento nuevo. Saldo se verifica con bloqueo SQL; salida insuficiente devuelve CONFLICT. Retención de cuerpo
+        24 h; tras expiración la clave histórica impide duplicar. La apertura de caja conserva su protocolo existente.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+              - cash_session_id
+              - type
+              - amount
+              - concept
+              properties:
+                cash_session_id:
+                  $ref: '#/components/schemas/CatalogUlid'
+                type:
+                  type: string
+                  enum:
+                  - cash_in
+                  - cash_out
+                amount:
+                  type: string
+                  pattern: ^(?:0|[1-9][0-9]{0,14})(?:\.[0-9]{1,4})?$
+                  not:
+                    enum:
+                    - '0'
+                    - '0.0'
+                    - '0.00'
+                    - '0.000'
+                    - '0.0000'
+                concept:
+                  type: string
+                  minLength: 1
+                  maxLength: 200
+                  description: Justificación obligatoria, texto plano normalizado NFC. Sin HTML o controles.
+  /cash/movements/{id}:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashMovement
+      summary: Detalle autorizado; sesión actual con cash.view, otras sesiones solo administración financiera.
+      security:
+      - BearerAuth: []
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          description: Resultado autorizado; el replay reproduce el mismo recurso.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashMovementResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
   /cash/registers:
     get:
       tags:
@@ -142,7 +472,7 @@ paths:
         abierta por índice filtrado SQL. Clave durable por actor: mismo fondo/caja recupera
         la sesión original (incluida una sesión ya cerrada), otro contenido devuelve
         409. No se crean pagos ni ingresos. Respuesta 200 tanto inicial como replay.
-        Cash no habilita apertura/agregado de Sales sin su idempotencia durable pendiente.'
+        Sales 1.5d.2a usa idempotencia durable propia para apertura y modificaciones; Cash conserva su mecanismo de apertura.'
       requestBody:
         required: true
         content:
@@ -1452,8 +1782,9 @@ paths:
       - Sales
       operationId: salesGetSales
       summary: Consulta ventas con filtros y paginación SQL.
-      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
-        del token. No-store; importes como texto decimal; UTC.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios
+        del navegador/PIN. Actor derivado del token. No-store; importes como texto decimal;
+        UTC.
       security:
       - BearerAuth: []
       parameters:
@@ -1553,21 +1884,31 @@ paths:
       tags:
       - Sales
       operationId: salesPostSales
-      summary: Apertura condicionada a Cash e idempotencia.
-      description: 'Permiso sales.create. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
-        del token. No-store; importes como texto decimal; UTC. Bloqueada operativamente (503): requiere idempotencia durable
-        y Cash real. La clave por sí sola no habilita la operación. No se crean registros parciales. table_id obligatorio para
-        table; prohibido para counter. No acepta usuario, caja, precios, folio ni totales del cliente.'
+      summary: Abre una venta de mostrador o mesa de manera idempotente.
+      description: Apertura autorizada con Cash real activo; table_id requerido para
+        mesa y prohibido para mostrador. Actor, caja, precio e importes se obtienen
+        en el servidor. Bearer vigente e identidad/permisos actuales antes del replay.
+        Idempotency-Key UUID v4 obligatoria, ámbito del actor para todas las operaciones;
+        no reemplazar por otra clave al reintentar. Hash canónico de operación, método,
+        destino, parámetros y revisión If-Match cuando corresponde. Reintento completado
+        reproduce resultado funcional/HTTP originales, con request_id actual, sin efectos
+        ni auditoría duplicados. 409 OPERATION_IN_PROGRESS mientras se ejecuta; 409
+        IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró el cuerpo. Respuestas
+        retenidas 24 horas configurables; la referencia/clave histórica permanece y
+        nunca permite reejecutar por expiración. Consultar GET /operations/{idempotencyKey}/status
+        para reconciliar. Sin pagos, folio ni cierre financiero.
       security:
       - BearerAuth: []
       parameters:
       - $ref: '#/components/parameters/RequestId'
-      - name: Idempotency-Key
-        in: header
+      - in: header
+        name: Idempotency-Key
         required: true
         schema:
           type: string
-          pattern: ^[A-Za-z0-9_-]{16,128}$
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '201':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -1587,7 +1928,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -1653,8 +2002,9 @@ paths:
       - Sales
       operationId: salesGetSalesIdItems
       summary: Consulta líneas históricas.
-      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN. Actor derivado
-        del token. No-store; importes como texto decimal; UTC.
+      description: Permiso sales.view. Bearer propio vigente, sin herencia de privilegios
+        del navegador/PIN. Actor derivado del token. No-store; importes como texto decimal;
+        UTC.
       security:
       - BearerAuth: []
       parameters:
@@ -1696,11 +2046,19 @@ paths:
       tags:
       - Sales
       operationId: salesPostSalesIdItems
-      summary: Incorpora producto desde Catalog; condicionada.
-      description: 'Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC. Bloqueada operativamente (503): requiere idempotencia
-        durable y Cash real. La clave por sí sola no habilita la operación. No se crean registros parciales. Precio y snapshot
-        desde Catalog. Máximo global inicial 100 unidades; consolidación en Sales.'
+      summary: Incorpora un producto una sola vez por intención.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -1716,13 +2074,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
-      - name: Idempotency-Key
-        in: header
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
         required: true
         schema:
           type: string
-          pattern: ^[A-Za-z0-9_-]{16,128}$
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -1742,7 +2103,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -1763,8 +2132,18 @@ paths:
       - Sales
       operationId: salesPatchSalesIdItemsItemidQuantity
       summary: Cambia cantidad entera positiva.
-      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -1785,7 +2164,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -1805,7 +2193,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -1826,8 +2222,18 @@ paths:
       - Sales
       operationId: salesPatchSalesIdItemsItemidNote
       summary: Cambia nota de línea.
-      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -1848,7 +2254,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -1868,7 +2283,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -1953,8 +2376,18 @@ paths:
       - Sales
       operationId: salesPatchSalesIdNote
       summary: Cambia nota de venta.
-      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -1970,7 +2403,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -1990,7 +2432,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -2011,9 +2461,18 @@ paths:
       - Sales
       operationId: salesPostSalesIdPause
       summary: Pausa mostrador.
-      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC. Solo mostrador; conserva notas, líneas e importes;
-        no genera folio.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -2029,7 +2488,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -2049,7 +2517,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -2064,9 +2540,18 @@ paths:
       - Sales
       operationId: salesPostSalesIdResume
       summary: Recupera mostrador.
-      description: Permiso sales.open.update y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC. Solo mostrador; conserva notas, líneas e importes;
-        no genera folio.
+      description: Operación autorizada con Cash original vigente y revisión If-Match,
+        conservando instantáneas y reglas existentes. Bearer vigente e identidad/permisos
+        actuales antes del replay. Idempotency-Key UUID v4 obligatoria, ámbito del actor
+        para todas las operaciones; no reemplazar por otra clave al reintentar. Hash
+        canónico de operación, método, destino, parámetros y revisión If-Match cuando
+        corresponde. Reintento completado reproduce resultado funcional/HTTP originales,
+        con request_id actual, sin efectos ni auditoría duplicados. 409 OPERATION_IN_PROGRESS
+        mientras se ejecuta; 409 IDEMPOTENCY_KEY_CONFLICT si cambian los datos o expiró
+        el cuerpo. Respuestas retenidas 24 horas configurables; la referencia/clave
+        histórica permanece y nunca permite reejecutar por expiración. Consultar GET
+        /operations/{idempotencyKey}/status para reconciliar. Sin pagos, folio ni cierre
+        financiero.
       security:
       - BearerAuth: []
       parameters:
@@ -2082,7 +2567,16 @@ paths:
         schema:
           type: string
           pattern: ^"[a-f0-9]{64}"$
-        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT
+          409; volver a consultar.'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        example: 3d6f0a97-2b10-4f71-8b3d-9e98c7b78e62
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -2102,7 +2596,15 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
-          $ref: '#/components/responses/Conflict'
+          description: CONFLICT funcional, OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT.
+            Conservar clave y consultar estado.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         '422':
           $ref: '#/components/responses/ValidationError'
         '429':
@@ -2209,6 +2711,272 @@ components:
       schema:
         type: string
   schemas:
+    OperationStatusResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - operation
+          properties:
+            operation:
+              type: object
+              additionalProperties: false
+              required:
+              - key
+              - state
+              - operation
+              - resource_id
+              - http_status
+              - completed_at
+              properties:
+                key:
+                  type: string
+                  format: uuid
+                  pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+                state:
+                  type: string
+                  enum:
+                  - pending
+                  - completed
+                  - failed
+                  - expired
+                operation:
+                  type:
+                  - string
+                  - 'null'
+                resource_id:
+                  type:
+                  - string
+                  - 'null'
+                  maxLength: 128
+                http_status:
+                  type:
+                  - integer
+                  - 'null'
+                  minimum: 200
+                  maximum: 499
+                completed_at:
+                  type:
+                  - string
+                  - 'null'
+                  format: date-time
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashPaymentMethod:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - code
+      - name
+      - is_active
+      - display_order
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        code:
+          type: string
+          enum:
+          - cash
+          - card
+          - transfer
+          - other
+        name:
+          type: string
+        is_active:
+          const: true
+        display_order:
+          type: integer
+          minimum: 0
+    CashMovement:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - cash_session_id
+      - type
+      - amount
+      - concept
+      - created_by
+      - occurred_at
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        cash_session_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        type:
+          type: string
+          enum:
+          - cash_in
+          - cash_out
+        amount:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        concept:
+          type: string
+        created_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        occurred_at:
+          type: string
+          format: date-time
+    CashExpectedBalance:
+      type: object
+      additionalProperties: false
+      required:
+      - cash_session_id
+      - opening_fund
+      - cash_in
+      - cash_out
+      - confirmed_sales_cash
+      - expected_cash
+      properties:
+        cash_session_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        opening_fund:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        cash_in:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        cash_out:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        confirmed_sales_cash:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        expected_cash:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+    PaymentMethodsResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - payment_methods
+          properties:
+            payment_methods:
+              type: array
+              maxItems: 4
+              items:
+                $ref: '#/components/schemas/CashPaymentMethod'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    PaymentMethodResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - payment_method
+          properties:
+            payment_method:
+              $ref: '#/components/schemas/CashPaymentMethod'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashMovementResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - movement
+          properties:
+            movement:
+              $ref: '#/components/schemas/CashMovement'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashMovementsResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - movements
+          - balance
+          properties:
+            movements:
+              type: array
+              maxItems: 100
+              items:
+                $ref: '#/components/schemas/CashMovement'
+            balance:
+              oneOf:
+              - $ref: '#/components/schemas/CashExpectedBalance'
+              - type: 'null'
+        meta:
+          $ref: '#/components/schemas/Meta'
     CashRegister:
       type: object
       additionalProperties: false
@@ -3101,6 +3869,8 @@ components:
         - TOO_MANY_REQUESTS
         - INTERNAL_ERROR
         - SERVICE_UNAVAILABLE
+        - OPERATION_IN_PROGRESS
+        - IDEMPOTENCY_KEY_CONFLICT
         - INVALID_CREDENTIALS
         - SESSION_EXPIRED
         - PIN_INVALID

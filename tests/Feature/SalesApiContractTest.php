@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Modules\Sales\Application\SalesRevision;
+use Modules\Sales\Application\Services\DurableSalesWrites;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
 use Modules\Sales\Contracts\DiningTableSnapshot;
@@ -42,13 +43,13 @@ class SalesApiContractTest extends TestCase
         }
     }
 
-    public function test_production_critical_adapter_never_executes_the_operation(): void
+    public function test_production_critical_adapter_is_durable_and_fallback_never_executes_the_operation(): void
     {
-        $this->assertInstanceOf(UnavailableCriticalSalesWrites::class, app(CriticalSalesWrites::class));
+        $this->assertInstanceOf(DurableSalesWrites::class, app(CriticalSalesWrites::class));
         $this->assertInstanceOf(UnavailableCancellationApproval::class, app(CancellationApproval::class));
         $executed = false;
         try {
-            app(CriticalSalesWrites::class)->run('actor', 'sales.open', 'key', [], function () use (&$executed): never {
+            (new UnavailableCriticalSalesWrites)->run('actor', 'sales.open', 'key', [], function () use (&$executed): never {
                 $executed = true;
                 throw new \LogicException('No ejecutar.');
             });

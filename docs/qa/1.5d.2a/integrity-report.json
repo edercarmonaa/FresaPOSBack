@@ -1,0 +1,23 @@
+{
+    "unchanged_prior_data_tables": 19,
+    "changed_prior_data_tables": [],
+    "prior_migrations_intact": true,
+    "protected_files": 10,
+    "changed_protected_files": [],
+    "operative_tables": 21,
+    "registers": 1,
+    "cash_sessions": 1,
+    "users": 1,
+    "active_administrators": 1,
+    "roles": 4,
+    "permissions": 44,
+    "categories": 2,
+    "products": 2,
+    "sales": 0,
+    "items": 0,
+    "tables": 0,
+    "trusted_cash_fk": 1,
+    "new_tables": [
+        "idempotency_records"
+    ]
+}

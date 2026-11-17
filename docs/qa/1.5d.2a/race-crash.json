@@ -1,0 +1,11 @@
+{
+    "mode": "crash",
+    "database": "fresapos_test",
+    "first_spid": 72,
+    "first_killed": true,
+    "final_status": 201,
+    "final_code": "OPERATION_SUCCESS",
+    "sales": 1,
+    "completed_records": 1,
+    "pending_records": 0
+}

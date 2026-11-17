@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
+use Modules\Core\Contracts\OperationIntent;
 use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Policies\SalesPolicy;
 use Modules\Users\Contracts\IdentityAccess;
@@ -91,9 +92,9 @@ class SalesRequest extends FormRequest
             if (array_diff(array_keys($this->all()), array_keys($this->rules())) !== []) {
                 $validator->errors()->add('data', 'La solicitud contiene campos no permitidos.');
             }
-            if (in_array($this->operation(), ['store', 'addItem'], true) && ! $this->tables()
-                && preg_match('/\A[A-Za-z0-9_-]{16,128}\z/', (string) $this->header('Idempotency-Key')) !== 1) {
-                $validator->errors()->add('idempotency_key', 'Envía una clave de idempotencia de 16 a 128 caracteres.');
+            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume'], true) && ! $this->tables()
+                && $validator->errors()->isEmpty()) {
+                OperationIntent::key((string) $this->header('Idempotency-Key'));
             }
         }];
     }

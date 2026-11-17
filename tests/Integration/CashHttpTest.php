@@ -160,7 +160,7 @@ class CashHttpTest extends CashSqlServerTestCase
         Livewire::test(PointOfSale::class)->assertSee('Sesión de caja activa')->assertSee('idempotencia durable')
             ->call('startSale')->assertHasErrors('operation');
         Auth::forgetGuards();
-        $this->withToken($this->token)->withHeader('Idempotency-Key', 'sales-open-key-123456')->postJson('/api/v1/sales', ['type' => 'counter'])->assertStatus(503);
+        $this->withToken($this->token)->withHeader('Idempotency-Key', (string) Str::uuid())->postJson('/api/v1/sales', ['type' => 'counter'])->assertStatus(503);
         $this->assertSame(0, $this->database->table('sales_sales')->count());
     }
 

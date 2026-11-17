@@ -12,6 +12,8 @@ enum ApiCode: string
     case NOT_FOUND = 'NOT_FOUND';
     case METHOD_NOT_ALLOWED = 'METHOD_NOT_ALLOWED';
     case CONFLICT = 'CONFLICT';
+    case OPERATION_IN_PROGRESS = 'OPERATION_IN_PROGRESS';
+    case IDEMPOTENCY_KEY_CONFLICT = 'IDEMPOTENCY_KEY_CONFLICT';
     case TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS';
     case INTERNAL_ERROR = 'INTERNAL_ERROR';
     case SERVICE_UNAVAILABLE = 'SERVICE_UNAVAILABLE';
@@ -31,7 +33,7 @@ enum ApiCode: string
             self::FORBIDDEN => 403,
             self::NOT_FOUND => 404,
             self::METHOD_NOT_ALLOWED => 405,
-            self::CONFLICT => 409,
+            self::CONFLICT, self::OPERATION_IN_PROGRESS, self::IDEMPOTENCY_KEY_CONFLICT => 409,
             self::VALIDATION_ERROR => 422,
             self::TOO_MANY_REQUESTS => 429,
             self::SERVICE_UNAVAILABLE => 503,

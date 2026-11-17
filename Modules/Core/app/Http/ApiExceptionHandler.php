@@ -12,6 +12,7 @@ use Illuminate\Validation\ValidationException;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Core\Contracts\ExceptionDiagnostic;
+use Modules\Core\Contracts\OperationRejected;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
@@ -51,7 +52,7 @@ final class ApiExceptionHandler
         }
         $this->report($exception, $request);
         [$code, $status] = $this->classify($exception);
-        $errors = $exception instanceof ValidationException ? $exception->errors() : [];
+        $errors = $exception instanceof ValidationException ? $exception->errors() : ($exception instanceof OperationRejected ? $exception->errors : []);
 
         return $this->responses->error($request, $code, $errors, $status, $response->headers->all());
     }
@@ -59,6 +60,9 @@ final class ApiExceptionHandler
     /** @return array{ApiCode, int} */
     private function classify(Throwable $exception): array
     {
+        if ($exception instanceof OperationRejected) {
+            return [$exception->apiCode, $exception->apiCode->status()];
+        }
         if ($exception instanceof QueryException) {
             return [ApiCode::INTERNAL_ERROR, 500];
         }

@@ -57,7 +57,7 @@ final class SaleController
 
     public function addItem(SalesRequest $request, string $id): JsonResponse
     {
-        $sale = $this->critical->run($request->actor(), 'sales.'.$id.'.add', (string) $request->header('Idempotency-Key'), $request->validated(),
+        $sale = $this->critical->run($request->actor(), 'sales.'.$id.'.add', (string) $request->header('Idempotency-Key'), $request->validated() + ['revision' => $request->header('If-Match')],
             fn () => $this->writes->run($request->actor(), $id, false, $request->header('If-Match'),
                 fn () => $this->sales->addProduct($request->actor(), $id, new AddProduct($request->validated('product_id'), $request->validated('quantity'), $request->validated('note')))));
 
@@ -103,7 +103,15 @@ final class SaleController
     /** @param Closure(): SaleSnapshot $operation */
     private function mutate(SalesRequest $request, string $id, Closure $operation): JsonResponse
     {
-        $sale = $this->writes->run($request->actor(), $id, false, $request->header('If-Match'), $operation);
+        $execute = fn () => $this->writes->run($request->actor(), $id, false, $request->header('If-Match'), $operation);
+        $name = match ($request->operation()) {
+            'quantity' => 'quantity.'.$request->route('itemId'),
+            'itemNote' => 'item-note.'.$request->route('itemId'),
+            'note', 'pause', 'resume' => $request->operation(),
+            default => null,
+        };
+        $sale = $name === null ? $execute() : $this->critical->run($request->actor(), 'sales.'.$id.'.'.$name,
+            (string) $request->header('Idempotency-Key'), $request->validated() + ['revision' => $request->header('If-Match')], $execute);
 
         return $this->respond($request, $sale);
     }

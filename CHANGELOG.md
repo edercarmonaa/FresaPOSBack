@@ -1,5 +1,23 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5d.2b
+
+- Cuatro métodos persistentes con ULID estable, provisión idempotente y desactivación con historial.
+- Preparación interna de pagos y validación exacta de efectivo, cambio y mezclas; confirmación bloqueada también por SQL.
+- Entradas/salidas Cash autorizadas, saldo bajo bloqueo SQL, recibos durables Core y auditoría atómica.
+- Cinco operaciones API, OpenAPI contrastado con 255 respuestas reales y panel Livewire dentro de Caja.
+- Suite completa: 504 pruebas / 5216 aserciones; nueve carreras SQL y 23 capturas Chrome aisladas.
+- Respaldo verificado, dos migraciones incrementales aplicadas y veinte tablas previas intactas.
+- [Informe](docs/entrega-1.5d.2b.md). Sin cobros definitivos, folios, cierres, commits/pushes o avance a 1.5d.3.
+
+## [Sin publicar] — Etapa 1.5d.2a
+
+- Idempotencia durable reusable en Core, UUID v4, hashing canónico y exclusión SQL por intención.
+- Sales real con Cash: apertura, agregado, cantidades/notas y pausa/recuperación; replay autorizado sin duplicados.
+- Estado autenticado, retención segura, compactación horaria y continuidad del POS tras respuesta perdida.
+- Pruebas SQL/HTTP/Livewire, deadlock real y QA Chrome en cuatro tamaños.
+- [Informe y límites](docs/entrega-1.5d.2a.md). Sin cobros, cierres, folios, commits o avances a 1.5d.2b.
+
 ## [Sin publicar] — Etapa 1.5d.1
 
 - Caja única/sesiones ULID, fondo decimal(19,4), permisos actuales y auditoría transaccional.

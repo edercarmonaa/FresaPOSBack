@@ -5,7 +5,11 @@ use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
 use Modules\Cash\Contracts\ActiveCashSession;
+use Modules\Sales\Contracts\CriticalSalesWrites;
+use Modules\Sales\Infrastructure\UnavailableCriticalSalesWrites;
+use Tests\Fixtures\Sales\IdempotencyKeys;
 use Tests\Fixtures\Sales\TestCashSession;
+use Tests\Fixtures\Sales\TestCriticalSalesWrites;
 use Tests\Support\TestDatabaseGuard;
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
@@ -30,6 +34,10 @@ if (! in_array($worker, ['first', 'second'], true)) {
     throw new RuntimeException('Worker inválido.');
 }
 config(['app.key' => $input['app_key'], 'app.debug' => false]);
+// Esta fixture conserva la carrera histórica de revisión con una TX externa.
+// Las nuevas carreras de idempotencia usan el coordinador real sin dobles.
+$app->bind(CriticalSalesWrites::class,
+    ($input['mode'] ?? '') === 'blocked_open' ? UnavailableCriticalSalesWrites::class : TestCriticalSalesWrites::class);
 if (($input['mode'] ?? '') !== 'blocked_open') {
     $app->instance(ActiveCashSession::class, new TestCashSession($input['cash']));
 }
@@ -37,7 +45,7 @@ file_put_contents($directory.'/'.$worker.'-attempt.json', json_encode(['spid' =>
 try {
     $db->beginTransaction();
     $request = Request::create('/api/v1/sales'.$input['path'], $input['method'], server: ['CONTENT_TYPE' => 'application/json', 'HTTP_ACCEPT' => 'application/json',
-        'HTTP_AUTHORIZATION' => 'Bearer '.$input['token'], 'HTTP_IF_MATCH' => '"'.$input['revision'].'"', 'HTTP_IDEMPOTENCY_KEY' => 'concurrent-open-key-01', 'HTTP_X_REQUEST_ID' => 'http-race-'.$worker], content: json_encode($input['payloads'][$worker], JSON_THROW_ON_ERROR));
+        'HTTP_AUTHORIZATION' => 'Bearer '.$input['token'], 'HTTP_IF_MATCH' => '"'.$input['revision'].'"', 'HTTP_IDEMPOTENCY_KEY' => IdempotencyKeys::fromLabel('concurrent-'.$worker), 'HTTP_X_REQUEST_ID' => 'http-race-'.$worker], content: json_encode($input['payloads'][$worker], JSON_THROW_ON_ERROR));
     $kernel = $app->make(HttpKernel::class);
     $response = $kernel->handle($request);
     if ($worker === 'first') {

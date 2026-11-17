@@ -1,0 +1,42 @@
+﻿[
+    {
+        "path":  "/",
+        "status":  200
+    },
+    {
+        "path":  "/up",
+        "status":  200
+    },
+    {
+        "path":  "/api/v1/ping",
+        "status":  200
+    },
+    {
+        "path":  "/login",
+        "status":  200
+    },
+    {
+        "path":  "/livewire-ba99715c/livewire.js",
+        "status":  200
+    },
+    {
+        "path":  "/cash",
+        "status":  302
+    },
+    {
+        "path":  "/pos",
+        "status":  302
+    },
+    {
+        "path":  "/admin/catalog/products",
+        "status":  302
+    },
+    {
+        "path":  "/api/v1/cash/payment-methods",
+        "status":  401
+    },
+    {
+        "path":  "/api/v1/cash/movements",
+        "status":  401
+    }
+]

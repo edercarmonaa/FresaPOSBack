@@ -14,6 +14,7 @@ final readonly class SecurityEvent
         public array $changedFields = [],
         public ?string $priceBefore = null,
         public ?string $priceAfter = null,
+        public ?CashMovementAudit $cashMovement = null,
     ) {
         if (! in_array($type, [
             'login', 'logout', 'password.failed', 'password.locked', 'authentication.unlocked',
@@ -30,8 +31,13 @@ final readonly class SecurityEvent
             'sales.item_note_updated', 'sales.note_updated', 'sales.item_removed', 'sales.cancelled',
             'sales.table.created', 'sales.table.updated',
             'cash.session.opened', 'cash.open.rejected', 'cash.register.updated',
+            'idempotency.key_conflict',
+            'cash.movement.recorded', 'cash.payment_method.updated',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
+        }
+        if (($type === 'cash.movement.recorded') !== ($cashMovement !== null)) {
+            throw new \InvalidArgumentException('El movimiento requiere datos de auditoría financiera cerrados.');
         }
         foreach ([$actorId, $subjectId, $recordId] as $id) {
             if ($id !== null && preg_match('/\A[0-7][0-9A-HJKMNP-TV-Z]{25}\z/i', $id) !== 1) {

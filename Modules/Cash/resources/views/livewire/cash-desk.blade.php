@@ -2,7 +2,7 @@
     <style>.cash-form input,.cash-form button{min-height:44px}.cash-form input{max-width:100%;width:100%}.cash-form button{padding:12px 16px}main{overflow-wrap:anywhere}@media(max-width:640px){main{padding:16px!important}}</style>
     <header><p class="text-sm font-semibold text-blue-800">FresaPOS · Operación</p><h1 id="cash-title" class="text-3xl font-bold">Caja</h1><p class="mt-2 text-slate-600">Consulta el estado y registra el fondo inicial al comenzar la sesión.</p></header>
     <div role="status" aria-live="polite">@if($status)<p class="rounded border border-green-300 bg-green-50 p-4 text-green-900">{{ $status }}</p>@endif</div>
-    <div data-cash-network hidden role="alert" class="rounded border border-red-300 bg-red-50 p-4">No se pudo actualizar. Conservamos el fondo ingresado. Comprueba tu sesión y conexión antes de reintentar. <a class="underline" href="{{ route('login') }}">Iniciar sesión</a></div>
+    <div data-cash-network hidden role="alert" class="rounded border border-red-300 bg-red-50 p-4">No se pudo actualizar. Conservamos los datos ingresados. Comprueba tu sesión y conexión; consulta el estado de la operación antes de reintentar. <a class="underline" href="{{ route('login') }}">Iniciar sesión</a></div>
     @if($errors->any())<div role="alert" class="rounded border border-red-300 bg-red-50 p-4"><strong>No se completó la apertura.</strong><ul>@foreach($errors->all() as $message)<li>{{ $message }}</li>@endforeach</ul></div>@endif
     @if(count($registers) === 0)
         <p class="rounded border bg-white p-4">La caja todavía no ha sido aprovisionada. Contacta al administrador.</p>
@@ -24,6 +24,7 @@
         </article>
     @endif
     <div class="flex flex-wrap gap-3"><button type="button" wire:click="refreshState" wire:loading.attr="disabled" class="min-h-11 rounded border border-slate-400 bg-white px-4 py-3">Actualizar estado</button><span wire:loading.delay role="status" class="p-3">Consultando caja…</span></div>
+    <livewire:cash.movements :key="'cash-movements-'.($session['id'] ?? 'none')" />
     @script
     <script>
         const root = $wire.$el;

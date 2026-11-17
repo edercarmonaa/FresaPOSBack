@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'OPERATION_IN_PROGRESS' => 'La operación sigue en proceso. Consulta su estado y conserva la misma clave.',
+    'IDEMPOTENCY_KEY_CONFLICT' => 'La clave ya fue utilizada para otra intención o su respuesta expiró. Consulta el estado antes de continuar.',
     'INVALID_CREDENTIALS' => 'No fue posible verificar las credenciales.',
     'SESSION_EXPIRED' => 'La sesión ya no está disponible. Inicia sesión nuevamente.',
     'PIN_INVALID' => 'No fue posible verificar el PIN.',

@@ -1,0 +1,43 @@
+{
+    "database": "fresapos_test",
+    "fixture_only": true,
+    "cash_sessions": 1,
+    "movements": [
+        {
+            "type": "cash_in",
+            "amount": "25.5000",
+            "concept": "Reposici\u00f3n autorizada de QA"
+        },
+        {
+            "type": "cash_out",
+            "amount": "5.1250",
+            "concept": "Retiro autorizado de QA"
+        }
+    ],
+    "expected": {
+        "cash_session_id": "01m7ndjww3f4a0dkcz5kvahqf4",
+        "opening_fund": "100.0000",
+        "cash_in": "25.5000",
+        "cash_out": "5.1250",
+        "confirmed_sales_cash": "0.0000",
+        "expected_cash": "120.3750"
+    },
+    "sales": 0,
+    "payments": 0,
+    "operation_states": [
+        {
+            "state": "completed",
+            "total": "2"
+        },
+        {
+            "state": "failed",
+            "total": "1"
+        }
+    ],
+    "audits": [
+        {
+            "event_type": "cash.movement.recorded",
+            "total": "2"
+        }
+    ]
+}

@@ -107,3 +107,15 @@ Auth contiene Application (autenticación, registro de accesos y PIN), Domain (e
 Catalog incorpora Domain (precio/texto/conflictos), Contracts (administración, consulta operativa y DTOs readonly), Application/Services, puertos de repositorio, Infrastructure/Persistence y modelos privados, más CatalogPolicy. No agrega Http ni endpoints. Su dependencia declarada es Core/Users, por TransactionManager, SecurityEvent e IdentityAccess; Users y Audit siguen dependiendo de Core. No existe dependencia hacia Sales ni modelos privados de otros módulos.
 
 El contrato operativo devuelve una instantánea inmutable del producto/categoría/precio vigentes. Sales deberá persistir valores por línea; el catálogo no recalcula operaciones históricas. Se reutiliza la coordinación SQL de identidad para que los cambios de permisos no se intercalen con escrituras autorizadas; los repositorios no abren transacciones propias. La auditoría mínima se integra en la transacción existente. Véase [entrega-1.4a.md](entrega-1.4a.md).
+
+## Actualización 1.5d.2a — Idempotencia
+
+Core incorpora coordinación genérica durable con contratos públicos y adapters SQL; no depende de identidad ni Sales. Sales compone autorización fresca, transacciones y DTOs mediante DurableSalesWrites. El lock de sesión protege contexto/UUID y negocio/recibo se confirman juntos. Cash se reutiliza sin cambios. [Protocolo, recuperación, retención y límites](entrega-1.5d.2a.md).
+
+## Actualización 1.5d.2b — Preparación financiera y efectivo
+
+Cash publica PaymentMethods y CashMovements con DTOs inmutables; Application coordina autorización, idempotencia Core, sesión, saldo y Audit en una sola transacción. FinancialStore persiste movimientos y agrega importes exactos, sin abrir una transacción independiente. Http adapta esos contratos a cinco operaciones REST y al panel Livewire de Caja. No hay edición o borrado de historial.
+
+Sales prepara cotizaciones mediante PreparePayments y PaymentAllocation, utilizando métodos activos y sesión original por contratos públicos de Cash. No importa sus modelos. DecimalAmount de Core reúne la aritmética exacta antes contenida en Sales; Amount conserva la interfaz anterior. Cash no depende de Sales y Core no depende de módulos funcionales. Audit recibe el DTO cerrado CashMovementAudit y usa su registro existente.
+
+sales_payments conserva FK reales y solo admite borradores; una CHECK impide confirmaciones en esta etapa. Confirmación, folios y cierres requieren la siguiente entrega. No existe integración anticipada de cobro en POS. [Reglas, pruebas y límites](entrega-1.5d.2b.md).
