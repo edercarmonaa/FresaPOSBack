@@ -1,5 +1,7 @@
 # Arquitectura modular — etapas 1.2 y 1.3a
 
+Actualización 1.5d.1: Cash implementa caja única, sesiones, apertura/consulta y ActiveCashSession real. Consume Core/Users; Sales consume el contrato público Cash y añade FK incremental sin importar sus modelos. Sin dependencia Cash→Sales. Idempotencia Cash propia; apertura/agregado API/POS de Sales siguen bloqueados por su idempotencia pendiente. [Informe Cash](entrega-1.5d.1.md). Las descripciones posteriores conservan el alcance histórico de sus entregas.
+
 Actualización 1.5a: Sales incorpora ventas, líneas históricas y mesas, con reglas/DTOs, servicios y persistencia Eloquent. Consume contratos de Core, Users, Catalog y el nuevo contrato ActiveCashSession de Cash. Cash no tiene implementación funcional: el adaptador registrado rechaza operaciones hasta disponer de caja real; los dobles están solo en Tests. Catalog no depende de Sales. Se reutiliza Audit mediante SecurityEvent y se emiten eventos secundarios tras commit. Véase [entrega-1.5a.md](entrega-1.5a.md). Las descripciones de etapas anteriores que siguen son históricas.
 
 Actualización 1.2b: Core incorpora el contrato real TransactionManager y su adaptador Laravel en Infrastructure/Persistence. No se modifican permisos entre módulos. [Persistencia](persistencia.md) documenta ULID nativo, transacciones y efectos posteriores al commit; [entorno-pruebas.md](entorno-pruebas.md) describe la suite SQL independiente. La visión y responsabilidades originales se mantienen con las extensiones indicadas.

@@ -1,0 +1,293 @@
+{
+  "browser": "Chrome/157.0.8103.51",
+  "database": "fresapos_test",
+  "fixture_only": true,
+  "screens": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-unprovisioned-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-form-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-without-cash-1440x900.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1024,
+        1024
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-form-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-without-cash-1024x768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-form-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-without-cash-768x1024.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-form-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-without-cash-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-validation-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-confirmation-390x844.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-open-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-with-cash-1440x900.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-open-1024x768.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-with-cash-1024x768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-open-768x1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-with-cash-768x1024.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-open-390x844.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-with-cash-390x844.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pos-waiter-no-financial-disclosure-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-waiter-forbidden-1440x900.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cash-revoked-session-1440x900.png"
+    }
+  ]
+}

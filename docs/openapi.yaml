@@ -19,7 +19,136 @@ tags:
     description: Categorías y productos administrativos; permisos actuales y precios decimales exactos.
   - name: Sales
     description: Mesas, consulta y operaciones no financieras sobre ventas; dependencias explícitas.
+  - name: Cash
+    description: Caja única, apertura y consulta autorizadas; sin pagos ni cierre.
 paths:
+  /cash/registers:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashRegisters
+      summary: Lista la única caja física. Requiere cash.view.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Resultado confirmado; replay devuelve el mismo recurso persistido.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashRegistersResponse'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/sessions/current:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashCurrent
+      summary: Consulta la sesión abierta o null. Requiere cash.view.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      responses:
+        '200':
+          description: Resultado confirmado; replay devuelve el mismo recurso persistido.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashSessionResponse'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/sessions:
+    post:
+      tags:
+      - Cash
+      operationId: apiV1CashOpen
+      summary: Abre caja explícitamente. Requiere cash.open y cash.view.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9_-]{16,128}$
+        description: No reutilizar para otra apertura. Reintentar con la misma clave
+          y contenido tras pérdida de respuesta.
+      responses:
+        '200':
+          description: Resultado confirmado; replay devuelve el mismo recurso persistido.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashSessionResponse'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      description: 'Transacción Core, autorización actual y caja activa. Solo una sesión
+        abierta por índice filtrado SQL. Clave durable por actor: mismo fondo/caja recupera
+        la sesión original (incluida una sesión ya cerrada), otro contenido devuelve
+        409. No se crean pagos ni ingresos. Respuesta 200 tanto inicial como replay.
+        Cash no habilita apertura/agregado de Sales sin su idempotencia durable pendiente.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CashOpen'
   /auth/login:
     post:
       tags: [Auth]
@@ -2080,6 +2209,131 @@ components:
       schema:
         type: string
   schemas:
+    CashRegister:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - name
+      - is_active
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        name:
+          type: string
+          maxLength: 150
+        is_active:
+          type: boolean
+    CashOpen:
+      type: object
+      additionalProperties: false
+      required:
+      - register_id
+      - opening_fund
+      properties:
+        register_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        opening_fund:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})(?:\.[0-9]{1,4})?$
+          description: Fondo inicial exacto; puede ser cero. No admite números JSON, exponentes
+            ni separador de miles.
+    CashSession:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - register
+      - opened_by
+      - status
+      - opening_fund
+      - opened_at
+      - closed_at
+      - closed_by
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        register:
+          $ref: '#/components/schemas/CashRegister'
+        opened_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        status:
+          type: string
+          enum:
+          - open
+          - closed
+        opening_fund:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        opened_at:
+          type: string
+          format: date-time
+        closed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        closed_by:
+          oneOf:
+          - $ref: '#/components/schemas/CatalogUlid'
+          - type: 'null'
+    CashRegistersResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - registers
+          properties:
+            registers:
+              type: array
+              maxItems: 1
+              items:
+                $ref: '#/components/schemas/CashRegister'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashSessionResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - session
+          properties:
+            session:
+              oneOf:
+              - $ref: '#/components/schemas/CashSession'
+              - type: 'null'
+        meta:
+          $ref: '#/components/schemas/Meta'
     SalesRevision:
       type: string
       pattern: ^[a-f0-9]{64}$

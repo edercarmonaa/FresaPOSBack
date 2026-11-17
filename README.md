@@ -1,6 +1,6 @@
 # FresaPOSBack
 
-Etapa actual: **1.5c, interfaz POS Web**, accesible en [Punto de venta](http://127.0.0.1:8080/pos) con sesión y permisos. [Informe del POS](docs/entrega-1.5c.md), [API de Sales](docs/entrega-1.5b.md), [catálogo](docs/entrega-1.4d.md) y [autenticación](docs/autenticacion.md). Permite consultar catálogo, mesas y ventas. La apertura/agregado requieren Cash e idempotencia durable; retirada/cancelación requieren motivos autorizados. Las operaciones dependientes siguen deshabilitadas y protegidas en el servidor.
+Etapa actual: **1.5d.1, fundamentos de Cash**, [Caja](http://127.0.0.1:8080/cash) y [POS](http://127.0.0.1:8080/pos), con sesión y permisos. [Informe Cash](docs/entrega-1.5d.1.md), [POS](docs/entrega-1.5c.md), [API Sales](docs/entrega-1.5b.md). Caja única, apertura explícita con fondo exacto, reintentos durables y adaptador real para Sales. **Apertura/agregado de ventas siguen bloqueados por idempotencia durable de Sales pendiente**, aun con caja abierta; retirada/cancelación requieren motivos autorizados. Sin pagos, movimientos, arqueo ni cierre.
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas. Entrega 1.1, versión 0.1.0: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Sin funcionalidades POS, Node, npm ni Vite.
 

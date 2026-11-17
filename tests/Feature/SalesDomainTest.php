@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use InvalidArgumentException;
+use Modules\Cash\Application\Services\ManageCash;
 use Modules\Cash\Contracts\ActiveCashSession;
 use Modules\Sales\Contracts\AddProduct;
 use Modules\Sales\Contracts\DiscountProposal;
@@ -124,10 +125,10 @@ class SalesDomainTest extends TestCase
 
     public function test_production_bindings_deny_missing_financial_and_reason_dependencies(): void
     {
-        $this->assertInstanceOf(UnavailableCashSession::class, app(ActiveCashSession::class));
+        $this->assertInstanceOf(ManageCash::class, app(ActiveCashSession::class));
         $this->assertInstanceOf(UnavailableLineRemoval::class, app(LineRemovalApproval::class));
         $this->expectException(SalesConflict::class);
-        app(ActiveCashSession::class)->requireActive('01arz3ndektsv4rrffq69g5fav');
+        (new UnavailableCashSession)->requireActive('01arz3ndektsv4rrffq69g5fav');
     }
 
     public function test_discount_proposal_does_not_apply_or_authorize_discounts(): void

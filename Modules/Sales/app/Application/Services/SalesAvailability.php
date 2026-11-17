@@ -3,6 +3,7 @@
 namespace Modules\Sales\Application\Services;
 
 use Modules\Cash\Contracts\ActiveCashSession;
+use Modules\Cash\Contracts\CashSessionUnavailable;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Sales\Contracts\CriticalSalesWrites;
 use Modules\Sales\Domain\SalesConflict;
@@ -19,18 +20,22 @@ final class SalesAvailability
 
     public function cash(string $actorId, ?string $sessionId = null): bool
     {
+        return $this->activeId($actorId, $sessionId) !== null;
+    }
+
+    public function activeId(string $actorId, ?string $sessionId = null): ?string
+    {
         if ($this->cash instanceof UnavailableCashSession) {
-            return false;
+            return null;
         }
         try {
-            return $this->transactions->run(function () use ($actorId, $sessionId): bool {
+            return $this->transactions->run(function () use ($actorId, $sessionId): string {
                 $this->identities->lock();
-                $this->cash->requireActive($actorId, $sessionId);
 
-                return true;
+                return $this->cash->requireActive($actorId, $sessionId);
             });
-        } catch (SalesConflict|SalesDependencyUnavailable) {
-            return false;
+        } catch (SalesConflict|SalesDependencyUnavailable|CashSessionUnavailable) {
+            return null;
         }
     }
 

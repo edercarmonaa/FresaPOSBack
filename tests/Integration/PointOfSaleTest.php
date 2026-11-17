@@ -119,7 +119,7 @@ class PointOfSaleTest extends SalesSqlServerTestCase
     public function test_default_cash_and_critical_dependencies_block_even_forged_actions(): void
     {
         $this->login();
-        Livewire::test(PointOfSale::class)->assertSee('La integración de caja está pendiente')->assertSee('No hay ventas abiertas')
+        Livewire::test(PointOfSale::class)->assertSee('No hay sesión de caja abierta')->assertSee('No hay ventas abiertas')
             ->call('startSale')->assertHasErrors('operation')->assertSee('Operación no disponible');
         $this->assertSame(0, $this->database->table('sales_sales')->count());
         $this->assertSame(0, $this->database->table('sales_items')->count());

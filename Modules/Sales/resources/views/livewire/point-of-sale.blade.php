@@ -5,10 +5,11 @@
         <div class="pos-employee"><span class="pos-dot"></span><div><span class="pos-muted">Empleado activo</span><strong>{{ $actor->name }}</strong><a href="{{ route('auth.account') }}">Cambiar empleado</a></div></div>
     </header>
     @if(!$cash)
-        <div class="pos-notice" role="status"><strong>La integración de caja está pendiente.</strong><p>Puedes consultar productos, mesas y ventas. La apertura y edición estarán disponibles al integrar una sesión de caja real.</p></div>
+        <div class="pos-notice" role="status"><strong>No hay sesión de caja abierta válida para esta operación.</strong><p>Puedes consultar productos, mesas y ventas. La escritura requiere una sesión de caja real vigente.</p>@can('cash.view')<a href="{{ route('cash.desk') }}">Consultar caja</a>@endcan</div>
     @elseif(!$critical)
         <div class="pos-notice" role="status"><strong>Apertura y agregado temporalmente no disponibles.</strong><p>Estas operaciones requieren la integración de idempotencia durable.</p></div>
     @endif
+    @if($cashSessionId)<p class="pos-muted pos-small">Sesión de caja activa: <span class="break-all">{{ $cashSessionId }}</span></p>@endif
     <div class="pos-feedback" aria-live="polite" aria-atomic="true">
         <div class="pos-error" data-pos-network hidden role="alert"><p data-pos-network-message></p><a href="{{ route('login') }}">Volver a iniciar sesión</a></div>
         @if($stale)<p class="pos-notice" role="status">Esta venta cambió desde tu última consulta. Usa «Actualizar vista» antes de editar. Tus notas pendientes se conservan.</p>@endif
@@ -39,7 +40,7 @@
                     @if($tables) @include('sales::partials.pagination', ['total'=>$tables->total, 'size'=>10, 'page'=>$tablePage, 'target'=>'tablePage', 'label'=>'mesas']) @endif
                     @if($tableId && !$saleId)<button type="button" class="pos-primary pos-spaced" wire:click="startSale" @disabled(!$critical || !in_array('sales.create', $actor->permissions, true)) wire:loading.attr="disabled" aria-describedby="pos-opening-help">Iniciar venta de mesa</button>@endif
                 @endif
-                <p id="pos-opening-help" class="pos-muted pos-small pos-spaced">{{ !$cash ? 'Apertura deshabilitada: falta integrar caja.' : (!$critical ? 'Apertura deshabilitada: falta idempotencia durable.' : 'La apertura verifica caja y permisos en el servidor.') }}</p>
+                <p id="pos-opening-help" class="pos-muted pos-small pos-spaced">{{ !$cash ? 'Apertura deshabilitada: no hay una sesión de caja válida.' : (!$critical ? 'Apertura deshabilitada: falta idempotencia durable.' : 'La apertura verifica caja y permisos en el servidor.') }}</p>
             </section>
             <section class="pos-card" aria-labelledby="pos-catalog-title">
                 <div class="pos-row"><div><p class="pos-eyebrow">Elige lo que necesitas</p><h2 id="pos-catalog-title">Productos</h2></div><span class="pos-muted">{{ $products?->total ?? 0 }} disponibles</span></div>

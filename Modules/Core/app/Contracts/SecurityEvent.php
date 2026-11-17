@@ -29,6 +29,7 @@ final readonly class SecurityEvent
             'sales.opened', 'sales.paused', 'sales.resumed', 'sales.item_added', 'sales.quantity_changed',
             'sales.item_note_updated', 'sales.note_updated', 'sales.item_removed', 'sales.cancelled',
             'sales.table.created', 'sales.table.updated',
+            'cash.session.opened', 'cash.open.rejected', 'cash.register.updated',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }

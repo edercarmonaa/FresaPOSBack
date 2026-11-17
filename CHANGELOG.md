@@ -1,5 +1,14 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5d.1
+
+- Caja única/sesiones ULID, fondo decimal(19,4), permisos actuales y auditoría transaccional.
+- Apertura con recibo SQL durable, replay autorizado e índice contra sesiones simultáneas.
+- Contrato Cash real en transacción Sales; FK incremental sin reescribir historia.
+- Tres endpoints Cash, pantalla /cash, navegación/estado POS y OpenAPI ampliado.
+- Pruebas SQL/HTTP/Livewire, seis carreras SQL independientes y 22 capturas Chrome aisladas.
+- [Informe/límites](docs/entrega-1.5d.1.md). Apertura/agregado Sales bloqueados por su idempotencia pendiente. Sin pagos, movimientos, arqueos, cierres ni commits/pushes.
+
 ## [Sin publicar] — Etapa 1.5c
 
 - Punto de venta Web en /pos con Blade/Livewire, navegación y empleado activo; catálogo paginado, búsqueda/categorías e imágenes.

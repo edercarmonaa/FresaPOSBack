@@ -12,6 +12,7 @@ use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
+use Modules\Cash\Contracts\CashSessionUnavailable;
 use Modules\Catalog\Contracts\CatalogAdministration;
 use Modules\Catalog\Contracts\CatalogReader;
 use Modules\Catalog\Contracts\CategoryQuery;
@@ -386,6 +387,8 @@ class PointOfSale extends Component
                     $this->addError($field, $message);
                 }
             }
+        } catch (CashSessionUnavailable $exception) {
+            $this->addError('operation', 'No hay una sesión de caja válida. Actualiza la venta y el estado de caja.');
         } catch (SalesDependencyUnavailable $exception) {
             $this->addError('operation', 'Operación no disponible: falta integrar caja, idempotencia o motivos autorizados.');
         } catch (SalesConflict $exception) {
@@ -411,7 +414,8 @@ class PointOfSale extends Component
         $actor = $this->actor();
         $products = $categories = $tables = $sales = null;
         $cash = $critical = $editable = $stale = false;
-        $this->attempt(function () use ($actor, &$products, &$categories, &$tables, &$sales, &$cash, &$critical, &$editable, &$stale): void {
+        $cashSessionId = null;
+        $this->attempt(function () use ($actor, &$products, &$categories, &$tables, &$sales, &$cash, &$critical, &$editable, &$stale, &$cashSessionId): void {
             $catalog = app(CatalogAdministration::class);
             $products = $catalog->products($actor->id, new ProductQuery(name: $this->search, categoryId: $this->categoryFilter === '' ? null : $this->categoryFilter, page: $this->productPage, perPage: 10, availableForSale: true));
             $categories = $catalog->categories($actor->id, new CategoryQuery(isActive: true, page: $this->categoryPage, perPage: 10));
@@ -422,7 +426,8 @@ class PointOfSale extends Component
             }
             $selected = $this->saleId === null ? null : $this->sales()->sale($actor->id, $this->saleId);
             $stale = $selected !== null && ! hash_equals($this->revision, SalesRevision::of($selected));
-            $cash = app(SalesAvailability::class)->cash($actor->id, $selected?->sale->cashSessionId);
+            $cashSessionId = app(SalesAvailability::class)->activeId($actor->id, $selected?->sale->cashSessionId);
+            $cash = $cashSessionId !== null;
             $critical = $cash && app(SalesAvailability::class)->critical();
             $editable = ! $stale && $cash && in_array('sales.open.update', $actor->permissions, true) && ($selected?->sale->state === SaleState::Open);
         }, false);
@@ -436,6 +441,6 @@ class PointOfSale extends Component
             }
         }
 
-        return view('sales::livewire.point-of-sale', compact('actor', 'products', 'categories', 'tables', 'sales', 'cash', 'critical', 'editable', 'stale', 'images'));
+        return view('sales::livewire.point-of-sale', compact('actor', 'products', 'categories', 'tables', 'sales', 'cash', 'critical', 'editable', 'stale', 'images', 'cashSessionId'));
     }
 }

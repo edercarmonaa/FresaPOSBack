@@ -7,7 +7,7 @@ return [
     'Users' => ['Core'],
     'Catalog' => ['Core', 'Users'],
     'Sales' => ['Core', 'Users', 'Catalog', 'Cash'],
-    'Cash' => ['Core'],
+    'Cash' => ['Core', 'Users'],
     'Tickets' => ['Core'],
     'Reports' => ['Core'],
     'Audit' => ['Core'],

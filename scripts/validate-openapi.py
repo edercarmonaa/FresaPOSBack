@@ -45,7 +45,7 @@ def main():
         if actual != documented:
             errors.append(f"Rutas sin documentar: {sorted(actual - documented)}; ficticias: {sorted(documented - actual)}")
         for route in routes:
-            if route["path"].startswith(("/catalog/", "/sales")):
+            if route["path"].startswith(("/catalog/", "/sales", "/cash/")):
                 security = spec["paths"][route["path"]][route["method"]].get("security", spec.get("security", []))
                 if not any("BearerAuth" in rule for rule in security) or not {"auth:sanctum", "auth.access.api"}.issubset(route["middleware"]):
                     errors.append(f"Autenticación incoherente en {route['method']} {route['path']}")
@@ -69,6 +69,8 @@ def main():
                 except (KeyError, ValueError) as error:
                     errors.append(f"Contrato ausente en respuesta {method} {path} {status}: {error}")
             sampled_modules = ('/catalog/', '/sales') if any(path.startswith('/sales') for _, path in covered) else ('/catalog/',)
+            if any(path.startswith('/cash/') for _, path in covered):
+                sampled_modules += ('/cash/',)
             missing_samples = {operation for operation in actual if operation[1].startswith(sampled_modules)} - covered
             if missing_samples:
                 errors.append(f"Operaciones sin respuesta real contrastada: {sorted(missing_samples)}")
@@ -77,6 +79,7 @@ def main():
               "file": args.spec.as_posix(), "openapi": spec.get("openapi"), "operations": len(actual),
               "catalog_operations": sum(path.startswith("/catalog/") for _, path in actual),
               "sales_operations": sum(path.startswith("/sales") for _, path in actual),
+              "cash_operations": sum(path.startswith("/cash/") for _, path in actual),
               "responses_validated": response_count, "operations_with_response_samples": len(covered),
               "errors": errors, "error_count": len(errors), "warnings": [str(item.message) for item in recorded],
               "warning_count": len(recorded), "result": "PASS" if not errors else "FAIL"}
