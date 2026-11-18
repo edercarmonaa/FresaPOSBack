@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: >-
     REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
-    Sales 1.5d.3 incorpora checkout transaccional, pagos mixtos y folios diarios con Cash real e idempotencia durable. Motivos y aprobación de dispositivos son futuros. Imágenes administradas mediante endpoints dedicados multipart.
+    Sales 1.5d.3 incorpora checkout transaccional, pagos mixtos y folios diarios con Cash real e idempotencia durable. La etapa 1.6a habilita motivos autorizados, retiro y cancelación no financiera; aprobación de dispositivos pendiente. Imágenes administradas mediante endpoints dedicados multipart.
     Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
 servers:
   - url: http://127.0.0.1:8080/api/v1
@@ -2318,10 +2318,11 @@ paths:
       tags:
       - Sales
       operationId: salesDeleteSalesIdItemsItemid
-      summary: Retira línea autorizada; condicionada a motivos.
-      description: Permiso sales.open.update y sales.view y sales.special.authorize. Bearer propio vigente, sin herencia de
-        privilegios del navegador/PIN. Actor derivado del token. No-store; importes como texto decimal; UTC. Requiere además
-        sales.special.authorize, Cash real y LineRemovalApproval funcional; sin catálogo rechaza (409). Baja lógica, no borrado.
+      summary: Retira una línea completa conservando su historia.
+      description: 'Permisos existentes: sales.view y sales.open.update y sales.special.authorize. Motivo activo del tipo correcto,
+        Cash original abierto, If-Match vigente y UUID v4 durable Core. reason_code obligatorio, sin texto libre ni campos adicionales.
+        No modifica pagos, folios ni movimientos. Reintento exacto devuelve el recibo sin duplicar auditoría; nueva clave o
+        revisión obsoleta produce conflicto. Ventas pagadas/cerradas/canceladas se rechazan. Catálogo vacío bloquea la operación.'
       security:
       - BearerAuth: []
       parameters:
@@ -2343,6 +2344,15 @@ paths:
           type: string
           pattern: ^"[a-f0-9]{64}"$
         description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -2625,10 +2635,11 @@ paths:
       tags:
       - Sales
       operationId: salesPostSalesIdCancel
-      summary: Cancelación no financiera; condicionada a motivos.
-      description: Permiso sales.cancel y sales.view. Bearer propio vigente, sin herencia de privilegios del navegador/PIN.
-        Actor derivado del token. No-store; importes como texto decimal; UTC. Cancelación no financiera bloqueada (503) hasta
-        catálogo autorizado de motivos y Cash real; no acepta texto libre.
+      summary: Cancela una venta abierta o pausada sin pagos.
+      description: 'Permisos existentes: sales.view y sales.cancel. Motivo activo del tipo correcto, Cash original abierto,
+        If-Match vigente y UUID v4 durable Core. reason_code obligatorio, sin texto libre ni campos adicionales. No modifica
+        pagos, folios ni movimientos. Reintento exacto devuelve el recibo sin duplicar auditoría; nueva clave o revisión obsoleta
+        produce conflicto. Ventas pagadas/cerradas/canceladas se rechazan. Catálogo vacío bloquea la operación.'
       security:
       - BearerAuth: []
       parameters:
@@ -2645,6 +2656,15 @@ paths:
           type: string
           pattern: ^"[a-f0-9]{64}"$
         description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
       responses:
         '200':
           description: Respuesta uniforme; operación condicionada a dependencias documentadas.
@@ -3075,6 +3095,323 @@ paths:
           $ref: '#/components/responses/InternalError'
         '503':
           $ref: '#/components/responses/ServiceUnavailable'
+  /sales/reasons:
+    get:
+      tags:
+      - Sales
+      operationId: salesReasonsIndex
+      summary: Consulta paginada de motivos autorizados.
+      description: 'Bearer vigente y sales.view. Consulta operativa: operation obligatoria, solo motivos activos y permiso de
+        la operación (sales.special.authorize + sales.open.update para retiro, sales.cancel para cancelación). administration=true,
+        detalle y escrituras requieren settings.update. Sin eliminación física, sin semillas operativas, sin actor enviado por
+        cliente. Escrituras durables Core y auditoría central; PUT completo e If-Match. No-store.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: operation
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - sale_item_removal
+          - sale_cancellation
+      - name: administration
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: is_active
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+      responses:
+        '200':
+          description: Catálogo autorizado de motivos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReasonsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    post:
+      tags:
+      - Sales
+      operationId: salesReasonsCreate
+      summary: Crea un motivo autorizado.
+      description: 'Bearer vigente y sales.view. Consulta operativa: operation obligatoria, solo motivos activos y permiso de
+        la operación (sales.special.authorize + sales.open.update para retiro, sales.cancel para cancelación). administration=true,
+        detalle y escrituras requieren settings.update. Sin eliminación física, sin semillas operativas, sin actor enviado por
+        cliente. Escrituras durables Core y auditoría central; PUT completo e If-Match. No-store.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '201':
+          description: Catálogo autorizado de motivos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReasonResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleReasonCreate'
+  /sales/reasons/{id}:
+    get:
+      tags:
+      - Sales
+      operationId: salesReasonsShow
+      summary: Consulta administrativa de un motivo.
+      description: 'Bearer vigente y sales.view. Consulta operativa: operation obligatoria, solo motivos activos y permiso de
+        la operación (sales.special.authorize + sales.open.update para retiro, sales.cancel para cancelación). administration=true,
+        detalle y escrituras requieren settings.update. Sin eliminación física, sin semillas operativas, sin actor enviado por
+        cliente. Escrituras durables Core y auditoría central; PUT completo e If-Match. No-store.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Catálogo autorizado de motivos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReasonResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    put:
+      tags:
+      - Sales
+      operationId: salesReasonsUpdate
+      summary: Actualiza nombre, descripción y orden sin cambiar código ni tipo.
+      description: 'Bearer vigente y sales.view. Consulta operativa: operation obligatoria, solo motivos activos y permiso de
+        la operación (sales.special.authorize + sales.open.update para retiro, sales.cancel para cancelación). administration=true,
+        detalle y escrituras requieren settings.update. Sin eliminación física, sin semillas operativas, sin actor enviado por
+        cliente. Escrituras durables Core y auditoría central; PUT completo e If-Match. No-store.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Catálogo autorizado de motivos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReasonResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleReasonUpdate'
+  /sales/reasons/{id}/status:
+    patch:
+      tags:
+      - Sales
+      operationId: salesReasonsStatus
+      summary: Activa o desactiva un motivo para nuevas operaciones.
+      description: 'Bearer vigente y sales.view. Consulta operativa: operation obligatoria, solo motivos activos y permiso de
+        la operación (sales.special.authorize + sales.open.update para retiro, sales.cancel para cancelación). administration=true,
+        detalle y escrituras requieren settings.update. Sin eliminación física, sin semillas operativas, sin actor enviado por
+        cliente. Escrituras durables Core y auditoría central; PUT completo e If-Match. No-store.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      responses:
+        '200':
+          description: Catálogo autorizado de motivos.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReasonResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleReasonStatus'
 components:
   securitySchemes:
     BearerAuth:
@@ -3114,6 +3451,224 @@ components:
       schema:
         type: string
   schemas:
+    SaleOperationReason:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - code
+      - name
+      - description
+      - operation
+      - is_active
+      - display_order
+      - revision
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        code:
+          type: string
+          pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 500
+        operation:
+          type: string
+          enum:
+          - sale_item_removal
+          - sale_cancellation
+        is_active:
+          type: boolean
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        revision:
+          $ref: '#/components/schemas/SalesRevision'
+    SaleReasonHistory:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - code
+      - name
+      - description
+      - operation
+      - is_active
+      - display_order
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        code:
+          type: string
+          pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 500
+        operation:
+          type: string
+          enum:
+          - sale_item_removal
+          - sale_cancellation
+        is_active:
+          type: boolean
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+    SaleReasonResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - reason
+          properties:
+            reason:
+              $ref: '#/components/schemas/SaleOperationReason'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SaleReasonsResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - reasons
+          properties:
+            reasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/SaleOperationReason'
+        meta:
+          type: object
+          additionalProperties: false
+          required:
+          - request_id
+          - page
+          - per_page
+          - total
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+            page:
+              type: integer
+              minimum: 1
+            per_page:
+              type: integer
+              enum:
+              - 10
+              - 25
+              - 50
+              - 100
+            total:
+              type: integer
+              minimum: 0
+    SaleReasonCreate:
+      type: object
+      additionalProperties: false
+      required:
+      - code
+      - name
+      - operation
+      properties:
+        code:
+          type: string
+          pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 500
+        operation:
+          type: string
+          enum:
+          - sale_item_removal
+          - sale_cancellation
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+        is_active:
+          type: boolean
+    SaleReasonUpdate:
+      type: object
+      additionalProperties: false
+      required:
+      - name
+      - description
+      - display_order
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 150
+        description:
+          type:
+          - string
+          - 'null'
+          maxLength: 500
+        display_order:
+          type: integer
+          minimum: 0
+          maximum: 2147483647
+    SaleReasonStatus:
+      type: object
+      additionalProperties: false
+      required:
+      - is_active
+      properties:
+        is_active:
+          type: boolean
     CashReconciliation:
       type: object
       additionalProperties: false
@@ -3809,6 +4364,8 @@ components:
           - string
           - 'null'
           format: date-time
+        removal_reason:
+          $ref: '#/components/schemas/SaleReasonHistory'
     SalesTableCreate:
       type: object
       additionalProperties: false
@@ -4077,6 +4634,8 @@ components:
           anyOf:
           - $ref: '#/components/schemas/CatalogUlid'
           - type: 'null'
+        cancellation_reason:
+          $ref: '#/components/schemas/SaleReasonHistory'
     SalesDetail:
       type: object
       additionalProperties: false
@@ -4163,6 +4722,8 @@ components:
           maxItems: 20
           items:
             $ref: '#/components/schemas/SalesPayment'
+        cancellation_reason:
+          $ref: '#/components/schemas/SaleReasonHistory'
     SalesTableResponse:
       type: object
       additionalProperties: false

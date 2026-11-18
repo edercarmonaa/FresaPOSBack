@@ -49,6 +49,14 @@ final class RecordSecurityEvent
                 'reconciliation_id' => $event->closing->reconciliationId, 'expected_cash' => $event->closing->expectedCash,
                 'counted_cash' => $event->closing->countedCash, 'difference' => $event->closing->difference], JSON_THROW_ON_ERROR);
         }
+        if ($event->saleOperation !== null) {
+            $values['change_data'] = json_encode(['sale_id' => $event->saleOperation->saleId,
+                'state_before' => $event->saleOperation->stateBefore, 'state_after' => $event->saleOperation->stateAfter,
+                'reason' => $event->saleOperation->reason, 'item' => $event->saleOperation->item], JSON_THROW_ON_ERROR);
+        }
+        if ($event->reasonChange !== null) {
+            $values['change_data'] = json_encode(['before' => $event->reasonChange->before, 'after' => $event->reasonChange->after], JSON_THROW_ON_ERROR);
+        }
         DB::table('audit_security_events')->insert($values);
     }
 }

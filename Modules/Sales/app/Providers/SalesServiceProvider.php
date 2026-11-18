@@ -12,6 +12,7 @@ use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Sales\Application\Ports\SalesStore;
 use Modules\Sales\Application\Services\CheckoutSale;
 use Modules\Sales\Application\Services\DurableSalesWrites;
+use Modules\Sales\Application\Services\ManageSaleReasons;
 use Modules\Sales\Application\Services\ManageSales;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
@@ -19,21 +20,23 @@ use Modules\Sales\Contracts\DiscountApproval;
 use Modules\Sales\Contracts\LineRemovalApproval;
 use Modules\Sales\Contracts\QuantityLimits;
 use Modules\Sales\Contracts\SaleCheckout;
+use Modules\Sales\Contracts\SaleOperationReasons;
 use Modules\Sales\Contracts\SalesOperations;
 use Modules\Sales\Domain\CashUnavailable;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SalesDependencyUnavailable;
 use Modules\Sales\Http\Livewire\CheckoutPanel;
 use Modules\Sales\Http\Livewire\PointOfSale;
+use Modules\Sales\Http\Livewire\ReasonAdministration;
+use Modules\Sales\Http\Livewire\SaleActionsPanel;
 use Modules\Sales\Http\Middleware\PosAccess;
+use Modules\Sales\Infrastructure\AuthorizedSaleReasons;
 use Modules\Sales\Infrastructure\GlobalQuantityLimits;
 use Modules\Sales\Infrastructure\Persistence\ConfirmedCashIncome;
 use Modules\Sales\Infrastructure\Persistence\EloquentSalesStore;
 use Modules\Sales\Infrastructure\Persistence\SessionSalesSummary;
-use Modules\Sales\Infrastructure\UnavailableCancellationApproval;
 use Modules\Sales\Infrastructure\UnavailableCashSession;
 use Modules\Sales\Infrastructure\UnavailableDiscountApproval;
-use Modules\Sales\Infrastructure\UnavailableLineRemoval;
 use Nwidart\Modules\Support\ModuleServiceProvider;
 
 class SalesServiceProvider extends ModuleServiceProvider
@@ -49,9 +52,10 @@ class SalesServiceProvider extends ModuleServiceProvider
         $this->app->bindIf(DiscountApproval::class, UnavailableDiscountApproval::class);
         $this->app->bind(QuantityLimits::class, GlobalQuantityLimits::class);
         $this->app->bindIf(ActiveCashSession::class, UnavailableCashSession::class);
-        $this->app->bindIf(LineRemovalApproval::class, UnavailableLineRemoval::class);
+        $this->app->bind(SaleOperationReasons::class, ManageSaleReasons::class);
+        $this->app->bind(LineRemovalApproval::class, AuthorizedSaleReasons::class);
         $this->app->bind(CriticalSalesWrites::class, DurableSalesWrites::class);
-        $this->app->bindIf(CancellationApproval::class, UnavailableCancellationApproval::class);
+        $this->app->bind(CancellationApproval::class, AuthorizedSaleReasons::class);
     }
 
     public function boot(): void
@@ -59,6 +63,8 @@ class SalesServiceProvider extends ModuleServiceProvider
         parent::boot();
         Livewire::component('sales.pos', PointOfSale::class);
         Livewire::component('sales.checkout', CheckoutPanel::class);
+        Livewire::component('sales.reasons', ReasonAdministration::class);
+        Livewire::component('sales.operations', SaleActionsPanel::class);
         Livewire::addPersistentMiddleware([PosAccess::class]);
         $this->app->make(ApiExceptionMappings::class)->register(SalesConflict::class, ApiCode::CONFLICT);
         $this->app->make(ApiExceptionMappings::class)->register(SalesDependencyUnavailable::class, ApiCode::SERVICE_UNAVAILABLE);

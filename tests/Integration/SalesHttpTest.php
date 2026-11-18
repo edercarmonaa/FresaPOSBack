@@ -66,7 +66,7 @@ class SalesHttpTest extends SalesSqlServerTestCase
     {
         if ($key !== null) {
             $key = IdempotencyKeys::fromLabel($key);
-        } elseif ($method !== 'GET' && preg_match('~/(quantity|note|pause|resume)$~', $path)) {
+        } elseif ($method !== 'GET' && (preg_match('~/(quantity|note|pause|resume|cancel)$~', $path) || $method === 'DELETE' && str_contains($path, '/items/'))) {
             $key = (string) Str::uuid();
         }
         Auth::forgetGuards();

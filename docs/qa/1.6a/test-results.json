@@ -1,0 +1,33 @@
+{
+  "baseline": {
+    "tests": 593,
+    "assertions": 6832,
+    "time": "14:50.399",
+    "memory": "166 MB",
+    "exit": 0
+  },
+  "final": {
+    "command": ".\\scripts\\local.cmd composer test -- --stop-on-failure",
+    "tests": 641,
+    "assertions": 7517,
+    "time": "15:23.190",
+    "memory": "184.00 MB",
+    "exit": 0
+  },
+  "quality": {
+    "analyse": 0,
+    "platform": 0,
+    "validate": 0,
+    "lint": 0
+  },
+  "intermediate_regression": {
+    "tests": 641,
+    "assertions": 7483,
+    "failures": 3,
+    "corrected": [
+      "Explicit controller allowlist",
+      "SQL foreign key rejects historical deletion before AFTER trigger",
+      "Legacy cancel fixture requires UUID v4"
+    ]
+  }
+}

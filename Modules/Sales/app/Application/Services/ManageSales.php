@@ -11,10 +11,12 @@ use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Modules\Cash\Contracts\ActiveCashSession;
 use Modules\Catalog\Contracts\CatalogReader;
+use Modules\Core\Contracts\SaleOperationAudit;
 use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Sales\Application\Ports\SalesStore;
 use Modules\Sales\Contracts\AddProduct;
+use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\DiningTableSnapshot;
 use Modules\Sales\Contracts\Events\SaleChanged;
 use Modules\Sales\Contracts\LineRemovalApproval;
@@ -47,6 +49,7 @@ final class ManageSales implements SalesOperations
         private readonly ActiveCashSession $cash,
         private readonly QuantityLimits $quantities,
         private readonly LineRemovalApproval $removals,
+        private readonly CancellationApproval $cancellations,
     ) {}
 
     public function open(string $actorId, OpenSale $input): SaleSnapshot
@@ -197,8 +200,9 @@ final class ManageSales implements SalesOperations
     {
         return $this->mutate($actorId, $saleId, 'cancelled', function (SaleSnapshot $sale) use ($actorId, $reason): bool {
             SaleLifecycle::cancel($sale->sale->state);
+            $approvedReason = $this->cancellations->reason($actorId, $sale->sale->id, $reason);
             $this->store->updateSale($sale->sale->id, ['status' => SaleState::Cancelled->value, 'cancelled_at' => now()->utc(),
-                'cancelled_by' => $actorId, 'cancellation_reason' => SalesText::normalize($reason, 150, true)]);
+                'cancelled_by' => $actorId, 'cancellation_reason' => SalesText::normalize($approvedReason, 150, true)]);
 
             return true;
         }, permission: 'sales.cancel', editable: false);
@@ -298,8 +302,22 @@ final class ManageSales implements SalesOperations
                 }
             }
             $total = $subtotal->subtract(Amount::from($current->sale->discount));
-            $result = $this->store->updateSale($sale->sale->id, ['subtotal' => $subtotal->value, 'total' => $total->value]);
-            $this->audit($actorId, $sale->sale->id, $operation);
+            // Cancelar no cambia líneas o importes; una venta cancelada ya es historia inmutable.
+            $result = $operation === 'cancelled' ? $current : $this->store->updateSale($sale->sale->id, ['subtotal' => $subtotal->value, 'total' => $total->value]);
+            $evidence = null;
+            if ($operation === 'cancelled' && $result->sale->reasonSnapshot !== null) {
+                $evidence = new SaleOperationAudit($sale->sale->id, $sale->sale->state->value, 'cancelled', $result->sale->reasonSnapshot);
+            } elseif ($operation === 'item_removed') {
+                foreach ($result->items as $item) {
+                    $previous = collect($sale->items)->firstWhere('id', $item->id);
+                    if ($previous !== null && $previous->removedAt === null && $item->removedAt !== null && $item->reasonSnapshot !== null) {
+                        $evidence = new SaleOperationAudit($sale->sale->id, 'open', 'open', $item->reasonSnapshot,
+                            ['item_id' => $item->id, 'product_id' => $item->productId, 'name' => $item->name,
+                                'quantity' => $item->quantity, 'unit_price' => $item->unitPrice, 'line_total' => $item->lineTotal]);
+                    }
+                }
+            }
+            $this->audit($actorId, $sale->sale->id, $operation, $evidence);
 
             return $result;
         });
@@ -337,9 +355,9 @@ final class ManageSales implements SalesOperations
         }
     }
 
-    private function audit(string $actorId, string $saleId, string $operation): void
+    private function audit(string $actorId, string $saleId, string $operation, ?SaleOperationAudit $evidence = null): void
     {
-        event(new SecurityEvent('sales.'.$operation, actorId: $actorId, recordId: $saleId));
+        event(new SecurityEvent('sales.'.$operation, actorId: $actorId, recordId: $saleId, saleOperation: $evidence));
         $this->transactions->afterCommit(function () use ($actorId, $saleId, $operation): void {
             try {
                 event(new SaleChanged($saleId, $actorId, $operation));

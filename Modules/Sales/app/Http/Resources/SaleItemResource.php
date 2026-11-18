@@ -20,6 +20,7 @@ class SaleItemResource extends JsonResource
         return ['id' => $item->id, 'product_id' => $item->productId, 'name' => $item->name,
             'category' => ['id' => $item->categoryId, 'name' => $item->categoryName], 'unit_price' => $item->unitPrice,
             'quantity' => $item->quantity, 'note' => $item->note, 'line_total' => $item->lineTotal,
-            'position' => $item->position, 'removed_at' => $item->removedAt];
+            'position' => $item->position, 'removed_at' => $item->removedAt,
+            ...($item->reasonSnapshot === null ? [] : ['removal_reason' => $item->reasonSnapshot])];
     }
 }

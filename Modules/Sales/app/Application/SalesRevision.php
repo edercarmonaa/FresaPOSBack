@@ -12,7 +12,21 @@ final class SalesRevision
     // e historia; una repetición con el estado anterior falla sin repetir el cambio.
     public static function of(SaleSnapshot|DiningTableSnapshot $snapshot): string
     {
-        return hash_hmac('sha256', json_encode($snapshot, JSON_THROW_ON_ERROR), (string) config('app.key'));
+        $data = json_decode(json_encode($snapshot, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
+        if ($snapshot instanceof SaleSnapshot) {
+            // Preservar revisiones/recibos anteriores cuando no hay nueva evidencia de motivo.
+            if ($data['sale']['reasonSnapshot'] === null) {
+                unset($data['sale']['reasonSnapshot']);
+            }
+            foreach ($data['items'] as &$item) {
+                if ($item['reasonSnapshot'] === null) {
+                    unset($item['reasonSnapshot']);
+                }
+            }
+            unset($item);
+        }
+
+        return hash_hmac('sha256', json_encode($data, JSON_THROW_ON_ERROR), (string) config('app.key'));
     }
 
     public static function requireCurrent(SaleSnapshot|DiningTableSnapshot $snapshot, ?string $expected): void

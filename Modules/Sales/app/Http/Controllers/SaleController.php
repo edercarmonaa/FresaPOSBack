@@ -7,7 +7,6 @@ use Illuminate\Http\JsonResponse;
 use Modules\Core\Contracts\ApiResponder;
 use Modules\Sales\Application\Services\CoordinateSalesWrite;
 use Modules\Sales\Contracts\AddProduct;
-use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
 use Modules\Sales\Contracts\OpenSale;
 use Modules\Sales\Contracts\SaleCheckout;
@@ -23,7 +22,7 @@ use Modules\Sales\Http\Resources\SaleResource;
 final class SaleController
 {
     public function __construct(private readonly SalesOperations $sales, private readonly ApiResponder $responses,
-        private readonly CoordinateSalesWrite $writes, private readonly CriticalSalesWrites $critical, private readonly CancellationApproval $cancellations) {}
+        private readonly CoordinateSalesWrite $writes, private readonly CriticalSalesWrites $critical) {}
 
     public function index(SalesRequest $request): JsonResponse
     {
@@ -103,8 +102,7 @@ final class SaleController
 
     public function cancel(SalesRequest $request, string $id): JsonResponse
     {
-        return $this->mutate($request, $id, fn () => $this->sales->cancel($request->actor(), $id,
-            $this->cancellations->reason($request->actor(), $id, $request->validated('reason_code'))));
+        return $this->mutate($request, $id, fn () => $this->sales->cancel($request->actor(), $id, $request->validated('reason_code')));
     }
 
     /** @param Closure(): SaleSnapshot $operation */
@@ -114,7 +112,8 @@ final class SaleController
         $name = match ($request->operation()) {
             'quantity' => 'quantity.'.$request->route('itemId'),
             'itemNote' => 'item-note.'.$request->route('itemId'),
-            'note', 'pause', 'resume' => $request->operation(),
+            'removeItem' => 'remove.'.$request->route('itemId'),
+            'note', 'pause', 'resume', 'cancel' => $request->operation(),
             default => null,
         };
         $sale = $name === null ? $execute() : $this->critical->run($request->actor(), 'sales.'.$id.'.'.$name,

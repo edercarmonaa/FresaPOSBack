@@ -10,7 +10,7 @@ use Modules\Sales\Contracts\DiningTableSnapshot;
 use Modules\Sales\Contracts\SaleQuery;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SalesDependencyUnavailable;
-use Modules\Sales\Infrastructure\UnavailableCancellationApproval;
+use Modules\Sales\Infrastructure\AuthorizedSaleReasons;
 use Modules\Sales\Infrastructure\UnavailableCriticalSalesWrites;
 use Tests\TestCase;
 
@@ -46,7 +46,7 @@ class SalesApiContractTest extends TestCase
     public function test_production_critical_adapter_is_durable_and_fallback_never_executes_the_operation(): void
     {
         $this->assertInstanceOf(DurableSalesWrites::class, app(CriticalSalesWrites::class));
-        $this->assertInstanceOf(UnavailableCancellationApproval::class, app(CancellationApproval::class));
+        $this->assertInstanceOf(AuthorizedSaleReasons::class, app(CancellationApproval::class));
         $executed = false;
         try {
             (new UnavailableCriticalSalesWrites)->run('actor', 'sales.open', 'key', [], function () use (&$executed): never {

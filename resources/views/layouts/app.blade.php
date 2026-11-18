@@ -14,6 +14,7 @@
         @include('cash::navigation')
         @unless(request()->routeIs('sales.pos'))
             @include('catalog::navigation')
+            @include('sales::reasons-navigation')
         @endunless
         @yield('content')
     </main>

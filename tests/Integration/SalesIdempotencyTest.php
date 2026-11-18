@@ -165,7 +165,7 @@ class SalesIdempotencyTest extends IdempotencySqlServerTestCase
             $this->assertSame(1, $this->database->table('audit_security_events')->where('event_type', $event)->count());
         }
         $this->api('PATCH', '/sales/'.$id.'/items/'.$item.'/quantity', ['quantity' => 0], (string) Str::uuid(), $sale->json('data.revision'))->assertUnprocessable();
-        $this->api('POST', '/sales/'.$id.'/cancel', ['reason_code' => 'NOT_IMPLEMENTED'], revision: $sale->json('data.revision'))->assertStatus(503);
+        $this->api('POST', '/sales/'.$id.'/cancel', ['reason_code' => 'NOT_IMPLEMENTED'], (string) Str::uuid(), $sale->json('data.revision'))->assertStatus(503);
         $this->assertSame(0, $this->database->table('sales_sales')->whereNotNull('folio')->count());
     }
 

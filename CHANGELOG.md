@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.6a
+
+- Catálogo Sales de motivos autorizados con código/tipo inmutables, administración Web/API y ausencia de semillas operativas inventadas.
+- Retiro histórico de líneas y cancelación no financiera de ventas abiertas/pausadas; permisos reales, Cash original, revisión y UUID v4 Core, auditoría atómica y protección SQL.
+- Recuperación del deadlock SQL anidado de Laravel y sincronización del panel POS después de actualizar el ticket.
+- Doce carreras SQL/HTTP, cuatro resoluciones Chrome, doble clic, respuesta perdida y cambio por PIN; 48 pruebas nuevas sin eliminar las 593 anteriores.
+- [Informe A–R y resultados definitivos](docs/entrega-1.6a.md), [evidencia](docs/qa/1.6a/README.md) y OpenAPI de 62 operaciones. Sin commits, pushes ni despliegues externos.
+
 ## [Sin publicar] — Etapa 1.5d.5
 
 - Aceptación integral por API y Chrome real del ciclo Cash–Sales, cinco modalidades de pago, arqueo ciego y segundo turno; sin reconstruir módulos ni cambiar negocio.

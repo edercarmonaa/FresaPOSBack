@@ -41,7 +41,7 @@ final class DurableOperations implements IdempotentOperations
                     $this->database->purge($this->database->getDefaultConnection());
                 }
                 try {
-                    Log::warning('Retrying durable operation.', ['attempt' => $attempt + 1, 'sql_code' => (int) (($exception->errorInfo ?? [])[1] ?? 0)]);
+                    Log::warning('Retrying durable operation.', ['attempt' => $attempt + 1, 'sql_code' => $this->transients->code($exception)]);
                 } catch (Throwable) {
                     // Un diagnóstico fallido no altera la resolución del recibo durable.
                 }

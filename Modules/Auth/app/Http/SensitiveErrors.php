@@ -22,7 +22,7 @@ final class SensitiveErrors
 
     private function handles(Request $request): bool
     {
-        if ($request->is('login', 'logout', 'account', 'admin', 'auth/*', 'admin/catalog/*', 'pos', 'cash')) {
+        if ($request->is('login', 'logout', 'account', 'admin', 'auth/*', 'admin/catalog/*', 'admin/sales/reasons', 'pos', 'cash')) {
             return true;
         }
         $components = $request->input('components', []);
@@ -34,7 +34,7 @@ final class SensitiveErrors
                 continue;
             }
             $snapshot = json_decode($component['snapshot'], true);
-            if (is_array($snapshot) && in_array($snapshot['memo']['name'] ?? null, ['auth.login', 'auth.sessions', 'catalog.categories', 'catalog.products', 'sales.pos', 'sales.checkout', 'cash.desk', 'cash.movements', 'cash.closing'], true)) {
+            if (is_array($snapshot) && in_array($snapshot['memo']['name'] ?? null, ['auth.login', 'auth.sessions', 'catalog.categories', 'catalog.products', 'sales.pos', 'sales.checkout', 'sales.reasons', 'sales.operations', 'cash.desk', 'cash.movements', 'cash.closing'], true)) {
                 return true;
             }
         }

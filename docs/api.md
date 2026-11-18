@@ -1,10 +1,12 @@
 # API REST v1
 
-## Sales — 1.5b
+## Sales — convenciones vigentes en 1.6a
 
 La API de mesas y ventas está definida en [OpenAPI](openapi.yaml) y en el [informe 1.5b](entrega-1.5b.md). Se reutiliza bearer Sanctum vigente y los permisos actuales; una cookie web/PIN no sustituye el token. Consultas en `/api/v1/sales`, `/{id}`, `/{id}/items` y `/api/v1/sales/tables`. Mesas permiten administración con `settings.update`.
 
-Al editar un recurso existente, consultar su detalle y enviar `If-Match: "<data.revision>"`. Una revisión ausente o antigua devuelve 409; volver a consultar antes de decidir cómo reconciliar. No usar `*`. Apertura y agregado requieren además `Idempotency-Key` de 16–128 caracteres. **Permanecen bloqueados con 503 hasta disponer de idempotencia durable y Cash real**; no se habilitan mediante un header. Cancelación y retirada requieren catálogos autorizados de motivos. No hay UI de ventas ni operaciones de cobro/cierre en esta entrega.
+Al editar un recurso existente, consultar su detalle y enviar `If-Match: "<data.revision>"`. Una revisión ausente o antigua devuelve 409; volver a consultar antes de decidir cómo reconciliar. No usar `*`. Las escrituras protegidas exigen `Idempotency-Key` UUID v4 durable en Core y Cash real. Apertura, agregado, POS, checkout y cierre se habilitaron en las etapas 1.5c–1.5d; consultar sus informes para las reglas financieras.
+
+La etapa [1.6a](entrega-1.6a.md) añade `/api/v1/sales/reasons`: consulta operativa con `operation=sale_item_removal|sale_cancellation`, listado administrativo con `administration=true`, detalle, alta, actualización y cambio de estado. Administración exige `sales.view` y `settings.update`; no permite borrar ni cambiar código/tipo. Retiro (`DELETE /sales/{id}/items/{itemId}`) y cancelación (`POST /sales/{id}/cancel`) conservan sus rutas y exigen `reason_code` activo compatible, UUID v4 e If-Match vigente. Retiro requiere `sales.open.update` y `sales.special.authorize`; cancelación requiere `sales.cancel`; ambos requieren `sales.view`. Las ventas pagadas no se cancelan. No hay motivos operativos precargados: estas operaciones quedan bloqueadas hasta configurar motivos aprobados. Un replay vuelve a autorizar al actor y recupera el resultado sin repetir efectos.
 
 Los importes se serializan como strings de cuatro decimales. No enviar precios, totales, folio, actor o caja. Los filtros/paginación, notas y cantidades se validan en el servidor; cantidad debe ser un entero JSON positivo, máximo inicial 100. Listados Sales: `data.sales`/`data.tables` con `meta.page`, `meta.per_page`, `meta.total` y `meta.request_id`; detalle de venta incluye líneas históricas y revisión.
 

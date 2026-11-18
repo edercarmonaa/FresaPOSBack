@@ -147,14 +147,14 @@ final class EloquentSalesStore implements SalesStore
         return new SaleSummary($sale->id, SaleType::from($sale->type), SaleState::from($sale->status), $sale->table_id,
             $sale->created_by, $sale->cash_session_id, $sale->note, $sale->subtotal, $sale->discount_amount, $sale->total,
             $sale->folio, $sale->closed_at?->toISOString(), $sale->cancelled_at?->toISOString(), $sale->cancelled_by,
-            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString(), $sale->getAttribute('closed_by'));
+            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString(), $sale->getAttribute('closed_by'), $sale->getAttribute('cancellation_reason_snapshot'));
     }
 
     private function item(SaleItem $item): SaleItemSnapshot
     {
         return new SaleItemSnapshot($item->id, $item->sale_id, $item->product_id, $item->product_name, $item->category_id,
             $item->category_name, $item->unit_price, $item->quantity, $item->note, $item->line_total, $item->position,
-            $item->removed_at?->toISOString(), $item->removed_by, $item->removal_reason_code);
+            $item->removed_at?->toISOString(), $item->removed_by, $item->removal_reason_code, $item->getAttribute('removal_reason_snapshot'));
     }
 
     private function requireTransaction(): void

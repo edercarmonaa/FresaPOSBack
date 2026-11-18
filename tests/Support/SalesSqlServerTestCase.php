@@ -4,9 +4,13 @@ namespace Tests\Support;
 
 use Illuminate\Database\Migrations\Migration;
 use Modules\Cash\Contracts\ActiveCashSession;
+use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\CriticalSalesWrites;
+use Modules\Sales\Contracts\LineRemovalApproval;
+use Modules\Sales\Infrastructure\UnavailableCancellationApproval;
 use Modules\Sales\Infrastructure\UnavailableCashSession;
 use Modules\Sales\Infrastructure\UnavailableCriticalSalesWrites;
+use Modules\Sales\Infrastructure\UnavailableLineRemoval;
 
 abstract class SalesSqlServerTestCase extends CatalogSqlServerTestCase
 {
@@ -22,6 +26,9 @@ abstract class SalesSqlServerTestCase extends CatalogSqlServerTestCase
         $this->app->bind(ActiveCashSession::class, UnavailableCashSession::class);
         // Dependencia de la suite histórica; IdempotencySqlServerTestCase registra la real.
         $this->app->bind(CriticalSalesWrites::class, UnavailableCriticalSalesWrites::class);
+        // Fixtures históricas sin el esquema de motivos: dependencia cerrada explícita.
+        $this->app->bind(CancellationApproval::class, UnavailableCancellationApproval::class);
+        $this->app->bind(LineRemovalApproval::class, UnavailableLineRemoval::class);
         TestDatabaseGuard::assertConnected($this->database);
         $schema = require base_path('Modules/Sales/database/migrations/2026_11_13_000006_create_sales_tables.php');
         $this->database->transaction(fn () => $schema->up());

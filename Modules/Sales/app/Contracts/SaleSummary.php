@@ -15,5 +15,6 @@ final readonly class SaleSummary
         public ?string $cancelledAt, public ?string $cancelledBy, public ?string $cancellationReason,
         public string $createdAt, public string $updatedAt,
         public ?string $closedBy = null,
+        public ?array $reasonSnapshot = null,
     ) {}
 }

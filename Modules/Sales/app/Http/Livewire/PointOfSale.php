@@ -226,6 +226,7 @@ class PointOfSale extends Component
     }
 
     #[On('sale-checked-out')]
+    #[On('sale-operation-completed')]
     public function checkoutFinished(string $saleId): void
     {
         $this->actor();
@@ -458,6 +459,7 @@ class PointOfSale extends Component
         $this->tableId = $sale->sale->tableId;
         $this->revision = SalesRevision::of($sale);
         $this->currentSale = (new SaleResource($sale))->resolve(request());
+        $this->dispatch('sale-ticket-refreshed', saleId: $this->saleId)->to(SaleActionsPanel::class);
         $this->currentSale['table_name'] = $sale->sale->tableId === null ? null : $this->sales()->table($this->actor()->id, $sale->sale->tableId)->name;
         if ($replaceNote) {
             $this->saleNote = $sale->sale->note ?? '';

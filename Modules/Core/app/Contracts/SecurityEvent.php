@@ -17,6 +17,8 @@ final readonly class SecurityEvent
         public ?CashMovementAudit $cashMovement = null,
         public ?SaleCheckoutAudit $checkout = null,
         public ?CashClosingAudit $closing = null,
+        public ?SaleOperationAudit $saleOperation = null,
+        public ?ReasonChangeAudit $reasonChange = null,
     ) {
         if (! in_array($type, [
             'login', 'logout', 'password.failed', 'password.locked', 'authentication.unlocked',
@@ -37,6 +39,7 @@ final readonly class SecurityEvent
             'cash.movement.recorded', 'cash.payment_method.updated',
             'sales.checkout.confirmed',
             'cash.reconciliation.confirmed', 'cash.session.closed', 'cash.difference.detected',
+            'sales.reason.created', 'sales.reason.updated', 'sales.reason.activated', 'sales.reason.deactivated',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }
@@ -45,6 +48,11 @@ final readonly class SecurityEvent
         }
         if (($type === 'sales.checkout.confirmed') !== ($checkout !== null)) {
             throw new \InvalidArgumentException('El cierre requiere auditoría financiera validada.');
+        }
+        if (str_starts_with($type, 'sales.reason.') !== ($reasonChange !== null)
+            || ($saleOperation !== null && (! in_array($type, ['sales.item_removed', 'sales.cancelled'], true)
+                || ($type === 'sales.item_removed') !== ($saleOperation->item !== null)))) {
+            throw new \InvalidArgumentException('Evidencia de operación o catálogo no permitida.');
         }
         if (in_array($type, ['cash.reconciliation.confirmed', 'cash.session.closed', 'cash.difference.detected'], true) !== ($closing !== null)) {
             throw new \InvalidArgumentException('El cierre Cash requiere auditoría financiera validada.');

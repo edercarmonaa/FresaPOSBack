@@ -18,8 +18,8 @@ use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Domain\SalesText;
 use Modules\Sales\Domain\SaleType;
+use Modules\Sales\Infrastructure\AuthorizedSaleReasons;
 use Modules\Sales\Infrastructure\UnavailableCashSession;
-use Modules\Sales\Infrastructure\UnavailableLineRemoval;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
@@ -126,7 +126,7 @@ class SalesDomainTest extends TestCase
     public function test_production_bindings_deny_missing_financial_and_reason_dependencies(): void
     {
         $this->assertInstanceOf(ManageCash::class, app(ActiveCashSession::class));
-        $this->assertInstanceOf(UnavailableLineRemoval::class, app(LineRemovalApproval::class));
+        $this->assertInstanceOf(AuthorizedSaleReasons::class, app(LineRemovalApproval::class));
         $this->expectException(SalesConflict::class);
         (new UnavailableCashSession)->requireActive('01arz3ndektsv4rrffq69g5fav');
     }

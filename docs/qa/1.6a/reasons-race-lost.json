@@ -1,0 +1,10 @@
+{
+    "database": "fresapos_test",
+    "mode": "lost",
+    "first_spid": 64,
+    "second_spid": null,
+    "first_status": 200,
+    "second_status": 200,
+    "cancelled": true,
+    "transient_sql_codes": []
+}

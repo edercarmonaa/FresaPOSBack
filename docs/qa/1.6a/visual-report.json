@@ -1,0 +1,1112 @@
+{
+  "browser": "Chrome/157.0.8103.79",
+  "database": "fresapos_test",
+  "fixture_only": true,
+  "screens": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reasons-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reasons-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reasons-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reasons-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "open-sale-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "open-sale-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "open-sale-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "open-sale-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reason-block-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reason-block-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reason-block-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "empty-reason-block-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_REMOVE-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_REMOVE-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_REMOVE-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_REMOVE-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_CANCEL-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_CANCEL-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_CANCEL-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "form-QA_WEB_CANCEL-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "reason-list-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "reason-list-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "reason-list-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "reason-list-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "remove-confirmation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "remove-confirmation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "remove-confirmation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "remove-confirmation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "keyboard-confirmation.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "removed-receipt-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "removed-receipt-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "removed-receipt-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "removed-receipt-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-confirmation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-confirmation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-confirmation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-confirmation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-lost-recovered-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-lost-recovered-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-lost-recovered-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cancel-lost-recovered-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "deactivate-confirmation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "deactivate-confirmation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "deactivate-confirmation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "deactivate-confirmation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-list-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-list-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-list-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-list-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-pos-block-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-pos-block-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-pos-block-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "inactive-pos-block-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "active-again-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "active-again-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "active-again-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "active-again-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-cancel-confirmation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-cancel-confirmation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-cancel-confirmation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-cancel-confirmation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-released-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-released-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-released-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "table-released-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "paid-sale-block-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "paid-sale-block-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "paid-sale-block-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "paid-sale-block-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "forbidden-admin-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1024,
+        1024
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "forbidden-admin-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "forbidden-admin-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "forbidden-admin-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cashier-pos-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cashier-pos-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cashier-pos-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "cashier-pos-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-waiter-pos-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-waiter-pos-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-waiter-pos-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-waiter-pos-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-forbidden-admin-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1024,
+        1024
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-forbidden-admin-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-forbidden-admin-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "pin-forbidden-admin-390.png"
+    }
+  ]
+}

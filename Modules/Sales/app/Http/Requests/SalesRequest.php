@@ -98,7 +98,7 @@ class SalesRequest extends FormRequest
             if (array_diff(array_keys($this->all()), array_keys($this->rules())) !== []) {
                 $validator->errors()->add('data', 'La solicitud contiene campos no permitidos.');
             }
-            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume', 'checkout'], true) && ! $this->tables()
+            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume', 'checkout', 'removeItem', 'cancel'], true) && ! $this->tables()
                 && $validator->errors()->isEmpty()) {
                 OperationIntent::key((string) $this->header('Idempotency-Key'));
             }

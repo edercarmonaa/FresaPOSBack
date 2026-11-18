@@ -33,6 +33,9 @@ class SaleResource extends JsonResource
                 $result['payments'] = $this->sale->payments;
             }
         }
+        if ($sale->reasonSnapshot !== null) {
+            $result['cancellation_reason'] = $sale->reasonSnapshot;
+        }
 
         return $result;
     }

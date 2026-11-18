@@ -1,10 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Sales\Http\Controllers\ReasonController;
 use Modules\Sales\Http\Controllers\SaleController;
 use Modules\Sales\Http\Controllers\TableController;
 
 Route::prefix('sales')->middleware(['auth.no-store', 'auth:sanctum', 'auth.access.api'])->group(function (): void {
+    Route::prefix('reasons')->name('reasons.')->group(function (): void {
+        Route::get('/', [ReasonController::class, 'index'])->name('index');
+        Route::post('/', [ReasonController::class, 'create'])->name('create');
+        Route::get('{id}', [ReasonController::class, 'show'])->whereUlid('id')->name('show');
+        Route::put('{id}', [ReasonController::class, 'update'])->whereUlid('id')->name('update');
+        Route::patch('{id}/status', [ReasonController::class, 'status'])->whereUlid('id')->name('status');
+    });
     Route::prefix('tables')->name('tables.')->group(function (): void {
         Route::get('/', [TableController::class, 'index'])->name('index');
         Route::post('/', [TableController::class, 'store'])->name('store');

@@ -34,7 +34,7 @@ class SaleItem extends Model
 
     protected function casts(): array
     {
-        return ['unit_price' => 'decimal:4', 'line_total' => 'decimal:4', 'quantity' => 'integer', 'position' => 'integer', 'removed_at' => 'datetime'];
+        return ['unit_price' => 'decimal:4', 'line_total' => 'decimal:4', 'quantity' => 'integer', 'position' => 'integer', 'removed_at' => 'datetime', 'removal_reason_snapshot' => 'array'];
     }
 
     /** @return BelongsTo<Sale, $this> */

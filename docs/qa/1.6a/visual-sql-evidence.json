@@ -1,0 +1,14 @@
+{
+    "database": "fresapos_test",
+    "fixture_only": true,
+    "reasons": 2,
+    "removed_lines": 1,
+    "cancelled_sales": 2,
+    "paid_sales": 1,
+    "payments": 1,
+    "cash_movements": 0,
+    "removal_audits": 1,
+    "cancellation_audits": 2,
+    "pending_intentions": 0,
+    "passed": true
+}

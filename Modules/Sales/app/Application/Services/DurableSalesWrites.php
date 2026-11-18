@@ -27,13 +27,16 @@ final class DurableSalesWrites implements CriticalSalesWrites
     public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation): SaleSnapshot
     {
         [$name, $method, $target] = $this->descriptor($scope);
-        $permission = $name === 'open' ? 'sales.create' : 'sales.open.update';
-        $authorize = function (bool $locking) use ($actorId, $permission): void {
+        $permission = match ($name) {
+            'open' => 'sales.create', 'cancel' => 'sales.cancel', default => 'sales.open.update'
+        };
+        $authorize = function (bool $locking) use ($actorId, $permission, $name): void {
             if ($locking) {
                 $this->identities->lock();
             }
             $actor = $this->identities->inspect($actorId);
-            if (! $actor || ! $this->policy->allows($actor, $permission) || ! $this->policy->allows($actor, 'sales.view')) {
+            if (! $actor || ! $this->policy->allows($actor, $permission) || ! $this->policy->allows($actor, 'sales.view')
+                || $name === 'remove' && ! $this->policy->allows($actor, 'sales.special.authorize')) {
                 throw new AuthorizationException;
             }
         };
@@ -63,13 +66,13 @@ final class DurableSalesWrites implements CriticalSalesWrites
         if ($scope === 'sales.open') {
             return ['open', 'POST', null];
         }
-        if (preg_match('/\Asales\.([0-7][0-9a-hjkmnp-tv-z]{25})\.(add|quantity|item-note|note|pause|resume)(?:\.([0-7][0-9a-hjkmnp-tv-z]{25}))?\z/i', $scope, $matches) !== 1
-            || (in_array($matches[2], ['quantity', 'item-note'], true) !== isset($matches[3]))) {
+        if (preg_match('/\Asales\.([0-7][0-9a-hjkmnp-tv-z]{25})\.(add|quantity|item-note|note|pause|resume|remove|cancel)(?:\.([0-7][0-9a-hjkmnp-tv-z]{25}))?\z/i', $scope, $matches) !== 1
+            || (in_array($matches[2], ['quantity', 'item-note', 'remove'], true) !== isset($matches[3]))) {
             throw new \InvalidArgumentException('Operación Sales no habilitada para idempotencia.');
         }
         $name = strtolower($matches[2]);
 
-        return [$name, in_array($name, ['add', 'pause', 'resume'], true) ? 'POST' : 'PATCH', strtolower($matches[1].(isset($matches[3]) ? ':'.$matches[3] : ''))];
+        return [$name, $name === 'remove' ? 'DELETE' : (in_array($name, ['add', 'pause', 'resume', 'cancel'], true) ? 'POST' : 'PATCH'), strtolower($matches[1].(isset($matches[3]) ? ':'.$matches[3] : ''))];
     }
 
     private function normalize(string $name, array $payload): array
