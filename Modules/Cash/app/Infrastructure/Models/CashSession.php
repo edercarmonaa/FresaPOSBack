@@ -39,6 +39,11 @@ class CashSession extends Model
 
     protected static function booted(): void
     {
+        static::updating(function (self $session): void {
+            if ($session->getRawOriginal('status') === 'closed') {
+                throw new \LogicException('La sesión cerrada es inmutable.');
+            }
+        });
         static::deleting(fn () => throw new \LogicException('No se eliminan sesiones de caja.'));
     }
 }

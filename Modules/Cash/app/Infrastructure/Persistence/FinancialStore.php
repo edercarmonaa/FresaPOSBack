@@ -39,6 +39,7 @@ final class FinancialStore
     public function balance(string $sessionId, string $openingFund): array
     {
         $this->transaction();
+        $openingFund = $this->decimal($openingFund);
         $income = $this->salesCash->total($sessionId);
         $row = DB::table('cash_movements')->where('cash_session_id', $sessionId)->selectRaw("COALESCE(SUM(CASE WHEN type='cash_in' THEN amount ELSE 0 END),0) AS cash_in, COALESCE(SUM(CASE WHEN type='cash_out' THEN amount ELSE 0 END),0) AS cash_out, COALESCE(SUM(CASE WHEN type='cash_in' THEN amount ELSE -amount END),0) + CAST(? AS decimal(19,4)) + CAST(? AS decimal(19,4)) AS expected", [$openingFund, $income])->first();
 

@@ -11,8 +11,8 @@
             <div class="flex flex-wrap items-center justify-between gap-3"><h2 class="text-xl font-bold">{{ $registers[0]->name }}</h2><span class="rounded bg-slate-100 px-3 py-2 font-semibold">{{ $session ? 'Abierta' : 'Sin sesión abierta' }}</span></div>
             @if(!$registers[0]->isActive)<p class="mt-3 text-red-800">Caja inactiva. No admite nuevas sesiones.</p>@endif
             @if($session)
-                <dl class="mt-5 grid gap-4 sm:grid-cols-2"><div><dt class="text-slate-600">Responsable de apertura</dt><dd class="font-semibold">{{ $responsible ?? $session['opened_by'] }}</dd></div><div><dt class="text-slate-600">Fondo inicial</dt><dd class="text-2xl font-bold">$ {{ $session['opening_fund'] }}</dd></div><div><dt class="text-slate-600">Apertura (UTC)</dt><dd><time datetime="{{ $session['opened_at'] }}">{{ $session['opened_at'] }}</time></dd></div><div><dt class="text-slate-600">Sesión</dt><dd class="break-all font-mono text-sm">{{ $session['id'] }}</dd></div></dl>
-                <p class="mt-5 text-slate-600">El fondo inicial es efectivo de apertura; no representa ingresos por ventas. El arqueo y cierre se incorporarán en una etapa posterior.</p>
+                <dl class="mt-5 grid gap-4 sm:grid-cols-2"><div><dt class="text-slate-600">Responsable de apertura</dt><dd class="font-semibold">{{ $responsible ?? $session['opened_by'] }}</dd></div>@if(!$counting)<div><dt class="text-slate-600">Fondo inicial</dt><dd class="text-2xl font-bold">$ {{ $session['opening_fund'] }}</dd></div>@endif<div><dt class="text-slate-600">Apertura (UTC)</dt><dd><time datetime="{{ $session['opened_at'] }}">{{ $session['opened_at'] }}</time></dd></div><div><dt class="text-slate-600">Sesión</dt><dd class="break-all font-mono text-sm">{{ $session['id'] }}</dd></div></dl>
+                <p class="mt-5 text-slate-600">El fondo inicial es efectivo de apertura; no representa ingresos por ventas. El cierre requiere un conteo físico y resuelve la sesión completa.</p>
             @elseif($canOpen && $registers[0]->isActive)
                 <form wire:submit="openSession" class="cash-form mt-5 space-y-4" aria-describedby="cash-fund-help">
                     <div><label for="cash-fund" class="block font-semibold">Fondo inicial</label><input id="cash-fund" wire:model="openingFund" type="text" inputmode="decimal" maxlength="20" autocomplete="off" class="mt-2 rounded border border-slate-400 p-3" aria-describedby="cash-fund-help"><p id="cash-fund-help" class="mt-2 text-sm text-slate-600">Puede ser cero. Usa punto decimal y hasta cuatro decimales. El fondo se conserva con la sesión.</p></div>
@@ -24,7 +24,10 @@
         </article>
     @endif
     <div class="flex flex-wrap gap-3"><button type="button" wire:click="refreshState" wire:loading.attr="disabled" class="min-h-11 rounded border border-slate-400 bg-white px-4 py-3">Actualizar estado</button><span wire:loading.delay role="status" class="p-3">Consultando caja…</span></div>
-    <livewire:cash.movements :key="'cash-movements-'.($session['id'] ?? 'none')" />
+    @if(!$counting)<livewire:cash.movements :key="'cash-movements-'.($session['id'] ?? 'none')" />@endif
+    @if($canViewClosings && \Illuminate\Support\Facades\Schema::hasTable('cash_reconciliations'))
+        <livewire:cash.closing :key="'cash-closing-'.$actorContext" />
+    @endif
     @script
     <script>
         const root = $wire.$el;

@@ -1,0 +1,38 @@
+{
+    "complete":  {
+                     "assertions":  6425,
+                     "time":  "10:44.473",
+                     "tests":  589,
+                     "memory_mb":  164.00,
+                     "exit_code":  0,
+                     "result":  "pass"
+                 },
+    "quality":  {
+                    "analyse":  0,
+                    "platform":  0,
+                    "composer":  0,
+                    "lint":  0
+                },
+    "baseline":  {
+                     "assertions":  5831,
+                     "time":  "10:22.947",
+                     "memory_mb":  152.00,
+                     "tests":  547,
+                     "result":  "pass"
+                 },
+    "note":  "La normalización histórica final se verificó después de la suite con las dos ejecuciones focalizadas; no se suman como casos únicos.",
+    "final_decimal_focus":  {
+                                "assertions":  146,
+                                "time":  "00:37.632",
+                                "memory_mb":  68.00,
+                                "tests":  24,
+                                "result":  "pass"
+                            },
+    "finance_regression":  {
+                               "assertions":  47,
+                               "time":  "00:07.516",
+                               "memory_mb":  60.00,
+                               "tests":  6,
+                               "result":  "pass"
+                           }
+}

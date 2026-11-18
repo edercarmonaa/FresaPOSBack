@@ -1,0 +1,12 @@
+{
+    "filename":  "fresapos_pre_1_5d4_20261118_154527Z_4dc514ae.bak",
+    "verified":  true,
+    "metadata":  {
+                     "database_name":  "fresapos",
+                     "backup_size":  "10108928",
+                     "is_copy_only":  "1",
+                     "has_backup_checksums":  "1",
+                     "backup_finish_date":  "2026-11-18 09:45:27.000"
+                 },
+    "verified_at_utc":  "2026-11-18T15:45:27+00:00"
+}

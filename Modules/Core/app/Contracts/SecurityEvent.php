@@ -16,6 +16,7 @@ final readonly class SecurityEvent
         public ?string $priceAfter = null,
         public ?CashMovementAudit $cashMovement = null,
         public ?SaleCheckoutAudit $checkout = null,
+        public ?CashClosingAudit $closing = null,
     ) {
         if (! in_array($type, [
             'login', 'logout', 'password.failed', 'password.locked', 'authentication.unlocked',
@@ -35,6 +36,7 @@ final readonly class SecurityEvent
             'idempotency.key_conflict',
             'cash.movement.recorded', 'cash.payment_method.updated',
             'sales.checkout.confirmed',
+            'cash.reconciliation.confirmed', 'cash.session.closed', 'cash.difference.detected',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }
@@ -43,6 +45,9 @@ final readonly class SecurityEvent
         }
         if (($type === 'sales.checkout.confirmed') !== ($checkout !== null)) {
             throw new \InvalidArgumentException('El cierre requiere auditoría financiera validada.');
+        }
+        if (in_array($type, ['cash.reconciliation.confirmed', 'cash.session.closed', 'cash.difference.detected'], true) !== ($closing !== null)) {
+            throw new \InvalidArgumentException('El cierre Cash requiere auditoría financiera validada.');
         }
         foreach ([$actorId, $subjectId, $recordId] as $id) {
             if ($id !== null && preg_match('/\A[0-7][0-9A-HJKMNP-TV-Z]{25}\z/i', $id) !== 1) {

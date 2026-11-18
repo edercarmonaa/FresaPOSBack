@@ -1,5 +1,15 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5d.4
+
+- Arqueo ciego, diferencias exactas, conciliación e historial inmutable por sesión; observación obligatoria sin revelar el saldo mediante validaciones condicionales.
+- Cierre transaccional con Core, saldo Cash existente, resumen Sales por contrato, UUID4 durable y auditoría atómica; bloqueo por ventas pendientes y actividad posterior al cierre.
+- Cinco operaciones REST, OpenAPI y panel Livewire dentro de /cash con recuperación, historial, filtros y apertura posterior expresa.
+- 589 pruebas / 6425 aserciones; doce carreras SQL, controles de calidad correctos y 38 capturas Chrome aisladas en cuatro resoluciones. Normalización histórica final verificada con 24/146 y 6/47 focalizadas.
+- OpenAPI: 57 operaciones y 315 respuestas reales validadas, sin errores ni advertencias.
+- Respaldo con checksum verificado, migraciones 000013/14 lote 12 y 24 tablas de datos previas/diez archivos protegidos intactos. Sin cierres operativos de prueba.
+- [Informe](docs/entrega-1.5d.4.md) y [evidencia](docs/qa/1.5d.4/README.md). Sin commits/pushes ni avance a 1.5d.5.
+
 ## [Sin publicar] — Etapa 1.5d.3
 
 - Checkout transaccional con Core, pagos confirmados, cierre y auditoría atómicos, UUID v4 y revisión vigente.

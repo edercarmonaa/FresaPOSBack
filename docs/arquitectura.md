@@ -127,3 +127,11 @@ SaleCheckout coordina pagos, folio y cierre con IdempotentOperations y Transacti
 Cash consume su puerto ConfirmedSalesCash, implementado por Sales con pagos confirmados. Esta inversión de control mantiene Cash independiente de Sales en PHP y evita entradas manuales duplicadas. SaleCheckoutAudit amplía el DTO cerrado del registro Audit existente, sin payload libre ni modelos compartidos.
 
 La migración 000012 amplía deliberadamente la barrera de 1.5d.2b y protege cierres/pagos/líneas históricos. CheckoutPanel usa el mismo servicio autorizado desde POS; el transporte API añade checkout e historial por folio. DiscountApproval conserva bloqueada la aplicación operativa de descuentos mientras falta su autorización funcional. [Flujo y evidencia de la entrega](entrega-1.5d.3.md).
+
+## Actualización 1.5d.4 — Arqueo y cierre de caja
+
+CashClosings/CloseCashSession coordina conteo ciego, saldo FinancialStore existente, resumen histórico, transición de CashSession, eventos Audit y recibo Core en una sola transacción. ClosingStore exige transacción externa; la unicidad por sesión y los triggers protegen historia. No existe un motor paralelo de saldo, transacciones, idempotencia o auditoría.
+
+Cash publica el puerto SessionSales; Sales implementa sus consultas de pendientes y cobros confirmados sin exponer modelos privados ni invertir la dependencia entre módulos. Su migración 000014 conserva en Sales los triggers sobre sus tablas; Cash 000013 posee la tabla de arqueos y sus barreras. Core solo añade CashClosingAudit cerrado y validado. Las dependencias PHP siguen sin ciclos.
+
+El transporte REST añade cinco operaciones autorizadas y el panel CashClosingPanel se integra en /cash. Antes del conteo no existe cotización de esperado/diferencia; summary/reconciliation son exclusivamente históricos. La observación es obligatoria para todo conteo y evita un error condicionado a la diferencia que revele el saldo. [Reglas, resultados y límites](entrega-1.5d.4.md).

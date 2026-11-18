@@ -1,0 +1,11 @@
+{
+    "database": "fresapos_test",
+    "mode": "rollback",
+    "first_spid": 86,
+    "second_spid": null,
+    "first_status": 500,
+    "second_status": 200,
+    "closures": 1,
+    "expected_cash": "100.0000",
+    "transient_sql_codes": []
+}

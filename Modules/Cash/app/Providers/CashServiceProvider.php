@@ -5,17 +5,20 @@ namespace Modules\Cash\Providers;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Modules\Cash\Application\Ports\CashStore;
+use Modules\Cash\Application\Services\CloseCashSession;
 use Modules\Cash\Application\Services\ManageCash;
 use Modules\Cash\Application\Services\ManageCashMovements;
 use Modules\Cash\Application\Services\ManagePaymentMethods;
 use Modules\Cash\Console\ProvisionCash;
 use Modules\Cash\Console\ProvisionPaymentMethods;
 use Modules\Cash\Contracts\ActiveCashSession;
+use Modules\Cash\Contracts\CashClosings;
 use Modules\Cash\Contracts\CashConflict;
 use Modules\Cash\Contracts\CashMovements;
 use Modules\Cash\Contracts\CashOperations;
 use Modules\Cash\Contracts\CashSessionUnavailable;
 use Modules\Cash\Contracts\PaymentMethods;
+use Modules\Cash\Http\Livewire\CashClosingPanel;
 use Modules\Cash\Http\Livewire\CashDesk;
 use Modules\Cash\Http\Livewire\CashMovementsPanel;
 use Modules\Cash\Http\Middleware\CashAccess;
@@ -34,6 +37,7 @@ class CashServiceProvider extends ModuleServiceProvider
         $this->app->bind(ActiveCashSession::class, ManageCash::class);
         $this->app->bind(PaymentMethods::class, ManagePaymentMethods::class);
         $this->app->bind(CashMovements::class, ManageCashMovements::class);
+        $this->app->bind(CashClosings::class, CloseCashSession::class);
     }
 
     public function boot(): void
@@ -43,6 +47,7 @@ class CashServiceProvider extends ModuleServiceProvider
         $this->commands([ProvisionPaymentMethods::class]);
         Livewire::component('cash.desk', CashDesk::class);
         Livewire::component('cash.movements', CashMovementsPanel::class);
+        Livewire::component('cash.closing', CashClosingPanel::class);
         Livewire::addPersistentMiddleware([CashAccess::class]);
         $this->app->make(ApiExceptionMappings::class)->register(CashConflict::class, ApiCode::CONFLICT);
         $this->app->make(ApiExceptionMappings::class)->register(CashSessionUnavailable::class, ApiCode::SERVICE_UNAVAILABLE);

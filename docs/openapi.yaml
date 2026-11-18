@@ -20,7 +20,7 @@ tags:
   - name: Sales
     description: Mesas, operaciones de venta, checkout financiero e historial autorizado por folio.
   - name: Cash
-    description: Caja única, apertura, métodos de pago, movimientos y saldo con efectivo neto confirmado; sin cierre de caja.
+    description: Caja única, apertura, métodos de pago, movimientos y saldo con efectivo neto confirmado; arqueo ciego, conciliación y cierre transaccional con historial.
 paths:
   /operations/{idempotencyKey}/status:
     get:
@@ -2761,6 +2761,320 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SalesCheckout'
+  /cash/sessions/{id}/summary:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashClosingSummary
+      summary: Resumen histórico del cierre; nunca precalcula una sesión abierta.
+      description: 'cash.view y cash.closings.view vigentes. Cierre requiere también cash.close. Pendientes requiere
+        cash.close y sales.view. Caja compartida según la política existente; sin propiedad por empleado. Summary
+        y reconciliation devuelven 409 mientras la sesión esté abierta. Observación obligatoria para todos los conteos:
+        evita revelar la diferencia mediante errores condicionales. Las consultas financieras existentes conservan
+        su autorización. Fechas UTC; filtro de fecha corresponde al cierre. Historial status=open devuelve colección
+        vacía. Idempotencia durable: 409 OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT; el replay conserva el resultado
+        funcional.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: path
+        name: id
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Resultado autorizado; resumen histórico únicamente después del cierre.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashReconciliationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/sessions/{id}/reconciliation:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashClosingReconciliation
+      summary: Arqueo confirmado de una sesión cerrada.
+      description: 'cash.view y cash.closings.view vigentes. Cierre requiere también cash.close. Pendientes requiere
+        cash.close y sales.view. Caja compartida según la política existente; sin propiedad por empleado. Summary
+        y reconciliation devuelven 409 mientras la sesión esté abierta. Observación obligatoria para todos los conteos:
+        evita revelar la diferencia mediante errores condicionales. Las consultas financieras existentes conservan
+        su autorización. Fechas UTC; filtro de fecha corresponde al cierre. Historial status=open devuelve colección
+        vacía. Idempotencia durable: 409 OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT; el replay conserva el resultado
+        funcional.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: path
+        name: id
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Resultado autorizado; resumen histórico únicamente después del cierre.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashReconciliationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/sessions/{id}/close:
+    post:
+      tags:
+      - Cash
+      operationId: apiV1CashClosingClose
+      summary: Confirma el conteo ciego y cierra la sesión atómicamente.
+      description: 'cash.view y cash.closings.view vigentes. Cierre requiere también cash.close. Pendientes requiere
+        cash.close y sales.view. Caja compartida según la política existente; sin propiedad por empleado. Summary
+        y reconciliation devuelven 409 mientras la sesión esté abierta. Observación obligatoria para todos los conteos:
+        evita revelar la diferencia mediante errores condicionales. Las consultas financieras existentes conservan
+        su autorización. Fechas UTC; filtro de fecha corresponde al cierre. Historial status=open devuelve colección
+        vacía. Idempotencia durable: 409 OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT; el replay conserva el resultado
+        funcional.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: path
+        name: id
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - in: header
+        name: Idempotency-Key
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+      responses:
+        '200':
+          description: Resultado autorizado; resumen histórico únicamente después del cierre.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashReconciliationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+              - counted_cash
+              - observation
+              properties:
+                counted_cash:
+                  type: string
+                  pattern: ^(?:0|[1-9][0-9]{0,14})(?:\.[0-9]{1,4})?$
+                observation:
+                  type: string
+                  minLength: 1
+                  maxLength: 200
+  /cash/sessions/{id}/pending-sales:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashClosingPendingSales
+      summary: Identificadores de ventas pendientes sin importes.
+      description: 'cash.view y cash.closings.view vigentes. Cierre requiere también cash.close. Pendientes requiere
+        cash.close y sales.view. Caja compartida según la política existente; sin propiedad por empleado. Summary
+        y reconciliation devuelven 409 mientras la sesión esté abierta. Observación obligatoria para todos los conteos:
+        evita revelar la diferencia mediante errores condicionales. Las consultas financieras existentes conservan
+        su autorización. Fechas UTC; filtro de fecha corresponde al cierre. Historial status=open devuelve colección
+        vacía. Idempotencia durable: 409 OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT; el replay conserva el resultado
+        funcional.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: path
+        name: id
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - in: query
+        name: page
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      responses:
+        '200':
+          description: Resultado autorizado; resumen histórico únicamente después del cierre.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashPendingSalesResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /cash/sessions/history:
+    get:
+      tags:
+      - Cash
+      operationId: apiV1CashClosingHistory
+      summary: Historial paginado de cierres confirmados.
+      description: 'cash.view y cash.closings.view vigentes. Cierre requiere también cash.close. Pendientes requiere
+        cash.close y sales.view. Caja compartida según la política existente; sin propiedad por empleado. Summary
+        y reconciliation devuelven 409 mientras la sesión esté abierta. Observación obligatoria para todos los conteos:
+        evita revelar la diferencia mediante errores condicionales. Las consultas financieras existentes conservan
+        su autorización. Fechas UTC; filtro de fecha corresponde al cierre. Historial status=open devuelve colección
+        vacía. Idempotencia durable: 409 OPERATION_IN_PROGRESS o IDEMPOTENCY_KEY_CONFLICT; el replay conserva el resultado
+        funcional.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - in: query
+        name: page
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - in: query
+        name: per_page
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+      - in: query
+        name: date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: status
+        schema:
+          enum:
+          - open
+          - closed
+      - in: query
+        name: register_id
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - in: query
+        name: opened_by
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - in: query
+        name: closed_by
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Resultado autorizado; resumen histórico únicamente después del cierre.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CashClosingHistoryResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
 components:
   securitySchemes:
     BearerAuth:
@@ -2800,6 +3114,218 @@ components:
       schema:
         type: string
   schemas:
+    CashReconciliation:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - cash_session_id
+      - register_id
+      - opened_by
+      - closed_by
+      - register_name
+      - opened_at
+      - closed_at
+      - status
+      - opening_fund
+      - cash_in
+      - cash_out
+      - confirmed_sales_cash
+      - expected_cash
+      - counted_cash
+      - total_sold
+      - difference
+      - closed_sales
+      - outcome
+      - observation
+      - payment_methods
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        cash_session_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        register_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        opened_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        closed_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        register_name:
+          type: string
+        opened_at:
+          type: string
+          format: date-time
+        closed_at:
+          type: string
+          format: date-time
+        status:
+          const: closed
+        opening_fund:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        cash_in:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        cash_out:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        confirmed_sales_cash:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        expected_cash:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        counted_cash:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        total_sold:
+          type: string
+          pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        difference:
+          type: string
+          pattern: ^-?(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        closed_sales:
+          type: integer
+          minimum: 0
+        outcome:
+          enum:
+          - balanced
+          - shortage
+          - surplus
+        observation:
+          type: string
+          minLength: 1
+          maxLength: 200
+        payment_methods:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - payment_method_id
+            - method_code
+            - applied_amount
+            - payment_count
+            properties:
+              payment_method_id:
+                $ref: '#/components/schemas/CatalogUlid'
+              method_code:
+                enum:
+                - cash
+                - card
+                - transfer
+                - other
+              applied_amount:
+                type: string
+                pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+              payment_count:
+                type: integer
+                minimum: 1
+    CashReconciliationResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - reconciliation
+          properties:
+            reconciliation:
+              $ref: '#/components/schemas/CashReconciliation'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashClosingHistoryResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - closings
+          properties:
+            closings:
+              type: array
+              maxItems: 100
+              items:
+                $ref: '#/components/schemas/CashReconciliation'
+        meta:
+          $ref: '#/components/schemas/Meta'
+    CashPendingSalesResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - pending_sales
+          properties:
+            pending_sales:
+              type: array
+              maxItems: 25
+              items:
+                type: object
+                additionalProperties: false
+                required:
+                - id
+                - type
+                - status
+                - table_id
+                properties:
+                  id:
+                    $ref: '#/components/schemas/CatalogUlid'
+                  type:
+                    enum:
+                    - counter
+                    - table
+                  status:
+                    enum:
+                    - open
+                    - paused
+                  table_id:
+                    oneOf:
+                    - $ref: '#/components/schemas/CatalogUlid'
+                    - type: 'null'
+        meta:
+          $ref: '#/components/schemas/Meta'
     OperationStatusResponse:
       type: object
       additionalProperties: false

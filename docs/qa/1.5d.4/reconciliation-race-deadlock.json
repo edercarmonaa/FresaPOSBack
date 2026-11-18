@@ -1,0 +1,13 @@
+{
+    "database": "fresapos_test",
+    "mode": "deadlock",
+    "first_spid": 74,
+    "second_spid": 77,
+    "first_status": 200,
+    "second_status": 200,
+    "closures": 1,
+    "expected_cash": "100.0000",
+    "transient_sql_codes": [
+        1205
+    ]
+}

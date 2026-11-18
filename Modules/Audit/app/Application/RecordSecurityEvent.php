@@ -44,6 +44,11 @@ final class RecordSecurityEvent
                 'total' => $event->checkout->total, 'cash_applied' => $event->checkout->cashApplied, 'payment_count' => $event->checkout->paymentCount,
                 'sale_closed' => true], JSON_THROW_ON_ERROR);
         }
+        if ($event->closing !== null) {
+            $values['change_data'] = json_encode(['cash_session_id' => $event->closing->cashSessionId, 'register_id' => $event->closing->registerId,
+                'reconciliation_id' => $event->closing->reconciliationId, 'expected_cash' => $event->closing->expectedCash,
+                'counted_cash' => $event->closing->countedCash, 'difference' => $event->closing->difference], JSON_THROW_ON_ERROR);
+        }
         DB::table('audit_security_events')->insert($values);
     }
 }

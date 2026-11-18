@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Modules\Cash\Contracts\CashConflict;
 use Modules\Cash\Contracts\CashOperations;
@@ -25,6 +26,25 @@ final class CashDesk extends Component
 
     #[Locked]
     public string $status = '';
+
+    #[Locked]
+    public bool $counting = false;
+
+    #[On('cash-count-started')]
+    public function beginBlindCount(): void
+    {
+        $this->actor('cash.close');
+        $this->counting = true;
+    }
+
+    #[On('cash-session-closed')]
+    public function closingConfirmed(): void
+    {
+        $this->actor();
+        $this->counting = false;
+        $this->openingKey = strtolower((string) Str::ulid());
+        $this->status = 'Estado actualizado. Para otro turno registra una nueva apertura expresamente.';
+    }
 
     public function mount(): void
     {
@@ -80,6 +100,8 @@ final class CashDesk extends Component
         $canOpen = in_array('cash.open', app(CashAccess::class)->require()->permissions, true);
         $session = $session ? (new SessionResource($session))->resolve(request()) : null;
 
-        return view('cash::livewire.cash-desk', compact('registers', 'session', 'responsible', 'canOpen'));
+        $canViewClosings = in_array('cash.closings.view', app(CashAccess::class)->require()->permissions, true);
+
+        return view('cash::livewire.cash-desk', compact('registers', 'session', 'responsible', 'canOpen', 'canViewClosings'));
     }
 }

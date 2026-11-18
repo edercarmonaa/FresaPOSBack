@@ -1,0 +1,577 @@
+{
+    "browser":  "Chrome/157.0.8103.79",
+    "database":  "fresapos_test",
+    "fixture_only":  true,
+    "screens":  [
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "open-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "open-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "open-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "open-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "pending-sales-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "pending-sales-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "pending-sales-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "pending-sales-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "keyboard.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "loading.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "balanced-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "balanced-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "balanced-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "balanced-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "shortage-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "shortage-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "shortage-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "shortage-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "surplus-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "surplus-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "surplus-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "surplus-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "lost-response.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "recovered-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "recovered-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "recovered-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "recovered-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "history-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "history-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "history-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "history-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "permission-ready.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "permission-rejected.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1440,
+                                      1440
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "waiter-forbidden.png"
+                    }
+                ]
+}
