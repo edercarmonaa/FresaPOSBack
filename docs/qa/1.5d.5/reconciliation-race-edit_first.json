@@ -1,0 +1,11 @@
+{
+    "database": "fresapos_test",
+    "mode": "edit_first",
+    "first_spid": 86,
+    "second_spid": 87,
+    "first_status": 200,
+    "second_status": 409,
+    "closures": 0,
+    "expected_cash": null,
+    "transient_sql_codes": []
+}

@@ -1,0 +1,12 @@
+{
+    "mode": "connection_after_commit",
+    "database": "fresapos_test",
+    "first_spid": 60,
+    "first_status": 201,
+    "second_status": 201,
+    "movement_count": 1,
+    "expected_cash": "110.0000",
+    "pending_records": 0,
+    "connection_killed": true,
+    "final_first_spid": 63
+}

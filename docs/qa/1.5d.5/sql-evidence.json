@@ -1,0 +1,135 @@
+{
+    "database": "fresapos_test",
+    "read_only": true,
+    "ulid_columns_checked": 55,
+    "violations": {
+        "untrusted_foreign_keys": 0,
+        "disabled_check_constraints": 0,
+        "disabled_financial_triggers": 0,
+        "missing_financial_triggers": 0,
+        "missing_unique_indexes": 0,
+        "incorrect_money_columns": 0,
+        "duplicate_open_registers": 0,
+        "duplicate_active_tables": 0,
+        "duplicate_folios": 0,
+        "duplicate_reconciliations": 0,
+        "duplicate_intentions": 0,
+        "orphan_sales": 0,
+        "orphan_items": 0,
+        "incorrect_payment_session": 0,
+        "confirmed_payment_without_close": 0,
+        "incorrect_closed_sale": 0,
+        "folio_on_open_sale": 0,
+        "unresolved_sales_in_closed_session": 0,
+        "incorrect_closed_session": 0,
+        "incorrect_reconciliation": 0,
+        "invalid_ulids": 0
+    },
+    "passed": true,
+    "sessions": [
+        {
+            "status": "closed",
+            "n": "2"
+        }
+    ],
+    "sales": [
+        {
+            "status": "closed",
+            "n": "5"
+        }
+    ],
+    "folios": [
+        "202611180001",
+        "202611180002",
+        "202611180003",
+        "202611180004",
+        "202611180005"
+    ],
+    "payments": [
+        {
+            "method_code": "card",
+            "status": "confirmed",
+            "n": "2",
+            "applied": "280.0000"
+        },
+        {
+            "method_code": "cash",
+            "status": "confirmed",
+            "n": "2",
+            "applied": "260.0000"
+        },
+        {
+            "method_code": "other",
+            "status": "confirmed",
+            "n": "1",
+            "applied": "180.0000"
+        },
+        {
+            "method_code": "transfer",
+            "status": "confirmed",
+            "n": "1",
+            "applied": "180.0000"
+        }
+    ],
+    "summaries": [
+        {
+            "status": "closed",
+            "opening_fund": "100.0000",
+            "cash_in": "30.0000",
+            "cash_out": "10.0000",
+            "confirmed_sales_cash": "260.0000",
+            "expected_cash": "380.0000",
+            "closed_sales": 5,
+            "total_sold": "900.0000",
+            "counted_cash": "380.0000",
+            "difference": "0.0000",
+            "outcome": "balanced"
+        },
+        {
+            "status": "closed",
+            "opening_fund": "0.0000",
+            "cash_in": "0.0000",
+            "cash_out": "0.0000",
+            "confirmed_sales_cash": "0.0000",
+            "expected_cash": "0.0000",
+            "closed_sales": 0,
+            "total_sold": "0.0000",
+            "counted_cash": "0.0000",
+            "difference": "0.0000",
+            "outcome": "balanced"
+        }
+    ],
+    "audit": [
+        {
+            "event_type": "cash.movement.recorded",
+            "n": "2"
+        },
+        {
+            "event_type": "cash.reconciliation.confirmed",
+            "n": "2"
+        },
+        {
+            "event_type": "cash.session.closed",
+            "n": "2"
+        },
+        {
+            "event_type": "cash.session.opened",
+            "n": "2"
+        },
+        {
+            "event_type": "sales.checkout.confirmed",
+            "n": "5"
+        }
+    ],
+    "intentions": [
+        {
+            "state": "completed",
+            "n": "21"
+        },
+        {
+            "state": "failed",
+            "n": "1"
+        }
+    ],
+    "fixture_only": true
+}

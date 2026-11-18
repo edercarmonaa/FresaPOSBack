@@ -1,0 +1,12 @@
+{
+    "runtime_exceptions":  0,
+    "expected_network_errors":  1,
+    "unexpected_console_errors":  0,
+    "details":  [
+                    {
+                        "source":  "network",
+                        "text":  "Failed to load resource: net::ERR_CONNECTION_CLOSED",
+                        "expected":  true
+                    }
+                ]
+}

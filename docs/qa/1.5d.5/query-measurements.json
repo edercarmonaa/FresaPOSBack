@@ -1,0 +1,72 @@
+{
+    "database": "fresapos_test",
+    "fixture_sales": 26,
+    "measurements": {
+        "catalog_10": {
+            "queries": 6,
+            "sql_ms": 35.22,
+            "wall_ms": 45.329
+        },
+        "tables_10": {
+            "queries": 6,
+            "sql_ms": 17.55,
+            "wall_ms": 24.998
+        },
+        "sales_10": {
+            "queries": 6,
+            "sql_ms": 5.319999999999999,
+            "wall_ms": 13.932
+        },
+        "catalog_25": {
+            "queries": 6,
+            "sql_ms": 7.709999999999999,
+            "wall_ms": 18.792
+        },
+        "tables_25": {
+            "queries": 6,
+            "sql_ms": 13.86,
+            "wall_ms": 23.495
+        },
+        "sales_25": {
+            "queries": 6,
+            "sql_ms": 18.09,
+            "wall_ms": 32.309
+        },
+        "add_product": {
+            "queries": 28,
+            "sql_ms": 106.11,
+            "wall_ms": 135.828
+        },
+        "checkout_and_folio": {
+            "queries": 57,
+            "sql_ms": 145.94,
+            "wall_ms": 209.228
+        },
+        "cash_movement": {
+            "queries": 24,
+            "sql_ms": 56.300000000000004,
+            "wall_ms": 81.873
+        },
+        "cash_balance": {
+            "queries": 10,
+            "sql_ms": 8.780000000000001,
+            "wall_ms": 16.326
+        },
+        "cash_close": {
+            "queries": 31,
+            "sql_ms": 120.21000000000001,
+            "wall_ms": 151.706
+        },
+        "cash_summary": {
+            "queries": 9,
+            "sql_ms": 25.69,
+            "wall_ms": 33.965
+        },
+        "cash_history": {
+            "queries": 7,
+            "sql_ms": 15.6,
+            "wall_ms": 23.01
+        }
+    },
+    "scope": "Local smoke measurement, not a load-test SLA"
+}

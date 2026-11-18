@@ -1,0 +1,44 @@
+{
+    "baseline":  {
+                     "tests":  589,
+                     "assertions":  6426,
+                     "time":  "13:32.342",
+                     "memory_mb":  164.00,
+                     "exit":  0
+                 },
+    "final":  {
+                  "tests":  593,
+                  "assertions":  6832,
+                  "time":  "14:08.380",
+                  "memory_mb":  166.00,
+                  "exit":  0
+              },
+    "added_tests":  4,
+    "added_assertions":  406,
+    "focused_before_last_utc_assertions":  {
+                                               "tests":  3,
+                                               "assertions":  383,
+                                               "time":  "00:18.666",
+                                               "memory_mb":  64.00,
+                                               "exit":  0
+                                           },
+    "lint_exit":  0,
+    "larastan_exit":  0,
+    "larastan_level":  5,
+    "larastan_files":  349,
+    "composer_validate_strict_exit":  0,
+    "platform_exit":  0,
+    "failed_attempts":  [
+                            {
+                                "assertions":  608,
+                                "reason":  "Expectativa nueva is_occupied en vez del contrato availability=free",
+                                "command":  "phpunit --filter Financial",
+                                "tests":  49,
+                                "failures":  1
+                            },
+                            {
+                                "command":  "Chrome review primer intento",
+                                "reason":  "Umbral heredado Cash 44 px aplicado a Entrar existente de 40 px; observación conservada"
+                            }
+                        ]
+}

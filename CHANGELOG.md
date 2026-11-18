@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.5d.5
+
+- Aceptación integral por API y Chrome real del ciclo Cash–Sales, cinco modalidades de pago, arqueo ciego y segundo turno; sin reconstruir módulos ni cambiar negocio.
+- Cuatro pruebas adicionales de ciclo financiero, revocación, compactación y consultas; 593 pruebas / 6832 aserciones, Pint y Larastan nivel 5 (349 archivos) correctos.
+- Sonda CLI de solo lectura para invariantes financieras; 26 tablas operativas y diez archivos protegidos idénticos, sin migraciones nuevas.
+- OpenAPI: 57 operaciones, 388 respuestas reales de las 57; 33 reportes de carreras financieras actuales y 76 capturas en cuatro resoluciones.
+- [Informe](docs/entrega-1.5d.5.md) y [evidencia](docs/qa/1.5d.5/README.md). Scheduler del sistema, Azure SQL/cPanel y observaciones visuales no bloqueantes documentados. Sin commits, pushes o despliegues.
+
 ## [Sin publicar] — Etapa 1.5d.4
 
 - Arqueo ciego, diferencias exactas, conciliación e historial inmutable por sesión; observación obligatoria sin revelar el saldo mediante validaciones condicionales.

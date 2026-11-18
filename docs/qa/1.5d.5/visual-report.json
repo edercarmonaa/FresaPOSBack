@@ -1,0 +1,1152 @@
+{
+    "browser":  "Chrome/157.0.8103.79",
+    "database":  "fresapos_test",
+    "fixture_only":  true,
+    "screens":  [
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1440,
+                                      1440
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  1,
+                        "file":  "login-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1024,
+                                      1024
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  1,
+                        "file":  "login-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  1,
+                        "file":  "login-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  1,
+                        "file":  "login-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1440,
+                                      1440
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  6,
+                        "file":  "catalog-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  6,
+                        "file":  "catalog-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  6,
+                        "file":  "catalog-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  6,
+                        "file":  "catalog-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-before-opening-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-before-opening-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-before-opening-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-before-opening-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-open-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-open-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-open-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-open-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-line-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-line-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-line-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-line-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-paused-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-paused-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-paused-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "counter-paused-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-insufficient.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "keyboard.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-change-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-change-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-change-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-change-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-receipt-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-receipt-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-receipt-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-receipt-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "card-receipt-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "card-receipt-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "card-receipt-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "card-receipt-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "transfer-receipt-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "transfer-receipt-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "transfer-receipt-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "transfer-receipt-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "other-receipt-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "other-receipt-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "other-receipt-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "other-receipt-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "table-occupied-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "table-occupied-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "table-occupied-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "table-occupied-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "checkout-response-lost.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "mixed-recovered-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "mixed-recovered-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      768,
+                                      768
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "mixed-recovered-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      390,
+                                      390
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "mixed-recovered-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-movements-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-movements-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-movements-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "cash-movements-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "blind-count-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "closing-loading.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "closing-receipt-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "closing-receipt-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "closing-receipt-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "closing-receipt-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-turn-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-turn-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-turn-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-turn-390.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1440,
+                                         900
+                                     ],
+                        "width":  [
+                                      1425,
+                                      1425
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-closing-1440.png"
+                    },
+                    {
+                        "viewport":  [
+                                         1024,
+                                         768
+                                     ],
+                        "width":  [
+                                      1009,
+                                      1009
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-closing-1024.png"
+                    },
+                    {
+                        "viewport":  [
+                                         768,
+                                         1024
+                                     ],
+                        "width":  [
+                                      753,
+                                      753
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-closing-768.png"
+                    },
+                    {
+                        "viewport":  [
+                                         390,
+                                         844
+                                     ],
+                        "width":  [
+                                      375,
+                                      375
+                                  ],
+                        "errors":  [
+
+                                   ],
+                        "smallButtons":  0,
+                        "file":  "second-closing-390.png"
+                    }
+                ],
+    "observations":  [
+                         "Ocho capturas Login/Catalog contienen controles no financieros menores de 44 px. Entrar mide 40 px. Se conserva el hallazgo; los controles financieros inspeccionados mantienen 44 px.",
+                         "Se descarta una respuesta HTTP 200 de checkout ya confirmado y se recupera por recarga.",
+                         "Sin overflow horizontal ni excepciones JavaScript en las 76 capturas únicas."
+                     ]
+}
