@@ -7,6 +7,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Locked;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Modules\Cash\Contracts\CashSessionUnavailable;
 use Modules\Cash\Contracts\PaymentMethods;
@@ -63,6 +64,18 @@ class CheckoutPanel extends Component
     public array $payments = [];
 
     private bool $written = false;
+
+    #[On('sale-ticket-refreshed')]
+    public function refreshTicket(string $saleId): void
+    {
+        $this->actor();
+        if ($saleId === $this->saleId && ! $this->submitted && $this->receipt === [] && $this->opened) {
+            $this->opened = false;
+            $this->preview = $this->payments = [];
+            $this->revision = '';
+            $this->status = 'La venta cambió. Prepara nuevamente el cobro para utilizar el total vigente.';
+        }
+    }
 
     public function mount(string $saleId): void
     {
@@ -215,7 +228,7 @@ class CheckoutPanel extends Component
             $this->written = true;
             $this->receipt = (new SaleResource($sale))->resolve(request());
             $this->pending = false;
-            $this->status = 'Venta cobrada. Conserva el folio de confirmación.';
+            $this->status = $sale->sale->total === '0.0000' ? 'Venta cerrada con descuento total. Conserva el folio de confirmación.' : 'Venta cobrada. Conserva el folio de confirmación.';
             $this->dispatch('sale-checked-out', saleId: $this->saleId);
         });
     }
@@ -231,7 +244,7 @@ class CheckoutPanel extends Component
             if ($sale->sale->state === SaleState::Closed) {
                 $this->receipt = (new SaleResource($sale))->resolve(request());
                 $this->opened = true;
-                $this->status = 'Venta cobrada. Resultado recuperado del servidor.';
+                $this->status = $sale->sale->total === '0.0000' ? 'Venta cerrada con descuento total. Resultado recuperado del servidor.' : 'Venta cobrada. Resultado recuperado del servidor.';
             } elseif ($this->pending) {
                 $this->status = 'Cobro en proceso. Consulta el estado antes de reintentar.';
             } elseif ($state->state === 'failed') {

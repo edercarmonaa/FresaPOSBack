@@ -7,6 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 use Modules\Core\Contracts\OperationIntent;
+use Modules\Sales\Domain\DiscountInput;
 use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Policies\SalesPolicy;
 use Modules\Users\Contracts\IdentityAccess;
@@ -33,7 +34,7 @@ class SalesRequest extends FormRequest
         $operation = $this->operation();
         $permission = in_array($operation, ['index', 'show', 'items'], true) ? 'sales.view'
             : ($this->tables() ? 'settings.update' : match ($operation) {
-                'store' => 'sales.create', 'cancel' => 'sales.cancel', 'checkout' => 'sales.close', default => 'sales.open.update',
+                'store' => 'sales.create', 'cancel' => 'sales.cancel', 'checkout' => 'sales.close', 'setDiscount', 'removeDiscount' => 'sales.discounts.apply', default => 'sales.open.update',
             });
         $actor = app(IdentityAccess::class)->inspect($this->actor());
         $policy = app(SalesPolicy::class);
@@ -42,6 +43,10 @@ class SalesRequest extends FormRequest
         }
         if ($operation === 'checkout' && (! $policy->allows($actor, 'sales.view') || ! $policy->allows($actor, 'cash.view'))) {
             return false;
+        }
+
+        if (in_array($operation, ['setDiscount', 'removeDiscount'], true)) {
+            return $policy->allows($actor, 'sales.view') && $policy->allows($actor, 'sales.open.update') && $policy->allows($actor, 'sales.special.authorize');
         }
 
         return $operation !== 'removeItem' || $policy->allows($actor, 'sales.special.authorize');
@@ -82,6 +87,7 @@ class SalesRequest extends FormRequest
         }
 
         return match ($this->operation()) {
+            'setDiscount' => DiscountInput::rules($this->input('type')),
             'checkout' => ['payments' => ['present', 'array', 'list', 'max:20'], 'payments.*' => ['required', 'array:payment_method_id,applied_amount,received_cash,reference'],
                 'payments.*.payment_method_id' => ['required', 'ulid'], 'payments.*.applied_amount' => ['required', 'string', 'max:20'],
                 'payments.*.received_cash' => ['sometimes', 'nullable', 'string', 'max:20'], 'payments.*.reference' => ['sometimes', 'nullable', 'string', 'max:64']],
@@ -98,7 +104,7 @@ class SalesRequest extends FormRequest
             if (array_diff(array_keys($this->all()), array_keys($this->rules())) !== []) {
                 $validator->errors()->add('data', 'La solicitud contiene campos no permitidos.');
             }
-            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume', 'checkout', 'removeItem', 'cancel'], true) && ! $this->tables()
+            if (in_array($this->operation(), ['store', 'addItem', 'quantity', 'itemNote', 'note', 'pause', 'resume', 'checkout', 'removeItem', 'cancel', 'setDiscount', 'removeDiscount'], true) && ! $this->tables()
                 && $validator->errors()->isEmpty()) {
                 OperationIntent::key((string) $this->header('Idempotency-Key'));
             }

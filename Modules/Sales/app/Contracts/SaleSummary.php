@@ -16,5 +16,6 @@ final readonly class SaleSummary
         public string $createdAt, public string $updatedAt,
         public ?string $closedBy = null,
         public ?array $reasonSnapshot = null,
+        public ?array $discountAuthorization = null,
     ) {}
 }

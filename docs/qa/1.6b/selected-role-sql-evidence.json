@@ -1,0 +1,11 @@
+{
+    "database": "fresapos_test",
+    "fixture_only": true,
+    "sales": 1,
+    "cashier_sales": 1,
+    "discounts": 0,
+    "discount_audits": 0,
+    "payments": 0,
+    "cash_movements": 0,
+    "passed": true
+}

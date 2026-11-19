@@ -17,6 +17,8 @@ interface SalesStore
 
     public function updateSale(string $id, array $values): SaleSnapshot;
 
+    public function hasConfirmedPayments(string $saleId): bool;
+
     public function createItem(string $saleId, array $values): SaleItemSnapshot;
 
     public function updateItem(string $saleId, string $itemId, array $values): void;

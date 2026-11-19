@@ -1,0 +1,15 @@
+{
+  "database": "fresapos_test",
+  "fixture_only": true,
+  "sales": 5,
+  "zero_closed": 3,
+  "zero_folios": 3,
+  "zero_payments": 0,
+  "closed_positive": 1,
+  "payments": 1,
+  "cash_movements": 0,
+  "pending_intentions": 0,
+  "reasons": 0,
+  "supervisor_authorizations": 1,
+  "passed": true
+}

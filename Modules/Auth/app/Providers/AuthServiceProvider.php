@@ -12,6 +12,7 @@ use Laravel\Sanctum\Sanctum;
 use Livewire\Livewire;
 use Modules\Auth\Application\Authenticate;
 use Modules\Auth\Application\SessionRegistry;
+use Modules\Auth\Contracts\AuthenticatedRequestAccess;
 use Modules\Auth\Contracts\Authenticator;
 use Modules\Auth\Domain\ExpiredSession;
 use Modules\Auth\Domain\InvalidCredentials;
@@ -48,6 +49,7 @@ class AuthServiceProvider extends ModuleServiceProvider
     {
         parent::register();
         $this->app->bind(Authenticator::class, Authenticate::class);
+        $this->app->bind(AuthenticatedRequestAccess::class, SessionRegistry::class);
         $this->app->singleton(SensitiveErrors::class);
     }
 

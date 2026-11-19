@@ -3412,6 +3412,141 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SaleReasonStatus'
+  /sales/{id}/discount:
+    put:
+      tags:
+      - Sales
+      operationId: salesDiscountApply
+      summary: Aplica o sustituye el descuento autorizado.
+      description: 'Venta abierta sin pagos confirmados, Cash original abierto y permisos sales.view, sales.open.update, sales.discounts.apply
+        y sales.special.authorize. UUID v4 durable Core e If-Match vigentes. Un único descuento: percent entero 1..100 o fixed
+        exacto positivo hasta subtotal. Porcentaje recalculado al cambiar consumo; fijo inválido bloquea el cambio. El servidor
+        registra al autorizador; no acepta actor, motivo libre ni importes derivados. Sustitución y eliminación conservan auditoría.
+        El cobro verifica nuevamente al autorizador. Total cero válido solo con subtotal positivo y descuento autorizado; checkout
+        con payments=[] y folio real sin movimiento de Cash.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleDiscountInput'
+    delete:
+      tags:
+      - Sales
+      operationId: salesDiscountRemove
+      summary: Elimina el descuento con autorización vigente.
+      description: 'Venta abierta sin pagos confirmados, Cash original abierto y permisos sales.view, sales.open.update, sales.discounts.apply
+        y sales.special.authorize. UUID v4 durable Core e If-Match vigentes. Un único descuento: percent entero 1..100 o fixed
+        exacto positivo hasta subtotal. Porcentaje recalculado al cambiar consumo; fijo inválido bloquea el cambio. El servidor
+        registra al autorizador; no acepta actor, motivo libre ni importes derivados. Sustitución y eliminación conservan auditoría.
+        El cobro verifica nuevamente al autorizador. Total cero válido solo con subtotal positivo y descuento autorizado; checkout
+        con payments=[] y folio real sin movimiento de Cash.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Respuesta uniforme; operación condicionada a dependencias documentadas.
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesDetailResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
 components:
   securitySchemes:
     BearerAuth:
@@ -3451,6 +3586,57 @@ components:
       schema:
         type: string
   schemas:
+    SaleDiscountInput:
+      oneOf:
+      - type: object
+        additionalProperties: false
+        required:
+        - type
+        - value
+        properties:
+          type:
+            const: percent
+          value:
+            type: integer
+            minimum: 1
+            maximum: 100
+      - type: object
+        additionalProperties: false
+        required:
+        - type
+        - value
+        properties:
+          type:
+            const: fixed
+          value:
+            type: string
+            pattern: ^(?:0|[1-9][0-9]{0,14})(?:\.[0-9]{1,4})?$
+            description: Importe positivo exacto, menor o igual al subtotal vigente.
+    SaleDiscountAuthorization:
+      type: object
+      additionalProperties: false
+      required:
+      - type
+      - value
+      - authorized_by
+      - authorized_at
+      properties:
+        type:
+          enum:
+          - percent
+          - fixed
+        value:
+          oneOf:
+          - type: integer
+            minimum: 1
+            maximum: 100
+          - type: string
+            pattern: ^[0-9]+\.[0-9]{4}$
+        authorized_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        authorized_at:
+          type: string
+          format: date-time
     SaleOperationReason:
       type: object
       additionalProperties: false
@@ -4636,6 +4822,8 @@ components:
           - type: 'null'
         cancellation_reason:
           $ref: '#/components/schemas/SaleReasonHistory'
+        discount_authorization:
+          $ref: '#/components/schemas/SaleDiscountAuthorization'
     SalesDetail:
       type: object
       additionalProperties: false
@@ -4724,6 +4912,8 @@ components:
             $ref: '#/components/schemas/SalesPayment'
         cancellation_reason:
           $ref: '#/components/schemas/SaleReasonHistory'
+        discount_authorization:
+          $ref: '#/components/schemas/SaleDiscountAuthorization'
     SalesTableResponse:
       type: object
       additionalProperties: false

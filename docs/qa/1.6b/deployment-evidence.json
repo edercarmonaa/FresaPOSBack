@@ -1,0 +1,197 @@
+{
+  "database": "fresapos",
+  "tables": 27,
+  "migration_count": 16,
+  "migration": {
+    "id": "16",
+    "migration": "2026_11_19_000016_enable_authorized_sale_discounts",
+    "batch": "14"
+  },
+  "prior_tables": {
+    "audit_security_events": {
+      "original_rows": 66,
+      "unchanged": true
+    },
+    "auth_access_sessions": {
+      "original_rows": 13,
+      "unchanged": true
+    },
+    "auth_employee_pins": {
+      "original_rows": 1,
+      "unchanged": true
+    },
+    "cash_movements": {
+      "original_rows": 3,
+      "unchanged": true
+    },
+    "cash_payment_methods": {
+      "original_rows": 4,
+      "unchanged": true
+    },
+    "cash_reconciliations": {
+      "original_rows": 2,
+      "unchanged": true
+    },
+    "cash_registers": {
+      "original_rows": 1,
+      "unchanged": true
+    },
+    "cash_sessions": {
+      "original_rows": 3,
+      "unchanged": true
+    },
+    "catalog_categories": {
+      "original_rows": 2,
+      "unchanged": true
+    },
+    "catalog_products": {
+      "original_rows": 2,
+      "unchanged": true
+    },
+    "idempotency_records": {
+      "original_rows": 17,
+      "unchanged": true
+    },
+    "migrations": {
+      "original_rows": 15,
+      "unchanged": true
+    },
+    "model_has_permissions": {
+      "original_rows": 0,
+      "unchanged": true
+    },
+    "model_has_roles": {
+      "original_rows": 1,
+      "unchanged": true
+    },
+    "permissions": {
+      "original_rows": 44,
+      "unchanged": true
+    },
+    "personal_access_tokens": {
+      "original_rows": 0,
+      "unchanged": true
+    },
+    "role_has_permissions": {
+      "original_rows": 81,
+      "unchanged": true
+    },
+    "roles": {
+      "original_rows": 4,
+      "unchanged": true
+    },
+    "sales_daily_sequences": {
+      "original_rows": 2,
+      "unchanged": true
+    },
+    "sales_items": {
+      "original_rows": 4,
+      "unchanged": true
+    },
+    "sales_operation_reasons": {
+      "original_rows": 0,
+      "unchanged": true
+    },
+    "sales_payments": {
+      "original_rows": 3,
+      "unchanged": true
+    },
+    "sales_sales": {
+      "original_rows": 3,
+      "unchanged": true
+    },
+    "sales_tables": {
+      "original_rows": 0,
+      "unchanged": true
+    },
+    "user_password_histories": {
+      "original_rows": 2,
+      "unchanged": true
+    },
+    "user_security_locks": {
+      "original_rows": 1,
+      "unchanged": true
+    },
+    "users": {
+      "original_rows": 1,
+      "unchanged": true
+    }
+  },
+  "protected_files": {
+    "config/session.php": true,
+    ".env": true,
+    ".env.testing": true,
+    "phpstan.neon": true,
+    "phpunit.xml": true,
+    "Modules/Users/config/security.php": true,
+    "config/filesystems.php": true,
+    "composer.lock": true,
+    "config/database.php": true,
+    "composer.json": true
+  },
+  "backup": {
+    "filename": "fresapos_pre_1_6b_20261119_164941Z_8c295b9a.bak",
+    "verified": true,
+    "metadata": {
+      "database_name": "fresapos",
+      "backup_size": "10567680",
+      "is_copy_only": "1",
+      "has_backup_checksums": "1",
+      "backup_finish_date": "2026-11-19 10:49:41.000"
+    },
+    "verified_at_utc": "2026-11-19T16:49:41+00:00"
+  },
+  "columns": [
+    {
+      "name": "discount_authorized_at",
+      "type": "datetimeoffset",
+      "max_length": "10",
+      "precision": "34",
+      "scale": "7",
+      "is_nullable": "1"
+    },
+    {
+      "name": "discount_authorized_by",
+      "type": "nchar",
+      "max_length": "52",
+      "precision": "0",
+      "scale": "0",
+      "is_nullable": "1"
+    },
+    {
+      "name": "discount_type",
+      "type": "nvarchar",
+      "max_length": "32",
+      "precision": "0",
+      "scale": "0",
+      "is_nullable": "1"
+    },
+    {
+      "name": "discount_value",
+      "type": "decimal",
+      "max_length": "9",
+      "precision": "19",
+      "scale": "4",
+      "is_nullable": "1"
+    }
+  ],
+  "check_constraints": [
+    {
+      "name": "sales_authorized_discount",
+      "is_disabled": "0",
+      "is_not_trusted": "0"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "name": "sales_sales_discount_authorized_by_foreign",
+      "is_disabled": "0",
+      "is_not_trusted": "0",
+      "delete_referential_action": "0"
+    }
+  ],
+  "invalid_discount_descriptors": 0,
+  "invalid_zero_closures": 0,
+  "approved_reasons": 0,
+  "passed": true
+}

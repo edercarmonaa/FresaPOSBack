@@ -1,6 +1,8 @@
 # API REST v1
 
-## Sales — convenciones vigentes en 1.6a
+## Sales — convenciones vigentes en 1.6b
+
+La etapa [1.6b](entrega-1.6b.md) añade `PUT /api/v1/sales/{id}/discount` y `DELETE` sobre la misma ruta. PUT recibe solo `{"type":"percent","value":20}` o `{"type":"fixed","value":"50.0000"}`. Ambos requieren los permisos `sales.view`, `sales.open.update`, `sales.discounts.apply` y `sales.special.authorize`, UUID v4 estable e If-Match. La venta debe estar abierta, sin pagos confirmados y con su Cash original abierto. Porcentaje entero 1–100; fijo positivo hasta el subtotal. El servidor fija autor, UTC e importes. El recurso incluye `discount_authorization` solo cuando existe, preservando la revisión histórica de ventas sin descriptor. Checkout revalida al autorizador y permite total cero exclusivamente sobre un subtotal positivo totalmente descontado, con `payments=[]`, folio y sin movimientos de efectivo. La sesión/token se revalida dentro del bloqueo antes de escribir o recuperar un recibo de descuento.
 
 La API de mesas y ventas está definida en [OpenAPI](openapi.yaml) y en el [informe 1.5b](entrega-1.5b.md). Se reutiliza bearer Sanctum vigente y los permisos actuales; una cookie web/PIN no sustituye el token. Consultas en `/api/v1/sales`, `/{id}`, `/{id}/items` y `/api/v1/sales/tables`. Mesas permiten administración con `settings.update`.
 

@@ -36,6 +36,9 @@ class SaleResource extends JsonResource
         if ($sale->reasonSnapshot !== null) {
             $result['cancellation_reason'] = $sale->reasonSnapshot;
         }
+        if ($sale->discountAuthorization !== null) {
+            $result['discount_authorization'] = $sale->discountAuthorization;
+        }
 
         return $result;
     }

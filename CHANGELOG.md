@@ -1,5 +1,13 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.6b
+
+- Un descuento autorizado por venta: porcentaje entero 1–100 o importe fijo exacto, sin acumulación; cálculo compartido con redondeo final a cuatro decimales.
+- Aplicación, sustitución, eliminación y recálculo integrados con Sales, Checkout, Cash y Audit; cierre real de total cero con folio y sin pagos ficticios.
+- Dos operaciones REST y panel POS con vista previa, intención durable, recuperación, permisos actuales y revalidación de sesión/token bajo bloqueo.
+- Migración incremental 000016 con respaldo verificado y datos originales conservados; 705 pruebas/8212 aserciones, catorce escenarios de concurrencia y 129 capturas Chrome en cuatro resoluciones.
+- OpenAPI de 64 operaciones/470 respuestas, Pint, Larastan nivel 5 y Composer correctos. [Informe A–T y aceptación local](docs/entrega-1.6b.md). Sin commits, pushes ni despliegues externos.
+
 ## [Sin publicar] — Etapa 1.6a
 
 - Catálogo Sales de motivos autorizados con código/tipo inmutables, administración Web/API y ausencia de semillas operativas inventadas.

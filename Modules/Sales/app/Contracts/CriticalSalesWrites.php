@@ -13,5 +13,5 @@ interface CriticalSalesWrites
     /** @param array<string, mixed> $payload
      * @param  Closure(): SaleSnapshot  $operation
      */
-    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation): SaleSnapshot;
+    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation, ?Closure $access = null): SaleSnapshot;
 }

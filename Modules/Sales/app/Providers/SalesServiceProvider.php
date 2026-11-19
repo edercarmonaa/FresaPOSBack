@@ -26,17 +26,18 @@ use Modules\Sales\Domain\CashUnavailable;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SalesDependencyUnavailable;
 use Modules\Sales\Http\Livewire\CheckoutPanel;
+use Modules\Sales\Http\Livewire\DiscountPanel;
 use Modules\Sales\Http\Livewire\PointOfSale;
 use Modules\Sales\Http\Livewire\ReasonAdministration;
 use Modules\Sales\Http\Livewire\SaleActionsPanel;
 use Modules\Sales\Http\Middleware\PosAccess;
+use Modules\Sales\Infrastructure\AuthorizedDiscounts;
 use Modules\Sales\Infrastructure\AuthorizedSaleReasons;
 use Modules\Sales\Infrastructure\GlobalQuantityLimits;
 use Modules\Sales\Infrastructure\Persistence\ConfirmedCashIncome;
 use Modules\Sales\Infrastructure\Persistence\EloquentSalesStore;
 use Modules\Sales\Infrastructure\Persistence\SessionSalesSummary;
 use Modules\Sales\Infrastructure\UnavailableCashSession;
-use Modules\Sales\Infrastructure\UnavailableDiscountApproval;
 use Nwidart\Modules\Support\ModuleServiceProvider;
 
 class SalesServiceProvider extends ModuleServiceProvider
@@ -49,7 +50,7 @@ class SalesServiceProvider extends ModuleServiceProvider
         $this->app->bind(ConfirmedSalesCash::class, ConfirmedCashIncome::class);
         $this->app->bind(SessionSales::class, SessionSalesSummary::class);
         $this->app->bind(SaleCheckout::class, CheckoutSale::class);
-        $this->app->bindIf(DiscountApproval::class, UnavailableDiscountApproval::class);
+        $this->app->bind(DiscountApproval::class, AuthorizedDiscounts::class);
         $this->app->bind(QuantityLimits::class, GlobalQuantityLimits::class);
         $this->app->bindIf(ActiveCashSession::class, UnavailableCashSession::class);
         $this->app->bind(SaleOperationReasons::class, ManageSaleReasons::class);
@@ -65,6 +66,7 @@ class SalesServiceProvider extends ModuleServiceProvider
         Livewire::component('sales.checkout', CheckoutPanel::class);
         Livewire::component('sales.reasons', ReasonAdministration::class);
         Livewire::component('sales.operations', SaleActionsPanel::class);
+        Livewire::component('sales.discounts', DiscountPanel::class);
         Livewire::addPersistentMiddleware([PosAccess::class]);
         $this->app->make(ApiExceptionMappings::class)->register(SalesConflict::class, ApiCode::CONFLICT);
         $this->app->make(ApiExceptionMappings::class)->register(SalesDependencyUnavailable::class, ApiCode::SERVICE_UNAVAILABLE);

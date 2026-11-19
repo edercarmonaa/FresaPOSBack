@@ -4,10 +4,12 @@ namespace Modules\Sales\Http\Controllers;
 
 use Closure;
 use Illuminate\Http\JsonResponse;
+use Modules\Auth\Contracts\AuthenticatedRequestAccess;
 use Modules\Core\Contracts\ApiResponder;
 use Modules\Sales\Application\Services\CoordinateSalesWrite;
 use Modules\Sales\Contracts\AddProduct;
 use Modules\Sales\Contracts\CriticalSalesWrites;
+use Modules\Sales\Contracts\DiscountProposal;
 use Modules\Sales\Contracts\OpenSale;
 use Modules\Sales\Contracts\SaleCheckout;
 use Modules\Sales\Contracts\SaleQuery;
@@ -38,6 +40,17 @@ final class SaleController
     public function show(SalesRequest $request, string $id): JsonResponse
     {
         return $this->respond($request, $this->sales->sale($request->actor(), $id));
+    }
+
+    public function setDiscount(SalesRequest $request, string $id): JsonResponse
+    {
+        return $this->mutate($request, $id, fn () => $this->sales->setDiscount($request->actor(), $id,
+            new DiscountProposal($request->validated('type'), $request->validated('value'))));
+    }
+
+    public function removeDiscount(SalesRequest $request, string $id): JsonResponse
+    {
+        return $this->mutate($request, $id, fn () => $this->sales->setDiscount($request->actor(), $id, null));
     }
 
     public function checkout(SalesRequest $request, string $id): JsonResponse
@@ -113,11 +126,13 @@ final class SaleController
             'quantity' => 'quantity.'.$request->route('itemId'),
             'itemNote' => 'item-note.'.$request->route('itemId'),
             'removeItem' => 'remove.'.$request->route('itemId'),
+            'setDiscount' => 'discount', 'removeDiscount' => 'discount-remove',
             'note', 'pause', 'resume', 'cancel' => $request->operation(),
             default => null,
         };
         $sale = $name === null ? $execute() : $this->critical->run($request->actor(), 'sales.'.$id.'.'.$name,
-            (string) $request->header('Idempotency-Key'), $request->validated() + ['revision' => $request->header('If-Match')], $execute);
+            (string) $request->header('Idempotency-Key'), $request->validated() + ['revision' => $request->header('If-Match')], $execute,
+            access: in_array($name, ['discount', 'discount-remove'], true) ? fn () => app(AuthenticatedRequestAccess::class)->requireApi($request, $request->actor()) : null);
 
         return $this->respond($request, $sale);
     }

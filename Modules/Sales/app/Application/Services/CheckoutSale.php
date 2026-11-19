@@ -31,6 +31,7 @@ use Modules\Sales\Domain\PaymentAllocation;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Domain\SalesText;
+use Modules\Sales\Domain\SaleTotals;
 use Modules\Sales\Infrastructure\Persistence\CheckoutStore;
 use Modules\Sales\Infrastructure\Persistence\DailyFolios;
 use Modules\Sales\Policies\SalesPolicy;
@@ -94,36 +95,21 @@ final class CheckoutSale implements SaleCheckout
                 $this->cash->requireActive($actorId, $initial->sale->cashSessionId);
                 $sale = $this->sales->findSale($saleId, lock: true);
                 SalesRevision::requireCurrent($sale, $revision);
-                if ($sale->sale->state !== SaleState::Open || $sale->sale->folio !== null || $sale->sale->cashSessionId !== $initial->sale->cashSessionId) {
+                if ($sale->sale->state !== SaleState::Open || $sale->sale->folio !== null || $sale->sale->cashSessionId !== $initial->sale->cashSessionId || $this->sales->hasConfirmedPayments($saleId)) {
                     throw new SalesConflict('La venta no admite cobro.');
                 }
-                $subtotal = DecimalAmount::from('0.0000');
-                $lines = 0;
-                foreach ($sale->items as $item) {
-                    if ($item->removedAt === null) {
-                        if ($item->quantity < 1) {
-                            throw new SalesConflict('Línea inválida.');
-                        }
-                        $line = DecimalAmount::from($item->unitPrice)->multiply($item->quantity);
-                        if ($line->value !== $item->lineTotal) {
-                            throw new SalesConflict('Los importes históricos no son coherentes.');
-                        }
-                        $subtotal = $subtotal->add($line);
-                        $lines++;
-                    }
-                }
-                $total = $subtotal->subtract(DecimalAmount::from($sale->sale->discount));
-                if ($lines === 0 || $subtotal->value !== $sale->sale->subtotal || $total->value !== $sale->sale->total) {
+                $totals = SaleTotals::calculate($sale);
+                if ($totals['subtotal'] === '0.0000' || $totals['subtotal'] !== $sale->sale->subtotal || $totals['discount_amount'] !== $sale->sale->discount || $totals['total'] !== $sale->sale->total) {
                     throw new SalesConflict('Revisa las líneas y el total vigente de la venta.');
                 }
-                if ($sale->sale->discount !== '0.0000') {
-                    $this->discounts->requireApproved($actorId, $saleId, $subtotal->value, $sale->sale->discount);
+                if ($sale->sale->discountAuthorization !== null || $sale->sale->discount !== '0.0000') {
+                    $this->discounts->requireApproved($actorId, $saleId, $totals['subtotal'], $sale->sale->discount);
                 }
-                if ($total->value === '0.0000' && ($sale->sale->discount === '0.0000' || $payments !== [])) {
+                if ($totals['total'] === '0.0000' && ($sale->sale->discount === '0.0000' || $payments !== [])) {
                     throw new SalesConflict('El cierre sin pagos requiere un descuento total autorizado.');
                 }
                 $actor = $this->identities->inspect($actorId);
-                $plan = PaymentAllocation::calculate($total->value, $this->methods->available($actorId), $payments, in_array('cash.administrative.execute', $actor->permissions, true));
+                $plan = PaymentAllocation::calculate($totals['total'], $this->methods->available($actorId), $payments, in_array('cash.administrative.execute', $actor->permissions, true));
                 $closedAt = CarbonImmutable::now('UTC');
                 $folio = $this->folios->next($closedAt);
                 $this->payments->persist($actorId, $saleId, $sale->sale->cashSessionId, $plan, $closedAt);
@@ -131,7 +117,7 @@ final class CheckoutSale implements SaleCheckout
                 // Valida también el rango del saldo agregado; nunca crea una entrada manual duplicada.
                 $this->movements->balance($actorId, $sale->sale->cashSessionId);
                 event(new SecurityEvent('sales.checkout.confirmed', actorId: $actorId, recordId: $saleId,
-                    checkout: new SaleCheckoutAudit($sale->sale->cashSessionId, $folio, $total->value, $plan->cashApplied, count($plan->payments))));
+                    checkout: new SaleCheckoutAudit($sale->sale->cashSessionId, $folio, $totals['total'], $plan->cashApplied, count($plan->payments))));
                 $this->transactions->afterCommit(function () use ($actorId, $saleId): void {
                     try {
                         event(new SaleChanged($saleId, $actorId, 'checkout'));

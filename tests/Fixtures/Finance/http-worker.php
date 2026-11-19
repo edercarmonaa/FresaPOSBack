@@ -30,6 +30,7 @@ if (! $directory || ! str_starts_with($directory, $root.DIRECTORY_SEPARATOR.'fin
 }
 $input = json_decode(file_get_contents($directory.'/input.json'), true, 512, JSON_THROW_ON_ERROR);
 $spid = (int) $db->selectOne('SELECT @@SPID AS id')->id;
+$initialConnectionId = (string) $db->selectOne('SELECT CONVERT(varchar(36),connection_id) AS id FROM sys.dm_exec_connections WHERE session_id=@@SPID')->id;
 file_put_contents($directory.'/'.$worker.'-attempt.json', json_encode(['spid' => $spid]));
 $hold = function () use ($directory): void {
     file_put_contents($directory.'/holding', 'ready');
@@ -106,5 +107,6 @@ $kernel = $app->make(HttpKernel::class);
 $response = $kernel->handle($request);
 $body = json_decode($response->getContent(), true);
 $delivered = ! ($worker === 'first' && $input['mode'] === 'lost');
-file_put_contents($directory.'/'.$worker.'-result.json', json_encode(['status' => $response->getStatusCode(), 'body' => $delivered ? $body : null, 'delivered' => $delivered, 'connection_killed' => $connectionKilled, 'final_spid' => (int) app('db')->connection()->selectOne('SELECT @@SPID AS id')->id], JSON_THROW_ON_ERROR));
+file_put_contents($directory.'/'.$worker.'-result.json', json_encode(['status' => $response->getStatusCode(), 'body' => $delivered ? $body : null, 'delivered' => $delivered, 'connection_killed' => $connectionKilled, 'final_spid' => (int) app('db')->connection()->selectOne('SELECT @@SPID AS id')->id,
+    'initial_connection_id' => $initialConnectionId, 'final_connection_id' => (string) app('db')->connection()->selectOne('SELECT CONVERT(varchar(36),connection_id) AS id FROM sys.dm_exec_connections WHERE session_id=@@SPID')->id], JSON_THROW_ON_ERROR));
 $kernel->terminate($request, $response);

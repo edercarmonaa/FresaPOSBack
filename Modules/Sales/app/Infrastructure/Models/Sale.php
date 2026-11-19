@@ -40,7 +40,7 @@ class Sale extends Model
 
     protected function casts(): array
     {
-        return ['subtotal' => 'decimal:4', 'discount_amount' => 'decimal:4', 'total' => 'decimal:4', 'closed_at' => 'datetime', 'cancelled_at' => 'datetime', 'cancellation_reason_snapshot' => 'array'];
+        return ['subtotal' => 'decimal:4', 'discount_amount' => 'decimal:4', 'total' => 'decimal:4', 'closed_at' => 'datetime', 'cancelled_at' => 'datetime', 'cancellation_reason_snapshot' => 'array', 'discount_value' => 'decimal:4', 'discount_authorized_at' => 'datetime'];
     }
 
     /** @return HasMany<SaleItem, $this> */

@@ -3,8 +3,8 @@
     @if($status !== '')<p role="status" class="pos-success">{{ $status }}</p>@endif
     @if($errors->any())<div class="pos-error" role="alert"><ul>@foreach($errors->all() as $message)<li>{{ $message }}</li>@endforeach</ul></div>@endif
     @if($receipt !== [])
-        <h3>Venta cobrada</h3><p>Folio <strong data-checkout-folio>{{ $receipt['folio'] }}</strong></p>
-        <p>Total pagado: <strong>${{ $receipt['total'] }}</strong></p><p class="pos-muted pos-small">Cierre: {{ $receipt['closed_at'] }} · UTC</p>
+        <h3>{{ $receipt['total']==='0.0000' ? 'Venta cerrada con descuento total' : 'Venta cobrada' }}</h3><p>Folio <strong data-checkout-folio>{{ $receipt['folio'] }}</strong></p>
+        <p>{{ $receipt['total']==='0.0000' ? 'Total de cierre' : 'Total pagado' }}: <strong>${{ $receipt['total'] }}</strong></p><p class="pos-muted pos-small">Cierre: {{ $receipt['closed_at'] }} · UTC</p>
         @forelse($receipt['payments'] ?? [] as $payment)
             <div class="pos-line"><strong>{{ ['cash'=>'Efectivo','card'=>'Tarjeta','transfer'=>'Transferencia','other'=>'Otro autorizado'][$payment['method_code']] }}</strong><p>Aplicado: ${{ $payment['applied_amount'] }}</p>@if($payment['received_cash'] !== null)<p>Recibido: ${{ $payment['received_cash'] }} · Cambio: <strong>${{ $payment['change_cash'] }}</strong></p>@endif</div>
         @empty<p>Venta totalmente descontada con autorización previa, sin pagos.</p>@endforelse
@@ -27,10 +27,11 @@
                     </fieldset>
                 @endforeach
                 <p id="checkout-reference-help" class="pos-muted pos-small">Transferencia y otro requieren referencia. No ingreses números de tarjeta, CVV o cuentas bancarias.</p>
-                <div class="pos-row"><button type="button" wire:click="addPayment" @disabled($submitted || $pending) wire:loading.attr="disabled">Agregar método</button><button type="button" wire:click="calculate" @disabled($submitted || $pending) wire:loading.attr="disabled">Calcular cambio</button></div>
+                @if(($preview['total'] ?? null)==='0.0000')<p>Descuento total autorizado. Este cierre genera folio, conserva la venta y no registra pagos, efectivo ni cambio.</p>@endif
+                <div class="pos-row"><button type="button" wire:click="addPayment" @disabled($submitted || $pending || ($preview['total'] ?? null)==='0.0000') wire:loading.attr="disabled">Agregar método</button><button type="button" wire:click="calculate" @disabled($submitted || $pending) wire:loading.attr="disabled">{{ ($preview['total'] ?? null)==='0.0000' ? 'Verificar cierre sin pago' : 'Calcular cambio' }}</button></div>
                 @if($preview !== [])<dl class="pos-totals"><div><dt>Total vigente</dt><dd>${{ $preview['total'] }}</dd></div><div><dt>Faltante</dt><dd>${{ $preview['remaining'] }}</dd></div><div><dt>Cambio calculado</dt><dd>${{ $preview['change'] }}</dd></div></dl>@endif
-                <p class="pos-muted pos-small">Confirmar registra los pagos y cierra financieramente esta venta. Revisa los importes.</p>
-                <button type="submit" class="pos-primary" wire:loading.attr="disabled" @disabled($pending)>Confirmar cobro</button>
+                <p class="pos-muted pos-small">{{ ($preview['total'] ?? null)==='0.0000' ? 'Confirmar cierra esta venta con folio y sin pagos. Revisa el descuento autorizado.' : 'Confirmar registra los pagos y cierra financieramente esta venta. Revisa los importes.' }}</p>
+                <button type="submit" class="pos-primary" wire:loading.attr="disabled" @disabled($pending)>{{ ($preview['total'] ?? null)==='0.0000' ? 'Confirmar cierre sin pago' : 'Confirmar cobro' }}</button>
             </form>
         @endif
     @endif

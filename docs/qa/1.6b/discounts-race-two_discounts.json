@@ -1,0 +1,10 @@
+{
+  "database": "fresapos_test",
+  "mode": "two_discounts",
+  "first_spid": 73,
+  "second_spid": 74,
+  "first_status": 200,
+  "second_status": 409,
+  "discount": "36.0000",
+  "transient_sql_codes": []
+}

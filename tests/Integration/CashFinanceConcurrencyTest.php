@@ -111,7 +111,11 @@ class CashFinanceConcurrencyTest extends FinanceSqlServerTestCase
             }
             if ($mode === 'connection_after_commit') {
                 $this->assertTrue($a['connection_killed']);
-                $this->assertNotSame($spidA, $a['final_spid']);
+                // Un SPID puede reutilizarse al reconectar: el GUID identifica
+                // la conexión física sin depender de la asignación de sesiones.
+                $this->assertMatchesRegularExpression('/\A[0-9a-f-]{36}\z/i', $a['initial_connection_id']);
+                $this->assertMatchesRegularExpression('/\A[0-9a-f-]{36}\z/i', $a['final_connection_id']);
+                $this->assertNotSame($a['initial_connection_id'], $a['final_connection_id']);
             }
             file_put_contents(base_path('.tools/finance-1.5d2b-race-'.$mode.'.json'), json_encode(['mode' => $mode, 'database' => 'fresapos_test', 'first_spid' => $spidA, 'first_status' => $a['status'], 'second_status' => $b['status'], 'movement_count' => $count, 'expected_cash' => $balance, 'pending_records' => 0, 'connection_killed' => $a['connection_killed'] ?? false, 'final_first_spid' => $a['final_spid'] ?? $spidA], JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR));
         } finally {

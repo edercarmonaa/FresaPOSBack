@@ -51,6 +51,25 @@ final readonly class DecimalAmount
         if (! is_int($quantity) || $quantity < 1 || $quantity > 2147483647) {
             throw new InvalidArgumentException('La cantidad debe ser positiva y compatible con SQL int.');
         }
+
+        return self::scaled($this->multipliedDigits($quantity));
+    }
+
+    public function percentage(mixed $percentage): self
+    {
+        if (! is_int($percentage) || $percentage < 1 || $percentage > 100) {
+            throw new InvalidArgumentException('Usa un porcentaje entero de 1 a 100.');
+        }
+        // El producto intermedio puede tener 21 dígitos. Dividir antes de validar
+        // decimal(19,4), y redondear una sola vez al final, mitades hacia arriba.
+        $digits = str_pad($this->multipliedDigits($percentage), 3, '0', STR_PAD_LEFT);
+        $result = self::scaled(substr($digits, 0, -2));
+
+        return (int) substr($digits, -2) >= 50 ? $result->add(self::from('0.0001')) : $result;
+    }
+
+    private function multipliedDigits(int $quantity): string
+    {
         $result = '';
         $carry = 0;
         foreach (str_split(strrev($this->digits())) as $digit) {
@@ -62,7 +81,7 @@ final readonly class DecimalAmount
             $result .= strrev((string) $carry);
         }
 
-        return self::scaled(strrev($result));
+        return strrev($result);
     }
 
     public function subtract(self $other): self

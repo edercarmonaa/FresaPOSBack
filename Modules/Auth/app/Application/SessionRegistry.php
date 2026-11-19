@@ -4,6 +4,7 @@ namespace Modules\Auth\Application;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Modules\Auth\Contracts\AuthenticatedRequestAccess;
 use Modules\Auth\Domain\ExpiredSession;
 use Modules\Auth\Infrastructure\Models\AccessSession;
 use Modules\Auth\Infrastructure\Models\AccessToken;
@@ -13,8 +14,22 @@ use Modules\Core\Contracts\TransactionManager;
 use Modules\Users\Contracts\IdentityAccess;
 use Modules\Users\Contracts\UserSnapshot;
 
-final class SessionRegistry
+final class SessionRegistry implements AuthenticatedRequestAccess
 {
+    public function requireWeb(Request $request, string $actorId): void
+    {
+        abort_unless($this->web($request, false)->user_id === $actorId, 401);
+    }
+
+    public function requireApi(Request $request, string $actorId): void
+    {
+        $token = $this->token($request);
+        abort_unless(AccessToken::query()->whereKey($token->getKey())->where('expires_at', '>', now())->exists(), 401);
+        // El middleware ya registró actividad. Esta revalidación bajo el lock
+        // financiero debe leer sin retener un UPDATE sobre la sesión del actor.
+        abort_unless($this->api($request, false)->user_id === $actorId, 401);
+    }
+
     public function __construct(private readonly TransactionManager $transactions, private readonly IdentityAccess $identities, private readonly SessionPolicy $policy) {}
 
     public function assertCapacity(string $userId, string $channel): void
@@ -69,12 +84,14 @@ final class SessionRegistry
         return $session;
     }
 
-    public function api(Request $request): AccessSession
+    public function api(Request $request, bool $touch = true): AccessSession
     {
         $token = $this->token($request);
         $session = AccessSession::query()->where('channel', 'api')->where('token_id', $token->getKey())->where('user_id', $request->user()->getAuthIdentifier())->first();
         $this->validate($session);
-        $session->update(['last_activity_at' => now()]);
+        if ($touch) {
+            $session->update(['last_activity_at' => now()]);
+        }
 
         return $session;
     }

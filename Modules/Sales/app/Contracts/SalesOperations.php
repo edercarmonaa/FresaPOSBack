@@ -26,6 +26,8 @@ interface SalesOperations
 
     public function cancel(string $actorId, string $saleId, string $reason): SaleSnapshot;
 
+    public function setDiscount(string $actorId, string $saleId, ?DiscountProposal $proposal): SaleSnapshot;
+
     public function createTable(string $actorId, string $name, int $displayOrder = 0): DiningTableSnapshot;
 
     public function updateTable(string $actorId, string $id, string $name, bool $isActive, int $displayOrder = 0): DiningTableSnapshot;

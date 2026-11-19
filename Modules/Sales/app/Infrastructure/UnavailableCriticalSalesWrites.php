@@ -9,7 +9,7 @@ use Modules\Sales\Domain\SalesDependencyUnavailable;
 
 final class UnavailableCriticalSalesWrites implements CriticalSalesWrites
 {
-    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation): SaleSnapshot
+    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation, ?Closure $access = null): SaleSnapshot
     {
         throw new SalesDependencyUnavailable('La operación requiere idempotencia durable y Cash funcional.');
     }

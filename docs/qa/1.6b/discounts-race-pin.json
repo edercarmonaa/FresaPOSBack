@@ -1,0 +1,7 @@
+{
+  "database": "fresapos_test",
+  "first_spid": 66,
+  "second_spid": 65,
+  "wait_type": "LCK_M_U",
+  "result": "revoked_session_rejected"
+}

@@ -18,6 +18,9 @@ final class SalesRevision
             if ($data['sale']['reasonSnapshot'] === null) {
                 unset($data['sale']['reasonSnapshot']);
             }
+            if ($data['sale']['discountAuthorization'] === null) {
+                unset($data['sale']['discountAuthorization']);
+            }
             foreach ($data['items'] as &$item) {
                 if ($item['reasonSnapshot'] === null) {
                     unset($item['reasonSnapshot']);

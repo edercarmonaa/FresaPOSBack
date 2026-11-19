@@ -52,6 +52,13 @@ final class EloquentSalesStore implements SalesStore
         return $this->findSale($id);
     }
 
+    public function hasConfirmedPayments(string $saleId): bool
+    {
+        $this->requireTransaction();
+
+        return DB::table('sales_payments')->where('sale_id', $saleId)->where('status', 'confirmed')->lock('with (updlock,holdlock)')->exists();
+    }
+
     public function createItem(string $saleId, array $values): SaleItemSnapshot
     {
         $this->requireTransaction();
@@ -147,7 +154,10 @@ final class EloquentSalesStore implements SalesStore
         return new SaleSummary($sale->id, SaleType::from($sale->type), SaleState::from($sale->status), $sale->table_id,
             $sale->created_by, $sale->cash_session_id, $sale->note, $sale->subtotal, $sale->discount_amount, $sale->total,
             $sale->folio, $sale->closed_at?->toISOString(), $sale->cancelled_at?->toISOString(), $sale->cancelled_by,
-            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString(), $sale->getAttribute('closed_by'), $sale->getAttribute('cancellation_reason_snapshot'));
+            $sale->cancellation_reason, $sale->created_at->toISOString(), $sale->updated_at->toISOString(), $sale->getAttribute('closed_by'), $sale->getAttribute('cancellation_reason_snapshot'),
+            $sale->getAttribute('discount_type') === null ? null : ['type' => $sale->getAttribute('discount_type'),
+                'value' => $sale->getAttribute('discount_type') === 'percent' ? (int) $sale->getAttribute('discount_value') : $sale->getAttribute('discount_value'),
+                'authorized_by' => $sale->getAttribute('discount_authorized_by'), 'authorized_at' => $sale->getAttribute('discount_authorized_at')?->toISOString()]);
     }
 
     private function item(SaleItem $item): SaleItemSnapshot

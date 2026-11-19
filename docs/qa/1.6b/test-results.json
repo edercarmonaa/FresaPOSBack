@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-19",
+  "baseline": {
+    "tests": 641,
+    "assertions": 7504,
+    "time": "19:29.200",
+    "memory": "184 MB",
+    "exit": 1,
+    "failure": "SaleReasonsConcurrencyTest@rollback: missing holding barrier",
+    "unchanged_isolated_retry": {
+      "tests": 1,
+      "assertions": 15,
+      "time": "00:07.720",
+      "exit": 0
+    }
+  },
+  "regression": {
+    "tests": 705,
+    "assertions": 8212,
+    "time": "23:47.364",
+    "memory": "198.00 MB",
+    "exit": 0
+  },
+  "inventory": {
+    "new_count": 64,
+    "missing_previous": [],
+    "final_count": 705,
+    "baseline_count": 641
+  },
+  "quality": {
+    "composer_validate": 0,
+    "analyse": 0,
+    "platform": 0,
+    "lint": 0
+  },
+  "commands": [
+    ".\\scripts\\local.cmd composer test",
+    ".\\scripts\\local.cmd composer lint",
+    ".\\scripts\\local.cmd composer analyse",
+    ".\\scripts\\local.cmd composer validate --strict",
+    ".\\scripts\\local.cmd composer check-platform-reqs",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-openapi.ps1 -Responses .tools/discounts-all-responses.json -Report .tools/discounts-openapi-report.json",
+    ".\\scripts\\local.cmd php scripts/inspect-financial-integrity.php"
+  ],
+  "transient_composer_timeout_seconds": 1800,
+  "concurrency_cases": 14,
+  "visual_screens": 129,
+  "stage_status": "ETAPA 1.6b: ACEPTADA LOCALMENTE",
+  "earlier_regression": {
+    "exit": 1,
+    "summary": "Tests: 704, Assertions: 8202, Failures: 2"
+  }
+}

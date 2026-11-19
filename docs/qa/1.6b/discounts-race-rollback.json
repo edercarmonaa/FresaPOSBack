@@ -1,0 +1,10 @@
+{
+  "database": "fresapos_test",
+  "mode": "rollback",
+  "first_spid": 65,
+  "second_spid": null,
+  "first_status": 500,
+  "second_status": 200,
+  "discount": "36.0000",
+  "transient_sql_codes": []
+}

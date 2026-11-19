@@ -118,6 +118,7 @@ class SaleReasonsHttpTest extends ReasonsSqlServerTestCase
         $sale = $this->sale();
         $legacy = json_decode(json_encode($sale, JSON_THROW_ON_ERROR), true);
         unset($legacy['sale']['reasonSnapshot']);
+        unset($legacy['sale']['discountAuthorization']);
         foreach ($legacy['items'] as &$item) {
             unset($item['reasonSnapshot']);
         }

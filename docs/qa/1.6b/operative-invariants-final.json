@@ -1,0 +1,29 @@
+{
+  "database": "fresapos",
+  "read_only": true,
+  "ulid_columns_checked": 59,
+  "violations": {
+    "untrusted_foreign_keys": 0,
+    "disabled_check_constraints": 0,
+    "disabled_financial_triggers": 0,
+    "missing_financial_triggers": 0,
+    "missing_unique_indexes": 0,
+    "incorrect_money_columns": 0,
+    "duplicate_open_registers": 0,
+    "duplicate_active_tables": 0,
+    "duplicate_folios": 0,
+    "duplicate_reconciliations": 0,
+    "duplicate_intentions": 0,
+    "orphan_sales": 0,
+    "orphan_items": 0,
+    "incorrect_payment_session": 0,
+    "confirmed_payment_without_close": 0,
+    "incorrect_closed_sale": 0,
+    "folio_on_open_sale": 0,
+    "unresolved_sales_in_closed_session": 0,
+    "incorrect_closed_session": 0,
+    "incorrect_reconciliation": 0,
+    "invalid_ulids": 0
+  },
+  "passed": true
+}

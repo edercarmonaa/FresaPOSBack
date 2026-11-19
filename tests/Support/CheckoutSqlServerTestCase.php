@@ -9,10 +9,12 @@ use Modules\Cash\Contracts\PaymentMethods;
 use Modules\Catalog\Contracts\CatalogAdministration;
 use Modules\Sales\Application\SalesRevision;
 use Modules\Sales\Contracts\AddProduct;
+use Modules\Sales\Contracts\DiscountApproval;
 use Modules\Sales\Contracts\OpenSale;
 use Modules\Sales\Contracts\SaleSnapshot;
 use Modules\Sales\Contracts\SalesOperations;
 use Modules\Sales\Domain\SaleType;
+use Modules\Sales\Infrastructure\UnavailableDiscountApproval;
 
 abstract class CheckoutSqlServerTestCase extends FinanceSqlServerTestCase
 {
@@ -27,6 +29,8 @@ abstract class CheckoutSqlServerTestCase extends FinanceSqlServerTestCase
         // Reloj determinista anterior a los workers de medianoche/transición.
         CarbonImmutable::setTestNow('2026-11-17T18:00:00Z');
         parent::setUp();
+        // Suite histórica sin 000016: el aprobador ausente es parte del fixture.
+        $this->app->bind(DiscountApproval::class, UnavailableDiscountApproval::class);
         $this->checkoutSchema = require base_path('Modules/Sales/database/migrations/2026_11_17_000012_enable_sale_checkout.php');
         $this->database->transaction(fn () => $this->checkoutSchema->up());
         $catalog = app(CatalogAdministration::class);

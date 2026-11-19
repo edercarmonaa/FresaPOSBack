@@ -11,6 +11,7 @@ use Illuminate\Validation\ValidationException;
 use InvalidArgumentException;
 use Modules\Cash\Contracts\ActiveCashSession;
 use Modules\Catalog\Contracts\CatalogReader;
+use Modules\Core\Contracts\SaleDiscountAudit;
 use Modules\Core\Contracts\SaleOperationAudit;
 use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
@@ -18,6 +19,7 @@ use Modules\Sales\Application\Ports\SalesStore;
 use Modules\Sales\Contracts\AddProduct;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\DiningTableSnapshot;
+use Modules\Sales\Contracts\DiscountProposal;
 use Modules\Sales\Contracts\Events\SaleChanged;
 use Modules\Sales\Contracts\LineRemovalApproval;
 use Modules\Sales\Contracts\OpenSale;
@@ -33,6 +35,7 @@ use Modules\Sales\Domain\SaleLifecycle;
 use Modules\Sales\Domain\SalesConflict;
 use Modules\Sales\Domain\SaleState;
 use Modules\Sales\Domain\SalesText;
+use Modules\Sales\Domain\SaleTotals;
 use Modules\Sales\Domain\SaleType;
 use Modules\Sales\Policies\SalesPolicy;
 use Modules\Users\Contracts\IdentityAccess;
@@ -208,6 +211,28 @@ final class ManageSales implements SalesOperations
         }, permission: 'sales.cancel', editable: false);
     }
 
+    public function setDiscount(string $actorId, string $saleId, ?DiscountProposal $proposal): SaleSnapshot
+    {
+        return $this->mutate($actorId, $saleId, $proposal === null ? 'discount_removed' : 'discount_set', function (SaleSnapshot $sale) use ($actorId, $proposal): bool {
+            foreach (['sales.view', 'sales.open.update', 'sales.special.authorize'] as $permission) {
+                $this->authorize($actorId, $permission);
+            }
+            if ($this->store->hasConfirmedPayments($sale->sale->id)) {
+                throw new SalesConflict('Una venta con pagos confirmados no admite descuentos.');
+            }
+            if ($proposal === null && $sale->sale->discountAuthorization === null && $sale->sale->discount === '0.0000') {
+                return false;
+            }
+            $totals = SaleTotals::calculate($sale, $proposal, $proposal === null);
+            $this->store->updateSale($sale->sale->id, $totals + ['discount_type' => $proposal?->type,
+                'discount_value' => $proposal === null ? null : ($proposal->type === 'percent' ? $proposal->value.'.0000' : $proposal->value),
+                'discount_authorized_by' => $proposal === null ? null : $actorId,
+                'discount_authorized_at' => $proposal === null ? null : now()->utc()]);
+
+            return true;
+        }, permission: 'sales.discounts.apply');
+    }
+
     public function createTable(string $actorId, string $name, int $displayOrder = 0): DiningTableSnapshot
     {
         return $this->write($actorId, 'settings.update', function () use ($actorId, $name, $displayOrder): DiningTableSnapshot {
@@ -295,15 +320,9 @@ final class ManageSales implements SalesOperations
                 return $sale;
             }
             $current = $this->store->findSale($sale->sale->id);
-            $subtotal = Amount::from('0.0000');
-            foreach ($current->items as $item) {
-                if ($item->removedAt === null) {
-                    $subtotal = $subtotal->add(Amount::from($item->unitPrice)->multiply($item->quantity));
-                }
-            }
-            $total = $subtotal->subtract(Amount::from($current->sale->discount));
+            $totals = SaleTotals::calculate($current);
             // Cancelar no cambia líneas o importes; una venta cancelada ya es historia inmutable.
-            $result = $operation === 'cancelled' ? $current : $this->store->updateSale($sale->sale->id, ['subtotal' => $subtotal->value, 'total' => $total->value]);
+            $result = $operation === 'cancelled' ? $current : $this->store->updateSale($sale->sale->id, $totals);
             $evidence = null;
             if ($operation === 'cancelled' && $result->sale->reasonSnapshot !== null) {
                 $evidence = new SaleOperationAudit($sale->sale->id, $sale->sale->state->value, 'cancelled', $result->sale->reasonSnapshot);
@@ -317,7 +336,17 @@ final class ManageSales implements SalesOperations
                     }
                 }
             }
-            $this->audit($actorId, $sale->sale->id, $operation, $evidence);
+            $discountEvidence = null;
+            if (in_array($operation, ['discount_set', 'discount_removed'], true)
+                || $sale->sale->discount !== $result->sale->discount && $sale->sale->discountAuthorization !== null) {
+                $discountEvidence = new SaleDiscountAudit($sale->sale->discountAuthorization, $result->sale->discountAuthorization,
+                    $sale->sale->subtotal, $result->sale->subtotal, $sale->sale->discount, $result->sale->discount, $sale->sale->total, $result->sale->total);
+            }
+            $operation = match ($operation) {
+                'discount_set' => $sale->sale->discountAuthorization === null ? 'discount.applied' : 'discount.replaced',
+                'discount_removed' => 'discount.removed', default => $operation,
+            };
+            $this->audit($actorId, $sale->sale->id, $operation, $evidence, $discountEvidence);
 
             return $result;
         });
@@ -355,9 +384,9 @@ final class ManageSales implements SalesOperations
         }
     }
 
-    private function audit(string $actorId, string $saleId, string $operation, ?SaleOperationAudit $evidence = null): void
+    private function audit(string $actorId, string $saleId, string $operation, ?SaleOperationAudit $evidence = null, ?SaleDiscountAudit $discount = null): void
     {
-        event(new SecurityEvent('sales.'.$operation, actorId: $actorId, recordId: $saleId, saleOperation: $evidence));
+        event(new SecurityEvent('sales.'.$operation, actorId: $actorId, recordId: $saleId, saleOperation: $evidence, discountChange: $discount));
         $this->transactions->afterCommit(function () use ($actorId, $saleId, $operation): void {
             try {
                 event(new SaleChanged($saleId, $actorId, $operation));

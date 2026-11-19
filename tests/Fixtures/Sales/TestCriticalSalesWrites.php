@@ -13,11 +13,12 @@ final class TestCriticalSalesWrites implements CriticalSalesWrites
 {
     private array $results = [];
 
-    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation): SaleSnapshot
+    public function run(string $actorId, string $scope, string $key, array $payload, Closure $operation, ?Closure $access = null): SaleSnapshot
     {
         if (! app()->environment('testing')) {
             throw new LogicException('Solo testing.');
         }
+        $access?->__invoke();
         $index = $actorId.'/'.$scope.'/'.$key;
         $fingerprint = hash('sha256', json_encode($payload, JSON_THROW_ON_ERROR));
         if (isset($this->results[$index])) {
