@@ -1,0 +1,1736 @@
+{
+  "browser": "Chrome/157.0.8103.79",
+  "database": "fresapos_test",
+  "fixture_only": true,
+  "screens": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "01-pos-paid-entry.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "02-paid-sale-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "02-paid-sale-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "02-paid-sale-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "02-paid-sale-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "03-reopen-observation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "03-reopen-observation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "03-reopen-observation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "03-reopen-observation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "04-active-correction-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "04-active-correction-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "04-active-correction-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "04-active-correction-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "05-proposed-note-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "05-proposed-note-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "05-proposed-note-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "05-proposed-note-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "06-confirm-comparison-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "06-confirm-comparison-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "06-confirm-comparison-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "06-confirm-comparison-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "07-correction-confirmed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "07-correction-confirmed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "07-correction-confirmed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "07-correction-confirmed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "08-increment-proposed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "08-increment-proposed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "08-increment-proposed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "08-increment-proposed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "09-additional-preview-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "09-additional-preview-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "09-additional-preview-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "09-additional-preview-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-additional-confirmed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-additional-confirmed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-additional-confirmed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-additional-confirmed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-refund-blocked-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-refund-blocked-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-refund-blocked-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-refund-blocked-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-discard-confirmation-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-discard-confirmation-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-discard-confirmation-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-discard-confirmation-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-discarded-history-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-discarded-history-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-discarded-history-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-discarded-history-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-no-changes-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-no-changes-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-no-changes-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-no-changes-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-unchanged-result-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-unchanged-result-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-unchanged-result-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-unchanged-result-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-lost-response-recovered-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-lost-response-recovered-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-lost-response-recovered-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-lost-response-recovered-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "19-new-product-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "19-new-product-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "19-new-product-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "19-new-product-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "20-percent-proposed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "20-percent-proposed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "20-percent-proposed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "20-percent-proposed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "21-fixed-proposed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "21-fixed-proposed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "21-fixed-proposed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "21-fixed-proposed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "22-removal-reason-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "22-removal-reason-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "22-removal-reason-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "22-removal-reason-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "23-full-comparison-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "23-full-comparison-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "23-full-comparison-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "23-full-comparison-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "24-products-confirmed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "24-products-confirmed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "24-products-confirmed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "24-products-confirmed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "17-table-history-correction-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "17-table-history-correction-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "17-table-history-correction-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "17-table-history-correction-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "18-cash-blocked-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "18-cash-blocked-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "18-cash-blocked-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "18-cash-blocked-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "25-current-financial-receipt-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "25-current-financial-receipt-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "25-current-financial-receipt-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "25-current-financial-receipt-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "29-keyboard-focus-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "29-keyboard-focus-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "29-keyboard-focus-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "29-keyboard-focus-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "31-additional-calculated-detail-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "31-additional-calculated-detail-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "31-additional-calculated-detail-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "31-additional-calculated-detail-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "32-live-receipt-refreshed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "32-live-receipt-refreshed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "32-live-receipt-refreshed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "32-live-receipt-refreshed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "26-pin-comparison-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "26-pin-comparison-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "26-pin-comparison-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "26-pin-comparison-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "27-pin-confirmed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "27-pin-confirmed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "27-pin-confirmed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "27-pin-confirmed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "33-money-layout-fixed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "33-money-layout-fixed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "33-money-layout-fixed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "33-money-layout-fixed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "34-uncollected-draft-discarded-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "34-uncollected-draft-discarded-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "34-uncollected-draft-discarded-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "34-uncollected-draft-discarded-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "28-cashier-read-only-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "28-cashier-read-only-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "28-cashier-read-only-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "28-cashier-read-only-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "30-session-revoked-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "30-session-revoked-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "30-session-revoked-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "30-session-revoked-390.png"
+    }
+  ]
+}

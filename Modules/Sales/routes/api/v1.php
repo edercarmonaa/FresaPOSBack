@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Sales\Http\Controllers\CorrectionController;
 use Modules\Sales\Http\Controllers\ReasonController;
 use Modules\Sales\Http\Controllers\SaleController;
 use Modules\Sales\Http\Controllers\TableController;
@@ -26,6 +27,12 @@ Route::prefix('sales')->middleware(['auth.no-store', 'auth:sanctum', 'auth.acces
     Route::get('{id}/items', [SaleController::class, 'items'])->whereUlid('id')->name('items');
     Route::post('{id}/items', [SaleController::class, 'addItem'])->whereUlid('id')->name('items.store');
     Route::post('{id}/checkout', [SaleController::class, 'checkout'])->whereUlid('id')->name('checkout');
+    Route::post('{id}/reopen', [CorrectionController::class, 'reopen'])->whereUlid('id')->name('corrections.reopen');
+    Route::get('{id}/correction', [CorrectionController::class, 'current'])->whereUlid('id')->name('corrections.current');
+    Route::patch('{id}/correction', [CorrectionController::class, 'edit'])->whereUlid('id')->name('corrections.edit');
+    Route::post('{id}/correction/confirm', [CorrectionController::class, 'confirm'])->whereUlid('id')->name('corrections.confirm');
+    Route::post('{id}/correction/discard', [CorrectionController::class, 'discard'])->whereUlid('id')->name('corrections.discard');
+    Route::get('{id}/corrections', [CorrectionController::class, 'history'])->whereUlid('id')->name('corrections.history');
     Route::put('{id}/discount', [SaleController::class, 'setDiscount'])->whereUlid('id')->name('discount.update');
     Route::delete('{id}/discount', [SaleController::class, 'removeDiscount'])->whereUlid('id')->name('discount.destroy');
     Route::patch('{id}/items/{itemId}/quantity', [SaleController::class, 'quantity'])->whereUlid(['id', 'itemId'])->name('items.quantity');

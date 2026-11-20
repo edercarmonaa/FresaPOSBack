@@ -1,0 +1,215 @@
+{
+    "database": "fresapos",
+    "read_only": true,
+    "tables": 28,
+    "migrations": 17,
+    "prior_tables": {
+        "audit_security_events": {
+            "original_rows": 66,
+            "unchanged": false,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "auth_access_sessions": {
+            "original_rows": 13,
+            "unchanged": false,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "auth_employee_pins": {
+            "original_rows": 1,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "cash_movements": {
+            "original_rows": 3,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "cash_payment_methods": {
+            "original_rows": 4,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "cash_reconciliations": {
+            "original_rows": 2,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "cash_registers": {
+            "original_rows": 1,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "cash_sessions": {
+            "original_rows": 3,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "catalog_categories": {
+            "original_rows": 2,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "catalog_products": {
+            "original_rows": 2,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "idempotency_records": {
+            "original_rows": 17,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "migrations": {
+            "original_rows": 17,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "model_has_permissions": {
+            "original_rows": 0,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "model_has_roles": {
+            "original_rows": 1,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "permissions": {
+            "original_rows": 44,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "personal_access_tokens": {
+            "original_rows": 0,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "role_has_permissions": {
+            "original_rows": 81,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "roles": {
+            "original_rows": 4,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_corrections": {
+            "original_rows": 0,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_daily_sequences": {
+            "original_rows": 2,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_items": {
+            "original_rows": 4,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_operation_reasons": {
+            "original_rows": 0,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_payments": {
+            "original_rows": 3,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_sales": {
+            "original_rows": 3,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "sales_tables": {
+            "original_rows": 0,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "user_password_histories": {
+            "original_rows": 2,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "user_security_locks": {
+            "original_rows": 1,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        },
+        "users": {
+            "original_rows": 1,
+            "unchanged": true,
+            "columns_unchanged": true,
+            "original_rows_unchanged": true
+        }
+    },
+    "protected_files": {
+        ".env": true,
+        ".env.testing": true,
+        "config\/database.php": true,
+        "config\/session.php": true,
+        "config\/filesystems.php": true,
+        "composer.json": true,
+        "composer.lock": true,
+        "phpunit.xml": true,
+        "phpstan.neon": true,
+        "Modules\/Users\/config\/security.php": true
+    },
+    "live_web_activity": {
+        "baseline_captured_at_utc": "2026-11-20 14:52:58",
+        "tables": {
+            "audit_security_events": {
+                "original_rows": 66,
+                "original_rows_unchanged": true,
+                "added_rows": 1
+            },
+            "auth_access_sessions": {
+                "original_rows": 13,
+                "original_rows_unchanged": true,
+                "added_rows": 1
+            }
+        },
+        "added_events": [
+            {
+                "event_type": "login",
+                "client": "web",
+                "occurred_at": "2026-11-20 16:27:07.167"
+            }
+        ],
+        "login_matches_added_session": true,
+        "expected_live_web_activity": true,
+        "passed": true
+    },
+    "schema_unchanged": true,
+    "passed": true
+}

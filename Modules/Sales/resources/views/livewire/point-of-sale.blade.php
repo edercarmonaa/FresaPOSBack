@@ -25,10 +25,11 @@
                 <div class="pos-row"><div class="pos-tabs" aria-label="Tipo de venta"><button type="button" wire:click="selectMode('counter')" aria-pressed="{{ $mode === 'counter' ? 'true' : 'false' }}" wire:loading.attr="disabled">Mostrador</button><button type="button" wire:click="selectMode('table')" aria-pressed="{{ $mode === 'table' ? 'true' : 'false' }}" wire:loading.attr="disabled">Mesas</button></div><button type="button" wire:click="refreshSale" wire:loading.attr="disabled">Actualizar vista</button></div>
                 @if($mode === 'counter')
                     <div class="pos-row pos-spaced"><h2>Ventas de mostrador</h2><button type="button" class="pos-primary" wire:click="startSale" @disabled(!$critical || !in_array('sales.create', $actor->permissions, true) || $saleId !== null) wire:loading.attr="disabled" aria-describedby="pos-opening-help">Iniciar venta</button></div>
-                    <div class="pos-tabs pos-small" aria-label="Estado de mostrador"><button type="button" wire:click="selectCounterState('open')" aria-pressed="{{ $counterState === 'open' ? 'true' : 'false' }}">Abiertas</button><button type="button" wire:click="selectCounterState('paused')" aria-pressed="{{ $counterState === 'paused' ? 'true' : 'false' }}">Pausadas</button></div>
+                    <div class="pos-tabs pos-small" aria-label="Estado de mostrador"><button type="button" wire:click="selectCounterState('open')" aria-pressed="{{ $counterState === 'open' ? 'true' : 'false' }}">Abiertas</button><button type="button" wire:click="selectCounterState('paused')" aria-pressed="{{ $counterState === 'paused' ? 'true' : 'false' }}">Pausadas</button><button type="button" wire:click="selectCounterState('closed')" aria-pressed="{{ $counterState === 'closed' ? 'true' : 'false' }}">Pagadas y correcciones</button></div>
+                    @if($counterState === 'closed')<form wire:submit="refreshSale" class="pos-spaced"><label for="pos-paid-folio" class="pos-label">Buscar venta pagada por folio (mostrador o mesa)</label><input id="pos-paid-folio" wire:model="paidFolio" maxlength="12" inputmode="numeric"><button type="submit" wire:loading.attr="disabled">Buscar folio</button></form>@endif
                     <div class="pos-sale-list">
                         @forelse($sales?->items ?? [] as $sale)
-                            <button type="button" class="pos-sale-choice" wire:key="sale-{{ $sale->id }}" wire:click="selectSale('{{ $sale->id }}')" @click="if(innerWidth < 1024) ticket = true" wire:loading.attr="disabled"><span><strong>{{ $sale->state->value === 'paused' ? 'Pausada' : 'Abierta' }}</strong><small>{{ $sale->id }}</small><small>{{ substr($sale->createdAt, 0, 16) }} UTC</small></span><strong class="pos-money">${{ $sale->total }}</strong></button>
+                            <button type="button" class="pos-sale-choice" wire:key="sale-{{ $sale->id }}" wire:click="selectSale('{{ $sale->id }}')" @click="if(innerWidth < 1024) ticket = true" wire:loading.attr="disabled"><span><strong>{{ $sale->folio ?? ($sale->state->value === 'paused' ? 'Pausada' : 'Abierta') }}</strong><small>{{ $sale->id }}</small><small>{{ substr($sale->createdAt, 0, 16) }} UTC</small></span><strong class="pos-money">${{ $sale->total }}</strong></button>
                         @empty<p class="pos-empty">No hay ventas {{ $counterState === 'paused' ? 'pausadas' : 'abiertas' }} de mostrador.</p>@endforelse
                     </div>
                     @if($sales) @include('sales::partials.pagination', ['total'=>$sales->total, 'size'=>10, 'page'=>$salesPage, 'target'=>'salesPage', 'label'=>'ventas']) @endif
@@ -96,7 +97,13 @@
             @if($saleId && \Illuminate\Support\Facades\Schema::hasColumn('sales_sales','discount_type') && array_diff(['sales.discounts.apply','sales.special.authorize','sales.open.update'],$actor->permissions)===[])
                 <livewire:sales.discounts :sale-id="$saleId" :key="'discounts-'.$saleId" />
             @endif
-            <div class="pos-future pos-spaced"><h3>Próximas operaciones</h3><p id="pos-future-help" class="pos-muted pos-small">Correcciones financieras y tickets requieren etapas posteriores. Retirar o cancelar requiere motivos autorizados.</p><div class="pos-future-buttons"><button type="button" disabled aria-describedby="pos-future-help">Imprimir ticket</button></div></div>
+            @if($saleId && $currentSale['state']==='closed' && \Illuminate\Support\Facades\Schema::hasTable('sales_corrections'))
+                <livewire:sales.corrections :sale-id="$saleId" :key="'corrections-'.$saleId" />
+            @endif
+            @if($saleId && ($currentSale['state'] ?? null)==='closed' && in_array('tickets.view', $actor->permissions, true))
+                <section class="pos-spaced pos-editor" aria-label="Comprobante de venta"><h3>Ticket de 80 mm</h3><p class="pos-muted pos-small">Vista histórica confirmada. Una corrección activa impide emitir el comprobante.</p><a href="{{ route('tickets.preview', ['id'=>$saleId]) }}" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid #334155;border-radius:6px;color:#172554;background:#fff">Ver ticket / preparar impresión</a></section>
+            @endif
+            <div class="pos-future pos-spaced"><p class="pos-muted pos-small">Retirar o cancelar requiere motivos autorizados. Las devoluciones permanecen bloqueadas.</p></div>
         </aside>
     </div>
     <button type="button" class="pos-mobile-ticket" x-ref="ticketButton" @click="ticket = true; $nextTick(() => $refs.panelHeading?.focus())" :aria-expanded="ticket" aria-controls="pos-sale-title">Ver venta actual <strong>${{ $currentSale['total'] ?? '0.0000' }}</strong></button>

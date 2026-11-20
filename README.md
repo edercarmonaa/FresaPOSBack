@@ -6,7 +6,7 @@ La entrega [1.5d.5 — Aceptación integral del ciclo financiero](docs/entrega-1
 
 La entrega [1.5d.4 — Arqueo ciego y cierre de caja](docs/entrega-1.5d.4.md) está **aceptada localmente**. En [Caja](http://127.0.0.1:8080/cash), usuarios autorizados pueden contar efectivo, cerrar una sesión sin ventas pendientes y consultar diferencias/historial. El conteo exige una observación breve en todos los casos; el saldo se muestra tras confirmar. Apertura posterior expresa, sin trasladar automáticamente el fondo. Regresión 589/6425 y [38 capturas de QA aislada](docs/qa/1.5d.4/README.md); datos operativos conservados. Azure SQL/cPanel y funcionalidades posteriores siguen pendientes según el informe.
 
-Se conserva la entrega [1.5d.3, cobro transaccional y folios diarios](docs/entrega-1.5d.3.md): [POS](http://127.0.0.1:8080/pos), efectivo, tarjeta, transferencia, otro autorizado y mezclas; cambio exacto, cierre de venta atómico y folio diario según America/Mexico_City. Caja integra el efectivo neto confirmado sin duplicarlo como movimiento manual. Su arqueo y cierre se incorporan en 1.5d.4. Los descuentos se incorporan en 1.6b; reaperturas/reembolsos y tickets siguen pendientes. Retirada/cancelación requieren motivos autorizados.
+Se conserva la entrega [1.5d.3, cobro transaccional y folios diarios](docs/entrega-1.5d.3.md): [POS](http://127.0.0.1:8080/pos), efectivo, tarjeta, transferencia, otro autorizado y mezclas; cambio exacto, cierre de venta atómico y folio diario según America/Mexico_City. Caja integra el efectivo neto confirmado sin duplicarlo como movimiento manual. Su arqueo y cierre se incorporan en 1.5d.4, los descuentos en 1.6b y las correcciones autorizadas en 1.6c. Los [tickets de 80 mm se documentan en 1.6d](docs/entrega-1.6d.md), con su estado real de validación. Los reembolsos permanecen bloqueados. Retirada/cancelación requieren motivos autorizados.
 
 Backend modular de FresaPOS para establecimientos de alimentos y bebidas: Laravel 13, PHP 8.3, SQL Server Express local y futura conexión a Azure SQL por entorno. Interfaz Blade/Livewire sin Node, npm ni Vite.
 
@@ -78,6 +78,8 @@ APP_PORT se conserva como referencia del flujo Docker histórico; `local.cmd ser
 - Sin estilos al perder conexión: limitación del CDN, descrita en docs/frontend.md.
 
 ## Documentación
+
+La entrega [1.6c](docs/entrega-1.6c.md) añade correcciones autorizadas de ventas pagadas con borrador separado, folio/primer cierre y pagos originales conservados, cobro adicional explícito e historial. El POS incorpora «Pagadas y correcciones». Requiere `sales.reopen` y autorización especial; la matriz operativa conserva ese permiso solo en admin. Devoluciones y reclasificación de pagos históricos permanecen bloqueadas. Consultar el informe para conocer el estado real de validación y despliegue local.
 
 La etapa [1.5a](docs/entrega-1.5a.md) prepara el dominio y persistencia de ventas de mostrador/mesas, líneas con precios históricos, cantidades enteras (máximo inicial 100), notas, transacciones y concurrencia SQL. **Todavía no añade una pantalla POS ni API de ventas. La apertura operativa requiere Cash funcional y permanece bloqueada mientras no exista esa integración.** No se crean ventas ni mesas ficticias en la base real.
 

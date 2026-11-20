@@ -16,6 +16,7 @@ use Modules\Core\Contracts\SaleOperationAudit;
 use Modules\Core\Contracts\SecurityEvent;
 use Modules\Core\Contracts\TransactionManager;
 use Modules\Sales\Application\Ports\SalesStore;
+use Modules\Sales\Application\Ports\StagedSalesStore;
 use Modules\Sales\Contracts\AddProduct;
 use Modules\Sales\Contracts\CancellationApproval;
 use Modules\Sales\Contracts\DiningTableSnapshot;
@@ -386,6 +387,10 @@ final class ManageSales implements SalesOperations
 
     private function audit(string $actorId, string $saleId, string $operation, ?SaleOperationAudit $evidence = null, ?SaleDiscountAudit $discount = null): void
     {
+        // El borrador reutiliza el dominio pero todavía no representa una operación financiera.
+        if ($this->store instanceof StagedSalesStore) {
+            return;
+        }
         event(new SecurityEvent('sales.'.$operation, actorId: $actorId, recordId: $saleId, saleOperation: $evidence, discountChange: $discount));
         $this->transactions->afterCommit(function () use ($actorId, $saleId, $operation): void {
             try {

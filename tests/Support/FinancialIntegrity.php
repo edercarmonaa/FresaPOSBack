@@ -38,6 +38,17 @@ final class FinancialIntegrity
             'incorrect_reconciliation' => "SELECT COUNT(*) AS n FROM cash_reconciliations r JOIN cash_sessions c ON c.id=r.cash_session_id OUTER APPLY (SELECT SUM(CASE WHEN type='cash_in' THEN amount ELSE -amount END) AS net FROM cash_movements WHERE cash_session_id=c.id) m OUTER APPLY (SELECT SUM(p.applied_amount) AS net FROM sales_payments p JOIN sales_sales s ON s.id=p.sale_id WHERE p.cash_session_id=c.id AND p.method_code='cash' AND p.status='confirmed' AND s.status='closed') p WHERE r.expected_cash<>c.opening_fund+COALESCE(m.net,0)+COALESCE(p.net,0) OR r.difference<>r.counted_cash-r.expected_cash OR TRY_CONVERT(decimal(19,4),JSON_VALUE(r.summary,'$.expected_cash'))<>r.expected_cash OR TRY_CONVERT(decimal(19,4),JSON_VALUE(r.summary,'$.counted_cash'))<>r.counted_cash OR TRY_CONVERT(decimal(19,4),JSON_VALUE(r.summary,'$.difference'))<>r.difference",
         ];
         $violations = [];
+        if ($database->getSchemaBuilder()->hasTable('sales_corrections')) {
+            $queries += [
+                'missing_correction_guards' => "SELECT 3-COUNT(*) AS n FROM sys.triggers WHERE is_disabled=0 AND name IN ('sales_correction_history_guard','sales_correction_payment_guard','sales_correction_cash_close_guard')",
+                'missing_correction_uniqueness' => "SELECT 1-COUNT(*) AS n FROM sys.indexes WHERE is_unique=1 AND is_disabled=0 AND name='sales_one_active_correction'",
+                'duplicate_active_corrections' => 'SELECT COUNT(*) AS n FROM (SELECT sale_id FROM sales_corrections WHERE completed_at IS NULL GROUP BY sale_id HAVING COUNT(*)>1) x',
+                'active_correction_in_closed_session' => "SELECT COUNT(*) AS n FROM sales_corrections x JOIN cash_sessions c ON c.id=x.cash_session_id WHERE x.completed_at IS NULL AND c.status<>'open'",
+                'unfinished_correction_application' => 'SELECT COUNT(*) AS n FROM sales_corrections WHERE applying_transaction_id IS NOT NULL',
+                'changed_correction_identity' => "SELECT COUNT(*) AS n FROM sales_corrections WHERE result_snapshot IS NOT NULL AND (JSON_VALUE(original_snapshot,'$.sale.id')<>JSON_VALUE(result_snapshot,'$.sale.id') OR JSON_VALUE(original_snapshot,'$.sale.folio')<>JSON_VALUE(result_snapshot,'$.sale.folio') OR JSON_VALUE(original_snapshot,'$.sale.closedAt')<>JSON_VALUE(result_snapshot,'$.sale.closedAt') OR JSON_VALUE(original_snapshot,'$.sale.createdAt')<>JSON_VALUE(result_snapshot,'$.sale.createdAt') OR JSON_VALUE(original_snapshot,'$.sale.cashSessionId')<>JSON_VALUE(result_snapshot,'$.sale.cashSessionId'))",
+                'incorrect_correction_finance' => "SELECT COUNT(*) AS n FROM sales_corrections x OUTER APPLY (SELECT SUM(TRY_CONVERT(decimal(19,4),JSON_VALUE(value,'$.applied_amount'))) AS paid FROM OPENJSON(x.result_snapshot,'$.payments')) p WHERE x.result_snapshot IS NOT NULL AND (TRY_CONVERT(decimal(19,4),JSON_VALUE(x.result_snapshot,'$.sale.total'))<>COALESCE(p.paid,0) OR TRY_CONVERT(decimal(19,4),JSON_VALUE(x.result_snapshot,'$.sale.total'))<TRY_CONVERT(decimal(19,4),JSON_VALUE(x.original_snapshot,'$.sale.total')))",
+            ];
+        }
         foreach ($queries as $label => $sql) {
             $violations[$label] = (int) $database->selectOne($sql)->n;
         }

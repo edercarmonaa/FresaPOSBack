@@ -40,8 +40,8 @@ class CashConcurrencyTest extends CashSqlServerTestCase
         mkdir($directory);
         file_put_contents($directory.'/input.json', json_encode(compact('mode', 'actor', 'other', 'register', 'table'), JSON_THROW_ON_ERROR));
         $command = [PHP_BINARY, base_path('tests/Fixtures/Cash/concurrent.php'), $directory];
-        $first = new Process([...$command, 'first'], base_path(), timeout: 35);
-        $second = new Process([...$command, 'second'], base_path(), timeout: 35);
+        $first = new Process([...$command, 'first'], base_path(), timeout: 90);
+        $second = new Process([...$command, 'second'], base_path(), timeout: 90);
         try {
             $first->start();
             $this->waitForFile($directory.'/holding', $first);
@@ -106,10 +106,11 @@ class CashConcurrencyTest extends CashSqlServerTestCase
 
     private function waitForFile(string $file, Process $process): void
     {
-        $deadline = microtime(true) + 12;
+        // Windows puede demorar el arranque del kernel; no cambia la espera de lock de 6 s.
+        $deadline = microtime(true) + 30;
         while (! is_file($file) && $process->isRunning() && microtime(true) < $deadline) {
             usleep(20000);
         }
-        $this->assertFileExists($file, $process->getErrorOutput().$process->getOutput());
+        $this->assertFileExists($file, 'El trabajador no produjo '.basename($file).' dentro de 30 s. '.$process->getErrorOutput().$process->getOutput());
     }
 }

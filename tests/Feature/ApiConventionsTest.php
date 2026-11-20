@@ -101,6 +101,7 @@ class ApiConventionsTest extends TestCase
         $this->assertEqualsCanonicalizing([
             'api.v1.core.ping', 'api.v1.auth.login', 'api.v1.auth.logout', 'api.v1.auth.me', 'api.v1.auth.password',
             'api.v1.core.operations.status',
+            'api.v1.sales.corrections.reopen', 'api.v1.sales.corrections.current', 'api.v1.sales.corrections.edit', 'api.v1.sales.corrections.confirm', 'api.v1.sales.corrections.discard', 'api.v1.sales.corrections.history',
             'api.v1.auth.sessions', 'api.v1.auth.sessions.revoke', 'api.v1.auth.sessions.revoke-all',
             'api.v1.auth.users.sessions', 'api.v1.auth.users.sessions.revoke',
             'api.v1.cash.payment-methods.index', 'api.v1.cash.payment-methods.show', 'api.v1.cash.movements.index', 'api.v1.cash.movements.show', 'api.v1.cash.movements.store', 'api.v1.cash.registers', 'api.v1.cash.sessions.current', 'api.v1.cash.sessions.open',
@@ -116,6 +117,7 @@ class ApiConventionsTest extends TestCase
             'api.v1.sales.items.quantity', 'api.v1.sales.items.note', 'api.v1.sales.items.destroy', 'api.v1.sales.note',
             'api.v1.sales.pause', 'api.v1.sales.resume', 'api.v1.sales.cancel', 'api.v1.sales.checkout',
             'api.v1.sales.discount.update', 'api.v1.sales.discount.destroy',
+            'api.v1.tickets.folio', 'api.v1.tickets.show',
         ], $routes->map(fn ($route) => $route->getName())->values()->all());
     }
 

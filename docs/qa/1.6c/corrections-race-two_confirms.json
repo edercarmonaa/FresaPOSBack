@@ -1,0 +1,18 @@
+{
+  "database": "fresapos_test",
+  "mode": "two_confirms",
+  "first_spid": 66,
+  "second_spid": 72,
+  "wait_type": "LCK_M_U",
+  "pending_status": null,
+  "first_status": 200,
+  "second_status": 409,
+  "folio_preserved": true,
+  "first_close_preserved": true,
+  "original_payments_preserved": true,
+  "additional_payments": 1,
+  "correction_events": 1,
+  "expected_cash": "460.0000",
+  "transient_sql_codes": [],
+  "passed": true
+}

@@ -6,6 +6,7 @@ info:
     REST v1, autenticación y sesiones de 1.3b/1.3c, catálogo administrativo e imágenes de 1.4c. Ping y login son públicos.
     Sales 1.5d.3 incorpora checkout transaccional, pagos mixtos y folios diarios con Cash real e idempotencia durable. La etapa 1.6a habilita motivos autorizados, retiro y cancelación no financiera; aprobación de dispositivos pendiente. Imágenes administradas mediante endpoints dedicados multipart.
     Validación formal OpenAPI 3.1 y correspondencia con rutas mediante composer openapi.
+    Tickets 1.6d consulta comprobantes históricos coherentes de 80 mm; reimpresión Web autorizada sin nuevas operaciones financieras.
 servers:
   - url: http://127.0.0.1:8080/api/v1
     description: Desarrollo local; los servidores de staging y producción quedan pendientes.
@@ -21,6 +22,8 @@ tags:
     description: Mesas, operaciones de venta, checkout financiero e historial autorizado por folio.
   - name: Cash
     description: Caja única, apertura, métodos de pago, movimientos y saldo con efectivo neto confirmado; arqueo ciego, conciliación y cierre transaccional con historial.
+  - name: Tickets
+    description: Comprobantes históricos y reimpresión Web autorizada de 80 mm.
 paths:
   /operations/{idempotencyKey}/status:
     get:
@@ -3547,6 +3550,455 @@ paths:
           $ref: '#/components/responses/InternalError'
         '503':
           $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/reopen:
+    post:
+      tags:
+      - Sales
+      operationId: salesCorrectionReopen
+      summary: Reabrir venta pagada
+      description: Reabre mediante un borrador autorizado. Exige sales.reopen, sales.special.authorize, sales.open.update, sales.view
+        y cash.view; Cash original abierto, venta closed reconciliada y ninguna corrección activa. Observación opcional, texto
+        plano normalizado. Conserva ULID, folio, primer cierre, mesa histórica, cliente y pagos. No consume folio ni vuelve
+        a ocupar mesa.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleReopen'
+  /sales/{id}/correction:
+    get:
+      tags:
+      - Sales
+      operationId: salesCorrectionCurrent
+      summary: Consultar corrección activa
+      description: Consulta el borrador activo con sales.view. La venta confirmada permanece closed y su saldo sigue vigente;
+        active en la corrección distingue el trabajo provisional. Sin borrador devuelve 404.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+    patch:
+      tags:
+      - Sales
+      operationId: salesCorrectionEdit
+      summary: Editar borrador autorizado
+      description: Guarda un único cambio provisional con las reglas existentes de productos/notas/cantidades y descuentos.
+        No altera venta confirmada, pagos o saldo, ni emite auditoría funcional por campo. Retiro exige motivo autorizado; descuentos
+        requieren además sales.discounts.apply, revalidado antes del replay. Usa la revisión de la corrección, no la revisión
+        de la venta.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaleCorrectionEdit'
+  /sales/{id}/correction/confirm:
+    post:
+      tags:
+      - Sales
+      operationId: salesCorrectionConfirm
+      summary: Confirmar corrección financiera
+      description: Confirma atómicamente bajo Core. Exige además sales.close y revalida sesión/token/actor, Cash original, revisión
+        y permisos. Conserva folio y primer cierre. Sin diferencia conserva pagos; incremento exige payments que cubran exactamente
+        la diferencia mediante PaymentAllocation existente. Efectivo neto adicional afecta Cash una vez; cambio calculado en
+        servidor. Disminuciones que requieren devolver dinero, reembolsos y reclasificación de pagos históricos están bloqueados.
+        Un único evento Venta corregida si hay cambios; sin cambios finaliza unchanged sin evento. No admite checkout ordinario
+        ni cancelación ordinaria de la venta pagada.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesCheckout'
+  /sales/{id}/correction/discard:
+    post:
+      tags:
+      - Sales
+      operationId: salesCorrectionDiscard
+      summary: Descartar borrador
+      description: Finaliza discarded conservando el borrador en historial, venta y pagos originales. Sin efectos financieros
+        ni evento Venta corregida. No descarta automáticamente correcciones.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: If-Match
+        in: header
+        required: true
+        schema:
+          type: string
+          pattern: ^"[a-f0-9]{64}"$
+        description: 'Revisión del recurso completo leído. Ausente o antigua: CONFLICT 409; volver a consultar.'
+      - name: Idempotency-Key
+        in: header
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+        description: UUID v4 estable para la intención. Reintentar con la misma clave y contenido; nunca renovarla automáticamente
+          ante resultado desconocido.
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/corrections:
+    get:
+      tags:
+      - Sales
+      operationId: salesCorrectionHistory
+      summary: Consultar historial de correcciones
+      description: Historial autorizado con sales.view, inmutable y paginado de diez. Incluye versiones antes/propuesta/resultado,
+        pagos anteriores y finales, actor, UTC, folio y diferencia. No expone datos bancarios sensibles ni mecanismo SQL interno.
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      responses:
+        '200':
+          description: Resultado autorizado sin duplicar efectos.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleCorrectionsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/{id}/receipt:
+    get:
+      tags:
+      - Tickets
+      operationId: saleReceiptById
+      summary: Consultar comprobante por id
+      description: 'Lectura autorizada con sales.view y tickets.view. Conserva el alcance compartido del establecimiento existente.
+        Solo venta closed, folio y primer cierre presentes, pagos conciliados y sin corrección activa. La lectura bloqueada
+        captura una versión financiera coherente: productos/precios/notas históricos, descuento, pagos originales y adicionales
+        confirmados. No emite folios, no modifica dinero, no registra reimpresión y no admite parámetros financieros. No expone
+        referencias bancarias, IDs de acceso o costos. Datos del establecimiento opcionales; identificador fiscal solo con configuración
+        explícita. No hay datos de clientes registrados en el modelo actual y se omiten. Employee es el nombre disponible de
+        la identidad del primer cerrador, no un snapshot histórico de su nombre. La fecha de cierre original se conserva en
+        UTC y se convierte para presentación a la zona comercial configurada. Durante una corrección activa devuelve 409; el
+        historial financiero anterior sigue en Sales. Reimpresión solo por ruta Web autorizada y auditada, sin confirmar salida
+        física.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: '#/components/schemas/CatalogUlid'
+      responses:
+        '200':
+          description: Comprobante confirmado, sin efectos financieros.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReceiptResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /sales/folio/{folio}/receipt:
+    get:
+      tags:
+      - Tickets
+      operationId: saleReceiptByFolio
+      summary: Consultar comprobante por folio
+      description: 'Lectura autorizada con sales.view y tickets.view. Conserva el alcance compartido del establecimiento existente.
+        Solo venta closed, folio y primer cierre presentes, pagos conciliados y sin corrección activa. La lectura bloqueada
+        captura una versión financiera coherente: productos/precios/notas históricos, descuento, pagos originales y adicionales
+        confirmados. No emite folios, no modifica dinero, no registra reimpresión y no admite parámetros financieros. No expone
+        referencias bancarias, IDs de acceso o costos. Datos del establecimiento opcionales; identificador fiscal solo con configuración
+        explícita. No hay datos de clientes registrados en el modelo actual y se omiten. Employee es el nombre disponible de
+        la identidad del primer cerrador, no un snapshot histórico de su nombre. La fecha de cierre original se conserva en
+        UTC y se convierte para presentación a la zona comercial configurada. Durante una corrección activa devuelve 409; el
+        historial financiero anterior sigue en Sales. Reimpresión solo por ruta Web autorizada y auditada, sin confirmar salida
+        física.'
+      security:
+      - BearerAuth: []
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: folio
+        in: path
+        required: true
+        schema:
+          type: string
+          pattern: ^[0-9]{12}$
+      responses:
+        '200':
+          description: Comprobante confirmado, sin efectos financieros.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SaleReceiptResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
 components:
   securitySchemes:
     BearerAuth:
@@ -3586,6 +4038,493 @@ components:
       schema:
         type: string
   schemas:
+    SaleReceipt:
+      type: object
+      additionalProperties: false
+      required:
+      - sale_id
+      - folio
+      - closed_at
+      - local_closed_at
+      - timezone
+      - sale_type
+      - items
+      - subtotal
+      - discount_amount
+      - discount
+      - total
+      - payments
+      - note
+      - establishment
+      - employee
+      - correction
+      - revision
+      properties:
+        sale_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        folio:
+          type: string
+          pattern: ^[0-9]{12}$
+        closed_at:
+          type: string
+          format: date-time
+        local_closed_at:
+          type: string
+          pattern: ^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$
+        timezone:
+          type: string
+        sale_type:
+          enum:
+          - counter
+          - table
+        items:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - name
+            - quantity
+            - unit_price
+            - line_total
+            - note
+            properties:
+              name:
+                type: string
+              quantity:
+                type: integer
+                minimum: 1
+                maximum: 100
+              unit_price:
+                $ref: '#/components/schemas/SalesMoney'
+              line_total:
+                $ref: '#/components/schemas/SalesMoney'
+              note:
+                type:
+                - string
+                - 'null'
+        subtotal:
+          $ref: '#/components/schemas/SalesMoney'
+        discount_amount:
+          $ref: '#/components/schemas/SalesMoney'
+        discount:
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          required:
+          - type
+          - value
+          properties:
+            type:
+              enum:
+              - percent
+              - fixed
+            value:
+              oneOf:
+              - type: integer
+                minimum: 1
+                maximum: 100
+              - $ref: '#/components/schemas/SalesMoney'
+        total:
+          $ref: '#/components/schemas/SalesMoney'
+        payments:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+            - method_code
+            - method_name
+            - applied_amount
+            - received_cash
+            - change_cash
+            properties:
+              method_code:
+                enum:
+                - cash
+                - card
+                - transfer
+                - other
+              method_name:
+                type: string
+              applied_amount:
+                $ref: '#/components/schemas/SalesMoney'
+              received_cash:
+                type:
+                - string
+                - 'null'
+                pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+              change_cash:
+                type:
+                - string
+                - 'null'
+                pattern: ^(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+        note:
+          type:
+          - string
+          - 'null'
+        establishment:
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          properties:
+            name:
+              type: string
+            branch:
+              type: string
+            address:
+              type: string
+            phone:
+              type: string
+            fiscal_id:
+              type: string
+            footer:
+              type: string
+        employee:
+          type:
+          - string
+          - 'null'
+        correction:
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          required:
+          - id
+          - confirmed_at
+          properties:
+            id:
+              $ref: '#/components/schemas/CatalogUlid'
+            confirmed_at:
+              type: string
+              format: date-time
+        revision:
+          $ref: '#/components/schemas/SalesRevision'
+    SaleReceiptResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/SaleReceipt'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SaleCorrection:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - sale_id
+      - cash_session_id
+      - folio
+      - status
+      - reopened_by
+      - reopened_at
+      - observation
+      - confirmed_by
+      - confirmed_at
+      - revision
+      - original
+      - proposed
+      - sale
+      - changes
+      - financial
+      properties:
+        id:
+          $ref: '#/components/schemas/CatalogUlid'
+        sale_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        cash_session_id:
+          $ref: '#/components/schemas/CatalogUlid'
+        folio:
+          type: string
+          pattern: ^[0-9]{12}$
+        status:
+          enum:
+          - active
+          - confirmed
+          - unchanged
+          - discarded
+        reopened_by:
+          $ref: '#/components/schemas/CatalogUlid'
+        reopened_at:
+          type: string
+          format: date-time
+        observation:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+        confirmed_by:
+          type:
+          - string
+          - 'null'
+        confirmed_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        revision:
+          $ref: '#/components/schemas/SalesRevision'
+        original:
+          $ref: '#/components/schemas/SalesDetail'
+        proposed:
+          $ref: '#/components/schemas/SalesDetail'
+        sale:
+          $ref: '#/components/schemas/SalesDetail'
+        changes:
+          type: array
+          uniqueItems: true
+          items:
+            enum:
+            - items
+            - note
+            - discount
+        financial:
+          type: object
+          additionalProperties: false
+          required:
+          - original_total
+          - proposed_total
+          - difference
+          - additional_paid
+          - requires_refund
+          - payment_reclassification_supported
+          properties:
+            original_total:
+              $ref: '#/components/schemas/SalesMoney'
+            proposed_total:
+              $ref: '#/components/schemas/SalesMoney'
+            difference:
+              type: string
+              pattern: ^-?(?:0|[1-9][0-9]{0,14})\.[0-9]{4}$
+            additional_paid:
+              $ref: '#/components/schemas/SalesMoney'
+            requires_refund:
+              type: boolean
+            payment_reclassification_supported:
+              const: false
+    SaleCorrectionEdit:
+      oneOf:
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - product_id
+        - quantity
+        properties:
+          action:
+            const: add
+          product_id:
+            $ref: '#/components/schemas/CatalogUlid'
+          quantity:
+            type: integer
+            minimum: 1
+            maximum: 100
+          note:
+            type:
+            - string
+            - 'null'
+            maxLength: 100
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - item_id
+        - quantity
+        properties:
+          action:
+            const: quantity
+          item_id:
+            $ref: '#/components/schemas/CatalogUlid'
+          quantity:
+            type: integer
+            minimum: 1
+            maximum: 100
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - item_id
+        - note
+        properties:
+          action:
+            const: item-note
+          item_id:
+            $ref: '#/components/schemas/CatalogUlid'
+          note:
+            type:
+            - string
+            - 'null'
+            maxLength: 100
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - note
+        properties:
+          action:
+            const: note
+          note:
+            type:
+            - string
+            - 'null'
+            maxLength: 150
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - item_id
+        - reason_code
+        properties:
+          action:
+            const: remove
+          item_id:
+            $ref: '#/components/schemas/CatalogUlid'
+          reason_code:
+            type: string
+            pattern: ^[A-Z0-9][A-Z0-9_:-]{0,63}$
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        properties:
+          action:
+            const: discount-remove
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - type
+        - value
+        properties:
+          action:
+            const: discount
+          type:
+            const: percent
+          value:
+            type: integer
+            minimum: 1
+            maximum: 100
+      - type: object
+        additionalProperties: false
+        required:
+        - action
+        - type
+        - value
+        properties:
+          action:
+            const: discount
+          type:
+            const: fixed
+          value:
+            type: string
+            pattern: ^(?:0|[1-9][0-9]{0,14})(?:\.[0-9]{1,4})?$
+            description: Importe positivo exacto, menor o igual al subtotal vigente.
+    SaleReopen:
+      type: object
+      additionalProperties: false
+      required: []
+      properties:
+        observation:
+          type:
+          - string
+          - 'null'
+          maxLength: 150
+    SaleCorrectionResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          $ref: '#/components/schemas/SaleCorrection'
+        meta:
+          type: object
+          required:
+          - request_id
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+    SaleCorrectionsResponse:
+      type: object
+      additionalProperties: false
+      required:
+      - success
+      - code
+      - message
+      - data
+      - meta
+      properties:
+        success:
+          const: true
+        code:
+          const: OPERATION_SUCCESS
+        message:
+          type: string
+        data:
+          type: object
+          additionalProperties: false
+          required:
+          - corrections
+          properties:
+            corrections:
+              type: array
+              items:
+                $ref: '#/components/schemas/SaleCorrection'
+        meta:
+          type: object
+          additionalProperties: false
+          required:
+          - request_id
+          - page
+          - per_page
+          - total
+          properties:
+            request_id:
+              $ref: '#/components/schemas/RequestId'
+            page:
+              type: integer
+              minimum: 1
+            per_page:
+              type: integer
+              enum:
+              - 10
+              - 25
+              - 50
+              - 100
+            total:
+              type: integer
+              minimum: 0
     SaleDiscountInput:
       oneOf:
       - type: object

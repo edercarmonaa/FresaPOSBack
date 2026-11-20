@@ -69,6 +69,11 @@ class CheckoutPanel extends Component
     public function refreshTicket(string $saleId): void
     {
         $this->actor();
+        if ($saleId === $this->saleId && $this->receipt !== []) {
+            $this->queryCheckout();
+
+            return;
+        }
         if ($saleId === $this->saleId && ! $this->submitted && $this->receipt === [] && $this->opened) {
             $this->opened = false;
             $this->preview = $this->payments = [];

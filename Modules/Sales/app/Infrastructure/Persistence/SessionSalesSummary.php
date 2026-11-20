@@ -3,6 +3,7 @@
 namespace Modules\Sales\Infrastructure\Persistence;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Modules\Cash\Contracts\SessionSales;
 use Modules\Core\Contracts\DecimalAmount;
 
@@ -23,9 +24,22 @@ final class SessionSalesSummary implements SessionSales
     public function pending(string $sessionId, int $page = 1): array
     {
         $this->transaction();
-        $query = DB::table('sales_sales')->where('cash_session_id', $sessionId)->whereIn('status', ['open', 'paused']);
+        $corrections = Schema::hasTable('sales_corrections');
+        $query = DB::table('sales_sales')->where('cash_session_id', $sessionId)->where(function ($query) use ($corrections): void {
+            $query->whereIn('status', ['open', 'paused']);
+            if ($corrections) {
+                $query->orWhereExists(fn ($active) => $active->selectRaw('1')->from('sales_corrections')->whereColumn('sale_id', 'sales_sales.id')->whereNull('completed_at'));
+            }
+        });
 
-        return ['total' => $query->count(), 'items' => $query->select(['id', 'type', 'status', 'table_id'])->orderBy('id')->forPage($page, 25)->get()->map(fn ($row) => (array) $row)->all()];
+        return ['total' => $query->count(), 'items' => $query->select(['id', 'type', 'status', 'table_id'])->orderBy('id')->forPage($page, 25)->get()->map(function ($row): array {
+            $item = (array) $row;
+            if ($item['status'] === 'closed') {
+                $item['status'] = 'correcting';
+            }
+
+            return $item;
+        })->all()];
     }
 
     public function confirmed(string $sessionId): array

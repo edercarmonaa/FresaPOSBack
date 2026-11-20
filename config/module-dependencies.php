@@ -8,7 +8,7 @@ return [
     'Catalog' => ['Core', 'Users'],
     'Sales' => ['Core', 'Users', 'Catalog', 'Cash', 'Auth'],
     'Cash' => ['Core', 'Users'],
-    'Tickets' => ['Core'],
+    'Tickets' => ['Core', 'Sales', 'Users', 'Auth'],
     'Reports' => ['Core'],
     'Audit' => ['Core'],
     'Notifications' => ['Core'],

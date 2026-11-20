@@ -104,7 +104,7 @@ final class CloseCashSession implements CashClosings
                 $pending = $this->sales->pending($sessionId);
                 if ($pending['total'] > 0) {
                     // Los IDs se consultan en pending con sales.view; el rechazo no filtra importes ni recursos ajenos.
-                    throw new OperationRejected(ApiCode::CONFLICT, ['pending_sales' => ['Hay ventas abiertas o pausadas. Resuélvelas en el POS y prepara otra intención de cierre.']]);
+                    throw new OperationRejected(ApiCode::CONFLICT, ['pending_sales' => ['Hay ventas abiertas, pausadas o correcciones activas. Resuélvelas en el POS y prepara otra intención de cierre.']]);
                 }
                 $balance = $this->finance->balance($sessionId, $session->opening_fund);
                 $sales = $this->sales->confirmed($sessionId);

@@ -73,7 +73,8 @@ try {
     $result['id'] = $id;
     if ($worker === 'first') {
         file_put_contents($directory.'/holding', 'ready');
-        $deadline = microtime(true) + 20;
+        // Margen para que el segundo kernel arranque y el coordinador observe el lock.
+        $deadline = microtime(true) + 60;
         while (! is_file($directory.'/release')) {
             if (microtime(true) > $deadline) {
                 throw new RuntimeException('Timeout esperando commit.');

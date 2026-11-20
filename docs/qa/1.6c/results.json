@@ -1,0 +1,50 @@
+{
+  "stage": "1.6c",
+  "accepted_locally": true,
+  "baseline": {
+    "tests": 705,
+    "assertions": 8212,
+    "time": "18:19.497",
+    "memory": "198 MB",
+    "exit_code": 0
+  },
+  "final": {
+    "tests": 769,
+    "assertions": 9216,
+    "time": "22:09.285",
+    "memory": "220.00 MB",
+    "exit_code": 0
+  },
+  "legacy_tests_retained": 705,
+  "new_tests": 64,
+  "quality": {
+    "analyse": 0,
+    "platform": 0,
+    "composer": 0,
+    "lint": 0
+  },
+  "openapi": {
+    "tool": "openapi-spec-validator",
+    "version": "0.9.0",
+    "response_validator": "openapi-schema-validator",
+    "response_validator_version": "0.9.0",
+    "file": "docs/openapi.yaml",
+    "openapi": "3.1.0",
+    "operations": 70,
+    "catalog_operations": 15,
+    "sales_operations": 31,
+    "cash_operations": 13,
+    "responses_validated": 518,
+    "operations_with_response_samples": 70,
+    "errors": [],
+    "error_count": 0,
+    "warnings": [],
+    "warning_count": 0,
+    "result": "PASS"
+  },
+  "operative_data_preserved": true,
+  "protected_files_preserved": true,
+  "operative_corrections": 0,
+  "no_commits_or_pushes": true,
+  "external_deployment": false
+}

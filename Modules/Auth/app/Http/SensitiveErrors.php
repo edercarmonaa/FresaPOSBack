@@ -34,7 +34,7 @@ final class SensitiveErrors
                 continue;
             }
             $snapshot = json_decode($component['snapshot'], true);
-            if (is_array($snapshot) && in_array($snapshot['memo']['name'] ?? null, ['auth.login', 'auth.sessions', 'catalog.categories', 'catalog.products', 'sales.pos', 'sales.checkout', 'sales.reasons', 'sales.operations', 'sales.discounts', 'cash.desk', 'cash.movements', 'cash.closing'], true)) {
+            if (is_array($snapshot) && in_array($snapshot['memo']['name'] ?? null, ['auth.login', 'auth.sessions', 'catalog.categories', 'catalog.products', 'sales.pos', 'sales.checkout', 'sales.reasons', 'sales.operations', 'sales.discounts', 'sales.corrections', 'cash.desk', 'cash.movements', 'cash.closing'], true)) {
                 return true;
             }
         }

@@ -62,6 +62,12 @@ final class RecordSecurityEvent
             $data['discount_change'] = get_object_vars($event->discountChange);
             $values['change_data'] = json_encode($data, JSON_THROW_ON_ERROR);
         }
+        if ($event->correction !== null) {
+            $values['change_data'] = json_encode(['correction' => get_object_vars($event->correction)], JSON_THROW_ON_ERROR);
+        }
+        if ($event->receipt !== null) {
+            $values['change_data'] = json_encode(['receipt' => get_object_vars($event->receipt)], JSON_THROW_ON_ERROR);
+        }
         DB::table('audit_security_events')->insert($values);
     }
 }

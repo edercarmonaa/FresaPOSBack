@@ -1,0 +1,23 @@
+{
+  "command": ".\\scripts\\local.cmd composer test",
+  "exit_code": 0,
+  "tests": 821,
+  "assertions": 9736,
+  "time": "19:13.303",
+  "memory": "240.00 MB",
+  "previous_tests": 769,
+  "new_tests": 52,
+  "missing_previous_tests": 0,
+  "baseline": {
+    "tests": 769,
+    "assertions": 9216,
+    "time": "25:13.700",
+    "memory": "220.00 MB",
+    "exit_code": 0
+  },
+  "test_database": {
+    "database": "fresapos_test",
+    "remaining_tables": 0
+  },
+  "passed": true
+}

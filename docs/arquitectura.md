@@ -1,5 +1,7 @@
 # Arquitectura modular — etapas 1.2 y 1.3a
 
+Actualización 1.6d: Tickets consume los contratos públicos de Sales, Users, Auth y Core para construir comprobantes coherentes de ventas confirmadas. Sales publica `ConfirmedSalesDocuments`, que bloquea la lectura y rechaza cierres inconsistentes o correcciones activas. `ReceiptData` separa datos y presentación; Blade ofrece 80 mm y el POS enlaza la vista sin importar componentes internos de Tickets. Reimpresión auxiliar mediante Core/Audit, sin otra operación monetaria, migración o dependencia externa. La relación explícita `Tickets → Sales/Users/Auth/Core` es acíclica. [Informe 1.6d](entrega-1.6d.md).
+
 Actualización 1.6b: Sales comparte `SaleTotals` entre mutaciones y Checkout; los descuentos usan `DecimalAmount`, Core durable, Cash y Audit existentes. Sus adaptadores HTTP/Livewire consumen el contrato público `Auth\Contracts\AuthenticatedRequestAccess` para revalidar la sesión/token bajo el bloqueo de identidad antes de ejecutar o recuperar una intención. Se declara `Sales → Auth` en la matriz sin dependencias circulares; no se importan modelos ni repositorios internos de Auth. [Informe 1.6b](entrega-1.6b.md).
 
 Actualización 1.5d.1: Cash implementa caja única, sesiones, apertura/consulta y ActiveCashSession real. Consume Core/Users; Sales consume el contrato público Cash y añade FK incremental sin importar sus modelos. Sin dependencia Cash→Sales. Idempotencia Cash propia; apertura/agregado API/POS de Sales siguen bloqueados por su idempotencia pendiente. [Informe Cash](entrega-1.5d.1.md). Las descripciones posteriores conservan el alcance histórico de sus entregas.
@@ -32,7 +34,7 @@ Estas responsabilidades son límites arquitectónicos, no funcionalidades implem
 
 ## Dependencias
 
-La matriz ejecutable es `config/module-dependencies.php`. Core tiene lista vacía; los otros 12 módulos solo tienen permitido depender de Core. Es una **lista de permisos**, no una declaración de dependencias obligatorias, orden de carga ni `requires` del paquete. Actualmente no hay referencias productivas cruzadas. No se inventan relaciones Sales/Cash/Users antes de existir contratos reales.
+La matriz ejecutable vigente es `config/module-dependencies.php`; las actualizaciones superiores documentan sus extensiones. Core mantiene su lista vacía. En la matriz inicial de 1.2 los otros doce módulos solo podían depender de Core; las relaciones funcionales se incorporaron al existir contratos reales. Es una **lista de permisos**, no una declaración de dependencias obligatorias, orden de carga ni `requires` del paquete.
 
 Una nueva relación funcional se incorpora explícitamente a la matriz y a esta documentación, se justifica en revisión y debe superar la detección de ciclos. Tanto la matriz permitida como el grafo observado deben ser acíclicos; tampoco se permiten dependencias hacia sí mismo en la matriz.
 
@@ -137,3 +139,11 @@ CashClosings/CloseCashSession coordina conteo ciego, saldo FinancialStore existe
 Cash publica el puerto SessionSales; Sales implementa sus consultas de pendientes y cobros confirmados sin exponer modelos privados ni invertir la dependencia entre módulos. Su migración 000014 conserva en Sales los triggers sobre sus tablas; Cash 000013 posee la tabla de arqueos y sus barreras. Core solo añade CashClosingAudit cerrado y validado. Las dependencias PHP siguen sin ciclos.
 
 El transporte REST añade cinco operaciones autorizadas y el panel CashClosingPanel se integra en /cash. Antes del conteo no existe cotización de esperado/diferencia; summary/reconciliation son exclusivamente históricos. La observación es obligatoria para todo conteo y evita un error condicionado a la diferencia que revele el saldo. [Reglas, resultados y límites](entrega-1.5d.4.md).
+
+## Actualización 1.6c — Corrección de ventas pagadas
+
+La evolución posterior [1.6c](entrega-1.6c.md) integra correcciones pagadas: Sales publica SaleCorrections y coordina CorrectPaidSale sobre Core. La venta confirmada permanece closed; sales_corrections representa active/confirmed/unchanged/discarded. El borrador no ocupa una mesa liberada ni excluye pagos históricos del saldo Cash. Un índice filtrado impone una corrección activa como máximo.
+
+El puerto interno StagedSalesStore reutiliza ManageSales/Catalog/descuentos sin escribir ventas/líneas confirmadas ni auditar campos provisionales. CorrectionStore aplica solo campos permitidos bajo la transacción SQL actual; los pagos anteriores siguen inmutables. Confirmar utiliza PaymentAllocation/CheckoutStore y el saldo Cash existentes para cobrar exclusivamente un incremento explícito, y confirma historial, Audit y recibo juntos. No genera folios, reembolsa ni reclasifica pagos.
+
+Cash consume su puerto SessionSales, cuya implementación Sales añade correcciones a los pendientes. Auth revalida sesión/token mediante contrato público; Audit recibe SaleCorrectionAudit cerrado desde Core. Sin dependencia PHP Cash→Sales, ciclos o infraestructura paralela.

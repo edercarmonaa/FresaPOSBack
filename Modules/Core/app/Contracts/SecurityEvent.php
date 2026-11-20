@@ -20,6 +20,8 @@ final readonly class SecurityEvent
         public ?SaleOperationAudit $saleOperation = null,
         public ?ReasonChangeAudit $reasonChange = null,
         public ?SaleDiscountAudit $discountChange = null,
+        public ?SaleCorrectionAudit $correction = null,
+        public ?ReceiptAudit $receipt = null,
     ) {
         if (! in_array($type, [
             'login', 'logout', 'password.failed', 'password.locked', 'authentication.unlocked',
@@ -42,12 +44,20 @@ final readonly class SecurityEvent
             'cash.reconciliation.confirmed', 'cash.session.closed', 'cash.difference.detected',
             'sales.reason.created', 'sales.reason.updated', 'sales.reason.activated', 'sales.reason.deactivated',
             'sales.discount.applied', 'sales.discount.replaced', 'sales.discount.removed',
+            'sales.correction.confirmed',
+            'tickets.reprint.requested',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }
         if (str_starts_with($type, 'sales.discount.') && $discountChange === null
             || $discountChange !== null && ! in_array($type, ['sales.discount.applied', 'sales.discount.replaced', 'sales.discount.removed', 'sales.item_added', 'sales.quantity_changed', 'sales.item_removed'], true)) {
             throw new \InvalidArgumentException('El descuento requiere evidencia financiera cerrada.');
+        }
+        if (($type === 'tickets.reprint.requested') !== ($receipt !== null)) {
+            throw new \InvalidArgumentException('La solicitud requiere evidencia cerrada del comprobante.');
+        }
+        if (($type === 'sales.correction.confirmed') !== ($correction !== null)) {
+            throw new \InvalidArgumentException('La corrección requiere un resumen financiero validado.');
         }
         if (($type === 'cash.movement.recorded') !== ($cashMovement !== null)) {
             throw new \InvalidArgumentException('El movimiento requiere datos de auditoría financiera cerrados.');

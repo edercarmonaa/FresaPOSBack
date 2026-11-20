@@ -107,6 +107,8 @@ class PointOfSale extends Component
 
     public string $search = '';
 
+    public string $paidFolio = '';
+
     public string $quantity = '1';
 
     public string $itemNote = '';
@@ -125,6 +127,9 @@ class PointOfSale extends Component
         $this->mode = $selection['mode'];
         $this->tableId = $selection['table_id'];
         $this->resolveIntent();
+        if (is_string(request()->query('sale'))) {
+            $this->selectSale(request()->query('sale'));
+        }
     }
 
     private function actor(string $permission = 'sales.view'): UserSnapshot
@@ -164,7 +169,7 @@ class PointOfSale extends Component
     public function selectCounterState(string $state): void
     {
         $this->actor();
-        abort_unless(in_array($state, ['open', 'paused'], true), 422);
+        abort_unless(in_array($state, ['open', 'paused', 'closed'], true), 422);
         $this->counterState = $state;
         $this->salesPage = 1;
     }
@@ -534,7 +539,11 @@ class PointOfSale extends Component
             if ($this->mode === 'table') {
                 $tables = $this->sales()->tables($actor->id, new TableQuery(page: $this->tablePage, perPage: 10));
             } else {
-                $sales = $this->sales()->sales($actor->id, new SaleQuery(state: SaleState::from($this->counterState), type: SaleType::Counter, page: $this->salesPage, perPage: 10));
+                $folio = trim($this->paidFolio);
+                if ($this->counterState === 'closed' && $folio !== '' && preg_match('/\A[0-9]{12}\z/', $folio) !== 1) {
+                    throw ValidationException::withMessages(['paidFolio' => 'Escribe el folio completo de doce dígitos.']);
+                }
+                $sales = $this->sales()->sales($actor->id, new SaleQuery(state: SaleState::from($this->counterState), type: $this->counterState === 'closed' ? null : SaleType::Counter, page: $this->salesPage, perPage: 10, folio: $this->counterState === 'closed' && $folio !== '' ? $folio : null));
             }
             $selected = $this->saleId === null ? null : $this->sales()->sale($actor->id, $this->saleId);
             $stale = $selected !== null && ! hash_equals($this->revision, SalesRevision::of($selected));

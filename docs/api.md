@@ -1,5 +1,21 @@
 # API REST v1
 
+## Comprobantes de venta — 1.6d
+
+GET `/api/v1/sales/{id}/receipt` y GET `/api/v1/sales/folio/{folio}/receipt`: autenticación bearer vigente, `sales.view` y `tickets.view`, sin parámetros financieros y no-store. Devuelven el mismo DTO: folio/primer cierre UTC y hora comercial, productos/precios/notas históricos, subtotal/descuento/total, pagos confirmados con efectivo recibido/cambio y metadatos opcionales. Se conserva la envoltura REST v1.
+
+Solo ventas cerradas conciliadas con folio y sin corrección activa. Una corrección confirmada aparece completa, con folio y primer cierre originales. Un borrador nunca se publica como definitivo. No se modifican datos financieros ni se audita reimpresión al consultar. Establecimiento ausente: null; cliente no disponible en el modelo actual: omitido. El nombre del empleado corresponde a la identidad del primer cerrador disponible, sin afirmar un snapshot histórico del nombre. Sin referencias bancarias, costos o credenciales.
+
+La reimpresión es una solicitud Web explícita con `tickets.print`, CSRF, intención cifrada ligada a actor/venta/revisión/UUID y Core/Audit existentes. Registra documento preparado, nunca éxito físico. Las vistas previas obsoletas y las intenciones de otro empleado se rechazan. [Formato, política de correcciones, permisos y evidencias](entrega-1.6d.md).
+
+## Correcciones de ventas pagadas — 1.6c
+
+Seis operaciones autenticadas: POST `/sales/{id}/reopen`, GET/PATCH `/sales/{id}/correction`, POST `/sales/{id}/correction/confirm`, POST `/sales/{id}/correction/discard` y GET `/sales/{id}/corrections`, bajo `/api/v1`. Reapertura recibe observación opcional de hasta 150 caracteres. Edición recibe un comando `action` cerrado: add, quantity, item-note, note, remove, discount o discount-remove, con exclusivamente sus campos documentados en [OpenAPI](openapi.yaml). Retiro conserva motivo autorizado; descuento conserva las reglas de 1.6b.
+
+Toda escritura exige Idempotency-Key UUID v4. Reabrir utiliza If-Match de la venta; editar/confirmar/descartar utilizan If-Match de la corrección. Requieren sales.view, sales.reopen, sales.special.authorize, sales.open.update y cash.view; confirmar añade sales.close y cambiar descuento añade sales.discounts.apply. Se revalidan identidad y sesión/token antes del replay y dentro del bloqueo. No se amplían asignaciones operativas.
+
+Confirmar recibe `payments`: lista vacía sin diferencia, o aplicaciones adicionales que cubran exactamente el incremento con los campos existentes del checkout. Los pagos anteriores son inmutables. Devolución y reclasificación histórica permanecen bloqueadas. Resultado: estado de corrección, folio original, actores/UTC, revisión, original/propuesta/resultado, cambios y conciliación. El borrador no altera el estado closed ni el saldo confirmado; no debe interpretarse su lista de pagos originales como un cobro adicional. Historial paginado de diez con sales.view. Consulta sin borrador activo: 404; confirmación sin corrección activa: 409. [Modelo, límites y pruebas](entrega-1.6c.md).
+
 ## Sales — convenciones vigentes en 1.6b
 
 La etapa [1.6b](entrega-1.6b.md) añade `PUT /api/v1/sales/{id}/discount` y `DELETE` sobre la misma ruta. PUT recibe solo `{"type":"percent","value":20}` o `{"type":"fixed","value":"50.0000"}`. Ambos requieren los permisos `sales.view`, `sales.open.update`, `sales.discounts.apply` y `sales.special.authorize`, UUID v4 estable e If-Match. La venta debe estar abierta, sin pagos confirmados y con su Cash original abierto. Porcentaje entero 1–100; fijo positivo hasta el subtotal. El servidor fija autor, UTC e importes. El recurso incluye `discount_authorization` solo cuando existe, preservando la revisión histórica de ventas sin descriptor. Checkout revalida al autorizador y permite total cero exclusivamente sobre un subtotal positivo totalmente descontado, con `payments=[]`, folio y sin movimientos de efectivo. La sesión/token se revalida dentro del bloqueo antes de escribir o recuperar un recibo de descuento.

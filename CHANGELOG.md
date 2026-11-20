@@ -1,5 +1,24 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.6d
+
+- Validación local 1.6d: 821 pruebas / 9736 aserciones; Pint, Larastan nivel 5 (397 archivos), Composer y 72 operaciones OpenAPI satisfactorios. Impresión desde navegador verificada; impresora física pendiente.
+
+- Tickets de 80 mm a partir de una lectura coherente de Sales, sin alterar ventas, pagos, folios o Cash; productos/precios históricos, descuentos, pagos mixtos, cambio y total cero.
+- Dos consultas REST y vista Web/POS con preparación explícita de reimpresión, permisos vigentes, intención ligada al empleado y auditoría/idempotencia Core existentes.
+- Bloqueo durante corrección activa y rechazo de vistas previas obsoletas; representación de la última versión confirmada conservando folio y primer cierre.
+- CSS de impresión con alto dinámico, datos empresariales opcionales y sin referencias bancarias. Sin migraciones, dependencias, controladores de impresora o impresión silenciosa.
+- [Informe y resultados reales](docs/entrega-1.6d.md). Sin commits, pushes ni despliegues externos.
+
+## [Sin publicar] — Etapa 1.6c
+
+- Reapertura autorizada con borrador independiente; conserva ULID, folio, sesión y primer cierre sin ocupar nuevamente la mesa.
+- Reutilización de productos, cantidades, notas, motivos y descuentos; confirmación atómica sin diferencia o con cobro adicional explícito mediante infraestructura financiera existente.
+- Historial protegido, único evento «Venta corregida», recuperación durable y bloqueo transaccional de cierre Cash con correcciones activas.
+- Seis operaciones REST, POS con comparación antes/después e historial y migración incremental 000017. Sin reembolsos, reclasificación de pagos ni permisos operativos nuevos.
+- Aceptación local: 769 pruebas/9216 aserciones, dieciséis escenarios concurrentes, 133 capturas Chrome, OpenAPI de 70 operaciones/518 respuestas; respaldo verificado, migración 17 e integridad operativa conservada.
+- [Informe y resultados reales](docs/entrega-1.6c.md). Sin commits, pushes o despliegues externos.
+
 ## [Sin publicar] — Etapa 1.6b
 
 - Un descuento autorizado por venta: porcentaje entero 1–100 o importe fijo exacto, sin acumulación; cálculo compartido con redondeo final a cuatro decimales.
