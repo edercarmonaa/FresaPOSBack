@@ -1,0 +1,128 @@
+[
+    {
+        "report": "summary",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23275,
+        "file": "report-summary-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "summary",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7745,
+        "file": "report-summary-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "sales",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 27741,
+        "file": "report-sales-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "sales",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 8600,
+        "file": "report-sales-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "products",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 30186,
+        "file": "report-products-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "products",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 8582,
+        "file": "report-products-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "payments",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23619,
+        "file": "report-payments-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "payments",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7660,
+        "file": "report-payments-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "cash-movements",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23581,
+        "file": "report-cash-movements-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "cash-movements",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7458,
+        "file": "report-cash-movements-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "cash-sessions",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23021,
+        "file": "report-cash-sessions-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "cash-sessions",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7502,
+        "file": "report-cash-sessions-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "cash-reconciliations",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 22784,
+        "file": "report-cash-reconciliations-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "cash-reconciliations",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7409,
+        "file": "report-cash-reconciliations-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "discounts",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 24472,
+        "file": "report-discounts-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "discounts",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7862,
+        "file": "report-discounts-2026-11-23-2026-11-23.xlsx"
+    },
+    {
+        "report": "corrections",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23409,
+        "file": "report-corrections-2026-11-23-2026-11-23.pdf"
+    },
+    {
+        "report": "corrections",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7584,
+        "file": "report-corrections-2026-11-23-2026-11-23.xlsx"
+    }
+]

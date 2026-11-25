@@ -1,0 +1,64 @@
+{
+  "operative_database": "fresapos",
+  "expected_database": "fresapos_test",
+  "operative_captured_at_utc": "2026-11-25T16:28:53+00:00",
+  "expected_captured_at_utc": "2026-11-25T16:27:41+00:00",
+  "sql_writes_by_inspection": false,
+  "excluded_tables": [
+    "migrations"
+  ],
+  "system_generated_constraint_names_normalized": true,
+  "trigger_creation_verb_normalized": true,
+  "historical_definition_changes_proven": false,
+  "comparisons": [
+    {
+      "category": "columns",
+      "operative_entries": 234,
+      "migration_fixture_entries": 234,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "c30cf734ffdf744dbaf83cf06855c3e95f5fd1f11b628c7fbca1a95aabc3fef0",
+      "migration_fixture_sha256": "c30cf734ffdf744dbaf83cf06855c3e95f5fd1f11b628c7fbca1a95aabc3fef0"
+    },
+    {
+      "category": "indexes",
+      "operative_entries": 139,
+      "migration_fixture_entries": 139,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "bd4a9ca8c5dfc75554458603ed0625d38bdeac0bc53b11d768a4aeef61ce6649",
+      "migration_fixture_sha256": "bd4a9ca8c5dfc75554458603ed0625d38bdeac0bc53b11d768a4aeef61ce6649"
+    },
+    {
+      "category": "foreign_keys",
+      "operative_entries": 46,
+      "migration_fixture_entries": 46,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "d73a1105de4c2c335d811a1258565ec20ca3cf7755f5c583902086ea96ca943b",
+      "migration_fixture_sha256": "d73a1105de4c2c335d811a1258565ec20ca3cf7755f5c583902086ea96ca943b"
+    },
+    {
+      "category": "checks",
+      "operative_entries": 37,
+      "migration_fixture_entries": 37,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "ba0e77f50f669fea6594928865a45063dbb3783ce8551d06a9c2e88348383fd2",
+      "migration_fixture_sha256": "ba0e77f50f669fea6594928865a45063dbb3783ce8551d06a9c2e88348383fd2"
+    },
+    {
+      "category": "triggers",
+      "operative_entries": 15,
+      "migration_fixture_entries": 15,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "8c3190468bfa02a4369a58d3d34c1060acd5724d754879932a18c8bb84fd74c8",
+      "migration_fixture_sha256": "8c3190468bfa02a4369a58d3d34c1060acd5724d754879932a18c8bb84fd74c8"
+    },
+    {
+      "category": "routines",
+      "operative_entries": 0,
+      "migration_fixture_entries": 0,
+      "matches_migration_created_schema": true,
+      "operative_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "migration_fixture_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "passed": true
+}

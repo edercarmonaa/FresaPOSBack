@@ -1,0 +1,10 @@
+{
+    "database": "fresapos_test",
+    "reader_spid": 61,
+    "writer_spid": 63,
+    "wait_type": "LCK_M_X",
+    "reader_status": 503,
+    "reader_income": null,
+    "after_commit_income": "360.0000",
+    "passed": true
+}

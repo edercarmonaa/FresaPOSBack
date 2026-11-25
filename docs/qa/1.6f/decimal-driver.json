@@ -1,0 +1,8 @@
+{
+  "read_only": true,
+  "zero_raw": ".0000",
+  "fund_raw": "100.0000",
+  "zero_raw_type": "string",
+  "strict_zero_literal_matches": false,
+  "normalized_zero_matches": true
+}

@@ -1,0 +1,1336 @@
+{
+  "browser": "Chrome/157.0.8103.79",
+  "database": "fresapos_test",
+  "fixture_only": true,
+  "screens": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-01-summary-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-02-sales-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-03-products-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-04-payments-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-05-cash-movements-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-06-cash-sessions-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-07-cash-reconciliations-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-08-discounts-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-header-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-results-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-header-1024.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-results-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-header-768.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-results-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-header-390.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "final-09-corrections-results-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-paging-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-paging-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-paging-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "10-paging-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-empty-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-empty-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-empty-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "11-empty-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-invalid-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1024,
+        1024
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-invalid-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-invalid-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "12-invalid-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-filtered-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-filtered-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-filtered-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "13-filtered-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1440,
+        1440
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-forbidden-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1024,
+        1024
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-forbidden-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        768,
+        768
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-forbidden-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        390,
+        390
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "14-forbidden-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-closed-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-closed-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-closed-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "15-closed-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-two-sessions-1440.png"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "width": [
+        1009,
+        1009
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-two-sessions-1024.png"
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "width": [
+        753,
+        753
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-two-sessions-768.png"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "width": [
+        375,
+        375
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "16-two-sessions-390.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "18-navigation-1440.png"
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "width": [
+        1425,
+        1425
+      ],
+      "errors": [],
+      "smallButtons": 0,
+      "file": "19-keyboard-1440.png"
+    }
+  ],
+  "screen_count": 102,
+  "horizontal_overflow": false,
+  "javascript_errors": 0
+}

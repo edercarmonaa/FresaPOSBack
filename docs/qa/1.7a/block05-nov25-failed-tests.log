@@ -1,0 +1,46 @@
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.36
+Configuration: <repo>\phpunit.xml
+
+...............................................................  63 / 900 (  7%)
+............................................................... 126 / 900 ( 14%)
+............................................................... 189 / 900 ( 21%)
+............................................................... 252 / 900 ( 28%)
+............................................................... 315 / 900 ( 35%)
+............................................................... 378 / 900 ( 42%)
+............................................................... 441 / 900 ( 49%)
+....................................FF......................... 504 / 900 ( 56%)
+............................................................... 567 / 900 ( 63%)
+............................................................... 630 / 900 ( 70%)
+............................................................... 693 / 900 ( 77%)
+............................................................... 756 / 900 ( 84%)
+............................................................... 819 / 900 ( 91%)
+............................................................... 882 / 900 ( 98%)
+..................                                              900 / 900 (100%)
+
+Time: 46:32.014, Memory: 380.00 MB
+
+There were 2 failures:
+
+1) Tests\Integration\CheckoutConcurrencyTest::test_independent_http_sql_sessions_protect_checkout_and_daily_sequence@two_keys with data ('two_keys')
+Failed asserting that file "<repo>\.tools/checkout-race-9d36cc261bc9/holding" exists.
+
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:28
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:69
+
+2) Tests\Integration\CheckoutConcurrencyTest::test_independent_http_sql_sessions_protect_checkout_and_daily_sequence@same with data ('same')
+Failed asserting that file "<repo>\.tools/checkout-race-bbbfef116c57/holding" exists.
+
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:28
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:69
+
+FAILURES!
+Tests: 900, Assertions: 11592, Failures: 2.
+local.cmd : Script @php vendor/phpunit/phpunit/phpunit handling the test event returned with error code 1
+En <repo>\.tools\block05-final-tests.ps1: 7 Carácter: 5
++     & .\scripts\local.cmd composer test -- --log-junit .tools/block05 ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Script @php ven...th error code 1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

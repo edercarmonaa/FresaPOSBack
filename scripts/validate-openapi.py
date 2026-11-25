@@ -45,7 +45,7 @@ def main():
         if actual != documented:
             errors.append(f"Rutas sin documentar: {sorted(actual - documented)}; ficticias: {sorted(documented - actual)}")
         for route in routes:
-            if route["path"].startswith(("/catalog/", "/sales", "/cash/", "/operations/")):
+            if route["path"].startswith(("/catalog/", "/sales", "/cash/", "/operations/", "/reports/")):
                 security = spec["paths"][route["path"]][route["method"]].get("security", spec.get("security", []))
                 if not any("BearerAuth" in rule for rule in security) or not {"auth:sanctum", "auth.access.api"}.issubset(route["middleware"]):
                     errors.append(f"Autenticación incoherente en {route['method']} {route['path']}")
@@ -73,6 +73,8 @@ def main():
                 sampled_modules += ('/cash/',)
             if any(path.startswith('/operations/') for _, path in covered):
                 sampled_modules += ('/operations/',)
+            if any(path.startswith('/reports/') for _, path in covered):
+                sampled_modules += ('/reports/',)
             missing_samples = {operation for operation in actual if operation[1].startswith(sampled_modules)} - covered
             if missing_samples:
                 errors.append(f"Operaciones sin respuesta real contrastada: {sorted(missing_samples)}")

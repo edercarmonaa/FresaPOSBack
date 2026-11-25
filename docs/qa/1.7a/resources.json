@@ -1,0 +1,34 @@
+{
+  "baseline": {
+    "samples": 39,
+    "free_memory_kib": {
+      "n": 39,
+      "minimum": 543084,
+      "median": 886712,
+      "maximum": 1253784
+    },
+    "cpu_percent": {
+      "n": 39,
+      "minimum": 12,
+      "median": 61,
+      "maximum": 100
+    },
+    "causality_demonstrated": false
+  },
+  "final": {
+    "samples": 42,
+    "free_memory_kib": {
+      "n": 42,
+      "minimum": 584188,
+      "median": 859630.0,
+      "maximum": 1160876
+    },
+    "cpu_percent": {
+      "n": 42,
+      "minimum": 9,
+      "median": 58.0,
+      "maximum": 100
+    },
+    "causality_demonstrated": false
+  }
+}

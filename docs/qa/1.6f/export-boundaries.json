@@ -1,0 +1,50 @@
+{
+  "database": "fresapos_test",
+  "real_service_created_sales": 1001,
+  "accepted_boundaries": [
+    {
+      "rows": 0,
+      "format": "pdf",
+      "bytes": 23359,
+      "passed": true
+    },
+    {
+      "rows": 0,
+      "format": "xlsx",
+      "bytes": 7561,
+      "passed": true
+    },
+    {
+      "rows": 1,
+      "format": "pdf",
+      "bytes": 24621,
+      "passed": true
+    },
+    {
+      "rows": 1,
+      "format": "xlsx",
+      "bytes": 7742,
+      "passed": true
+    },
+    {
+      "rows": 300,
+      "format": "pdf",
+      "bytes": 82752,
+      "passed": true
+    },
+    {
+      "rows": 300,
+      "format": "xlsx",
+      "bytes": 20890,
+      "passed": true
+    },
+    {
+      "rows": 1000,
+      "format": "xlsx",
+      "bytes": 50452,
+      "passed": true
+    }
+  ],
+  "pdf_above_300_rejected": true,
+  "xlsx_above_1000_rejected": true
+}

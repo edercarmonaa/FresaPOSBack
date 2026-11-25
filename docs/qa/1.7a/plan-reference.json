@@ -1,0 +1,80 @@
+{
+  "actual_runtime_counters_available": false,
+  "estimated_plan": true,
+  "indexes": [
+    {
+      "table": "[sales_corrections]",
+      "index": "[sales_corrections_id_primary]"
+    },
+    {
+      "table": "[sales_sales]",
+      "index": "[sales_sales_id_primary]"
+    },
+    {
+      "table": "[sales_tables]",
+      "index": "[sales_tables_id_primary]"
+    }
+  ],
+  "operators": [
+    {
+      "physical": "Compute Scalar",
+      "logical": "Compute Scalar",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Top",
+      "logical": "Top",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Nested Loops",
+      "logical": "Left Semi Join",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Nested Loops",
+      "logical": "Left Semi Join",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Nested Loops",
+      "logical": "Left Outer Join",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Filter",
+      "logical": "Filter",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Sort",
+      "logical": "Sort",
+      "estimated_rows": "100"
+    },
+    {
+      "physical": "Compute Scalar",
+      "logical": "Compute Scalar",
+      "estimated_rows": "1001"
+    },
+    {
+      "physical": "Clustered Index Scan",
+      "logical": "Clustered Index Scan",
+      "estimated_rows": "1001"
+    },
+    {
+      "physical": "Clustered Index Scan",
+      "logical": "Clustered Index Scan",
+      "estimated_rows": "1"
+    },
+    {
+      "physical": "Clustered Index Scan",
+      "logical": "Clustered Index Scan",
+      "estimated_rows": "1"
+    },
+    {
+      "physical": "Clustered Index Scan",
+      "logical": "Clustered Index Scan",
+      "estimated_rows": "1"
+    }
+  ]
+}

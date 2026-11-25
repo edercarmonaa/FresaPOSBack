@@ -1,0 +1,158 @@
+{
+  "reviewed_at_utc": "2026-11-25T16:33:06.231629+00:00",
+  "composite_reports": [
+    "summary",
+    "sales",
+    "products",
+    "payments",
+    "cash-movements",
+    "cash-sessions",
+    "cash-reconciliations",
+    "discounts",
+    "corrections"
+  ],
+  "composite_pdf_pages_visually_reviewed_in_contact": 9,
+  "composite_xlsx_previews_visually_reviewed_in_contact": 9,
+  "refreshed_individual_views": [
+    "sales.xlsx",
+    "summary.xlsx",
+    "native closed cash-sessions.xlsx",
+    "boundary PDF empty/one/300 first and last",
+    "boundary XLSX 1000 last rows"
+  ],
+  "boundary_pdf_pages_rendered": 17,
+  "boundary_pdf_layout_review": "Casos vacío/una fila; contacto de las quince páginas de 300 filas y primera/última ampliadas.",
+  "boundary_xlsx_review": "Contactos de 0/1/300/1000; comienzo y final visibles de los libros grandes.",
+  "native_closed_pdf_pages_reviewed_in_contact": 2,
+  "native_closed_xlsx_previews_reviewed_in_contact": 2,
+  "new_ui_screens_reviewed_in_contacts": 16,
+  "new_ui_individual_views": [
+    "POS 1440/390",
+    "acción de ticket 1440/390"
+  ],
+  "ui_contact_sheets_refreshed_and_reviewed": [
+    "contact-14.png",
+    "contact-15.png"
+  ],
+  "horizontal_clipping_observed": false,
+  "original_workbooks_modified": false,
+  "viewer_observation": "ArtifactTool representa algunos folios de texto/@ en notación científica. Adaptación numérica únicamente en la vista previa; XML, tipos y SHA del original verificados. Excel de escritorio pendiente.",
+  "reviewed_artifact_sha256": [
+    {
+      "file": ".tools/block05-artifacts/cash-movements.pdf",
+      "sha256": "d96c4ee6ae33b97a424a475f0f9e45ad9f029848df873e9a3e8c32d8750899e1"
+    },
+    {
+      "file": ".tools/block05-artifacts/cash-movements.xlsx",
+      "sha256": "5f78633e6e0e7ecce36d301ae83b727169d440ccc21e5126bdb71ac9854b353b"
+    },
+    {
+      "file": ".tools/block05-artifacts/cash-reconciliations.pdf",
+      "sha256": "95d4f22a7cab01cd171183601af8184b3cce48c8e5bebe3c8977cc3bb32469a5"
+    },
+    {
+      "file": ".tools/block05-artifacts/cash-reconciliations.xlsx",
+      "sha256": "8bf2ffaa29f9ce7ac375ebcb2942ae2c0fb6a8f874360653b7bf47958c4c8611"
+    },
+    {
+      "file": ".tools/block05-artifacts/cash-sessions.pdf",
+      "sha256": "f50bef4e8536e36335bcafe441ced19d6f9cb95d28dc459cf545317f7e50abdb"
+    },
+    {
+      "file": ".tools/block05-artifacts/cash-sessions.xlsx",
+      "sha256": "907c6541354ccd2d65be3d73dfe6ef2db96274388aa84909e59b164a65564ec0"
+    },
+    {
+      "file": ".tools/block05-artifacts/corrections.pdf",
+      "sha256": "c72f78e51cf5542895c820caf2008e27c64611fa89aa66e4984d49b6fddf6126"
+    },
+    {
+      "file": ".tools/block05-artifacts/corrections.xlsx",
+      "sha256": "5b56ea93896ec15c087866feee2c3422e8256be505722d0a3be8369b6d80a290"
+    },
+    {
+      "file": ".tools/block05-artifacts/discounts.pdf",
+      "sha256": "0b6f6efe6f20b6887ceda4f3f80710076347f3f974536105efe4ab395d3a346d"
+    },
+    {
+      "file": ".tools/block05-artifacts/discounts.xlsx",
+      "sha256": "3e51e5c7dc684a466ceca8d40a28387c0da3aca82a055feceb1d6b6d93a8ad36"
+    },
+    {
+      "file": ".tools/block05-artifacts/payments.pdf",
+      "sha256": "dda7cca0ecbf23902d9a3ccbdd8b6a775014ff973a94324a0e7837f75ddf53dc"
+    },
+    {
+      "file": ".tools/block05-artifacts/payments.xlsx",
+      "sha256": "4510c1a210a89f4ffb1b730e56d9fbf96b39765345713c5c1e71e329d4c38791"
+    },
+    {
+      "file": ".tools/block05-artifacts/products.pdf",
+      "sha256": "9d289e1dede8bfe6a1dfdf95ba1c048df3e9077d40b441364001da4689498c6a"
+    },
+    {
+      "file": ".tools/block05-artifacts/products.xlsx",
+      "sha256": "9cbc4c7f74f91e2551779df0b3f7582a0315260add5147bebf847c880615e6be"
+    },
+    {
+      "file": ".tools/block05-artifacts/sales.pdf",
+      "sha256": "e96d76a28005fbe251e8e0e378bbd058f4d8d164e2ddaa0d27cc2f568f9ca8ef"
+    },
+    {
+      "file": ".tools/block05-artifacts/sales.xlsx",
+      "sha256": "019bcf0eeece06b40d700e13fb3176088a58c903dd273ee2afa071a53ec2bec5"
+    },
+    {
+      "file": ".tools/block05-artifacts/summary.pdf",
+      "sha256": "97ae6e8609d243a6382072e701de4f12be9cfca62c054d6c51b969971b995082"
+    },
+    {
+      "file": ".tools/block05-artifacts/summary.xlsx",
+      "sha256": "6f0851890ddf69792a0a15bd8e5318dec296878fb3b7dbab4eeac205dfe3bc8f"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-0.pdf",
+      "sha256": "1fa3869854f43ca2281938516e1f6cfc7551cd8ca57645bae02f68f8cb6c22cc"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-0.xlsx",
+      "sha256": "9e6952b34737d0b0befc215a81802c718eccc5967984df4e42e7d8d2d92cb8f4"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-1.pdf",
+      "sha256": "82e36f59da520bf400123710eca0fd33190cbbe4a7ecf2ad1c6cf3400dad2f70"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-1.xlsx",
+      "sha256": "19102aba1da445d79d7ead2a0033afccf6cd03469b2a367d85dd471fc8338041"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-1000.xlsx",
+      "sha256": "cf212cafe0fa783bcd1f651fb10681fef8cd650e2c2936c003d986a19546aaba"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-300.pdf",
+      "sha256": "3c50242288f1e84839b8ecfbfd9ac2ea5ef6d8ae4748a3bf6999736b7ca78f0c"
+    },
+    {
+      "file": ".tools/block05-boundaries/sales-300.xlsx",
+      "sha256": "392aaf45888c85301c3394415981851f09a311c779f34357d8c58a7662a9a817"
+    },
+    {
+      "file": ".tools/block05-visual/closed-downloads/report-cash-reconciliations-2026-11-25-2026-11-25.pdf",
+      "sha256": "8a97c58e4f0755fe4a4dd2534821a92ffdd23655254ad92270236a7c7602d232"
+    },
+    {
+      "file": ".tools/block05-visual/closed-downloads/report-cash-reconciliations-2026-11-25-2026-11-25.xlsx",
+      "sha256": "4639db111572462c33a342b9ed3018eafa28a337720d20e6f5717af33b934357"
+    },
+    {
+      "file": ".tools/block05-visual/closed-downloads/report-cash-sessions-2026-11-25-2026-11-25.pdf",
+      "sha256": "67041604773252c29a6920a2bb942c204d6631f5b29e9bb4427f4d3d49c64eed"
+    },
+    {
+      "file": ".tools/block05-visual/closed-downloads/report-cash-sessions-2026-11-25-2026-11-25.xlsx",
+      "sha256": "115fa4b36bd07b399261fd19cdd699ec81d151c335aa4d9f4683cbdbc3fba4c3"
+    }
+  ]
+}

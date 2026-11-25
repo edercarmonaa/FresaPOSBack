@@ -1,0 +1,17 @@
+{
+  "database": "fresapos_test",
+  "fresh_fixture": true,
+  "closed_exports_retained": 4,
+  "retained_files": [
+    "report-cash-reconciliations-2026-11-25-2026-11-25.pdf",
+    "report-cash-reconciliations-2026-11-25-2026-11-25.xlsx",
+    "report-cash-sessions-2026-11-25-2026-11-25.pdf",
+    "report-cash-sessions-2026-11-25-2026-11-25.xlsx"
+  ],
+  "closed_sessions": 1,
+  "open_sessions": 1,
+  "expected_cash": "1795.8625",
+  "counted_cash": "1795.8625",
+  "difference_raw": ".0000",
+  "passed": true
+}

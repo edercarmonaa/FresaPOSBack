@@ -1,0 +1,8 @@
+{
+  "database": "fresapos_test",
+  "empty_reason_blocked": true,
+  "created_fixture_reasons": 2,
+  "last_line_removed": true,
+  "sale_cancelled": true,
+  "operative_reasons_written": false
+}

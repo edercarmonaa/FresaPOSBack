@@ -1,0 +1,20 @@
+{
+  "captured_at_utc": "2026-11-25T14:49:52.951413+00:00",
+  "configured_printers": [
+    {
+      "Name": "Brother DCP-L5660DN series Printer",
+      "DriverName": "Microsoft IPP Class Driver"
+    },
+    {
+      "Name": "Microsoft Print to PDF",
+      "DriverName": "Microsoft Print To PDF"
+    },
+    {
+      "Name": "OneNote (Desktop)",
+      "DriverName": "Send to Microsoft OneNote 16 Driver"
+    }
+  ],
+  "thermal_80mm_physically_verified": false,
+  "print_jobs_submitted_by_acceptance": 0,
+  "drivers_installed_by_acceptance": 0
+}

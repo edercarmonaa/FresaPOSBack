@@ -1,0 +1,2396 @@
+{
+  "count": 53,
+  "readiness_min_ms": 338.7141,
+  "readiness_median_ms": 485.9026,
+  "readiness_max_ms": 1101.3879,
+  "records": [
+    {
+      "file": "block05-worker-trace-10488-168300449622400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0234
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 32.1556
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 462.554
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 476.1003
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 520.3085
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 534.214
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1062.9837
+        }
+      ],
+      "ready_ms": 520.3085,
+      "context": {
+        "pid": 10488
+      }
+    },
+    {
+      "file": "block05-worker-trace-10692-168268454815100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0393
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 52.6385
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 451.339
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 459.1287
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 493.5445
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 509.3998
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 952.5238
+        }
+      ],
+      "ready_ms": 493.5445,
+      "context": {
+        "pid": 10692
+      }
+    },
+    {
+      "file": "block05-worker-trace-11316-166914158255800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0209
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 32.9755
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 332.7324
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 342.7241
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 375.7437
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 382.4756
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 694.0609
+        }
+      ],
+      "ready_ms": 375.7437,
+      "context": {
+        "pid": 11316
+      }
+    },
+    {
+      "file": "block05-worker-trace-11348-168340387885000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0323
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 64.3971
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 372.5886
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 382.7403
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 422.2641
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 434.4151
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1454.5769
+        }
+      ],
+      "ready_ms": 422.2641,
+      "context": {
+        "pid": 11348
+      }
+    },
+    {
+      "file": "block05-worker-trace-11836-168320143161000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0234
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 35.2284
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 404.6494
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 414.7937
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 451.9531
+        }
+      ],
+      "ready_ms": 451.9531,
+      "context": {
+        "pid": 11836
+      }
+    },
+    {
+      "file": "block05-worker-trace-12260-168329430576100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0342
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 41.9597
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 425.8971
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 442.8255
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 485.9026
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 500.8433
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 4683.3635
+        }
+      ],
+      "ready_ms": 485.9026,
+      "context": {
+        "pid": 12260
+      }
+    },
+    {
+      "file": "block05-worker-trace-1384-168280086532900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0231
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 30.0865
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 347.5448
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 354.8203
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 387.3996
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 398.3266
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1933.4628
+        }
+      ],
+      "ready_ms": 387.3996,
+      "context": {
+        "pid": 1384
+      }
+    },
+    {
+      "file": "block05-worker-trace-14824-168320805799200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0335
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 40.0594
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 356.5192
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 364.4731
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 399.6788
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 409.2347
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 586.7923
+        }
+      ],
+      "ready_ms": 399.6788,
+      "context": {
+        "pid": 14824
+      }
+    },
+    {
+      "file": "block05-worker-trace-15092-166897288256100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0505
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 78.6542
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 867.8176
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 886.5655
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 969.0796
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 986.8892
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1529.1527
+        }
+      ],
+      "ready_ms": 969.0796,
+      "context": {
+        "pid": 15092
+      }
+    },
+    {
+      "file": "block05-worker-trace-15316-166913223879700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0251
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 44.9205
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 449.2049
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 458.968
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 491.8405
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 499.1501
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1533.0101
+        }
+      ],
+      "ready_ms": 491.8405,
+      "context": {
+        "pid": 15316
+      }
+    },
+    {
+      "file": "block05-worker-trace-15592-166876579871400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.036
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 93.8408
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 714.7844
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 732.6051
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 832.4137
+        }
+      ],
+      "ready_ms": 832.4137,
+      "context": {
+        "pid": 15592
+      }
+    },
+    {
+      "file": "block05-worker-trace-15888-168286989348300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0264
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.503
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 367.9095
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 378.5018
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 416.3891
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 425.709
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 724.9191
+        }
+      ],
+      "ready_ms": 416.3891,
+      "context": {
+        "pid": 15888
+      }
+    },
+    {
+      "file": "block05-worker-trace-16160-168285966518800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0229
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 37.1977
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 341.3191
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 348.0198
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 383.3958
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 394.7554
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1680.6782
+        }
+      ],
+      "ready_ms": 383.3958,
+      "context": {
+        "pid": 16160
+      }
+    },
+    {
+      "file": "block05-worker-trace-16320-166850469117100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0292
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 34.5185
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 367.9031
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 378.9515
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 415.7158
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 425.1731
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 621.6139
+        }
+      ],
+      "ready_ms": 415.7158,
+      "context": {
+        "pid": 16320
+      }
+    },
+    {
+      "file": "block05-worker-trace-16700-166884565996900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0264
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 78.4051
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 696.8479
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 731.7506
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 777.7743
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 786.6076
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2666.009
+        }
+      ],
+      "ready_ms": 777.7743,
+      "context": {
+        "pid": 16700
+      }
+    },
+    {
+      "file": "block05-worker-trace-16732-168328832607800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0257
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 32.0492
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 417.4928
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 424.7806
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 466.372
+        }
+      ],
+      "ready_ms": 466.372,
+      "context": {
+        "pid": 16732
+      }
+    },
+    {
+      "file": "block05-worker-trace-17996-166919416059100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.032
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 49.1814
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 548.6956
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 560.7939
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 609.448
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 620.1303
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1233.0815
+        }
+      ],
+      "ready_ms": 609.448,
+      "context": {
+        "pid": 17996
+      }
+    },
+    {
+      "file": "block05-worker-trace-18616-166906921564500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0255
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 39.0673
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 520.3363
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 530.0077
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 572.7877
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 588.5053
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 4053.0616
+        }
+      ],
+      "ready_ms": 572.7877,
+      "context": {
+        "pid": 18616
+      }
+    },
+    {
+      "file": "block05-worker-trace-18972-166906148226700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0341
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 51.7361
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 532.7315
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 545.8254
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 630.2241
+        }
+      ],
+      "ready_ms": 630.2241,
+      "context": {
+        "pid": 18972
+      }
+    },
+    {
+      "file": "block05-worker-trace-19152-168337471468800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0241
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 35.7451
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 299.289
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 306.7826
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 338.7141
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 347.26
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 649.5557
+        }
+      ],
+      "ready_ms": 338.7141,
+      "context": {
+        "pid": 19152
+      }
+    },
+    {
+      "file": "block05-worker-trace-19200-168299273968000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0449
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 33.4746
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 411.3029
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 419.2769
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 470.8721
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 487.321
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2035.99
+        }
+      ],
+      "ready_ms": 470.8721,
+      "context": {
+        "pid": 19200
+      }
+    },
+    {
+      "file": "block05-worker-trace-19688-168274876693400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.042
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 66.6619
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 511.7933
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 522.235
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 560.3723
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 572.8892
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1124.1193
+        }
+      ],
+      "ready_ms": 560.3723,
+      "context": {
+        "pid": 19688
+      }
+    },
+    {
+      "file": "block05-worker-trace-19772-166868204059500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0253
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 55.8132
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 1009.7518
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 1032.9694
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 1101.3879
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1121.7348
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2354.6767
+        }
+      ],
+      "ready_ms": 1101.3879,
+      "context": {
+        "pid": 19772
+      }
+    },
+    {
+      "file": "block05-worker-trace-20584-166842938055700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0227
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 37.3534
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 380.938
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 390.1899
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 433.0582
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 442.6313
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2208.6417
+        }
+      ],
+      "ready_ms": 433.0582,
+      "context": {
+        "pid": 20584
+      }
+    },
+    {
+      "file": "block05-worker-trace-20680-166882623909500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0359
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 61.4554
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 762.3218
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 779.8128
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 824.0922
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 832.4605
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1648.401
+        }
+      ],
+      "ready_ms": 824.0922,
+      "context": {
+        "pid": 20680
+      }
+    },
+    {
+      "file": "block05-worker-trace-20700-166895171324700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0506
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 72.2181
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 738.018
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 752.3459
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 812.0797
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 821.8423
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1725.5707
+        }
+      ],
+      "ready_ms": 812.0797,
+      "context": {
+        "pid": 20700
+      }
+    },
+    {
+      "file": "block05-worker-trace-20712-166854115730700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0249
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.9888
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 422.8748
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 432.1717
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 471.4004
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 480.6507
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1807.4171
+        }
+      ],
+      "ready_ms": 471.4004,
+      "context": {
+        "pid": 20712
+      }
+    },
+    {
+      "file": "block05-worker-trace-20924-166855105047900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0309
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 33.8165
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 390.5183
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 406.2549
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 458.914
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 471.5331
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1118.8048
+        }
+      ],
+      "ready_ms": 458.914,
+      "context": {
+        "pid": 20924
+      }
+    },
+    {
+      "file": "block05-worker-trace-20976-168336543924600.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0248
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 29.2405
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 319.5189
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 327.5525
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 357.4513
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 368.7325
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 688.0552
+        }
+      ],
+      "ready_ms": 357.4513,
+      "context": {
+        "pid": 20976
+      }
+    },
+    {
+      "file": "block05-worker-trace-21128-166835938162300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0348
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 40.595
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 568.7595
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 580.3771
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 643.2347
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 663.7152
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 3785.604
+        }
+      ],
+      "ready_ms": 643.2347,
+      "context": {
+        "pid": 21128
+      }
+    },
+    {
+      "file": "block05-worker-trace-21300-168307622787500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.029
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 39.0774
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 462.3922
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 469.5792
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 503.8981
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 513.8045
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 914.129
+        }
+      ],
+      "ready_ms": 503.8981,
+      "context": {
+        "pid": 21300
+      }
+    },
+    {
+      "file": "block05-worker-trace-21740-168306315520200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0915
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.3808
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 498.7325
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 509.986
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 550.0415
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 561.5058
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2030.5907
+        }
+      ],
+      "ready_ms": 550.0415,
+      "context": {
+        "pid": 21740
+      }
+    },
+    {
+      "file": "block05-worker-trace-21788-166917948888200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0296
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 45.78
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 506.4132
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 521.0769
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 582.759
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 593.8985
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2436.2683
+        }
+      ],
+      "ready_ms": 582.759,
+      "context": {
+        "pid": 21788
+      }
+    },
+    {
+      "file": "block05-worker-trace-21976-166860984755300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0266
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 53.4029
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 564.0932
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 573.6658
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 626.9983
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 637.2864
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1418.977
+        }
+      ],
+      "ready_ms": 626.9983,
+      "context": {
+        "pid": 21976
+      }
+    },
+    {
+      "file": "block05-worker-trace-22108-168273473839300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0242
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 36.2878
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 412.8131
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 422.0701
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 468.3876
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 483.123
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2360.7368
+        }
+      ],
+      "ready_ms": 468.3876,
+      "context": {
+        "pid": 22108
+      }
+    },
+    {
+      "file": "block05-worker-trace-22196-166859860086700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0323
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 50.2272
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 421.6662
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 431.651
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 473.8833
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 482.0648
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2241.1586
+        }
+      ],
+      "ready_ms": 473.8833,
+      "context": {
+        "pid": 22196
+      }
+    },
+    {
+      "file": "block05-worker-trace-22836-168325280132200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0252
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 27.6389
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 354.8094
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 363.2353
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 399.5335
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 411.4252
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 615.5044
+        }
+      ],
+      "ready_ms": 399.5335,
+      "context": {
+        "pid": 22836
+      }
+    },
+    {
+      "file": "block05-worker-trace-22840-168313941196900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0306
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 30.298
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 495.7763
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 507.6229
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 555.4208
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 567.4913
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1149.5708
+        }
+      ],
+      "ready_ms": 555.4208,
+      "context": {
+        "pid": 22840
+      }
+    },
+    {
+      "file": "block05-worker-trace-23240-168293662706900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0459
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 54.7624
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 526.8604
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 539.3635
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 584.6197
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 597.9568
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1078.6078
+        }
+      ],
+      "ready_ms": 584.6197,
+      "context": {
+        "pid": 23240
+      }
+    },
+    {
+      "file": "block05-worker-trace-23744-168341207697100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0251
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 28.3925
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 318.2923
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 327.225
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 355.2718
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 365.5795
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 510.2343
+        }
+      ],
+      "ready_ms": 355.2718,
+      "context": {
+        "pid": 23744
+      }
+    },
+    {
+      "file": "block05-worker-trace-23928-168324248779300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0383
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 32.6489
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 340.6308
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 348.6139
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 388.4751
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 397.3965
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 773.8803
+        }
+      ],
+      "ready_ms": 388.4751,
+      "context": {
+        "pid": 23928
+      }
+    },
+    {
+      "file": "block05-worker-trace-24060-168292482211200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0395
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 55.0592
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 477.1621
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 489.7406
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 525.3418
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 537.0154
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2115.4486
+        }
+      ],
+      "ready_ms": 525.3418,
+      "context": {
+        "pid": 24060
+      }
+    },
+    {
+      "file": "block05-worker-trace-24564-166838029022500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0374
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 64.5743
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 801.2531
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 817.7119
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 912.0353
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 923.4057
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1909.8603
+        }
+      ],
+      "ready_ms": 912.0353,
+      "context": {
+        "pid": 24564
+      }
+    },
+    {
+      "file": "block05-worker-trace-2888-168313209081000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0224
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 29.8307
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 327.2398
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 336.2408
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 367.7849
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 376.7786
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1632.8317
+        }
+      ],
+      "ready_ms": 367.7849,
+      "context": {
+        "pid": 2888
+      }
+    },
+    {
+      "file": "block05-worker-trace-312-166847975500200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0344
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 46.5143
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 559.9386
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 571.4434
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 615.537
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 627.2819
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2175.1491
+        }
+      ],
+      "ready_ms": 615.537,
+      "context": {
+        "pid": 312
+      }
+    },
+    {
+      "file": "block05-worker-trace-3128-168281127301400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0252
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 28.1217
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 378.1134
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 387.0628
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 420.2776
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 430.9024
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 970.281
+        }
+      ],
+      "ready_ms": 420.2776,
+      "context": {
+        "pid": 3128
+      }
+    },
+    {
+      "file": "block05-worker-trace-3192-166867229358200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0247
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 39.6087
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 558.1137
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 571.1479
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 613.5828
+        }
+      ],
+      "ready_ms": 613.5828,
+      "context": {
+        "pid": 3192
+      }
+    },
+    {
+      "file": "block05-worker-trace-4140-168267273634100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0248
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 28.2609
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 391.1013
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 401.2668
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 441.1051
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 455.7325
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1945.0184
+        }
+      ],
+      "ready_ms": 441.1051,
+      "context": {
+        "pid": 4140
+      }
+    },
+    {
+      "file": "block05-worker-trace-4900-166844109510400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0294
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 48.2983
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 491.4465
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 500.8655
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 546.5332
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 558.1349
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 949.6966
+        }
+      ],
+      "ready_ms": 546.5332,
+      "context": {
+        "pid": 4900
+      }
+    },
+    {
+      "file": "block05-worker-trace-5280-168342102856600.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0224
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 35.4653
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 319.1586
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 325.9881
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 355.426
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 367.9554
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 526.5113
+        }
+      ],
+      "ready_ms": 355.426,
+      "context": {
+        "pid": 5280
+      }
+    },
+    {
+      "file": "block05-worker-trace-5692-166849210831300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0231
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 32.9845
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 407.287
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 417.2045
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 452.2505
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 459.8109
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 712.0581
+        }
+      ],
+      "ready_ms": 452.2505,
+      "context": {
+        "pid": 5692
+      }
+    },
+    {
+      "file": "block05-worker-trace-5784-166877717463800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0373
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 56.4585
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 660.7064
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 674.5289
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 736.7121
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 749.9951
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1369.5209
+        }
+      ],
+      "ready_ms": 736.7121,
+      "context": {
+        "pid": 5784
+      }
+    },
+    {
+      "file": "block05-worker-trace-9112-166845389755300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "http.begin",
+        "http.completed"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0289
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 34.1466
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 352.3366
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 364.516
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 399.0906
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 408.4589
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 601.7527
+        }
+      ],
+      "ready_ms": 399.0906,
+      "context": {
+        "pid": 9112
+      }
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "pdf": [
+    {
+      "file": "report-cash-movements-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-cash-reconciliations-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-cash-sessions-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-closed-cash-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-corrections-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-discounts-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-payments-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-products-2026-11-23-2026-11-23.pdf",
+      "pages": 5,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-sales-2026-11-23-2026-11-23.pdf",
+      "pages": 2,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    },
+    {
+      "file": "report-summary-2026-11-23-2026-11-23.pdf",
+      "pages": 1,
+      "outside_margins": 0,
+      "sensitive_reference_present": false,
+      "historical_names_preserved": true
+    }
+  ],
+  "xlsx": [
+    {
+      "file": "report-cash-movements-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 15,
+      "columns": 6,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A10:F12",
+      "freeze": "A11"
+    },
+    {
+      "file": "report-cash-reconciliations-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 13,
+      "columns": 11,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A10:K10",
+      "freeze": "A11"
+    },
+    {
+      "file": "report-cash-sessions-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 13,
+      "columns": 11,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A9:K10",
+      "freeze": "A10"
+    },
+    {
+      "file": "report-closed-cash-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 14,
+      "columns": 11,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A10:K11",
+      "freeze": "A11"
+    },
+    {
+      "file": "report-corrections-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 14,
+      "columns": 10,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A9:J11",
+      "freeze": "A10"
+    },
+    {
+      "file": "report-discounts-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 20,
+      "columns": 9,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A12:I16",
+      "freeze": "A13"
+    },
+    {
+      "file": "report-payments-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 19,
+      "columns": 6,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A12:D16",
+      "freeze": "A13"
+    },
+    {
+      "file": "report-products-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 38,
+      "columns": 6,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A9:F35",
+      "freeze": "A10"
+    },
+    {
+      "file": "report-sales-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 30,
+      "columns": 12,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A12:L26",
+      "freeze": "A13"
+    },
+    {
+      "file": "report-summary-2026-11-23-2026-11-23.xlsx",
+      "sheets": 1,
+      "rows": 20,
+      "columns": 6,
+      "formulas": 0,
+      "typed_dates": true,
+      "filter": "A15:D16",
+      "freeze": "A16"
+    }
+  ]
+}

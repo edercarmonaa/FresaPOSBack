@@ -1,0 +1,22 @@
+[
+  {
+    "action": "Calidad inicial por local.ps1 directo",
+    "result": "ExecutionPolicy rechazo la invocacion; herramientas no ejecutadas",
+    "resolution": "Envoltorio local.cmd existente; cuatro salidas 0"
+  },
+  {
+    "action": "Primera bateria, orden normal con semilla",
+    "result": "25 casos/474 aserciones sin fallos; warning del runner y salida 1",
+    "resolution": "Semillas solo en orden random; intento conservado y bateria repetida explicitamente"
+  },
+  {
+    "action": "Validacion estricta mediante splatting en script de calidad",
+    "result": "Envoltorio PowerShell rechazo argumento; Composer validate no se ejecuto en ese intento",
+    "resolution": "Invocacion explicita composer validate --strict, salida real 0; log anterior conservado"
+  },
+  {
+    "action": "Recarga controlada del proceso propio de espera final",
+    "result": "Reutilizar su log produjo FileOpenFailure porque el handle anterior seguia abierto",
+    "resolution": "Proceso de espera actualizado con log nuevo; sin reiniciar PHPUnit, workers ni servidor"
+  }
+]

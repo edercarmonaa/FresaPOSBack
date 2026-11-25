@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><style>
+@page{margin:30px 24px 40px}body{font-family:'DejaVu Sans',sans-serif;font-size:8.5pt;color:#172033}h1{font-size:19pt;margin:0 0 8px}h2{font-size:11pt;color:#172554;margin-top:16px}p{margin:4px 0;line-height:1.4}.caption{color:#475569;font-size:8pt}.totals{width:100%;margin:10px 0;border-collapse:collapse}.totals td{padding:5px;border-bottom:1px solid #dbe4ef}.totals td:last-child{text-align:right}.results{width:100%;border-collapse:collapse;table-layout:fixed}.results thead{display:table-header-group}.results th{background:#172554;color:white;padding:7px 4px;text-align:left;font-size:8pt}.results td{padding:6px 4px;border-bottom:1px solid #dbe4ef;vertical-align:top;word-wrap:break-word}.results tr{page-break-inside:avoid}.money{text-align:right}.notes{margin:12px 0;padding:8px;background:#f1f5f9}.header{border-bottom:2px solid #172554;padding-bottom:10px}.empty{text-align:center;padding:22px}
+</style></head><body>
+<div class="header"><p class="caption">FresaPOS · Reportes operativos y financieros</p><h1>{{ $data->title }}</h1><p>Generado: {{ $data->generatedAt }} · UTC</p><p>Período comercial: {{ $data->filters['from'] }} al {{ $data->filters['until'] }} · {{ $data->timezone }}</p><p class="caption">{{ \Modules\Reports\Application\ReportPresentation::filters($data->filters) }}</p><p>{{ $data->total }} filas · Conjunto filtrado completo</p></div>
+@if($data->totals)<h2>Totales del conjunto filtrado</h2><table class="totals">@foreach($data->totals  as $key=>$value)<tr><td>{{ \Modules\Reports\Application\ReportPresentation::METRICS[$key]??'Indicador' }}</td><td>{{ $value===null?'No disponible':$value }}</td></tr>@endforeach</table>@endif
+<div class="notes">@foreach($data->notes  as $note)<p>{{ $note }}</p>@endforeach</div>
+<h2>Detalle</h2><table class="results"><thead><tr>@foreach($data->columns  as [$label,$type])<th>{{ $label }}</th>@endforeach</tr></thead><tbody>
+@forelse($data->items  as $item)<tr>@foreach($data->columns  as $key=>[$label,$type])<td class="{{ in_array($type,['money','integer','decimal'])?'money':'' }}">{{ \Modules\Reports\Application\ReportPresentation::value($item[$key]??null,$type,$data->timezone) }}</td>@endforeach</tr>
+@empty<tr><td colspan="{{ count($data->columns) }}" class="empty">No hay operaciones para los filtros elegidos.</td></tr>@endforelse
+</tbody></table>
+</body></html>

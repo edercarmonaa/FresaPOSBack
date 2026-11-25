@@ -9,7 +9,7 @@ return [
     'Sales' => ['Core', 'Users', 'Catalog', 'Cash', 'Auth'],
     'Cash' => ['Core', 'Users'],
     'Tickets' => ['Core', 'Sales', 'Users', 'Auth'],
-    'Reports' => ['Core'],
+    'Reports' => ['Core', 'Sales', 'Cash', 'Users', 'Auth'],
     'Audit' => ['Core'],
     'Notifications' => ['Core'],
     'Devices' => ['Core'],

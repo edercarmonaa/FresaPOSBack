@@ -1,0 +1,57 @@
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.36
+Configuration: <repo>\phpunit.xml
+
+...............................................................  63 / 904 (  6%)
+............................................................... 126 / 904 ( 13%)
+............................................................... 189 / 904 ( 20%)
+............................................................... 252 / 904 ( 27%)
+............................................................... 315 / 904 ( 34%)
+............................................................... 378 / 904 ( 41%)
+............................................................... 441 / 904 ( 48%)
+........................................FF..................... 504 / 904 ( 55%)
+............................................................... 567 / 904 ( 62%)
+............................................................... 630 / 904 ( 69%)
+............................................................... 693 / 904 ( 76%)
+............................................................... 756 / 904 ( 83%)
+............................................................... 819 / 904 ( 90%)
+............................................................... 882 / 904 ( 97%)
+......................                                          904 / 904 (100%)
+
+Time: 38:54.027, Memory: 382.00 MB
+
+There were 2 failures:
+
+1) Tests\Integration\CheckoutConcurrencyTest::test_independent_http_sql_sessions_protect_checkout_and_daily_sequence@two_keys with data ('two_keys')
+{"phase":"autoload.begin","pid":24556,"monotonic_ns":172963588620600,"elapsed_ms":0.053}
+{"phase":"bootstrap.begin","pid":24556,"monotonic_ns":172967159205200,"elapsed_ms":3570.6375}
+{"running":true,"exit_code":null,"requests":[]}
+Failed asserting that file "<repo>\.tools/checkout-race-23545a2ace00/holding" exists.
+
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:42
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:83
+
+2) Tests\Integration\CheckoutConcurrencyTest::test_independent_http_sql_sessions_protect_checkout_and_daily_sequence@same with data ('same')
+{"phase":"autoload.begin","pid":3952,"monotonic_ns":172981534749100,"elapsed_ms":0.0353}
+{"phase":"bootstrap.begin","pid":3952,"monotonic_ns":172981586761500,"elapsed_ms":52.0477}
+{"phase":"bootstrap.ready","pid":3952,"monotonic_ns":172991315929200,"elapsed_ms":9781.2155}
+{"phase":"database.guard.begin","pid":3952,"monotonic_ns":172991755669000,"elapsed_ms":10220.9552}
+{"phase":"database.ready","pid":3952,"monotonic_ns":172991934303900,"elapsed_ms":10399.5901}
+{"phase":"worker.ready","pid":3952,"monotonic_ns":172991960095300,"elapsed_ms":10425.3815,"run_id":"checkout-race-d5c2be3e5f1b","scenario":"same","worker":"first","spid":76}
+{"phase":"http.begin","pid":3952,"monotonic_ns":172992423101300,"elapsed_ms":10888.3875,"run_id":"checkout-race-d5c2be3e5f1b","scenario":"same","worker":"first","spid":76}
+{"running":true,"exit_code":null,"requests":[]}
+Failed asserting that file "<repo>\.tools/checkout-race-d5c2be3e5f1b/holding" exists.
+
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:42
+<repo>\tests\Integration\CheckoutConcurrencyTest.php:83
+
+FAILURES!
+Tests: 904, Assertions: 11610, Failures: 2.
+local.cmd : Script @php vendor/phpunit/phpunit/phpunit handling the test event returned with error code 1
+En <repo>\.tools\stability-final-tests.ps1: 8 Carácter: 5
++     & .\scripts\local.cmd composer test -- --log-junit .tools/stabili ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Script @php ven...th error code 1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

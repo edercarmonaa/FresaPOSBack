@@ -406,9 +406,10 @@ class AuthenticationTest extends AuthSqlServerTestCase
             $response->assertDontSee($secret);
         }
         $this->assertSame($response->json('meta.request_id'), $records[0]->context['request_id']);
-        foreach ($records[0]->context['exception']->getTrace() as $frame) {
-            $this->assertArrayNotHasKey('args', $frame);
-        }
+        $this->assertArrayNotHasKey('exception', $records[0]->context);
+        $this->assertSame(\RuntimeException::class, $records[0]->context['exception_type']);
+        $this->assertStringNotContainsString('Synthetic authentication error.', $formatted);
+        $this->assertArrayNotHasKey('trace', $records[0]->context);
     }
 
     public function test_html_auth_errors_never_dump_request_body_with_debug_enabled(): void

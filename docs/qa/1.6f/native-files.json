@@ -1,0 +1,118 @@
+{
+  "database": "fresapos_test",
+  "retained_pdf": 9,
+  "retained_xlsx": 9,
+  "reports": [
+    {
+      "pdf": "report-cash-movements-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-cash-movements-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 2,
+      "detail_values_compared": 12,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-cash-reconciliations-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-cash-reconciliations-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 0,
+      "detail_values_compared": 0,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-cash-sessions-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-cash-sessions-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 1,
+      "detail_values_compared": 6,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-corrections-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-corrections-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 3,
+      "detail_values_compared": 27,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-discounts-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-discounts-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 4,
+      "detail_values_compared": 36,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-payments-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-payments-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 4,
+      "detail_values_compared": 16,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-products-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-products-2026-11-24-2026-11-24.xlsx",
+      "pages": 5,
+      "detail_rows": 26,
+      "detail_values_compared": 156,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-sales-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-sales-2026-11-24-2026-11-24.xlsx",
+      "pages": 2,
+      "detail_rows": 14,
+      "detail_values_compared": 152,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-summary-2026-11-24-2026-11-24.pdf",
+      "xlsx": "report-summary-2026-11-24-2026-11-24.xlsx",
+      "pages": 1,
+      "detail_rows": 1,
+      "detail_values_compared": 4,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    }
+  ],
+  "closed_state_extra_downloads_retained": false,
+  "closed_state_evidence": "Capturas 15-closed y 16-two-sessions; exportaciones cerradas del escenario compuesto verificadas por separado.",
+  "passed": true
+}

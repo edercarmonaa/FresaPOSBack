@@ -1,5 +1,7 @@
 # FresaPOSBack
 
+La etapa [1.6e](docs/entrega-1.6e.md), aceptada localmente, incorpora [Reportes](http://127.0.0.1:8080/reports): resumen, ventas, productos, pagos, movimientos, sesiones, arqueos, descuentos y correcciones. Requiere acceso financiero administrativo vigente y permisos del módulo propietario. PDF y XLSX reales se generan con PHP, sin Node/Vite/colas en el hosting. Límites síncronos: 300 filas para PDF y 1000 para Excel. Consultar el informe para definiciones históricas, precisión, aislamiento y pendientes.
+
 La etapa [1.6b — Descuentos autorizados](docs/entrega-1.6b.md) está **aceptada localmente**: porcentaje entero e importe fijo por venta, sustitución/eliminación con auditoría y cierre con folio de ventas totalmente descontadas. **705 pruebas / 8212 aserciones**, 64 operaciones OpenAPI con 470 respuestas y [129 capturas aisladas](docs/qa/1.6b/README.md). Migración incremental aplicada con respaldo verificado; datos originales y diez archivos protegidos conservados. Se mantienen los permisos existentes. Disponible en [POS](http://127.0.0.1:8080/pos).
 
 La entrega [1.5d.5 — Aceptación integral del ciclo financiero](docs/entrega-1.5d.5.md) está **aceptada localmente**: apertura, mostrador/mesas, cinco modalidades de cobro, movimientos, arqueo ciego, cierre y nuevo turno comprobados con SQL Server y navegador real. **593 pruebas / 6832 aserciones**, 57 operaciones OpenAPI con 388 respuestas reales y [76 capturas aisladas](docs/qa/1.5d.5/README.md). Las 26 tablas operativas y diez archivos protegidos permanecen idénticos. Sin cambios de negocio, migraciones nuevas, commits o despliegues; Scheduler del sistema, Azure SQL/cPanel y funcionalidades posteriores siguen pendientes.
@@ -78,6 +80,8 @@ APP_PORT se conserva como referencia del flujo Docker histórico; `local.cmd ser
 - Sin estilos al perder conexión: limitación del CDN, descrita en docs/frontend.md.
 
 ## Documentación
+
+La aceptación funcional con observaciones de [1.6f](docs/entrega-1.6f.md) valida el Bloque05 con SQL Server, concurrencia, contratos, PDF/XLSX e interfaz reales; explica las cinco diferencias históricas y conserva intacta la operación. Incluye dos correcciones comprobadas y evidencia actual en [QA](docs/qa/1.6f/README.md). Azure/cPanel e impresión física continúan pendientes.
 
 La entrega [1.6c](docs/entrega-1.6c.md) añade correcciones autorizadas de ventas pagadas con borrador separado, folio/primer cierre y pagos originales conservados, cobro adicional explícito e historial. El POS incorpora «Pagadas y correcciones». Requiere `sales.reopen` y autorización especial; la matriz operativa conserva ese permiso solo en admin. Devoluciones y reclasificación de pagos históricos permanecen bloqueadas. Consultar el informe para conocer el estado real de validación y despliegue local.
 

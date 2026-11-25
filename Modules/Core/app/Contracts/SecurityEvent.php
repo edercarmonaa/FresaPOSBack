@@ -22,6 +22,7 @@ final readonly class SecurityEvent
         public ?SaleDiscountAudit $discountChange = null,
         public ?SaleCorrectionAudit $correction = null,
         public ?ReceiptAudit $receipt = null,
+        public ?ReportExportAudit $reportExport = null,
     ) {
         if (! in_array($type, [
             'login', 'logout', 'password.failed', 'password.locked', 'authentication.unlocked',
@@ -46,6 +47,7 @@ final readonly class SecurityEvent
             'sales.discount.applied', 'sales.discount.replaced', 'sales.discount.removed',
             'sales.correction.confirmed',
             'tickets.reprint.requested',
+            'reports.export.generated',
         ], true) || ! in_array($result, ['success', 'failure', 'blocked'], true)) {
             throw new \InvalidArgumentException('Evento de seguridad no permitido.');
         }
@@ -55,6 +57,9 @@ final readonly class SecurityEvent
         }
         if (($type === 'tickets.reprint.requested') !== ($receipt !== null)) {
             throw new \InvalidArgumentException('La solicitud requiere evidencia cerrada del comprobante.');
+        }
+        if (($type === 'reports.export.generated') !== ($reportExport !== null)) {
+            throw new \InvalidArgumentException('La exportación requiere evidencia cerrada del documento generado.');
         }
         if (($type === 'sales.correction.confirmed') !== ($correction !== null)) {
             throw new \InvalidArgumentException('La corrección requiere un resumen financiero validado.');

@@ -1,0 +1,9 @@
+{
+  "database": "fresapos_test",
+  "real_browser_form_submission": true,
+  "source_origin": "http://127.0.0.1:8086",
+  "destination_origin": "http://127.0.0.1:8085",
+  "csrf_token_absent": true,
+  "status": 419,
+  "sensitive_details_present": false
+}

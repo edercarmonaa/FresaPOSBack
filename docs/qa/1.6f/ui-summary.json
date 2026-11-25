@@ -1,0 +1,45 @@
+{
+  "browser": "Chrome/157.0.8103.79",
+  "database": "fresapos_test",
+  "unique_screenshots": 341,
+  "scenario_groups": 86,
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "global_horizontal_overflow": false,
+  "unexpected_javascript_errors_in_retained_screens": false,
+  "contact_sheets": [
+    "contact-01.png",
+    "contact-02.png",
+    "contact-03.png",
+    "contact-04.png",
+    "contact-05.png",
+    "contact-06.png",
+    "contact-07.png",
+    "contact-08.png",
+    "contact-09.png",
+    "contact-10.png",
+    "contact-11.png",
+    "contact-12.png",
+    "contact-13.png",
+    "contact-14.png",
+    "contact-15.png"
+  ],
+  "before_fix_layout_screens_preserved": 4,
+  "passed": true
+}

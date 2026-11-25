@@ -1,0 +1,19 @@
+{
+  "database": "fresapos_test",
+  "synthetic_sales": 1001,
+  "metrics": [
+    {
+      "rows": 10,
+      "queries": 26,
+      "elapsed_ms": 225.082,
+      "peak_memory_bytes": 220200960
+    },
+    {
+      "rows": 100,
+      "queries": 26,
+      "elapsed_ms": 172.106,
+      "peak_memory_bytes": 220200960
+    }
+  ],
+  "plan_captured": true
+}

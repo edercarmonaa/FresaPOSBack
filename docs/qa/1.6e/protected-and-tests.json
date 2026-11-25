@@ -1,0 +1,59 @@
+{
+  "protected_files": [
+    {
+      "file": ".env",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": ".env.testing",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "config/database.php",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "config/session.php",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "config/filesystems.php",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "composer.json",
+      "unchanged": false,
+      "authorized_exception": true
+    },
+    {
+      "file": "composer.lock",
+      "unchanged": false,
+      "authorized_exception": true
+    },
+    {
+      "file": "phpunit.xml",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "phpstan.neon",
+      "unchanged": true,
+      "authorized_exception": false
+    },
+    {
+      "file": "Modules/Users/config/security.php",
+      "unchanged": true,
+      "authorized_exception": false
+    }
+  ],
+  "eight_protected_unchanged": true,
+  "prior_test_count": 821,
+  "current_test_count": 891,
+  "missing_prior_tests": [],
+  "added_tests": 70
+}

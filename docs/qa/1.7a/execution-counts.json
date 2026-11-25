@@ -1,0 +1,13 @@
+{
+  "phpunit_invocations": 25,
+  "test_cases": 3108,
+  "assertions": 42279,
+  "functional_failures": 2,
+  "nonzero_runner_invocations": 2,
+  "intentional_non_phpunit_probes_excluded": true,
+  "batteries": {
+    "total": 20,
+    "exit_zero": 19,
+    "exit_nonzero": 1
+  }
+}

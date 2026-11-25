@@ -1,0 +1,29 @@
+{
+  "database": "fresapos_test",
+  "fresh_fixture": true,
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8085/pos?sale=01m89resas49x17zk0gbxkk2p7",
+      "status": 200,
+      "type": "Document"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:8085/livewire-4aeeedbb/livewire.min.js?id=a964a3c8",
+      "status": 200,
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:8085/livewire-4aeeedbb/update",
+      "status": 200,
+      "type": "Fetch"
+    }
+  ],
+  "http_errors": [],
+  "visible_error_banners": [],
+  "passed": true
+}

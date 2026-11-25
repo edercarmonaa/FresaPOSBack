@@ -1,0 +1,364 @@
+{
+  "scenarios": [
+    {
+      "scenario": "Retiro contra Checkout",
+      "source": "reasons-race-remove_checkout.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "remove_checkout",
+        "first_spid": 98,
+        "second_spid": 103,
+        "first_status": 200,
+        "second_status": 409,
+        "cancelled": false,
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Cancelación contra Checkout",
+      "source": "reasons-race-cancel_checkout.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "cancel_checkout",
+        "first_spid": 98,
+        "second_spid": 103,
+        "first_status": 200,
+        "second_status": 409,
+        "cancelled": true,
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Descuento contra Checkout",
+      "source": "discounts-race-checkout.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "checkout",
+        "first_spid": 62,
+        "second_spid": 63,
+        "first_status": 200,
+        "second_status": 409,
+        "discount": "36.0000",
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Sustitución simultánea",
+      "source": "discounts-race-replace.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "replace",
+        "first_spid": 63,
+        "second_spid": 64,
+        "first_status": 200,
+        "second_status": 409,
+        "discount": "36.0000",
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Reapertura contra cierre Cash",
+      "source": "corrections-race-reopen_close.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "reopen_close",
+        "first_spid": 57,
+        "second_spid": 58,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 0,
+        "correction_events": 0,
+        "expected_cash": "280.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Corrección contra arqueo",
+      "source": "corrections-race-reopen_count.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "reopen_count",
+        "first_spid": 57,
+        "second_spid": 58,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 0,
+        "correction_events": 0,
+        "expected_cash": "280.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Dos confirmaciones de corrección",
+      "source": "corrections-race-two_confirms.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "two_confirms",
+        "first_spid": 65,
+        "second_spid": 74,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 1,
+        "correction_events": 1,
+        "expected_cash": "460.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Cobro adicional simultáneo",
+      "source": "corrections-race-two_confirms.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "two_confirms",
+        "first_spid": 65,
+        "second_spid": 74,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 1,
+        "correction_events": 1,
+        "expected_cash": "460.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Corrección contra modificación de productos",
+      "source": "corrections-race-products.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "products",
+        "first_spid": 71,
+        "second_spid": 73,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 0,
+        "correction_events": 0,
+        "expected_cash": "280.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Cierre Cash contra venta abierta",
+      "source": "reconciliation-race-open_after.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "open_after",
+        "first_spid": 67,
+        "second_spid": 71,
+        "first_status": 200,
+        "second_status": 503,
+        "closures": 1,
+        "expected_cash": "100.0000",
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Cierre Cash contra corrección activa",
+      "source": "corrections-race-reopen_close.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "reopen_close",
+        "first_spid": 57,
+        "second_spid": 58,
+        "wait_type": "LCK_M_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 409,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 0,
+        "correction_events": 0,
+        "expected_cash": "280.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Dos cierres Cash",
+      "source": "reconciliation-race-two_keys.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "two_keys",
+        "first_spid": 68,
+        "second_spid": 71,
+        "first_status": 200,
+        "second_status": 409,
+        "closures": 1,
+        "expected_cash": "100.0000",
+        "transient_sql_codes": []
+      }
+    },
+    {
+      "scenario": "Dos aperturas Cash",
+      "source": "cash-1.5d1-race-application.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "application",
+        "first_spid": 68,
+        "second_spid": 71,
+        "wait_type": "LCK_M_U",
+        "first": {
+          "status": "created",
+          "id": "01m89p2ekyy5mmfsat6hzdvqyz"
+        },
+        "second": {
+          "status": "conflict",
+          "exception": "Modules\\Cash\\Contracts\\CashConflict",
+          "sql_code": null
+        },
+        "sessions": 1
+      }
+    },
+    {
+      "scenario": "Reintento tras respuesta perdida",
+      "source": "corrections-race-lost.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "lost",
+        "first_spid": 77,
+        "second_spid": 79,
+        "wait_type": null,
+        "pending_status": 409,
+        "first_status": 200,
+        "second_status": 200,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 1,
+        "correction_events": 1,
+        "expected_cash": "460.0000",
+        "transient_sql_codes": [],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Deadlock SQL real",
+      "source": "corrections-race-deadlock.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "deadlock",
+        "first_spid": 97,
+        "second_spid": 98,
+        "wait_type": "LCK_M_RS_U",
+        "pending_status": null,
+        "first_status": 200,
+        "second_status": 200,
+        "folio_preserved": true,
+        "first_close_preserved": true,
+        "original_payments_preserved": true,
+        "additional_payments": 1,
+        "correction_events": 1,
+        "expected_cash": "460.0000",
+        "transient_sql_codes": [
+          1205
+        ],
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Lectura de reporte durante cambios",
+      "source": "reports-concurrency.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "reader_spid": 67,
+        "writer_spid": 76,
+        "wait_type": "LCK_M_X",
+        "reader_status": 503,
+        "reader_income": null,
+        "after_commit_income": "360.0000",
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Exportación durante cobro",
+      "source": "block05-concurrency-export_checkout.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "export_checkout",
+        "first_spid": 68,
+        "second_spid": 71,
+        "wait_type": "LCK_M_X",
+        "first_result": {
+          "status": 503,
+          "code": "SERVICE_UNAVAILABLE"
+        },
+        "second_result": {
+          "status": 200,
+          "total": "180.0000"
+        },
+        "passed": true
+      }
+    },
+    {
+      "scenario": "Reimpresión durante confirmación corregida",
+      "source": "block05-concurrency-reprint_confirmation.json",
+      "current_run": true,
+      "evidence": {
+        "database": "fresapos_test",
+        "mode": "reprint_confirmation",
+        "first_spid": 68,
+        "second_spid": 71,
+        "wait_type": "LCK_M_U",
+        "first_result": {
+          "status": 200,
+          "correction_status": "confirmed"
+        },
+        "second_result": {
+          "status": 409,
+          "code": "CONFLICT"
+        },
+        "passed": true
+      }
+    }
+  ],
+  "scenarios_count": 18,
+  "distinct_runs": 16,
+  "shared_coverage_explained": true
+}

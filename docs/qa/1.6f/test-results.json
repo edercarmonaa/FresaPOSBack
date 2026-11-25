@@ -1,0 +1,15 @@
+{
+  "tests": 900,
+  "assertions": 11625,
+  "duration": "43:51.167",
+  "process_peak_memory_mb": 380.0,
+  "exit_code": 0,
+  "started_at_utc": "2026-11-25T15:41:12.8224388Z",
+  "completed_at_utc": "2026-11-25T16:25:07.814484+00:00",
+  "baseline_completed_local_date": "2026-11-24",
+  "baseline_tests": 891,
+  "baseline_assertions": 10617,
+  "missing_prior_tests": 0,
+  "new_tests": 9,
+  "skipped": 0
+}

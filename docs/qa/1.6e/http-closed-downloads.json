@@ -1,0 +1,16 @@
+[
+    {
+        "report": "cash-reconciliations",
+        "format": "pdf",
+        "status": 200,
+        "bytes": 23874,
+        "file": "report-closed-cash-2026-11-23.pdf"
+    },
+    {
+        "report": "cash-reconciliations",
+        "format": "xlsx",
+        "status": 200,
+        "bytes": 7588,
+        "file": "report-closed-cash-2026-11-23.xlsx"
+    }
+]

@@ -1,0 +1,10 @@
+{
+  "sales_sales": "0aca24ca16e090126b8d125a9b6ea4990d590f3740462f44fdfbd94555d9c75a",
+  "sales_items": "9b1525deebc915f495361004c262544da9ef599257c0e9d198125643cc32c26e",
+  "sales_payments": "6f2ab5aed77e638efe5f7cf7dd789998da51743f20c7c7e0c40f88e199dcbfb9",
+  "sales_daily_sequences": "7b741192f8fc69335bf5a72412aef5b40ac167ea8b78c3897cb1ec850cb94947",
+  "sales_corrections": "051315a09418dd572c82e727532ed003756c2f52f43a40792210f40dd8e3f2a6",
+  "cash_sessions": "eaad89823f55eb4689222dddaaf01fd69cf8a48a6fc5ea13d35bbd11e715170f",
+  "cash_movements": "bfc3adb61470170a69fb437eccdc82ef3ba0c0ae771eeb279ed9e5af2f3ef54d",
+  "cash_reconciliations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

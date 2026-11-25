@@ -1,0 +1,6626 @@
+{
+  "count": 53,
+  "readiness_min_ms": 377.0293,
+  "readiness_median_ms": 589.8114,
+  "readiness_max_ms": 745.0486,
+  "records": [
+    {
+      "file": "stability-worker-trace-10256-177548795709300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "transaction.begin",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "query.slow.completed",
+        "transaction.committed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0304,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 52.2452,
+          "previous_trace_io_ms": 0.9082
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 524.0545,
+          "previous_trace_io_ms": 0.5895
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 536.5533,
+          "previous_trace_io_ms": 0.6417
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 585.2793,
+          "previous_trace_io_ms": 0.3729
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 593.3911,
+          "previous_trace_io_ms": 0.3912
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 594.4324,
+          "previous_trace_io_ms": 1.0443
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 657.5387,
+          "previous_trace_io_ms": 0.2703
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 668.7888,
+          "previous_trace_io_ms": 0.4008,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 694.1047,
+          "previous_trace_io_ms": 0.3779
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 695.2099,
+          "previous_trace_io_ms": 0.4315
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1389.652,
+          "previous_trace_io_ms": 0.2837
+        },
+        {
+          "phase": "query.slow.completed",
+          "elapsed_ms": 4771.6655,
+          "previous_trace_io_ms": 0.5847,
+          "duration_ms": 3375,
+          "fingerprint": "8084ca39cd047e65b28cf9e8381a8d3d0c4b21b33deb2172206b696a964627b1"
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 4775.8565,
+          "previous_trace_io_ms": 1.0805,
+          "transaction_level": 0
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 4777.0032,
+          "previous_trace_io_ms": 0.3588,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 593.3911,
+      "context": {
+        "run_id": "discounts-race-240c661b4c5d",
+        "scenario": "deadlock",
+        "worker": "first",
+        "spid": 81,
+        "pid": 10256
+      }
+    },
+    {
+      "file": "stability-worker-trace-11908-177490151430900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.029,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 54.2778,
+          "previous_trace_io_ms": 1.2798
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 516.0001,
+          "previous_trace_io_ms": 0.4712
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 527.8428,
+          "previous_trace_io_ms": 1.0301
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 583.5005,
+          "previous_trace_io_ms": 0.6839
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 595.6322,
+          "previous_trace_io_ms": 0.5424
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 596.95,
+          "previous_trace_io_ms": 1.3179
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1442.0019,
+          "previous_trace_io_ms": 0.2798
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1450.5103,
+          "previous_trace_io_ms": 0.3982
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1733.41,
+          "previous_trace_io_ms": 0.4056,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1733.8282,
+          "previous_trace_io_ms": 0.3727
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1855.6019,
+          "previous_trace_io_ms": 0.2791,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1911.1512,
+          "previous_trace_io_ms": 0.4482,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1913.9629,
+          "previous_trace_io_ms": 1.0371,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1914.5711,
+          "previous_trace_io_ms": 0.3459,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1955.8319,
+          "previous_trace_io_ms": 0.2692,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1965.7917,
+          "previous_trace_io_ms": 0.3159,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1969.7972,
+          "previous_trace_io_ms": 0.3147,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 595.6322,
+      "context": {
+        "run_id": "discounts-race-ec2062efa00a",
+        "scenario": "add",
+        "worker": "second",
+        "spid": 72,
+        "pid": 11908
+      }
+    },
+    {
+      "file": "stability-worker-trace-12108-176319582978200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0239,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.5036,
+          "previous_trace_io_ms": 0.9797
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 454.1893,
+          "previous_trace_io_ms": 2.1629
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 466.1919,
+          "previous_trace_io_ms": 0.5636
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 512.0175,
+          "previous_trace_io_ms": 0.3711
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 518.3009,
+          "previous_trace_io_ms": 0.352
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 518.8436,
+          "previous_trace_io_ms": 0.5408
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 856.3065,
+          "previous_trace_io_ms": 0.288
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 865.2811,
+          "previous_trace_io_ms": 1.1857
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1131.5732,
+          "previous_trace_io_ms": 0.3898,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1132.0245,
+          "previous_trace_io_ms": 0.4056
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1294.9998,
+          "previous_trace_io_ms": 0.2648,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1295.6669,
+          "previous_trace_io_ms": 0.4069,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1335.3845,
+          "previous_trace_io_ms": 0.3315,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1351.0999,
+          "previous_trace_io_ms": 0.4203,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1355.0162,
+          "previous_trace_io_ms": 0.6122,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 518.3009,
+      "context": {
+        "run_id": "checkout-race-bad88c9cc35d",
+        "scenario": "edit",
+        "worker": "second",
+        "spid": 77,
+        "pid": 12108
+      }
+    },
+    {
+      "file": "stability-worker-trace-12120-177516117417100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0273,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 49.5403,
+          "previous_trace_io_ms": 4.256
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 501.8341,
+          "previous_trace_io_ms": 0.4329
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 513.7163,
+          "previous_trace_io_ms": 1.0281
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 577.709,
+          "previous_trace_io_ms": 0.5254
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 591.0757,
+          "previous_trace_io_ms": 0.5024
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 591.8013,
+          "previous_trace_io_ms": 0.7218
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1368.5699,
+          "previous_trace_io_ms": 0.4628
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1377.0796,
+          "previous_trace_io_ms": 0.5407
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1679.1373,
+          "previous_trace_io_ms": 0.3774,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1679.542,
+          "previous_trace_io_ms": 0.3583
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1854.5356,
+          "previous_trace_io_ms": 0.2752,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1855.1701,
+          "previous_trace_io_ms": 0.376,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1884.2063,
+          "previous_trace_io_ms": 0.3339,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1912.4942,
+          "previous_trace_io_ms": 0.5385,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1916.8798,
+          "previous_trace_io_ms": 0.3689,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 591.0757,
+      "context": {
+        "run_id": "discounts-race-a89e6f9a3cc7",
+        "scenario": "checkout",
+        "worker": "second",
+        "spid": 76,
+        "pid": 12120
+      }
+    },
+    {
+      "file": "stability-worker-trace-12416-177543734529300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0211,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 37.5226,
+          "previous_trace_io_ms": 0.8635
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 453.0101,
+          "previous_trace_io_ms": 0.5198
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 464.1894,
+          "previous_trace_io_ms": 0.5677
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 505.2029,
+          "previous_trace_io_ms": 0.3717
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 513.4597,
+          "previous_trace_io_ms": 0.3383
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 520.9917,
+          "previous_trace_io_ms": 0.5636
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 808.5433,
+          "previous_trace_io_ms": 0.3753,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 891.1756,
+          "previous_trace_io_ms": 0.407,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 907.1645,
+          "previous_trace_io_ms": 0.6245,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 912.8052,
+          "previous_trace_io_ms": 0.5093,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 513.4597,
+      "context": {
+        "run_id": "discounts-race-532c13c73175",
+        "scenario": "lost",
+        "worker": "retry",
+        "spid": 80,
+        "pid": 12416
+      }
+    },
+    {
+      "file": "stability-worker-trace-12696-177542103266100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0267,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 36.0205,
+          "previous_trace_io_ms": 0.9194
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 455.3124,
+          "previous_trace_io_ms": 0.5232
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 467.3729,
+          "previous_trace_io_ms": 0.5515
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 513.5097,
+          "previous_trace_io_ms": 0.3455
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 520.91,
+          "previous_trace_io_ms": 0.3422
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 521.5253,
+          "previous_trace_io_ms": 0.6126
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 574.4125,
+          "previous_trace_io_ms": 0.2841
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 582.3056,
+          "previous_trace_io_ms": 0.5724
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 888.3913,
+          "previous_trace_io_ms": 0.3531,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 978.4509,
+          "previous_trace_io_ms": 0.6864,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1033.2247,
+          "previous_trace_io_ms": 0.4299,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1283.1737,
+          "previous_trace_io_ms": 0.4284,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1283.6592,
+          "previous_trace_io_ms": 0.4275,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1296.7175,
+          "previous_trace_io_ms": 0.3199
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1297.7641,
+          "previous_trace_io_ms": 0.3937
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1355.8993,
+          "previous_trace_io_ms": 0.2789
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1358.2863,
+          "previous_trace_io_ms": 0.3741,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1372.0452,
+          "previous_trace_io_ms": 0.5821,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1376.7521,
+          "previous_trace_io_ms": 0.4877,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 520.91,
+      "context": {
+        "run_id": "discounts-race-532c13c73175",
+        "scenario": "lost",
+        "worker": "first",
+        "spid": 80,
+        "pid": 12696
+      }
+    },
+    {
+      "file": "stability-worker-trace-13780-176324134731000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "transaction.begin",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0188,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 45.5048,
+          "previous_trace_io_ms": 0.7679
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 497.1258,
+          "previous_trace_io_ms": 0.7029
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 509.6546,
+          "previous_trace_io_ms": 0.5081
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 576.2898,
+          "previous_trace_io_ms": 0.9118
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 595.2826,
+          "previous_trace_io_ms": 0.4089
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 595.8969,
+          "previous_trace_io_ms": 0.6111
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 617.3457,
+          "previous_trace_io_ms": 0.3964
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 650.86,
+          "previous_trace_io_ms": 1.3414,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 792.6662,
+          "previous_trace_io_ms": 1.1968
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 793.8047,
+          "previous_trace_io_ms": 0.4696
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1516.5564,
+          "previous_trace_io_ms": 0.3314
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1520.3245,
+          "previous_trace_io_ms": 0.9018,
+          "transaction_level": 0
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1521.2741,
+          "previous_trace_io_ms": 0.3689,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 595.2826,
+      "context": {
+        "run_id": "checkout-race-2786a685d80b",
+        "scenario": "session",
+        "worker": "first",
+        "spid": 76,
+        "pid": 13780
+      }
+    },
+    {
+      "file": "stability-worker-trace-14760-176304743131400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0264,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 40.265,
+          "previous_trace_io_ms": 0.9874
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 473.0588,
+          "previous_trace_io_ms": 0.5221
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 484.9801,
+          "previous_trace_io_ms": 0.3658
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 525.7365,
+          "previous_trace_io_ms": 0.5531
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 539.7033,
+          "previous_trace_io_ms": 0.4685
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 540.343,
+          "previous_trace_io_ms": 0.638
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 561.1104,
+          "previous_trace_io_ms": 0.2628
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 567.9963,
+          "previous_trace_io_ms": 0.3338
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 761.0895,
+          "previous_trace_io_ms": 0.2883,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 876.578,
+          "previous_trace_io_ms": 1.1547,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 909.3432,
+          "previous_trace_io_ms": 0.4507,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 964.4626,
+          "previous_trace_io_ms": 0.3219,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1007.0228,
+          "previous_trace_io_ms": 0.3974,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1022.1107,
+          "previous_trace_io_ms": 0.3743
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1023.0304,
+          "previous_trace_io_ms": 0.2741
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1478.148,
+          "previous_trace_io_ms": 0.2923
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1483.0463,
+          "previous_trace_io_ms": 1.1294,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1496.3638,
+          "previous_trace_io_ms": 0.3717,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1500.4789,
+          "previous_trace_io_ms": 0.7778,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 539.7033,
+      "context": {
+        "run_id": "checkout-race-dc8a1cad9510",
+        "scenario": "different",
+        "worker": "first",
+        "spid": 77,
+        "pid": 14760
+      }
+    },
+    {
+      "file": "stability-worker-trace-14764-177483881960700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0274,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.6567,
+          "previous_trace_io_ms": 1.0866
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 571.2303,
+          "previous_trace_io_ms": 0.432
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 584.1989,
+          "previous_trace_io_ms": 2.0545
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 644.3828,
+          "previous_trace_io_ms": 0.3717
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 651.603,
+          "previous_trace_io_ms": 0.3611
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 652.4234,
+          "previous_trace_io_ms": 0.8162
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 684.7087,
+          "previous_trace_io_ms": 0.4809
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 693.1059,
+          "previous_trace_io_ms": 0.4225
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1126.5233,
+          "previous_trace_io_ms": 0.3766,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1194.446,
+          "previous_trace_io_ms": 0.3647,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1230.226,
+          "previous_trace_io_ms": 0.5181,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1441.0364,
+          "previous_trace_io_ms": 0.3781,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1441.4394,
+          "previous_trace_io_ms": 0.3511,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1449.5506,
+          "previous_trace_io_ms": 0.2996
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1450.7723,
+          "previous_trace_io_ms": 0.4439
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1817.36,
+          "previous_trace_io_ms": 0.3636
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1824.0572,
+          "previous_trace_io_ms": 0.5472,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1848.438,
+          "previous_trace_io_ms": 2.2555,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1853.7385,
+          "previous_trace_io_ms": 0.459,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 651.603,
+      "context": {
+        "run_id": "discounts-race-97cee64b1112",
+        "scenario": "two_discounts",
+        "worker": "first",
+        "spid": 71,
+        "pid": 14764
+      }
+    },
+    {
+      "file": "stability-worker-trace-16104-176300949837700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0272,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 34.1562,
+          "previous_trace_io_ms": 0.9922
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 468.7152,
+          "previous_trace_io_ms": 0.5271
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 499.9831,
+          "previous_trace_io_ms": 0.6898
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 546.2581,
+          "previous_trace_io_ms": 3.2204
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 553.3654,
+          "previous_trace_io_ms": 0.3838
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 560.5172,
+          "previous_trace_io_ms": 0.5464
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 824.5553,
+          "previous_trace_io_ms": 0.4816,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 850.8478,
+          "previous_trace_io_ms": 0.3347,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 866.0004,
+          "previous_trace_io_ms": 0.4062,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 869.6249,
+          "previous_trace_io_ms": 0.404,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 553.3654,
+      "context": {
+        "run_id": "checkout-race-e3fe362d3874",
+        "scenario": "same",
+        "worker": "retry",
+        "spid": 76,
+        "pid": 16104
+      }
+    },
+    {
+      "file": "stability-worker-trace-16116-176315209371000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0307,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 48.893,
+          "previous_trace_io_ms": 1.2181
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 464.9979,
+          "previous_trace_io_ms": 0.7098
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 477.7612,
+          "previous_trace_io_ms": 0.3222
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 526.9527,
+          "previous_trace_io_ms": 2.3043
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 534.1021,
+          "previous_trace_io_ms": 0.3688
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 534.6306,
+          "previous_trace_io_ms": 0.5269
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 569.1863,
+          "previous_trace_io_ms": 0.3303
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 577.5161,
+          "previous_trace_io_ms": 0.775
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 878.0656,
+          "previous_trace_io_ms": 0.299,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1032.681,
+          "previous_trace_io_ms": 0.3873,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1060.788,
+          "previous_trace_io_ms": 0.4798,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1106.3113,
+          "previous_trace_io_ms": 0.2986,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1146.1998,
+          "previous_trace_io_ms": 0.3733,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1164.324,
+          "previous_trace_io_ms": 0.4966
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1165.2665,
+          "previous_trace_io_ms": 0.3127
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1483.5314,
+          "previous_trace_io_ms": 0.2906
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1490.9309,
+          "previous_trace_io_ms": 0.4892,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1505.4752,
+          "previous_trace_io_ms": 0.3824,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1508.5568,
+          "previous_trace_io_ms": 0.3564,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 534.1021,
+      "context": {
+        "run_id": "checkout-race-cf54771b103d",
+        "scenario": "mixed",
+        "worker": "first",
+        "spid": 76,
+        "pid": 16116
+      }
+    },
+    {
+      "file": "stability-worker-trace-16280-177567440680200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0223,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.6042,
+          "previous_trace_io_ms": 0.8971
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 505.1296,
+          "previous_trace_io_ms": 0.6167
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 518.8675,
+          "previous_trace_io_ms": 0.603
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 559.8185,
+          "previous_trace_io_ms": 0.3413
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 570.6485,
+          "previous_trace_io_ms": 0.4112
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 577.7737,
+          "previous_trace_io_ms": 0.5932
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 841.1977,
+          "previous_trace_io_ms": 0.37,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 923.2098,
+          "previous_trace_io_ms": 0.3887,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 935.8896,
+          "previous_trace_io_ms": 0.3698,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 939.9676,
+          "previous_trace_io_ms": 0.3069,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 570.6485,
+      "context": {
+        "run_id": "discounts-race-59a1549241d6",
+        "scenario": "same",
+        "worker": "retry",
+        "spid": 65,
+        "pid": 16280
+      }
+    },
+    {
+      "file": "stability-worker-trace-16620-176339415719700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0261,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.1681,
+          "previous_trace_io_ms": 1.1358
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 570.0502,
+          "previous_trace_io_ms": 0.4393
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 581.334,
+          "previous_trace_io_ms": 0.5295
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 633.9354,
+          "previous_trace_io_ms": 0.364
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 643.321,
+          "previous_trace_io_ms": 0.3825
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 643.9028,
+          "previous_trace_io_ms": 0.5795
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 735.0713,
+          "previous_trace_io_ms": 0.3118
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 746.9819,
+          "previous_trace_io_ms": 0.4513
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1037.6956,
+          "previous_trace_io_ms": 0.4255,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1038.2017,
+          "previous_trace_io_ms": 0.4612
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1116.2542,
+          "previous_trace_io_ms": 0.5998,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1133.9337,
+          "previous_trace_io_ms": 0.3414,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1496.4048,
+          "previous_trace_io_ms": 0.3083,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1644.7846,
+          "previous_trace_io_ms": 0.4171,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1701.6521,
+          "previous_trace_io_ms": 0.4235,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1735.2797,
+          "previous_trace_io_ms": 0.4859,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1790.8809,
+          "previous_trace_io_ms": 0.4552,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1852.0092,
+          "previous_trace_io_ms": 0.4418,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1868.3267,
+          "previous_trace_io_ms": 0.4819,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1880.4153,
+          "previous_trace_io_ms": 0.2722,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1883.8082,
+          "previous_trace_io_ms": 0.28,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 643.321,
+      "context": {
+        "run_id": "checkout-race-092eb0b71f38",
+        "scenario": "deadlock",
+        "worker": "second",
+        "spid": 77,
+        "pid": 16620
+      }
+    },
+    {
+      "file": "stability-worker-trace-16644-176324167025200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "query.slow.completed",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0179,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 41.5794,
+          "previous_trace_io_ms": 0.8852
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 478.9121,
+          "previous_trace_io_ms": 0.4471
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 491.614,
+          "previous_trace_io_ms": 0.8272
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 546.4808,
+          "previous_trace_io_ms": 0.3889
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 566.1716,
+          "previous_trace_io_ms": 0.3559
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 566.7615,
+          "previous_trace_io_ms": 0.5878
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 807.1524,
+          "previous_trace_io_ms": 0.2678
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 825.9692,
+          "previous_trace_io_ms": 2.6256
+        },
+        {
+          "phase": "query.slow.completed",
+          "elapsed_ms": 1271.0179,
+          "previous_trace_io_ms": 0.3741,
+          "duration_ms": 221.17,
+          "fingerprint": "2821c3db561961de603542d4a08b9d20ca626361457f83b61044554308ba7169"
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1463.1995,
+          "previous_trace_io_ms": 0.9613,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1463.5118,
+          "previous_trace_io_ms": 0.278
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1548.7156,
+          "previous_trace_io_ms": 0.2707,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1549.3031,
+          "previous_trace_io_ms": 0.3669,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1593.7201,
+          "previous_trace_io_ms": 0.2982,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1604.5209,
+          "previous_trace_io_ms": 0.3903,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1607.5738,
+          "previous_trace_io_ms": 0.3474,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 566.1716,
+      "context": {
+        "run_id": "checkout-race-2786a685d80b",
+        "scenario": "session",
+        "worker": "second",
+        "spid": 77,
+        "pid": 16644
+      }
+    },
+    {
+      "file": "stability-worker-trace-16728-177483867157700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0292,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 56.048,
+          "previous_trace_io_ms": 1.5339
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 549.6641,
+          "previous_trace_io_ms": 0.4609
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 562.563,
+          "previous_trace_io_ms": 1.7139
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 614.9456,
+          "previous_trace_io_ms": 0.3569
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 627.7483,
+          "previous_trace_io_ms": 0.3935
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 628.3857,
+          "previous_trace_io_ms": 0.6347
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1515.5249,
+          "previous_trace_io_ms": 0.3001
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1526.0651,
+          "previous_trace_io_ms": 1.3595
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1806.8205,
+          "previous_trace_io_ms": 0.3764,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1807.2217,
+          "previous_trace_io_ms": 0.3522
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1936.9963,
+          "previous_trace_io_ms": 0.2985,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1976.4491,
+          "previous_trace_io_ms": 0.5191,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1979.1028,
+          "previous_trace_io_ms": 0.3668,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1979.778,
+          "previous_trace_io_ms": 0.4142,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2038.4103,
+          "previous_trace_io_ms": 0.3836,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2051.2111,
+          "previous_trace_io_ms": 0.3542,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 2057.0143,
+          "previous_trace_io_ms": 0.6587,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 627.7483,
+      "context": {
+        "run_id": "discounts-race-97cee64b1112",
+        "scenario": "two_discounts",
+        "worker": "second",
+        "spid": 70,
+        "pid": 16728
+      }
+    },
+    {
+      "file": "stability-worker-trace-16932-177529863137300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0289,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 48.7554,
+          "previous_trace_io_ms": 1.1418
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 530.4848,
+          "previous_trace_io_ms": 0.4589
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 540.5972,
+          "previous_trace_io_ms": 0.6453
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 599.2631,
+          "previous_trace_io_ms": 0.3975
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 614.6069,
+          "previous_trace_io_ms": 0.4038
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 615.2565,
+          "previous_trace_io_ms": 0.6479
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1357.9598,
+          "previous_trace_io_ms": 0.3008
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1368.1373,
+          "previous_trace_io_ms": 0.4221
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1647.9108,
+          "previous_trace_io_ms": 0.4356,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1648.3743,
+          "previous_trace_io_ms": 0.4141
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1773.6341,
+          "previous_trace_io_ms": 0.3029,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1816.3208,
+          "previous_trace_io_ms": 0.5636,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1818.9434,
+          "previous_trace_io_ms": 0.3896,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1819.6223,
+          "previous_trace_io_ms": 0.4114,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1915.2841,
+          "previous_trace_io_ms": 0.3682,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1926.1082,
+          "previous_trace_io_ms": 0.3949,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1930.8401,
+          "previous_trace_io_ms": 0.4979,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 614.6069,
+      "context": {
+        "run_id": "discounts-race-7aa98e38c0b8",
+        "scenario": "delete",
+        "worker": "second",
+        "spid": 78,
+        "pid": 16932
+      }
+    },
+    {
+      "file": "stability-worker-trace-17500-176329257094500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.rolled_back",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0174,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 29.3056,
+          "previous_trace_io_ms": 0.6745
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 350.1619,
+          "previous_trace_io_ms": 0.5803
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 356.7561,
+          "previous_trace_io_ms": 0.2688
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 389.7385,
+          "previous_trace_io_ms": 2.4497
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 396.3659,
+          "previous_trace_io_ms": 0.2691
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 396.8616,
+          "previous_trace_io_ms": 0.4935
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 442.4653,
+          "previous_trace_io_ms": 0.256
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 449.4971,
+          "previous_trace_io_ms": 0.6952
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 713.9959,
+          "previous_trace_io_ms": 0.3417,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 857.6846,
+          "previous_trace_io_ms": 0.3695,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 875.9598,
+          "previous_trace_io_ms": 0.6687,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 915.5712,
+          "previous_trace_io_ms": 0.8187,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 974.612,
+          "previous_trace_io_ms": 0.4412,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 983.2743,
+          "previous_trace_io_ms": 0.6429
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 984.3876,
+          "previous_trace_io_ms": 0.4028
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1039.3146,
+          "previous_trace_io_ms": 0.4907
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1046.4939,
+          "previous_trace_io_ms": 0.7486,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1063.8754,
+          "previous_trace_io_ms": 0.4133,
+          "http_status": 500
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1066.6696,
+          "previous_trace_io_ms": 0.2722,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 396.3659,
+      "context": {
+        "run_id": "checkout-race-239f59b57eb6",
+        "scenario": "rollback",
+        "worker": "first",
+        "spid": 76,
+        "pid": 17500
+      }
+    },
+    {
+      "file": "stability-worker-trace-17644-176344942387300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0257,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 36.3759,
+          "previous_trace_io_ms": 1.0121
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 419.9784,
+          "previous_trace_io_ms": 0.4329
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 432.9554,
+          "previous_trace_io_ms": 2.4537
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 476.8871,
+          "previous_trace_io_ms": 0.4547
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 486.782,
+          "previous_trace_io_ms": 0.3968
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 487.3887,
+          "previous_trace_io_ms": 0.6039
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1324.9588,
+          "previous_trace_io_ms": 0.3156
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1334.3982,
+          "previous_trace_io_ms": 1.9089
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1729.623,
+          "previous_trace_io_ms": 0.4012,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1730.0669,
+          "previous_trace_io_ms": 0.396
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1947.4513,
+          "previous_trace_io_ms": 0.3141,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1981.4763,
+          "previous_trace_io_ms": 0.4197,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 2021.5865,
+          "previous_trace_io_ms": 0.3365,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2061.9974,
+          "previous_trace_io_ms": 0.5812,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2078.0313,
+          "previous_trace_io_ms": 0.4192,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2090.5273,
+          "previous_trace_io_ms": 0.2984,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 2095.1494,
+          "previous_trace_io_ms": 1.1302,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 486.782,
+      "context": {
+        "run_id": "checkout-race-89c17d27cdbf",
+        "scenario": "day_change",
+        "worker": "second",
+        "spid": 77,
+        "pid": 17644
+      }
+    },
+    {
+      "file": "stability-worker-trace-17724-177565411950200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0267,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 51.0113,
+          "previous_trace_io_ms": 1.1022
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 515.8748,
+          "previous_trace_io_ms": 0.4998
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 526.5838,
+          "previous_trace_io_ms": 0.5976
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 582.6828,
+          "previous_trace_io_ms": 0.5297
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 590.1729,
+          "previous_trace_io_ms": 0.3942
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 590.8047,
+          "previous_trace_io_ms": 0.6294
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1325.0958,
+          "previous_trace_io_ms": 0.2855
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1334.0282,
+          "previous_trace_io_ms": 0.723
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1611.6816,
+          "previous_trace_io_ms": 0.3685,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1615.7731,
+          "previous_trace_io_ms": 0.4112,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 590.1729,
+      "context": {
+        "run_id": "discounts-race-59a1549241d6",
+        "scenario": "same",
+        "worker": "second",
+        "spid": 79,
+        "pid": 17724
+      }
+    },
+    {
+      "file": "stability-worker-trace-18300-177536914193600.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0247,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.1007,
+          "previous_trace_io_ms": 1.1559
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 510.2283,
+          "previous_trace_io_ms": 0.4568
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 555.0027,
+          "previous_trace_io_ms": 33.6394
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 664.7824,
+          "previous_trace_io_ms": 0.3765
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 680.9999,
+          "previous_trace_io_ms": 0.4594
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 681.6111,
+          "previous_trace_io_ms": 0.6089
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 933.7645,
+          "previous_trace_io_ms": 0.3719
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 941.5805,
+          "previous_trace_io_ms": 0.494
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1191.5288,
+          "previous_trace_io_ms": 0.3942,
+          "http_status": 403
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1195.7716,
+          "previous_trace_io_ms": 0.3867,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 680.9999,
+      "context": {
+        "run_id": "discounts-race-fe11456871a0",
+        "scenario": "permission",
+        "worker": "second",
+        "spid": 78,
+        "pid": 18300
+      }
+    },
+    {
+      "file": "stability-worker-trace-18504-177516101805200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0292,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 55.673,
+          "previous_trace_io_ms": 1.1321
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 517.3652,
+          "previous_trace_io_ms": 0.6927
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 529.2947,
+          "previous_trace_io_ms": 0.6755
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 593.3336,
+          "previous_trace_io_ms": 0.5305
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 606.6729,
+          "previous_trace_io_ms": 0.4561
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 607.4855,
+          "previous_trace_io_ms": 0.8123
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 666.9482,
+          "previous_trace_io_ms": 0.3751
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 677.2264,
+          "previous_trace_io_ms": 1.2929
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 995.9537,
+          "previous_trace_io_ms": 0.3738,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1079.5276,
+          "previous_trace_io_ms": 0.3848,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1127.7149,
+          "previous_trace_io_ms": 0.4005,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1331.7246,
+          "previous_trace_io_ms": 0.3579,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1332.1141,
+          "previous_trace_io_ms": 0.3371,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1342.294,
+          "previous_trace_io_ms": 0.2856
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1343.3502,
+          "previous_trace_io_ms": 0.3746
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1732.3379,
+          "previous_trace_io_ms": 0.3052
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1737.4605,
+          "previous_trace_io_ms": 0.4258,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1755.0482,
+          "previous_trace_io_ms": 0.4187,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1759.3531,
+          "previous_trace_io_ms": 0.3662,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 606.6729,
+      "context": {
+        "run_id": "discounts-race-a89e6f9a3cc7",
+        "scenario": "checkout",
+        "worker": "first",
+        "spid": 74,
+        "pid": 18504
+      }
+    },
+    {
+      "file": "stability-worker-trace-19464-176344923443300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0239,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 41.7393,
+          "previous_trace_io_ms": 0.8291
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 438.9521,
+          "previous_trace_io_ms": 1.4261
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 451.8921,
+          "previous_trace_io_ms": 0.3763
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 495.8454,
+          "previous_trace_io_ms": 0.6126
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 503.1446,
+          "previous_trace_io_ms": 0.4228
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 504.4816,
+          "previous_trace_io_ms": 1.3333
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 563.7051,
+          "previous_trace_io_ms": 0.8053
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 571.3054,
+          "previous_trace_io_ms": 0.3878
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 838.3586,
+          "previous_trace_io_ms": 0.3684,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 995.7583,
+          "previous_trace_io_ms": 0.3734,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1017.0747,
+          "previous_trace_io_ms": 0.5855,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1083.3159,
+          "previous_trace_io_ms": 0.3584,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1234.5138,
+          "previous_trace_io_ms": 0.4509,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1322.6311,
+          "previous_trace_io_ms": 0.5344
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1323.7352,
+          "previous_trace_io_ms": 0.4427
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1790.4395,
+          "previous_trace_io_ms": 0.2687
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1795.5944,
+          "previous_trace_io_ms": 1.3668,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1810.5196,
+          "previous_trace_io_ms": 0.3657,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1815.8968,
+          "previous_trace_io_ms": 0.3807,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 503.1446,
+      "context": {
+        "run_id": "checkout-race-89c17d27cdbf",
+        "scenario": "day_change",
+        "worker": "first",
+        "spid": 76,
+        "pid": 19464
+      }
+    },
+    {
+      "file": "stability-worker-trace-19760-177548819949300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0267,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.2352,
+          "previous_trace_io_ms": 1.0164
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 510.7263,
+          "previous_trace_io_ms": 0.4259
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 526.9103,
+          "previous_trace_io_ms": 0.6336
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 581.9896,
+          "previous_trace_io_ms": 0.3989
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 593.9081,
+          "previous_trace_io_ms": 0.3679
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 594.4951,
+          "previous_trace_io_ms": 0.5853
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 721.9321,
+          "previous_trace_io_ms": 0.29
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 737.4878,
+          "previous_trace_io_ms": 0.4728
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1116.4399,
+          "previous_trace_io_ms": 0.5009,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1117.021,
+          "previous_trace_io_ms": 0.5248
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1229.469,
+          "previous_trace_io_ms": 0.4811,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1292.6055,
+          "previous_trace_io_ms": 0.628,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 4753.2919,
+          "previous_trace_io_ms": 0.4141,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 4939.6518,
+          "previous_trace_io_ms": 0.2884,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 5011.8891,
+          "previous_trace_io_ms": 0.5667,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 5052.6926,
+          "previous_trace_io_ms": 0.4411,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 5262.0682,
+          "previous_trace_io_ms": 0.4726,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 5262.6198,
+          "previous_trace_io_ms": 0.4903,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 5273.662,
+          "previous_trace_io_ms": 0.6744,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 5289.5595,
+          "previous_trace_io_ms": 0.3824,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 5293.7501,
+          "previous_trace_io_ms": 0.364,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 593.9081,
+      "context": {
+        "run_id": "discounts-race-240c661b4c5d",
+        "scenario": "deadlock",
+        "worker": "second",
+        "spid": 82,
+        "pid": 19760
+      }
+    },
+    {
+      "file": "stability-worker-trace-19864-176310628350900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0211,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 49.916,
+          "previous_trace_io_ms": 0.9686
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 488.4481,
+          "previous_trace_io_ms": 0.6044
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 500.1035,
+          "previous_trace_io_ms": 0.5167
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 553.9119,
+          "previous_trace_io_ms": 2.6769
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 562.8137,
+          "previous_trace_io_ms": 0.5017
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 563.4264,
+          "previous_trace_io_ms": 0.6104
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 620.0817,
+          "previous_trace_io_ms": 0.3404
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 625.93,
+          "previous_trace_io_ms": 0.3454
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 894.4044,
+          "previous_trace_io_ms": 0.2953,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 958.8849,
+          "previous_trace_io_ms": 0.2924,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 976.5874,
+          "previous_trace_io_ms": 0.3791,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1030.9167,
+          "previous_trace_io_ms": 0.3059,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1095.0406,
+          "previous_trace_io_ms": 0.48,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1112.7301,
+          "previous_trace_io_ms": 0.4313
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1113.7198,
+          "previous_trace_io_ms": 0.3205
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1469.2022,
+          "previous_trace_io_ms": 0.2802
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1473.8346,
+          "previous_trace_io_ms": 0.3806,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1489.9184,
+          "previous_trace_io_ms": 0.3589,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1493.0512,
+          "previous_trace_io_ms": 0.3654,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 562.8137,
+      "context": {
+        "run_id": "checkout-race-9c53adb417f7",
+        "scenario": "two_sales",
+        "worker": "first",
+        "spid": 76,
+        "pid": 19864
+      }
+    },
+    {
+      "file": "stability-worker-trace-20008-177509813020700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0294,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 52.9041,
+          "previous_trace_io_ms": 1.2712
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 528.0083,
+          "previous_trace_io_ms": 0.4629
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 540.7272,
+          "previous_trace_io_ms": 1
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 591.8737,
+          "previous_trace_io_ms": 0.5119
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 600.2752,
+          "previous_trace_io_ms": 0.4352
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 600.9434,
+          "previous_trace_io_ms": 0.6658
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 661.8171,
+          "previous_trace_io_ms": 0.3308
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 670.8991,
+          "previous_trace_io_ms": 0.3992
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 983.4985,
+          "previous_trace_io_ms": 0.3811,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1025.2541,
+          "previous_trace_io_ms": 0.2996,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1068.8638,
+          "previous_trace_io_ms": 0.4458,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1371.8174,
+          "previous_trace_io_ms": 0.4466,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1372.2498,
+          "previous_trace_io_ms": 0.3798,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1382.814,
+          "previous_trace_io_ms": 0.3087
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1383.9938,
+          "previous_trace_io_ms": 0.4686
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1794.1158,
+          "previous_trace_io_ms": 0.3342
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1796.4181,
+          "previous_trace_io_ms": 0.3609,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1812.0181,
+          "previous_trace_io_ms": 0.3809,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1817.2597,
+          "previous_trace_io_ms": 0.4137,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 600.2752,
+      "context": {
+        "run_id": "discounts-race-e2cad4d9a217",
+        "scenario": "cancel",
+        "worker": "first",
+        "spid": 73,
+        "pid": 20008
+      }
+    },
+    {
+      "file": "stability-worker-trace-20164-177509834225500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0271,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 50.9006,
+          "previous_trace_io_ms": 1.0881
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 520.0442,
+          "previous_trace_io_ms": 0.4922
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 533.8725,
+          "previous_trace_io_ms": 0.9061
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 583.0463,
+          "previous_trace_io_ms": 0.4169
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 589.8114,
+          "previous_trace_io_ms": 0.3783
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 590.3982,
+          "previous_trace_io_ms": 0.5846
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1423.3115,
+          "previous_trace_io_ms": 0.2732
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1431.9853,
+          "previous_trace_io_ms": 0.411
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1733.62,
+          "previous_trace_io_ms": 0.3863,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1734.0432,
+          "previous_trace_io_ms": 0.3722
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1833.1686,
+          "previous_trace_io_ms": 0.2797,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1892.109,
+          "previous_trace_io_ms": 0.5442,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1895.5937,
+          "previous_trace_io_ms": 0.7617,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1896.2766,
+          "previous_trace_io_ms": 0.4254,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1948.6122,
+          "previous_trace_io_ms": 0.3483,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1961.164,
+          "previous_trace_io_ms": 0.442,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1965.6259,
+          "previous_trace_io_ms": 0.3972,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 589.8114,
+      "context": {
+        "run_id": "discounts-race-e2cad4d9a217",
+        "scenario": "cancel",
+        "worker": "second",
+        "spid": 74,
+        "pid": 20164
+      }
+    },
+    {
+      "file": "stability-worker-trace-20564-176315237509900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0267,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 46.9416,
+          "previous_trace_io_ms": 0.9
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 450.1508,
+          "previous_trace_io_ms": 0.4807
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 463.9009,
+          "previous_trace_io_ms": 0.3495
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 505.2236,
+          "previous_trace_io_ms": 0.6305
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 519.6822,
+          "previous_trace_io_ms": 0.3139
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 520.2845,
+          "previous_trace_io_ms": 0.6004
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1173.9535,
+          "previous_trace_io_ms": 0.2969
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1183.4349,
+          "previous_trace_io_ms": 1.4366
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1422.3368,
+          "previous_trace_io_ms": 0.4065,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1422.8166,
+          "previous_trace_io_ms": 0.3901
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1567.6468,
+          "previous_trace_io_ms": 0.4065,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1568.0939,
+          "previous_trace_io_ms": 0.2526,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1587.6016,
+          "previous_trace_io_ms": 0.2733,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1600.0944,
+          "previous_trace_io_ms": 0.2595,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1602.974,
+          "previous_trace_io_ms": 0.309,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 519.6822,
+      "context": {
+        "run_id": "checkout-race-cf54771b103d",
+        "scenario": "mixed",
+        "worker": "second",
+        "spid": 77,
+        "pid": 20564
+      }
+    },
+    {
+      "file": "stability-worker-trace-20704-177522985786100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0274,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 46.8789,
+          "previous_trace_io_ms": 1.0383
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 520.2562,
+          "previous_trace_io_ms": 0.4679
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 539.2218,
+          "previous_trace_io_ms": 0.6311
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 593.4306,
+          "previous_trace_io_ms": 0.4238
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 605.93,
+          "previous_trace_io_ms": 0.8752
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 606.5999,
+          "previous_trace_io_ms": 0.6684
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1342.0975,
+          "previous_trace_io_ms": 0.3311
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1350.413,
+          "previous_trace_io_ms": 0.4178
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1627.2946,
+          "previous_trace_io_ms": 0.3884,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1627.7768,
+          "previous_trace_io_ms": 0.4326
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1838.965,
+          "previous_trace_io_ms": 0.3067,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1904.2912,
+          "previous_trace_io_ms": 0.5441,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1907.1157,
+          "previous_trace_io_ms": 0.3861,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1907.8446,
+          "previous_trace_io_ms": 0.454,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1997.8782,
+          "previous_trace_io_ms": 0.3591,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2008.3333,
+          "previous_trace_io_ms": 0.3866,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 2015.0239,
+          "previous_trace_io_ms": 0.3218,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 605.93,
+      "context": {
+        "run_id": "discounts-race-7ef01894dd8d",
+        "scenario": "replace",
+        "worker": "second",
+        "spid": 76,
+        "pid": 20704
+      }
+    },
+    {
+      "file": "stability-worker-trace-21052-177522965977100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0501,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 53.404,
+          "previous_trace_io_ms": 2.2542
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 540.336,
+          "previous_trace_io_ms": 0.6006
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 554.7963,
+          "previous_trace_io_ms": 0.8566
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 613.2781,
+          "previous_trace_io_ms": 2.0242
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 629.4945,
+          "previous_trace_io_ms": 0.9192
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 630.5915,
+          "previous_trace_io_ms": 1.0925
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 663.8267,
+          "previous_trace_io_ms": 0.3688
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 673.1954,
+          "previous_trace_io_ms": 0.5481
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 983.2139,
+          "previous_trace_io_ms": 0.3848,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1058.0228,
+          "previous_trace_io_ms": 0.3722,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1092.7584,
+          "previous_trace_io_ms": 0.4752,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1296.9871,
+          "previous_trace_io_ms": 0.4212,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1297.531,
+          "previous_trace_io_ms": 0.461,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1304.7784,
+          "previous_trace_io_ms": 0.4266
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1306.0472,
+          "previous_trace_io_ms": 0.3397
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1695.3989,
+          "previous_trace_io_ms": 0.3177
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1700.0579,
+          "previous_trace_io_ms": 1.492,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1718.2874,
+          "previous_trace_io_ms": 0.3784,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1722.4263,
+          "previous_trace_io_ms": 0.3878,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 629.4945,
+      "context": {
+        "run_id": "discounts-race-7ef01894dd8d",
+        "scenario": "replace",
+        "worker": "first",
+        "spid": 77,
+        "pid": 21052
+      }
+    },
+    {
+      "file": "stability-worker-trace-21172-177490160866200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0249,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 52.4182,
+          "previous_trace_io_ms": 1.5653
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 506.5648,
+          "previous_trace_io_ms": 0.6385
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 518.2384,
+          "previous_trace_io_ms": 1.0537
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 574.0384,
+          "previous_trace_io_ms": 0.6519
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 589.2511,
+          "previous_trace_io_ms": 0.5322
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 589.837,
+          "previous_trace_io_ms": 0.5825
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 616.2868,
+          "previous_trace_io_ms": 0.2963
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 626.1813,
+          "previous_trace_io_ms": 0.3996
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1039.4249,
+          "previous_trace_io_ms": 0.3856,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1128.9891,
+          "previous_trace_io_ms": 0.3926,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1176.0162,
+          "previous_trace_io_ms": 0.4908,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1381.3287,
+          "previous_trace_io_ms": 0.3244,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1381.7093,
+          "previous_trace_io_ms": 0.3257,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1391.4657,
+          "previous_trace_io_ms": 0.295
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1392.5418,
+          "previous_trace_io_ms": 0.3818
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1783.0018,
+          "previous_trace_io_ms": 0.3982
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1787.4025,
+          "previous_trace_io_ms": 0.6929,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1804.8104,
+          "previous_trace_io_ms": 0.4114,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1808.7345,
+          "previous_trace_io_ms": 0.3783,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 589.2511,
+      "context": {
+        "run_id": "discounts-race-ec2062efa00a",
+        "scenario": "add",
+        "worker": "first",
+        "spid": 71,
+        "pid": 21172
+      }
+    },
+    {
+      "file": "stability-worker-trace-21220-177529855157600.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.027,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.158,
+          "previous_trace_io_ms": 1.1769
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 529.0036,
+          "previous_trace_io_ms": 0.5899
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 541.6418,
+          "previous_trace_io_ms": 0.5662
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 595.1285,
+          "previous_trace_io_ms": 0.4541
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 604.0698,
+          "previous_trace_io_ms": 0.4308
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 605.1238,
+          "previous_trace_io_ms": 1.0533
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 668.0081,
+          "previous_trace_io_ms": 0.4313
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 677.2532,
+          "previous_trace_io_ms": 0.6372
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1013.877,
+          "previous_trace_io_ms": 0.5399,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1062.6439,
+          "previous_trace_io_ms": 0.3947,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1121.8118,
+          "previous_trace_io_ms": 0.4135,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1308.9145,
+          "previous_trace_io_ms": 1.1966,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1309.3618,
+          "previous_trace_io_ms": 0.39,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1320.2927,
+          "previous_trace_io_ms": 0.3111
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1321.6411,
+          "previous_trace_io_ms": 0.3996
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1699.4857,
+          "previous_trace_io_ms": 0.3727
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1705.3103,
+          "previous_trace_io_ms": 1.8421,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1723.9128,
+          "previous_trace_io_ms": 0.3788,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1728.4544,
+          "previous_trace_io_ms": 0.6386,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 604.0698,
+      "context": {
+        "run_id": "discounts-race-7aa98e38c0b8",
+        "scenario": "delete",
+        "worker": "first",
+        "spid": 77,
+        "pid": 21220
+      }
+    },
+    {
+      "file": "stability-worker-trace-21972-177502749323800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0303,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 54.6425,
+          "previous_trace_io_ms": 3.8953
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 560.18,
+          "previous_trace_io_ms": 0.4631
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 574.7903,
+          "previous_trace_io_ms": 1.5221
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 624.0984,
+          "previous_trace_io_ms": 0.5182
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 632.4908,
+          "previous_trace_io_ms": 0.427
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 634.276,
+          "previous_trace_io_ms": 1.7808
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1448.2808,
+          "previous_trace_io_ms": 0.3385
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1456.6283,
+          "previous_trace_io_ms": 0.416
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1739.6021,
+          "previous_trace_io_ms": 0.4419,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1740.0085,
+          "previous_trace_io_ms": 0.3621
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1826.08,
+          "previous_trace_io_ms": 0.3237,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1872.6827,
+          "previous_trace_io_ms": 0.4488,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1875.4177,
+          "previous_trace_io_ms": 0.4126,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1876.1666,
+          "previous_trace_io_ms": 0.4755,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1929.5995,
+          "previous_trace_io_ms": 0.3965,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1954.8751,
+          "previous_trace_io_ms": 0.4185,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1958.8012,
+          "previous_trace_io_ms": 0.4014,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 632.4908,
+      "context": {
+        "run_id": "discounts-race-40951068e049",
+        "scenario": "remove",
+        "worker": "second",
+        "spid": 77,
+        "pid": 21972
+      }
+    },
+    {
+      "file": "stability-worker-trace-22332-177559842020700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0214,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.9712,
+          "previous_trace_io_ms": 1.0895
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 460.3523,
+          "previous_trace_io_ms": 0.6003
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 471.6158,
+          "previous_trace_io_ms": 0.5201
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 512.3725,
+          "previous_trace_io_ms": 0.3174
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 519.8831,
+          "previous_trace_io_ms": 0.316
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 528.666,
+          "previous_trace_io_ms": 0.5706
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 798.9311,
+          "previous_trace_io_ms": 0.4348,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 890.0918,
+          "previous_trace_io_ms": 0.4314,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 945.3109,
+          "previous_trace_io_ms": 0.4511,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1131.5534,
+          "previous_trace_io_ms": 0.3844,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1132.0156,
+          "previous_trace_io_ms": 0.398,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1145.5028,
+          "previous_trace_io_ms": 0.3066,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1159.4185,
+          "previous_trace_io_ms": 0.3774,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1163.627,
+          "previous_trace_io_ms": 0.3854,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 519.8831,
+      "context": {
+        "run_id": "discounts-race-f167e82e172e",
+        "scenario": "rollback",
+        "worker": "retry",
+        "spid": 81,
+        "pid": 22332
+      }
+    },
+    {
+      "file": "stability-worker-trace-22920-176335523721300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.024,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 31.1139,
+          "previous_trace_io_ms": 0.8687
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 386.212,
+          "previous_trace_io_ms": 0.368
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 393.1975,
+          "previous_trace_io_ms": 0.3039
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 431.6462,
+          "previous_trace_io_ms": 0.4757
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 440.5748,
+          "previous_trace_io_ms": 0.3027
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 447.8427,
+          "previous_trace_io_ms": 0.6
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 665.7567,
+          "previous_trace_io_ms": 0.4402,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 692.9471,
+          "previous_trace_io_ms": 0.3256,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 710.5888,
+          "previous_trace_io_ms": 0.2926,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 724.5814,
+          "previous_trace_io_ms": 0.338,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 440.5748,
+      "context": {
+        "run_id": "checkout-race-67ba6b12c365",
+        "scenario": "lost",
+        "worker": "retry",
+        "spid": 76,
+        "pid": 22920
+      }
+    },
+    {
+      "file": "stability-worker-trace-22952-177565387051900.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0258,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 48.6854,
+          "previous_trace_io_ms": 0.8315
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 518.1706,
+          "previous_trace_io_ms": 0.6272
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 529.3375,
+          "previous_trace_io_ms": 0.7451
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 580.2802,
+          "previous_trace_io_ms": 0.3649
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 589.7792,
+          "previous_trace_io_ms": 0.3519
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 590.3899,
+          "previous_trace_io_ms": 0.6077
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 650.9291,
+          "previous_trace_io_ms": 0.2962
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 658.6761,
+          "previous_trace_io_ms": 0.5687
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 998.7881,
+          "previous_trace_io_ms": 0.3768,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1053.9288,
+          "previous_trace_io_ms": 0.3264,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1108.1077,
+          "previous_trace_io_ms": 0.4923,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1296.4545,
+          "previous_trace_io_ms": 0.3817,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1296.9488,
+          "previous_trace_io_ms": 0.4349,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1306.6158,
+          "previous_trace_io_ms": 0.2931
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1307.7264,
+          "previous_trace_io_ms": 0.4075
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1766.0234,
+          "previous_trace_io_ms": 0.2663
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1770.2318,
+          "previous_trace_io_ms": 0.8009,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1783.1499,
+          "previous_trace_io_ms": 0.3881,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1789.0773,
+          "previous_trace_io_ms": 0.3907,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 589.7792,
+      "context": {
+        "run_id": "discounts-race-59a1549241d6",
+        "scenario": "same",
+        "worker": "first",
+        "spid": 65,
+        "pid": 22952
+      }
+    },
+    {
+      "file": "stability-worker-trace-23772-176293904486500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0223,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 36.0982,
+          "previous_trace_io_ms": 0.9016
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 410.5848,
+          "previous_trace_io_ms": 0.3569
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 423.0834,
+          "previous_trace_io_ms": 3.1189
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 467.2478,
+          "previous_trace_io_ms": 0.3026
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 474.9611,
+          "previous_trace_io_ms": 0.4619
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 475.5263,
+          "previous_trace_io_ms": 0.5629
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1082.2068,
+          "previous_trace_io_ms": 0.2704
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1088.5066,
+          "previous_trace_io_ms": 0.3884
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1333.4483,
+          "previous_trace_io_ms": 0.3652,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1333.8366,
+          "previous_trace_io_ms": 0.3394
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1491.696,
+          "previous_trace_io_ms": 0.275,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1492.2209,
+          "previous_trace_io_ms": 0.285,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1518.6194,
+          "previous_trace_io_ms": 0.3308,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1531.4346,
+          "previous_trace_io_ms": 0.3505,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1534.4947,
+          "previous_trace_io_ms": 0.3442,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 474.9611,
+      "context": {
+        "run_id": "checkout-race-328256070e7b",
+        "scenario": "two_keys",
+        "worker": "second",
+        "spid": 77,
+        "pid": 23772
+      }
+    },
+    {
+      "file": "stability-worker-trace-23876-176310652058200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0258,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 43.8918,
+          "previous_trace_io_ms": 0.9342
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 485.8056,
+          "previous_trace_io_ms": 0.3408
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 497.4214,
+          "previous_trace_io_ms": 1.8485
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 545.6066,
+          "previous_trace_io_ms": 0.3842
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 557.0421,
+          "previous_trace_io_ms": 0.4111
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 557.7716,
+          "previous_trace_io_ms": 0.7271
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1145.9368,
+          "previous_trace_io_ms": 0.2632
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1153.8798,
+          "previous_trace_io_ms": 0.5677
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1402.3018,
+          "previous_trace_io_ms": 0.2783,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1402.6125,
+          "previous_trace_io_ms": 0.2727
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1605.7547,
+          "previous_trace_io_ms": 0.2307,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1624.563,
+          "previous_trace_io_ms": 0.2902,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1659.7976,
+          "previous_trace_io_ms": 0.2696,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1691.2978,
+          "previous_trace_io_ms": 0.3885,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1707.9175,
+          "previous_trace_io_ms": 0.5249,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1720.4097,
+          "previous_trace_io_ms": 0.338,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1723.5597,
+          "previous_trace_io_ms": 0.3954,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 557.0421,
+      "context": {
+        "run_id": "checkout-race-9c53adb417f7",
+        "scenario": "two_sales",
+        "worker": "second",
+        "spid": 77,
+        "pid": 23876
+      }
+    },
+    {
+      "file": "stability-worker-trace-23920-176350439962400.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0263,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 164.2208,
+          "previous_trace_io_ms": 1.1734
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 665.4446,
+          "previous_trace_io_ms": 0.6984
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 678.6604,
+          "previous_trace_io_ms": 2.4922
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 729.1765,
+          "previous_trace_io_ms": 0.3854
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 745.0486,
+          "previous_trace_io_ms": 0.3988
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 745.6983,
+          "previous_trace_io_ms": 0.647
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1422.8601,
+          "previous_trace_io_ms": 0.3433
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1429.7517,
+          "previous_trace_io_ms": 0.4299
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1890.839,
+          "previous_trace_io_ms": 0.3591,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1891.2854,
+          "previous_trace_io_ms": 0.3967
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 2037.7631,
+          "previous_trace_io_ms": 0.2681,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2074.5529,
+          "previous_trace_io_ms": 1.1051,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 2131.9935,
+          "previous_trace_io_ms": 0.3993,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2176.564,
+          "previous_trace_io_ms": 0.4373,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2193.508,
+          "previous_trace_io_ms": 0.4654,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2203.6322,
+          "previous_trace_io_ms": 0.3118,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 2207.9312,
+          "previous_trace_io_ms": 0.3287,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 745.0486,
+      "context": {
+        "run_id": "checkout-race-43b0c3430b66",
+        "scenario": "utc_local",
+        "worker": "second",
+        "spid": 77,
+        "pid": 23920
+      }
+    },
+    {
+      "file": "stability-worker-trace-24204-176304751297100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0257,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 46.2912,
+          "previous_trace_io_ms": 1.1128
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 464.8806,
+          "previous_trace_io_ms": 0.3497
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 478.0848,
+          "previous_trace_io_ms": 0.538
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 517.5683,
+          "previous_trace_io_ms": 0.3257
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 531.324,
+          "previous_trace_io_ms": 0.4498
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 531.8895,
+          "previous_trace_io_ms": 0.5631
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1052.2931,
+          "previous_trace_io_ms": 0.3085
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1059.6913,
+          "previous_trace_io_ms": 0.5377
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1281.654,
+          "previous_trace_io_ms": 0.2993,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1284.5272,
+          "previous_trace_io_ms": 0.2786,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 531.324,
+      "context": {
+        "run_id": "checkout-race-dc8a1cad9510",
+        "scenario": "different",
+        "worker": "second",
+        "spid": 76,
+        "pid": 24204
+      }
+    },
+    {
+      "file": "stability-worker-trace-2744-176350430378800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0253,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 159.172,
+          "previous_trace_io_ms": 0.9159
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 670.1517,
+          "previous_trace_io_ms": 0.6265
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 682.6393,
+          "previous_trace_io_ms": 0.4517
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 734.0185,
+          "previous_trace_io_ms": 0.6436
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 741.7691,
+          "previous_trace_io_ms": 0.3857
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 742.3601,
+          "previous_trace_io_ms": 0.589
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 794.5124,
+          "previous_trace_io_ms": 0.2833
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 803.6861,
+          "previous_trace_io_ms": 0.4689
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1121.1068,
+          "previous_trace_io_ms": 0.4083,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1233.4634,
+          "previous_trace_io_ms": 0.4113,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1246.5491,
+          "previous_trace_io_ms": 0.3679,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1303.5073,
+          "previous_trace_io_ms": 0.3461,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1385.9622,
+          "previous_trace_io_ms": 0.5617,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1407.0908,
+          "previous_trace_io_ms": 0.4741
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1408.2975,
+          "previous_trace_io_ms": 0.3983
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1927.9569,
+          "previous_trace_io_ms": 0.3149
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1933.669,
+          "previous_trace_io_ms": 1.1548,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1946.8446,
+          "previous_trace_io_ms": 0.3608,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1951.2723,
+          "previous_trace_io_ms": 0.3679,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 741.7691,
+      "context": {
+        "run_id": "checkout-race-43b0c3430b66",
+        "scenario": "utc_local",
+        "worker": "first",
+        "spid": 76,
+        "pid": 2744
+      }
+    },
+    {
+      "file": "stability-worker-trace-3732-177558334575700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0266,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 37.169,
+          "previous_trace_io_ms": 0.8623
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 456.0715,
+          "previous_trace_io_ms": 0.6424
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 468.9052,
+          "previous_trace_io_ms": 0.4193
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 518.4343,
+          "previous_trace_io_ms": 0.6144
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 526.1644,
+          "previous_trace_io_ms": 0.352
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 527.5865,
+          "previous_trace_io_ms": 1.4157
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 559.5714,
+          "previous_trace_io_ms": 0.6264
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 568.1687,
+          "previous_trace_io_ms": 0.4072
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 863.866,
+          "previous_trace_io_ms": 0.38,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 932.4753,
+          "previous_trace_io_ms": 0.3326,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 988.7424,
+          "previous_trace_io_ms": 0.4604,
+          "transaction_level": 3
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1184.0742,
+          "previous_trace_io_ms": 0.4005
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1185.2961,
+          "previous_trace_io_ms": 0.5053
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1209.0956,
+          "previous_trace_io_ms": 0.323
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1214.0987,
+          "previous_trace_io_ms": 0.5668,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1215.1519,
+          "previous_trace_io_ms": 0.3883,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1216.2188,
+          "previous_trace_io_ms": 0.3849,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1237.9473,
+          "previous_trace_io_ms": 0.4252,
+          "http_status": 500
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1241.8651,
+          "previous_trace_io_ms": 0.34,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 526.1644,
+      "context": {
+        "run_id": "discounts-race-f167e82e172e",
+        "scenario": "rollback",
+        "worker": "first",
+        "spid": 81,
+        "pid": 3732
+      }
+    },
+    {
+      "file": "stability-worker-trace-4684-176293884536200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0411,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 42.4225,
+          "previous_trace_io_ms": 1.7639
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 430.5606,
+          "previous_trace_io_ms": 0.4715
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 442.0556,
+          "previous_trace_io_ms": 0.6594
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 487.2014,
+          "previous_trace_io_ms": 0.5655
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 496.8468,
+          "previous_trace_io_ms": 0.4418
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 497.4289,
+          "previous_trace_io_ms": 0.5778
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 531.0889,
+          "previous_trace_io_ms": 1.4751
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 539.9285,
+          "previous_trace_io_ms": 0.4905
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 795.4446,
+          "previous_trace_io_ms": 0.341,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 928.1393,
+          "previous_trace_io_ms": 0.3457,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 960.0615,
+          "previous_trace_io_ms": 0.3593,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 996.4857,
+          "previous_trace_io_ms": 0.3308,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1030.1873,
+          "previous_trace_io_ms": 0.3877,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1048.4637,
+          "previous_trace_io_ms": 0.6691
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1050.4133,
+          "previous_trace_io_ms": 0.492
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1397.2376,
+          "previous_trace_io_ms": 0.3125
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1401.8168,
+          "previous_trace_io_ms": 1.5386,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1415.2892,
+          "previous_trace_io_ms": 0.3753,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1419.6939,
+          "previous_trace_io_ms": 0.4626,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 496.8468,
+      "context": {
+        "run_id": "checkout-race-328256070e7b",
+        "scenario": "two_keys",
+        "worker": "first",
+        "spid": 76,
+        "pid": 4684
+      }
+    },
+    {
+      "file": "stability-worker-trace-4864-176334310715000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0279,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 37.5559,
+          "previous_trace_io_ms": 1.0205
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 336.4967,
+          "previous_trace_io_ms": 0.5478
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 345.2565,
+          "previous_trace_io_ms": 0.3774
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 388.5479,
+          "previous_trace_io_ms": 2.3634
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 394.9366,
+          "previous_trace_io_ms": 0.343
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 395.4789,
+          "previous_trace_io_ms": 0.5404
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 430.8003,
+          "previous_trace_io_ms": 0.2739
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 438.5736,
+          "previous_trace_io_ms": 0.3825
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 709.6984,
+          "previous_trace_io_ms": 0.3607,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 774.0577,
+          "previous_trace_io_ms": 0.2708,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 789.486,
+          "previous_trace_io_ms": 0.3085,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 838.7217,
+          "previous_trace_io_ms": 0.2896,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 894.5982,
+          "previous_trace_io_ms": 0.3974,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 909.7716,
+          "previous_trace_io_ms": 0.4564
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 910.7003,
+          "previous_trace_io_ms": 0.306
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 931.781,
+          "previous_trace_io_ms": 0.263
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 935.5799,
+          "previous_trace_io_ms": 0.3788,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 945.9087,
+          "previous_trace_io_ms": 0.3541,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 949.1474,
+          "previous_trace_io_ms": 0.3025,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 394.9366,
+      "context": {
+        "run_id": "checkout-race-67ba6b12c365",
+        "scenario": "lost",
+        "worker": "first",
+        "spid": 76,
+        "pid": 4864
+      }
+    },
+    {
+      "file": "stability-worker-trace-5104-177496329852300.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0254,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 50.3497,
+          "previous_trace_io_ms": 1.1025
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 519.0531,
+          "previous_trace_io_ms": 0.4376
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 532.0327,
+          "previous_trace_io_ms": 0.4513
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 584.2994,
+          "previous_trace_io_ms": 0.9383
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 595.8694,
+          "previous_trace_io_ms": 0.4108
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 596.6797,
+          "previous_trace_io_ms": 0.8259
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 625.2339,
+          "previous_trace_io_ms": 0.3331
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 634.4882,
+          "previous_trace_io_ms": 0.9149
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 930.2546,
+          "previous_trace_io_ms": 0.3976,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1014.5186,
+          "previous_trace_io_ms": 0.377,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1070.5818,
+          "previous_trace_io_ms": 0.4593,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1336.879,
+          "previous_trace_io_ms": 0.3766,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1337.4108,
+          "previous_trace_io_ms": 0.4703,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1361.457,
+          "previous_trace_io_ms": 0.2918
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1365.1054,
+          "previous_trace_io_ms": 0.4324
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1723.8019,
+          "previous_trace_io_ms": 0.3416
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1728.5212,
+          "previous_trace_io_ms": 0.4038,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1742.9459,
+          "previous_trace_io_ms": 0.4457,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1747.6714,
+          "previous_trace_io_ms": 0.5587,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 595.8694,
+      "context": {
+        "run_id": "discounts-race-2c00e804a6dc",
+        "scenario": "quantity",
+        "worker": "first",
+        "spid": 75,
+        "pid": 5104
+      }
+    },
+    {
+      "file": "stability-worker-trace-6968-176298642159200.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.024,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 50.0192,
+          "previous_trace_io_ms": 1.0242
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 498.7888,
+          "previous_trace_io_ms": 0.5465
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 514.5568,
+          "previous_trace_io_ms": 0.4882
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 610.959,
+          "previous_trace_io_ms": 2.7403
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 622.7392,
+          "previous_trace_io_ms": 0.3986
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 623.4616,
+          "previous_trace_io_ms": 0.7201
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 670.5836,
+          "previous_trace_io_ms": 0.3119
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 678.305,
+          "previous_trace_io_ms": 1.2515
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1100.8481,
+          "previous_trace_io_ms": 0.3666,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1357.3567,
+          "previous_trace_io_ms": 1.0355,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1389.2242,
+          "previous_trace_io_ms": 0.7724,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1466.9699,
+          "previous_trace_io_ms": 0.4444,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1541.9607,
+          "previous_trace_io_ms": 0.9386,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1559.504,
+          "previous_trace_io_ms": 0.5503
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1560.6882,
+          "previous_trace_io_ms": 0.446
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 2016.7349,
+          "previous_trace_io_ms": 0.3122
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 2021.667,
+          "previous_trace_io_ms": 0.61,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 2032.7805,
+          "previous_trace_io_ms": 0.3552,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 2037.4175,
+          "previous_trace_io_ms": 0.3628,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 622.7392,
+      "context": {
+        "run_id": "checkout-race-e3fe362d3874",
+        "scenario": "same",
+        "worker": "first",
+        "spid": 76,
+        "pid": 6968
+      }
+    },
+    {
+      "file": "stability-worker-trace-7088-176319549374000.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0276,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 50.1879,
+          "previous_trace_io_ms": 0.9212
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 464.1971,
+          "previous_trace_io_ms": 0.4754
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 472.9,
+          "previous_trace_io_ms": 0.3084
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 519.1,
+          "previous_trace_io_ms": 0.822
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 526.9621,
+          "previous_trace_io_ms": 0.3029
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 528.0594,
+          "previous_trace_io_ms": 1.0946
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 590.2541,
+          "previous_trace_io_ms": 0.3172
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 599.9963,
+          "previous_trace_io_ms": 0.4724,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 702.5578,
+          "previous_trace_io_ms": 0.3515,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 832.6018,
+          "previous_trace_io_ms": 0.4124,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 832.941,
+          "previous_trace_io_ms": 0.3263
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 833.8591,
+          "previous_trace_io_ms": 0.2542
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1224.4426,
+          "previous_trace_io_ms": 0.2583
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1230.1645,
+          "previous_trace_io_ms": 1.034,
+          "transaction_level": 0
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1231.1531,
+          "previous_trace_io_ms": 0.3804,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 526.9621,
+      "context": {
+        "run_id": "checkout-race-bad88c9cc35d",
+        "scenario": "edit",
+        "worker": "first",
+        "spid": 76,
+        "pid": 7088
+      }
+    },
+    {
+      "file": "stability-worker-trace-7928-176330562076600.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0223,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 28.9931,
+          "previous_trace_io_ms": 0.8444
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 326.7008,
+          "previous_trace_io_ms": 0.3663
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 334.7798,
+          "previous_trace_io_ms": 0.3044
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 371.5581,
+          "previous_trace_io_ms": 2.9389
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 377.0293,
+          "previous_trace_io_ms": 0.2629
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 383.1883,
+          "previous_trace_io_ms": 0.4902
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 646.6491,
+          "previous_trace_io_ms": 0.4647,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 710.6078,
+          "previous_trace_io_ms": 0.2873,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 726.5136,
+          "previous_trace_io_ms": 0.3391,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 773.2934,
+          "previous_trace_io_ms": 0.2829,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 823.7401,
+          "previous_trace_io_ms": 0.4065,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 842.5861,
+          "previous_trace_io_ms": 0.4138,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 860.1136,
+          "previous_trace_io_ms": 0.2751,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 863.2622,
+          "previous_trace_io_ms": 0.3241,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 377.0293,
+      "context": {
+        "run_id": "checkout-race-239f59b57eb6",
+        "scenario": "rollback",
+        "worker": "retry",
+        "spid": 76,
+        "pid": 7928
+      }
+    },
+    {
+      "file": "stability-worker-trace-7952-176298670626100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0254,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 44.3336,
+          "previous_trace_io_ms": 0.9118
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 509.9292,
+          "previous_trace_io_ms": 0.3591
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 528.0669,
+          "previous_trace_io_ms": 1.5126
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 602.9228,
+          "previous_trace_io_ms": 2.5533
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 613.3867,
+          "previous_trace_io_ms": 0.6205
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 613.9386,
+          "previous_trace_io_ms": 0.5498
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1588.7236,
+          "previous_trace_io_ms": 0.2828
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1597.7985,
+          "previous_trace_io_ms": 1.4945
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1882.7895,
+          "previous_trace_io_ms": 0.354,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1886.0751,
+          "previous_trace_io_ms": 0.4409,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 613.3867,
+      "context": {
+        "run_id": "checkout-race-e3fe362d3874",
+        "scenario": "same",
+        "worker": "second",
+        "spid": 77,
+        "pid": 7952
+      }
+    },
+    {
+      "file": "stability-worker-trace-8132-177502715172800.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0289,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 76.13,
+          "previous_trace_io_ms": 1.8658
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 588.7596,
+          "previous_trace_io_ms": 0.6975
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 599.3877,
+          "previous_trace_io_ms": 0.6224
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 658.5986,
+          "previous_trace_io_ms": 5.323
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 666.4174,
+          "previous_trace_io_ms": 0.3856
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 667.6418,
+          "previous_trace_io_ms": 0.7319
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 699.5496,
+          "previous_trace_io_ms": 0.623
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 710.3074,
+          "previous_trace_io_ms": 0.391
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1098.7282,
+          "previous_trace_io_ms": 0.3178,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1150.9289,
+          "previous_trace_io_ms": 0.4763,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1206.8541,
+          "previous_trace_io_ms": 0.4229,
+          "transaction_level": 3
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1406.5959,
+          "previous_trace_io_ms": 0.4091,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1407.0729,
+          "previous_trace_io_ms": 0.422,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 1415.3878,
+          "previous_trace_io_ms": 0.3562
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 1416.5204,
+          "previous_trace_io_ms": 0.4499
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1815.7257,
+          "previous_trace_io_ms": 0.3587
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1819.4405,
+          "previous_trace_io_ms": 0.9553,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1832.3993,
+          "previous_trace_io_ms": 0.4289,
+          "http_status": 200
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1836.6526,
+          "previous_trace_io_ms": 0.7805,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 666.4174,
+      "context": {
+        "run_id": "discounts-race-40951068e049",
+        "scenario": "remove",
+        "worker": "first",
+        "spid": 78,
+        "pid": 8132
+      }
+    },
+    {
+      "file": "stability-worker-trace-8764-176339401553100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "transaction.begin",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "query.slow.completed",
+        "transaction.committed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0307,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 43.7034,
+          "previous_trace_io_ms": 0.9863
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 545.0864,
+          "previous_trace_io_ms": 0.4457
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 557.3567,
+          "previous_trace_io_ms": 0.5891
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 609.4473,
+          "previous_trace_io_ms": 0.6987
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 616.2529,
+          "previous_trace_io_ms": 0.386
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 616.8795,
+          "previous_trace_io_ms": 0.6246
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 686.6156,
+          "previous_trace_io_ms": 0.2438
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 695.3566,
+          "previous_trace_io_ms": 0.4061,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 711.6578,
+          "previous_trace_io_ms": 0.3467
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 713.0186,
+          "previous_trace_io_ms": 0.536
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1202.3495,
+          "previous_trace_io_ms": 0.3253
+        },
+        {
+          "phase": "query.slow.completed",
+          "elapsed_ms": 1527.9826,
+          "previous_trace_io_ms": 0.823,
+          "duration_ms": 320.76,
+          "fingerprint": "8084ca39cd047e65b28cf9e8381a8d3d0c4b21b33deb2172206b696a964627b1"
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1581.352,
+          "previous_trace_io_ms": 0.5882,
+          "transaction_level": 0
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1582.5328,
+          "previous_trace_io_ms": 0.3989,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 616.2529,
+      "context": {
+        "run_id": "checkout-race-092eb0b71f38",
+        "scenario": "deadlock",
+        "worker": "first",
+        "spid": 76,
+        "pid": 8764
+      }
+    },
+    {
+      "file": "stability-worker-trace-8824-177496329852100.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "http.begin",
+        "transaction.begin",
+        "security_lock.attempt",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "transaction.rolled_back",
+        "transaction.begin",
+        "transaction.committed",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0255,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 46.8638,
+          "previous_trace_io_ms": 1.0602
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 537.7626,
+          "previous_trace_io_ms": 0.5179
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 551.1787,
+          "previous_trace_io_ms": 0.6591
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 603.3226,
+          "previous_trace_io_ms": 0.4103
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 611.2408,
+          "previous_trace_io_ms": 0.386
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 612.054,
+          "previous_trace_io_ms": 0.7989
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 1407.6733,
+          "previous_trace_io_ms": 0.6719
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 1417.5551,
+          "previous_trace_io_ms": 1.3283
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1678.971,
+          "previous_trace_io_ms": 0.3794,
+          "transaction_level": 1
+        },
+        {
+          "phase": "security_lock.attempt",
+          "elapsed_ms": 1679.4206,
+          "previous_trace_io_ms": 0.392
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1788.8006,
+          "previous_trace_io_ms": 0.3362,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1849.417,
+          "previous_trace_io_ms": 0.5372,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 1852.1785,
+          "previous_trace_io_ms": 0.3803,
+          "transaction_level": 0
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 1852.8545,
+          "previous_trace_io_ms": 0.4366,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1891.8697,
+          "previous_trace_io_ms": 0.3591,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 1903.4722,
+          "previous_trace_io_ms": 0.4087,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1907.4376,
+          "previous_trace_io_ms": 0.3057,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 611.2408,
+      "context": {
+        "run_id": "discounts-race-2c00e804a6dc",
+        "scenario": "quantity",
+        "worker": "second",
+        "spid": 77,
+        "pid": 8824
+      }
+    },
+    {
+      "file": "stability-worker-trace-9108-177536904901500.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "start.waiting",
+        "start.observed",
+        "transaction.begin",
+        "transaction.begin",
+        "transaction.committed",
+        "holding.before_signal",
+        "holding.ready",
+        "release.observed",
+        "transaction.committed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.0285,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 47.176,
+          "previous_trace_io_ms": 1.0312
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 505.6457,
+          "previous_trace_io_ms": 0.5494
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 518.9798,
+          "previous_trace_io_ms": 0.4913
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 674.1964,
+          "previous_trace_io_ms": 24.699
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 687.1164,
+          "previous_trace_io_ms": 0.371
+        },
+        {
+          "phase": "start.waiting",
+          "elapsed_ms": 687.7451,
+          "previous_trace_io_ms": 0.6262
+        },
+        {
+          "phase": "start.observed",
+          "elapsed_ms": 710.1303,
+          "previous_trace_io_ms": 0.3109
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 720.0992,
+          "previous_trace_io_ms": 0.4445,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 725.4485,
+          "previous_trace_io_ms": 0.3948,
+          "transaction_level": 2
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 894.2841,
+          "previous_trace_io_ms": 0.4797,
+          "transaction_level": 1
+        },
+        {
+          "phase": "holding.before_signal",
+          "elapsed_ms": 894.771,
+          "previous_trace_io_ms": 0.4755
+        },
+        {
+          "phase": "holding.ready",
+          "elapsed_ms": 896.5774,
+          "previous_trace_io_ms": 0.3798
+        },
+        {
+          "phase": "release.observed",
+          "elapsed_ms": 1059.0781,
+          "previous_trace_io_ms": 0.9121
+        },
+        {
+          "phase": "transaction.committed",
+          "elapsed_ms": 1064.9705,
+          "previous_trace_io_ms": 0.3937,
+          "transaction_level": 0
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 1066.2568,
+          "previous_trace_io_ms": 0.4109,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 687.1164,
+      "context": {
+        "run_id": "discounts-race-fe11456871a0",
+        "scenario": "permission",
+        "worker": "first",
+        "spid": 80,
+        "pid": 9108
+      }
+    },
+    {
+      "file": "stability-worker-trace-9944-176306485187700.jsonl",
+      "phases": [
+        "autoload.begin",
+        "bootstrap.begin",
+        "bootstrap.ready",
+        "database.guard.begin",
+        "database.ready",
+        "worker.ready",
+        "http.begin",
+        "transaction.begin",
+        "transaction.rolled_back",
+        "http.completed",
+        "process.shutdown"
+      ],
+      "phase_timings": [
+        {
+          "phase": "autoload.begin",
+          "elapsed_ms": 0.017,
+          "previous_trace_io_ms": 0
+        },
+        {
+          "phase": "bootstrap.begin",
+          "elapsed_ms": 33.8216,
+          "previous_trace_io_ms": 0.7159
+        },
+        {
+          "phase": "bootstrap.ready",
+          "elapsed_ms": 397.1045,
+          "previous_trace_io_ms": 0.7085
+        },
+        {
+          "phase": "database.guard.begin",
+          "elapsed_ms": 418.8623,
+          "previous_trace_io_ms": 0.4493
+        },
+        {
+          "phase": "database.ready",
+          "elapsed_ms": 457.5522,
+          "previous_trace_io_ms": 0.6997
+        },
+        {
+          "phase": "worker.ready",
+          "elapsed_ms": 463.5254,
+          "previous_trace_io_ms": 0.2804
+        },
+        {
+          "phase": "http.begin",
+          "elapsed_ms": 473.1349,
+          "previous_trace_io_ms": 0.552
+        },
+        {
+          "phase": "transaction.begin",
+          "elapsed_ms": 644.4837,
+          "previous_trace_io_ms": 0.3815,
+          "transaction_level": 1
+        },
+        {
+          "phase": "transaction.rolled_back",
+          "elapsed_ms": 666.279,
+          "previous_trace_io_ms": 0.3933,
+          "transaction_level": 0
+        },
+        {
+          "phase": "http.completed",
+          "elapsed_ms": 699.841,
+          "previous_trace_io_ms": 0.3006,
+          "http_status": 409
+        },
+        {
+          "phase": "process.shutdown",
+          "elapsed_ms": 704.6952,
+          "previous_trace_io_ms": 0.2747,
+          "fatal_error": false
+        }
+      ],
+      "ready_ms": 463.5254,
+      "context": {
+        "run_id": "checkout-race-dc8a1cad9510",
+        "scenario": "different",
+        "worker": "retry",
+        "spid": 76,
+        "pid": 9944
+      }
+    }
+  ]
+}

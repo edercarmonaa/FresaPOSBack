@@ -11,6 +11,7 @@ use Modules\Users\Contracts\UserAdministration;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Process\Process;
 use Tests\Support\DiscountsSqlServerTestCase;
+use Tests\Support\WorkerDiagnostics;
 
 class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
 {
@@ -23,14 +24,23 @@ class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
 
     private function waitFile(string $file, Process $process): void
     {
+        $waitStarted = hrtime(true);
+        $process->checkTimeout();
         $until = microtime(true) + 15;
         while (! is_file($file) && $process->isRunning() && microtime(true) < $until) {
+            $process->checkTimeout();
             usleep(20000);
         }
+        WorkerDiagnostics::record('barrier.observed', dirname($file), 'observed', $process, ['signal' => basename($file), 'found' => is_file($file), 'elapsed_ms' => (hrtime(true) - $waitStarted) / 1000000]);
         $diagnostics = $process->getErrorOutput().$process->getOutput();
         if (! is_file($file)) {
             foreach (glob(dirname($file).'/*result.json') as $result) {
                 $diagnostics .= file_get_contents($result);
+            }
+            try {
+                $diagnostics .= json_encode(['running' => $process->isRunning(), 'exit_code' => $process->getExitCode(), 'requests' => $this->database->select('SELECT session_id,status,command,wait_type,blocking_session_id,open_transaction_count FROM sys.dm_exec_requests WHERE database_id=DB_ID() AND session_id<>@@SPID')], JSON_THROW_ON_ERROR);
+            } catch (\Throwable $diagnosticFailure) {
+                $diagnostics .= ' Diagnostic unavailable: '.$diagnosticFailure::class;
             }
         }
         $this->assertFileExists($file, $diagnostics);
@@ -108,14 +118,21 @@ class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
         $second = new Process([...$command, 'second'], base_path(), timeout: 45);
         $retry = null;
         try {
-            $first->start();
+            $parallel = ! in_array($mode, ['lost', 'rollback'], true);
+            WorkerDiagnostics::start($first, $directory, 'first');
+            $prepared = ['first' => $first];
+            if ($parallel) {
+                WorkerDiagnostics::start($second, $directory, 'second');
+                $prepared['second'] = $second;
+            }
+            WorkerDiagnostics::awaitReady($prepared, $directory);
+            file_put_contents($directory.'/first-start', 'execute');
             $this->waitFile($directory.'/holding', $first);
             $spidA = json_decode(file_get_contents($directory.'/first-attempt.json'), true)['spid'];
-            $parallel = ! in_array($mode, ['lost', 'rollback'], true);
             $spidB = null;
             $wait = null;
             if ($parallel) {
-                $second->start();
+                file_put_contents($directory.'/second-start', 'execute');
                 $this->waitFile($directory.'/second-attempt.json', $second);
                 $spidB = json_decode(file_get_contents($directory.'/second-attempt.json'), true)['spid'];
                 $this->assertNotSame($spidA, $spidB);
@@ -127,6 +144,8 @@ class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
                 } else {
                     $until = microtime(true) + 8;
                     do {
+                        $first->checkTimeout();
+                        $second->checkTimeout();
                         $wait = $this->database->selectOne('SELECT blocking_session_id,wait_type FROM sys.dm_exec_requests WHERE session_id=?', [$spidB]);
                         if ($wait && (int) $wait->blocking_session_id === $spidA) {
                             break;
@@ -143,7 +162,7 @@ class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
             $a = json_decode(file_get_contents($directory.'/first-result.json'), true);
             if (! $parallel || $mode === 'same') {
                 $retry = new Process([...$command, 'retry'], base_path(), timeout: 35);
-                $retry->run();
+                WorkerDiagnostics::run($retry, $directory, 'retry');
                 $this->assertSame(0, $retry->getExitCode(), $retry->getErrorOutput());
                 $b = json_decode(file_get_contents($directory.'/retry-result.json'), true);
             } else {
@@ -184,6 +203,7 @@ class SaleDiscountsConcurrencyTest extends DiscountsSqlServerTestCase
                 if ($process->isRunning()) {
                     $process->stop(1);
                 }
+                WorkerDiagnostics::record('process.cleaned', $directory, 'cleanup', $process);
             }
             foreach (glob($directory.'/*') as $file) {
                 unlink($file);

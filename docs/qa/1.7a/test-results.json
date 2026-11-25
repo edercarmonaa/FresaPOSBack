@@ -1,0 +1,61 @@
+{
+  "baseline": {
+    "tests": 900,
+    "assertions": 11625,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "duration": "45:39.511",
+    "memory_mb": 380.0,
+    "exit_code": 0
+  },
+  "pre_gate_failed_regression": {
+    "tests": 904,
+    "assertions": 11610,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [
+      {
+        "class": "Tests.Integration.CheckoutConcurrencyTest",
+        "name": "test_independent_http_sql_sessions_protect_checkout_and_daily_sequence with data set \"two_keys\""
+      },
+      {
+        "class": "Tests.Integration.CheckoutConcurrencyTest",
+        "name": "test_independent_http_sql_sessions_protect_checkout_and_daily_sequence with data set \"same\""
+      }
+    ],
+    "duration": "38:54.027",
+    "memory_mb": 382.0,
+    "exit_code": 1
+  },
+  "final": {
+    "tests": 906,
+    "assertions": 11653,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "duration": "41:03.642",
+    "memory_mb": 382.0,
+    "exit_code": 0
+  },
+  "original_cases_preserved": true,
+  "cleanup_and_readiness_regressions": {
+    "tests": 6,
+    "assertions": 22,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": []
+  },
+  "pre_gate_cleanup_regressions": {
+    "tests": 4,
+    "assertions": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": []
+  }
+}

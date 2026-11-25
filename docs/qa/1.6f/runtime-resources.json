@@ -1,0 +1,12 @@
+{
+  "observed_at_local": "2026-11-25T09:16:59-06:00",
+  "source": "Win32_OperatingSystem and Get-Process, read-only",
+  "total_visible_memory_kib": 8049188,
+  "free_physical_memory_kib": 756548,
+  "php_private_memory_bytes": 235659264,
+  "php_working_set_bytes": 45211648,
+  "sql_private_memory_bytes": 549732352,
+  "sql_working_set_bytes": 142176256,
+  "synchronization_failure_cause_established": false,
+  "comparable_baseline_resource_sample_available": false
+}
