@@ -1,0 +1,151 @@
+{
+  "database": "fresapos_test",
+  "read_only_inspection": true,
+  "database_settings": [
+    {
+      "name": "fresapos_test",
+      "is_read_committed_snapshot_on": "0",
+      "snapshot_isolation_state_desc": "OFF"
+    }
+  ],
+  "engine": [
+    {
+      "product_version": "17.0.1155.3",
+      "edition": "Express Edition (64-bit)",
+      "engine_edition": "4"
+    }
+  ],
+  "connection": [
+    {
+      "spid": "55",
+      "transaction_count": "0",
+      "transaction_isolation_level": "2"
+    }
+  ],
+  "sql_memory": [
+    {
+      "physical_memory_in_use_kb": "291292",
+      "locked_page_allocations_kb": "0",
+      "process_physical_memory_low": "0",
+      "process_virtual_memory_low": "0"
+    }
+  ],
+  "global_waits": [
+    {
+      "wait_type": "SOS_WORK_DISPATCHER",
+      "waiting_tasks_count": "102790625",
+      "wait_time_ms": "7545842348",
+      "signal_wait_time_ms": "236415341"
+    },
+    {
+      "wait_type": "SLEEP_TASK",
+      "waiting_tasks_count": "379042",
+      "wait_time_ms": "665016194",
+      "signal_wait_time_ms": "31936868"
+    },
+    {
+      "wait_type": "DISPATCHER_QUEUE_SEMAPHORE",
+      "waiting_tasks_count": "1049",
+      "wait_time_ms": "547017106",
+      "signal_wait_time_ms": "1782009"
+    },
+    {
+      "wait_type": "LOGMGR_QUEUE",
+      "waiting_tasks_count": "1804947",
+      "wait_time_ms": "355845260",
+      "signal_wait_time_ms": "45909"
+    },
+    {
+      "wait_type": "CLR_AUTO_EVENT",
+      "waiting_tasks_count": "7834",
+      "wait_time_ms": "355064872",
+      "signal_wait_time_ms": "9772"
+    },
+    {
+      "wait_type": "XE_DISPATCHER_WAIT",
+      "waiting_tasks_count": "1252",
+      "wait_time_ms": "279841371",
+      "signal_wait_time_ms": "0"
+    },
+    {
+      "wait_type": "THREADPOOL",
+      "waiting_tasks_count": "76469",
+      "wait_time_ms": "262040447",
+      "signal_wait_time_ms": "7"
+    },
+    {
+      "wait_type": "PREEMPTIVE_XE_DISPATCHER",
+      "waiting_tasks_count": "33",
+      "wait_time_ms": "261083568",
+      "signal_wait_time_ms": "0"
+    },
+    {
+      "wait_type": "BROKER_TASK_STOP",
+      "waiting_tasks_count": "3821",
+      "wait_time_ms": "211124890",
+      "signal_wait_time_ms": "23168782"
+    },
+    {
+      "wait_type": "CMEMTHREAD",
+      "waiting_tasks_count": "129423",
+      "wait_time_ms": "179933723",
+      "signal_wait_time_ms": "138942788"
+    },
+    {
+      "wait_type": "HADR_FILESTREAM_IOMGR_IOCOMPLETION",
+      "waiting_tasks_count": "67852",
+      "wait_time_ms": "177952387",
+      "signal_wait_time_ms": "9016368"
+    },
+    {
+      "wait_type": "REQUEST_FOR_DEADLOCK_SEARCH",
+      "waiting_tasks_count": "6926",
+      "wait_time_ms": "177949659",
+      "signal_wait_time_ms": "177949659"
+    },
+    {
+      "wait_type": "DIRTY_PAGE_POLL",
+      "waiting_tasks_count": "315729",
+      "wait_time_ms": "177944834",
+      "signal_wait_time_ms": "1609"
+    },
+    {
+      "wait_type": "CHECKPOINT_QUEUE",
+      "waiting_tasks_count": "4855",
+      "wait_time_ms": "177944731",
+      "signal_wait_time_ms": "1564"
+    },
+    {
+      "wait_type": "QDS_ASYNC_QUEUE",
+      "waiting_tasks_count": "3629",
+      "wait_time_ms": "177937524",
+      "signal_wait_time_ms": "604"
+    }
+  ],
+  "global_waits_are_not_isolated_to_tests": true,
+  "system_health_deadlock_timestamps": [
+    "2026-11-25T18:21:30.936Z",
+    "2026-11-25T18:23:23.708Z",
+    "2026-11-25T18:24:21.325Z",
+    "2026-11-25T18:24:43.856Z",
+    "2026-11-25T18:26:26.480Z",
+    "2026-11-25T18:26:49.048Z",
+    "2026-11-25T18:28:36.725Z",
+    "2026-11-25T18:29:14.284Z",
+    "2026-11-25T18:30:36.919Z",
+    "2026-11-25T18:31:44.504Z",
+    "2026-11-25T18:37:42.823Z",
+    "2026-11-25T18:41:25.823Z",
+    "2026-11-25T18:47:34.257Z",
+    "2026-11-25T18:50:52.185Z",
+    "2026-11-25T18:54:05.126Z",
+    "2026-11-25T19:01:03.648Z",
+    "2026-11-25T19:05:51.758Z",
+    "2026-11-25T19:08:14.578Z"
+  ],
+  "system_health_retention_complete": false,
+  "memory_errorlog": {
+    "available": false,
+    "failure_type": "Illuminate\\Database\\QueryException"
+  }
+}

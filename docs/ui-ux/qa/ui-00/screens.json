@@ -1,0 +1,106 @@
+[
+  {
+    "id": "S01",
+    "route": "/",
+    "screen": "Inicio técnico",
+    "file": "resources/views/welcome.blade.php",
+    "access": "Público",
+    "review": "Actual: Chrome/Edge; sin dashboard ejecutivo"
+  },
+  {
+    "id": "S02",
+    "route": "/login",
+    "screen": "Inicio de sesión",
+    "file": "Modules/Auth/resources/views/livewire-login.blade.php",
+    "access": "Público; no-store",
+    "review": "Actual: Chrome/Edge; sin envío ni credenciales"
+  },
+  {
+    "id": "S03",
+    "route": "/account",
+    "screen": "Mi acceso, PIN, terminal y cambio de empleado",
+    "file": "Modules/Auth/resources/views/account.blade.php",
+    "access": "auth.access.web; controles propios",
+    "review": "Revisión estática; E2E protegido pendiente"
+  },
+  {
+    "id": "S04",
+    "route": "/auth/password",
+    "screen": "Cambio de contraseña",
+    "file": "Modules/Auth/resources/views/password.blade.php",
+    "access": "auth.access.web",
+    "review": "Revisión estática; no enviar formulario"
+  },
+  {
+    "id": "S05",
+    "route": "/admin",
+    "screen": "Administración de sesiones",
+    "file": "Modules/Auth/resources/views/admin.blade.php",
+    "access": "auth.access.web + users.view",
+    "review": "No CRUD completo de usuarios/roles"
+  },
+  {
+    "id": "S06",
+    "route": "/admin/catalog/categories",
+    "screen": "Categorías: lista/alta/edición/estado",
+    "file": "Modules/Catalog/resources/views/livewire-categories.blade.php",
+    "access": "CatalogAdminAccess; categorías.manage",
+    "review": "Estático; confirmaciones y paginación existentes"
+  },
+  {
+    "id": "S07",
+    "route": "/admin/catalog/products",
+    "screen": "Productos: lista/alta/edición/imagen/papelera",
+    "file": "Modules/Catalog/resources/views/livewire-products.blade.php",
+    "access": "CatalogAdminAccess + capacidades específicas",
+    "review": "Estático; subida, restauración y filtros existentes"
+  },
+  {
+    "id": "S08",
+    "route": "/admin/sales/reasons",
+    "screen": "Motivos autorizados",
+    "file": "Modules/Sales/resources/views/livewire/reason-administration.blade.php",
+    "access": "PosAccess + settings.update",
+    "review": "Estático; catálogo de motivos, no configuración general"
+  },
+  {
+    "id": "S09",
+    "route": "/pos",
+    "screen": "Mostrador, mesas, consumo y venta",
+    "file": "Modules/Sales/resources/views/livewire/point-of-sale.blade.php",
+    "access": "PosAccess + permisos por operación",
+    "review": "Estático; no operar base real"
+  },
+  {
+    "id": "S10",
+    "route": "/cash",
+    "screen": "Caja, movimientos, arqueo e historial",
+    "file": "Modules/Cash/resources/views/livewire/cash-desk.blade.php",
+    "access": "CashAccess + capacidades por operación",
+    "review": "Estático; esperado permanece oculto durante conteo"
+  },
+  {
+    "id": "S11",
+    "route": "/reports",
+    "screen": "Resumen operativo/financiero",
+    "file": "Modules/Reports/resources/views/index.blade.php",
+    "access": "auth.access.web + autorización del servicio",
+    "review": "Estático; datos existentes, sin consultas nuevas"
+  },
+  {
+    "id": "S12",
+    "route": "/reports/{report}",
+    "screen": "Nueve variantes de reportes",
+    "file": "Modules/Reports/resources/views/index.blade.php",
+    "access": "Permisos Reports y módulos propietarios",
+    "review": "summary, sales, products, payments, cash-movements, cash-sessions, cash-reconciliations, discounts, corrections"
+  },
+  {
+    "id": "X01",
+    "route": "/pos/sales/{id}/receipt",
+    "screen": "Ticket y preparación de impresión",
+    "file": "Modules/Tickets/resources/views/receipt.blade.php",
+    "access": "Auth y permisos Tickets",
+    "review": "Inventariado; excluido de modificación por alcance"
+  }
+]

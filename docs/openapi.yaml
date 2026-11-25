@@ -24,7 +24,496 @@ tags:
     description: Caja única, apertura, métodos de pago, movimientos y saldo con efectivo neto confirmado; arqueo ciego, conciliación y cierre transaccional con historial.
   - name: Tickets
     description: Comprobantes históricos y reimpresión Web autorizada de 80 mm.
+  - name: Reports
+    description: Reportes operativos y financieros de solo lectura; PDF y XLSX autorizados.
 paths:
+  /reports/{report}:
+    get:
+      tags:
+      - Reports
+      operationId: apiV1ReportsShow
+      summary: Consulta uno de los nueve reportes autorizados
+      description: Acceso vigente y reports.view más capacidades del propietario y cash.administrative.execute. Resumen
+        requiere sales.view, cash.view y cash.closings.view; correcciones además sales.reopen y sales.special.authorize.
+        Nunca publica esperado/contado/diferencia de sesiones abiertas. Fechas comerciales inclusivas, ventana UTC
+        final exclusiva, máximo 366 días. Filtros no aplicables y orden no admitido por reporte devuelven 422. Pago
+        selecciona ventas y conserva todos sus componentes mixtos. Totales sobre todo el conjunto, no solo la página.
+        Montos decimales como texto exacto. Lectura consistente SNAPSHOT o SERIALIZABLE sin cambiar opciones globales.
+      security:
+      - BearerAuth: []
+      parameters:
+      - in: path
+        name: report
+        required: true
+        schema:
+          type: string
+          enum:
+          - summary
+          - sales
+          - products
+          - payments
+          - cash-movements
+          - cash-sessions
+          - cash-reconciliations
+          - discounts
+          - corrections
+      - $ref: '#/components/parameters/RequestId'
+      - in: query
+        name: range
+        required: false
+        schema:
+          enum:
+          - today
+          - yesterday
+          - last_seven_days
+          - current_month
+          - previous_month
+          - custom
+      - in: query
+        name: from
+        required: false
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: until
+        required: false
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1000000
+      - in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+          enum:
+          - 10
+          - 25
+          - 50
+          - 100
+      - in: query
+        name: direction
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+      - in: query
+        name: sort
+        required: false
+        schema:
+          enum:
+          - occurred_at
+          - total
+          - folio
+          - quantity
+          - amount
+          - product_name
+          - operations
+          - method
+          - business_date
+          - income
+          - paid_sales
+          - opened_at
+          - closed_at
+          - opening_fund
+          - difference
+          - expected_cash
+      - in: query
+        name: sale_type
+        required: false
+        schema:
+          enum:
+          - counter
+          - table
+      - in: query
+        name: payment_method
+        required: false
+        schema:
+          enum:
+          - cash
+          - card
+          - transfer
+          - other
+      - in: query
+        name: discount_type
+        required: false
+        schema:
+          enum:
+          - fixed
+          - percent
+      - in: query
+        name: state
+        required: false
+        schema:
+          enum:
+          - open
+          - paused
+          - cancelled
+          - closed
+          - active
+          - confirmed
+          - unchanged
+          - discarded
+      - in: query
+        name: movement_type
+        required: false
+        schema:
+          enum:
+          - cash_in
+          - cash_out
+      - in: query
+        name: employee_id
+        required: false
+        schema:
+          type: string
+          pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+      - in: query
+        name: cash_session_id
+        required: false
+        schema:
+          type: string
+          pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+      - in: query
+        name: product_id
+        required: false
+        schema:
+          type: string
+          pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+      - in: query
+        name: category_id
+        required: false
+        schema:
+          type: string
+          pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+      responses:
+        '200':
+          description: Reporte paginado y totales completos; Cache-Control private, no-store.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Success'
+                - type: object
+                  properties:
+                    data:
+                      type: object
+                      required:
+                      - report
+                      - title
+                      - generated_at
+                      - timezone
+                      - filters
+                      - columns
+                      - items
+                      - totals
+                      - pagination
+                      - series
+                      - notes
+                      - consistency
+                      additionalProperties: false
+                      properties:
+                        report:
+                          type: string
+                          enum:
+                          - summary
+                          - sales
+                          - products
+                          - payments
+                          - cash-movements
+                          - cash-sessions
+                          - cash-reconciliations
+                          - discounts
+                          - corrections
+                        title:
+                          type: string
+                        generated_at:
+                          type: string
+                          format: date-time
+                        timezone:
+                          type: string
+                          enum:
+                          - America/Mexico_City
+                          - UTC
+                        filters:
+                          type: object
+                          additionalProperties:
+                            oneOf:
+                            - type: string
+                            - type: integer
+                        columns:
+                          type: object
+                          additionalProperties:
+                            type: array
+                            minItems: 2
+                            maxItems: 2
+                            items:
+                              type: string
+                        items:
+                          type: array
+                          maxItems: 100
+                          items:
+                            type: object
+                            additionalProperties:
+                              oneOf:
+                              - type: string
+                              - type: integer
+                              - type: boolean
+                              - type: 'null'
+                        totals:
+                          type: object
+                          additionalProperties:
+                            oneOf:
+                            - type: string
+                              pattern: ^-?(0|[1-9][0-9]*)\.[0-9]{4}$
+                            - type: integer
+                            - type: 'null'
+                        pagination:
+                          type: object
+                          required:
+                          - total
+                          - page
+                          - per_page
+                          - last_page
+                          additionalProperties: false
+                          properties:
+                            total:
+                              type: integer
+                              minimum: 0
+                            page:
+                              type: integer
+                              minimum: 1
+                            per_page:
+                              type: integer
+                              minimum: 1
+                            last_page:
+                              type: integer
+                              minimum: 1
+                        series:
+                          type: array
+                          maxItems: 366
+                          items:
+                            type: object
+                            required:
+                            - business_date
+                            - paid_sales
+                            - income
+                            - discounts
+                            properties:
+                              business_date:
+                                type: string
+                                format: date
+                              paid_sales:
+                                type: integer
+                              income:
+                                type: string
+                              discounts:
+                                type: string
+                        notes:
+                          type: array
+                          items:
+                            type: string
+                        consistency:
+                          type: object
+                          required:
+                          - isolation
+                          - scope
+                          additionalProperties: false
+                          properties:
+                            isolation:
+                              enum:
+                              - SNAPSHOT
+                              - SERIALIZABLE
+                            scope:
+                              type: string
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+  /reports/{report}/exports/{format}:
+    post:
+      tags:
+      - Reports
+      operationId: apiV1ReportsExport
+      summary: Genera PDF o XLSX del conjunto filtrado completo
+      description: Acceso vigente y reports.view más capacidades del propietario y cash.administrative.execute. Resumen
+        requiere sales.view, cash.view y cash.closings.view; correcciones además sales.reopen y sales.special.authorize.
+        Nunca publica esperado/contado/diferencia de sesiones abiertas. Fechas comerciales inclusivas, ventana UTC
+        final exclusiva, máximo 366 días. Filtros no aplicables y orden no admitido por reporte devuelven 422. Pago
+        selecciona ventas y conserva todos sus componentes mixtos. Totales sobre todo el conjunto, no solo la página.
+        Montos decimales como texto exacto. Lectura consistente SNAPSHOT o SERIALIZABLE sin cambiar opciones globales.
+        Exige reports.export. PDF hasta 300 filas; XLSX hasta 1000. Ignora página para exportar el conjunto completo.
+        XLSX rechaza importes que no conserva con cuatro decimales. Generación fuera de la transacción, reautorización
+        final y evento Audit reports.export.generated; generado no confirma descarga. No almacena archivos públicos.
+        Texto explícito impide fórmulas. Sin macros.
+      security:
+      - BearerAuth: []
+      parameters:
+      - in: path
+        name: report
+        required: true
+        schema:
+          type: string
+          enum:
+          - summary
+          - sales
+          - products
+          - payments
+          - cash-movements
+          - cash-sessions
+          - cash-reconciliations
+          - discounts
+          - corrections
+      - in: path
+        name: format
+        required: true
+        schema:
+          type: string
+          enum:
+          - pdf
+          - xlsx
+      - $ref: '#/components/parameters/RequestId'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              properties:
+                range:
+                  enum:
+                  - today
+                  - yesterday
+                  - last_seven_days
+                  - current_month
+                  - previous_month
+                  - custom
+                from:
+                  type: string
+                  format: date
+                until:
+                  type: string
+                  format: date
+                page:
+                  type: integer
+                  minimum: 1
+                  maximum: 1000000
+                per_page:
+                  type: integer
+                  enum:
+                  - 10
+                  - 25
+                  - 50
+                  - 100
+                direction:
+                  enum:
+                  - asc
+                  - desc
+                sort:
+                  enum:
+                  - occurred_at
+                  - total
+                  - folio
+                  - quantity
+                  - amount
+                  - product_name
+                  - operations
+                  - method
+                  - business_date
+                  - income
+                  - paid_sales
+                  - opened_at
+                  - closed_at
+                  - opening_fund
+                  - difference
+                  - expected_cash
+                sale_type:
+                  enum:
+                  - counter
+                  - table
+                payment_method:
+                  enum:
+                  - cash
+                  - card
+                  - transfer
+                  - other
+                discount_type:
+                  enum:
+                  - fixed
+                  - percent
+                state:
+                  enum:
+                  - open
+                  - paused
+                  - cancelled
+                  - closed
+                  - active
+                  - confirmed
+                  - unchanged
+                  - discarded
+                movement_type:
+                  enum:
+                  - cash_in
+                  - cash_out
+                employee_id:
+                  type: string
+                  pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+                cash_session_id:
+                  type: string
+                  pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+                product_id:
+                  type: string
+                  pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+                category_id:
+                  type: string
+                  pattern: ^[0-7][0-9a-hjkmnp-tv-zA-HJKMNP-TV-Z]{25}$
+      responses:
+        '200':
+          description: Archivo real; Content-Disposition attachment y Cache-Control private, no-store.
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: string
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthenticated'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
   /operations/{idempotencyKey}/status:
     get:
       tags:

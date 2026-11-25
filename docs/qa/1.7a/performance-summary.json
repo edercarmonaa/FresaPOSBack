@@ -1,0 +1,67 @@
+{
+  "10": {
+    "application_ms": {
+      "n": 10,
+      "minimum": 115.7315,
+      "median": 139.17225000000002,
+      "maximum": 157.0258
+    },
+    "reported_sql_ms": {
+      "n": 10,
+      "minimum": 89.93,
+      "median": 108.375,
+      "maximum": 126.67
+    },
+    "non_sql_estimate_ms": {
+      "n": 10,
+      "minimum": 24.361499999999964,
+      "median": 28.505150000000015,
+      "maximum": 31.300499999999985
+    },
+    "blade_render_ms": {
+      "n": 10,
+      "minimum": 3.3726,
+      "median": 4.7799,
+      "maximum": 11.9325
+    },
+    "application_plus_blade_ms": {
+      "n": 10,
+      "minimum": 119.1041,
+      "median": 144.72835,
+      "maximum": 161.5233
+    }
+  },
+  "100": {
+    "application_ms": {
+      "n": 10,
+      "minimum": 134.4861,
+      "median": 166.57905,
+      "maximum": 199.2761
+    },
+    "reported_sql_ms": {
+      "n": 10,
+      "minimum": 87.36000000000003,
+      "median": 119.38999999999999,
+      "maximum": 144.81
+    },
+    "non_sql_estimate_ms": {
+      "n": 10,
+      "minimum": 44.009600000000006,
+      "median": 49.53925000000003,
+      "maximum": 54.46610000000001
+    },
+    "blade_render_ms": {
+      "n": 10,
+      "minimum": 10.9703,
+      "median": 12.7147,
+      "maximum": 25.702
+    },
+    "application_plus_blade_ms": {
+      "n": 10,
+      "minimum": 151.8733,
+      "median": 182.2303,
+      "maximum": 212.28160000000003
+    }
+  },
+  "p95": "No se estima un percentil 95 estable con diez muestras por tamaño."
+}

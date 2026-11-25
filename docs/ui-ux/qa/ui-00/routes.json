@@ -1,0 +1,1535 @@
+[
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "/",
+    "name": null,
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "account",
+    "name": "auth.account",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@account",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "admin",
+    "name": "auth.admin",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Illuminate\\Auth\\Middleware\\Authorize:users.view"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "admin/catalog/categories",
+    "name": "catalog.categories",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Catalog\\Http\\Middleware\\CatalogAdminAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "admin/catalog/products",
+    "name": "catalog.products",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Catalog\\Http\\Middleware\\CatalogAdminAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "admin/sales/reasons",
+    "name": "sales.reasons",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Sales\\Http\\Middleware\\PosAccess",
+      "Illuminate\\Auth\\Middleware\\Authorize:settings.update"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/auth/login",
+    "name": "api.v1.auth.login",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@login",
+    "middleware": [
+      "api",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/auth/logout",
+    "name": "api.v1.auth.logout",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@logout",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/auth/me",
+    "name": "api.v1.auth.me",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@me",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/auth/password",
+    "name": "api.v1.auth.password",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@password",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:auth-security"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/auth/sessions",
+    "name": "api.v1.auth.sessions",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@sessions",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/auth/sessions",
+    "name": "api.v1.auth.sessions.revoke-all",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@revokeSessions",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/auth/sessions/{id}",
+    "name": "api.v1.auth.sessions.revoke",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@revokeSession",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/auth/users/{userId}/sessions",
+    "name": "api.v1.auth.users.sessions",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@sessions",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess",
+      "Illuminate\\Auth\\Middleware\\Authorize:users.status"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/auth/users/{userId}/sessions",
+    "name": "api.v1.auth.users.sessions.revoke",
+    "action": "Modules\\Auth\\Http\\Controllers\\ApiAuthenticationController@revokeSessions",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess",
+      "Illuminate\\Auth\\Middleware\\Authorize:users.status"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/movements",
+    "name": "api.v1.cash.movements.index",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashFinanceController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/cash/movements",
+    "name": "api.v1.cash.movements.store",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashFinanceController@store",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/movements/{id}",
+    "name": "api.v1.cash.movements.show",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashFinanceController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/payment-methods",
+    "name": "api.v1.cash.payment-methods.index",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashFinanceController@methods",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/payment-methods/{id}",
+    "name": "api.v1.cash.payment-methods.show",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashFinanceController@method",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/registers",
+    "name": "api.v1.cash.registers",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashController@registers",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/cash/sessions",
+    "name": "api.v1.cash.sessions.open",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashController@open",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/sessions/current",
+    "name": "api.v1.cash.sessions.current",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashController@current",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/sessions/history",
+    "name": "api.v1.cash.sessions.history",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashClosingController@history",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/cash/sessions/{id}/close",
+    "name": "api.v1.cash.sessions.close",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashClosingController@close",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/sessions/{id}/pending-sales",
+    "name": "api.v1.cash.sessions.pending",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashClosingController@pending",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/sessions/{id}/reconciliation",
+    "name": "api.v1.cash.sessions.reconciliation",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashClosingController@reconciliation",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/cash/sessions/{id}/summary",
+    "name": "api.v1.cash.sessions.summary",
+    "action": "Modules\\Cash\\Http\\Controllers\\CashClosingController@summary",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/catalog/categories",
+    "name": "api.v1.catalog.categories.index",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/catalog/categories",
+    "name": "api.v1.catalog.categories.store",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@store",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/catalog/categories/{id}",
+    "name": "api.v1.catalog.categories.show",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "api/v1/catalog/categories/{id}",
+    "name": "api.v1.catalog.categories.update",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@update",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/catalog/categories/{id}",
+    "name": "api.v1.catalog.categories.destroy",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@destroy",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/catalog/categories/{id}/status",
+    "name": "api.v1.catalog.categories.status",
+    "action": "Modules\\Catalog\\Http\\Controllers\\CategoryController@status",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/catalog/products",
+    "name": "api.v1.catalog.products.index",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/catalog/products",
+    "name": "api.v1.catalog.products.store",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@store",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/catalog/products/{id}",
+    "name": "api.v1.catalog.products.show",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "api/v1/catalog/products/{id}",
+    "name": "api.v1.catalog.products.update",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@update",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/catalog/products/{id}",
+    "name": "api.v1.catalog.products.destroy",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@destroy",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/catalog/products/{id}/image",
+    "name": "api.v1.catalog.products.image.store",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@uploadImage",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/catalog/products/{id}/image",
+    "name": "api.v1.catalog.products.image.destroy",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@removeImage",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/catalog/products/{id}/restore",
+    "name": "api.v1.catalog.products.restore",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@restore",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/catalog/products/{id}/status",
+    "name": "api.v1.catalog.products.status",
+    "action": "Modules\\Catalog\\Http\\Controllers\\ProductController@status",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/operations/{idempotencyKey}/status",
+    "name": "api.v1.core.operations.status",
+    "action": "Modules\\Core\\Http\\OperationStatusController",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/ping",
+    "name": "api.v1.core.ping",
+    "action": "Closure",
+    "middleware": [
+      "api",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1"
+    ],
+    "path": "Modules/Core/routes/api/v1.php:8"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/reports/{report}",
+    "name": "api.v1.reports.show",
+    "action": "Modules\\Reports\\Http\\Controllers\\ReportController@api",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/reports/{report}/exports/{format}",
+    "name": "api.v1.reports.export",
+    "action": "Modules\\Reports\\Http\\Controllers\\ReportController@apiExport",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales",
+    "name": "api.v1.sales.index",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales",
+    "name": "api.v1.sales.store",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@store",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/folio/{folio}/receipt",
+    "name": "api.v1.tickets.folio",
+    "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@byFolio",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/reasons",
+    "name": "api.v1.sales.reasons.index",
+    "action": "Modules\\Sales\\Http\\Controllers\\ReasonController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/reasons",
+    "name": "api.v1.sales.reasons.create",
+    "action": "Modules\\Sales\\Http\\Controllers\\ReasonController@create",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/reasons/{id}",
+    "name": "api.v1.sales.reasons.show",
+    "action": "Modules\\Sales\\Http\\Controllers\\ReasonController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "api/v1/sales/reasons/{id}",
+    "name": "api.v1.sales.reasons.update",
+    "action": "Modules\\Sales\\Http\\Controllers\\ReasonController@update",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/reasons/{id}/status",
+    "name": "api.v1.sales.reasons.status",
+    "action": "Modules\\Sales\\Http\\Controllers\\ReasonController@status",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/tables",
+    "name": "api.v1.sales.tables.index",
+    "action": "Modules\\Sales\\Http\\Controllers\\TableController@index",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/tables",
+    "name": "api.v1.sales.tables.store",
+    "action": "Modules\\Sales\\Http\\Controllers\\TableController@store",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/tables/{id}",
+    "name": "api.v1.sales.tables.show",
+    "action": "Modules\\Sales\\Http\\Controllers\\TableController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "api/v1/sales/tables/{id}",
+    "name": "api.v1.sales.tables.update",
+    "action": "Modules\\Sales\\Http\\Controllers\\TableController@update",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/tables/{id}/status",
+    "name": "api.v1.sales.tables.status",
+    "action": "Modules\\Sales\\Http\\Controllers\\TableController@status",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/{id}",
+    "name": "api.v1.sales.show",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/cancel",
+    "name": "api.v1.sales.cancel",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@cancel",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/checkout",
+    "name": "api.v1.sales.checkout",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@checkout",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/{id}/correction",
+    "name": "api.v1.sales.corrections.current",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@current",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/{id}/correction",
+    "name": "api.v1.sales.corrections.edit",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@edit",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/correction/confirm",
+    "name": "api.v1.sales.corrections.confirm",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@confirm",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/correction/discard",
+    "name": "api.v1.sales.corrections.discard",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@discard",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/{id}/corrections",
+    "name": "api.v1.sales.corrections.history",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@history",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "api/v1/sales/{id}/discount",
+    "name": "api.v1.sales.discount.update",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@setDiscount",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/sales/{id}/discount",
+    "name": "api.v1.sales.discount.destroy",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@removeDiscount",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/{id}/items",
+    "name": "api.v1.sales.items",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@items",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/items",
+    "name": "api.v1.sales.items.store",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@addItem",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "api/v1/sales/{id}/items/{itemId}",
+    "name": "api.v1.sales.items.destroy",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@removeItem",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/{id}/items/{itemId}/note",
+    "name": "api.v1.sales.items.note",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@itemNote",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/{id}/items/{itemId}/quantity",
+    "name": "api.v1.sales.items.quantity",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@quantity",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "api/v1/sales/{id}/note",
+    "name": "api.v1.sales.note",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@note",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/pause",
+    "name": "api.v1.sales.pause",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@pause",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "api/v1/sales/{id}/receipt",
+    "name": "api.v1.tickets.show",
+    "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@show",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/reopen",
+    "name": "api.v1.sales.corrections.reopen",
+    "action": "Modules\\Sales\\Http\\Controllers\\CorrectionController@reopen",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/v1/sales/{id}/resume",
+    "name": "api.v1.sales.resume",
+    "action": "Modules\\Sales\\Http\\Controllers\\SaleController@resume",
+    "middleware": [
+      "api",
+      "Illuminate\\Auth\\Middleware\\Authenticate:sanctum",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:api-v1",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureApiAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/employee",
+    "name": "auth.employee",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@switchEmployee",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "auth/password",
+    "name": "auth.password",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/password",
+    "name": "auth.password.update",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@password",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:auth-security"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/pin",
+    "name": "auth.pin",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@pin",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/pin/disable",
+    "name": "auth.pin.disable",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@disablePin",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/sessions/{id}/revoke",
+    "name": "auth.session.revoke",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@revoke",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "auth/terminal",
+    "name": "auth.terminal",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@authorizeTerminal",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "cash",
+    "name": "cash.desk",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Cash\\Http\\Middleware\\CashAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/css/{component}.css",
+    "name": null,
+    "action": "Closure",
+    "middleware": [],
+    "path": "vendor/livewire/livewire/src/Features/SupportCssModules/SupportCssModules.php:16"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/css/{component}.global.css",
+    "name": null,
+    "action": "Closure",
+    "middleware": [],
+    "path": "vendor/livewire/livewire/src/Features/SupportCssModules/SupportCssModules.php:49"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/js/{component}.js",
+    "name": null,
+    "action": "Closure",
+    "middleware": [],
+    "path": "vendor/livewire/livewire/src/Features/SupportJsModules/SupportJsModules.php:24"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/livewire.csp.min.js.map",
+    "name": null,
+    "action": "Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@cspMaps",
+    "middleware": [],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/livewire.js",
+    "name": null,
+    "action": "Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@returnJavaScriptAsFile",
+    "middleware": [],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/livewire.min.js.map",
+    "name": null,
+    "action": "Livewire\\Mechanisms\\FrontendAssets\\FrontendAssets@maps",
+    "middleware": [],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "livewire-ba99715c/preview-file/{filename}",
+    "name": "livewire.preview-file",
+    "action": "Livewire\\Features\\SupportFileUploads\\FilePreviewController@handle",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Catalog\\Http\\Middleware\\CatalogImageUploadAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "livewire-ba99715c/update",
+    "name": "default-livewire.update",
+    "action": "Livewire\\Mechanisms\\HandleRequests\\HandleRequests@handleUpdate",
+    "middleware": [
+      "web",
+      "Livewire\\Mechanisms\\HandleRequests\\RequireLivewireHeaders"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "livewire-ba99715c/upload-file",
+    "name": "livewire.upload-file",
+    "action": "Livewire\\Features\\SupportFileUploads\\FileUploadController@handle",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Catalog\\Http\\Middleware\\CatalogImageUploadAccess",
+      "Illuminate\\Routing\\Middleware\\ThrottleRequests:60,1"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "login",
+    "name": "login",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "login",
+    "name": "auth.web.login",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@login",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "logout",
+    "name": "auth.web.logout",
+    "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@logout",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "pos",
+    "name": "sales.pos",
+    "action": "Illuminate\\Routing\\ViewController",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+      "Modules\\Sales\\Http\\Middleware\\PosAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "pos/sales/{id}/receipt",
+    "name": "tickets.preview",
+    "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@preview",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "pos/sales/{id}/receipt/print",
+    "name": "tickets.print",
+    "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@print",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "reports",
+    "name": "reports.index",
+    "action": "Modules\\Reports\\Http\\Controllers\\ReportController@web",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "reports/{report}",
+    "name": "reports.show",
+    "action": "Modules\\Reports\\Http\\Controllers\\ReportController@web",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "reports/{report}/exports/{format}",
+    "name": "reports.export",
+    "action": "Modules\\Reports\\Http\\Controllers\\ReportController@webExport",
+    "middleware": [
+      "web",
+      "Modules\\Auth\\Http\\Middleware\\NoStore",
+      "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+    ],
+    "path": null
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "storage/{path}",
+    "name": "storage.local",
+    "action": "Closure",
+    "middleware": [],
+    "path": "vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php:111"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "storage/{path}",
+    "name": "storage.local.upload",
+    "action": "Closure",
+    "middleware": [],
+    "path": "vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php:119"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "up",
+    "name": null,
+    "action": "Illuminate\\Foundation\\Http\\HealthCheck",
+    "middleware": [],
+    "path": null
+  }
+]

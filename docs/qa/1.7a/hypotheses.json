@@ -1,0 +1,82 @@
+[
+  {
+    "id": "H1",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Dos fallos reproducidos en 904 casos; procesos vivos al vencer 15 s, uno sin ready y otro con ready a 10.4 s.",
+    "hypothesis": "Arranque tardío o planificación Windows",
+    "experiment": "Trazas monotónicas del padre y del worker; rondas normal/inversa/1702/1703.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "Preparación y barrera compartían un plazo; ready/start corrige esa dependencia. Origen último de la demora no atribuido.",
+    "certainty": "Alta para el mecanismo reproducido; desconocida para el host"
+  },
+  {
+    "id": "H2",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "En los dos fallos actuales no hubo http.completed; el padre encontró procesos vivos.",
+    "hypothesis": "Respuesta HTTP antes de alcanzar la barrera",
+    "experiment": "Registrar estado HTTP y fase de shutdown sin copiar cuerpos ni inputs.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "No explica la reproducción actual; resultados antiguos de 1.6f siguen irrecuperables.",
+    "certainty": "Alta para los dos casos actuales; histórica desconocida"
+  },
+  {
+    "id": "H3",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Primer worker sin ready; segundo sin eventos transaccionales antes del límite.",
+    "hypothesis": "Bloqueo SQL o deadlock previo a holding",
+    "experiment": "SPID independientes, DMV de locks y casos de deadlock 1205 real.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "No se demuestra un deadlock financiero como causa de estos dos fallos; se mantienen pruebas de deadlock reales.",
+    "certainty": "Limitada al alcance de las trazas"
+  },
+  {
+    "id": "H4",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Eventos grandes de reloj anteriores al inicio de ambos intentos fallidos.",
+    "hypothesis": "Cambio del reloj durante una espera",
+    "experiment": "Contrastar OldTime/NewTime y ventanas de ejecución, medir ahora con hrtime.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "Los saltos registrados no coinciden con las ventanas fallidas.",
+    "certainty": "Alta para esa no coincidencia; no descarta todo ajuste"
+  },
+  {
+    "id": "H5",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Tres finally sin borrado y seis directorios de la línea base.",
+    "hypothesis": "Estado residual de archivos de carrera",
+    "experiment": "Limpieza validada por ruta, seis aserciones integradas y cuatro casos de seguridad/preservación.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "Defecto de limpieza confirmado y corregido; causalidad con holding no demostrada.",
+    "certainty": "Alta para limpieza, desconocida para holding"
+  },
+  {
+    "id": "H6",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Memoria libre baja y process_physical_memory_low=1 en captura inicial.",
+    "hypothesis": "Presión de memoria/carga del entorno",
+    "experiment": "Muestras de recursos y veinte lecturas equivalentes alternadas de Reports.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "Variación medida; no se demuestra causalidad ni se altera configuración.",
+    "certainty": "Alta para condición observada, baja para causalidad"
+  },
+  {
+    "id": "H7",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Workers vivos al vencer el plazo; finally los detuvo. Consulta acotada Application Error sin crash PHP.",
+    "hypothesis": "Crash nativo de PHP sin stderr",
+    "experiment": "Revisar registro de Windows y conservar códigos de salida/fases actuales.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "El exit code tras stop no se interpreta como crash espontáneo. Causa nativa histórica no demostrada.",
+    "certainty": "Alta para la terminación controlada observada"
+  },
+  {
+    "id": "H8",
+    "symptom": "Holding ausente o variación temporal; H5 incluye residuo de archivos confirmado",
+    "evidence": "Baterías focalizadas pasaron, regresión completa previa reprodujo dos fallos; con gates todas las ejecuciones posteriores pasan.",
+    "hypothesis": "Dependencia de orden, caché o estado de autenticación",
+    "experiment": "Orden normal, inverso y dos semillas; comprobar limpieza de base al final.",
+    "result": "Dos fallos en regresión diagnóstica; batería y regresión posteriores a ready/start sin fallos. Ver todos los intentos.",
+    "conclusion": "Carga/orden del entorno no queda descartada como origen de demoras; no se demostró dependencia de datos entre pruebas.",
+    "certainty": "Observación confirmada; causalidad última abierta"
+  }
+]

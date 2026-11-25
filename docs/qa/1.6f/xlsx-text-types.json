@@ -1,0 +1,8087 @@
+[
+  {
+    "file": ".tools/block05-artifacts/cash-movements.xlsx",
+    "sha256": "5f78633e6e0e7ecce36d301ae83b727169d440ccc21e5126bdb71ac9854b353b",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-artifacts/cash-reconciliations.xlsx",
+    "sha256": "8bf2ffaa29f9ce7ac375ebcb2942ae2c0fb6a8f874360653b7bf47958c4c8611",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-artifacts/cash-sessions.xlsx",
+    "sha256": "907c6541354ccd2d65be3d73dfe6ef2db96274388aa84909e59b164a65564ec0",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-artifacts/corrections.xlsx",
+    "sha256": "5b56ea93896ec15c087866feee2c3422e8256be505722d0a3be8369b6d80a290",
+    "text_folio_cells": [
+      {
+        "cell": "A10",
+        "value": "202611170002",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-artifacts/discounts.xlsx",
+    "sha256": "3e51e5c7dc684a466ceca8d40a28387c0da3aca82a055feceb1d6b6d93a8ad36",
+    "text_folio_cells": [
+      {
+        "cell": "A13",
+        "value": "202611170003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A14",
+        "value": "202611170001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-artifacts/payments.xlsx",
+    "sha256": "4510c1a210a89f4ffb1b730e56d9fbf96b39765345713c5c1e71e329d4c38791",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-artifacts/products.xlsx",
+    "sha256": "9cbc4c7f74f91e2551779df0b3f7582a0315260add5147bebf847c880615e6be",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-artifacts/sales.xlsx",
+    "sha256": "019bcf0eeece06b40d700e13fb3176088a58c903dd273ee2afa071a53ec2bec5",
+    "text_folio_cells": [
+      {
+        "cell": "A14",
+        "value": "202611170003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A15",
+        "value": "202611170002",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A16",
+        "value": "202611170001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-artifacts/summary.xlsx",
+    "sha256": "6f0851890ddf69792a0a15bd8e5318dec296878fb3b7dbab4eeac205dfe3bc8f",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-boundaries/sales-0.xlsx",
+    "sha256": "9e6952b34737d0b0befc215a81802c718eccc5967984df4e42e7d8d2d92cb8f4",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-boundaries/sales-1.xlsx",
+    "sha256": "19102aba1da445d79d7ead2a0033afccf6cd03469b2a367d85dd471fc8338041",
+    "text_folio_cells": [
+      {
+        "cell": "A13",
+        "value": "202611190001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-boundaries/sales-1000.xlsx",
+    "sha256": "cf212cafe0fa783bcd1f651fb10681fef8cd650e2c2936c003d986a19546aaba",
+    "text_folio_cells": [
+      {
+        "cell": "A13",
+        "value": "202611180700",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A14",
+        "value": "202611180699",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A15",
+        "value": "202611180698",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A16",
+        "value": "202611180697",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A17",
+        "value": "202611180696",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A18",
+        "value": "202611180695",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A19",
+        "value": "202611180694",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A20",
+        "value": "202611180693",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A21",
+        "value": "202611180692",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A22",
+        "value": "202611180691",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A23",
+        "value": "202611180690",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A24",
+        "value": "202611180689",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A25",
+        "value": "202611180688",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A26",
+        "value": "202611180687",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A27",
+        "value": "202611180686",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A28",
+        "value": "202611180685",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A29",
+        "value": "202611180684",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A30",
+        "value": "202611180683",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A31",
+        "value": "202611180682",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A32",
+        "value": "202611180681",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A33",
+        "value": "202611180680",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A34",
+        "value": "202611180679",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A35",
+        "value": "202611180678",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A36",
+        "value": "202611180677",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A37",
+        "value": "202611180676",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A38",
+        "value": "202611180675",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A39",
+        "value": "202611180674",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A40",
+        "value": "202611180673",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A41",
+        "value": "202611180672",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A42",
+        "value": "202611180671",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A43",
+        "value": "202611180670",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A44",
+        "value": "202611180669",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A45",
+        "value": "202611180668",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A46",
+        "value": "202611180667",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A47",
+        "value": "202611180666",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A48",
+        "value": "202611180665",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A49",
+        "value": "202611180664",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A50",
+        "value": "202611180663",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A51",
+        "value": "202611180662",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A52",
+        "value": "202611180661",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A53",
+        "value": "202611180660",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A54",
+        "value": "202611180659",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A55",
+        "value": "202611180658",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A56",
+        "value": "202611180657",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A57",
+        "value": "202611180656",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A58",
+        "value": "202611180655",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A59",
+        "value": "202611180654",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A60",
+        "value": "202611180653",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A61",
+        "value": "202611180652",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A62",
+        "value": "202611180651",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A63",
+        "value": "202611180650",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A64",
+        "value": "202611180649",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A65",
+        "value": "202611180648",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A66",
+        "value": "202611180647",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A67",
+        "value": "202611180646",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A68",
+        "value": "202611180645",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A69",
+        "value": "202611180644",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A70",
+        "value": "202611180643",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A71",
+        "value": "202611180642",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A72",
+        "value": "202611180641",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A73",
+        "value": "202611180640",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A74",
+        "value": "202611180639",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A75",
+        "value": "202611180638",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A76",
+        "value": "202611180637",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A77",
+        "value": "202611180636",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A78",
+        "value": "202611180635",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A79",
+        "value": "202611180634",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A80",
+        "value": "202611180633",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A81",
+        "value": "202611180632",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A82",
+        "value": "202611180631",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A83",
+        "value": "202611180630",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A84",
+        "value": "202611180629",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A85",
+        "value": "202611180628",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A86",
+        "value": "202611180627",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A87",
+        "value": "202611180626",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A88",
+        "value": "202611180625",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A89",
+        "value": "202611180624",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A90",
+        "value": "202611180623",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A91",
+        "value": "202611180622",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A92",
+        "value": "202611180621",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A93",
+        "value": "202611180620",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A94",
+        "value": "202611180619",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A95",
+        "value": "202611180618",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A96",
+        "value": "202611180617",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A97",
+        "value": "202611180616",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A98",
+        "value": "202611180615",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A99",
+        "value": "202611180614",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A100",
+        "value": "202611180613",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A101",
+        "value": "202611180612",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A102",
+        "value": "202611180611",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A103",
+        "value": "202611180610",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A104",
+        "value": "202611180609",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A105",
+        "value": "202611180608",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A106",
+        "value": "202611180607",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A107",
+        "value": "202611180606",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A108",
+        "value": "202611180605",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A109",
+        "value": "202611180604",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A110",
+        "value": "202611180603",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A111",
+        "value": "202611180602",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A112",
+        "value": "202611180601",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A113",
+        "value": "202611180600",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A114",
+        "value": "202611180599",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A115",
+        "value": "202611180598",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A116",
+        "value": "202611180597",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A117",
+        "value": "202611180596",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A118",
+        "value": "202611180595",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A119",
+        "value": "202611180594",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A120",
+        "value": "202611180593",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A121",
+        "value": "202611180592",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A122",
+        "value": "202611180591",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A123",
+        "value": "202611180590",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A124",
+        "value": "202611180589",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A125",
+        "value": "202611180588",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A126",
+        "value": "202611180587",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A127",
+        "value": "202611180586",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A128",
+        "value": "202611180585",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A129",
+        "value": "202611180584",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A130",
+        "value": "202611180583",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A131",
+        "value": "202611180582",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A132",
+        "value": "202611180581",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A133",
+        "value": "202611180580",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A134",
+        "value": "202611180579",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A135",
+        "value": "202611180578",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A136",
+        "value": "202611180577",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A137",
+        "value": "202611180576",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A138",
+        "value": "202611180575",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A139",
+        "value": "202611180574",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A140",
+        "value": "202611180573",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A141",
+        "value": "202611180572",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A142",
+        "value": "202611180571",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A143",
+        "value": "202611180570",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A144",
+        "value": "202611180569",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A145",
+        "value": "202611180568",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A146",
+        "value": "202611180567",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A147",
+        "value": "202611180566",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A148",
+        "value": "202611180565",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A149",
+        "value": "202611180564",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A150",
+        "value": "202611180563",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A151",
+        "value": "202611180562",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A152",
+        "value": "202611180561",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A153",
+        "value": "202611180560",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A154",
+        "value": "202611180559",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A155",
+        "value": "202611180558",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A156",
+        "value": "202611180557",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A157",
+        "value": "202611180556",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A158",
+        "value": "202611180555",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A159",
+        "value": "202611180554",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A160",
+        "value": "202611180553",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A161",
+        "value": "202611180552",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A162",
+        "value": "202611180551",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A163",
+        "value": "202611180550",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A164",
+        "value": "202611180549",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A165",
+        "value": "202611180548",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A166",
+        "value": "202611180547",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A167",
+        "value": "202611180546",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A168",
+        "value": "202611180545",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A169",
+        "value": "202611180544",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A170",
+        "value": "202611180543",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A171",
+        "value": "202611180542",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A172",
+        "value": "202611180541",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A173",
+        "value": "202611180540",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A174",
+        "value": "202611180539",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A175",
+        "value": "202611180538",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A176",
+        "value": "202611180537",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A177",
+        "value": "202611180536",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A178",
+        "value": "202611180535",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A179",
+        "value": "202611180534",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A180",
+        "value": "202611180533",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A181",
+        "value": "202611180532",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A182",
+        "value": "202611180531",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A183",
+        "value": "202611180530",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A184",
+        "value": "202611180529",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A185",
+        "value": "202611180528",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A186",
+        "value": "202611180527",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A187",
+        "value": "202611180526",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A188",
+        "value": "202611180525",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A189",
+        "value": "202611180524",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A190",
+        "value": "202611180523",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A191",
+        "value": "202611180522",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A192",
+        "value": "202611180521",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A193",
+        "value": "202611180520",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A194",
+        "value": "202611180519",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A195",
+        "value": "202611180518",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A196",
+        "value": "202611180517",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A197",
+        "value": "202611180516",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A198",
+        "value": "202611180515",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A199",
+        "value": "202611180514",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A200",
+        "value": "202611180513",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A201",
+        "value": "202611180512",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A202",
+        "value": "202611180511",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A203",
+        "value": "202611180510",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A204",
+        "value": "202611180509",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A205",
+        "value": "202611180508",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A206",
+        "value": "202611180507",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A207",
+        "value": "202611180506",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A208",
+        "value": "202611180505",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A209",
+        "value": "202611180504",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A210",
+        "value": "202611180503",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A211",
+        "value": "202611180502",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A212",
+        "value": "202611180501",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A213",
+        "value": "202611180500",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A214",
+        "value": "202611180499",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A215",
+        "value": "202611180498",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A216",
+        "value": "202611180497",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A217",
+        "value": "202611180496",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A218",
+        "value": "202611180495",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A219",
+        "value": "202611180494",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A220",
+        "value": "202611180493",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A221",
+        "value": "202611180492",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A222",
+        "value": "202611180491",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A223",
+        "value": "202611180490",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A224",
+        "value": "202611180489",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A225",
+        "value": "202611180488",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A226",
+        "value": "202611180487",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A227",
+        "value": "202611180486",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A228",
+        "value": "202611180485",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A229",
+        "value": "202611180484",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A230",
+        "value": "202611180483",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A231",
+        "value": "202611180482",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A232",
+        "value": "202611180481",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A233",
+        "value": "202611180480",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A234",
+        "value": "202611180479",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A235",
+        "value": "202611180478",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A236",
+        "value": "202611180477",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A237",
+        "value": "202611180476",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A238",
+        "value": "202611180475",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A239",
+        "value": "202611180474",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A240",
+        "value": "202611180473",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A241",
+        "value": "202611180472",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A242",
+        "value": "202611180471",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A243",
+        "value": "202611180470",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A244",
+        "value": "202611180469",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A245",
+        "value": "202611180468",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A246",
+        "value": "202611180467",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A247",
+        "value": "202611180466",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A248",
+        "value": "202611180465",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A249",
+        "value": "202611180464",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A250",
+        "value": "202611180463",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A251",
+        "value": "202611180462",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A252",
+        "value": "202611180461",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A253",
+        "value": "202611180460",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A254",
+        "value": "202611180459",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A255",
+        "value": "202611180458",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A256",
+        "value": "202611180457",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A257",
+        "value": "202611180456",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A258",
+        "value": "202611180455",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A259",
+        "value": "202611180454",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A260",
+        "value": "202611180453",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A261",
+        "value": "202611180452",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A262",
+        "value": "202611180451",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A263",
+        "value": "202611180450",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A264",
+        "value": "202611180449",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A265",
+        "value": "202611180448",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A266",
+        "value": "202611180447",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A267",
+        "value": "202611180446",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A268",
+        "value": "202611180445",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A269",
+        "value": "202611180444",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A270",
+        "value": "202611180443",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A271",
+        "value": "202611180442",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A272",
+        "value": "202611180441",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A273",
+        "value": "202611180440",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A274",
+        "value": "202611180439",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A275",
+        "value": "202611180438",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A276",
+        "value": "202611180437",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A277",
+        "value": "202611180436",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A278",
+        "value": "202611180435",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A279",
+        "value": "202611180434",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A280",
+        "value": "202611180433",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A281",
+        "value": "202611180432",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A282",
+        "value": "202611180431",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A283",
+        "value": "202611180430",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A284",
+        "value": "202611180429",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A285",
+        "value": "202611180428",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A286",
+        "value": "202611180427",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A287",
+        "value": "202611180426",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A288",
+        "value": "202611180425",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A289",
+        "value": "202611180424",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A290",
+        "value": "202611180423",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A291",
+        "value": "202611180422",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A292",
+        "value": "202611180421",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A293",
+        "value": "202611180420",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A294",
+        "value": "202611180419",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A295",
+        "value": "202611180418",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A296",
+        "value": "202611180417",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A297",
+        "value": "202611180416",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A298",
+        "value": "202611180415",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A299",
+        "value": "202611180414",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A300",
+        "value": "202611180413",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A301",
+        "value": "202611180412",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A302",
+        "value": "202611180411",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A303",
+        "value": "202611180410",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A304",
+        "value": "202611180409",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A305",
+        "value": "202611180408",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A306",
+        "value": "202611180407",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A307",
+        "value": "202611180406",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A308",
+        "value": "202611180405",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A309",
+        "value": "202611180404",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A310",
+        "value": "202611180403",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A311",
+        "value": "202611180402",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A312",
+        "value": "202611180401",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A313",
+        "value": "202611180400",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A314",
+        "value": "202611180399",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A315",
+        "value": "202611180398",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A316",
+        "value": "202611180397",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A317",
+        "value": "202611180396",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A318",
+        "value": "202611180395",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A319",
+        "value": "202611180394",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A320",
+        "value": "202611180393",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A321",
+        "value": "202611180392",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A322",
+        "value": "202611180391",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A323",
+        "value": "202611180390",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A324",
+        "value": "202611180389",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A325",
+        "value": "202611180388",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A326",
+        "value": "202611180387",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A327",
+        "value": "202611180386",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A328",
+        "value": "202611180385",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A329",
+        "value": "202611180384",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A330",
+        "value": "202611180383",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A331",
+        "value": "202611180382",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A332",
+        "value": "202611180381",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A333",
+        "value": "202611180380",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A334",
+        "value": "202611180379",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A335",
+        "value": "202611180378",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A336",
+        "value": "202611180377",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A337",
+        "value": "202611180376",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A338",
+        "value": "202611180375",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A339",
+        "value": "202611180374",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A340",
+        "value": "202611180373",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A341",
+        "value": "202611180372",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A342",
+        "value": "202611180371",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A343",
+        "value": "202611180370",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A344",
+        "value": "202611180369",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A345",
+        "value": "202611180368",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A346",
+        "value": "202611180367",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A347",
+        "value": "202611180366",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A348",
+        "value": "202611180365",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A349",
+        "value": "202611180364",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A350",
+        "value": "202611180363",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A351",
+        "value": "202611180362",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A352",
+        "value": "202611180361",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A353",
+        "value": "202611180360",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A354",
+        "value": "202611180359",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A355",
+        "value": "202611180358",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A356",
+        "value": "202611180357",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A357",
+        "value": "202611180356",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A358",
+        "value": "202611180355",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A359",
+        "value": "202611180354",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A360",
+        "value": "202611180353",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A361",
+        "value": "202611180352",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A362",
+        "value": "202611180351",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A363",
+        "value": "202611180350",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A364",
+        "value": "202611180349",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A365",
+        "value": "202611180348",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A366",
+        "value": "202611180347",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A367",
+        "value": "202611180346",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A368",
+        "value": "202611180345",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A369",
+        "value": "202611180344",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A370",
+        "value": "202611180343",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A371",
+        "value": "202611180342",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A372",
+        "value": "202611180341",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A373",
+        "value": "202611180340",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A374",
+        "value": "202611180339",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A375",
+        "value": "202611180338",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A376",
+        "value": "202611180337",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A377",
+        "value": "202611180336",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A378",
+        "value": "202611180335",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A379",
+        "value": "202611180334",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A380",
+        "value": "202611180333",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A381",
+        "value": "202611180332",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A382",
+        "value": "202611180331",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A383",
+        "value": "202611180330",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A384",
+        "value": "202611180329",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A385",
+        "value": "202611180328",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A386",
+        "value": "202611180327",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A387",
+        "value": "202611180326",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A388",
+        "value": "202611180325",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A389",
+        "value": "202611180324",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A390",
+        "value": "202611180323",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A391",
+        "value": "202611180322",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A392",
+        "value": "202611180321",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A393",
+        "value": "202611180320",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A394",
+        "value": "202611180319",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A395",
+        "value": "202611180318",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A396",
+        "value": "202611180317",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A397",
+        "value": "202611180316",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A398",
+        "value": "202611180315",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A399",
+        "value": "202611180314",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A400",
+        "value": "202611180313",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A401",
+        "value": "202611180312",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A402",
+        "value": "202611180311",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A403",
+        "value": "202611180310",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A404",
+        "value": "202611180309",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A405",
+        "value": "202611180308",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A406",
+        "value": "202611180307",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A407",
+        "value": "202611180306",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A408",
+        "value": "202611180305",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A409",
+        "value": "202611180304",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A410",
+        "value": "202611180303",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A411",
+        "value": "202611180302",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A412",
+        "value": "202611180301",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A413",
+        "value": "202611180300",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A414",
+        "value": "202611180299",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A415",
+        "value": "202611180298",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A416",
+        "value": "202611180297",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A417",
+        "value": "202611180296",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A418",
+        "value": "202611180295",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A419",
+        "value": "202611180294",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A420",
+        "value": "202611180293",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A421",
+        "value": "202611180292",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A422",
+        "value": "202611180291",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A423",
+        "value": "202611180290",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A424",
+        "value": "202611180289",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A425",
+        "value": "202611180288",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A426",
+        "value": "202611180287",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A427",
+        "value": "202611180286",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A428",
+        "value": "202611180285",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A429",
+        "value": "202611180284",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A430",
+        "value": "202611180283",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A431",
+        "value": "202611180282",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A432",
+        "value": "202611180281",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A433",
+        "value": "202611180280",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A434",
+        "value": "202611180279",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A435",
+        "value": "202611180278",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A436",
+        "value": "202611180277",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A437",
+        "value": "202611180276",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A438",
+        "value": "202611180275",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A439",
+        "value": "202611180274",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A440",
+        "value": "202611180273",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A441",
+        "value": "202611180272",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A442",
+        "value": "202611180271",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A443",
+        "value": "202611180270",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A444",
+        "value": "202611180269",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A445",
+        "value": "202611180268",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A446",
+        "value": "202611180267",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A447",
+        "value": "202611180266",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A448",
+        "value": "202611180265",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A449",
+        "value": "202611180264",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A450",
+        "value": "202611180263",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A451",
+        "value": "202611180262",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A452",
+        "value": "202611180261",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A453",
+        "value": "202611180260",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A454",
+        "value": "202611180259",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A455",
+        "value": "202611180258",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A456",
+        "value": "202611180257",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A457",
+        "value": "202611180256",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A458",
+        "value": "202611180255",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A459",
+        "value": "202611180254",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A460",
+        "value": "202611180253",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A461",
+        "value": "202611180252",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A462",
+        "value": "202611180251",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A463",
+        "value": "202611180250",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A464",
+        "value": "202611180249",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A465",
+        "value": "202611180248",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A466",
+        "value": "202611180247",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A467",
+        "value": "202611180246",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A468",
+        "value": "202611180245",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A469",
+        "value": "202611180244",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A470",
+        "value": "202611180243",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A471",
+        "value": "202611180242",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A472",
+        "value": "202611180241",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A473",
+        "value": "202611180240",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A474",
+        "value": "202611180239",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A475",
+        "value": "202611180238",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A476",
+        "value": "202611180237",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A477",
+        "value": "202611180236",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A478",
+        "value": "202611180235",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A479",
+        "value": "202611180234",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A480",
+        "value": "202611180233",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A481",
+        "value": "202611180232",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A482",
+        "value": "202611180231",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A483",
+        "value": "202611180230",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A484",
+        "value": "202611180229",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A485",
+        "value": "202611180228",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A486",
+        "value": "202611180227",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A487",
+        "value": "202611180226",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A488",
+        "value": "202611180225",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A489",
+        "value": "202611180224",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A490",
+        "value": "202611180223",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A491",
+        "value": "202611180222",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A492",
+        "value": "202611180221",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A493",
+        "value": "202611180220",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A494",
+        "value": "202611180219",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A495",
+        "value": "202611180218",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A496",
+        "value": "202611180217",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A497",
+        "value": "202611180216",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A498",
+        "value": "202611180215",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A499",
+        "value": "202611180214",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A500",
+        "value": "202611180213",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A501",
+        "value": "202611180212",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A502",
+        "value": "202611180211",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A503",
+        "value": "202611180210",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A504",
+        "value": "202611180209",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A505",
+        "value": "202611180208",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A506",
+        "value": "202611180207",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A507",
+        "value": "202611180206",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A508",
+        "value": "202611180205",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A509",
+        "value": "202611180204",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A510",
+        "value": "202611180203",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A511",
+        "value": "202611180202",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A512",
+        "value": "202611180201",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A513",
+        "value": "202611180200",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A514",
+        "value": "202611180199",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A515",
+        "value": "202611180198",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A516",
+        "value": "202611180197",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A517",
+        "value": "202611180196",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A518",
+        "value": "202611180195",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A519",
+        "value": "202611180194",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A520",
+        "value": "202611180193",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A521",
+        "value": "202611180192",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A522",
+        "value": "202611180191",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A523",
+        "value": "202611180190",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A524",
+        "value": "202611180189",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A525",
+        "value": "202611180188",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A526",
+        "value": "202611180187",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A527",
+        "value": "202611180186",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A528",
+        "value": "202611180185",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A529",
+        "value": "202611180184",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A530",
+        "value": "202611180183",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A531",
+        "value": "202611180182",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A532",
+        "value": "202611180181",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A533",
+        "value": "202611180180",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A534",
+        "value": "202611180179",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A535",
+        "value": "202611180178",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A536",
+        "value": "202611180177",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A537",
+        "value": "202611180176",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A538",
+        "value": "202611180175",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A539",
+        "value": "202611180174",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A540",
+        "value": "202611180173",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A541",
+        "value": "202611180172",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A542",
+        "value": "202611180171",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A543",
+        "value": "202611180170",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A544",
+        "value": "202611180169",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A545",
+        "value": "202611180168",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A546",
+        "value": "202611180167",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A547",
+        "value": "202611180166",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A548",
+        "value": "202611180165",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A549",
+        "value": "202611180164",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A550",
+        "value": "202611180163",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A551",
+        "value": "202611180162",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A552",
+        "value": "202611180161",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A553",
+        "value": "202611180160",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A554",
+        "value": "202611180159",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A555",
+        "value": "202611180158",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A556",
+        "value": "202611180157",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A557",
+        "value": "202611180156",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A558",
+        "value": "202611180155",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A559",
+        "value": "202611180154",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A560",
+        "value": "202611180153",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A561",
+        "value": "202611180152",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A562",
+        "value": "202611180151",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A563",
+        "value": "202611180150",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A564",
+        "value": "202611180149",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A565",
+        "value": "202611180148",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A566",
+        "value": "202611180147",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A567",
+        "value": "202611180146",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A568",
+        "value": "202611180145",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A569",
+        "value": "202611180144",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A570",
+        "value": "202611180143",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A571",
+        "value": "202611180142",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A572",
+        "value": "202611180141",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A573",
+        "value": "202611180140",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A574",
+        "value": "202611180139",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A575",
+        "value": "202611180138",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A576",
+        "value": "202611180137",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A577",
+        "value": "202611180136",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A578",
+        "value": "202611180135",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A579",
+        "value": "202611180134",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A580",
+        "value": "202611180133",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A581",
+        "value": "202611180132",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A582",
+        "value": "202611180131",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A583",
+        "value": "202611180130",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A584",
+        "value": "202611180129",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A585",
+        "value": "202611180128",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A586",
+        "value": "202611180127",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A587",
+        "value": "202611180126",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A588",
+        "value": "202611180125",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A589",
+        "value": "202611180124",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A590",
+        "value": "202611180123",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A591",
+        "value": "202611180122",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A592",
+        "value": "202611180121",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A593",
+        "value": "202611180120",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A594",
+        "value": "202611180119",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A595",
+        "value": "202611180118",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A596",
+        "value": "202611180117",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A597",
+        "value": "202611180116",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A598",
+        "value": "202611180115",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A599",
+        "value": "202611180114",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A600",
+        "value": "202611180113",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A601",
+        "value": "202611180112",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A602",
+        "value": "202611180111",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A603",
+        "value": "202611180110",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A604",
+        "value": "202611180109",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A605",
+        "value": "202611180108",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A606",
+        "value": "202611180107",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A607",
+        "value": "202611180106",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A608",
+        "value": "202611180105",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A609",
+        "value": "202611180104",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A610",
+        "value": "202611180103",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A611",
+        "value": "202611180102",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A612",
+        "value": "202611180101",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A613",
+        "value": "202611180100",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A614",
+        "value": "202611180099",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A615",
+        "value": "202611180098",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A616",
+        "value": "202611180097",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A617",
+        "value": "202611180096",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A618",
+        "value": "202611180095",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A619",
+        "value": "202611180094",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A620",
+        "value": "202611180093",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A621",
+        "value": "202611180092",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A622",
+        "value": "202611180091",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A623",
+        "value": "202611180090",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A624",
+        "value": "202611180089",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A625",
+        "value": "202611180088",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A626",
+        "value": "202611180087",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A627",
+        "value": "202611180086",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A628",
+        "value": "202611180085",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A629",
+        "value": "202611180084",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A630",
+        "value": "202611180083",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A631",
+        "value": "202611180082",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A632",
+        "value": "202611180081",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A633",
+        "value": "202611180080",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A634",
+        "value": "202611180079",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A635",
+        "value": "202611180078",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A636",
+        "value": "202611180077",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A637",
+        "value": "202611180076",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A638",
+        "value": "202611180075",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A639",
+        "value": "202611180074",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A640",
+        "value": "202611180073",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A641",
+        "value": "202611180072",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A642",
+        "value": "202611180071",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A643",
+        "value": "202611180070",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A644",
+        "value": "202611180069",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A645",
+        "value": "202611180068",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A646",
+        "value": "202611180067",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A647",
+        "value": "202611180066",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A648",
+        "value": "202611180065",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A649",
+        "value": "202611180064",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A650",
+        "value": "202611180063",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A651",
+        "value": "202611180062",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A652",
+        "value": "202611180061",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A653",
+        "value": "202611180060",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A654",
+        "value": "202611180059",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A655",
+        "value": "202611180058",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A656",
+        "value": "202611180057",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A657",
+        "value": "202611180056",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A658",
+        "value": "202611180055",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A659",
+        "value": "202611180054",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A660",
+        "value": "202611180053",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A661",
+        "value": "202611180052",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A662",
+        "value": "202611180051",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A663",
+        "value": "202611180050",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A664",
+        "value": "202611180049",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A665",
+        "value": "202611180048",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A666",
+        "value": "202611180047",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A667",
+        "value": "202611180046",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A668",
+        "value": "202611180045",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A669",
+        "value": "202611180044",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A670",
+        "value": "202611180043",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A671",
+        "value": "202611180042",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A672",
+        "value": "202611180041",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A673",
+        "value": "202611180040",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A674",
+        "value": "202611180039",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A675",
+        "value": "202611180038",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A676",
+        "value": "202611180037",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A677",
+        "value": "202611180036",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A678",
+        "value": "202611180035",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A679",
+        "value": "202611180034",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A680",
+        "value": "202611180033",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A681",
+        "value": "202611180032",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A682",
+        "value": "202611180031",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A683",
+        "value": "202611180030",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A684",
+        "value": "202611180029",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A685",
+        "value": "202611180028",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A686",
+        "value": "202611180027",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A687",
+        "value": "202611180026",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A688",
+        "value": "202611180025",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A689",
+        "value": "202611180024",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A690",
+        "value": "202611180023",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A691",
+        "value": "202611180022",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A692",
+        "value": "202611180021",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A693",
+        "value": "202611180020",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A694",
+        "value": "202611180019",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A695",
+        "value": "202611180018",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A696",
+        "value": "202611180017",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A697",
+        "value": "202611180016",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A698",
+        "value": "202611180015",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A699",
+        "value": "202611180014",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A700",
+        "value": "202611180013",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A701",
+        "value": "202611180012",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A702",
+        "value": "202611180011",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A703",
+        "value": "202611180010",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A704",
+        "value": "202611180009",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A705",
+        "value": "202611180008",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A706",
+        "value": "202611180007",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A707",
+        "value": "202611180006",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A708",
+        "value": "202611180005",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A709",
+        "value": "202611180004",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A710",
+        "value": "202611180003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A711",
+        "value": "202611180002",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A712",
+        "value": "202611180001",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A713",
+        "value": "202611170300",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A714",
+        "value": "202611170299",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A715",
+        "value": "202611170298",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A716",
+        "value": "202611170297",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A717",
+        "value": "202611170296",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A718",
+        "value": "202611170295",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A719",
+        "value": "202611170294",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A720",
+        "value": "202611170293",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A721",
+        "value": "202611170292",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A722",
+        "value": "202611170291",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A723",
+        "value": "202611170290",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A724",
+        "value": "202611170289",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A725",
+        "value": "202611170288",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A726",
+        "value": "202611170287",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A727",
+        "value": "202611170286",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A728",
+        "value": "202611170285",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A729",
+        "value": "202611170284",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A730",
+        "value": "202611170283",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A731",
+        "value": "202611170282",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A732",
+        "value": "202611170281",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A733",
+        "value": "202611170280",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A734",
+        "value": "202611170279",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A735",
+        "value": "202611170278",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A736",
+        "value": "202611170277",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A737",
+        "value": "202611170276",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A738",
+        "value": "202611170275",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A739",
+        "value": "202611170274",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A740",
+        "value": "202611170273",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A741",
+        "value": "202611170272",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A742",
+        "value": "202611170271",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A743",
+        "value": "202611170270",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A744",
+        "value": "202611170269",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A745",
+        "value": "202611170268",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A746",
+        "value": "202611170267",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A747",
+        "value": "202611170266",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A748",
+        "value": "202611170265",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A749",
+        "value": "202611170264",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A750",
+        "value": "202611170263",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A751",
+        "value": "202611170262",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A752",
+        "value": "202611170261",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A753",
+        "value": "202611170260",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A754",
+        "value": "202611170259",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A755",
+        "value": "202611170258",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A756",
+        "value": "202611170257",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A757",
+        "value": "202611170256",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A758",
+        "value": "202611170255",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A759",
+        "value": "202611170254",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A760",
+        "value": "202611170253",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A761",
+        "value": "202611170252",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A762",
+        "value": "202611170251",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A763",
+        "value": "202611170250",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A764",
+        "value": "202611170249",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A765",
+        "value": "202611170248",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A766",
+        "value": "202611170247",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A767",
+        "value": "202611170246",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A768",
+        "value": "202611170245",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A769",
+        "value": "202611170244",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A770",
+        "value": "202611170243",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A771",
+        "value": "202611170242",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A772",
+        "value": "202611170241",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A773",
+        "value": "202611170240",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A774",
+        "value": "202611170239",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A775",
+        "value": "202611170238",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A776",
+        "value": "202611170237",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A777",
+        "value": "202611170236",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A778",
+        "value": "202611170235",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A779",
+        "value": "202611170234",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A780",
+        "value": "202611170233",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A781",
+        "value": "202611170232",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A782",
+        "value": "202611170231",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A783",
+        "value": "202611170230",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A784",
+        "value": "202611170229",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A785",
+        "value": "202611170228",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A786",
+        "value": "202611170227",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A787",
+        "value": "202611170226",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A788",
+        "value": "202611170225",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A789",
+        "value": "202611170224",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A790",
+        "value": "202611170223",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A791",
+        "value": "202611170222",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A792",
+        "value": "202611170221",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A793",
+        "value": "202611170220",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A794",
+        "value": "202611170219",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A795",
+        "value": "202611170218",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A796",
+        "value": "202611170217",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A797",
+        "value": "202611170216",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A798",
+        "value": "202611170215",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A799",
+        "value": "202611170214",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A800",
+        "value": "202611170213",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A801",
+        "value": "202611170212",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A802",
+        "value": "202611170211",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A803",
+        "value": "202611170210",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A804",
+        "value": "202611170209",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A805",
+        "value": "202611170208",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A806",
+        "value": "202611170207",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A807",
+        "value": "202611170206",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A808",
+        "value": "202611170205",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A809",
+        "value": "202611170204",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A810",
+        "value": "202611170203",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A811",
+        "value": "202611170202",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A812",
+        "value": "202611170201",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A813",
+        "value": "202611170200",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A814",
+        "value": "202611170199",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A815",
+        "value": "202611170198",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A816",
+        "value": "202611170197",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A817",
+        "value": "202611170196",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A818",
+        "value": "202611170195",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A819",
+        "value": "202611170194",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A820",
+        "value": "202611170193",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A821",
+        "value": "202611170192",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A822",
+        "value": "202611170191",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A823",
+        "value": "202611170190",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A824",
+        "value": "202611170189",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A825",
+        "value": "202611170188",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A826",
+        "value": "202611170187",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A827",
+        "value": "202611170186",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A828",
+        "value": "202611170185",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A829",
+        "value": "202611170184",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A830",
+        "value": "202611170183",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A831",
+        "value": "202611170182",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A832",
+        "value": "202611170181",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A833",
+        "value": "202611170180",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A834",
+        "value": "202611170179",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A835",
+        "value": "202611170178",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A836",
+        "value": "202611170177",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A837",
+        "value": "202611170176",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A838",
+        "value": "202611170175",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A839",
+        "value": "202611170174",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A840",
+        "value": "202611170173",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A841",
+        "value": "202611170172",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A842",
+        "value": "202611170171",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A843",
+        "value": "202611170170",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A844",
+        "value": "202611170169",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A845",
+        "value": "202611170168",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A846",
+        "value": "202611170167",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A847",
+        "value": "202611170166",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A848",
+        "value": "202611170165",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A849",
+        "value": "202611170164",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A850",
+        "value": "202611170163",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A851",
+        "value": "202611170162",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A852",
+        "value": "202611170161",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A853",
+        "value": "202611170160",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A854",
+        "value": "202611170159",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A855",
+        "value": "202611170158",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A856",
+        "value": "202611170157",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A857",
+        "value": "202611170156",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A858",
+        "value": "202611170155",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A859",
+        "value": "202611170154",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A860",
+        "value": "202611170153",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A861",
+        "value": "202611170152",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A862",
+        "value": "202611170151",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A863",
+        "value": "202611170150",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A864",
+        "value": "202611170149",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A865",
+        "value": "202611170148",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A866",
+        "value": "202611170147",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A867",
+        "value": "202611170146",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A868",
+        "value": "202611170145",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A869",
+        "value": "202611170144",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A870",
+        "value": "202611170143",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A871",
+        "value": "202611170142",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A872",
+        "value": "202611170141",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A873",
+        "value": "202611170140",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A874",
+        "value": "202611170139",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A875",
+        "value": "202611170138",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A876",
+        "value": "202611170137",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A877",
+        "value": "202611170136",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A878",
+        "value": "202611170135",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A879",
+        "value": "202611170134",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A880",
+        "value": "202611170133",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A881",
+        "value": "202611170132",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A882",
+        "value": "202611170131",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A883",
+        "value": "202611170130",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A884",
+        "value": "202611170129",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A885",
+        "value": "202611170128",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A886",
+        "value": "202611170127",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A887",
+        "value": "202611170126",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A888",
+        "value": "202611170125",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A889",
+        "value": "202611170124",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A890",
+        "value": "202611170123",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A891",
+        "value": "202611170122",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A892",
+        "value": "202611170121",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A893",
+        "value": "202611170120",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A894",
+        "value": "202611170119",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A895",
+        "value": "202611170118",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A896",
+        "value": "202611170117",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A897",
+        "value": "202611170116",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A898",
+        "value": "202611170115",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A899",
+        "value": "202611170114",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A900",
+        "value": "202611170113",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A901",
+        "value": "202611170112",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A902",
+        "value": "202611170111",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A903",
+        "value": "202611170110",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A904",
+        "value": "202611170109",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A905",
+        "value": "202611170108",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A906",
+        "value": "202611170107",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A907",
+        "value": "202611170106",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A908",
+        "value": "202611170105",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A909",
+        "value": "202611170104",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A910",
+        "value": "202611170103",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A911",
+        "value": "202611170102",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A912",
+        "value": "202611170101",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A913",
+        "value": "202611170100",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A914",
+        "value": "202611170099",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A915",
+        "value": "202611170098",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A916",
+        "value": "202611170097",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A917",
+        "value": "202611170096",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A918",
+        "value": "202611170095",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A919",
+        "value": "202611170094",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A920",
+        "value": "202611170093",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A921",
+        "value": "202611170092",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A922",
+        "value": "202611170091",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A923",
+        "value": "202611170090",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A924",
+        "value": "202611170089",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A925",
+        "value": "202611170088",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A926",
+        "value": "202611170087",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A927",
+        "value": "202611170086",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A928",
+        "value": "202611170085",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A929",
+        "value": "202611170084",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A930",
+        "value": "202611170083",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A931",
+        "value": "202611170082",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A932",
+        "value": "202611170081",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A933",
+        "value": "202611170080",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A934",
+        "value": "202611170079",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A935",
+        "value": "202611170078",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A936",
+        "value": "202611170077",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A937",
+        "value": "202611170076",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A938",
+        "value": "202611170075",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A939",
+        "value": "202611170074",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A940",
+        "value": "202611170073",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A941",
+        "value": "202611170072",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A942",
+        "value": "202611170071",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A943",
+        "value": "202611170070",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A944",
+        "value": "202611170069",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A945",
+        "value": "202611170068",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A946",
+        "value": "202611170067",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A947",
+        "value": "202611170066",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A948",
+        "value": "202611170065",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A949",
+        "value": "202611170064",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A950",
+        "value": "202611170063",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A951",
+        "value": "202611170062",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A952",
+        "value": "202611170061",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A953",
+        "value": "202611170060",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A954",
+        "value": "202611170059",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A955",
+        "value": "202611170058",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A956",
+        "value": "202611170057",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A957",
+        "value": "202611170056",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A958",
+        "value": "202611170055",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A959",
+        "value": "202611170054",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A960",
+        "value": "202611170053",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A961",
+        "value": "202611170052",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A962",
+        "value": "202611170051",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A963",
+        "value": "202611170050",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A964",
+        "value": "202611170049",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A965",
+        "value": "202611170048",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A966",
+        "value": "202611170047",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A967",
+        "value": "202611170046",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A968",
+        "value": "202611170045",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A969",
+        "value": "202611170044",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A970",
+        "value": "202611170043",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A971",
+        "value": "202611170042",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A972",
+        "value": "202611170041",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A973",
+        "value": "202611170040",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A974",
+        "value": "202611170039",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A975",
+        "value": "202611170038",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A976",
+        "value": "202611170037",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A977",
+        "value": "202611170036",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A978",
+        "value": "202611170035",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A979",
+        "value": "202611170034",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A980",
+        "value": "202611170033",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A981",
+        "value": "202611170032",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A982",
+        "value": "202611170031",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A983",
+        "value": "202611170030",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A984",
+        "value": "202611170029",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A985",
+        "value": "202611170028",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A986",
+        "value": "202611170027",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A987",
+        "value": "202611170026",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A988",
+        "value": "202611170025",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A989",
+        "value": "202611170024",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A990",
+        "value": "202611170023",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A991",
+        "value": "202611170022",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A992",
+        "value": "202611170021",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A993",
+        "value": "202611170020",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A994",
+        "value": "202611170019",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A995",
+        "value": "202611170018",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A996",
+        "value": "202611170017",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A997",
+        "value": "202611170016",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A998",
+        "value": "202611170015",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A999",
+        "value": "202611170014",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1000",
+        "value": "202611170013",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1001",
+        "value": "202611170012",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1002",
+        "value": "202611170011",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1003",
+        "value": "202611170010",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1004",
+        "value": "202611170009",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1005",
+        "value": "202611170008",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1006",
+        "value": "202611170007",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1007",
+        "value": "202611170006",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1008",
+        "value": "202611170005",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1009",
+        "value": "202611170004",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1010",
+        "value": "202611170003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1011",
+        "value": "202611170002",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A1012",
+        "value": "202611170001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-boundaries/sales-300.xlsx",
+    "sha256": "392aaf45888c85301c3394415981851f09a311c779f34357d8c58a7662a9a817",
+    "text_folio_cells": [
+      {
+        "cell": "A13",
+        "value": "202611170300",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A14",
+        "value": "202611170299",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A15",
+        "value": "202611170298",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A16",
+        "value": "202611170297",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A17",
+        "value": "202611170296",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A18",
+        "value": "202611170295",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A19",
+        "value": "202611170294",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A20",
+        "value": "202611170293",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A21",
+        "value": "202611170292",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A22",
+        "value": "202611170291",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A23",
+        "value": "202611170290",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A24",
+        "value": "202611170289",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A25",
+        "value": "202611170288",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A26",
+        "value": "202611170287",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A27",
+        "value": "202611170286",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A28",
+        "value": "202611170285",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A29",
+        "value": "202611170284",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A30",
+        "value": "202611170283",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A31",
+        "value": "202611170282",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A32",
+        "value": "202611170281",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A33",
+        "value": "202611170280",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A34",
+        "value": "202611170279",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A35",
+        "value": "202611170278",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A36",
+        "value": "202611170277",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A37",
+        "value": "202611170276",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A38",
+        "value": "202611170275",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A39",
+        "value": "202611170274",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A40",
+        "value": "202611170273",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A41",
+        "value": "202611170272",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A42",
+        "value": "202611170271",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A43",
+        "value": "202611170270",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A44",
+        "value": "202611170269",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A45",
+        "value": "202611170268",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A46",
+        "value": "202611170267",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A47",
+        "value": "202611170266",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A48",
+        "value": "202611170265",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A49",
+        "value": "202611170264",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A50",
+        "value": "202611170263",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A51",
+        "value": "202611170262",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A52",
+        "value": "202611170261",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A53",
+        "value": "202611170260",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A54",
+        "value": "202611170259",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A55",
+        "value": "202611170258",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A56",
+        "value": "202611170257",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A57",
+        "value": "202611170256",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A58",
+        "value": "202611170255",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A59",
+        "value": "202611170254",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A60",
+        "value": "202611170253",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A61",
+        "value": "202611170252",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A62",
+        "value": "202611170251",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A63",
+        "value": "202611170250",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A64",
+        "value": "202611170249",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A65",
+        "value": "202611170248",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A66",
+        "value": "202611170247",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A67",
+        "value": "202611170246",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A68",
+        "value": "202611170245",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A69",
+        "value": "202611170244",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A70",
+        "value": "202611170243",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A71",
+        "value": "202611170242",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A72",
+        "value": "202611170241",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A73",
+        "value": "202611170240",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A74",
+        "value": "202611170239",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A75",
+        "value": "202611170238",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A76",
+        "value": "202611170237",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A77",
+        "value": "202611170236",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A78",
+        "value": "202611170235",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A79",
+        "value": "202611170234",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A80",
+        "value": "202611170233",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A81",
+        "value": "202611170232",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A82",
+        "value": "202611170231",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A83",
+        "value": "202611170230",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A84",
+        "value": "202611170229",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A85",
+        "value": "202611170228",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A86",
+        "value": "202611170227",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A87",
+        "value": "202611170226",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A88",
+        "value": "202611170225",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A89",
+        "value": "202611170224",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A90",
+        "value": "202611170223",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A91",
+        "value": "202611170222",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A92",
+        "value": "202611170221",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A93",
+        "value": "202611170220",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A94",
+        "value": "202611170219",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A95",
+        "value": "202611170218",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A96",
+        "value": "202611170217",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A97",
+        "value": "202611170216",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A98",
+        "value": "202611170215",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A99",
+        "value": "202611170214",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A100",
+        "value": "202611170213",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A101",
+        "value": "202611170212",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A102",
+        "value": "202611170211",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A103",
+        "value": "202611170210",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A104",
+        "value": "202611170209",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A105",
+        "value": "202611170208",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A106",
+        "value": "202611170207",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A107",
+        "value": "202611170206",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A108",
+        "value": "202611170205",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A109",
+        "value": "202611170204",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A110",
+        "value": "202611170203",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A111",
+        "value": "202611170202",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A112",
+        "value": "202611170201",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A113",
+        "value": "202611170200",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A114",
+        "value": "202611170199",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A115",
+        "value": "202611170198",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A116",
+        "value": "202611170197",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A117",
+        "value": "202611170196",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A118",
+        "value": "202611170195",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A119",
+        "value": "202611170194",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A120",
+        "value": "202611170193",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A121",
+        "value": "202611170192",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A122",
+        "value": "202611170191",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A123",
+        "value": "202611170190",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A124",
+        "value": "202611170189",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A125",
+        "value": "202611170188",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A126",
+        "value": "202611170187",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A127",
+        "value": "202611170186",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A128",
+        "value": "202611170185",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A129",
+        "value": "202611170184",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A130",
+        "value": "202611170183",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A131",
+        "value": "202611170182",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A132",
+        "value": "202611170181",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A133",
+        "value": "202611170180",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A134",
+        "value": "202611170179",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A135",
+        "value": "202611170178",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A136",
+        "value": "202611170177",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A137",
+        "value": "202611170176",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A138",
+        "value": "202611170175",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A139",
+        "value": "202611170174",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A140",
+        "value": "202611170173",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A141",
+        "value": "202611170172",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A142",
+        "value": "202611170171",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A143",
+        "value": "202611170170",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A144",
+        "value": "202611170169",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A145",
+        "value": "202611170168",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A146",
+        "value": "202611170167",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A147",
+        "value": "202611170166",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A148",
+        "value": "202611170165",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A149",
+        "value": "202611170164",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A150",
+        "value": "202611170163",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A151",
+        "value": "202611170162",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A152",
+        "value": "202611170161",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A153",
+        "value": "202611170160",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A154",
+        "value": "202611170159",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A155",
+        "value": "202611170158",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A156",
+        "value": "202611170157",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A157",
+        "value": "202611170156",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A158",
+        "value": "202611170155",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A159",
+        "value": "202611170154",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A160",
+        "value": "202611170153",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A161",
+        "value": "202611170152",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A162",
+        "value": "202611170151",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A163",
+        "value": "202611170150",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A164",
+        "value": "202611170149",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A165",
+        "value": "202611170148",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A166",
+        "value": "202611170147",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A167",
+        "value": "202611170146",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A168",
+        "value": "202611170145",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A169",
+        "value": "202611170144",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A170",
+        "value": "202611170143",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A171",
+        "value": "202611170142",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A172",
+        "value": "202611170141",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A173",
+        "value": "202611170140",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A174",
+        "value": "202611170139",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A175",
+        "value": "202611170138",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A176",
+        "value": "202611170137",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A177",
+        "value": "202611170136",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A178",
+        "value": "202611170135",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A179",
+        "value": "202611170134",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A180",
+        "value": "202611170133",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A181",
+        "value": "202611170132",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A182",
+        "value": "202611170131",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A183",
+        "value": "202611170130",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A184",
+        "value": "202611170129",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A185",
+        "value": "202611170128",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A186",
+        "value": "202611170127",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A187",
+        "value": "202611170126",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A188",
+        "value": "202611170125",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A189",
+        "value": "202611170124",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A190",
+        "value": "202611170123",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A191",
+        "value": "202611170122",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A192",
+        "value": "202611170121",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A193",
+        "value": "202611170120",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A194",
+        "value": "202611170119",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A195",
+        "value": "202611170118",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A196",
+        "value": "202611170117",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A197",
+        "value": "202611170116",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A198",
+        "value": "202611170115",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A199",
+        "value": "202611170114",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A200",
+        "value": "202611170113",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A201",
+        "value": "202611170112",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A202",
+        "value": "202611170111",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A203",
+        "value": "202611170110",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A204",
+        "value": "202611170109",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A205",
+        "value": "202611170108",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A206",
+        "value": "202611170107",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A207",
+        "value": "202611170106",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A208",
+        "value": "202611170105",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A209",
+        "value": "202611170104",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A210",
+        "value": "202611170103",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A211",
+        "value": "202611170102",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A212",
+        "value": "202611170101",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A213",
+        "value": "202611170100",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A214",
+        "value": "202611170099",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A215",
+        "value": "202611170098",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A216",
+        "value": "202611170097",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A217",
+        "value": "202611170096",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A218",
+        "value": "202611170095",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A219",
+        "value": "202611170094",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A220",
+        "value": "202611170093",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A221",
+        "value": "202611170092",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A222",
+        "value": "202611170091",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A223",
+        "value": "202611170090",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A224",
+        "value": "202611170089",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A225",
+        "value": "202611170088",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A226",
+        "value": "202611170087",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A227",
+        "value": "202611170086",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A228",
+        "value": "202611170085",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A229",
+        "value": "202611170084",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A230",
+        "value": "202611170083",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A231",
+        "value": "202611170082",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A232",
+        "value": "202611170081",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A233",
+        "value": "202611170080",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A234",
+        "value": "202611170079",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A235",
+        "value": "202611170078",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A236",
+        "value": "202611170077",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A237",
+        "value": "202611170076",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A238",
+        "value": "202611170075",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A239",
+        "value": "202611170074",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A240",
+        "value": "202611170073",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A241",
+        "value": "202611170072",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A242",
+        "value": "202611170071",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A243",
+        "value": "202611170070",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A244",
+        "value": "202611170069",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A245",
+        "value": "202611170068",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A246",
+        "value": "202611170067",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A247",
+        "value": "202611170066",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A248",
+        "value": "202611170065",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A249",
+        "value": "202611170064",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A250",
+        "value": "202611170063",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A251",
+        "value": "202611170062",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A252",
+        "value": "202611170061",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A253",
+        "value": "202611170060",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A254",
+        "value": "202611170059",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A255",
+        "value": "202611170058",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A256",
+        "value": "202611170057",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A257",
+        "value": "202611170056",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A258",
+        "value": "202611170055",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A259",
+        "value": "202611170054",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A260",
+        "value": "202611170053",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A261",
+        "value": "202611170052",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A262",
+        "value": "202611170051",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A263",
+        "value": "202611170050",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A264",
+        "value": "202611170049",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A265",
+        "value": "202611170048",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A266",
+        "value": "202611170047",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A267",
+        "value": "202611170046",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A268",
+        "value": "202611170045",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A269",
+        "value": "202611170044",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A270",
+        "value": "202611170043",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A271",
+        "value": "202611170042",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A272",
+        "value": "202611170041",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A273",
+        "value": "202611170040",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A274",
+        "value": "202611170039",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A275",
+        "value": "202611170038",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A276",
+        "value": "202611170037",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A277",
+        "value": "202611170036",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A278",
+        "value": "202611170035",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A279",
+        "value": "202611170034",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A280",
+        "value": "202611170033",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A281",
+        "value": "202611170032",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A282",
+        "value": "202611170031",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A283",
+        "value": "202611170030",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A284",
+        "value": "202611170029",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A285",
+        "value": "202611170028",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A286",
+        "value": "202611170027",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A287",
+        "value": "202611170026",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A288",
+        "value": "202611170025",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A289",
+        "value": "202611170024",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A290",
+        "value": "202611170023",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A291",
+        "value": "202611170022",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A292",
+        "value": "202611170021",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A293",
+        "value": "202611170020",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A294",
+        "value": "202611170019",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A295",
+        "value": "202611170018",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A296",
+        "value": "202611170017",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A297",
+        "value": "202611170016",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A298",
+        "value": "202611170015",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A299",
+        "value": "202611170014",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A300",
+        "value": "202611170013",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A301",
+        "value": "202611170012",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A302",
+        "value": "202611170011",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A303",
+        "value": "202611170010",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A304",
+        "value": "202611170009",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A305",
+        "value": "202611170008",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A306",
+        "value": "202611170007",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A307",
+        "value": "202611170006",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A308",
+        "value": "202611170005",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A309",
+        "value": "202611170004",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A310",
+        "value": "202611170003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A311",
+        "value": "202611170002",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A312",
+        "value": "202611170001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-cash-movements-2026-11-24-2026-11-24.xlsx",
+    "sha256": "d1e87a69d59c7a586145276a05b0082135c6ebaf1f87f5c38a079841ae128e43",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-cash-reconciliations-2026-11-24-2026-11-24.xlsx",
+    "sha256": "4df6293f6460e61b17f7af9f030a6bc467f9da15a2fa32478e6a9161a651e086",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-cash-sessions-2026-11-24-2026-11-24.xlsx",
+    "sha256": "e9429bc430a1ed4eb5ebadf0e3efe1f47c3ee3f5dc49140c408999c05e31d869",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-corrections-2026-11-24-2026-11-24.xlsx",
+    "sha256": "51a3c92be998bf3ee062056ebd7d40e857eab8513c90dcb7803fef0940e4ec95",
+    "text_folio_cells": [
+      {
+        "cell": "A10",
+        "value": "202611240010",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A11",
+        "value": "202611240012",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A12",
+        "value": "202611240010",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-discounts-2026-11-24-2026-11-24.xlsx",
+    "sha256": "443712b26f0f5cc3cdb7a92da95318a817e3d3ef63d400fe6669cb5c7ee56a74",
+    "text_folio_cells": [
+      {
+        "cell": "A13",
+        "value": "202611240009",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A14",
+        "value": "202611240008",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A15",
+        "value": "202611240007",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A16",
+        "value": "202611240006",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-payments-2026-11-24-2026-11-24.xlsx",
+    "sha256": "7154ee93a9e654c67d50909f81df4aa5e8b430fc103e07e49f89ef1a4b1e7976",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-products-2026-11-24-2026-11-24.xlsx",
+    "sha256": "36c77819d52221144a62d937ed5a83a2217766a295e801f50eeaa8e6fa062b3a",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-sales-2026-11-24-2026-11-24.xlsx",
+    "sha256": "56c764249f5b905679e4cc00847bef94334ae09d5b296001b770efcb0d754ff6",
+    "text_folio_cells": [
+      {
+        "cell": "A15",
+        "value": "202611240012",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A16",
+        "value": "202611240011",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A17",
+        "value": "202611240010",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A18",
+        "value": "202611240009",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A19",
+        "value": "202611240008",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A20",
+        "value": "202611240007",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A21",
+        "value": "202611240006",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A22",
+        "value": "202611240005",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A23",
+        "value": "202611240004",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A24",
+        "value": "202611240003",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A25",
+        "value": "202611240002",
+        "type": "s",
+        "number_format": "@"
+      },
+      {
+        "cell": "A26",
+        "value": "202611240001",
+        "type": "s",
+        "number_format": "@"
+      }
+    ]
+  },
+  {
+    "file": ".tools/block05-visual/downloads/report-summary-2026-11-24-2026-11-24.xlsx",
+    "sha256": "d905ef91a9d2dc98f05d0306c1e8563af576da67e83655c4fdfd4168a927add4",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/closed-downloads/report-cash-reconciliations-2026-11-25-2026-11-25.xlsx",
+    "sha256": "4639db111572462c33a342b9ed3018eafa28a337720d20e6f5717af33b934357",
+    "text_folio_cells": []
+  },
+  {
+    "file": ".tools/block05-visual/closed-downloads/report-cash-sessions-2026-11-25-2026-11-25.xlsx",
+    "sha256": "115fa4b36bd07b399261fd19cdd699ec81d151c335aa4d9f4683cbdbc3fba4c3",
+    "text_folio_cells": []
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "command": ".\\scripts\\local.cmd composer test -- --log-junit .tools/ui00-baseline-junit.xml",
+  "exit_code": 0,
+  "tests": 906,
+  "assertions": 11653,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "failed_cases": [],
+  "started_at_utc": "2026-11-26T14:44:19.0490506Z",
+  "completed_at_utc": "2026-11-26T15:20:31.4579813Z",
+  "duration": "35:27.808",
+  "memory_mb": 382.0,
+  "junit_sha256": "66d8a972acd4c0d8b0a2f04c322cafa0490f2efca1c75039ad5be0975fc2412b",
+  "log_sha256": "741c4eb8b5b57bc4f6c0e0e08a1e22f201bff9ee3e62c649725ec6a9854c73b7"
+}

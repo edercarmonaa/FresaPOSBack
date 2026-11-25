@@ -1,0 +1,28 @@
+{
+  "captured_at_utc": "2026-11-26T14:49:52.918Z",
+  "scope": "anonymous GET only",
+  "authenticated_screens": "not tested",
+  "real_user_metrics": false,
+  "lighthouse": "not installed or executed",
+  "device_scale_factor": 1,
+  "throttling": "none; localhost; concurrent PHPUnit on host",
+  "engines": [
+    {
+      "name": "chromium",
+      "available": false,
+      "reason": "executable not installed; no installation attempted"
+    },
+    {
+      "name": "firefox",
+      "available": false,
+      "reason": "executable not installed; no installation attempted"
+    },
+    {
+      "name": "webkit",
+      "available": false,
+      "reason": "executable not installed; no installation attempted"
+    }
+  ],
+  "pages": [],
+  "measurements": []
+}

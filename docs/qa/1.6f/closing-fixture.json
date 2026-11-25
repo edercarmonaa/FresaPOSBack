@@ -1,0 +1,13 @@
+{
+  "database": "fresapos_test",
+  "closed_sessions": 1,
+  "open_sessions": 1,
+  "reconciliations": [
+    {
+      "expected_cash": "1795.8625",
+      "counted_cash": "1795.8625",
+      "difference": ".0000"
+    }
+  ],
+  "new_opening_fund": "100.0000"
+}

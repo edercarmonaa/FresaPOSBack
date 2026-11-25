@@ -1,0 +1,19 @@
+{
+  "php": "8.3.36",
+  "packages": {
+    "dompdf/dompdf": "v3.1.6",
+    "laravel/framework": "v13.42.0",
+    "laravel/sanctum": "v4.4.0",
+    "livewire/livewire": "v4.4.8",
+    "nwidart/laravel-modules": "v13.3.0",
+    "phpoffice/phpspreadsheet": "5.11.0",
+    "spatie/laravel-permission": "8.5.0",
+    "larastan/larastan": "v3.14.0",
+    "laravel/pint": "v1.32.2",
+    "phpunit/phpunit": "12.5.43"
+  },
+  "tailwind_browser": "4.1.18",
+  "playwright_qa_only": "1.62.1",
+  "node_build_in_application": false,
+  "hosting_requires_node": false
+}

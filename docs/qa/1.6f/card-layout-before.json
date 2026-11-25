@@ -1,0 +1,153 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [
+      {
+        "index": 1,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 2,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 3,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 4,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 5,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 6,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 7,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 8,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 9,
+        "reason": "fallback_text_overlaps_card_body"
+      }
+    ],
+    "passed": false
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [],
+    "passed": true
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [
+      {
+        "index": 1,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 2,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 3,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 4,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 5,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 6,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 7,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 8,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 9,
+        "reason": "fallback_text_overlaps_card_body"
+      }
+    ],
+    "passed": false
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [
+      {
+        "index": 1,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 2,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 3,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 4,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 5,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 6,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 7,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 8,
+        "reason": "fallback_text_overlaps_card_body"
+      },
+      {
+        "index": 9,
+        "reason": "fallback_text_overlaps_card_body"
+      }
+    ],
+    "passed": false
+  }
+]

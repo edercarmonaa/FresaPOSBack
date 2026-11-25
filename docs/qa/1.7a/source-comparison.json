@@ -1,0 +1,28 @@
+{
+  "branch": "main",
+  "head": "a0fc5a5e8aef885479d9774b4c6cdef7b116781c",
+  "protected": {
+    "config/session.php": true,
+    ".env": true,
+    ".env.testing": true,
+    "phpstan.neon": true,
+    "phpunit.xml": true,
+    "Modules/Users/config/security.php": true,
+    "config/filesystems.php": true,
+    "composer.lock": true,
+    "config/database.php": true,
+    "composer.json": true
+  },
+  "changed_existing_files": [
+    "tests/Integration/CheckoutConcurrencyTest.php",
+    "tests/Integration/Block05ConcurrencyTest.php",
+    "tests/Integration/ReportsPerformanceTest.php",
+    "tests/Fixtures/Finance/checkout-worker.php",
+    "tests/Integration/SaleDiscountsConcurrencyTest.php",
+    "tests/Integration/SaleReceiptsConcurrencyTest.php",
+    "tests/Fixtures/Finance/discounts-worker.php",
+    "tests/Integration/ReportsConcurrencyTest.php"
+  ],
+  "missing_initial_files": [],
+  "application_files_unchanged": true
+}

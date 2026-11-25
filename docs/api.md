@@ -1,5 +1,17 @@
 # API REST v1
 
+## Reports — etapa 1.6e
+
+`GET /api/v1/reports/{report}` consulta `summary`, `sales`, `products`, `payments`, `cash-movements`, `cash-sessions`, `cash-reconciliations`, `discounts` o `corrections`. `POST /api/v1/reports/{report}/exports/{format}` genera `pdf` o `xlsx`. Se conservan bearer Sanctum, sesión vigente, request ID, no-store y JSON común para errores. Las descargas 200 son binarias explícitas, con Content-Disposition attachment.
+
+Filtros: `range` (today/yesterday/last_seven_days/current_month/previous_month/custom), `from`, `until`, `page`, `per_page`, `sort`, `direction` y los aplicables al reporte: empleado, sesión, tipo/estado, método, producto/categoría, descuento o movimiento. Identificadores ULID. Fechas comerciales inclusivas, máximo 366 días; límites UTC, final exclusivo. Los rangos se devuelven resueltos a fechas para paginar/exportar. Campos desconocidos, filtros no aplicables y órdenes no permitidos: 422. Páginas 10/25/50/100; totales del conjunto completo. Importes como texto decimal exacto de cuatro posiciones; promedio sin denominador: null.
+
+Permisos: `reports.view`, `cash.administrative.execute` y capacidades del propietario; exportar añade `reports.export`. Resumen: `sales.view`, `cash.view`, `cash.closings.view`; Sales: `sales.view`; Cash: `cash.view`, y salvo movimientos `cash.closings.view`; correcciones añade `sales.reopen` y `sales.special.authorize`. Reautorización antes de entregar; sin bypass por rol.
+
+Método filtra ventas que lo utilizaron y conserva sus componentes mixtos para conciliar. Las no pagadas no suman ingresos. Correcciones conservan venta/folio y actualizan el total confirmado del primer cierre; borrador no publicado. Cierres por fecha de confirmación, importes de conciliación persistida; nunca se publican resultados de arqueo abierto.
+
+Exportación completa: PDF hasta 300 filas, XLSX hasta 1000; exceso: 422. Excel rechaza magnitudes que no conservan cuatro decimales (más de once enteros). Texto literal para nombres/folios, fechas y montos numéricos, sin fórmulas/macros. `reports.export.generated` registra generación, no descarga completada. Bloqueos SQL 1205/1222: 503 seguro; reducir rango y consultar nuevamente.
+
 ## Comprobantes de venta — 1.6d
 
 GET `/api/v1/sales/{id}/receipt` y GET `/api/v1/sales/folio/{folio}/receipt`: autenticación bearer vigente, `sales.view` y `tickets.view`, sin parámetros financieros y no-store. Devuelven el mismo DTO: folio/primer cierre UTC y hora comercial, productos/precios/notas históricos, subtotal/descuento/total, pagos confirmados con efectivo recibido/cambio y metadatos opcionales. Se conserva la envoltura REST v1.

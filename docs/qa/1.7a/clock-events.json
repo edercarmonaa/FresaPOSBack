@@ -1,0 +1,45 @@
+{
+  "events": [
+    {
+      "captured_event_utc": "2026-11-25T14:39:09.5006473Z",
+      "data": {
+        "OldTime": "2026-11-25T10:46:44.2775842Z",
+        "Reason": "2",
+        "TimeDeltaInMs": "13945222",
+        "NewTime": "2026-11-25T14:39:09.5000000Z"
+      },
+      "record_id": 95698
+    },
+    {
+      "captured_event_utc": "2026-11-24T18:46:16.6612637Z",
+      "data": {
+        "OldTime": "2026-11-24T18:46:16.6602009Z",
+        "Reason": "1",
+        "TimeDeltaInMs": "0",
+        "NewTime": "2026-11-24T18:46:16.6604438Z"
+      },
+      "record_id": 95671
+    },
+    {
+      "captured_event_utc": "2026-11-24T14:58:15.5004522Z",
+      "data": {
+        "OldTime": "2026-11-24T10:57:34.2700417Z",
+        "Reason": "2",
+        "TimeDeltaInMs": "14441229",
+        "NewTime": "2026-11-24T14:58:15.5000000Z"
+      },
+      "record_id": 95535
+    },
+    {
+      "captured_event_utc": "2026-11-23T18:43:09.4155032Z",
+      "data": {
+        "OldTime": "2026-11-23T18:43:09.4144635Z",
+        "Reason": "1",
+        "TimeDeltaInMs": "0",
+        "NewTime": "2026-11-23T18:43:09.4151210Z"
+      },
+      "record_id": 95329
+    }
+  ],
+  "available": true
+}

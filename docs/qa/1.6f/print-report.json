@@ -1,0 +1,155 @@
+{
+  "browser_engine": true,
+  "physical_printer_tested": false,
+  "documents": [
+    {
+      "file": "print-cash-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 179.15234375,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-mixed-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 186.17207031249998,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-fixed-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 185.1716145833333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-percent-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 185.1716145833333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-zero_percent-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 172.1326171875,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-zero_fixed-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 172.1326171875,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-corrected-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 213.3497395833333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-long-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 1095.8922526041667,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-long-paginated-80mm.pdf",
+      "pages": 6,
+      "widths_mm": [
+        80.09466313888888,
+        80.09466313888888,
+        80.09466313888888,
+        80.09466313888888,
+        80.09466313888888,
+        80.09466313888888
+      ],
+      "height_mm": 200,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-card-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 167.11380208333333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-transfer-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 167.11380208333333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    },
+    {
+      "file": "print-other-80mm.pdf",
+      "pages": 1,
+      "widths_mm": [
+        80.09466313888888
+      ],
+      "height_mm": 167.11380208333333,
+      "content_width_mm": 73.99651692708333,
+      "controls_hidden": true,
+      "horizontal_clipping": false,
+      "all_expected_content_present": true
+    }
+  ]
+}

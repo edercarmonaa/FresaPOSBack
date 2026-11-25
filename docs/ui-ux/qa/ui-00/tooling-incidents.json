@@ -1,0 +1,32 @@
+[
+  {
+    "id": "I01",
+    "action": "CUA inventory, initial and bounded retry",
+    "result": "trusted Node process exited unexpectedly; kernel reset",
+    "resolution": "No CUA interaction or capture; use existing local browser tools"
+  },
+  {
+    "id": "I02",
+    "action": "Native computer-use fallback initialization and retry",
+    "result": "node_repl kernel exit; windows sandbox helper_unknown_error: setup refresh had errors",
+    "resolution": "No Windows input; stop helper attempts and use already installed CLI QA"
+  },
+  {
+    "id": "I03",
+    "action": "Playwright bundled engine discovery",
+    "result": "Chromium, Firefox and WebKit bundled executables absent",
+    "resolution": "No download/install; system Chrome and Edge used; discovery evidence retained"
+  },
+  {
+    "id": "I04",
+    "action": "Additional login accessibility probe waiting for load",
+    "result": "page.goto timeout 30000 ms",
+    "resolution": "Original log retained; explicit second attempt waits for DOM plus verified styles, same timeout; passed. Ultimate cause not attributed"
+  },
+  {
+    "id": "I05",
+    "action": "Initial read-only file discovery",
+    "result": "Guessed SqlServerTestCase/layout paths absent; rg wildcard paths not expanded by PowerShell",
+    "resolution": "Actual paths found with file inventory; inspected tests/Support/SqlServerTestCase.php and resources/views/layouts/app.blade.php; module views enumerated with pathlib. Not application or test failures"
+  }
+]

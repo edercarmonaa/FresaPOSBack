@@ -1,0 +1,43 @@
+{
+  "post_css_first_full_run": {
+    "tests": 900,
+    "assertions": 11607,
+    "failures": 1,
+    "duration": "37:56.270",
+    "exit_code": 1,
+    "case": "SaleDiscountsConcurrencyTest@two_discounts",
+    "failure": "holding synchronization file absent within existing 15-second limit",
+    "cause_proven": false
+  },
+  "nov25_full_run": {
+    "tests": 900,
+    "assertions": 11592,
+    "failures": 2,
+    "duration": "46:32.014",
+    "exit_code": 1,
+    "cases": [
+      "CheckoutConcurrencyTest@two_keys",
+      "CheckoutConcurrencyTest@same"
+    ],
+    "failure": "holding synchronization file absent within existing 15-second limit",
+    "cause_proven": false
+  },
+  "isolated_unchanged_retry": {
+    "tests": 1,
+    "assertions": 20,
+    "duration": "00:10.963",
+    "exit_code": 0
+  },
+  "instrumented_targeted_retry": {
+    "checkout_tests": 12,
+    "checkout_assertions": 222,
+    "checkout_duration": "01:13.887",
+    "discount_tests": 13,
+    "discount_assertions": 252,
+    "discount_duration": "01:42.276",
+    "both_exit_codes": 0
+  },
+  "combined_filter_shell_invocation_failed": true,
+  "failed_invocation_counted_as_success": false,
+  "wait_limits_changed": false
+}

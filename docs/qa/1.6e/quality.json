@@ -1,0 +1,37 @@
+{
+  "baseline": {
+    "tests": 821,
+    "assertions": 9736,
+    "exit_code": 0
+  },
+  "first_full_run": {
+    "tests": 891,
+    "assertions": 10611,
+    "errors": 1,
+    "exit_code": 2,
+    "reason": "Capturador de planes; corregido y repetido."
+  },
+  "full_regression": {
+    "tests": 891,
+    "assertions": 10615,
+    "time": "25:01.075",
+    "memory_mb": "276.00",
+    "exit_code": 0
+  },
+  "final_reports_repetition": {
+    "tests": 70,
+    "assertions": 868,
+    "time": "10:20.682",
+    "memory_mb": "102.00",
+    "exit_code": 0
+  },
+  "quality_exit_codes": {
+    "analyse": 0,
+    "check-platform-reqs": 0,
+    "validate": 0,
+    "lint": 0
+  },
+  "unique_tests": 891,
+  "new_tests": 70,
+  "no_previous_tests_removed": true
+}

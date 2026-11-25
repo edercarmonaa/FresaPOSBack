@@ -1,0 +1,6 @@
+{
+  "sql_used": false,
+  "expected_child_exit": 7,
+  "observed_child_exit": 7,
+  "child_running_after_wait": false
+}

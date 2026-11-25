@@ -1,0 +1,19 @@
+{
+  "tool": "openapi-spec-validator",
+  "version": "0.9.0",
+  "response_validator": "openapi-schema-validator",
+  "response_validator_version": "0.9.0",
+  "file": "docs/openapi.yaml",
+  "openapi": "3.1.0",
+  "operations": 74,
+  "catalog_operations": 15,
+  "sales_operations": 33,
+  "cash_operations": 13,
+  "responses_validated": 609,
+  "operations_with_response_samples": 74,
+  "errors": [],
+  "error_count": 0,
+  "warnings": [],
+  "warning_count": 0,
+  "result": "PASS"
+}

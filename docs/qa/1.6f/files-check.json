@@ -1,0 +1,211 @@
+{
+  "database": "fresapos_test",
+  "pdf": [
+    {
+      "file": ".tools\\block05-artifacts\\cash-movements.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\cash-reconciliations.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\cash-sessions.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\corrections.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\discounts.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\payments.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\products.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\sales.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-artifacts\\summary.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-0.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-1.pdf",
+      "pages": 1,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-300.pdf",
+      "pages": 15,
+      "all_expected_values_present": true,
+      "outside_margins": 0
+    }
+  ],
+  "xlsx": [
+    {
+      "file": ".tools\\block05-artifacts\\cash-movements.xlsx",
+      "detail_rows": 2,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A10:F12",
+      "freeze": "A11"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\cash-reconciliations.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A10:K11",
+      "freeze": "A11"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\cash-sessions.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A9:K10",
+      "freeze": "A10"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\corrections.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A9:J10",
+      "freeze": "A10"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\discounts.xlsx",
+      "detail_rows": 2,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:I14",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\payments.xlsx",
+      "detail_rows": 2,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:D14",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\products.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A9:F10",
+      "freeze": "A10"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\sales.xlsx",
+      "detail_rows": 4,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:L16",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-artifacts\\summary.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A15:D16",
+      "freeze": "A16"
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-0.xlsx",
+      "detail_rows": 0,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:L12",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-1.xlsx",
+      "detail_rows": 1,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:L13",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-1000.xlsx",
+      "detail_rows": 1000,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:L1012",
+      "freeze": "A13"
+    },
+    {
+      "file": ".tools\\block05-boundaries\\sales-300.xlsx",
+      "detail_rows": 300,
+      "sheets": 1,
+      "formulas": 0,
+      "macros": false,
+      "typed_dates": true,
+      "filter": "A12:L312",
+      "freeze": "A13"
+    }
+  ],
+  "same_filtered_dataset_comparison": true,
+  "passed": true
+}

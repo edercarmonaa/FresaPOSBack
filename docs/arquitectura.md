@@ -1,5 +1,13 @@
 # Arquitectura modular — etapas 1.2 y 1.3a
 
+## Reports — etapa 1.6e
+
+Reports coordina exclusivamente lectura mediante `OperationalReports`, `ReportCriteria` y `ReportData`. Consume los contratos públicos `SalesReports`, `CashReports` e `IdentityLabels`; cada propietario conserva sus consultas SQL y autorización. `ReportQuery`, `ReportSlice`, `ReportExportAudit` y `ApiDownloadResponse` son contratos transversales de Core. Reports no accede a modelos o tablas privadas ajenas y Sales/Cash no dependen de Reports.
+
+Una transacción propia usa SNAPSHOT si está habilitado o SERIALIZABLE en caso contrario. El nivel se establece como **lote directo después de BEGIN**; la carrera SQL detectó que el SET preparado no conservaba el aislamiento efectivo. Sin opciones globales nuevas. Se restauran aislamiento, prioridad de deadlock y lock timeout; las esperas de bloqueo se limitan a cinco segundos. Dompdf y PhpSpreadsheet renderizan fuera de esa transacción. Antes de entregar se revalidan acceso y permisos del propietario bajo el bloqueo de seguridad existente y se registra una generación en Audit. Las consultas no modifican dinero, folios, sesiones o arqueos.
+
+Web, API, PDF y Excel comparten datos y filtros. Totales sobre el conjunto completo, detalle Web/API paginado en SQL. Las sesiones abiertas nunca publican esperado, contado o diferencia. La lectura financiera global exige `cash.administrative.execute` además de las capacidades del reporte, para conservar la política de arqueo ciego.
+
 Actualización 1.6d: Tickets consume los contratos públicos de Sales, Users, Auth y Core para construir comprobantes coherentes de ventas confirmadas. Sales publica `ConfirmedSalesDocuments`, que bloquea la lectura y rechaza cierres inconsistentes o correcciones activas. `ReceiptData` separa datos y presentación; Blade ofrece 80 mm y el POS enlaza la vista sin importar componentes internos de Tickets. Reimpresión auxiliar mediante Core/Audit, sin otra operación monetaria, migración o dependencia externa. La relación explícita `Tickets → Sales/Users/Auth/Core` es acíclica. [Informe 1.6d](entrega-1.6d.md).
 
 Actualización 1.6b: Sales comparte `SaleTotals` entre mutaciones y Checkout; los descuentos usan `DecimalAmount`, Core durable, Cash y Audit existentes. Sus adaptadores HTTP/Livewire consumen el contrato público `Auth\Contracts\AuthenticatedRequestAccess` para revalidar la sesión/token bajo el bloqueo de identidad antes de ejecutar o recuperar una intención. Se declara `Sales → Auth` en la matriz sin dependencias circulares; no se importan modelos ni repositorios internos de Auth. [Informe 1.6b](entrega-1.6b.md).

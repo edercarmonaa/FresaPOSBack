@@ -1,0 +1,85 @@
+{
+  "origin": "http://127.0.0.1:8080",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/up",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/ping",
+      "status": 200
+    },
+    {
+      "path": "/login",
+      "status": 200
+    },
+    {
+      "path": "/admin/catalog/products",
+      "status": 302
+    },
+    {
+      "path": "/api/v1/catalog/products",
+      "status": 401
+    },
+    {
+      "path": "/admin/sales/reasons",
+      "status": 302
+    },
+    {
+      "path": "/api/v1/sales",
+      "status": 401
+    },
+    {
+      "path": "/reports",
+      "status": 302
+    },
+    {
+      "path": "/reports/sales",
+      "status": 302
+    },
+    {
+      "path": "/api/v1/reports/summary",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/reports/cash-sessions",
+      "status": 401
+    },
+    {
+      "path": "/pos",
+      "status": 302
+    },
+    {
+      "path": "/pos/sales/01arz3ndektsv4rrffq69g5fav/receipt",
+      "status": 302
+    },
+    {
+      "path": "/api/v1/sales/01arz3ndektsv4rrffq69g5fav/receipt",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/sales/folio/200001010001/receipt",
+      "status": 401
+    },
+    {
+      "path": "/cash",
+      "status": 302
+    },
+    {
+      "path": "/api/v1/cash/sessions/history",
+      "status": 401
+    },
+    {
+      "path": "/api/v1/cash/sessions/01arz3ndektsv4rrffq69g5fav/summary",
+      "status": 401
+    },
+    {
+      "path": "/livewire-ba99715c/livewire.js?id=a964a3c8",
+      "status": 200
+    }
+  ]
+}

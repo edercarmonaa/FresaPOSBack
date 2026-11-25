@@ -1,0 +1,7 @@
+{
+  "database": "fresapos_test",
+  "double_click_sent": true,
+  "dropped_response_status": 200,
+  "recovered_fixed_discount": "15.0000",
+  "removed_after_recovery": true
+}

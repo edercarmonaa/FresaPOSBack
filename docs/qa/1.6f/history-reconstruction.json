@@ -1,0 +1,48 @@
+{
+  "database": "fresapos",
+  "captured_at_utc": "2026-11-25T16:30:58+00:00",
+  "sql_writes": false,
+  "tables": [
+    {
+      "table": "audit_security_events",
+      "historical_rows": 68,
+      "current_rows": 71,
+      "candidate_additions": 3,
+      "candidate_updated_rows": 0,
+      "historical_sha256_matches": true
+    },
+    {
+      "table": "auth_access_sessions",
+      "historical_rows": 15,
+      "current_rows": 15,
+      "candidate_additions": 0,
+      "candidate_updated_rows": 1,
+      "historical_sha256_matches": true
+    },
+    {
+      "table": "cash_reconciliations",
+      "historical_rows": 2,
+      "current_rows": 3,
+      "candidate_additions": 1,
+      "candidate_updated_rows": 0,
+      "historical_sha256_matches": true
+    },
+    {
+      "table": "cash_sessions",
+      "historical_rows": 3,
+      "current_rows": 4,
+      "candidate_additions": 1,
+      "candidate_updated_rows": 1,
+      "historical_sha256_matches": true
+    },
+    {
+      "table": "idempotency_records",
+      "historical_rows": 17,
+      "current_rows": 18,
+      "candidate_additions": 1,
+      "candidate_updated_rows": 0,
+      "historical_sha256_matches": true
+    }
+  ],
+  "passed": true
+}

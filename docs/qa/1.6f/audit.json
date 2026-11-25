@@ -1,0 +1,209 @@
+{
+  "protected_files": [
+    {
+      "file": ".env",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": ".env.testing",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "config/database.php",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "config/session.php",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "config/filesystems.php",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "composer.json",
+      "classification_since_1_6e": "Modificado con autorización",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "composer.lock",
+      "classification_since_1_6e": "Modificado con autorización",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "phpunit.xml",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "phpstan.neon",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    },
+    {
+      "file": "Modules/Users/config/security.php",
+      "classification_since_1_6e": "Intacto",
+      "unchanged_in_1_6f": true
+    }
+  ],
+  "application_changes_in_1_6f": [
+    "Modules/Sales/resources/views/partials/styles.blade.php",
+    "Modules/Core/app/Contracts/ExceptionDiagnostic.php"
+  ],
+  "validation_changes_in_1_6f": [
+    {
+      "file": "scripts/qa/pos-card-layout.js",
+      "state": "added"
+    },
+    {
+      "file": "scripts/inspect-block05-history.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Feature/Block05DiagnosticTest.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Feature/ApiConventionsTest.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Integration/ReportsPerformanceTest.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Integration/CheckoutConcurrencyTest.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Integration/Block05ContractEvidenceTest.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Integration/Block05ConcurrencyTest.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Integration/Block05AcceptanceTest.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Integration/AuthenticationTest.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Fixtures/Finance/checkout-worker.php",
+      "state": "modified"
+    },
+    {
+      "file": "tests/Fixtures/Finance/block05-worker.php",
+      "state": "added"
+    },
+    {
+      "file": "tests/Fixtures/Finance/discounts-worker.php",
+      "state": "modified"
+    }
+  ],
+  "prior_tests": 891,
+  "current_tests": 900,
+  "added_tests": 9,
+  "missing_prior_tests": [],
+  "current_class_case_counts": {
+    "ApiConventionsTest": 29,
+    "Block05DiagnosticTest": 3,
+    "BootstrapTest": 3,
+    "CashOpeningFundTest": 18,
+    "CatalogDomainTest": 37,
+    "CatalogImageProcessingTest": 25,
+    "DiscountArithmeticTest": 22,
+    "ModuleRegistrationTest": 2,
+    "NestedSqlDeadlockTest": 1,
+    "OperationIntentTest": 7,
+    "PasswordStrengthTest": 13,
+    "PaymentAllocationTest": 19,
+    "ReportCriteriaTest": 19,
+    "SalesApiContractTest": 4,
+    "SalesDomainTest": 42,
+    "SecurityDiagnosticsTest": 1,
+    "SqlServerEnvironmentTest": 1,
+    "TestDatabaseGuardTest": 3,
+    "UserCompositionTest": 1,
+    "ModuleDependencyTest": 4,
+    "ModuleInjectionTest": 1,
+    "AdminBootstrapAuthenticationTest": 2,
+    "AdvancedSecurityTest": 23,
+    "AuthenticationTest": 23,
+    "Block05AcceptanceTest": 3,
+    "Block05ConcurrencyTest": 2,
+    "Block05ContractEvidenceTest": 1,
+    "CashConcurrencyTest": 6,
+    "CashFinanceConcurrencyTest": 9,
+    "CashFinanceHttpTest": 6,
+    "CashFinanceLivewireTest": 5,
+    "CashFinanceTest": 6,
+    "CashHttpTest": 7,
+    "CashReconciliationConcurrencyTest": 12,
+    "CashReconciliationHttpTest": 3,
+    "CashReconciliationLivewireTest": 3,
+    "CashReconciliationTest": 24,
+    "CashTest": 11,
+    "CatalogAcceptanceTest": 5,
+    "CatalogHttpTest": 25,
+    "CatalogImagesTest": 18,
+    "CatalogTest": 28,
+    "CheckoutConcurrencyTest": 12,
+    "CheckoutHttpTest": 4,
+    "CheckoutIntegrityTest": 4,
+    "CheckoutLivewireTest": 5,
+    "CheckoutTest": 18,
+    "FinancialCycleTest": 3,
+    "FinancialQueryTest": 1,
+    "IdempotencyConcurrencyTest": 8,
+    "IdempotencyDeadlockTest": 1,
+    "IdempotencyTest": 5,
+    "OperationalReportsTest": 28,
+    "PaymentPreparationTest": 1,
+    "PersistenceTest": 5,
+    "PointOfSaleTest": 18,
+    "PosIdempotencyTest": 4,
+    "PreparedSalePaymentTest": 3,
+    "ReportExportsTest": 9,
+    "ReportsConcurrencyTest": 1,
+    "ReportsHttpTest": 12,
+    "ReportsPerformanceTest": 1,
+    "SaleCorrectionsConcurrencyTest": 16,
+    "SaleCorrectionsHttpTest": 12,
+    "SaleCorrectionsTest": 30,
+    "SaleCorrectionsWebTest": 6,
+    "SaleDiscountsConcurrencyTest": 13,
+    "SaleDiscountsHttpTest": 10,
+    "SaleDiscountsPinConcurrencyTest": 1,
+    "SaleDiscountsTest": 13,
+    "SaleDiscountsWebTest": 5,
+    "SaleReasonsConcurrencyTest": 12,
+    "SaleReasonsHttpTest": 8,
+    "SaleReasonsTest": 25,
+    "SaleReasonsWebTest": 2,
+    "SaleReceiptsConcurrencyTest": 3,
+    "SaleReceiptsHttpTest": 15,
+    "SaleReceiptsTest": 26,
+    "SaleReceiptsWebTest": 8,
+    "SalesConcurrencyTest": 2,
+    "SalesHttpConcurrencyTest": 5,
+    "SalesHttpTest": 11,
+    "SalesIdempotencyTest": 7,
+    "SalesTest": 26,
+    "TransactionTest": 7,
+    "UserSecurityTest": 17
+  },
+  "passed": true
+}

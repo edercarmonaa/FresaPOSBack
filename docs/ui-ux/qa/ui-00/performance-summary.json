@@ -1,0 +1,21 @@
+{
+  "lcp_ms": {
+    "n": 5,
+    "minimum": 584,
+    "median": 672,
+    "maximum": 904
+  },
+  "cls": {
+    "n": 5,
+    "minimum": 0,
+    "median": 0,
+    "maximum": 0
+  },
+  "ttfb_ms": {
+    "n": 5,
+    "minimum": 454.40000000596046,
+    "median": 532.2999999821186,
+    "maximum": 779.8000000119209
+  },
+  "condition": "localhost, Chrome headless, 1366x768, DPR1, five warm reloads, no throttling, PHPUnit active; observation until capture, not field metrics"
+}

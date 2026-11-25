@@ -1,0 +1,329 @@
+{
+  "current_final_run": true,
+  "worker_traces": 53,
+  "max_autoload_ms": 69.3006,
+  "max_bootstrap_ms": 702.1207,
+  "max_database_guard_ms": 81.47199999999998,
+  "prior_failure_cause_established": false,
+  "wait_limits_changed": false,
+  "observations": [
+    {
+      "autoload_ms": 51.9602,
+      "bootstrap_ms": 510.9466,
+      "database_guard_ms": 81.47199999999998,
+      "http_elapsed_including_fixture_barrier_ms": 1697.3795999999998
+    },
+    {
+      "autoload_ms": 33.634,
+      "bootstrap_ms": 373.0089,
+      "database_guard_ms": 66.95460000000003,
+      "http_elapsed_including_fixture_barrier_ms": 0
+    },
+    {
+      "autoload_ms": 25.8327,
+      "bootstrap_ms": 260.3592,
+      "database_guard_ms": 29.39760000000001,
+      "http_elapsed_including_fixture_barrier_ms": 212.3845
+    },
+    {
+      "autoload_ms": 32.0821,
+      "bootstrap_ms": 299.1756,
+      "database_guard_ms": 34.19540000000001,
+      "http_elapsed_including_fixture_barrier_ms": 515.7547999999999
+    },
+    {
+      "autoload_ms": 38.904700000000005,
+      "bootstrap_ms": 338.5182,
+      "database_guard_ms": 32.64590000000004,
+      "http_elapsed_including_fixture_barrier_ms": 1339.9552999999999
+    },
+    {
+      "autoload_ms": 66.7928,
+      "bootstrap_ms": 456.1139999999999,
+      "database_guard_ms": 32.83050000000003,
+      "http_elapsed_including_fixture_barrier_ms": 1262.4443999999999
+    },
+    {
+      "autoload_ms": 30.9797,
+      "bootstrap_ms": 277.9928,
+      "database_guard_ms": 30.164800000000014,
+      "http_elapsed_including_fixture_barrier_ms": 1058.0398
+    },
+    {
+      "autoload_ms": 34.524699999999996,
+      "bootstrap_ms": 416.706,
+      "database_guard_ms": 52.74689999999998,
+      "http_elapsed_including_fixture_barrier_ms": 1695.7781
+    },
+    {
+      "autoload_ms": 38.6867,
+      "bootstrap_ms": 398.55600000000004,
+      "database_guard_ms": 30.742500000000007,
+      "http_elapsed_including_fixture_barrier_ms": 394.58380000000005
+    },
+    {
+      "autoload_ms": 33.764100000000006,
+      "bootstrap_ms": 403.8134,
+      "database_guard_ms": 37.7715,
+      "http_elapsed_including_fixture_barrier_ms": 3125.4146
+    },
+    {
+      "autoload_ms": 51.9201,
+      "bootstrap_ms": 552.2742000000001,
+      "database_guard_ms": 46.21210000000008,
+      "http_elapsed_including_fixture_barrier_ms": 245.966
+    },
+    {
+      "autoload_ms": 34.5841,
+      "bootstrap_ms": 311.1958,
+      "database_guard_ms": 33.651700000000005,
+      "http_elapsed_including_fixture_barrier_ms": 1236.7197999999999
+    },
+    {
+      "autoload_ms": 27.0595,
+      "bootstrap_ms": 289.2496,
+      "database_guard_ms": 47.71629999999999,
+      "http_elapsed_including_fixture_barrier_ms": 578.0554999999999
+    },
+    {
+      "autoload_ms": 33.1282,
+      "bootstrap_ms": 308.3979,
+      "database_guard_ms": 40.00920000000002,
+      "http_elapsed_including_fixture_barrier_ms": 431.60229999999996
+    },
+    {
+      "autoload_ms": 27.1956,
+      "bootstrap_ms": 396.38890000000004,
+      "database_guard_ms": 33.259900000000016,
+      "http_elapsed_including_fixture_barrier_ms": 447.4911
+    },
+    {
+      "autoload_ms": 59.3229,
+      "bootstrap_ms": 465.7886,
+      "database_guard_ms": 34.27030000000002,
+      "http_elapsed_including_fixture_barrier_ms": 284.9954
+    },
+    {
+      "autoload_ms": 35.6639,
+      "bootstrap_ms": 487.14990000000006,
+      "database_guard_ms": 47.62189999999998,
+      "http_elapsed_including_fixture_barrier_ms": 436.6195
+    },
+    {
+      "autoload_ms": 32.7229,
+      "bootstrap_ms": 290.7195,
+      "database_guard_ms": 35.55869999999999,
+      "http_elapsed_including_fixture_barrier_ms": 438.2147
+    },
+    {
+      "autoload_ms": 45.1428,
+      "bootstrap_ms": 561.7179,
+      "database_guard_ms": 40.9550999999999,
+      "http_elapsed_including_fixture_barrier_ms": 0
+    },
+    {
+      "autoload_ms": 43.757,
+      "bootstrap_ms": 388.3872,
+      "database_guard_ms": 33.108000000000004,
+      "http_elapsed_including_fixture_barrier_ms": 508.15450000000004
+    },
+    {
+      "autoload_ms": 45.1795,
+      "bootstrap_ms": 371.0283,
+      "database_guard_ms": 32.3381,
+      "http_elapsed_including_fixture_barrier_ms": 381.43149999999997
+    },
+    {
+      "autoload_ms": 31.4177,
+      "bootstrap_ms": 306.3796,
+      "database_guard_ms": 32.47800000000001,
+      "http_elapsed_including_fixture_barrier_ms": 403.63530000000003
+    },
+    {
+      "autoload_ms": 46.4934,
+      "bootstrap_ms": 376.90860000000004,
+      "database_guard_ms": 34.021799999999985,
+      "http_elapsed_including_fixture_barrier_ms": 1346.082
+    },
+    {
+      "autoload_ms": 43.749,
+      "bootstrap_ms": 468.7273,
+      "database_guard_ms": 62.247299999999996,
+      "http_elapsed_including_fixture_barrier_ms": 674.2539999999999
+    },
+    {
+      "autoload_ms": 32.1268,
+      "bootstrap_ms": 360.3972,
+      "database_guard_ms": 36.61629999999997,
+      "http_elapsed_including_fixture_barrier_ms": 420.48990000000003
+    },
+    {
+      "autoload_ms": 35.963899999999995,
+      "bootstrap_ms": 290.0521,
+      "database_guard_ms": 33.8784,
+      "http_elapsed_including_fixture_barrier_ms": 0
+    },
+    {
+      "autoload_ms": 35.0952,
+      "bootstrap_ms": 312.2148,
+      "database_guard_ms": 36.3485,
+      "http_elapsed_including_fixture_barrier_ms": 223.9339
+    },
+    {
+      "autoload_ms": 40.4202,
+      "bootstrap_ms": 254.846,
+      "database_guard_ms": 28.95179999999999,
+      "http_elapsed_including_fixture_barrier_ms": 0
+    },
+    {
+      "autoload_ms": 69.3006,
+      "bootstrap_ms": 476.3598,
+      "database_guard_ms": 47.08240000000001,
+      "http_elapsed_including_fixture_barrier_ms": 1540.8959
+    },
+    {
+      "autoload_ms": 56.8974,
+      "bootstrap_ms": 479.39520000000005,
+      "database_guard_ms": 44.43810000000008,
+      "http_elapsed_including_fixture_barrier_ms": 560.7168999999999
+    },
+    {
+      "autoload_ms": 31.0625,
+      "bootstrap_ms": 331.64910000000003,
+      "database_guard_ms": 31.436399999999992,
+      "http_elapsed_including_fixture_barrier_ms": 1085.5339
+    },
+    {
+      "autoload_ms": 45.0857,
+      "bootstrap_ms": 407.35859999999997,
+      "database_guard_ms": 73.62380000000007,
+      "http_elapsed_including_fixture_barrier_ms": 2016.9189
+    },
+    {
+      "autoload_ms": 28.779999999999998,
+      "bootstrap_ms": 257.527,
+      "database_guard_ms": 29.552300000000002,
+      "http_elapsed_including_fixture_barrier_ms": 1077.1102
+    },
+    {
+      "autoload_ms": 39.1601,
+      "bootstrap_ms": 443.1187,
+      "database_guard_ms": 33.22380000000004,
+      "http_elapsed_including_fixture_barrier_ms": 362.38790000000006
+    },
+    {
+      "autoload_ms": 37.2366,
+      "bootstrap_ms": 303.3248,
+      "database_guard_ms": 39.3057,
+      "http_elapsed_including_fixture_barrier_ms": 1486.3202
+    },
+    {
+      "autoload_ms": 32.1789,
+      "bootstrap_ms": 294.3487,
+      "database_guard_ms": 29.88299999999998,
+      "http_elapsed_including_fixture_barrier_ms": 1234.3402
+    },
+    {
+      "autoload_ms": 60.9614,
+      "bootstrap_ms": 375.6743,
+      "database_guard_ms": 36.2432,
+      "http_elapsed_including_fixture_barrier_ms": 4118.361000000001
+    },
+    {
+      "autoload_ms": 41.1152,
+      "bootstrap_ms": 424.1436,
+      "database_guard_ms": 38.42180000000002,
+      "http_elapsed_including_fixture_barrier_ms": 313.06589999999994
+    },
+    {
+      "autoload_ms": 63.6167,
+      "bootstrap_ms": 421.396,
+      "database_guard_ms": 49.614900000000034,
+      "http_elapsed_including_fixture_barrier_ms": 0
+    },
+    {
+      "autoload_ms": 44.5835,
+      "bootstrap_ms": 395.80400000000003,
+      "database_guard_ms": 40.8888,
+      "http_elapsed_including_fixture_barrier_ms": 1345.24
+    },
+    {
+      "autoload_ms": 27.7943,
+      "bootstrap_ms": 286.7591,
+      "database_guard_ms": 28.66489999999999,
+      "http_elapsed_including_fixture_barrier_ms": 1145.8980000000001
+    },
+    {
+      "autoload_ms": 56.457699999999996,
+      "bootstrap_ms": 475.3339,
+      "database_guard_ms": 40.73689999999999,
+      "http_elapsed_including_fixture_barrier_ms": 444.4967999999999
+    },
+    {
+      "autoload_ms": 45.5227,
+      "bootstrap_ms": 702.1207,
+      "database_guard_ms": 53.46219999999994,
+      "http_elapsed_including_fixture_barrier_ms": 211.7421999999999
+    },
+    {
+      "autoload_ms": 28.779600000000002,
+      "bootstrap_ms": 330.15070000000003,
+      "database_guard_ms": 40.484099999999955,
+      "http_elapsed_including_fixture_barrier_ms": 279.6775999999999
+    },
+    {
+      "autoload_ms": 41.5407,
+      "bootstrap_ms": 329.8785,
+      "database_guard_ms": 41.76350000000002,
+      "http_elapsed_including_fixture_barrier_ms": 386.3516
+    },
+    {
+      "autoload_ms": 33.9293,
+      "bootstrap_ms": 360.6861,
+      "database_guard_ms": 41.3673,
+      "http_elapsed_including_fixture_barrier_ms": 288.44259999999997
+    },
+    {
+      "autoload_ms": 26.2132,
+      "bootstrap_ms": 282.73400000000004,
+      "database_guard_ms": 29.526099999999985,
+      "http_elapsed_including_fixture_barrier_ms": 163.77389999999997
+    },
+    {
+      "autoload_ms": 37.26049999999999,
+      "bootstrap_ms": 341.8857,
+      "database_guard_ms": 42.388600000000054,
+      "http_elapsed_including_fixture_barrier_ms": 404.2524
+    },
+    {
+      "autoload_ms": 38.0632,
+      "bootstrap_ms": 359.9177,
+      "database_guard_ms": 40.86180000000002,
+      "http_elapsed_including_fixture_barrier_ms": 1598.3278
+    },
+    {
+      "autoload_ms": 37.8586,
+      "bootstrap_ms": 402.6368,
+      "database_guard_ms": 40.744699999999966,
+      "http_elapsed_including_fixture_barrier_ms": 776.7685999999999
+    },
+    {
+      "autoload_ms": 31.4721,
+      "bootstrap_ms": 349.8473,
+      "database_guard_ms": 31.76400000000001,
+      "http_elapsed_including_fixture_barrier_ms": 347.23509999999993
+    },
+    {
+      "autoload_ms": 41.5829,
+      "bootstrap_ms": 456.41999999999996,
+      "database_guard_ms": 30.317600000000027,
+      "http_elapsed_including_fixture_barrier_ms": 336.52290000000005
+    },
+    {
+      "autoload_ms": 36.860099999999996,
+      "bootstrap_ms": 303.4405,
+      "database_guard_ms": 28.787199999999984,
+      "http_elapsed_including_fixture_barrier_ms": 432.58809999999994
+    }
+  ]
+}

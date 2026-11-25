@@ -1,0 +1,100 @@
+{
+  "sources": [
+    {
+      "source": "catalog-1.4d-contract-responses.json",
+      "samples": 34,
+      "included": 34,
+      "current_run": true
+    },
+    {
+      "source": "sales-1.5b-contract-responses.json",
+      "samples": 104,
+      "included": 104,
+      "current_run": true
+    },
+    {
+      "source": "cash-1.5d1-contract-responses.json",
+      "samples": 28,
+      "included": 28,
+      "current_run": true
+    },
+    {
+      "source": "idempotency-1.5d2a-contract-responses.json",
+      "samples": 49,
+      "included": 49,
+      "current_run": true
+    },
+    {
+      "source": "finance-1.5d2b-contract-responses.json",
+      "samples": 40,
+      "included": 40,
+      "current_run": true
+    },
+    {
+      "source": "checkout-1.5d3-responses.json",
+      "samples": 26,
+      "included": 26,
+      "current_run": true
+    },
+    {
+      "source": "reconciliation-responses.json",
+      "samples": 34,
+      "included": 34,
+      "current_run": true
+    },
+    {
+      "source": "acceptance-cycle-responses.json",
+      "samples": 73,
+      "included": 73,
+      "current_run": true
+    },
+    {
+      "source": "reasons-responses.json",
+      "samples": 47,
+      "included": 46,
+      "current_run": true
+    },
+    {
+      "source": "discounts-responses.json",
+      "samples": 36,
+      "included": 36,
+      "current_run": true
+    },
+    {
+      "source": "corrections-responses.json",
+      "samples": 48,
+      "included": 48,
+      "current_run": true
+    },
+    {
+      "source": "receipts-responses.json",
+      "samples": 35,
+      "included": 35,
+      "current_run": true
+    },
+    {
+      "source": "reports-responses.json",
+      "samples": 56,
+      "included": 56,
+      "current_run": true
+    },
+    {
+      "source": "block05-fresh-route-responses.json",
+      "samples": 74,
+      "included": 74,
+      "current_run": true
+    }
+  ],
+  "responses": 683,
+  "operations_covered": 74,
+  "excluded_negative_probes": [
+    {
+      "source": "reasons-responses.json",
+      "method": "delete",
+      "path": "/sales/reasons/{id}",
+      "status": 405,
+      "reason": "Negative probe outside real operation matrix"
+    }
+  ],
+  "historical_samples_reused": false
+}

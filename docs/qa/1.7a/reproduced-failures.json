@@ -1,0 +1,218 @@
+{
+  "failed_barriers": [
+    {
+      "phase": "barrier.observed",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "observed",
+      "parent_pid": 18736,
+      "worker_pid": 15448,
+      "monotonic_ns": 172977519369900,
+      "running": true,
+      "exit_code": null,
+      "signal": "holding",
+      "found": false,
+      "elapsed_ms": 15013.2916
+    },
+    {
+      "phase": "barrier.observed",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "observed",
+      "parent_pid": 18736,
+      "worker_pid": 19384,
+      "monotonic_ns": 172996458430800,
+      "running": true,
+      "exit_code": null,
+      "signal": "holding",
+      "found": false,
+      "elapsed_ms": 15020.9758
+    }
+  ],
+  "parent_lifecycle": [
+    {
+      "phase": "process.start.begin",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "first",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172962483517600,
+      "running": false,
+      "exit_code": null
+    },
+    {
+      "phase": "process.start.returned",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "first",
+      "parent_pid": 18736,
+      "worker_pid": 15448,
+      "monotonic_ns": 172962505386600,
+      "running": true,
+      "exit_code": null,
+      "elapsed_ms": 21.8749
+    },
+    {
+      "phase": "barrier.observed",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "observed",
+      "parent_pid": 18736,
+      "worker_pid": 15448,
+      "monotonic_ns": 172977519369900,
+      "running": true,
+      "exit_code": null,
+      "signal": "holding",
+      "found": false,
+      "elapsed_ms": 15013.2916
+    },
+    {
+      "phase": "process.cleaned",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "cleanup",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172977732949600,
+      "running": false,
+      "exit_code": 1
+    },
+    {
+      "phase": "process.cleaned",
+      "run_id": "checkout-race-23545a2ace00",
+      "worker": "cleanup",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172977733704900,
+      "running": false,
+      "exit_code": null
+    },
+    {
+      "phase": "process.start.begin",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "first",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172981416100000,
+      "running": false,
+      "exit_code": null
+    },
+    {
+      "phase": "process.start.returned",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "first",
+      "parent_pid": 18736,
+      "worker_pid": 19384,
+      "monotonic_ns": 172981436948700,
+      "running": true,
+      "exit_code": null,
+      "elapsed_ms": 20.8153
+    },
+    {
+      "phase": "barrier.observed",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "observed",
+      "parent_pid": 18736,
+      "worker_pid": 19384,
+      "monotonic_ns": 172996458430800,
+      "running": true,
+      "exit_code": null,
+      "signal": "holding",
+      "found": false,
+      "elapsed_ms": 15020.9758
+    },
+    {
+      "phase": "process.cleaned",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "cleanup",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172996668679900,
+      "running": false,
+      "exit_code": 1
+    },
+    {
+      "phase": "process.cleaned",
+      "run_id": "checkout-race-d5c2be3e5f1b",
+      "worker": "cleanup",
+      "parent_pid": 18736,
+      "worker_pid": null,
+      "monotonic_ns": 172996669748000,
+      "running": false,
+      "exit_code": null
+    }
+  ],
+  "workers": [
+    {
+      "file": "stability-worker-trace-24556-172963588567800.jsonl",
+      "associated_run_id": "checkout-race-23545a2ace00",
+      "association": "inferred from the unique unidentified PHP trace in the monotonic launch-to-timeout window; not a directly observed PID chain",
+      "events": [
+        {
+          "phase": "autoload.begin",
+          "pid": 24556,
+          "monotonic_ns": 172963588620600,
+          "elapsed_ms": 0.053
+        },
+        {
+          "phase": "bootstrap.begin",
+          "pid": 24556,
+          "monotonic_ns": 172967159205200,
+          "elapsed_ms": 3570.6375
+        }
+      ]
+    },
+    {
+      "file": "stability-worker-trace-3952-172981534714000.jsonl",
+      "association": "explicit run_id",
+      "events": [
+        {
+          "phase": "autoload.begin",
+          "pid": 3952,
+          "monotonic_ns": 172981534749100,
+          "elapsed_ms": 0.0353
+        },
+        {
+          "phase": "bootstrap.begin",
+          "pid": 3952,
+          "monotonic_ns": 172981586761500,
+          "elapsed_ms": 52.0477
+        },
+        {
+          "phase": "bootstrap.ready",
+          "pid": 3952,
+          "monotonic_ns": 172991315929200,
+          "elapsed_ms": 9781.2155
+        },
+        {
+          "phase": "database.guard.begin",
+          "pid": 3952,
+          "monotonic_ns": 172991755669000,
+          "elapsed_ms": 10220.9552
+        },
+        {
+          "phase": "database.ready",
+          "pid": 3952,
+          "monotonic_ns": 172991934303900,
+          "elapsed_ms": 10399.5901
+        },
+        {
+          "phase": "worker.ready",
+          "pid": 3952,
+          "monotonic_ns": 172991960095300,
+          "elapsed_ms": 10425.3815,
+          "run_id": "checkout-race-d5c2be3e5f1b",
+          "scenario": "same",
+          "worker": "first",
+          "spid": 76
+        },
+        {
+          "phase": "http.begin",
+          "pid": 3952,
+          "monotonic_ns": 172992423101300,
+          "elapsed_ms": 10888.3875,
+          "run_id": "checkout-race-d5c2be3e5f1b",
+          "scenario": "same",
+          "worker": "first",
+          "spid": 76
+        }
+      ]
+    }
+  ],
+  "pid_note": "worker_pid in pre-gate parent logs is the Symfony process PID; pid in worker events is the actual PHP PID."
+}

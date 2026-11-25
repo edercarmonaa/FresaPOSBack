@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/up",
+    "status": 200,
+    "duration_ms": 647.8608
+  },
+  {
+    "path": "/api/v1/ping",
+    "status": 200,
+    "duration_ms": 370.2138
+  }
+]

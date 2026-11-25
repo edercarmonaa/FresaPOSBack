@@ -1,0 +1,82 @@
+[
+  {
+    "file": "report-cash-movements-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:52.135000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:51.308153+00:00",
+    "date_difference_seconds": 0.826847,
+    "frozen_height_pt": 217.0,
+    "macros": 0
+  },
+  {
+    "file": "report-cash-reconciliations-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:54.930000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:54.159243+00:00",
+    "date_difference_seconds": 0.770757,
+    "frozen_height_pt": 217.0,
+    "macros": 0
+  },
+  {
+    "file": "report-cash-sessions-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:53.580000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:52.746825+00:00",
+    "date_difference_seconds": 0.833175,
+    "frozen_height_pt": 193.0,
+    "macros": 0
+  },
+  {
+    "file": "report-closed-cash-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:22:06.361000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:22:05.156896+00:00",
+    "date_difference_seconds": 1.204104,
+    "frozen_height_pt": 217.0,
+    "macros": 0
+  },
+  {
+    "file": "report-corrections-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:57.927000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:57.062490+00:00",
+    "date_difference_seconds": 0.86451,
+    "frozen_height_pt": 193.0,
+    "macros": 0
+  },
+  {
+    "file": "report-discounts-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:56.446000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:55.576629+00:00",
+    "date_difference_seconds": 0.869371,
+    "frozen_height_pt": 265.0,
+    "macros": 0
+  },
+  {
+    "file": "report-payments-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:50.648000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:49.777592+00:00",
+    "date_difference_seconds": 0.870408,
+    "frozen_height_pt": 265.0,
+    "macros": 0
+  },
+  {
+    "file": "report-products-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:49.115000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:48.150484+00:00",
+    "date_difference_seconds": 0.964516,
+    "frozen_height_pt": 193.0,
+    "macros": 0
+  },
+  {
+    "file": "report-sales-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:47.470000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:46.487332+00:00",
+    "date_difference_seconds": 0.982668,
+    "frozen_height_pt": 265.0,
+    "macros": 0
+  },
+  {
+    "file": "report-summary-2026-11-23-2026-11-23.xlsx",
+    "generated_utc": "2026-11-23T16:21:45.761000+00:00",
+    "pdf_generated_utc": "2026-11-23T16:21:44.507988+00:00",
+    "date_difference_seconds": 1.253012,
+    "frozen_height_pt": 337.0,
+    "macros": 0
+  }
+]

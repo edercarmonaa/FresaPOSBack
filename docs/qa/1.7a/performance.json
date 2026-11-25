@@ -1,0 +1,3732 @@
+{
+  "captured_at_utc": "2026-11-25T19:55:50+00:00",
+  "database": "fresapos_test",
+  "synthetic_sales": 1001,
+  "query_log_enabled": true,
+  "parallel_test_runners": 1,
+  "cold_sql_cache_tested": false,
+  "cold_php_process_tested": false,
+  "notes": "Fixture creado previamente por los servicios reales. Primera muestra adicional y repeticiones calientes; sin vaciar caché global. Blade directo, sin red ni navegador. Tiempo no SQL es estimación, no CPU PHP.",
+  "measurements": [
+    {
+      "iteration": 0,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 116.5025,
+      "reported_sql_ms": 89.93,
+      "non_sql_estimate_ms": 26.57249999999999,
+      "blade_render_ms": 11.9325,
+      "application_plus_blade_ms": 128.435,
+      "html_bytes": 21020,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.63
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.32
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.23
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.03
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.57
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 1.9
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 27.94
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.18
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.12
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.9
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.45
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.32
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.65
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.3
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.45
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.29
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.66
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 13.4
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.27
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 14.87
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.29
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.32
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.2
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.15
+        }
+      ]
+    },
+    {
+      "iteration": 0,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 181.3,
+      "reported_sql_ms": 132.58999999999997,
+      "non_sql_estimate_ms": 48.710000000000036,
+      "blade_render_ms": 12.1544,
+      "application_plus_blade_ms": 193.45440000000002,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 5.74
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.33
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.8
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 5.32
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.74
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.43
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.99
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 44.37
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.21
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.31
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.09
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.07
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.72
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.57
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.64
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.08
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.02
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 12.98
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.48
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 12.76
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.13
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.25
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.14
+        }
+      ]
+    },
+    {
+      "iteration": 1,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 199.2761,
+      "reported_sql_ms": 144.81,
+      "non_sql_estimate_ms": 54.46610000000001,
+      "blade_render_ms": 13.0055,
+      "application_plus_blade_ms": 212.28160000000003,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.73
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.51
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.56
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.31
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.45
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 43.93
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.22
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.12
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.48
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.57
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.8
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.76
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.53
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.06
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.68
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.72
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 20.54
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.71
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 19.58
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.53
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.24
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.13
+        }
+      ]
+    },
+    {
+      "iteration": 1,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 118.4876,
+      "reported_sql_ms": 93.16000000000001,
+      "non_sql_estimate_ms": 25.32759999999999,
+      "blade_render_ms": 5.1365,
+      "application_plus_blade_ms": 123.6241,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.47
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.33
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.01
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.77
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.7
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 1.96
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 27.18
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.25
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.38
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.28
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.66
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.31
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.26
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.65
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 18.03
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 9.91
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 17.81
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.32
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.22
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.18
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 145.7963,
+      "reported_sql_ms": 116.00999999999998,
+      "non_sql_estimate_ms": 29.786300000000026,
+      "blade_render_ms": 3.5108,
+      "application_plus_blade_ms": 149.3071,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.9
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.21
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.98
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.2
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.85
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.47
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 37.72
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.12
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.22
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.19
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.93
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.27
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.56
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.02
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.33
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.5
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 13.19
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.53
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 11.46
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.24
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.13
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 161.1785,
+      "reported_sql_ms": 110.80999999999999,
+      "non_sql_estimate_ms": 50.368500000000026,
+      "blade_render_ms": 14.4004,
+      "application_plus_blade_ms": 175.5789,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.86
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.4
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.53
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 1.65
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.59
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.33
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 1.95
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 30.54
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.63
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.87
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.54
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.51
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.08
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.34
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.07
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.82
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 15.64
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 11.69
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 16.63
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.13
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.24
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.17
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 150.7427,
+      "reported_sql_ms": 97.66000000000001,
+      "non_sql_estimate_ms": 53.0827,
+      "blade_render_ms": 14.9012,
+      "application_plus_blade_ms": 165.6439,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.66
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.15
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 5.02
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.43
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.69
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.32
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.38
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 27.89
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.23
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.77
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.69
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.43
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.28
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.69
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 12.1
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 7.73
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 13.86
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.57
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.27
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.18
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.17
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 153.7205,
+      "reported_sql_ms": 122.42,
+      "non_sql_estimate_ms": 31.300499999999985,
+      "blade_render_ms": 3.5007,
+      "application_plus_blade_ms": 157.22119999999998,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.94
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.24
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.86
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 5.16
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.65
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.33
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 4.06
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 42.07
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.22
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.31
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.13
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.06
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.88
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.58
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.83
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.99
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.9
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 12.76
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.53
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.9
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.26
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.2
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.12
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 143.9858,
+      "reported_sql_ms": 112.83000000000001,
+      "non_sql_estimate_ms": 31.1558,
+      "blade_render_ms": 5.0623,
+      "application_plus_blade_ms": 149.0481,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.86
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.93
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 1.14
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.82
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.68
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.33
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.02
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 30.37
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.21
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.19
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.1
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.66
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.7
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.92
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.94
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.31
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.75
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 19.59
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 7.35
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 17.26
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.82
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.26
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.17
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 143.3339,
+      "reported_sql_ms": 98.05000000000001,
+      "non_sql_estimate_ms": 45.28389999999999,
+      "blade_render_ms": 12.4239,
+      "application_plus_blade_ms": 155.7578,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.75
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.01
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.84
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.25
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.81
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.26
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 32.94
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.12
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.24
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.48
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.53
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.77
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.43
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.28
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.67
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 11.88
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 6.77
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.95
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.41
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.3
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.2
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 188.301,
+      "reported_sql_ms": 137.29000000000002,
+      "non_sql_estimate_ms": 51.01099999999997,
+      "blade_render_ms": 10.9703,
+      "application_plus_blade_ms": 199.2713,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 4.69
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.22
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.71
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.93
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.78
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.37
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.13
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 45.77
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.21
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.24
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.69
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.01
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.18
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.51
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.61
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.67
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 5.4
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 17.86
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 9.07
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 11.47
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.97
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.24
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.13
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 157.0258,
+      "reported_sql_ms": 126.67,
+      "non_sql_estimate_ms": 30.355800000000002,
+      "blade_render_ms": 4.4975,
+      "application_plus_blade_ms": 161.5233,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.07
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.2
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 1.86
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.2
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.81
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.48
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.21
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 32.86
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.22
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.18
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.2
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.57
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.7
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.57
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.99
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.02
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.3
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.46
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 18.54
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 9.91
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 17.56
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.03
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.29
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.13
+        }
+      ]
+    },
+    {
+      "iteration": 6,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 118.7019,
+      "reported_sql_ms": 91.72,
+      "non_sql_estimate_ms": 26.981899999999996,
+      "blade_render_ms": 5.7224,
+      "application_plus_blade_ms": 124.42429999999999,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.53
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 5.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.83
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.94
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.69
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.39
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.23
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 28.89
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.18
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.99
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.42
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.4
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.57
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.41
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.27
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.64
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 12.41
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.44
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.02
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.06
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.12
+        }
+      ]
+    },
+    {
+      "iteration": 6,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 181.9769,
+      "reported_sql_ms": 135.3,
+      "non_sql_estimate_ms": 46.67689999999999,
+      "blade_render_ms": 11.4915,
+      "application_plus_blade_ms": 193.4684,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.75
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.75
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.49
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.95
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.79
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.04
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 42.08
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.43
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.11
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.75
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 5.33
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.97
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.9
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.76
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.03
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 20.26
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 8.97
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 17.74
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.57
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.22
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.22
+        }
+      ]
+    },
+    {
+      "iteration": 7,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 154.8805,
+      "reported_sql_ms": 102.38000000000001,
+      "non_sql_estimate_ms": 52.5005,
+      "blade_render_ms": 25.702,
+      "application_plus_blade_ms": 180.5825,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.99
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.7
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.05
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.2
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.48
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.29
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 1.97
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 27.27
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.12
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.36
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.35
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.28
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.66
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.67
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.17
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.67
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.12
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 17.32
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 9.81
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 20.95
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.08
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.26
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.13
+        }
+      ]
+    },
+    {
+      "iteration": 7,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 115.7315,
+      "reported_sql_ms": 91.37000000000003,
+      "non_sql_estimate_ms": 24.361499999999964,
+      "blade_render_ms": 3.3726,
+      "application_plus_blade_ms": 119.1041,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.43
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 6.02
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.91
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.08
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.93
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.46
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 3.35
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 30.12
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.23
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.04
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.38
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.16
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.44
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.41
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.27
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.67
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 12.77
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.23
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.37
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.04
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.2
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.11
+        }
+      ]
+    },
+    {
+      "iteration": 8,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 134.3587,
+      "reported_sql_ms": 103.92,
+      "non_sql_estimate_ms": 30.438699999999997,
+      "blade_render_ms": 6.0499,
+      "application_plus_blade_ms": 140.4086,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.47
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.37
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.5
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 1.44
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.76
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.31
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.26
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 30.9
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.17
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.44
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.13
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.66
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.85
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.88
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.7
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.27
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.98
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 16.22
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 7.21
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 15.03
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.66
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.2
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.12
+        }
+      ]
+    },
+    {
+      "iteration": 8,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 134.4861,
+      "reported_sql_ms": 87.36000000000003,
+      "non_sql_estimate_ms": 47.126099999999965,
+      "blade_render_ms": 17.3872,
+      "application_plus_blade_ms": 151.8733,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.9
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.17
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.1
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.46
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.62
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.38
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.1
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 27.09
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.18
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.42
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.28
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.72
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 0.42
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 0.34
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 0.27
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 0.62
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 11.94
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 7.48
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.87
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.13
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.29
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.15
+        }
+      ]
+    },
+    {
+      "iteration": 9,
+      "rows": 100,
+      "queries": 26,
+      "application_ms": 171.9796,
+      "reported_sql_ms": 127.97,
+      "non_sql_estimate_ms": 44.009600000000006,
+      "blade_render_ms": 11.8985,
+      "application_plus_blade_ms": 183.87810000000002,
+      "html_bytes": 92094,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.96
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.01
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 4.69
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.22
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.63
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.39
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 2.99
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 44.86
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.2
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.16
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.13
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 3.37
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.99
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.97
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.89
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.59
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 3.6
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.64
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.96
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 14.07
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 5.42
+        },
+        {
+          "fingerprint": "a9451672f4ab2d48a1ffbf4caa4ddf972b162a4be67ea3b93f483f5a1d89a7f2",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 12.6
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.13
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.23
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.12
+        }
+      ]
+    },
+    {
+      "iteration": 9,
+      "rows": 10,
+      "queries": 26,
+      "application_ms": 153.554,
+      "reported_sql_ms": 126.33,
+      "non_sql_estimate_ms": 27.224000000000004,
+      "blade_render_ms": 3.7446,
+      "application_plus_blade_ms": 157.2986,
+      "html_bytes": 19374,
+      "queries_detail": [
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.9
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.15
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 1.88
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 3.72
+        },
+        {
+          "fingerprint": "81c0cd61422f0940e614a4438cd497dc167d245c973252b142fd5bbd7cb1131d",
+          "tables": [],
+          "duration_ms": 0.65
+        },
+        {
+          "fingerprint": "63eb7807837a2bf8c49984a710fdb9def3daf0b0c2222aaf87312ae6875c7964",
+          "tables": [],
+          "duration_ms": 0.32
+        },
+        {
+          "fingerprint": "197278bd1d9efca6f52b8fd7b4c35d529ea00cf78a6562358fff11ad381ea576",
+          "tables": [],
+          "duration_ms": 1.88
+        },
+        {
+          "fingerprint": "df608356010f1cef4800125ced131e3143f77d62662bded7f3ced0bca5e16c56",
+          "tables": [],
+          "duration_ms": 42.05
+        },
+        {
+          "fingerprint": "fdd04764151cf9560a308926c49c11486e9999b54fb575e32750773aef75b4ea",
+          "tables": [],
+          "duration_ms": 0.4
+        },
+        {
+          "fingerprint": "5829c2d70e39cbd54ad1c6e43d49f2dd4cbf9bdbd41f7fede49c57d1e9b0fd0d",
+          "tables": [],
+          "duration_ms": 0.14
+        },
+        {
+          "fingerprint": "a2ed0cad371dca3dcff1b4bd9d46aceea5dbecab00b9a959e9a9931f5e5deda0",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.63
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 4.11
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 3.61
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 2.92
+        },
+        {
+          "fingerprint": "f61a3daaa5227f33cfa3ae5e8e9e2d424ffcaa4501ebe0d3ebcf88ce619ef411",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 2.13
+        },
+        {
+          "fingerprint": "93194c240d9ba70ba0e495841a7b2570751155c26c56f98a0c116c3d48668c79",
+          "tables": [
+            "roles",
+            "model_has_roles"
+          ],
+          "duration_ms": 2.62
+        },
+        {
+          "fingerprint": "c730306dde0b8953ecdbbf31976e433b578c4cd09a28ec00d92b643cda44e3b5",
+          "tables": [
+            "permissions",
+            "model_has_permissions"
+          ],
+          "duration_ms": 2.88
+        },
+        {
+          "fingerprint": "74350093d0a25589b5fa108f04dacfc7db3746a5df92f7ec12b0d65c61c0cf13",
+          "tables": [
+            "permissions",
+            "role_has_permissions"
+          ],
+          "duration_ms": 4.84
+        },
+        {
+          "fingerprint": "473620c12f1e8bb6adb3e7d8f4c7a9001d46f0932fc01b48c9a3827f1b73fe08",
+          "tables": [
+            "sales_sales"
+          ],
+          "duration_ms": 18.52
+        },
+        {
+          "fingerprint": "efc3ce063f9c4bbeb168e360f8ec0b341ae7f00e62ed3a0515aa125e4ae1622d",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 10.98
+        },
+        {
+          "fingerprint": "9495039591200ea3f4e4f5f78fb04bf110076c6ed7fcba19547852f49d87421e",
+          "tables": [
+            "sales_sales",
+            "sales_tables"
+          ],
+          "duration_ms": 13.74
+        },
+        {
+          "fingerprint": "9b4adcd84349e19e6e0b7b8fc06d0ed500ece019f33e9e4ef68d829028fb4ab8",
+          "tables": [
+            "users"
+          ],
+          "duration_ms": 1.61
+        },
+        {
+          "fingerprint": "d2de0adbe17ca8e7a987338ec1b7af463af77aa2f17346408ba927d857a0b946",
+          "tables": [],
+          "duration_ms": 0.19
+        },
+        {
+          "fingerprint": "bcd2639091d097d5a154e2fb2084b848c78c86b652b6ab9f9f7fa5c2c1685137",
+          "tables": [],
+          "duration_ms": 0.15
+        },
+        {
+          "fingerprint": "aaa3f33c1c1d56ae18b136b7b2154f794ba2ee7752ad65aabc636b31256c0c0b",
+          "tables": [],
+          "duration_ms": 0.12
+        }
+      ]
+    }
+  ]
+}

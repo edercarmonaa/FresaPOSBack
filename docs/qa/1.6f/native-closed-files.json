@@ -1,0 +1,33 @@
+{
+  "database": "fresapos_test",
+  "retained_pdf": 2,
+  "retained_xlsx": 2,
+  "reports": [
+    {
+      "pdf": "report-cash-reconciliations-2026-11-25-2026-11-25.pdf",
+      "xlsx": "report-cash-reconciliations-2026-11-25-2026-11-25.xlsx",
+      "pages": 1,
+      "detail_rows": 1,
+      "detail_values_compared": 11,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    },
+    {
+      "pdf": "report-cash-sessions-2026-11-25-2026-11-25.pdf",
+      "xlsx": "report-cash-sessions-2026-11-25-2026-11-25.xlsx",
+      "pages": 1,
+      "detail_rows": 2,
+      "detail_values_compared": 17,
+      "same_filtered_values": true,
+      "typed_dates": true,
+      "formulas": 0,
+      "macros": false,
+      "outside_margins": 0
+    }
+  ],
+  "closed_fixture_recheck": true,
+  "passed": true
+}

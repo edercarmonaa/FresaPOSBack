@@ -1,5 +1,18 @@
 # Registro de cambios
 
+## [Sin publicar] — Etapa 1.6f
+
+- Aceptación funcional con observaciones del Bloque05: 900 pruebas / 11625 aserciones, 74 operaciones / 683 respuestas actuales y concurrencia SQL real.
+- Diagnóstico de excepciones sin objetos/mensajes sensibles; nombres largos del POS contenidos sin solaparse, con regresiones específicas.
+- Cinco diferencias históricas reconstruidas en memoria; 28 tablas y diez archivos protegidos intactos durante 1.6f. Sin migraciones, dependencias, datos operativos, commits, pushes o despliegues nuevos.
+- [Informe A–AA](docs/entrega-1.6f.md) y [evidencia actual](docs/qa/1.6f/README.md). Pendientes externos explícitos.
+
+## [Sin publicar] — Etapa 1.6e
+
+- Nueve reportes de lectura por contratos públicos de Sales/Cash/Users, panel `/reports` y API v1 con filtros, totales completos y paginación SQL.
+- PDF Dompdf 3.1.6 y XLSX PhpSpreadsheet 5.11.0; límites síncronos, texto literal contra fórmulas, precisión decimal y auditoría de generación con reautorización final.
+- Lectura consistente por transacción y aislamiento efectivo posterior a BEGIN; prioridad baja de deadlock, espera de bloqueo acotada y restauración de opciones de conexión. Sin migraciones nuevas ni cambios financieros.
+
 ## [Sin publicar] — Etapa 1.6d
 
 - Validación local 1.6d: 821 pruebas / 9736 aserciones; Pint, Larastan nivel 5 (397 archivos), Composer y 72 operaciones OpenAPI satisfactorios. Impresión desde navegador verificada; impresora física pendiente.

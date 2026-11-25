@@ -1,0 +1,405 @@
+[
+  {
+    "name": "historical-two-keys",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "two_keys"
+    ],
+    "started_at_utc": "2026-11-25T18:11:29.9407449Z",
+    "duration_ms": 11289.623800000001,
+    "exit_code": 0,
+    "attempt": "primer intento",
+    "tests": 1,
+    "assertions": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-same",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "@same"
+    ],
+    "started_at_utc": "2026-11-25T18:11:41.3376727Z",
+    "duration_ms": 12252.102,
+    "exit_code": 0,
+    "attempt": "primer intento",
+    "tests": 1,
+    "assertions": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-discounts",
+    "arguments": [
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--filter",
+      "two_discounts"
+    ],
+    "started_at_utc": "2026-11-25T18:11:53.5958392Z",
+    "duration_ms": 13604.697900000001,
+    "exit_code": 0,
+    "attempt": "primer intento",
+    "tests": 1,
+    "assertions": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-0-default",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=default",
+      "--random-order-seed=1700"
+    ],
+    "started_at_utc": "2026-11-25T18:12:07.2174074Z",
+    "duration_ms": 171185.9769,
+    "exit_code": 1,
+    "attempt": "primer intento",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": true
+  },
+  {
+    "name": "historical-two-keys",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "two_keys"
+    ],
+    "started_at_utc": "2026-11-25T18:16:38.6569612Z",
+    "duration_ms": 13751.8205,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 1,
+    "assertions": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-same",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "@same"
+    ],
+    "started_at_utc": "2026-11-25T18:16:52.5417656Z",
+    "duration_ms": 15182.634,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 1,
+    "assertions": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-discounts",
+    "arguments": [
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--filter",
+      "two_discounts"
+    ],
+    "started_at_utc": "2026-11-25T18:17:07.7311219Z",
+    "duration_ms": 11023.4892,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 1,
+    "assertions": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-0-default",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=default"
+    ],
+    "started_at_utc": "2026-11-25T18:17:18.7601823Z",
+    "duration_ms": 164030.86980000001,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-1-reverse",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=reverse"
+    ],
+    "started_at_utc": "2026-11-25T18:20:02.8269849Z",
+    "duration_ms": 121848.47510000001,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-2-random",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=random",
+      "--random-order-seed=1702"
+    ],
+    "started_at_utc": "2026-11-25T18:22:04.6842721Z",
+    "duration_ms": 145334.6363,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-3-random",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=random",
+      "--random-order-seed=1703"
+    ],
+    "started_at_utc": "2026-11-25T18:24:30.0237447Z",
+    "duration_ms": 129212.3546,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "related-concurrency",
+    "arguments": [
+      "tests/Integration/Block05ConcurrencyTest.php",
+      "tests/Integration/CashConcurrencyTest.php",
+      "tests/Integration/CashFinanceConcurrencyTest.php",
+      "tests/Integration/CashReconciliationConcurrencyTest.php",
+      "tests/Integration/IdempotencyConcurrencyTest.php",
+      "tests/Integration/ReportsConcurrencyTest.php",
+      "tests/Integration/SaleCorrectionsConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsPinConcurrencyTest.php",
+      "tests/Integration/SaleReasonsConcurrencyTest.php",
+      "tests/Integration/SaleReceiptsConcurrencyTest.php",
+      "tests/Integration/SalesConcurrencyTest.php",
+      "tests/Integration/SalesHttpConcurrencyTest.php"
+    ],
+    "started_at_utc": "2026-11-25T18:26:39.2473109Z",
+    "duration_ms": 354099.11830000003,
+    "exit_code": 0,
+    "attempt": "batería previa a gates",
+    "tests": 77,
+    "assertions": 1460,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-two-keys",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "two_keys"
+    ],
+    "started_at_utc": "2026-11-25T19:14:14.8058822Z",
+    "duration_ms": 9358.9145,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 1,
+    "assertions": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-same",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "--filter",
+      "@same"
+    ],
+    "started_at_utc": "2026-11-25T19:14:24.2509158Z",
+    "duration_ms": 8861.0293,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 1,
+    "assertions": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "historical-discounts",
+    "arguments": [
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--filter",
+      "two_discounts"
+    ],
+    "started_at_utc": "2026-11-25T19:14:33.1148361Z",
+    "duration_ms": 9153.9266,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 1,
+    "assertions": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-0-default",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=default"
+    ],
+    "started_at_utc": "2026-11-25T19:14:42.2727960Z",
+    "duration_ms": 158690.0939,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-1-reverse",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=reverse"
+    ],
+    "started_at_utc": "2026-11-25T19:17:20.9762449Z",
+    "duration_ms": 134490.4082,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-2-random",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=random",
+      "--random-order-seed=1702"
+    ],
+    "started_at_utc": "2026-11-25T19:19:35.4862109Z",
+    "duration_ms": 129547.5614,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "combined-3-random",
+    "arguments": [
+      "tests/Integration/CheckoutConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsConcurrencyTest.php",
+      "--order-by=random",
+      "--random-order-seed=1703"
+    ],
+    "started_at_utc": "2026-11-25T19:21:45.0448150Z",
+    "duration_ms": 135268.0143,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 25,
+    "assertions": 474,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  },
+  {
+    "name": "related-concurrency",
+    "arguments": [
+      "tests/Integration/Block05ConcurrencyTest.php",
+      "tests/Integration/CashConcurrencyTest.php",
+      "tests/Integration/CashFinanceConcurrencyTest.php",
+      "tests/Integration/CashReconciliationConcurrencyTest.php",
+      "tests/Integration/IdempotencyConcurrencyTest.php",
+      "tests/Integration/ReportsConcurrencyTest.php",
+      "tests/Integration/SaleCorrectionsConcurrencyTest.php",
+      "tests/Integration/SaleDiscountsPinConcurrencyTest.php",
+      "tests/Integration/SaleReasonsConcurrencyTest.php",
+      "tests/Integration/SaleReceiptsConcurrencyTest.php",
+      "tests/Integration/SalesConcurrencyTest.php",
+      "tests/Integration/SalesHttpConcurrencyTest.php"
+    ],
+    "started_at_utc": "2026-11-25T19:24:00.3464079Z",
+    "duration_ms": 364822.7136,
+    "exit_code": 0,
+    "attempt": "batería posterior a gates",
+    "tests": 77,
+    "assertions": 1460,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_cases": [],
+    "runner_warning": false
+  }
+]

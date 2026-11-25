@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use InvalidArgumentException;
 use Modules\Core\Contracts\ApiCode;
+use Modules\Core\Contracts\ApiDownloadResponse;
 use Modules\Core\Contracts\ApiResponder;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -49,6 +50,9 @@ final class ApiResponseFactory implements ApiResponder
 
     public function normalize(Request $request, Response $response): Response
     {
+        if ($response instanceof ApiDownloadResponse && $response->getStatusCode() === 200) {
+            return $response;
+        }
         if ($response instanceof ApiJsonResponse || $response->getStatusCode() === 204 || $response->getStatusCode() === 304) {
             return $response;
         }

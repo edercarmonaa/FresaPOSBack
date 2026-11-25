@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Core\Contracts\ApiCode;
 use Modules\Core\Contracts\ApiExceptionMappings;
 use Modules\Core\Contracts\ApiResponder;
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\TestHandler;
 use Monolog\Logger;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -118,6 +119,7 @@ class ApiConventionsTest extends TestCase
             'api.v1.sales.pause', 'api.v1.sales.resume', 'api.v1.sales.cancel', 'api.v1.sales.checkout',
             'api.v1.sales.discount.update', 'api.v1.sales.discount.destroy',
             'api.v1.tickets.folio', 'api.v1.tickets.show',
+            'api.v1.reports.show', 'api.v1.reports.export',
         ], $routes->map(fn ($route) => $route->getName())->values()->all());
     }
 
@@ -233,7 +235,9 @@ class ApiConventionsTest extends TestCase
                 $this->assertStringNotContainsString($secret, $context);
             }
         } else {
-            $this->assertInstanceOf(RuntimeException::class, $records[0]->context['exception']);
+            $this->assertArrayNotHasKey('exception', $records[0]->context);
+            $this->assertSame(RuntimeException::class, $records[0]->context['exception_type']);
+            $this->assertStringNotContainsString('INTERNAL_SECRET', (new LineFormatter)->format($records[0]));
         }
     }
 
@@ -262,7 +266,9 @@ class ApiConventionsTest extends TestCase
         $records = $this->logs->getRecords();
         $this->assertCount(1, $records);
         $this->assertSame('reported-request', $records[0]->context['request_id']);
-        $this->assertSame('REPORTED_SECRET', $records[0]->context['exception']->getMessage());
+        $this->assertArrayNotHasKey('exception', $records[0]->context);
+        $this->assertSame(RuntimeException::class, $records[0]->context['exception_type']);
+        $this->assertStringNotContainsString('REPORTED_SECRET', (new LineFormatter)->format($records[0]));
     }
 
     public function test_web_and_livewire_retain_native_behavior_but_json_errors_use_convention(): void

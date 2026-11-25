@@ -1,0 +1,93 @@
+// Herramienta privada de auditoría: GET anónimo, sin formularios ni datos reales.
+const fs = require('node:fs');
+const path = require('node:path');
+const { chromium, firefox, webkit } = require('./node_modules/playwright');
+const out = path.resolve('docs/ui-ux/evidencias/ui-00');
+fs.mkdirSync(out, { recursive: true });
+const sizes = [[2560,1440],[1920,1080],[1366,768],[1024,768],[768,1024],[390,844],[320,844]];
+const result = { captured_at_utc: new Date().toISOString(), scope: 'anonymous GET only',
+  authenticated_screens: 'not tested', real_user_metrics: false, lighthouse: 'not installed or executed',
+  device_scale_factor: 1, throttling: 'none; localhost; concurrent PHPUnit on host', engines: [], pages: [], measurements: [] };
+async function inspect(page) {
+  return page.evaluate(() => {
+    const visible = e => !!(e.getClientRects().length && getComputedStyle(e).visibility !== 'hidden');
+    const controls = [...document.querySelectorAll('button,input:not([type=hidden]),select,textarea,a[href]')].filter(visible);
+    const label = e => e.labels?.length || e.getAttribute('aria-label') || e.getAttribute('aria-labelledby') || e.innerText?.trim();
+    return {
+      viewport: { width: innerWidth, height: innerHeight }, document_width: document.documentElement.scrollWidth,
+      horizontal_overflow: document.documentElement.scrollWidth > innerWidth,
+      h1_count: document.querySelectorAll('h1').length, main_count: document.querySelectorAll('main').length,
+      lang: document.documentElement.lang, font: getComputedStyle(document.body).fontFamily,
+      main_padding: document.querySelector('main') ? getComputedStyle(document.querySelector('main')).padding : null,
+      body_background: getComputedStyle(document.body).backgroundColor,
+      color_scheme: getComputedStyle(document.documentElement).colorScheme,
+      controls: controls.length, controls_below_44_both_axes: controls.filter(e=>{const r=e.getBoundingClientRect();return r.width<44 || r.height<44}).map(e=>({tag:e.tagName,name:(label(e)||'').toString().slice(0,80),width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height})),
+      unnamed_controls: controls.filter(e=>!label(e)).map(e=>({tag:e.tagName,type:e.type||null})),
+      images_without_alt: document.querySelectorAll('img:not([alt])').length,
+      css_resources: [...document.querySelectorAll('link[rel=stylesheet]')].map(e=>new URL(e.href).pathname),
+      theme_controls: [...document.querySelectorAll('button,select')].some(e=>/tema|apariencia|oscuro/i.test(e.innerText||e.getAttribute('aria-label')||'')),
+      navigation: performance.getEntriesByType('navigation').map(n=>({ttfb_ms:n.responseStart-n.requestStart,dom_content_loaded_ms:n.domContentLoadedEventEnd,load_ms:n.loadEventEnd,transfer_size:n.transferSize})),
+      paint: performance.getEntriesByType('paint').map(p=>({name:p.name,start_ms:p.startTime})),
+      observed: window.__ui00 || {},
+      resource_summary: performance.getEntriesByType('resource').map(r=>({origin:new URL(r.name).origin,path:new URL(r.name).pathname,duration_ms:r.duration,transfer_size:r.transferSize}))
+    };
+  });
+}
+(async()=>{
+  for(const [name,type,executable] of [['chrome',chromium,'C:/Program Files/Google/Chrome/Application/chrome.exe'],['edge',chromium,'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'],['firefox',firefox,firefox.executablePath()],['webkit',webkit,webkit.executablePath()]]) {
+    if(!fs.existsSync(executable)) { result.engines.push({name,available:false,reason:'executable not installed; no installation attempted'}); continue; }
+    let browser;
+    try {
+      browser=await type.launch({headless:true,executablePath:executable});
+      const engine={name,available:true,version:browser.version(),headless:true}; result.engines.push(engine);
+      // Chromium realiza matriz completa; otros motores, una comprobación acotada.
+      const matrix=name==='chrome'?sizes:[[1366,768],[390,844]];
+      for(const [width,height] of matrix) {
+        const context=await browser.newContext({viewport:{width,height},deviceScaleFactor:1,colorScheme:'light'});
+        await context.route('**/*', route=>route.request().method()==='GET'?route.continue():route.abort());
+        await context.addInitScript(()=>{
+          window.__ui00={lcp_ms:null,cls:0};
+          if(PerformanceObserver.supportedEntryTypes.includes('largest-contentful-paint')) new PerformanceObserver(list=>{for(const e of list.getEntries()) window.__ui00.lcp_ms=e.startTime;}).observe({type:'largest-contentful-paint',buffered:true});
+          if(PerformanceObserver.supportedEntryTypes.includes('layout-shift')) new PerformanceObserver(list=>{for(const e of list.getEntries()) if(!e.hadRecentInput) window.__ui00.cls+=e.value;}).observe({type:'layout-shift',buffered:true});
+        });
+        for(const [id,url] of [['inicio','/'],['login','/login']]) {
+          const page=await context.newPage(), errors=[], consoleErrors=[], failed=[];
+          page.on('pageerror',e=>errors.push(e.name));
+          page.on('console',m=>{if(m.type()==='error') consoleErrors.push(m.text().slice(0,240));});
+          page.on('requestfailed',r=>failed.push({origin:new URL(r.url()).origin,path:new URL(r.url()).pathname,error:r.failure()?.errorText}));
+          const response=await page.goto('http://127.0.0.1:8080'+url,{waitUntil:'load',timeout:30000});
+          let styles_ready=true;
+          try { await page.waitForFunction(()=>getComputedStyle(document.querySelector('main')).paddingTop==='32px',{},{timeout:10000}); } catch { styles_ready=false; }
+          await page.evaluate(()=>document.fonts.ready);
+          await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+          const screenshot=`${name}-${id}-${width}x${height}.png`;
+          await page.screenshot({path:path.join(out,screenshot),fullPage:true});
+          const inspected=await inspect(page);
+          // Solo se desplaza el foco en login; no se escribe ni se envía formulario.
+          let keyboard=null;
+          if(id==='login') {
+            await page.keyboard.press('Tab');
+            keyboard=await page.evaluate(()=>({first_focus:document.activeElement.id,outline:getComputedStyle(document.activeElement).outlineStyle,outline_width:getComputedStyle(document.activeElement).outlineWidth}));
+          }
+          result.pages.push({engine:name,id,url,width,height,status:response.status(),styles_ready,screenshot,errors,console_errors:consoleErrors,failed_requests:failed,keyboard,...inspected});
+          if(name==='chrome'&&id==='login'&&width===1366) {
+            for(let i=0;i<5;i++) {
+              await page.reload({waitUntil:'load'});
+              await page.waitForFunction(()=>getComputedStyle(document.querySelector('main')).paddingTop==='32px',{},{timeout:10000}).catch(()=>{});
+              await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+              result.measurements.push({page:'login',sample:i+1,cache:'same context; warm after initial navigation',...(await inspect(page))});
+            }
+            await page.emulateMedia({colorScheme:'dark',reducedMotion:'reduce'});
+            result.dark_preference=await inspect(page);
+            await page.screenshot({path:path.join(out,'chrome-login-dark-preference-1366x768.png'),fullPage:true});
+          }
+          await page.close();
+        }
+        await context.close();
+      }
+    } catch(e) { result.engines.push({name,execution_error:e.message.slice(0,400)}); }
+    finally { if(browser) await browser.close(); }
+  }
+  fs.writeFileSync(path.join(out,'browser-baseline.json'),JSON.stringify(result,null,2)+'\n');
+  console.log(JSON.stringify({engines:result.engines,pages:result.pages.length,samples:result.measurements.length,overflow:result.pages.filter(p=>p.horizontal_overflow).length,errors:result.pages.reduce((n,p)=>n+p.errors.length,0)}));
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,29 @@
+const fs=require('node:fs');
+const {chromium}=require('./node_modules/playwright');
+(async()=>{
+  const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+  try {
+    const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1});
+    await context.route('**/*',r=>r.request().method()==='GET'?r.continue():r.abort());
+    const page=await context.newPage();
+    await page.goto('http://127.0.0.1:8080/login',{waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>getComputedStyle(document.querySelector('main')).paddingTop==='32px',{},{timeout:10000});
+    const result=await page.evaluate(()=>{
+      const canvas=document.createElement('canvas');canvas.width=canvas.height=1;const ctx=canvas.getContext('2d',{willReadFrequently:true});
+      const rgba=color=>{ctx.clearRect(0,0,1,1);ctx.fillStyle=color;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data];};
+      const lum=rgb=>rgb.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+      const contrast=e=>{let bg=[255,255,255];const ancestors=[];for(let n=e;n;n=n.parentElement)ancestors.unshift(n);for(const n of ancestors){const c=rgba(getComputedStyle(n).backgroundColor),a=c[3]/255;bg=bg.map((v,i)=>c[i]*a+v*(1-a));}const fg=rgba(getComputedStyle(e).color),a=fg[3]/255;const text=bg.map((v,i)=>fg[i]*a+v*(1-a));const l=[lum(text),lum(bg)].sort((a,b)=>b-a);return (l[0]+.05)/(l[1]+.05);};
+      return {scope:'login only; solid backgrounds; anonymous',lang:document.documentElement.lang,
+        labels:[...document.querySelectorAll('label')].map(e=>({text:e.innerText,for:e.htmlFor,contrast:contrast(e)})),
+        controls:[...document.querySelectorAll('input:not([type=hidden]),button')].map(e=>({id:e.id||null,tag:e.tagName,type:e.type,label:e.labels?.[0]?.innerText||e.innerText,width:e.getBoundingClientRect().width,height:e.getBoundingClientRect().height,contrast:e.tagName==='BUTTON'?contrast(e):null})),
+        form_method:document.querySelector('form').method,csrf_field_present:!!document.querySelector('input[name=_token]'),
+        values_not_collected:true,screen_reader_tested:false,axe_executed:false};
+    });
+    result.keyboard=[];
+    for(let i=0;i<3;i++) {await page.keyboard.press('Tab');result.keyboard.push(await page.evaluate(()=>({id:document.activeElement.id||null,tag:document.activeElement.tagName,text:document.activeElement.tagName==='BUTTON'?document.activeElement.innerText:null,outline:getComputedStyle(document.activeElement).outlineStyle,outline_width:getComputedStyle(document.activeElement).outlineWidth})));}
+    await page.screenshot({path:'docs/ui-ux/evidencias/ui-00/chrome-login-focus-390x844.png',fullPage:true});
+    fs.writeFileSync('docs/ui-ux/evidencias/ui-00/accessibility-login.json',JSON.stringify(result,null,2)+'\n');
+    console.log(JSON.stringify(result));
+    await context.close();
+  } finally {await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

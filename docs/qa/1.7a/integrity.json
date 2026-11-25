@@ -1,0 +1,167 @@
+{
+  "database": "fresapos",
+  "initial_captured_at_utc": "2026-11-25T16:49:58+00:00",
+  "final_captured_at_utc": "2026-11-25T20:11:41+00:00",
+  "tables": [
+    {
+      "table": "audit_security_events",
+      "rows": 71,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "auth_access_sessions",
+      "rows": 15,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "auth_employee_pins",
+      "rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_movements",
+      "rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_payment_methods",
+      "rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_reconciliations",
+      "rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_registers",
+      "rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_sessions",
+      "rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "catalog_categories",
+      "rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "catalog_products",
+      "rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "idempotency_records",
+      "rows": 18,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "migrations",
+      "rows": 17,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "model_has_permissions",
+      "rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "model_has_roles",
+      "rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "permissions",
+      "rows": 44,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "personal_access_tokens",
+      "rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "role_has_permissions",
+      "rows": 81,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "roles",
+      "rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_corrections",
+      "rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_daily_sequences",
+      "rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_items",
+      "rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_operation_reasons",
+      "rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_payments",
+      "rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_sales",
+      "rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_tables",
+      "rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "user_password_histories",
+      "rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "user_security_locks",
+      "rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "users",
+      "rows": 1,
+      "projected_rows_unchanged": true
+    }
+  ],
+  "migrations": 17,
+  "schema_metadata_unchanged": true,
+  "constraint_violations": 0,
+  "financial_checks_passed": true,
+  "protected_files_unchanged": {
+    "config/session.php": true,
+    ".env": true,
+    ".env.testing": true,
+    "phpstan.neon": true,
+    "phpunit.xml": true,
+    "Modules/Users/config/security.php": true,
+    "config/filesystems.php": true,
+    "composer.lock": true,
+    "config/database.php": true,
+    "composer.json": true
+  },
+  "application_files_unchanged": true,
+  "sql_writes_to_operative": false,
+  "testing_tables_after": 0,
+  "testing_user_sessions_after": 0
+}

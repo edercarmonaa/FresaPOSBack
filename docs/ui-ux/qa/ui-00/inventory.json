@@ -1,0 +1,1616 @@
+{
+  "tracked_files": 2539,
+  "extensions": {
+    ".png": 1351,
+    ".php": 586,
+    ".pdf": 46,
+    "": 101,
+    ".json": 326,
+    ".neon": 1,
+    ".xlsx": 34,
+    ".md": 60,
+    ".log": 3,
+    ".sql": 1,
+    ".ps1": 7,
+    ".conf": 1,
+    ".stub": 4,
+    ".cmd": 4,
+    ".yaml": 2,
+    ".ini": 1,
+    ".txt": 2,
+    ".py": 1,
+    ".example": 4,
+    ".xml": 1,
+    ".ico": 1,
+    ".lock": 1,
+    ".js": 1
+  },
+  "modules": {
+    "Core": true,
+    "Auth": true,
+    "Users": true,
+    "Catalog": true,
+    "Sales": true,
+    "Cash": true,
+    "Tickets": true,
+    "Reports": true,
+    "Audit": true,
+    "Notifications": true,
+    "Devices": true,
+    "Settings": true,
+    "System": true
+  },
+  "blade_views": [
+    {
+      "file": "Modules/Auth/resources/views/account.blade.php",
+      "lines": 31,
+      "bytes": 2946,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 5,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'cash.open'",
+        "'users.view'"
+      ],
+      "route_names": [
+        "auth.admin",
+        "auth.employee",
+        "auth.password",
+        "auth.pin",
+        "auth.pin.disable",
+        "auth.terminal",
+        "auth.web.logout"
+      ],
+      "livewire_children": [
+        "auth.sessions"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "e21fa8b5b3d4d0c957f9a0cb9df689b1d83c5ea6277db0d412fc5c7563d7be38"
+    },
+    {
+      "file": "Modules/Auth/resources/views/admin.blade.php",
+      "lines": 6,
+      "bytes": 236,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [
+        "auth.account"
+      ],
+      "livewire_children": [
+        "auth.sessions"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "dd0851b1963dedb42b1d8e3158c14999a8f50ace05f51c50460bd0b7253d10eb"
+    },
+    {
+      "file": "Modules/Auth/resources/views/livewire-login.blade.php",
+      "lines": 6,
+      "bytes": 806,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:submit": 1,
+        "wire:model": 2,
+        "wire:loading.attr": 1
+      },
+      "can_guards": [],
+      "route_names": [
+        "auth.web.login"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "f29c85eec9494e54b726cfb03df72b5717463d46981187135003fe19866d5244"
+    },
+    {
+      "file": "Modules/Auth/resources/views/livewire-sessions.blade.php",
+      "lines": 26,
+      "bytes": 1826,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 1,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:submit": 1,
+        "wire:model": 1,
+        "wire:key": 1,
+        "wire:click": 3,
+        "wire:confirm": 3
+      },
+      "can_guards": [
+        "'users.status'"
+      ],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "b0812b3b703c9c537e8ed9057ad0a41b6d2408f47a230796b13a71ee3feed5f6"
+    },
+    {
+      "file": "Modules/Auth/resources/views/login.blade.php",
+      "lines": 5,
+      "bytes": 149,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "auth.login"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "1ca974a6153c947f4d1ec3fa55de572385b8e7338b575e297d472405845ffc57"
+    },
+    {
+      "file": "Modules/Auth/resources/views/password.blade.php",
+      "lines": 14,
+      "bytes": 1241,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 2,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [
+        "auth.password.update",
+        "auth.web.logout"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "a4e2432972075007bd54e748c8c551607ec9d4def4b0f6148e93ddfe54c507d6"
+    },
+    {
+      "file": "Modules/Cash/resources/views/desk.blade.php",
+      "lines": 4,
+      "bytes": 83,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "cash.desk"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "718ff7ca73c0ff66bd5bb95714c2e488116149f0abd16048b4e5ca59a9a26df1"
+    },
+    {
+      "file": "Modules/Cash/resources/views/livewire/cash-desk.blade.php",
+      "lines": 45,
+      "bytes": 4945,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 1,
+      "wire_directives": {
+        "wire:submit": 1,
+        "wire:model": 1,
+        "wire:loading.attr": 2,
+        "wire:click": 1
+      },
+      "can_guards": [],
+      "route_names": [
+        "login"
+      ],
+      "livewire_children": [
+        "cash.closing",
+        "cash.movements"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [
+        "max-width:640px"
+      ],
+      "role_status": true,
+      "sha256": "64c669655a38f1a60eb76845df505f6f44c08b16036eca5f15504b5ffb0c1605"
+    },
+    {
+      "file": "Modules/Cash/resources/views/livewire/closing-panel.blade.php",
+      "lines": 51,
+      "bytes": 8074,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 2,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 5,
+        "wire:loading.attr": 7,
+        "wire:submit": 2,
+        "wire:model": 6
+      },
+      "can_guards": [],
+      "route_names": [
+        "sales.pos"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "ceef243938e58b702662905a150ba6ea1f128f519498eeb80533bc7ba036ad31"
+    },
+    {
+      "file": "Modules/Cash/resources/views/livewire/movements-panel.blade.php",
+      "lines": 27,
+      "bytes": 5936,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 1,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 5,
+        "wire:loading.attr": 4,
+        "wire:submit": 1,
+        "wire:model": 3,
+        "wire:key": 1
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": true,
+      "responsive_rules": [
+        "max-width:640px"
+      ],
+      "role_status": true,
+      "sha256": "10dd1d70b5ef425499fea0328046531857869eb2f0f7b0abe4ff36373193eccc"
+    },
+    {
+      "file": "Modules/Cash/resources/views/navigation.blade.php",
+      "lines": 7,
+      "bytes": 365,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'cash.view'"
+      ],
+      "route_names": [
+        "cash.desk"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "9761c2d3faba26052a2147c88e9eb6559cfd901d6554622039d3f1ef2df8c86d"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/categories.blade.php",
+      "lines": 5,
+      "bytes": 153,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "catalog.categories"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "365aa141152cc019295187ac629ccda4d99f4bf8f27a9d3e0ffca84885966f4f"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/field-error.blade.php",
+      "lines": 7,
+      "bytes": 347,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "7fcf358b56d35532905b35900a5c8ee09e4670c4ec57606f31fc7a256c6642b0"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/livewire-categories.blade.php",
+      "lines": 38,
+      "bytes": 5653,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 1,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:model.live.debounce.350ms": 1,
+        "wire:model.live": 2,
+        "wire:click": 5,
+        "wire:loading.attr": 6,
+        "wire:submit": 1,
+        "wire:model": 4,
+        "wire:key": 1,
+        "wire:confirm": 2
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "4b09d765cbebcf5126b844a658533c4d40a80cac263ad9647625ead00734b200"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/livewire-products.blade.php",
+      "lines": 64,
+      "bytes": 10463,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 1,
+      "tables": 1,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:model.live.debounce.350ms": 2,
+        "wire:model.live": 6,
+        "wire:click": 8,
+        "wire:loading.attr": 9,
+        "wire:submit": 1,
+        "wire:model": 6,
+        "wire:confirm": 4,
+        "wire:target": 1,
+        "wire:key": 1
+      },
+      "can_guards": [
+        "'catalog.products.create'",
+        "'catalog.products.deactivate'",
+        "'catalog.products.restore'",
+        "'catalog.products.update'"
+      ],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "3f204d24c8735c2a249d269666bc649ba6b0a5cf032370aeb3eb31437a03aa85"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/navigation.blade.php",
+      "lines": 16,
+      "bytes": 1288,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'catalog.categories.manage'",
+        "'catalog.products.view'",
+        "['catalog.products.create', 'catalog.products.update', 'catalog.products.deactivate', 'catalog.products.restore']"
+      ],
+      "route_names": [
+        "auth.account",
+        "catalog.categories",
+        "catalog.products"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "2b2d52d141decc0fe765f1cfc0b6eb44ad70defe798a771c9c103a247bf7adc9"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/pagination.blade.php",
+      "lines": 5,
+      "bytes": 712,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 2,
+        "wire:loading.attr": 2
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "3f447f1d30121e852193639deff139ce62d4f43d9c7d930b11cd99b9d3524e65"
+    },
+    {
+      "file": "Modules/Catalog/resources/views/products.blade.php",
+      "lines": 5,
+      "bytes": 149,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "catalog.products"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "e7770cadf74b9d2cf6a1b242d02d2ba92dc1bfe3e171d07eb341bce584c487ce"
+    },
+    {
+      "file": "Modules/Reports/resources/views/error.blade.php",
+      "lines": 6,
+      "bytes": 484,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [
+        "reports.index"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "5600800aa5e19cb79e0926bb7706840b039aa5f875bbf6c2293b41fdc06e2de2"
+    },
+    {
+      "file": "Modules/Reports/resources/views/index.blade.php",
+      "lines": 46,
+      "bytes": 11734,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 2,
+      "tables": 1,
+      "style_blocks": 1,
+      "script_blocks": 1,
+      "wire_directives": {},
+      "can_guards": [
+        "'reports.export'"
+      ],
+      "route_names": [
+        "cash.desk",
+        "reports.export",
+        "reports.show",
+        "sales.pos"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": true,
+      "responsive_rules": [
+        "max-width:1100px"
+      ],
+      "role_status": false,
+      "sha256": "1683444f8e9ae761dfa767a4448014570a11dd01a29ccc0b29b3cc3adcf297b2"
+    },
+    {
+      "file": "Modules/Reports/resources/views/navigation.blade.php",
+      "lines": 3,
+      "bytes": 227,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'reports.view'"
+      ],
+      "route_names": [
+        "reports.index"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "7a593db6ed3e73b7e18366434cd760fcaaa8dd612cddf195aff90516e73fe081"
+    },
+    {
+      "file": "Modules/Reports/resources/views/pdf.blade.php",
+      "lines": 12,
+      "bytes": 2429,
+      "level": 3,
+      "scope": "excluded print/document",
+      "forms": 0,
+      "tables": 2,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "35d69f2df97d0a8b19277b6bee1a44630bdd00ab8c13ae58939f1c6864b8f2b4"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/checkout-panel.blade.php",
+      "lines": 41,
+      "bytes": 5426,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 5,
+        "wire:loading.attr": 6,
+        "wire:submit": 1,
+        "wire:key": 1,
+        "wire:model.live": 1,
+        "wire:model": 3
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "a918fa6bdadf848648f2a8fdfd1394acfe16c64d3614f207845828afd7f9ddfd"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/correction-panel.blade.php",
+      "lines": 72,
+      "bytes": 14948,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:key": 2,
+        "wire:click": 20,
+        "wire:loading.attr": 12,
+        "wire:submit": 1,
+        "wire:model": 9,
+        "wire:model.live.debounce.350ms": 1,
+        "wire:model.live": 2
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "1c1b99a2b465c56a3f14f564f4ebe4af7cc52e5cb0be54a2d951ffd617542bf6"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/discount-panel.blade.php",
+      "lines": 27,
+      "bytes": 3290,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 4,
+        "wire:loading.attr": 5,
+        "wire:submit": 1,
+        "wire:model.live": 1,
+        "wire:model": 1
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "44550fc538dcaecd9714c2328245096ed0612601a17b32a5cd7f1dd8c7cfec91"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/point-of-sale.blade.php",
+      "lines": 138,
+      "bytes": 21179,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 3,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 1,
+      "wire_directives": {
+        "wire:click": 22,
+        "wire:loading.attr": 20,
+        "wire:submit": 3,
+        "wire:model": 4,
+        "wire:key": 5,
+        "wire:model.live.debounce.350ms": 1
+      },
+      "can_guards": [
+        "'cash.view'"
+      ],
+      "route_names": [
+        "auth.account",
+        "cash.desk",
+        "login",
+        "tickets.preview"
+      ],
+      "livewire_children": [
+        "sales.checkout",
+        "sales.corrections",
+        "sales.discounts",
+        "sales.operations"
+      ],
+      "focus_or_trap": true,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "e114800a3b1ec1124853ac97a49f3aee5cd02ef5c7860cde3125176da3cddd54"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/reason-administration.blade.php",
+      "lines": 36,
+      "bytes": 5122,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 6,
+        "wire:loading.attr": 5,
+        "wire:submit": 1,
+        "wire:model": 5,
+        "wire:confirm": 1,
+        "wire:model.live": 2,
+        "wire:key": 1
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "04859fd7efaeedfd6bff594259158d088b2a6e07519ff85f9bfb9db454642c79"
+    },
+    {
+      "file": "Modules/Sales/resources/views/livewire/sale-actions-panel.blade.php",
+      "lines": 26,
+      "bytes": 3377,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 5,
+        "wire:loading.attr": 6,
+        "wire:submit": 1,
+        "wire:model": 1
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "7935f0bcdb37efae93887187c66350c1622e37ba0010152db4c4b92e7270f1a3"
+    },
+    {
+      "file": "Modules/Sales/resources/views/navigation.blade.php",
+      "lines": 11,
+      "bytes": 756,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'catalog.products.view'",
+        "'sales.view'",
+        "'users.view'"
+      ],
+      "route_names": [
+        "auth.account",
+        "auth.admin",
+        "sales.pos"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": true,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "80a390527f2b394caa8faaaa04b8a26bd634e8d8cf852b03a4330d241cf38de4"
+    },
+    {
+      "file": "Modules/Sales/resources/views/partials/pagination.blade.php",
+      "lines": 7,
+      "bytes": 521,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {
+        "wire:click": 2,
+        "wire:loading.attr": 2
+      },
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "f1a7d836c1d895332739dcef2704564f2c312dfa6cd46b0eb8daa165e260e9ec"
+    },
+    {
+      "file": "Modules/Sales/resources/views/partials/styles.blade.php",
+      "lines": 11,
+      "bytes": 8132,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": true,
+      "responsive_rules": [
+        "max-width:1023px",
+        "max-width:480px",
+        "min-width:1024px"
+      ],
+      "role_status": false,
+      "sha256": "df28275a43dddc0fb44d06cc111c11cabd265784b78b228c42d789696ff6c698"
+    },
+    {
+      "file": "Modules/Sales/resources/views/pos.blade.php",
+      "lines": 5,
+      "bytes": 142,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "sales.pos"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "d680d16fde8a757ff05147836db96017c817f0feced39b20b962f0f01dbc0fcf"
+    },
+    {
+      "file": "Modules/Sales/resources/views/reasons-navigation.blade.php",
+      "lines": 7,
+      "bytes": 406,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [
+        "'sales.view'",
+        "'settings.update'"
+      ],
+      "route_names": [
+        "sales.reasons"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "9e309d7d4f26e6377958911f966c0147341ccce3b895c1d1472fe43f689bab61"
+    },
+    {
+      "file": "Modules/Sales/resources/views/reasons.blade.php",
+      "lines": 4,
+      "bytes": 87,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [
+        "sales.reasons"
+      ],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "9c653fb4b99d584a151de881bc758eb6f8d5cffcb1201d19bdd80f1c6fa86fef"
+    },
+    {
+      "file": "Modules/Tickets/resources/views/error.blade.php",
+      "lines": 1,
+      "bytes": 469,
+      "level": 3,
+      "scope": "excluded print/document",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [
+        "sales.pos"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": true,
+      "sha256": "0c72756bd7dff5648a2697df056d51040e1dfa4237b9497ca0d537bdbd4ae008"
+    },
+    {
+      "file": "Modules/Tickets/resources/views/receipt.blade.php",
+      "lines": 61,
+      "bytes": 6902,
+      "level": 3,
+      "scope": "excluded print/document",
+      "forms": 1,
+      "tables": 0,
+      "style_blocks": 1,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [
+        "sales.pos",
+        "tickets.preview",
+        "tickets.print"
+      ],
+      "livewire_children": [],
+      "focus_or_trap": true,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "14ff365a06e9ac4f905e19d63e8c67e3c8e4abb389a40318343e4148e8df773a"
+    },
+    {
+      "file": "resources/views/layouts/app.blade.php",
+      "lines": 24,
+      "bytes": 817,
+      "level": 2,
+      "scope": "conditional: visual sections only",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 1,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "93d7e34b53114ad583f95379fa2040b30299964f206cbbbdc0bff72f603f4d08"
+    },
+    {
+      "file": "resources/views/welcome.blade.php",
+      "lines": 6,
+      "bytes": 169,
+      "level": 1,
+      "scope": "presentation; preserve every binding and guard",
+      "forms": 0,
+      "tables": 0,
+      "style_blocks": 0,
+      "script_blocks": 0,
+      "wire_directives": {},
+      "can_guards": [],
+      "route_names": [],
+      "livewire_children": [],
+      "focus_or_trap": false,
+      "responsive_rules": [],
+      "role_status": false,
+      "sha256": "02247eec6fffa61805bb1ab066b5ba8cf62d91cf907a18c547d4d5ced78b488d"
+    }
+  ],
+  "livewire_classes": [
+    {
+      "file": "Modules/Auth/app/Http/Livewire/Login.php",
+      "level": 2,
+      "lines": 37,
+      "public_methods": [
+        "login",
+        "render"
+      ],
+      "locked_attributes": 0,
+      "authorization_calls": false,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Auth/app/Http/Livewire/Sessions.php",
+      "level": 2,
+      "lines": 69,
+      "public_methods": [
+        "consult",
+        "revoke",
+        "revokeAll",
+        "revokeOthers",
+        "render"
+      ],
+      "locked_attributes": 1,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Cash/app/Http/Livewire/CashClosingPanel.php",
+      "level": 2,
+      "lines": 249,
+      "public_methods": [
+        "mount",
+        "beginClosing",
+        "confirmClosing",
+        "queryClosing",
+        "showClosing",
+        "filterHistory",
+        "changePage",
+        "render"
+      ],
+      "locked_attributes": 9,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Cash/app/Http/Livewire/CashDesk.php",
+      "level": 2,
+      "lines": 107,
+      "public_methods": [
+        "beginBlindCount",
+        "closingConfirmed",
+        "mount",
+        "refreshState",
+        "openSession",
+        "render"
+      ],
+      "locked_attributes": 4,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Cash/app/Http/Livewire/CashMovementsPanel.php",
+      "level": 2,
+      "lines": 151,
+      "public_methods": [
+        "mount",
+        "resolveMovement",
+        "prepareMovement",
+        "recordMovement",
+        "changePage",
+        "render"
+      ],
+      "locked_attributes": 6,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Catalog/app/Http/Livewire/CatalogScreen.php",
+      "level": 2,
+      "lines": 92,
+      "public_methods": [
+        "updated",
+        "gotoPage",
+        "closeForm"
+      ],
+      "locked_attributes": 1,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Catalog/app/Http/Livewire/Categories.php",
+      "level": 2,
+      "lines": 87,
+      "public_methods": [
+        "create",
+        "edit",
+        "save",
+        "toggle",
+        "remove",
+        "render"
+      ],
+      "locked_attributes": 0,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Catalog/app/Http/Livewire/Products.php",
+      "level": 2,
+      "lines": 226,
+      "public_methods": [
+        "_startUpload",
+        "_finishUpload",
+        "updatedImage",
+        "clearUpload",
+        "removeImage",
+        "closeForm",
+        "create",
+        "edit",
+        "save",
+        "toggle",
+        "remove",
+        "restore",
+        "render"
+      ],
+      "locked_attributes": 3,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/CheckoutPanel.php",
+      "level": 2,
+      "lines": 268,
+      "public_methods": [
+        "refreshTicket",
+        "mount",
+        "openCheckout",
+        "addPayment",
+        "removePayment",
+        "updated",
+        "calculate",
+        "confirmCheckout",
+        "queryCheckout",
+        "render"
+      ],
+      "locked_attributes": 10,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/CorrectionPanel.php",
+      "level": 2,
+      "lines": 339,
+      "public_methods": [
+        "mount",
+        "prepare",
+        "addPayment",
+        "removePayment",
+        "calculate",
+        "updated",
+        "submit",
+        "queryOperation",
+        "goPage",
+        "updatedSearch",
+        "render"
+      ],
+      "locked_attributes": 14,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/DiscountPanel.php",
+      "level": 2,
+      "lines": 223,
+      "public_methods": [
+        "mount",
+        "refreshTicket",
+        "prepare",
+        "calculate",
+        "confirm",
+        "queryOperation",
+        "updated",
+        "render"
+      ],
+      "locked_attributes": 10,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/PointOfSale.php",
+      "level": 2,
+      "lines": 567,
+      "public_methods": [
+        "mount",
+        "updated",
+        "selectMode",
+        "selectCounterState",
+        "clearSale",
+        "selectSale",
+        "selectTable",
+        "refreshSale",
+        "checkoutFinished",
+        "resolveIntent",
+        "startSale",
+        "selectCategory",
+        "clearSearch",
+        "gotoPage",
+        "chooseProduct",
+        "addProduct",
+        "editItem",
+        "adjustQuantity",
+        "saveQuantity",
+        "saveItemNote",
+        "saveSaleNote",
+        "pauseSale",
+        "resumeSale",
+        "render"
+      ],
+      "locked_attributes": 20,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/ReasonAdministration.php",
+      "level": 2,
+      "lines": 204,
+      "public_methods": [
+        "mount",
+        "create",
+        "edit",
+        "changeStatus",
+        "save",
+        "queryOperation",
+        "render",
+        "updated"
+      ],
+      "locked_attributes": 7,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    },
+    {
+      "file": "Modules/Sales/app/Http/Livewire/SaleActionsPanel.php",
+      "level": 2,
+      "lines": 250,
+      "public_methods": [
+        "refreshTicket",
+        "mount",
+        "prepareRemoval",
+        "prepareCancellation",
+        "reasonPage",
+        "confirmOperation",
+        "queryOperation",
+        "render"
+      ],
+      "locked_attributes": 15,
+      "authorization_calls": true,
+      "restriction": "No changes in UI-00; business/auth/persistence portions prohibited in all UI stages."
+    }
+  ],
+  "classification_counts": {
+    "3": 2485,
+    "2": 26,
+    "1": 28
+  },
+  "web_routes": [
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "/",
+      "name": null,
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "account",
+      "name": "auth.account",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@account",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "admin",
+      "name": "auth.admin",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Illuminate\\Auth\\Middleware\\Authorize:users.view"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "admin/catalog/categories",
+      "name": "catalog.categories",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Modules\\Catalog\\Http\\Middleware\\CatalogAdminAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "admin/catalog/products",
+      "name": "catalog.products",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Modules\\Catalog\\Http\\Middleware\\CatalogAdminAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "admin/sales/reasons",
+      "name": "sales.reasons",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Modules\\Sales\\Http\\Middleware\\PosAccess",
+        "Illuminate\\Auth\\Middleware\\Authorize:settings.update"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/employee",
+      "name": "auth.employee",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@switchEmployee",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "auth/password",
+      "name": "auth.password",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/password",
+      "name": "auth.password.update",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@password",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Illuminate\\Routing\\Middleware\\ThrottleRequests:auth-security"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/pin",
+      "name": "auth.pin",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@pin",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/pin/disable",
+      "name": "auth.pin.disable",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@disablePin",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/sessions/{id}/revoke",
+      "name": "auth.session.revoke",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@revoke",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "auth/terminal",
+      "name": "auth.terminal",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@authorizeTerminal",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "cash",
+      "name": "cash.desk",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Modules\\Cash\\Http\\Middleware\\CashAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "login",
+      "name": "login",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "login",
+      "name": "auth.web.login",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@login",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "logout",
+      "name": "auth.web.logout",
+      "action": "Modules\\Auth\\Http\\Controllers\\WebAuthenticationController@logout",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "pos",
+      "name": "sales.pos",
+      "action": "Illuminate\\Routing\\ViewController",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess",
+        "Modules\\Sales\\Http\\Middleware\\PosAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "pos/sales/{id}/receipt",
+      "name": "tickets.preview",
+      "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@preview",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "pos/sales/{id}/receipt/print",
+      "name": "tickets.print",
+      "action": "Modules\\Tickets\\Http\\Controllers\\ReceiptController@print",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "reports",
+      "name": "reports.index",
+      "action": "Modules\\Reports\\Http\\Controllers\\ReportController@web",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "reports/{report}",
+      "name": "reports.show",
+      "action": "Modules\\Reports\\Http\\Controllers\\ReportController@web",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "POST",
+      "uri": "reports/{report}/exports/{format}",
+      "name": "reports.export",
+      "action": "Modules\\Reports\\Http\\Controllers\\ReportController@webExport",
+      "middleware": [
+        "web",
+        "Modules\\Auth\\Http\\Middleware\\NoStore",
+        "Modules\\Auth\\Http\\Middleware\\EnsureWebAccess"
+      ],
+      "path": null
+    },
+    {
+      "domain": null,
+      "method": "GET|HEAD",
+      "uri": "up",
+      "name": null,
+      "action": "Illuminate\\Foundation\\Http\\HealthCheck",
+      "middleware": [],
+      "path": null
+    }
+  ],
+  "api_v1_routes": 74,
+  "inline_styles": 7,
+  "inline_scripts": 4,
+  "literal_colors": {
+    "#fff": 15,
+    "#475569": 10,
+    "#cbd5e1": 8,
+    "#e2e8f0": 7,
+    "#1e40af": 7,
+    "#1e3a8a": 6,
+    "#94a3b8": 5,
+    "#1d4ed8": 5,
+    "#eff6ff": 5,
+    "#172554": 3,
+    "#9f1239": 3,
+    "#334155": 2,
+    "#f8fafc": 2,
+    "#2563eb": 2,
+    "#0f172a": 2,
+    "#f1f5f9": 2,
+    "#047857": 2,
+    "#fff1f2": 2,
+    "#fda4af": 2,
+    "#eef2ff": 1,
+    "#dbe4ef": 1,
+    "#fffbeb": 1,
+    "#fcd34d": 1,
+    "#78350f": 1,
+    "#0f172a05": 1,
+    "#64748b": 1,
+    "#dbeafe": 1,
+    "#ecfdf5": 1,
+    "#065f46": 1,
+    "#0f172acc": 1,
+    "#0f172a33": 1
+  },
+  "theme_preference_implementation_found": false,
+  "assets": [
+    {
+      "file": "public/.htaccess",
+      "bytes": 740
+    },
+    {
+      "file": "public/favicon.ico",
+      "bytes": 0
+    },
+    {
+      "file": "public/index.php",
+      "bytes": 543
+    },
+    {
+      "file": "public/robots.txt",
+      "bytes": 24
+    },
+    {
+      "file": "public/storage/.gitignore",
+      "bytes": 14
+    },
+    {
+      "file": "public/storage/catalog/products/.htaccess",
+      "bytes": 493
+    }
+  ],
+  "source_instructions": "No AGENTS.md found at root, ancestors or project search; README/CONTRIBUTING/SECURITY and architecture respected."
+}

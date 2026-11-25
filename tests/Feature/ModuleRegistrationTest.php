@@ -12,6 +12,7 @@ use Modules\Cash\Http\Controllers\CashFinanceController;
 use Modules\Catalog\Http\Controllers\CategoryController;
 use Modules\Catalog\Http\Controllers\ProductController;
 use Modules\Core\Http\OperationStatusController;
+use Modules\Reports\Http\Controllers\ReportController;
 use Modules\Sales\Http\Controllers\CorrectionController;
 use Modules\Sales\Http\Controllers\ReasonController;
 use Modules\Sales\Http\Controllers\SaleController;
@@ -61,6 +62,7 @@ class ModuleRegistrationTest extends TestCase
                 CashClosingController::class,
                 OperationStatusController::class,
                 ReceiptController::class,
+                ReportController::class,
             ]);
         }
     }

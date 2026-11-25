@@ -1,0 +1,73 @@
+{
+  "scope": "login only; solid backgrounds; anonymous",
+  "lang": "es",
+  "labels": [
+    {
+      "text": "Nombre de usuario",
+      "for": "username",
+      "contrast": 17.041924491285634
+    },
+    {
+      "text": "Contraseña",
+      "for": "password",
+      "contrast": 17.041924491285634
+    }
+  ],
+  "controls": [
+    {
+      "id": "username",
+      "tag": "INPUT",
+      "type": "text",
+      "label": "Nombre de usuario",
+      "width": 326,
+      "height": 42,
+      "contrast": null
+    },
+    {
+      "id": "password",
+      "tag": "INPUT",
+      "type": "password",
+      "label": "Contraseña",
+      "width": 326,
+      "height": 42,
+      "contrast": null
+    },
+    {
+      "id": null,
+      "tag": "BUTTON",
+      "type": "submit",
+      "label": "Entrar",
+      "width": 73.84375,
+      "height": 40,
+      "contrast": 17.8305532523795
+    }
+  ],
+  "form_method": "post",
+  "csrf_field_present": true,
+  "values_not_collected": true,
+  "screen_reader_tested": false,
+  "axe_executed": false,
+  "keyboard": [
+    {
+      "id": "username",
+      "tag": "INPUT",
+      "text": null,
+      "outline": "auto",
+      "outline_width": "1px"
+    },
+    {
+      "id": "password",
+      "tag": "INPUT",
+      "text": null,
+      "outline": "auto",
+      "outline_width": "1px"
+    },
+    {
+      "id": null,
+      "tag": "BUTTON",
+      "text": "Entrar",
+      "outline": "auto",
+      "outline_width": "1px"
+    }
+  ]
+}

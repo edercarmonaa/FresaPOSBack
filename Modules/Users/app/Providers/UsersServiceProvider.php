@@ -13,11 +13,13 @@ use Modules\Users\Application\Services\ManageUsers;
 use Modules\Users\Application\Services\UserIdentityAccess;
 use Modules\Users\Console\ProvisionAdministrator;
 use Modules\Users\Contracts\IdentityAccess;
+use Modules\Users\Contracts\IdentityLabels;
 use Modules\Users\Contracts\UserAdministration;
 use Modules\Users\Domain\SecurityConflict;
 use Modules\Users\Infrastructure\Persistence\ActiveUserProvider;
 use Modules\Users\Infrastructure\Persistence\EloquentSecurityStore;
 use Modules\Users\Infrastructure\Persistence\Models\User;
+use Modules\Users\Infrastructure\Persistence\ReadIdentityLabels;
 use Modules\Users\Policies\UserPolicy;
 use Nwidart\Modules\Support\ModuleServiceProvider;
 
@@ -40,6 +42,7 @@ class UsersServiceProvider extends ModuleServiceProvider
         $this->app->bind(SecurityStore::class, EloquentSecurityStore::class);
         $this->app->bind(UserAdministration::class, ManageUsers::class);
         $this->app->bind(IdentityAccess::class, UserIdentityAccess::class);
+        $this->app->bind(IdentityLabels::class, ReadIdentityLabels::class);
     }
 
     public function boot(): void

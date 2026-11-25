@@ -1,0 +1,50 @@
+{
+  "added": [
+    {
+      "name": "composer/pcre",
+      "version": "3.4.0"
+    },
+    {
+      "name": "dompdf/dompdf",
+      "version": "v3.1.6"
+    },
+    {
+      "name": "dompdf/php-font-lib",
+      "version": "1.0.2"
+    },
+    {
+      "name": "dompdf/php-svg-lib",
+      "version": "1.0.2"
+    },
+    {
+      "name": "maennchen/zipstream-php",
+      "version": "3.2.2"
+    },
+    {
+      "name": "markbaker/complex",
+      "version": "3.0.2"
+    },
+    {
+      "name": "markbaker/matrix",
+      "version": "3.0.1"
+    },
+    {
+      "name": "masterminds/html5",
+      "version": "2.12.0"
+    },
+    {
+      "name": "phpoffice/phpspreadsheet",
+      "version": "5.11.0"
+    },
+    {
+      "name": "phpoffice/wmf",
+      "version": "0.2.1"
+    },
+    {
+      "name": "sabberworm/php-css-parser",
+      "version": "v9.5.0"
+    }
+  ],
+  "updated": [],
+  "removed": []
+}

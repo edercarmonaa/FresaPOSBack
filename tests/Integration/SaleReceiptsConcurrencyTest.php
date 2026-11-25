@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Process\Process;
 use Tests\Support\FinancialIntegrity;
 use Tests\Support\ReceiptsSqlServerTestCase;
+use Tests\Support\WorkerDiagnostics;
 
 class SaleReceiptsConcurrencyTest extends ReceiptsSqlServerTestCase
 {
@@ -62,6 +63,7 @@ class SaleReceiptsConcurrencyTest extends ReceiptsSqlServerTestCase
         $command = [PHP_BINARY, base_path('tests/Fixtures/Finance/corrections-worker.php'), $directory];
         $first = new Process([...$command, 'first'], base_path(), timeout: 45);
         $second = new Process([...$command, 'second'], base_path(), timeout: 45);
+        $completed = false;
         try {
             $first->start();
             $this->waitFile($directory.'/holding', $first);
@@ -111,6 +113,7 @@ class SaleReceiptsConcurrencyTest extends ReceiptsSqlServerTestCase
                 'mode' => $mode, 'first_spid' => $spidA, 'second_spid' => $spidB, 'wait_type' => $wait->wait_type,
                 'first_status' => $a['status'], 'second_status' => $b['status'], 'folio_preserved' => true,
                 'original_payments_preserved' => true, 'financial_invariants' => $invariants, 'passed' => true], JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR));
+            $completed = true;
         } finally {
             if (! is_file($directory.'/release')) {
                 file_put_contents($directory.'/release', 'cleanup');
@@ -120,6 +123,8 @@ class SaleReceiptsConcurrencyTest extends ReceiptsSqlServerTestCase
                     $process->stop(2);
                 }
             }
+            WorkerDiagnostics::removeDirectory($directory, ! $completed);
         }
+        $this->assertDirectoryDoesNotExist($directory);
     }
 }

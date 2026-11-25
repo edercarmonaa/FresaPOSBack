@@ -1,0 +1,6 @@
+{
+  "database": "fresapos_test",
+  "read_only": true,
+  "user_tables": 0,
+  "other_user_sessions": 0
+}

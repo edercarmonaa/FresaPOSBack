@@ -1,0 +1,42 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [],
+    "passed": true
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [],
+    "passed": true
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [],
+    "passed": true
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "cards": 10,
+    "fallbacks": 10,
+    "failures": [],
+    "passed": true
+  }
+]

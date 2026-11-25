@@ -1,0 +1,252 @@
+{
+  "database": "fresapos",
+  "initial_captured_at_utc": "2026-11-23T17:41:17+00:00",
+  "final_captured_at_utc": "2026-11-25T16:30:04+00:00",
+  "sql_writes_by_inspection": false,
+  "tables": [
+    {
+      "table": "audit_security_events",
+      "initial_rows": 71,
+      "final_rows": 71,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "auth_access_sessions",
+      "initial_rows": 15,
+      "final_rows": 15,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "auth_employee_pins",
+      "initial_rows": 1,
+      "final_rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_movements",
+      "initial_rows": 3,
+      "final_rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_payment_methods",
+      "initial_rows": 4,
+      "final_rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_reconciliations",
+      "initial_rows": 3,
+      "final_rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_registers",
+      "initial_rows": 1,
+      "final_rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "cash_sessions",
+      "initial_rows": 4,
+      "final_rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "catalog_categories",
+      "initial_rows": 2,
+      "final_rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "catalog_products",
+      "initial_rows": 2,
+      "final_rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "idempotency_records",
+      "initial_rows": 18,
+      "final_rows": 18,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "migrations",
+      "initial_rows": 17,
+      "final_rows": 17,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "model_has_permissions",
+      "initial_rows": 0,
+      "final_rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "model_has_roles",
+      "initial_rows": 1,
+      "final_rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "permissions",
+      "initial_rows": 44,
+      "final_rows": 44,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "personal_access_tokens",
+      "initial_rows": 0,
+      "final_rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "role_has_permissions",
+      "initial_rows": 81,
+      "final_rows": 81,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "roles",
+      "initial_rows": 4,
+      "final_rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_corrections",
+      "initial_rows": 0,
+      "final_rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_daily_sequences",
+      "initial_rows": 2,
+      "final_rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_items",
+      "initial_rows": 4,
+      "final_rows": 4,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_operation_reasons",
+      "initial_rows": 0,
+      "final_rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_payments",
+      "initial_rows": 3,
+      "final_rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_sales",
+      "initial_rows": 3,
+      "final_rows": 3,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "sales_tables",
+      "initial_rows": 0,
+      "final_rows": 0,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "user_password_histories",
+      "initial_rows": 2,
+      "final_rows": 2,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "user_security_locks",
+      "initial_rows": 1,
+      "final_rows": 1,
+      "projected_rows_unchanged": true
+    },
+    {
+      "table": "users",
+      "initial_rows": 1,
+      "final_rows": 1,
+      "projected_rows_unchanged": true
+    }
+  ],
+  "schema_unchanged_during_1_6f": {
+    "columns": true,
+    "indexes": true,
+    "constraints": true,
+    "migrations": true
+  },
+  "historical_index_column_entries_verified": 59,
+  "complete_historical_index_definitions_available": false,
+  "migration_rows": 17,
+  "constraint_violations": 0,
+  "financial_integrity": {
+    "database": "fresapos",
+    "read_only": true,
+    "ulid_columns_checked": 64,
+    "violations": {
+      "untrusted_foreign_keys": 0,
+      "disabled_check_constraints": 0,
+      "disabled_financial_triggers": 0,
+      "missing_financial_triggers": 0,
+      "missing_unique_indexes": 0,
+      "incorrect_money_columns": 0,
+      "duplicate_open_registers": 0,
+      "duplicate_active_tables": 0,
+      "duplicate_folios": 0,
+      "duplicate_reconciliations": 0,
+      "duplicate_intentions": 0,
+      "orphan_sales": 0,
+      "orphan_items": 0,
+      "incorrect_payment_session": 0,
+      "confirmed_payment_without_close": 0,
+      "incorrect_closed_sale": 0,
+      "folio_on_open_sale": 0,
+      "unresolved_sales_in_closed_session": 0,
+      "incorrect_closed_session": 0,
+      "incorrect_reconciliation": 0,
+      "missing_correction_guards": 0,
+      "missing_correction_uniqueness": 0,
+      "duplicate_active_corrections": 0,
+      "active_correction_in_closed_session": 0,
+      "unfinished_correction_application": 0,
+      "changed_correction_identity": 0,
+      "incorrect_correction_finance": 0,
+      "invalid_ulids": 0
+    },
+    "passed": true
+  },
+  "operative_reason_count": 0,
+  "five_historical_differences_reconstructed": true,
+  "physical_operator_identity_independently_proven": false,
+  "passed": true,
+  "complete_object_definition_comparison": false,
+  "schema_comparison_scope": {
+    "columns": [
+      "name",
+      "type",
+      "max_length",
+      "precision",
+      "scale",
+      "is_nullable"
+    ],
+    "indexes": [
+      "name",
+      "is_unique",
+      "type_desc",
+      "filter_definition",
+      "column_name",
+      "key_ordinal",
+      "is_included_column"
+    ],
+    "constraints": [
+      "name",
+      "type_desc",
+      "table_name"
+    ],
+    "full_trigger_and_check_bodies_compared": false
+  }
+}
