@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<?xml encoding="UTF-8"><html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI07C_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8099/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8099/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8099/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8099/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8099/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8099/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8099/css/ui/cash.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8099/css/ui/admin.css">
+        
+<style>[wire\:loading],[wire\:loading\.delay],[wire\:offline]{display:none!important}</style></head>
+<body class="ui-page" data-ui-context="admin">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer men&uacute;"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8099">FresaPOS</a>
+        <span class="ui-workspace-label">Espacio de trabajo</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Autom&aacute;tico</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"></path></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegaci&oacute;n principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar men&uacute;"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8099/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8099/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8099/admin" aria-label="Administraci&oacute;n" title="Administraci&oacute;n" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Administraci&oacute;n</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8099/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" aria-current="page"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+        <nav aria-label="Cat&aacute;logo" class="mb-6 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-4">
+            <span class="ui-nav-heading">Cat&aacute;logo</span>
+                                                <a href="http://127.0.0.1:8099/admin/catalog/products" aria-label="Productos" title="Productos" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Productos</span></a>
+                                                        <a href="http://127.0.0.1:8099/admin/catalog/categories" aria-label="Categor&iacute;as" title="Categor&iacute;as" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Categor&iacute;as</span></a>
+                        <a href="http://127.0.0.1:8099/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link ml-auto px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+        </nav>
+        <nav aria-label="Administraci&oacute;n de ventas" class="mb-6 flex flex-wrap gap-4 border-b pb-4"><a class="ui-nav-link rounded px-3 py-3 text-blue-700 underline" href="http://127.0.0.1:8099/admin/sales/reasons" aria-label="Motivos autorizados de ventas" title="Motivos autorizados de ventas"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01"></path></svg>
+<span class="ui-nav-label">Motivos autorizados de ventas</span></a></nav>
+                <nav aria-label="Reportes" class="mb-4"><a class="ui-nav-link inline-flex min-h-11 items-center rounded border border-slate-300 bg-white px-4 py-2" href="http://127.0.0.1:8099/reports" aria-label="Reportes" title="Reportes" aria-current="false"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Reportes</span></a></nav>
+
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar men&uacute;" tabindex="-1" hidden></button>
+                <main id="ui-main" tabindex="-1" class="ui-content  ui-cash-page"><p role="note" style="margin-bottom:24px">UI-07C &middot; Fixture after &middot; Datos ficticios y campos rellenados para QA. Sin Livewire operativo, sesi&oacute;n ni operaciones.</p>
+                    <section class="ui-cash-module" aria-labelledby="cash-title">
+    <header><p class="ui-cash-eyebrow">FresaPOS &middot; Operaci&oacute;n</p><h1 id="cash-title" class="ui-heading">Caja</h1><p class="ui-cash-help">Consulta el estado y registra el fondo inicial al comenzar la sesi&oacute;n.</p></header>
+    <div role="status" aria-live="polite"></div>
+    <div data-cash-network hidden role="alert" class="ui-cash-error">No se pudo actualizar. Conservamos los datos ingresados. Comprueba tu sesi&oacute;n y conexi&oacute;n; consulta el estado de la operaci&oacute;n antes de reintentar. <a class="underline" href="http://127.0.0.1:8099/login">Iniciar sesi&oacute;n</a></div>
+                <article class="ui-cash-card">
+            <div class="ui-cash-card-heading"><h2 class="ui-section-title">Caja de QA &lt;script&gt;alert("escaped")&lt;/script&gt;</h2><span class="ui-cash-badge">Sin sesi&oacute;n abierta</span></div>
+                                        <form wire:submit="openSession" class="cash-form ui-cash-opening-form" aria-describedby="cash-fund-help">
+                    <div><label for="cash-fund" class="block font-semibold">Fondo inicial</label><input id="cash-fund" wire:model="openingFund" type="text" inputmode="decimal" maxlength="20" autocomplete="off" class="ui-input" aria-describedby="cash-fund-help" value="0.0000"><p id="cash-fund-help" class="ui-cash-help">Puede ser cero. Usa punto decimal y hasta cuatro decimales. El fondo se conserva con la sesi&oacute;n.</p></div>
+                    <button type="submit" wire:loading.attr="disabled" class="ui-button ui-button--primary">Confirmar apertura de caja</button>
+                </form>
+                    </article>
+        <div class="ui-admin-actions"><button type="button" wire:click="refreshState" wire:loading.attr="disabled" class="ui-button ui-button--secondary">Actualizar estado</button><span wire:loading.delay role="status" class="p-3">Consultando caja&hellip;</span></div>
+    <section class="cash-movements ui-cash-panel" aria-labelledby="cash-movements-title">
+    <header><h2 id="cash-movements-title" class="ui-section-title">Movimientos de efectivo</h2><p class="ui-cash-help">Entradas y salidas manuales autorizadas. El saldo tambi&eacute;n incluye el efectivo neto de ventas cobradas.</p></header>
+            <p wire:loading role="status">Procesando&hellip; Espera la confirmaci&oacute;n antes de preparar otro movimiento.</p>
+    <p>Sin sesi&oacute;n abierta: no se permiten movimientos.</p>    <h3 class="ui-cash-amount">Historial de la sesi&oacute;n actual</h3>
+    <button type="button" wire:click="resolveMovement" wire:loading.attr="disabled" class="ui-button ui-button--secondary">Actualizar historial y estado</button>    <p>No hay movimientos para mostrar.</p>
+        </section>
+            <section class="cash-closing ui-cash-panel" aria-labelledby="cash-closing-title">
+    <header><h2 id="cash-closing-title" class="ui-section-title">Arqueo y cierre de caja</h2><p class="ui-cash-help">Cuenta el efectivo f&iacute;sico antes de confirmar. El resultado se mostrar&aacute; cuando la sesi&oacute;n quede cerrada.</p></header>
+        <div class="ui-admin-actions">
+        <button type="button" wire:click="beginClosing" wire:loading.attr="disabled" class="ui-button ui-button--primary">Iniciar arqueo ciego</button>                <span wire:loading role="status" class="p-3">Procesando; conserva esta intenci&oacute;n&hellip;</span>
+        <span wire:offline role="alert" class="ui-cash-offline">Sin conexi&oacute;n. Conserva el conteo y consulta el estado antes de reintentar.</span>
+    </div>
+                        <article data-closing-receipt class="ui-cash-receipt" aria-labelledby="closing-result-title">
+            <h3 id="closing-result-title" class="ui-section-title">Caja cerrada &middot; Faltante</h3>
+            <dl class="ui-cash-details">
+                                    <div><dt class="ui-cash-help">Caja</dt><dd class="font-semibold">Caja de QA</dd></div>
+                                    <div><dt class="ui-cash-help">Sesi&oacute;n</dt><dd class="font-semibold">01ARZ3NDEKTSV4RRFFQ69G5FAV</dd></div>
+                                    <div><dt class="ui-cash-help">Arqueo</dt><dd class="font-semibold">01ARZ3NDEKTSV4RRFFQ69G5FAZ</dd></div>
+                                    <div><dt class="ui-cash-help">Usuario de apertura</dt><dd class="font-semibold">Responsable ficticio</dd></div>
+                                    <div><dt class="ui-cash-help">Apertura UTC</dt><dd class="font-semibold">2026-11-27T12:00:00Z</dd></div>
+                                    <div><dt class="ui-cash-help">Usuario de cierre</dt><dd class="font-semibold">Responsable ficticio</dd></div>
+                                    <div><dt class="ui-cash-help">Cierre UTC</dt><dd class="font-semibold">2026-11-27T18:00:00Z</dd></div>
+                                    <div><dt class="ui-cash-help">Fondo inicial</dt><dd class="font-semibold">100.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Ventas cobradas</dt><dd class="font-semibold">1</dd></div>
+                                    <div><dt class="ui-cash-help">Total vendido</dt><dd class="font-semibold">50.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Efectivo neto de ventas</dt><dd class="font-semibold">0.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Entradas autorizadas</dt><dd class="font-semibold">0.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Salidas autorizadas</dt><dd class="font-semibold">0.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Efectivo esperado</dt><dd class="font-semibold">100.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Efectivo contado</dt><dd class="font-semibold">99.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Diferencia</dt><dd class="font-semibold">-1.0000</dd></div>
+                                    <div><dt class="ui-cash-help">Observaci&oacute;n</dt><dd class="font-semibold">Observaci&oacute;n ficticia &lt;script&gt;alert("escaped")&lt;/script&gt;</dd></div>
+                            </dl>
+            <h4 class="font-bold">Pagos confirmados por m&eacute;todo</h4><ul><li>Tarjeta: $ 50.0000 &middot; 1 pagos</li></ul>
+            <p>No se generan ajustes para compensar diferencias. Para otro turno, abre expresamente una nueva sesi&oacute;n y registra su fondo inicial.</p>
+        </article>
+        <div class="ui-cash-history">
+        <h3 class="ui-section-title">Historial de cierres</h3>
+        <form wire:submit="filterHistory" class="ui-cash-filter-grid">
+            <div><label for="closing-date">Fecha de cierre UTC</label><input id="closing-date" type="date" wire:model="date" value=""></div>
+            <div><label for="closing-user">Usuario de cierre (ULID)</label><input id="closing-user" type="text" maxlength="26" wire:model="closedBy" value=""></div>
+            <div><label for="closing-register">Caja (ULID)</label><input id="closing-register" type="text" maxlength="26" wire:model="registerId" value=""></div>
+            <div><label for="closing-state">Estado</label><select id="closing-state" wire:model="historyStatus"><option value="closed" selected>Cerradas</option><option value="open">Abiertas (sin cierre hist&oacute;rico)</option></select></div>
+            <button type="submit" wire:loading.attr="disabled" class="ui-button ui-button--secondary">Filtrar historial</button>
+        </form>
+        <p>12 cierres &middot; P&aacute;gina 1</p>
+        <div class="ui-cash-history-grid">            <article class="ui-cash-history-card"><h4 class="font-semibold">Caja de QA &middot; 2026-11-26T18:00:00Z</h4><p class="ui-cash-reference">Sesi&oacute;n 01ARZ3NDEKTSV4RRFFQ69G5FB0</p><p>Esperado $ 75.0000 &middot; Contado $ 74.0000 &middot; Diferencia $ -1.0000</p><button type="button" wire:click="showClosing('01ARZ3NDEKTSV4RRFFQ69G5FB0')" wire:loading.attr="disabled" class="ui-button ui-button--secondary">Ver resumen del cierre</button></article>
+        </div>
+        <nav aria-label="P&aacute;ginas de cierres" class="ui-admin-actions"><button type="button" wire:click="changePage(1)" disabled wire:loading.attr="disabled" class="ui-button ui-button--secondary">Anterior</button><button type="button" wire:click="changePage(2)" wire:loading.attr="disabled" class="ui-button ui-button--secondary">Siguiente</button></nav>
+    </div>
+</section>
+
+        
+</section>
+
+        </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Autom&aacute;tico</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Est&aacute;ndar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tama&ntilde;o de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Seg&uacute;n sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Men&uacute; lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+            <script src="http://127.0.0.1:8099/js/ui/admin.js" defer></script>
+    </body>
+</html>

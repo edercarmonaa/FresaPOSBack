@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "light button backgrounds do not interpolate theme",
+      "passed": true
+    },
+    {
+      "name": "light input retains focus",
+      "passed": true
+    },
+    {
+      "name": "dark button backgrounds do not interpolate theme",
+      "passed": true
+    },
+    {
+      "name": "dark input retains focus",
+      "passed": true
+    },
+    {
+      "name": "restore action visible for deleted row",
+      "passed": true
+    },
+    {
+      "name": "restore confirmation exact",
+      "passed": true
+    },
+    {
+      "name": "final root font doubled reflows at 320",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "error input border",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 6.485130093589804
+        },
+        {
+          "name": "normal input border",
+          "foreground": "rgb(127, 143, 165)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 3.2942664921806943
+        },
+        {
+          "name": "focus outline",
+          "foreground": "rgb(37, 99, 235)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 5.168555560022562
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "error input border",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 10.31795643399342
+        },
+        {
+          "name": "normal input border",
+          "foreground": "rgb(101, 123, 151)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 3.8041453230264386
+        },
+        {
+          "name": "focus outline",
+          "foreground": "rgb(182, 209, 255)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 10.667104685759428
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "158.0.8127.37"
+}

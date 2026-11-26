@@ -1,0 +1,200 @@
+{
+  "scope": "Fixtures Blade estáticas, sin hidratación Livewire ni operaciones. Valores ficticios.",
+  "screens": [
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-submitted-light-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-submitted-dark-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-submitted-light-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-submitted-dark-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-submitted-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-submitted-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-submitted-light-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-submitted-dark-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-submitted-light-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-submitted-dark-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-submitted-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-submitted-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-submitted-light-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-submitted-dark-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "submitted",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-submitted-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-submitted-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "submitted",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-submitted-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "submitted",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-submitted-dark-390.png",
+      "overflow": false,
+      "small": []
+    }
+  ],
+  "checks": [],
+  "contrast": [],
+  "performance": [],
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "errors": [],
+  "violations": []
+}

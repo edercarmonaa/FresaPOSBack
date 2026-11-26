@@ -1,0 +1,22 @@
+{
+  "matrix_screens": 108,
+  "focused_edit_screens_after_final_border_rule": 36,
+  "main_checks": 17,
+  "focused_checks": 36,
+  "additional_checks": 7,
+  "contrast_pairs": 22,
+  "total_png": 155,
+  "violations": [],
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "browser_authenticated_e2e": false,
+  "binding_values_in_fixtures_are_fictitious": true
+}

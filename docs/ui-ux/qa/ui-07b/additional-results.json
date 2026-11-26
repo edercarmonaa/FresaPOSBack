@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "name": "Tab reaches description after enabled name",
+      "passed": true
+    },
+    {
+      "name": "summary error retains live role",
+      "passed": true
+    },
+    {
+      "name": "long values reflow at 320",
+      "passed": true
+    },
+    {
+      "name": "all message contrast pairs pass",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "selector": ".ui-reasons-status",
+          "foreground": "rgb(30, 64, 175)",
+          "background": "rgb(234, 241, 255)",
+          "ratio": 7.694247805196307,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-reasons-pending",
+          "foreground": "rgb(30, 64, 175)",
+          "background": "rgb(234, 241, 255)",
+          "ratio": 7.694247805196307,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-reasons-offline",
+          "foreground": "rgb(133, 77, 14)",
+          "background": "rgb(255, 245, 223)",
+          "ratio": 6.322099099738203,
+          "minimum": 4.5
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "selector": ".ui-reasons-status",
+          "foreground": "rgb(188, 212, 255)",
+          "background": "rgb(35, 59, 99)",
+          "ratio": 7.457653725394572,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-reasons-pending",
+          "foreground": "rgb(188, 212, 255)",
+          "background": "rgb(35, 59, 99)",
+          "ratio": 7.457653725394572,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-reasons-offline",
+          "foreground": "rgb(242, 207, 131)",
+          "background": "rgb(63, 50, 26)",
+          "ratio": 8.33773465205967,
+          "minimum": 4.5
+        }
+      ]
+    }
+  ]
+}

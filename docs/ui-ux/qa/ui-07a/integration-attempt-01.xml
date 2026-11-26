@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CLI Arguments" tests="48" assertions="839" errors="0" failures="1" skipped="0" time="144.657534">
+    <testsuite name="Tests\Integration\CatalogAcceptanceTest" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" tests="5" assertions="245" errors="0" failures="0" skipped="0" time="28.843224">
+      <testcase name="test_complete_catalog_http_cycle_exports_actual_responses_for_openapi_validation" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" line="86" class="Tests\Integration\CatalogAcceptanceTest" classname="Tests.Integration.CatalogAcceptanceTest" assertions="203" time="16.708218"/>
+      <testcase name="test_revoked_token_and_limited_supervisor_cannot_mutate_or_consult_trash" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" line="135" class="Tests\Integration\CatalogAcceptanceTest" classname="Tests.Integration.CatalogAcceptanceTest" assertions="21" time="2.489691"/>
+      <testcase name="test_sales_can_copy_available_snapshot_and_read_optional_image_without_catalog_dependency_on_sales" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" line="150" class="Tests\Integration\CatalogAcceptanceTest" classname="Tests.Integration.CatalogAcceptanceTest" assertions="4" time="2.352186"/>
+      <testcase name="test_invalid_product_price_is_programmatically_associated_with_the_editable_input" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" line="169" class="Tests\Integration\CatalogAcceptanceTest" classname="Tests.Integration.CatalogAcceptanceTest" assertions="9" time="5.437581"/>
+      <testcase name="test_category_required_name_error_is_programmatically_associated" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogAcceptanceTest.php" line="184" class="Tests\Integration\CatalogAcceptanceTest" classname="Tests.Integration.CatalogAcceptanceTest" assertions="8" time="1.855549"/>
+    </testsuite>
+    <testsuite name="Tests\Integration\CatalogHttpTest" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" tests="25" assertions="439" errors="0" failures="1" skipped="0" time="71.599678">
+      <testcase name="test_anonymous_api_and_web_cannot_access_catalog" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="93" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="29" time="0.918965"/>
+      <testcase name="test_category_api_crud_normalization_unique_validation_and_audit" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="105" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="25" time="2.522109"/>
+      <testcase name="test_category_query_validation_fixed_order_search_and_pagination" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="126" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="33" time="3.186850"/>
+      <testcase name="test_product_api_full_lifecycle_preserves_exact_prices_and_single_audit_events" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="143" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="31" time="2.974740"/>
+      <testcase name="test_product_validation_cannot_mass_assign_or_lose_decimal_precision" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="168" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="33" time="4.342599"/>
+      <testcase name="test_inactive_category_and_restore_conflicts_are_atomic_and_safe" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="184" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="9" time="1.570872"/>
+      <testcase name="test_product_filters_order_and_database_pagination" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="199" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="18" time="2.155669"/>
+      <testcase name="test_roles_can_read_but_cannot_write_or_access_admin_or_trash" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="217" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="57" time="8.206310"/>
+      <testcase name="test_existing_token_loses_catalog_permission_immediately" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="239" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="3" time="1.787675"/>
+      <testcase name="test_disabled_deleted_or_password_pending_identities_cannot_enter_catalog" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="248" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="6" time="2.780500"/>
+      <testcase name="test_missing_invalid_and_soft_deleted_ids_have_uniform_404" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="263" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="10" time="1.369509"/>
+      <testcase name="test_image_resource_only_publishes_url_and_version_without_mutation" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="274" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="14" time="2.660995"/>
+      <testcase name="test_web_screens_navigation_confirmation_and_name_placeholder" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="287" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="10" time="2.131886">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Integration\CatalogHttpTest::test_web_screens_navigation_confirmation_and_name_placeholder&#13;
+Failed asserting that '&lt;!DOCTYPE html&gt;\n
+&lt;html lang="es" class="ui-root"&gt;\n
+&lt;head&gt;\n
+    &lt;meta charset="utf-8"&gt;\n
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;\n
+    &lt;meta name="csrf-token" content="83CvzrF41pNM3lQHpfhl87v3h3tS5qil8fyyAnd6"&gt;\n
+    &lt;title&gt;FresaPOS&lt;/title&gt;\n
+    &lt;script src="http://localhost/js/ui/theme.js"&gt;&lt;/script&gt;\n
+    &lt;link rel="preload" href="http://localhost/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin&gt;\n
+    &lt;link rel="stylesheet" href="http://localhost/css/ui/tokens.css"&gt;\n
+    &lt;link rel="stylesheet" href="http://localhost/css/ui/components.css"&gt;\n
+    &lt;link rel="stylesheet" href="http://localhost/css/ui/layouts.css"&gt;\n
+    &lt;script src="http://localhost/js/ui/layout.js" defer&gt;&lt;/script&gt;\n
+    &lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"&gt;&lt;/script&gt;\n
+        &lt;link rel="stylesheet" href="http://localhost/css/ui/catalog.css"&gt;\n
+        &lt;link rel="stylesheet" href="http://localhost/css/ui/admin.css"&gt;\n
+        &lt;!-- Livewire Styles --&gt;&lt;style &gt;[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak="x-cloak"],[x-cloak=""] {display: none !important;}[wire\:cloak="wire:cloak"],[wire\:cloak=""] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}&lt;/style&gt;\n
+&lt;/head&gt;\n
+&lt;body class="ui-page" data-ui-context="admin"&gt;\n
+    &lt;a class="ui-skip-link" href="#ui-main"&gt;Saltar al contenido&lt;/a&gt;\n
+    &lt;header class="ui-app-header" id="ui-app-header"&gt;\n
+    &lt;div class="ui-header-start"&gt;\n
+                    &lt;button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer menú"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M4 6h16M4 12h16M4 18h16" /&gt;&lt;/svg&gt;\n
+&lt;/button&gt;\n
+                &lt;a class="ui-brand" href="http://localhost"&gt;FresaPOS&lt;/a&gt;\n
+        &lt;span class="ui-workspace-label"&gt;Espacio de trabajo&lt;/span&gt;\n
+    &lt;/div&gt;\n
+    &lt;div class="ui-header-actions"&gt;\n
+        &lt;label class="ui-header-theme"&gt;&lt;span class="ui-sr-only"&gt;Apariencia&lt;/span&gt;&lt;select class="ui-select" data-ui-theme-select&gt;&lt;option value="auto"&gt;Automático&lt;/option&gt;&lt;option value="light"&gt;Claro&lt;/option&gt;&lt;option value="dark"&gt;Oscuro&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;\n
+        &lt;button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /&gt;&lt;/svg&gt;\n
+&lt;/button&gt;\n
+    &lt;/div&gt;\n
+&lt;/header&gt;\n
+    &lt;div class="ui-shell ui-shell--with-navigation"&gt;\n
+                    &lt;aside class="ui-navigation" id="ui-navigation" aria-label="Navegación principal"&gt;\n
+                &lt;div class="ui-navigation-heading"&gt;&lt;span&gt;Espacio de trabajo&lt;/span&gt;&lt;button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar menú"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="m6 6 12 12M6 18 18 6" /&gt;&lt;/svg&gt;\n
+&lt;/button&gt;&lt;/div&gt;\n
+                &lt;nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3"&gt;\r\n
+                &lt;a href="http://localhost/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2" &gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M4 6h16M4 12h16M4 18h16" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Punto de venta&lt;/span&gt;&lt;/a&gt;\r\n
+                &lt;a href="http://localhost/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Mi cuenta&lt;/span&gt;&lt;/a&gt;\r\n
+                &lt;a href="http://localhost/admin" aria-label="Administración" title="Administración" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M4 6h16M4 12h16M4 18h16" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Administración&lt;/span&gt;&lt;/a&gt;            &lt;/nav&gt;\r\n
+            &lt;nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3"&gt;\r\n
+            &lt;a href="http://localhost/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" &gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M12 5v14M5 12h14" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Caja&lt;/span&gt;&lt;/a&gt;\r\n
+        &lt;/nav&gt;\r\n
+        &lt;nav aria-label="Catálogo" class="mb-6 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-4"&gt;\r\n
+            &lt;span class="ui-nav-heading"&gt;Catálogo&lt;/span&gt;\r\n
+                                                &lt;a href="http://localhost/admin/catalog/products" aria-label="Productos" title="Productos" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline"  aria-current="page" &gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M4 6h16M4 12h16M4 18h16" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Productos&lt;/span&gt;&lt;/a&gt;\r\n
+                                                        &lt;a href="http://localhost/admin/catalog/categories" aria-label="Categorías" title="Categorías" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" &gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M4 6h16M4 12h16M4 18h16" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Categorías&lt;/span&gt;&lt;/a&gt;\r\n
+                        &lt;a href="http://localhost/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link ml-auto px-2 py-2 text-blue-700 underline"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Mi cuenta&lt;/span&gt;&lt;/a&gt;\r\n
+        &lt;/nav&gt;\r\n
+        &lt;nav aria-label="Administración de ventas" class="mb-6 flex flex-wrap gap-4 border-b pb-4"&gt;&lt;a class="ui-nav-link rounded px-3 py-3 text-blue-700 underline" href="http://localhost/admin/sales/reasons" aria-label="Motivos autorizados de ventas" title="Motivos autorizados de ventas" &gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Motivos autorizados de ventas&lt;/span&gt;&lt;/a&gt;&lt;/nav&gt;\r\n
+                &lt;nav aria-label="Reportes" class="mb-4"&gt;&lt;a class="ui-nav-link inline-flex min-h-11 items-center rounded border border-slate-300 bg-white px-4 py-2" href="http://localhost/reports" aria-label="Reportes" title="Reportes" aria-current="false"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /&gt;&lt;/svg&gt;\n
+&lt;span class="ui-nav-label"&gt;Reportes&lt;/span&gt;&lt;/a&gt;&lt;/nav&gt;\r\n
+\n
+            &lt;/aside&gt;\n
+            &lt;button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden&gt;&lt;/button&gt;\n
+                &lt;main id="ui-main" tabindex="-1" class="ui-content  ui-catalog-page"&gt;\n
+                &lt;h1 class="ui-catalog-title"&gt;Productos&lt;/h1&gt;\n
+    &lt;section wire:key="lw-840366784-0" wire:snapshot="{&amp;quot;data&amp;quot;:{&amp;quot;image&amp;quot;:null,&amp;quot;imagePreview&amp;quot;:null,&amp;quot;currentImageUrl&amp;quot;:null,&amp;quot;categoryId&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;price&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;categoryFilter&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;categorySearch&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;deleted&amp;quot;:&amp;quot;without&amp;quot;,&amp;quot;sort&amp;quot;:&amp;quot;name&amp;quot;,&amp;quot;direction&amp;quot;:&amp;quot;asc&amp;quot;,&amp;quot;originalCategoryId&amp;quot;:null,&amp;quot;search&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;stateFilter&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;perPage&amp;quot;:25,&amp;quot;page&amp;quot;:1,&amp;quot;status&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;formOpen&amp;quot;:false,&amp;quot;editingId&amp;quot;:null,&amp;quot;name&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;isActive&amp;quot;:true},&amp;quot;memo&amp;quot;:{&amp;quot;id&amp;quot;:&amp;quot;TKCqS523kGOSJOmDxQO9&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;catalog.products&amp;quot;,&amp;quot;path&amp;quot;:&amp;quot;admin\/catalog\/products&amp;quot;,&amp;quot;method&amp;quot;:&amp;quot;GET&amp;quot;,&amp;quot;release&amp;quot;:&amp;quot;a-a-a&amp;quot;,&amp;quot;children&amp;quot;:[],&amp;quot;scripts&amp;quot;:[],&amp;quot;assets&amp;quot;:[],&amp;quot;errors&amp;quot;:[],&amp;quot;locale&amp;quot;:&amp;quot;es&amp;quot;,&amp;quot;islands&amp;quot;:[]},&amp;quot;checksum&amp;quot;:&amp;quot;ad814082b8b50cc414bcd08ce1e4e514901ff8909ea5ed13506fdeedd283219f&amp;quot;}" wire:effects="[]" wire:id="TKCqS523kGOSJOmDxQO9" wire:name="catalog.products" aria-label="Administración de productos" class="ui-catalog-module"&gt;\n
+    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;    &lt;section aria-label="Filtros de catálogo" class="ui-admin-filters"&gt;\n
+    &lt;div class="ui-admin-filter-fields"&gt;&lt;label class="ui-catalog-label"&gt;Buscar producto&lt;input type="search" class="ui-input" wire:model.live.debounce.350ms="search" maxlength="100"&gt;\n
+&lt;/label&gt;\n
+        &lt;label&gt;Estado&lt;select class="ui-select" wire:model.live="stateFilter"&gt;&lt;option value=""&gt;Todos&lt;/option&gt;&lt;option value="active"&gt;Activos&lt;/option&gt;&lt;option value="inactive"&gt;Inactivos&lt;/option&gt;&lt;/select&gt;\n
+&lt;/label&gt;\n
+        &lt;label&gt;Por página&lt;select class="ui-select" wire:model.live="perPage"&gt;&lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;option value="10"&gt;10&lt;/option&gt;&lt;option value="25"&gt;25&lt;/option&gt;&lt;option value="50"&gt;50&lt;/option&gt;&lt;option value="100"&gt;100&lt;/option&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/select&gt;\n
+&lt;/label&gt;\n
+        &lt;button type="button" class="ui-button ui-button--primary" wire:click="create" wire:loading.attr="disabled"&gt;Crear producto&lt;/button&gt;&lt;/div&gt;\n
+    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/section&gt;\n
+    &lt;section aria-label="Categoría y orden" class="ui-admin-filters"&gt;\n
+    &lt;div class="ui-admin-filter-fields"&gt;&lt;label&gt;Buscar categoría&lt;input type="search" class="ui-input" wire:model.live.debounce.350ms="categorySearch" maxlength="100" placeholder="Acota las primeras 100 coincidencias"&gt;\n
+&lt;/label&gt;\n
+        &lt;label&gt;Categoría&lt;select class="ui-select" wire:model.live="categoryFilter"&gt;&lt;option value=""&gt;Todas&lt;/option&gt;&lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;option value="01m8evakwn7kf669rmf7hzx80f"&gt;Bebidas&lt;/option&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/select&gt;\n
+&lt;/label&gt;\n
+        &lt;label&gt;Ordenar por&lt;select class="ui-select" wire:model.live="sort"&gt;&lt;option value="name"&gt;Nombre&lt;/option&gt;&lt;option value="price"&gt;Precio&lt;/option&gt;&lt;/select&gt;\n
+&lt;/label&gt;\n
+        &lt;label&gt;Dirección&lt;select class="ui-select" wire:model.live="direction"&gt;&lt;option value="asc"&gt;Ascendente&lt;/option&gt;&lt;option value="desc"&gt;Descendente&lt;/option&gt;&lt;/select&gt;\n
+&lt;/label&gt;&lt;/div&gt;\n
+    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/section&gt;\n
+    &lt;label class="ui-catalog-label"&gt;Vista&lt;select class="ui-select" wire:model.live="deleted"&gt;&lt;option value="without"&gt;Productos vigentes&lt;/option&gt;&lt;option value="only"&gt;Papelera (solo eliminados)&lt;/option&gt;&lt;/select&gt;\n
+&lt;/label&gt;    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;    &lt;div wire:loading role="status" class="text-sm text-slate-600"&gt;Procesando…&lt;/div&gt;\n
+    &lt;div tabindex="0" role="region" aria-label="Listado de productos" class="ui-table-region"&gt;\n
+    &lt;table class="ui-table"&gt;\n
+        &lt;caption&gt;Listado de productos&lt;/caption&gt;\n
+        &lt;thead class="bg-slate-100"&gt;&lt;tr&gt;&lt;th scope="col"&gt;Imagen&lt;/th&gt;&lt;th scope="col"&gt;Producto&lt;/th&gt;&lt;th scope="col"&gt;Categoría&lt;/th&gt;&lt;th scope="col"&gt;Precio&lt;/th&gt;&lt;th scope="col"&gt;Estado&lt;/th&gt;&lt;th scope="col"&gt;Acciones&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;\n
+        &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;            &lt;tr wire:key="product-01m8evaky1sf2m9d3618jnbzzb" class="border-t border-slate-200"&gt;&lt;td &gt;&lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;div class="ui-catalog-image-placeholder"&gt;Producto sin imagen&lt;/div&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/td&gt;&lt;td &gt;&lt;span class="font-medium"&gt;Producto sin imagen&lt;/span&gt;&lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;&lt;/td&gt;&lt;td &gt;Bebidas&lt;/td&gt;&lt;td class="ui-numeric"&gt;$25.5000&lt;/td&gt;&lt;td &gt;Activo&lt;/td&gt;&lt;td &gt;&lt;div class="ui-admin-actions"&gt;\n
+                &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;                    &lt;button type="button" class="ui-button ui-button--secondary" wire:click="edit('01m8evaky1sf2m9d3618jnbzzb')" wire:loading.attr="disabled"&gt;Editar&lt;/button&gt;\n
+                    &lt;button type="button" class="ui-button ui-button--secondary" wire:click="toggle('01m8evaky1sf2m9d3618jnbzzb')" wire:confirm="¿Cambiar el estado de este producto?" wire:loading.attr="disabled"&gt;Desactivar&lt;/button&gt;\n
+                    &lt;button type="button" class="ui-button ui-button--danger" wire:click="remove('01m8evaky1sf2m9d3618jnbzzb')" wire:confirm="¿Enviar este producto a la papelera? Se conservarán sus referencias históricas." wire:loading.attr="disabled"&gt;Eliminar&lt;/button&gt;\n
+                &lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;            &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;\n
+        &lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;        &lt;/tbody&gt;\n
+    &lt;/table&gt;\n
+&lt;/div&gt;\n
+    &lt;nav aria-label="Paginación" class="ui-admin-pagination"&gt;\n
+    &lt;!--[if BLOCK]&gt;&lt;![endif]--&gt;&lt;p class="ui-muted"&gt;1–1 de 1 · Página 1 de 1&lt;/p&gt;&lt;!--[if ENDBLOCK]&gt;&lt;![endif]--&gt;    &lt;div class="ui-admin-actions"&gt;&lt;button type="button" class="ui-button ui-button--secondary" wire:click="gotoPage(1)" wire:loading.attr="disabled" disabled="disabled"&gt;Anterior&lt;/button&gt;\n
+    &lt;button type="button" class="ui-button ui-button--secondary" wire:click="gotoPage(2)" wire:loading.attr="disabled" disabled="disabled"&gt;Siguiente&lt;/button&gt;&lt;/div&gt;\n
+&lt;/nav&gt;\n
+&lt;/section&gt;\n
+        &lt;/main&gt;\n
+    &lt;/div&gt;\n
+    &lt;dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title"&gt;\n
+    &lt;div class="ui-preferences-heading"&gt;&lt;h2 id="ui-preferences-title"&gt;Preferencias visuales&lt;/h2&gt;&lt;button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"&gt;&lt;svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"&gt;&lt;path d="m6 6 12 12M6 18 18 6" /&gt;&lt;/svg&gt;\n
+&lt;/button&gt;&lt;/div&gt;\n
+    &lt;p class="ui-muted"&gt;Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.&lt;/p&gt;\n
+    &lt;div class="ui-preference-row"&gt;&lt;label for="ui-preference-theme"&gt;Apariencia&lt;/label&gt;&lt;select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"&gt;&lt;option value="auto"&gt;Automático&lt;/option&gt;&lt;option value="light"&gt;Claro&lt;/option&gt;&lt;option value="dark"&gt;Oscuro&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;\n
+    &lt;div class="ui-preference-row"&gt;&lt;label for="ui-preference-density"&gt;Densidad de tablas&lt;/label&gt;&lt;select id="ui-preference-density" class="ui-select" data-ui-preference="density"&gt;&lt;option value="standard"&gt;Estándar&lt;/option&gt;&lt;option value="compact"&gt;Compacta&lt;/option&gt;&lt;option value="comfortable"&gt;Amplia&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;\n
+    &lt;div class="ui-preference-row"&gt;&lt;label for="ui-preference-text"&gt;Tamaño de texto&lt;/label&gt;&lt;select id="ui-preference-text" class="ui-select" data-ui-preference="text"&gt;&lt;option value="normal"&gt;Normal&lt;/option&gt;&lt;option value="large"&gt;Ampliado&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;\n
+    &lt;div class="ui-preference-row"&gt;&lt;label for="ui-preference-motion"&gt;Movimiento&lt;/label&gt;&lt;select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"&gt;&lt;option value="auto"&gt;Según sistema&lt;/option&gt;&lt;option value="reduce"&gt;Reducido&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;\n
+    &lt;div class="ui-preference-row"&gt;&lt;label for="ui-preference-sidebar"&gt;Menú lateral&lt;/label&gt;&lt;select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"&gt;&lt;option value="expanded"&gt;Expandido&lt;/option&gt;&lt;option value="collapsed"&gt;Colapsado&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;\n
+    &lt;p class="ui-help"&gt;La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.&lt;/p&gt;\n
+    &lt;div class="ui-preferences-footer"&gt;&lt;button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences&gt;Restablecer&lt;/button&gt;&lt;button type="button" class="ui-button" data-ui-close-preferences&gt;Listo&lt;/button&gt;&lt;/div&gt;\n
+&lt;/dialog&gt;\n
+    &lt;script src="http://localhost/livewire-53ac0bbe/livewire.min.js?id=a964a3c8"   data-csrf="83CvzrF41pNM3lQHpfhl87v3h3tS5qil8fyyAnd6" data-module-url="http://localhost/livewire-53ac0bbe" data-update-uri="http://localhost/livewire-53ac0bbe/update" data-navigate-once="true"&gt;&lt;/script&gt;\n
+            &lt;script src="http://localhost/js/ui/admin.js" defer&gt;&lt;/script&gt;\n
+    &lt;/body&gt;\n
+&lt;/html&gt;\n
+' [UTF-8](length: 17323) contains "overflow-x-auto" [ASCII](length: 15).
+&#13;
+C:\Repos\FresaPOSBack\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:46
+C:\Repos\FresaPOSBack\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:720
+C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php:292</failure>
+      </testcase>
+      <testcase name="test_livewire_category_forms_keep_values_on_error_and_apply_changes" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="296" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="18" time="4.178230"/>
+      <testcase name="test_livewire_product_form_price_edit_status_soft_delete_restore_and_validation" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="307" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="22" time="4.578949"/>
+      <testcase name="test_livewire_restore_conflict_keeps_product_in_trash" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="322" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="8" time="1.912313"/>
+      <testcase name="test_livewire_filters_preserve_search_on_page_changes_and_reset_page_on_filter" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="333" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="13" time="3.138458"/>
+      <testcase name="test_livewire_unique_category_and_inactive_assignment_have_visible_errors" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="345" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="13" time="2.237540"/>
+      <testcase name="test_livewire_read_only_roles_cannot_invoke_hidden_admin_actions" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="355" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="8" time="2.126462"/>
+      <testcase name="test_editor_cannot_tamper_status_or_trash_through_api_or_livewire" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="373" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="11" time="3.210174"/>
+      <testcase name="test_real_livewire_protocol_enforces_csrf_then_creates_category_and_rejects_revoked_session" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="406" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="10" time="1.772694"/>
+      <testcase name="test_real_livewire_protocol_rechecks_removed_administrative_permission" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="425" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="6" time="2.821646"/>
+      <testcase name="test_locked_editor_target_rejects_client_side_identifier_replacement" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="438" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="4" time="2.023350"/>
+      <testcase name="test_catalog_api_and_html_hide_internal_exceptions_in_both_debug_modes" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="445" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="34" time="3.572596"/>
+      <testcase name="test_category_and_status_requests_validate_the_transport_boundary" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogHttpTest.php" line="466" class="Tests\Integration\CatalogHttpTest" classname="Tests.Integration.CatalogHttpTest" assertions="14" time="3.418587"/>
+    </testsuite>
+    <testsuite name="Tests\Integration\CatalogImagesTest" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" tests="18" assertions="155" errors="0" failures="0" skipped="0" time="44.214631">
+      <testcase name="test_api_upload_replace_remove_versions_and_audit_without_changing_other_product_fields" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="96" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="34" time="1.978431"/>
+      <testcase name="test_api_rejects_anonymous_read_only_and_missing_products_and_client_paths" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="122" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="9" time="2.624550"/>
+      <testcase name="test_api_invalid_large_and_empty_uploads_return_safe_validation_errors" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="138" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="25" time="1.860914"/>
+      <testcase name="test_audit_failure_rolls_back_reference_and_cleans_new_file_without_losing_old_image" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="148" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="5" time="1.182884"/>
+      <testcase name="test_processor_failure_preserves_reference_and_creates_no_new_files" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="168" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="2" time="0.978081"/>
+      <testcase name="test_partial_storage_failure_has_a_private_journal_and_controlled_recovery" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="183" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="8" time="1.582091"/>
+      <testcase name="test_cleanup_failure_does_not_reverse_commit_and_retries_safely_later" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="204" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="7" time="1.312655"/>
+      <testcase name="test_shared_reference_and_soft_deleted_products_protect_the_physical_image" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="221" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="3" time="2.049668"/>
+      <testcase name="test_product_soft_delete_keeps_image_and_forbids_image_mutation_until_restored" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="234" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="5" time="3.139133"/>
+      <testcase name="test_outer_transactions_are_rejected_before_file_io" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="245" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="1" time="1.283544"/>
+      <testcase name="test_livewire_create_with_preview_replace_remove_and_preserved_form_fields" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="258" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="15" time="7.289834"/>
+      <testcase name="test_livewire_invalid_upload_keeps_form_values_and_does_not_create_product" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="272" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="8" time="3.028722"/>
+      <testcase name="test_livewire_invalid_processing_rolls_back_creation_and_retains_values" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="280" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="9" time="3.618111"/>
+      <testcase name="test_removing_an_absent_image_is_idempotent_without_duplicate_audit" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="290" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="2" time="1.383238"/>
+      <testcase name="test_new_product_and_image_roll_back_together_when_audit_fails" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="299" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="3" time="1.621069"/>
+      <testcase name="test_native_livewire_upload_endpoint_and_preview_require_session_permission_and_no_store" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="316" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="9" time="2.904629"/>
+      <testcase name="test_livewire_five_mib_limit_is_enforced_by_temporary_upload_validation" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="333" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="6" time="3.337319"/>
+      <testcase name="test_create_only_user_cannot_request_an_upload_signature_or_remove_image" file="C:\Repos\FresaPOSBack\tests\Integration\CatalogImagesTest.php" line="341" class="Tests\Integration\CatalogImagesTest" classname="Tests.Integration.CatalogImagesTest" assertions="4" time="3.039757"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

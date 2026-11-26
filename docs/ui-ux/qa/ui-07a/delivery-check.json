@@ -1,0 +1,17 @@
+{
+  "report_sections": 22,
+  "local_links_missing": [],
+  "manifest_entries": 246,
+  "initial_files_verified": 3436,
+  "ui06_manifest_entries_verified_unchanged": 126,
+  "initial_ui06_uncommitted_work_preserved": true,
+  "allowed_existing_changes": 7,
+  "new_files_before_manifest_and_check": 240,
+  "matrix_screens": 108,
+  "focused_edit_screens": 36,
+  "png_count": 155,
+  "local_APP_KEY_present": false,
+  "fixture_tokens_scrubbed": true,
+  "staged_files": [],
+  "accepted_by_user": false
+}

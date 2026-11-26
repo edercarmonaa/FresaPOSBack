@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "name": "light short viewport dialog contained",
+      "passed": true
+    },
+    {
+      "name": "light footer reachable with scrolling",
+      "passed": true
+    },
+    {
+      "name": "dark short viewport dialog contained",
+      "passed": true
+    },
+    {
+      "name": "dark footer reachable with scrolling",
+      "passed": true
+    },
+    {
+      "name": "submit controls not intercepted",
+      "passed": true
+    },
+    {
+      "name": "other native dialogs remain exclusive",
+      "passed": true
+    },
+    {
+      "name": "reloading script remains usable",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "input border",
+          "foreground": "rgb(127, 143, 165)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 3.2942664921806943
+        },
+        {
+          "name": "dialog title",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 4.5,
+          "ratio": 16.123407801609634
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "input border",
+          "foreground": "rgb(101, 123, 151)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 3.8041453230264386
+        },
+        {
+          "name": "dialog title",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 4.5,
+          "ratio": 14.703890179903702
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "158.0.8127.37"
+}

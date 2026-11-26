@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Integration\ReportsHttpTest" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" tests="12" assertions="359" errors="0" failures="0" skipped="0" time="73.105837">
+    <testcase name="test_all_nine_authenticated_queries_use_the_same_application_results_without_mutations" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="61" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="74" time="26.063477"/>
+    <testcase name="test_web_api_and_both_authenticated_downloads_remain_read_only" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="77" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="49" time="12.174758"/>
+    <testcase name="test_validation_unauthenticated_unknown_report_and_wrong_format_have_safe_uniform_errors" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="101" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="44" time="2.981324"/>
+    <testsuite name="Tests\Integration\ReportsHttpTest::test_non_administrative_roles_cannot_use_reports_to_bypass_blind_count" tests="3" assertions="126" errors="0" failures="0" skipped="0" time="11.522705">
+      <testcase name="test_non_administrative_roles_cannot_use_reports_to_bypass_blind_count with data set #0" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="123" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="42" time="3.661182"/>
+      <testcase name="test_non_administrative_roles_cannot_use_reports_to_bypass_blind_count with data set #1" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="123" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="42" time="3.280775"/>
+      <testcase name="test_non_administrative_roles_cannot_use_reports_to_bypass_blind_count with data set #2" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="123" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="42" time="4.580748"/>
+    </testsuite>
+    <testsuite name="Tests\Integration\ReportsHttpTest::test_current_revocation_blocks_queries_and_exports" tests="3" assertions="27" errors="0" failures="0" skipped="0" time="8.244315">
+      <testcase name="test_current_revocation_blocks_queries_and_exports with data set #0" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="144" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="9" time="2.887221"/>
+      <testcase name="test_current_revocation_blocks_queries_and_exports with data set #1" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="144" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="9" time="2.667397"/>
+      <testcase name="test_current_revocation_blocks_queries_and_exports with data set #2" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="144" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="9" time="2.689697"/>
+    </testsuite>
+    <testcase name="test_pin_employee_switch_uses_current_permissions_for_reports_and_exports" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="167" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="9" time="5.058517"/>
+    <testsuite name="Tests\Integration\ReportsHttpTest::test_internal_failures_do_not_expose_financial_sql_paths_or_secrets" tests="2" assertions="30" errors="0" failures="0" skipped="0" time="7.060742">
+      <testcase name="test_internal_failures_do_not_expose_financial_sql_paths_or_secrets with data set #0" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="184" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="15" time="3.187450"/>
+      <testcase name="test_internal_failures_do_not_expose_financial_sql_paths_or_secrets with data set #1" file="C:\Repos\FresaPOSBack\tests\Integration\ReportsHttpTest.php" line="184" class="Tests\Integration\ReportsHttpTest" classname="Tests.Integration.ReportsHttpTest" assertions="15" time="3.873292"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

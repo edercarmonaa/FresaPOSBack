@@ -1,0 +1,34 @@
+/* UI-07B: presentación de motivos. Las condiciones pertenecen a Livewire. */
+.ui-root .ui-content.ui-reasons-page{max-width:1280px;min-width:0}
+.ui-root .ui-reasons-module{display:grid;gap:24px;min-width:0}
+.ui-root .ui-reasons-module *{min-width:0}
+.ui-root .ui-reasons-module p{margin:0;overflow-wrap:anywhere}
+.ui-root .ui-reasons-module header{display:grid;gap:12px;max-width:900px}
+.ui-root .ui-reasons-module header p{color:var(--ui-muted)}
+.ui-root .ui-reasons-module .ui-heading{font-size:var(--ui-font-3xl)}
+.ui-root .ui-reasons-module>.ui-button{justify-self:start}
+.ui-root .ui-reasons-module .ui-button{max-width:100%;min-height:44px;white-space:normal;transition:border-color var(--ui-duration) var(--ui-ease)}
+.ui-root .ui-reasons-form,.ui-root .ui-reasons-filters,.ui-root .ui-reasons-card{box-sizing:border-box;padding:24px;border:1px solid var(--ui-line);border-radius:var(--ui-radius-md);background:var(--ui-surface)}
+.ui-root .ui-reasons-form{display:grid;gap:20px}
+.ui-root .ui-reasons-form>button{justify-self:start}
+.ui-root .ui-reasons-form fieldset{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:0;padding:0;border:0}
+.ui-root .ui-reasons-form label{display:grid;gap:8px;align-content:start;font-weight:var(--ui-weight-medium)}
+.ui-root .ui-reasons-form label:has(textarea){grid-column:1/-1}
+.ui-root .ui-reasons-filters label{display:grid;gap:8px;font-weight:var(--ui-weight-medium)}
+.ui-root .ui-reasons-module :is(input,select,textarea){max-width:100%;width:100%}
+.ui-root .ui-reasons-module :is(input,select,textarea):disabled{background:var(--ui-disabled-bg);color:var(--ui-disabled-text);cursor:not-allowed}
+.ui-root .ui-reasons-list{display:grid;gap:16px}
+.ui-root .ui-reasons-card{display:grid;gap:12px;border-left:4px solid var(--ui-primary)}
+.ui-root .ui-reasons-card h2{overflow-wrap:anywhere}
+.ui-root .ui-reasons-card code{display:inline;overflow-wrap:anywhere;font-size:.9em;color:var(--ui-info)}
+.ui-root .ui-reasons-card .ui-admin-actions{margin-top:4px}
+.ui-root .ui-reasons-status,.ui-root .ui-reasons-errors,.ui-root .ui-reasons-pending,.ui-root .ui-reasons-offline{box-sizing:border-box;padding:16px 20px;border:1px solid currentColor;border-radius:var(--ui-radius-sm)}
+.ui-root .ui-reasons-status{color:var(--ui-info);background:var(--ui-info-bg)}
+.ui-root .ui-reasons-errors{color:var(--ui-error);background:var(--ui-error-bg)}
+.ui-root .ui-reasons-errors ul{margin:0;padding-left:20px;overflow-wrap:anywhere}
+.ui-root .ui-reasons-pending{color:var(--ui-info);background:var(--ui-info-bg)}
+.ui-root .ui-reasons-offline{color:var(--ui-warning);background:var(--ui-warning-bg)}
+.ui-root .ui-reasons-empty{padding:24px;border:1px dashed var(--ui-control-border);border-radius:var(--ui-radius-md);color:var(--ui-muted)}
+.ui-root .ui-reasons-pagination{padding-block:4px}
+@media(max-width:767px){.ui-root .ui-reasons-module .ui-heading{font-size:var(--ui-font-2xl)}.ui-root .ui-reasons-form fieldset{grid-template-columns:minmax(0,1fr)}.ui-root .ui-reasons-form,.ui-root .ui-reasons-filters,.ui-root .ui-reasons-card{padding:20px}}
+@media(max-width:359px){.ui-root .ui-reasons-form,.ui-root .ui-reasons-filters,.ui-root .ui-reasons-card{padding:16px}}

@@ -1,0 +1,7 @@
+requisito,cambio,riesgo,prueba,evidencia,resultado,limite
+Productos y categorías,Componentes compartidos,Campos o acciones alterados,60 pares renderizados y SQL,quality.json,Pasa,Navegador estático
+Permisos y papelera,Mismas condiciones,Acciones visibles incorrectamente,6 perfiles y CatalogHttpTest,quality.json,Pasa,E2E navegador pendiente
+Imágenes y precio,Presentación preservada,Formato precisión o contratos alterados,CatalogImagesTest y aceptación,integration-final.xml,Pasa,SVG solo QA
+Paginación,Componente y bindings booleanos,Disabled o páginas modificadas,Límites y comparaciones,new-test.log,Pasa,Lógica permanece en módulo
+Temas y errores,Tokens y reglas locales,Contraste o foco insuficientes,108 casos + 36 revisión + 22 pares,browser-summary.json,Pasa tras correcciones,AT pendiente
+Integridad UI-06,Estado previo sin commit preservado,Sobrescribir trabajo anterior,Hashes 3436 archivos,source-integrity.json,Pasa,Índice evolutivo actualizado

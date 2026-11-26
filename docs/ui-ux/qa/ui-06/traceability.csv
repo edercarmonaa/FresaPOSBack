@@ -1,0 +1,7 @@
+requisito,cambio,riesgo,prueba,evidencia,resultado,limite
+Formularios y filtros,Select textarea y contenedor,Bindings o validación alterados,AdminComponentsTest + nativos en navegador,quality.json,Pasa,Sin integración en módulos
+Tablas y paginación,Reutilización de tabla y slots,Acciones nuevas o datos truncados,Render y desplazamiento de teclado,browser-summary.json,Pasa,La lógica sigue en consumidores
+Modal y panel,Dialog nativo con foco visual,Escape foco o tamaño incorrectos,54 casos y ventanas bajas,responsive.csv,Pasa tras corrección,AT pendiente
+Notificaciones y estados,Persistencia y anuncios optativos,Éxito/carga simulados,Pruebas de props y cierre explícito,quality.json,Pasa,Muestras identificadas
+Integridad,Solo layout optativo e índice,Cambios no autorizados,Hashes 3309 archivos y recursos ausentes en inicio,source-integrity.json,Pasa,Sin hashes de filas operativas
+Regresión funcional módulos,Sin integración todavía,Errores de adopción futura,Pendiente UI-07,../../componentes-ui06.md,Pendiente,No se afirma E2E de negocio

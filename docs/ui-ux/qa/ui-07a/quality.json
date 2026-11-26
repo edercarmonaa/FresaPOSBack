@@ -1,0 +1,52 @@
+{
+  "baseline": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "baseline_junit": {
+    "name": "CLI Arguments",
+    "tests": "312",
+    "assertions": "1287",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "22.110693"
+  },
+  "final": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "final_junit": {
+    "name": "CLI Arguments",
+    "tests": "319",
+    "assertions": "1349",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "29.189538"
+  },
+  "integration_final": {
+    "name": "CLI Arguments",
+    "tests": "49",
+    "assertions": "858",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "150.626844"
+  },
+  "integration_attempt_01": {
+    "name": "CLI Arguments",
+    "tests": "48",
+    "assertions": "839",
+    "errors": "0",
+    "failures": "1",
+    "skipped": "0",
+    "time": "144.657534"
+  }
+}

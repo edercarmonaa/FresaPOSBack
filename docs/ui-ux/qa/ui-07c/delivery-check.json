@@ -1,0 +1,20 @@
+{
+  "manifest_entries": 264,
+  "new_files": 260,
+  "changed_existing_files": [
+    "Modules/Cash/resources/views/desk.blade.php",
+    "Modules/Cash/resources/views/livewire/cash-desk.blade.php",
+    "Modules/Cash/resources/views/livewire/closing-panel.blade.php",
+    "Modules/Cash/resources/views/livewire/movements-panel.blade.php",
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "previous_manifests_unchanged": true,
+  "existing_tests_unchanged": true,
+  "protected_files_unchanged": true,
+  "report_sections": 22,
+  "missing_markdown_links": [],
+  "local_app_key_leaks": [],
+  "concurrent_staged_files": 608,
+  "concurrent_index_unchanged": true,
+  "staging_executed_by_this_task": false
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<?xml encoding="UTF-8"><html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI07A_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8097/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8097/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8097/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8097/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8097/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8097/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8097/css/ui/catalog.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8097/css/ui/admin.css">
+        
+<style>[wire\:loading]{display:none!important}</style></head>
+<body class="ui-page" data-ui-context="admin">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer men&uacute;"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8097">FresaPOS</a>
+        <span class="ui-workspace-label">Espacio de trabajo</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Autom&aacute;tico</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"></path></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegaci&oacute;n principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar men&uacute;"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8097/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8097/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8097/admin" aria-label="Administraci&oacute;n" title="Administraci&oacute;n" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Administraci&oacute;n</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8097/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+        <nav aria-label="Cat&aacute;logo" class="mb-6 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-4">
+            <span class="ui-nav-heading">Cat&aacute;logo</span>
+                                                <a href="http://127.0.0.1:8097/admin/catalog/products" aria-label="Productos" title="Productos" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" aria-current="page"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Productos</span></a>
+                                                        <a href="http://127.0.0.1:8097/admin/catalog/categories" aria-label="Categor&iacute;as" title="Categor&iacute;as" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+<span class="ui-nav-label">Categor&iacute;as</span></a>
+                        <a href="http://127.0.0.1:8097/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link ml-auto px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+        </nav>
+        <nav aria-label="Administraci&oacute;n de ventas" class="mb-6 flex flex-wrap gap-4 border-b pb-4"><a class="ui-nav-link rounded px-3 py-3 text-blue-700 underline" href="http://127.0.0.1:8097/admin/sales/reasons" aria-label="Motivos autorizados de ventas" title="Motivos autorizados de ventas"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01"></path></svg>
+<span class="ui-nav-label">Motivos autorizados de ventas</span></a></nav>
+                <nav aria-label="Reportes" class="mb-4"><a class="ui-nav-link inline-flex min-h-11 items-center rounded border border-slate-300 bg-white px-4 py-2" href="http://127.0.0.1:8097/reports" aria-label="Reportes" title="Reportes" aria-current="false"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0"></path></svg>
+<span class="ui-nav-label">Reportes</span></a></nav>
+
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar men&uacute;" tabindex="-1" hidden></button>
+                <main id="ui-main" tabindex="-1" class="ui-content  ui-catalog-page"><p role="note" style="margin-bottom:24px">UI-07A &middot; Fixture after &middot; Datos ficticios y campos rellenados para QA. Sin Livewire operativo, sesi&oacute;n ni operaciones.</p>
+                    <h1 class="ui-catalog-title">Productos</h1>
+    <section aria-label="Administraci&oacute;n de productos" class="ui-catalog-module">
+            <section aria-label="Filtros de cat&aacute;logo" class="ui-admin-filters">
+    <div class="ui-admin-filter-fields"><label class="ui-catalog-label">Buscar producto<input type="search" class="ui-input" wire:model.live.debounce.350ms="search" maxlength="100" value="">
+</label>
+        <label>Estado<select class="ui-select" wire:model.live="stateFilter"><option value="" selected>Todos</option><option value="active">Activos</option><option value="inactive">Inactivos</option></select>
+</label>
+        <label>Por p&aacute;gina<select class="ui-select" wire:model.live="perPage"><option value="10">10</option><option value="25" selected>25</option><option value="50">50</option><option value="100">100</option></select>
+</label>
+        <button type="button" class="ui-button ui-button--primary" wire:click="create" wire:loading.attr="disabled">Crear producto</button></div>
+    </section>
+    <section aria-label="Categor&iacute;a y orden" class="ui-admin-filters">
+    <div class="ui-admin-filter-fields"><label>Buscar categor&iacute;a<input type="search" class="ui-input" wire:model.live.debounce.350ms="categorySearch" maxlength="100" placeholder="Acota las primeras 100 coincidencias" value="">
+</label>
+        <label>Categor&iacute;a<select class="ui-select" wire:model.live="categoryFilter"><option value="" selected>Todas</option><option value="01ARZ3NDEKTSV4RRFFQ69G5FAV">Categor&iacute;a ficticia</option><option value="01ARZ3NDEKTSV4RRFFQ69G5FAW">Categor&iacute;a inactiva ficticia (inactiva)</option></select>
+</label>
+        <label>Ordenar por<select class="ui-select" wire:model.live="sort"><option value="name" selected>Nombre</option><option value="price">Precio</option></select>
+</label>
+        <label>Direcci&oacute;n<select class="ui-select" wire:model.live="direction"><option value="asc" selected>Ascendente</option><option value="desc">Descendente</option></select>
+</label></div>
+    </section>
+    <label class="ui-catalog-label">Vista<select class="ui-select" wire:model.live="deleted"><option value="without" selected>Productos vigentes</option><option value="only">Papelera (solo eliminados)</option></select>
+</label>        <div wire:loading role="status" class="text-sm text-slate-600">Procesando&hellip;</div>
+    <div tabindex="0" role="region" aria-label="Listado de productos" class="ui-table-region overflow-x-auto">
+    <table class="ui-table">
+        <caption>Listado de productos</caption>
+        <thead class="bg-slate-100"><tr><th scope="col">Imagen</th><th scope="col">Producto</th><th scope="col">Categor&iacute;a</th><th scope="col">Precio</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead><tbody>
+                    <tr wire:key="product-01ARZ3NDEKTSV4RRFFQ69G5FAV" class="border-t border-slate-200"><td><img src="/qa-image.svg" alt="Producto ficticio con nombre largo para comprobar su lectura completa" loading="lazy" class="ui-catalog-image"></td><td><span class="font-medium">Producto ficticio con nombre largo para comprobar su lectura completa</span><p class="text-slate-600">Descripci&oacute;n de muestra, sin datos operativos.</p></td><td>Categor&iacute;a ficticia</td><td class="ui-numeric">$1,234.5678</td><td>Activo</td><td><div class="ui-admin-actions">
+                                    <button type="button" class="ui-button ui-button--secondary" wire:click="edit('01ARZ3NDEKTSV4RRFFQ69G5FAV')" wire:loading.attr="disabled">Editar</button>
+                    <button type="button" class="ui-button ui-button--secondary" wire:click="toggle('01ARZ3NDEKTSV4RRFFQ69G5FAV')" wire:confirm="&iquest;Cambiar el estado de este producto?" wire:loading.attr="disabled">Desactivar</button>
+                    <button type="button" class="ui-button ui-button--danger" wire:click="remove('01ARZ3NDEKTSV4RRFFQ69G5FAV')" wire:confirm="&iquest;Enviar este producto a la papelera? Se conservar&aacute;n sus referencias hist&oacute;ricas." wire:loading.attr="disabled">Eliminar</button>
+                            </div></td></tr>
+                    <tr wire:key="product-01ARZ3NDEKTSV4RRFFQ69G5FAX" class="border-t border-slate-200"><td><div class="ui-catalog-image-placeholder">Segundo producto ficticio</div></td><td><span class="font-medium">Segundo producto ficticio</span></td><td>Categor&iacute;a inactiva ficticia</td><td class="ui-numeric">$0.0000</td><td>Inactivo</td><td><div class="ui-admin-actions">
+                                    <button type="button" class="ui-button ui-button--secondary" wire:click="edit('01ARZ3NDEKTSV4RRFFQ69G5FAX')" wire:loading.attr="disabled">Editar</button>
+                    <button type="button" class="ui-button ui-button--secondary" wire:click="toggle('01ARZ3NDEKTSV4RRFFQ69G5FAX')" wire:confirm="&iquest;Cambiar el estado de este producto?" wire:loading.attr="disabled">Activar</button>
+                    <button type="button" class="ui-button ui-button--danger" wire:click="remove('01ARZ3NDEKTSV4RRFFQ69G5FAX')" wire:confirm="&iquest;Enviar este producto a la papelera? Se conservar&aacute;n sus referencias hist&oacute;ricas." wire:loading.attr="disabled">Eliminar</button>
+                            </div></td></tr>
+                </tbody>
+    </table>
+</div>
+    <nav aria-label="Paginaci&oacute;n" class="ui-admin-pagination">
+    <p class="ui-muted">26&ndash;27 de 50 &middot; P&aacute;gina 2 de 2</p>    <div class="ui-admin-actions"><button type="button" class="ui-button ui-button--secondary" wire:click="gotoPage(1)" wire:loading.attr="disabled">Anterior</button>
+    <button type="button" class="ui-button ui-button--secondary" wire:click="gotoPage(3)" wire:loading.attr="disabled" disabled>Siguiente</button></div>
+</nav>
+</section>
+
+        </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"></path></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Autom&aacute;tico</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Est&aacute;ndar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tama&ntilde;o de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Seg&uacute;n sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Men&uacute; lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+            <script src="http://127.0.0.1:8097/js/ui/admin.js" defer></script>
+    </body>
+</html>

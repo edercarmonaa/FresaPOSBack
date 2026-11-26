@@ -1,0 +1,1301 @@
+{
+  "started_at": "2026-11-27T15:25:51.175Z",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-catalog-light-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-modal-light-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-drawer-light-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-catalog-light-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-modal-light-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-drawer-light-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-catalog-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-modal-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-drawer-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-catalog-light-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-modal-light-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-drawer-light-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-catalog-light-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-modal-light-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-drawer-light-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-catalog-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-modal-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-drawer-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-catalog-light-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-modal-light-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-drawer-light-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-catalog-dark-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-modal-dark-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-drawer-dark-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-catalog-dark-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-modal-dark-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-drawer-dark-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-catalog-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-modal-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-drawer-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-catalog-dark-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-modal-dark-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-drawer-dark-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-catalog-dark-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-modal-dark-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-drawer-dark-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-catalog-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-modal-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-drawer-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-catalog-dark-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "modal",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-modal-dark-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-drawer-dark-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "catalog",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-catalog-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "modal",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-modal-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "drawer",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-drawer-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "catalog",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-catalog-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "modal",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-modal-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "drawer",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-drawer-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-catalog-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "modal",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-modal-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-drawer-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "catalog",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-catalog-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "modal",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-modal-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "state": "drawer",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-drawer-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "dialogs_outside": [],
+      "font": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "chrome modal light 2560 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 2560 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 2560 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 2560 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1920 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1920 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1920 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1920 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1024 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 1024 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1024 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 1024 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 768 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 768 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 768 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 768 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 320 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal light 320 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 320 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer light 320 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 2560 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 2560 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 2560 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 2560 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1920 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1920 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1920 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1920 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1024 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 1024 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1024 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 1024 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 768 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 768 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 768 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 768 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 320 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome modal dark 320 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 320 initial focus",
+      "passed": true
+    },
+    {
+      "name": "chrome drawer dark 320 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "required native form validation",
+      "passed": true
+    },
+    {
+      "name": "submit kept local by catalogue only",
+      "passed": true
+    },
+    {
+      "name": "native modal contains sequential keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "explicit close restores opener",
+      "passed": true
+    },
+    {
+      "name": "unmarked button does not open dialog",
+      "passed": true
+    },
+    {
+      "name": "unknown dialog id ignored",
+      "passed": true
+    },
+    {
+      "name": "dismiss only explicit notice",
+      "passed": true
+    },
+    {
+      "name": "notice returns focus explicitly",
+      "passed": true
+    },
+    {
+      "name": "floating notice closes explicitly",
+      "passed": true
+    },
+    {
+      "name": "compact table density",
+      "passed": true
+    },
+    {
+      "name": "automatic theme follows OS",
+      "passed": true
+    },
+    {
+      "name": "system reduced motion retained",
+      "passed": true
+    },
+    {
+      "name": "table scroll with keyboard",
+      "passed": true
+    },
+    {
+      "name": "root text doubled reflows at 320",
+      "passed": true
+    },
+    {
+      "name": "blocked storage still permits modal and theme",
+      "passed": true
+    },
+    {
+      "name": "edge modal light 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge modal light 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge drawer light 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge drawer light 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge modal light 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge modal light 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge drawer light 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge drawer light 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge modal dark 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge modal dark 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge drawer dark 1366 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge drawer dark 1366 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge modal dark 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge modal dark 390 escape focus return",
+      "passed": true
+    },
+    {
+      "name": "edge drawer dark 390 initial focus",
+      "passed": true
+    },
+    {
+      "name": "edge drawer dark 390 escape focus return",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "selector": "h1",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(243, 245, 249)",
+          "ratio": 14.771967595329517,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-label",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-help",
+          "foreground": "rgb(82, 97, 120)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.287691490602022,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-field-error",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.485130093589804,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-select",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-textarea",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--error",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 240, 241)",
+          "ratio": 5.863240091705818,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--warning",
+          "foreground": "rgb(133, 77, 14)",
+          "background": "rgb(255, 245, 223)",
+          "ratio": 6.322099099738203,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--success",
+          "foreground": "rgb(22, 101, 52)",
+          "background": "rgb(233, 247, 239)",
+          "ratio": 6.456472807649506,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-admin-state h2",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "selector": "h1",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(13, 20, 33)",
+          "ratio": 16.400301581551453,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-label",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-help",
+          "foreground": "rgb(177, 191, 210)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 8.856226215398179,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-field-error",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 10.31795643399342,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-select",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-textarea",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--error",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(65, 37, 46)",
+          "ratio": 8.574848480333031,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--warning",
+          "foreground": "rgb(242, 207, 131)",
+          "background": "rgb(63, 50, 26)",
+          "ratio": 8.33773465205967,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-alert--success",
+          "foreground": "rgb(155, 227, 181)",
+          "background": "rgb(21, 56, 43)",
+          "ratio": 8.605887827578451,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".ui-admin-state h2",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        }
+      ]
+    }
+  ],
+  "performance": [
+    {
+      "lcp": 164,
+      "cls": 0
+    },
+    {
+      "lcp": 96,
+      "cls": 0
+    },
+    {
+      "lcp": 140,
+      "cls": 0
+    },
+    {
+      "lcp": 128,
+      "cls": 0
+    },
+    {
+      "lcp": 92,
+      "cls": 0
+    }
+  ],
+  "errors": [],
+  "violations": [],
+  "scope": "isolated component catalogue; SQL disabled; no business flows",
+  "axe": false,
+  "screen_reader": false,
+  "completed_at": "2026-11-27T15:26:21.522Z"
+}

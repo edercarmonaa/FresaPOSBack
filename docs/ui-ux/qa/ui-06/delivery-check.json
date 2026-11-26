@@ -1,0 +1,15 @@
+{
+  "report_sections": 22,
+  "missing_local_links": [],
+  "manifest_entries": 126,
+  "initial_files_verified": 3309,
+  "allowed_existing_changes": 2,
+  "new_files_before_manifest_and_check": 125,
+  "new_component_files": 8,
+  "local_APP_KEY_present": false,
+  "catalog_resources_registered_once_in_head_and_body": true,
+  "final_matrix_screens": 54,
+  "png_count": 58,
+  "accepted_by_user": false,
+  "staged_files": []
+}

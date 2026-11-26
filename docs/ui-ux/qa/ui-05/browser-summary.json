@@ -1,0 +1,21 @@
+{
+  "matrix_captures": 108,
+  "total_png": 117,
+  "before_captures": 8,
+  "extra_captures": 1,
+  "interaction_checks": 12,
+  "additional_checks": 4,
+  "contrast_pairs": 26,
+  "violations": [],
+  "browser_e2e_authenticated": false,
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ]
+}

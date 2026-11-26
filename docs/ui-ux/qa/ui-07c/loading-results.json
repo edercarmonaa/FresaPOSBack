@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "name": "delayed loading hidden at rest",
+      "passed": true
+    },
+    {
+      "name": "all ordinary loading indicators hidden at rest",
+      "passed": true
+    },
+    {
+      "name": "offline indicators hidden at rest",
+      "passed": true
+    }
+  ]
+}

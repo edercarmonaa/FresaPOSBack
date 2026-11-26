@@ -1,0 +1,52 @@
+/* UI-07C: presentación de Caja; sin condiciones ni cálculos financieros. */
+.ui-root .ui-content.ui-cash-page{max-width:1440px;min-width:0;overflow-wrap:anywhere}
+.ui-root .ui-cash-module,.ui-root .ui-cash-panel{display:grid;gap:24px;min-width:0}
+.ui-root .ui-cash-module *{min-width:0}
+.ui-root .ui-cash-module :is(p,h1,h2,h3,h4,dl,dd){margin:0}
+.ui-root .ui-cash-module header{display:grid;gap:12px}
+.ui-root .ui-cash-eyebrow{font-weight:var(--ui-weight-medium);font-size:var(--ui-font-sm);color:var(--ui-info)}
+.ui-root .ui-cash-module .ui-cash-help,.ui-root .ui-cash-module form p{color:var(--ui-muted);font-size:var(--ui-font-sm)}
+.ui-root .ui-cash-module .ui-cash-error-text{color:var(--ui-error)}
+.ui-root .ui-cash-card,.ui-root .ui-cash-panel,.ui-root .ui-cash-receipt,.ui-root .ui-cash-history-card{box-sizing:border-box;padding:24px;background:var(--ui-surface);border:1px solid var(--ui-line);border-radius:var(--ui-radius-md)}
+.ui-root .ui-cash-card{display:grid;gap:20px}
+.ui-root .ui-cash-card-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ui-root .ui-cash-badge{display:inline-flex;padding:8px 12px;border-radius:var(--ui-radius-sm);background:var(--ui-selected);color:var(--ui-selected-text);font-weight:var(--ui-weight-medium)}
+.ui-root .ui-cash-details,.ui-root .ui-cash-form-grid,.ui-root .ui-cash-filter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ui-root .ui-cash-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ui-root .ui-cash-module dl>div{display:grid;align-content:start;gap:8px}
+.ui-root .ui-cash-module dt{color:var(--ui-muted);font-size:var(--ui-font-sm)}
+.ui-root .ui-cash-module dd{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.ui-root .ui-cash-amount{font-size:var(--ui-font-xl);font-weight:var(--ui-weight-strong);font-variant-numeric:tabular-nums}
+.ui-root .ui-cash-reference{font-family:ui-monospace,monospace;font-size:var(--ui-font-xs);overflow-wrap:anywhere}
+.ui-root .ui-cash-module form{display:grid;gap:20px}
+.ui-root .ui-cash-module :is(label,.cash-form>div,.cash-closing form>div){display:grid;gap:8px;align-content:start}
+.ui-root .ui-cash-module label{font-weight:var(--ui-weight-medium)}
+.ui-root .ui-cash-module form>button{justify-self:start}
+.ui-root .ui-cash-form-grid :is(label:has(textarea),p){grid-column:1/-1}
+.ui-root .ui-cash-module :is(input,select,textarea){box-sizing:border-box;width:100%;max-width:100%;min-height:44px;border:1px solid var(--ui-control-border);border-radius:var(--ui-radius-sm);background:var(--ui-surface);color:var(--ui-text);font:inherit;padding:10px 12px}
+.ui-root .ui-cash-module textarea{min-height:96px;resize:vertical}
+.ui-root .ui-cash-module :is(input,select,textarea):disabled{background:var(--ui-disabled-bg);color:var(--ui-disabled-text);cursor:not-allowed}
+.ui-root .ui-cash-module [aria-invalid=true]{border:2px solid var(--ui-error)}
+.ui-root .ui-cash-module :is(input,select,textarea,a):focus-visible{outline:3px solid var(--ui-focus);outline-offset:3px}
+.ui-root .ui-cash-module .ui-button{max-width:100%;min-height:44px;white-space:normal;transition:border-color var(--ui-duration) var(--ui-ease)}
+.ui-root .ui-cash-module a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;color:var(--ui-info);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.ui-root .ui-cash-status,.ui-root .ui-cash-error,.ui-root .ui-cash-warning,.ui-root .ui-cash-information{box-sizing:border-box;padding:16px 20px;border:1px solid currentColor;border-radius:var(--ui-radius-sm)}
+.ui-root .ui-cash-status,.ui-root .ui-cash-information{color:var(--ui-info);background:var(--ui-info-bg)}
+.ui-root .ui-cash-error{color:var(--ui-error);background:var(--ui-error-bg)}
+.ui-root .ui-cash-warning,.ui-root .ui-cash-offline{color:var(--ui-warning);background:var(--ui-warning-bg)}
+.ui-root .ui-cash-offline{padding:12px 16px;border:1px solid currentColor;border-radius:var(--ui-radius-sm)}
+.ui-root .ui-cash-module .ui-cash-information{color:var(--ui-info)}
+.ui-root .ui-cash-module :is(.ui-cash-error,.ui-cash-warning) ul{margin:12px 0 0;padding-left:20px}
+.ui-root .ui-cash-empty{padding:24px;border:1px dashed var(--ui-control-border);border-radius:var(--ui-radius-md);color:var(--ui-muted)}
+.ui-root .ui-cash-history{display:grid;gap:20px;border-top:1px solid var(--ui-line);padding-top:24px}
+.ui-root .ui-cash-history-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ui-root .ui-cash-history-card,.ui-root .ui-cash-receipt{display:grid;gap:16px}
+.ui-root .ui-cash-receipt{border-color:var(--ui-control-border)}
+.ui-root .cash-movement-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:var(--ui-font-sm)}
+.ui-root .cash-movement-table :is(th,td){padding:16px 12px;text-align:left;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid var(--ui-line)}
+.ui-root .cash-movement-table th{color:var(--ui-muted);background:var(--ui-surface-soft);font-weight:var(--ui-weight-medium)}
+.ui-root .cash-movement-table td strong{font-variant-numeric:tabular-nums}
+@media(max-width:1023px){.ui-root .ui-cash-history-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:767px){.ui-root .ui-cash-details,.ui-root .ui-cash-form-grid,.ui-root .ui-cash-filter-grid,.ui-root .ui-cash-totals{grid-template-columns:minmax(0,1fr)}.ui-root .ui-cash-card,.ui-root .ui-cash-panel,.ui-root .ui-cash-receipt,.ui-root .ui-cash-history-card{padding:20px}}
+@media(max-width:640px){.ui-root .cash-movement-table thead{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.ui-root .cash-movement-table tr{display:block;border-bottom:1px solid var(--ui-line);padding:12px 0}.ui-root .cash-movement-table td{display:block;padding:8px 0;border:0}.ui-root .cash-movement-table td::before{content:attr(data-label) ': ';font-weight:var(--ui-weight-medium)}}
+@media(max-width:359px){.ui-root .ui-cash-card,.ui-root .ui-cash-panel,.ui-root .ui-cash-receipt,.ui-root .ui-cash-history-card{padding:16px}}

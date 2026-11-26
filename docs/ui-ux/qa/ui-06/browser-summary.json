@@ -1,0 +1,20 @@
+{
+  "matrix_screens": 54,
+  "total_png": 58,
+  "interactions": 87,
+  "additional_checks": 7,
+  "contrast_pairs": 24,
+  "violations": [],
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ],
+  "business_module_integration": false,
+  "authenticated_e2e": false
+}

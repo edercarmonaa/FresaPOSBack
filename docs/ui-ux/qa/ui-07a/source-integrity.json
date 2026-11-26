@@ -1,0 +1,72 @@
+{
+  "head": "be38e26ae54e928f8567a8260ea09bfda193fd2d",
+  "initial_files_tracked_and_untracked": 3436,
+  "initial_git_status": [
+    " M docs/ui-ux/ESTADO.md",
+    " M resources/views/layouts/app.blade.php",
+    "?? docs/ui-ux/catalogo/ui-06/",
+    "?? docs/ui-ux/componentes-ui06.md",
+    "?? docs/ui-ux/entregas/UI-06.md",
+    "?? docs/ui-ux/evidencias/ui-06/",
+    "?? docs/ui-ux/qa/ui-06/",
+    "?? public/css/ui/admin.css",
+    "?? public/js/ui/admin.js",
+    "?? resources/views/components/ui/admin-assets.blade.php",
+    "?? resources/views/components/ui/dialog.blade.php",
+    "?? resources/views/components/ui/filters.blade.php",
+    "?? resources/views/components/ui/notification.blade.php",
+    "?? resources/views/components/ui/pagination.blade.php",
+    "?? resources/views/components/ui/select.blade.php",
+    "?? resources/views/components/ui/state.blade.php",
+    "?? resources/views/components/ui/textarea.blade.php",
+    "?? tests/Feature/AdminComponentsTest.php"
+  ],
+  "ui06_was_uncommitted": true,
+  "ui06_files_preserved_except_evolving_index": true,
+  "changed_from_stage_start": [
+    "Modules/Catalog/resources/views/products.blade.php",
+    "Modules/Catalog/resources/views/categories.blade.php",
+    "Modules/Catalog/resources/views/pagination.blade.php",
+    "Modules/Catalog/resources/views/livewire-categories.blade.php",
+    "docs/ui-ux/ESTADO.md",
+    "Modules/Catalog/resources/views/field-error.blade.php",
+    "Modules/Catalog/resources/views/livewire-products.blade.php"
+  ],
+  "existing_test_files_checked": 174,
+  "existing_test_files_changed": [],
+  "protected_files": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "protected_files_changed": [],
+  "source_contract_checks": [
+    {
+      "file": "livewire-products",
+      "wire_attributes": true,
+      "can_guards": true,
+      "image_src_alt": true,
+      "if_conditions_count": true,
+      "live_regions": true
+    },
+    {
+      "file": "livewire-categories",
+      "wire_attributes": true,
+      "can_guards": true,
+      "image_src_alt": true,
+      "if_conditions_count": true,
+      "live_regions": true
+    }
+  ],
+  "field_error_logic_unchanged": true,
+  "backend_files_changed": [],
+  "operational_row_hashes_verified": false,
+  "staged_files": []
+}

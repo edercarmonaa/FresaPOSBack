@@ -1,0 +1,672 @@
+{
+  "started_at": "2026-11-27T16:03:00.848Z",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-products-edit-light-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-categories-edit-light-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-products-edit-light-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-categories-edit-light-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-products-edit-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-categories-edit-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-products-edit-light-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-categories-edit-light-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-products-edit-light-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-categories-edit-light-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-products-edit-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-categories-edit-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-products-edit-light-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-categories-edit-light-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-products-edit-dark-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "review-chrome-categories-edit-dark-2560x1440.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-products-edit-dark-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "review-chrome-categories-edit-dark-1920x1080.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-products-edit-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-chrome-categories-edit-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-products-edit-dark-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "review-chrome-categories-edit-dark-1024x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-products-edit-dark-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "review-chrome-categories-edit-dark-768x1024.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-products-edit-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-chrome-categories-edit-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-products-edit-dark-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "review-chrome-categories-edit-dark-320x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-products-edit-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-categories-edit-light-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "products-edit",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-products-edit-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "categories-edit",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-categories-edit-light-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-products-edit-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "review-edge-categories-edit-dark-1366x768.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "products-edit",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-products-edit-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "name": "categories-edit",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "review-edge-categories-edit-dark-390x844.png",
+      "overflow": false,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "small": [],
+      "broken_images": [],
+      "font": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "chrome products-edit light 2560 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 2560 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 1920 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 1920 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 1024 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 1024 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 768 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 768 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 390 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 390 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit light 320 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit light 320 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 2560 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 2560 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 1920 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 1920 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 1024 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 1024 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 768 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 768 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 390 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 390 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome products-edit dark 320 error border",
+      "passed": true
+    },
+    {
+      "name": "chrome categories-edit dark 320 error border",
+      "passed": true
+    },
+    {
+      "name": "edge products-edit light 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "edge categories-edit light 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "edge products-edit light 390 error border",
+      "passed": true
+    },
+    {
+      "name": "edge categories-edit light 390 error border",
+      "passed": true
+    },
+    {
+      "name": "edge products-edit dark 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "edge categories-edit dark 1366 error border",
+      "passed": true
+    },
+    {
+      "name": "edge products-edit dark 390 error border",
+      "passed": true
+    },
+    {
+      "name": "edge categories-edit dark 390 error border",
+      "passed": true
+    }
+  ],
+  "contrast": [],
+  "performance": [],
+  "errors": [],
+  "violations": [],
+  "scope": "static Blade fixtures; values filled from fictitious binding state; no Livewire hydration or business requests",
+  "authenticated_e2e": false,
+  "completed_at": "2026-11-27T16:03:36.350Z"
+}

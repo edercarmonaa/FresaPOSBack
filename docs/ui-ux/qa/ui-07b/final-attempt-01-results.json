@@ -1,0 +1,7 @@
+﻿{
+    "composer":  0,
+    "phpunit":  0,
+    "platform":  0,
+    "pint":  1,
+    "larastan":  0
+}

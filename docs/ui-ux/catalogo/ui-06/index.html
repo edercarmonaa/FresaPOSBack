@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es" class="ui-root"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UI-06 · Catálogo documental</title>
+<script src="/js/ui/theme.js"></script><link rel="preload" href="/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/ui/tokens.css"><link rel="stylesheet" href="/css/ui/components.css"><link rel="stylesheet" href="/css/ui/layouts.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8096/css/ui/admin.css">
+        <style>.qa-shell{max-width:1180px;margin:auto;padding:32px;display:grid;gap:24px}.qa-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}.qa-stack{display:grid;gap:20px}.qa-heading{font-size:var(--ui-font-xl);font-weight:650;margin-bottom:20px}.qa-demo-form{display:grid;gap:20px}.qa-shell>section{min-width:0}.qa-shell .ui-table{min-width:720px}@media(max-width:767px){.qa-shell{padding:20px}}@media(max-width:359px){.qa-shell{padding:16px}}</style>
+</head><body class="ui-page">
+<main id="ui-main" class="qa-shell" tabindex="-1">
+<header class="qa-top"><div><p class="ui-muted">UI-06 · Catálogo documental · Datos ficticios</p><h1 class="ui-heading">Componentes administrativos</h1><p>Sin sesión, conexión SQL u operaciones reales. Integración de módulos pendiente de UI-07.</p></div><label class="ui-field">Tema<select class="ui-select" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label></header>
+<div class="ui-admin-notice" data-ui-notice data-ui-notice-return="" data-ui-dismissible="false">
+    <div class="ui-alert ui-alert--info" aria-live="off" aria-atomic="false">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+    <div><strong class="ui-alert-title">Muestra persistente</strong>Este mensaje es documental. No informa una operación real ni desaparece automáticamente.</div>
+</div>
+    </div>
+<section class="qa-stack" aria-labelledby="forms-heading"><h2 class="qa-heading" id="forms-heading">Formulario y filtros</h2>
+<form id="qa-form" class="qa-demo-form" action="/_qa/no-operation" method="post">
+<section aria-label="Filtros de ejemplo" class="ui-admin-filters">
+    <div class="ui-admin-filter-fields"><div class="ui-field">
+    <label class="ui-label" for="qa-search">Buscar</label>
+    <input type="search" class="ui-input" id="qa-search" name="search" aria-describedby="qa-search-help" maxlength="100" wire:model.live.debounce.350ms="search">
+    <p class="ui-help" id="qa-search-help">Campo de muestra, sin consulta.</p>    </div>
+    <div class="ui-field">
+    <label class="ui-label" for="qa-state">Estado</label>
+    <select class="ui-select" id="qa-state" name="state" wire:model.live="stateFilter"><option value="">Todos</option><option value="active">Activo</option><option value="inactive">Inactivo</option></select>
+        </div>
+    <div class="ui-field">
+    <label class="ui-label" for="qa-name">Nombre <span>(obligatorio)</span></label>
+    <input type="text" class="ui-input" id="qa-name" name="name" required="required" maxlength="150" wire:model="name">
+        </div>
+    <div class="ui-field">
+    <label class="ui-label" for="qa-description">Descripción</label>
+    <textarea rows="4" class="ui-textarea" id="qa-description" name="description" maxlength="1000" wire:model="description">Texto ficticio editable; no se guarda.</textarea>
+        </div>
+    <div class="ui-field">
+    <label class="ui-label" for="qa-invalid">Campo con error de muestra</label>
+    <input type="text" aria-invalid="true" class="ui-input" id="qa-invalid" name="invalid" aria-describedby="qa-invalid-error">
+        <p class="ui-field-error" id="qa-invalid-error">Mensaje ficticio de validación.</p></div>
+    <div class="ui-field">
+    <label class="ui-label" for="qa-disabled">Campo deshabilitado</label>
+    <input type="text" class="ui-input" id="qa-disabled" name="disabled" disabled="disabled" value="No disponible">
+        </div></div>
+    <div class="ui-admin-actions"><button type="submit" class="ui-button ui-button--primary">Validar muestra local</button>
+<button type="reset" class="ui-button ui-button--secondary">Restablecer campos</button></div></section>
+</form></section>
+<section aria-labelledby="table-heading"><h2 class="qa-heading" id="table-heading">Tabla, densidad y paginación</h2>
+<label class="ui-field" style="max-width:240px;margin-bottom:20px">Densidad<select class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Cómoda</option></select></label>
+<div tabindex="0" role="region" aria-label="Filas ficticias para comprobar el desplazamiento" class="ui-table-region">
+    <table class="ui-table">
+        <caption>Filas ficticias para comprobar el desplazamiento</caption>
+        <thead><tr><th scope="col">Identificador</th><th scope="col">Nombre</th><th scope="col">Estado</th><th scope="col">Cantidad de muestra</th><th scope="col">Acciones de muestra</th></tr></thead><tbody>
+<tr><td>UI06-1</td><td>Ejemplo de nombre largo que conserva todo su texto</td><td><span class="ui-badge ui-badge--success">Activo</span>
+</td><td class="ui-numeric">1</td><td><button type="button" class="ui-button ui-button--secondary" id="open-drawer-0" data-ui-dialog-open="qa-drawer">Ver panel de muestra</button>
+</td></tr><tr><td>UI06-2</td><td>Segundo registro ficticio</td><td><span class="ui-badge ui-badge--success">Activo</span>
+</td><td class="ui-numeric">2</td><td><button type="button" class="ui-button ui-button--secondary" id="open-drawer-1" data-ui-dialog-open="qa-drawer">Ver panel de muestra</button>
+</td></tr></tbody>
+    </table>
+</div>
+<nav aria-label="Paginación documental" class="ui-admin-pagination">
+    <p class="ui-muted">1–2 de 2 · Página 1 de 1 (muestra)</p>    <div class="ui-admin-actions"><button type="button" class="ui-button ui-button--secondary" disabled="disabled" wire:click="gotoPage(1)">Anterior</button>
+<button type="button" class="ui-button ui-button--secondary" disabled="disabled" wire:click="gotoPage(2)">Siguiente</button></div>
+</nav>
+</section>
+<section aria-labelledby="dialogs-heading"><h2 class="qa-heading" id="dialogs-heading">Modal y panel lateral</h2><div class="ui-admin-actions"><button type="button" class="ui-button ui-button--primary" id="open-modal" data-ui-dialog-open="qa-modal">Abrir modal de muestra</button>
+<button type="button" class="ui-button ui-button--secondary" id="open-drawer" data-ui-dialog-open="qa-drawer">Abrir panel lateral</button>
+<button type="button" class="ui-button ui-button--secondary" id="plain-action">Botón sin comportamiento añadido</button>
+</div></section>
+<div class="qa-grid"><section class="ui-admin-state ui-admin-state--empty" >
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+    <h2>Sin resultados de muestra</h2>
+    <p class="ui-muted">El estado vacío no añade registros ni cambia filtros.</p>        
+</section>
+<section class="ui-admin-state ui-admin-state--loading"  aria-busy="true" >
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+    <h2>Estado de carga de muestra</h2>
+    <p class="ui-muted">Ejemplo estático; no hay una consulta en curso.</p>    <div class="ui-admin-skeleton" aria-hidden="true"><span></span><span></span><span></span></div>    
+</section>
+<section class="ui-admin-state ui-admin-state--error" >
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+    <h2>Error de muestra</h2>
+    <p class="ui-muted">No corresponde a una operación real.</p>        <button type="button" class="ui-button ui-button--secondary" id="qa-retry">Acción proporcionada por el consumidor</button>
+</section>
+</div>
+<div class="ui-admin-notice" id="notice-dismissible" data-ui-notice data-ui-notice-return="plain-action" data-ui-dismissible="true">
+    <div class="ui-alert ui-alert--success" aria-live="off" aria-atomic="false">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" /></svg>
+    <div><strong class="ui-alert-title">Mensaje cerrable de muestra</strong>Su cierre es exclusivamente visual y requiere una decisión explícita del consumidor.</div>
+</div>
+    <button type="button" class="ui-button ui-button--secondary" data-ui-notice-dismiss="data-ui-notice-dismiss" aria-label="Cerrar notificación"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg></button>
+</div>
+<div class="ui-admin-notice" data-ui-notice data-ui-notice-return="" data-ui-dismissible="false">
+    <div class="ui-alert ui-alert--warning" aria-live="off" aria-atomic="false">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+    <div><strong class="ui-alert-title">Advertencia de muestra</strong>El color acompaña un texto explícito.</div>
+</div>
+    </div>
+<div class="ui-admin-notice" data-ui-notice data-ui-notice-return="" data-ui-dismissible="false">
+    <div class="ui-alert ui-alert--error" aria-live="off" aria-atomic="false">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+    <div><strong class="ui-alert-title">Error de muestra</strong>Los mensajes críticos son persistentes por defecto.</div>
+</div>
+    </div>
+<div class="ui-admin-notice ui-admin-notice--floating" id="floating-notice" hidden="hidden" data-ui-notice data-ui-notice-return="plain-action" data-ui-dismissible="true">
+    <div class="ui-alert ui-alert--info" aria-live="off" aria-atomic="false">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+    <div><strong class="ui-alert-title">Notificación flotante de muestra</strong>Estado ilustrativo; sin autodescarte ni temporizador.</div>
+</div>
+    <button type="button" class="ui-button ui-button--secondary" data-ui-notice-dismiss="data-ui-notice-dismiss" aria-label="Cerrar notificación"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg></button>
+</div>
+</main>
+<dialog id="qa-modal" data-ui-dialog="" aria-labelledby="qa-modal-title" class="ui-admin-dialog ui-admin-dialog--modal"  aria-describedby="qa-modal-description" >
+    <div class="ui-admin-dialog-heading">
+        <h2 id="qa-modal-title">Modal de muestra</h2>
+        <button type="button" class="ui-button ui-button--secondary" data-ui-dialog-close="data-ui-dialog-close" aria-label="Cerrar Modal de muestra"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg></button>
+    </div>
+    <p class="ui-muted" id="qa-modal-description">Solo presentación. Escape y el botón de cierre regresan al origen.</p>    <div class="ui-admin-dialog-body"><div class="ui-field">
+    <label class="ui-label" for="modal-name">Nombre de muestra</label>
+    <input type="text" class="ui-input" id="modal-name" name="modal_name" wire:model="name">
+        </div>
+<a class="ui-button ui-button--secondary" href="#qa-name">Enlace de muestra</a></div>
+    <div class="ui-admin-actions ui-admin-dialog-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-dialog-close="data-ui-dialog-close">Volver</button></div></dialog>
+<dialog id="qa-drawer" data-ui-dialog="" aria-labelledby="qa-drawer-title" class="ui-admin-dialog ui-admin-dialog--drawer"  aria-describedby="qa-drawer-description" >
+    <div class="ui-admin-dialog-heading">
+        <h2 id="qa-drawer-title">Panel lateral de muestra</h2>
+        <button type="button" class="ui-button ui-button--secondary" data-ui-dialog-close="data-ui-dialog-close" aria-label="Cerrar Panel lateral de muestra"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg></button>
+    </div>
+    <p class="ui-muted" id="qa-drawer-description">Datos ficticios. No edita registros.</p>    <div class="ui-admin-dialog-body"><p>La interacción abre y cierra únicamente este panel.</p><div class="ui-field">
+    <label class="ui-label" for="drawer-description">Descripción</label>
+    <textarea rows="4" class="ui-textarea" id="drawer-description" name="drawer_description"></textarea>
+        </div></div>
+    <div class="ui-admin-actions ui-admin-dialog-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-dialog-close="data-ui-dialog-close">Cerrar panel</button></div></dialog>
+
+        <script src="http://127.0.0.1:8096/js/ui/admin.js" defer></script>
+    <script>document.getElementById('qa-form').addEventListener('submit',event=>event.preventDefault());</script>
+</body></html>

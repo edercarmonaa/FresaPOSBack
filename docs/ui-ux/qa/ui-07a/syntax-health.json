@@ -1,0 +1,18 @@
+﻿{
+    "http":  {
+                 "http://127.0.0.1:8080/admin/catalog/products":  302,
+                 "http://127.0.0.1:8080/up":  200,
+                 "http://127.0.0.1:8080/admin/catalog/categories":  302,
+                 "http://127.0.0.1:8080/login":  200
+             },
+    "syntax":  {
+                   "tests/Fixtures/UI07A/FixtureData.php":  0,
+                   "docs/ui-ux/qa/ui-07a/additional-checks.cjs":  0,
+                   "tests/Integration/CatalogPresentationHttpTest.php":  0,
+                   "tests/Feature/CatalogPresentationTest.php":  0,
+                   "docs/ui-ux/qa/ui-07a/export-views.php":  0,
+                   "docs/ui-ux/qa/ui-07a/browser-check.cjs":  0,
+                   "docs/ui-ux/qa/ui-07a/router.php":  0
+               },
+    "diff_check":  0
+}

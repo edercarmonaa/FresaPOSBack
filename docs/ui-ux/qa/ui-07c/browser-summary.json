@@ -1,0 +1,36 @@
+{
+  "screens": 162,
+  "checks": 31,
+  "contrast_pairs": 26,
+  "minimum_text_contrast": 5.7606664851167295,
+  "minimum_nontext_contrast": 3.2942664921806943,
+  "png_files": 171,
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "violations": [],
+  "browser_authenticated_e2e": false,
+  "performance_static_warm_cache": {
+    "before": {
+      "sample": 5,
+      "lcp_min_ms": 176,
+      "lcp_median_ms": 192,
+      "lcp_max_ms": 208,
+      "cls_max": 0
+    },
+    "after": {
+      "sample": 5,
+      "lcp_min_ms": 160,
+      "lcp_median_ms": 164,
+      "lcp_max_ms": 176,
+      "cls_max": 0
+    }
+  }
+}

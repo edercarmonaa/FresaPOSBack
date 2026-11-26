@@ -1,0 +1,83 @@
+{
+  "main_screens": 126,
+  "final_submitted_review_screens": 18,
+  "checks": 17,
+  "contrast_pairs": 22,
+  "minimum_text_contrast": 5.7606664851167295,
+  "minimum_nontext_contrast": 3.2942664921806943,
+  "png_files": 151,
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "violations": [],
+  "browser_authenticated_e2e": false,
+  "performance": [
+    {
+      "phase": "before",
+      "iteration": 1,
+      "lcp": 124,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 2,
+      "lcp": 192,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 3,
+      "lcp": 120,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 4,
+      "lcp": 128,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 5,
+      "lcp": 96,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 1,
+      "lcp": 132,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 2,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 3,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 4,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 5,
+      "lcp": 144,
+      "cls": 0
+    }
+  ]
+}

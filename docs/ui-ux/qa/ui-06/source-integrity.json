@@ -1,0 +1,28 @@
+{
+  "head": "be38e26ae54e928f8567a8260ea09bfda193fd2d",
+  "initial_tracked_files": 3309,
+  "changed": [
+    "docs/ui-ux/ESTADO.md",
+    "resources/views/layouts/app.blade.php"
+  ],
+  "existing_test_files_checked": 178,
+  "existing_test_files_changed": [],
+  "protected_files": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "protected_files_changed": [],
+  "layout_only_adds_opt_in_script_stack": true,
+  "module_files_changed": [],
+  "historical_document_files_changed": [],
+  "operational_database_row_hashes_verified": false,
+  "staged_files": []
+}

@@ -1,5 +1,10 @@
 @extends('layouts.app')
+@section('mainClass', 'ui-catalog-page')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/ui/catalog.css') }}">
+@endpush
 @section('content')
-    <h1 class="mb-6 text-2xl font-semibold">Productos</h1>
+    <x-ui.admin-assets />
+    <h1 class="ui-catalog-title">Productos</h1>
     <livewire:catalog.products />
 @endsection

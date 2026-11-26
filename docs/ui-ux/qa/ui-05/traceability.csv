@@ -1,0 +1,7 @@
+requisito,cambio,riesgo,prueba,evidencia,resultado,limite
+Indicadores existentes,Tarjetas y tipografía tabular,Importes o precisión alterados,54 comparativas renderizadas y ReportsHttpTest,quality.json,Pasa,"Datos visuales ficticios, integración SQL real"
+Filtros y exportación,CSS semántico,Acciones o permisos alterados,"Comparación de controles, scripts y permisos",source-integrity.json,Pasa,PDF/XLSX no rediseñados
+Temas,Retiro de límite claro solo Reportes,Contenido ilegible,108 casos y contraste,browser-summary.json,Pasa,Chrome/Edge
+Detalle y estados,Tabla por tarjetas y región enfocables,Campos ocultos o inaccesibles,"Responsive, teclado, vacío y error",responsive.csv,Pasa,AT no ejecutado
+Integridad,Cambios limitados a presentación,Regresión funcional no autorizada,Hashes 3130 archivos y SQL guardado,source-integrity.json,Pasa,Sin hashes de filas operativas
+Indicadores no implementados,Excluidos,Datos simulados en aplicación,Inspección fuente,../../dashboard-ui05.md,Excluido,"Inventario, actividad y tendencias nuevas fuera de alcance"

@@ -1,0 +1,46 @@
+/* UI-07A: presentación de Catálogo; no contiene reglas de disponibilidad. */
+.ui-root .ui-content.ui-catalog-page{max-width:1500px;min-width:0}
+.ui-root .ui-catalog-title{margin:0 0 24px;font-size:var(--ui-font-3xl);font-weight:var(--ui-weight-strong);line-height:1.2;letter-spacing:-.025em}
+.ui-root .ui-catalog-module{display:grid;gap:24px;min-width:0}
+.ui-root .ui-catalog-module>*,.ui-root .ui-catalog-form>*{min-width:0}
+.ui-root .ui-catalog-module .ui-admin-filter-fields>.ui-button{align-self:end;justify-self:start}
+.ui-root .ui-catalog-module label:not(.ui-catalog-check){display:grid;align-content:start;gap:8px;font-size:var(--ui-font-sm);font-weight:var(--ui-weight-medium);overflow-wrap:anywhere}
+.ui-root .ui-catalog-module .ui-admin-filter-fields label{min-width:0}
+.ui-root .ui-catalog-module :is(.ui-input,.ui-select,.ui-textarea){max-width:100%;min-width:0;width:100%}
+.ui-root .ui-catalog-module>.ui-catalog-label{max-width:340px}
+.ui-root .ui-catalog-form{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;padding:24px;border:1px solid var(--ui-line);border-radius:var(--ui-radius-md);background:var(--ui-surface)}
+.ui-root .ui-catalog-form h2{font-size:var(--ui-font-xl);font-weight:var(--ui-weight-strong);margin:0 0 8px}
+.ui-root .ui-catalog-module p{overflow-wrap:anywhere}
+.ui-root .ui-catalog-form label,.ui-root .ui-catalog-form p{margin:0}
+.ui-root .ui-catalog-form>label:not(.ui-catalog-check){max-width:760px}
+.ui-root .ui-catalog-form>.ui-catalog-check{display:flex;align-items:center;gap:12px;min-height:44px;padding:4px;box-sizing:border-box;justify-self:start;cursor:pointer}
+.ui-root .ui-catalog-check input[type=checkbox]{width:22px;height:22px;min-height:22px;margin:0;accent-color:var(--ui-primary)}
+.ui-root .ui-catalog-status,.ui-root .ui-catalog-errors{padding:16px 20px;margin:0;border:1px solid;border-radius:var(--ui-radius-sm)}
+.ui-root .ui-catalog-status{color:var(--ui-success);background:var(--ui-success-bg)}
+.ui-root .ui-catalog-errors{color:var(--ui-error);background:var(--ui-error-bg)}
+.ui-root .ui-catalog-errors ul{margin:0;padding-left:20px}
+.ui-root .ui-catalog-field-error{color:var(--ui-error);font-size:var(--ui-font-sm);margin:0}
+.ui-root .ui-catalog-module .ui-table-region{border-color:var(--ui-control-border)}
+.ui-root .ui-catalog-module .ui-table{min-width:900px}
+.ui-root .ui-catalog-module[aria-label="Administración de categorías"] .ui-table{min-width:740px}
+.ui-root .ui-catalog-module .ui-table th,.ui-root .ui-catalog-module .ui-table td{vertical-align:top;overflow-wrap:anywhere;max-width:340px}
+.ui-root .ui-catalog-module .ui-table td:nth-child(2){min-width:160px}
+.ui-root .ui-catalog-module .ui-table tbody tr:nth-child(even){background:var(--ui-surface-soft)}
+.ui-root .ui-catalog-module .ui-table .ui-numeric{font-variant-numeric:tabular-nums}
+.ui-root .ui-catalog-module .ui-table .ui-admin-actions{min-width:160px;align-items:start}
+.ui-root .ui-catalog-module .ui-table p{color:var(--ui-muted)}
+.ui-root .ui-catalog-module .ui-button{transition:border-color var(--ui-duration) var(--ui-ease);max-width:100%;min-height:44px;white-space:normal;overflow-wrap:anywhere;justify-content:center}
+.ui-root .ui-catalog-image{width:80px;height:80px;object-fit:contain;border:1px solid var(--ui-line);border-radius:var(--ui-radius-sm);background:var(--ui-surface-soft)}
+.ui-root .ui-catalog-form .ui-catalog-image{width:160px;height:160px;max-width:100%}
+.ui-root .ui-catalog-image-placeholder{display:flex;align-items:center;justify-content:center;min-height:80px;width:96px;padding:8px;box-sizing:border-box;border-radius:var(--ui-radius-sm);background:var(--ui-surface-soft);color:var(--ui-muted);text-align:center;font-size:var(--ui-font-xs);overflow-wrap:anywhere}
+.ui-root .ui-catalog-module input[type=file]{min-height:44px;padding:8px}
+.ui-root .ui-catalog-module input[type=file]::file-selector-button{min-height:44px;margin-right:12px;padding:8px 12px;border:1px solid var(--ui-control-border);border-radius:var(--ui-radius-sm);color:var(--ui-text);background:var(--ui-surface-soft);font:inherit}
+.ui-root .ui-catalog-empty{padding:28px;color:var(--ui-muted)}
+.ui-root .ui-catalog-module .ui-admin-pagination{padding-block:0}
+@media(max-width:767px){.ui-root .ui-catalog-title{font-size:var(--ui-font-2xl)}.ui-root .ui-catalog-form{padding:20px}}
+@media(max-width:359px){.ui-root .ui-catalog-form{padding:16px}}
+
+.ui-root .ui-catalog-form>.ui-button{justify-self:start}
+.ui-root .ui-catalog-module[aria-label="Administración de productos"] .ui-table :is(th,td):nth-child(5){white-space:nowrap}
+
+.ui-root .ui-catalog-module :is(.ui-input,.ui-select,.ui-textarea)[aria-invalid=true]{border-color:var(--ui-error);border-width:2px}

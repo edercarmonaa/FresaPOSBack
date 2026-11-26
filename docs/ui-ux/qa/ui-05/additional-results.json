@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "name": "light table and chart keyboard regions",
+      "passed": true
+    },
+    {
+      "name": "light empty state",
+      "passed": true
+    },
+    {
+      "name": "dark table and chart keyboard regions",
+      "passed": true
+    },
+    {
+      "name": "dark empty state",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "view": "summary",
+      "pairs": [
+        {
+          "name": "input border",
+          "foreground": "rgb(127, 143, 165)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 3.2942664921806943
+        },
+        {
+          "name": "focus outline",
+          "foreground": "rgb(37, 99, 235)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 5.168555560022562
+        },
+        {
+          "name": "chart bar",
+          "foreground": "rgb(29, 78, 216)",
+          "background": "rgb(255, 255, 255)",
+          "minimum": 3,
+          "ratio": 6.701618401398807
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "view": "empty",
+      "pairs": []
+    },
+    {
+      "theme": "light",
+      "view": "error",
+      "pairs": [
+        {
+          "name": "error text",
+          "foreground": "rgb(133, 77, 14)",
+          "background": "rgb(255, 245, 223)",
+          "minimum": 4.5,
+          "ratio": 6.322099099738203
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "view": "summary",
+      "pairs": [
+        {
+          "name": "input border",
+          "foreground": "rgb(101, 123, 151)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 3.8041453230264386
+        },
+        {
+          "name": "focus outline",
+          "foreground": "rgb(182, 209, 255)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 10.667104685759428
+        },
+        {
+          "name": "chart bar",
+          "foreground": "rgb(167, 198, 255)",
+          "background": "rgb(21, 31, 48)",
+          "minimum": 3,
+          "ratio": 9.57430272711665
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "view": "empty",
+      "pairs": []
+    },
+    {
+      "theme": "dark",
+      "view": "error",
+      "pairs": [
+        {
+          "name": "error text",
+          "foreground": "rgb(242, 207, 131)",
+          "background": "rgb(63, 50, 26)",
+          "minimum": 4.5,
+          "ratio": 8.33773465205967
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browser": "158.0.8127.37"
+}

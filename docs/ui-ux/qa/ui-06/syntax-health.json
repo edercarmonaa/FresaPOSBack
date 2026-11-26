@@ -1,0 +1,16 @@
+﻿{
+    "http":  {
+                 "http://127.0.0.1:8080/up":  200,
+                 "http://127.0.0.1:8096/":  200,
+                 "http://127.0.0.1:8080/login":  200
+             },
+    "syntax":  {
+                   "public/js/ui/admin.js":  0,
+                   "docs/ui-ux/qa/ui-06/router.php":  0,
+                   "tests/Feature/AdminComponentsTest.php":  0,
+                   "docs/ui-ux/qa/ui-06/export-catalog.php":  0,
+                   "docs/ui-ux/qa/ui-06/browser-check.cjs":  0,
+                   "docs/ui-ux/qa/ui-06/additional-checks.cjs":  0
+               },
+    "diff_check":  0
+}

@@ -1,0 +1,16 @@
+{
+  "manifest_entries": 229,
+  "new_files": 227,
+  "changed_existing_files": [
+    "Modules/Sales/resources/views/reasons.blade.php",
+    "Modules/Sales/resources/views/livewire/reason-administration.blade.php",
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "previous_manifests_unchanged": true,
+  "existing_tests_unchanged": true,
+  "protected_files_unchanged": true,
+  "report_sections": 22,
+  "missing_markdown_links": [],
+  "local_app_key_leaks": [],
+  "staged_files": []
+}

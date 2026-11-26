@@ -1,0 +1,53 @@
+{
+  "baseline": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "baseline_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "328",
+    "assertions": "1367",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "85.436725"
+  },
+  "final": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "final_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "358",
+    "assertions": "1433",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "181.700470"
+  },
+  "integration": {
+    "name": "CLI Arguments",
+    "tests": "66",
+    "assertions": "1075",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "135.398102"
+  },
+  "new_test_attempt_01": {
+    "name": "Tests\\Feature\\CashPresentationTest",
+    "file": "C:\\Repos\\FresaPOSBack\\tests\\Feature\\CashPresentationTest.php",
+    "tests": "30",
+    "assertions": "4",
+    "errors": "29",
+    "failures": "0",
+    "skipped": "0",
+    "time": "5.136612"
+  }
+}

@@ -1,0 +1,10 @@
+﻿[
+    {
+        "path":  "/up",
+        "status":  200
+    },
+    {
+        "path":  "/login",
+        "status":  200
+    }
+]
