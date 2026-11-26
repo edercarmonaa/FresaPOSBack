@@ -1,0 +1,28 @@
+{
+  "initial_head": "64cdc3f3d22da16794b932b9486bc319ea33c691",
+  "final_head": "64cdc3f3d22da16794b932b9486bc319ea33c691",
+  "branch": "main",
+  "initial_status": [],
+  "tracked_checked": 2707,
+  "tracked_changed": [
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "authorized_existing_document_change_only": true,
+  "existing_application_and_tests_changed": [],
+  "protected_checked": 10,
+  "protected_changed": [],
+  "historical_manifests": [
+    {
+      "stage": "ui-00",
+      "checked": 48,
+      "changed": []
+    },
+    {
+      "stage": "ui-01",
+      "checked": 117,
+      "changed": []
+    }
+  ],
+  "staged_files": "",
+  "database_row_hashes_checked": false
+}

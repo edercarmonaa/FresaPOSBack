@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+    <title>FresaPOS · Catálogo Design System UI-02</title>
+    <link rel="icon" href="data:,">
+    <script src="/js/ui/theme.js"></script>
+    <link rel="preload" href="/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/css/ui/tokens.css">
+    <link rel="stylesheet" href="/css/ui/components.css">
+    <link rel="stylesheet" href="/catalog.css">
+    <script src="/catalog.js" defer></script>
+</head>
+<body class="ui-page">
+    <a href="#catalog-content" class="ui-link catalog-skip">Saltar al contenido</a>
+    <header class="catalog-header">
+        <div><span class="catalog-tag">CATÁLOGO UI-02</span><strong>FresaPOS</strong><span>Componentes reales · Sin operaciones de negocio</span></div>
+        <label class="catalog-theme" for="theme"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /></svg>
+<span>Apariencia</span><select class="ui-select" id="theme" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+    </header>
+    <main id="catalog-content" class="catalog-main" tabindex="-1">
+        <div class="catalog-intro"><div><p class="catalog-eyebrow">BASE VISUAL 1.0 · PENDIENTE DE ACEPTACIÓN</p><h1 class="ui-heading">Una base común para FresaPOS</h1><p class="ui-muted">Tokens y componentes Blade preparados para integrar por etapas. Las pantallas operativas todavía conservan su presentación actual.</p></div><span class="ui-badge ui-badge--info">Recursos locales · Sin CDN</span>
+</div>
+        <nav class="catalog-links" aria-label="Secciones del catálogo"><a class="ui-link" href="#identity">Identidad</a><a class="ui-link" href="#actions">Acciones</a><a class="ui-link" href="#fields">Campos</a><a class="ui-link" href="#states">Estados</a><a class="ui-link" href="#tables">Tablas</a></nav>
+        <section id="identity" class="catalog-section"><h2 class="ui-section-title">Identidad y jerarquía</h2><div class="catalog-grid">
+            <section class="ui-card">
+    <h2 class="ui-card-title">Color con un propósito</h2>    <div class="catalog-swatches"><div><span class="catalog-swatch catalog-swatch--navy"></span>Marino<small>#0F172A</small></div><div><span class="catalog-swatch catalog-swatch--brand"></span>Corporativo<small>#2563EB</small></div><div><span class="catalog-swatch catalog-swatch--primary"></span>Acción<small>Según tema</small></div><div><span class="catalog-swatch catalog-swatch--surface"></span>Superficie<small>Según tema</small></div></div><p class="ui-muted">Primitivos → semánticos → componentes. Los roles mantienen su significado al cambiar de tema.</p>
+</section>
+            <section class="ui-card">
+    <h2 class="ui-card-title">Inter local · Lectura clara</h2>    <p class="catalog-type-title">La información, en su lugar.</p><p>Texto general 14 px. Jerarquía contenida, pesos moderados y alternativas del sistema.</p><p><span class="ui-money">0123456789</span> · <span class="ui-money">$1,234.0000</span></p><p class="ui-muted">Cadena tipográfica de muestra; no corresponde a datos del sistema.</p><div class="catalog-icon-row"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 21l-5-5m2-6a8 8 0 1 1-16 0 8 8 0 0 1 16 0" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</div>
+</section>
+        </div></section>
+        <section id="actions" class="catalog-section"><h2 class="ui-section-title">Acciones y estados</h2><section class="ui-card">
+        <div class="catalog-actions">
+            <button type="button" class="ui-button ui-button--primary" data-demo="Muestra de acción principal; no se envía ninguna operación."><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+Principal</button>
+            <button type="button" class="ui-button ui-button--secondary" data-demo="Muestra de acción secundaria.">Secundaria</button>
+            <button type="button" class="ui-button ui-button--danger" data-demo="Muestra visual crítica. La integración conservará las confirmaciones y permisos existentes."><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+Acción crítica · muestra</button>
+            <button type="button" class="ui-button ui-button--primary" disabled="disabled">No disponible</button>
+            <button type="button" class="ui-button ui-button--secondary" aria-label="Buscar, muestra de botón de icono" data-demo="Botón con nombre accesible."><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 21l-5-5m2-6a8 8 0 1 1-16 0 8 8 0 0 1 16 0" /></svg></button>
+        </div><p class="ui-muted">Botones de ejemplo: solo muestran una explicación. No guardan, confirman ni ejecutan acciones reales. El foco se puede recorrer con Tab.</p><div class="catalog-actions"><span class="ui-badge ui-badge--neutral">Neutral · muestra</span>
+<span class="ui-badge ui-badge--success"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" /></svg>
+Activo · muestra</span>
+<span class="ui-badge ui-badge--warning">Pendiente · muestra</span>
+<span class="ui-badge ui-badge--error">Restringido · muestra</span>
+<span class="ui-badge ui-badge--info">Información · muestra</span>
+</div>
+</section>
+</section>
+        <section id="fields" class="catalog-section"><h2 class="ui-section-title">Campos con contexto</h2><section class="ui-card">
+        <div class="catalog-grid">
+            <div class="ui-field">
+    <label class="ui-label" for="sample-name">Nombre <span>(obligatorio)</span></label>
+    <input type="text" class="ui-input" id="sample-name" name="sample_name" value="Producto de muestra" readonly="readonly" required="required" aria-describedby="sample-name-help">
+    <p class="ui-help" id="sample-name-help">Campo de muestra, de solo lectura.</p>    </div>
+            <div class="ui-field">
+    <label class="ui-label" for="sample-category">Categoría</label>
+    <select class="ui-select" id="sample-category" name="sample_category"><option>Panadería · muestra</option><option>Bebidas · muestra</option></select>
+        </div>
+            <div class="ui-field">
+    <label class="ui-label" for="sample-error">Campo con error · muestra</label>
+    <input type="text" aria-invalid="true" class="ui-input" id="sample-error" value="Muestra inválida" readonly="readonly" aria-describedby="sample-error-error">
+        <p class="ui-field-error" id="sample-error-error">Ejemplo de mensaje asociado al campo.</p></div>
+            <div class="ui-field">
+    <label class="ui-label" for="sample-disabled">No disponible</label>
+    <input type="text" class="ui-input" id="sample-disabled" value="Campo deshabilitado" disabled="disabled">
+        </div>
+            <div class="ui-field">
+    <label class="ui-label" for="sample-note">Observación</label>
+    <textarea class="ui-textarea" id="sample-note" readonly aria-describedby="sample-note-help">Observación de muestra.</textarea>
+    <p class="ui-help" id="sample-note-help">La estructura conserva etiquetas e IDs explícitos.</p>    </div>
+            <div class="ui-field">
+    <label class="ui-label" for="sample-loading">Estado de procesamiento · muestra</label>
+    <button type="button" class="ui-button ui-button--primary" id="sample-loading" disabled="disabled" aria-busy="true">Procesando · variante estática</button>
+<p class="ui-help">No indica que haya una operación en curso.</p>
+        </div>
+        </div>
+</section>
+</section>
+        <section id="states" class="catalog-section"><h2 class="ui-section-title">Mensajes que orientan</h2><div class="catalog-grid">
+            <div class="ui-alert ui-alert--success">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6" /></svg>
+    <div><strong class="ui-alert-title">Variante de éxito</strong>Muestra visual. La aplicación conservará sus mensajes reales.</div>
+</div>
+            <div class="ui-alert ui-alert--warning">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+    <div><strong class="ui-alert-title">Variante de advertencia</strong>Explicar el contexto y la acción necesaria sin depender solo del color.</div>
+</div>
+            <div class="ui-alert ui-alert--error">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+    <div><strong class="ui-alert-title">Variante de error</strong>Mantener los errores relevantes junto a la operación o campo.</div>
+</div>
+            <div class="ui-alert ui-alert--info">
+    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+    <div><strong class="ui-alert-title">Variante informativa</strong>Los roles vivos se agregan únicamente cuando el flujo real lo necesita.</div>
+</div>
+        </div></section>
+        <section id="tables" class="catalog-section"><div class="catalog-table-heading"><h2 class="ui-section-title">Tablas legibles</h2><label for="density">Densidad <select class="ui-select" id="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></label></div><p class="ui-muted">Tabla estática de muestra. En pantallas pequeñas puede desplazarse horizontalmente, también con teclado.</p><div tabindex="0" role="region" aria-label="Elementos del catálogo visual, sin datos operativos" class="ui-table-region">
+    <table class="ui-table">
+        <caption>Elementos del catálogo visual, sin datos operativos</caption>
+        <thead><tr><th scope="col">Componente</th><th scope="col">Uso</th><th scope="col">Estado</th><th scope="col" class="ui-numeric">Tamaño de referencia</th></tr></thead><tbody><tr><td>Botón principal</td><td>Acción explícita</td><td><span class="ui-badge ui-badge--info">Disponible en la base</span>
+</td><td class="ui-numeric">44 px</td></tr><tr><td>Campo de texto</td><td>Entrada etiquetada</td><td><span class="ui-badge ui-badge--info">Disponible en la base</span>
+</td><td class="ui-numeric">44 px</td></tr><tr><td>Mensajes</td><td>Contexto de operación</td><td><span class="ui-badge ui-badge--neutral">Según contenido</span>
+</td><td class="ui-numeric">Adaptable</td></tr></tbody>
+    </table>
+</div>
+<div class="ui-empty catalog-empty"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<h3>Estado vacío · muestra</h3><p>La explicación y las acciones deben corresponder a la información real.</p></div></section>
+        <div id="catalog-notice" class="ui-alert ui-alert--info catalog-notice" role="status" hidden></div>
+        <footer class="catalog-footer">FresaPOS · UI-02 · Catálogo de componentes renderizados con Blade. No es una pantalla funcional ni una ruta de Laravel.</footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿[
+    {
+        "path":  "/up",
+        "method":  "GET",
+        "status":  200
+    },
+    {
+        "path":  "/api/v1/ping",
+        "method":  "GET",
+        "status":  200
+    }
+]

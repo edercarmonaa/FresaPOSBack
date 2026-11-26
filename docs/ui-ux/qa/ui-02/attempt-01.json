@@ -1,0 +1,681 @@
+{
+  "origin": "http://127.0.0.1:8092",
+  "started_at_utc": "2026-11-26T16:28:08.313Z",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-catalog-light-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-catalog-light-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-catalog-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-catalog-light-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-catalog-light-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-catalog-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-catalog-light-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-catalog-dark-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-catalog-dark-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-catalog-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-catalog-dark-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-catalog-dark-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-catalog-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-catalog-dark-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-catalog-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-catalog-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-catalog-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-catalog-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed_controls": [],
+      "undersized_controls": [],
+      "font": true
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Automático sigue sistema oscuro",
+      "passed": true
+    },
+    {
+      "name": "Selección explícita prevalece",
+      "passed": true
+    },
+    {
+      "name": "Tema persiste al recargar",
+      "passed": true
+    },
+    {
+      "name": "Solo persiste theme visual",
+      "passed": true
+    },
+    {
+      "name": "Densidad respeta mínimo táctil y cambia filas",
+      "passed": true,
+      "compact": 47,
+      "comfortable": 71
+    },
+    {
+      "name": "Movimiento reducido desactiva transición",
+      "passed": true
+    },
+    {
+      "name": "Foco de teclado visible",
+      "passed": true
+    },
+    {
+      "name": "Botón de muestra solo explica",
+      "passed": true
+    },
+    {
+      "name": "Texto al 200 por ciento refluye a 320",
+      "passed": false
+    },
+    {
+      "name": "JSON inválido vuelve a automático",
+      "passed": true
+    },
+    {
+      "name": "Valores y claves ajenas se descartan",
+      "passed": true
+    },
+    {
+      "name": "Storage bloqueado permite tema en memoria",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#142137",
+          "background": "#fff",
+          "minimum": 4.5,
+          "ratio": 16.123407801609634,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#526178",
+          "background": "#fff",
+          "minimum": 4.5,
+          "ratio": 6.287691490602022,
+          "passed": true
+        },
+        {
+          "name": "Suave",
+          "foreground": "#526178",
+          "background": "#f8fafc",
+          "minimum": 4.5,
+          "ratio": 6.009592752992061,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#fff",
+          "background": "#1d4ed8",
+          "minimum": 4.5,
+          "ratio": 6.701618401398807,
+          "passed": true
+        },
+        {
+          "name": "Selección",
+          "foreground": "#1e40af",
+          "background": "#eaf1ff",
+          "minimum": 4.5,
+          "ratio": 7.694247805196307,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#166534",
+          "background": "#e9f7ef",
+          "minimum": 4.5,
+          "ratio": 6.456472807649506,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#854d0e",
+          "background": "#fff5df",
+          "minimum": 4.5,
+          "ratio": 6.322099099738203,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#b42338",
+          "background": "#fff0f1",
+          "minimum": 4.5,
+          "ratio": 5.863240091705818,
+          "passed": true
+        },
+        {
+          "name": "Borde",
+          "foreground": "#7f8fa5",
+          "background": "#fff",
+          "minimum": 3,
+          "ratio": 3.2942664921806943,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#2563eb",
+          "background": "#fff",
+          "minimum": 3,
+          "ratio": 5.168555560022562,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#edf2fa",
+          "background": "#151f30",
+          "minimum": 4.5,
+          "ratio": 14.703890179903702,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#b1bfd2",
+          "background": "#151f30",
+          "minimum": 4.5,
+          "ratio": 8.856226215398179,
+          "passed": true
+        },
+        {
+          "name": "Suave",
+          "foreground": "#b1bfd2",
+          "background": "#1b283b",
+          "minimum": 4.5,
+          "ratio": 7.961926825294613,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#102448",
+          "background": "#a7c6ff",
+          "minimum": 4.5,
+          "ratio": 8.892618902078969,
+          "passed": true
+        },
+        {
+          "name": "Selección",
+          "foreground": "#bcd4ff",
+          "background": "#233b63",
+          "minimum": 4.5,
+          "ratio": 7.457653725394572,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#9be3b5",
+          "background": "#15382b",
+          "minimum": 4.5,
+          "ratio": 8.605887827578451,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#f2cf83",
+          "background": "#3f321a",
+          "minimum": 4.5,
+          "ratio": 8.33773465205967,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#ffbac8",
+          "background": "#41252e",
+          "minimum": 4.5,
+          "ratio": 8.574848480333031,
+          "passed": true
+        },
+        {
+          "name": "Borde",
+          "foreground": "#657b97",
+          "background": "#151f30",
+          "minimum": 3,
+          "ratio": 3.8041453230264386,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#b6d1ff",
+          "background": "#151f30",
+          "minimum": 3,
+          "ratio": 10.667104685759428,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "edge",
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#142137",
+          "background": "#fff",
+          "minimum": 4.5,
+          "ratio": 16.123407801609634,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#526178",
+          "background": "#fff",
+          "minimum": 4.5,
+          "ratio": 6.287691490602022,
+          "passed": true
+        },
+        {
+          "name": "Suave",
+          "foreground": "#526178",
+          "background": "#f8fafc",
+          "minimum": 4.5,
+          "ratio": 6.009592752992061,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#fff",
+          "background": "#1d4ed8",
+          "minimum": 4.5,
+          "ratio": 6.701618401398807,
+          "passed": true
+        },
+        {
+          "name": "Selección",
+          "foreground": "#1e40af",
+          "background": "#eaf1ff",
+          "minimum": 4.5,
+          "ratio": 7.694247805196307,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#166534",
+          "background": "#e9f7ef",
+          "minimum": 4.5,
+          "ratio": 6.456472807649506,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#854d0e",
+          "background": "#fff5df",
+          "minimum": 4.5,
+          "ratio": 6.322099099738203,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#b42338",
+          "background": "#fff0f1",
+          "minimum": 4.5,
+          "ratio": 5.863240091705818,
+          "passed": true
+        },
+        {
+          "name": "Borde",
+          "foreground": "#7f8fa5",
+          "background": "#fff",
+          "minimum": 3,
+          "ratio": 3.2942664921806943,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#2563eb",
+          "background": "#fff",
+          "minimum": 3,
+          "ratio": 5.168555560022562,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "edge",
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#edf2fa",
+          "background": "#151f30",
+          "minimum": 4.5,
+          "ratio": 14.703890179903702,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#b1bfd2",
+          "background": "#151f30",
+          "minimum": 4.5,
+          "ratio": 8.856226215398179,
+          "passed": true
+        },
+        {
+          "name": "Suave",
+          "foreground": "#b1bfd2",
+          "background": "#1b283b",
+          "minimum": 4.5,
+          "ratio": 7.961926825294613,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#102448",
+          "background": "#a7c6ff",
+          "minimum": 4.5,
+          "ratio": 8.892618902078969,
+          "passed": true
+        },
+        {
+          "name": "Selección",
+          "foreground": "#bcd4ff",
+          "background": "#233b63",
+          "minimum": 4.5,
+          "ratio": 7.457653725394572,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#9be3b5",
+          "background": "#15382b",
+          "minimum": 4.5,
+          "ratio": 8.605887827578451,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#f2cf83",
+          "background": "#3f321a",
+          "minimum": 4.5,
+          "ratio": 8.33773465205967,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#ffbac8",
+          "background": "#41252e",
+          "minimum": 4.5,
+          "ratio": 8.574848480333031,
+          "passed": true
+        },
+        {
+          "name": "Borde",
+          "foreground": "#657b97",
+          "background": "#151f30",
+          "minimum": 3,
+          "ratio": 3.8041453230264386,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#b6d1ff",
+          "background": "#151f30",
+          "minimum": 3,
+          "ratio": 10.667104685759428,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "console_errors": [],
+  "unexpected_requests": [],
+  "violations": [
+    {
+      "name": "Texto al 200 por ciento refluye a 320"
+    }
+  ],
+  "headless": true,
+  "device_scale_factor": 1,
+  "throttling": "none",
+  "axe": false,
+  "lighthouse": false,
+  "screen_reader": false,
+  "completed_at_utc": "2026-11-26T16:28:20.009Z"
+}

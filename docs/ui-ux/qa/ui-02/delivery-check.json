@@ -1,0 +1,20 @@
+{
+  "markdown_missing_links": [],
+  "delivery_numbered_items": 22,
+  "final_pngs": 19,
+  "browser_checks_passed": true,
+  "health_statuses": [
+    200,
+    200
+  ],
+  "scope_checked": [
+    "docs/ui-ux/",
+    "public/css/ui/",
+    "public/js/ui/",
+    "public/fonts/ui/",
+    "resources/views/components/ui/",
+    "tests/Feature/DesignSystemRenderingTest.php"
+  ],
+  "syntax_checks": "Node --check and PHP lint executed separately",
+  "live_index_excluded_from_manifest": "docs/ui-ux/ESTADO.md"
+}
