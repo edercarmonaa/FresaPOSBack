@@ -31,7 +31,7 @@
             </aside>
             <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden></button>
         @endif
-        <main id="ui-main" tabindex="-1" class="ui-content {{ $uiContext === 'pos' || request()->routeIs('reports.*') ? 'ui-legacy-light' : '' }} @yield('mainClass', 'mx-auto max-w-4xl p-8')">
+        <main id="ui-main" tabindex="-1" class="ui-content {{ $uiContext === 'pos' ? 'ui-legacy-light' : '' }} @yield('mainClass', 'mx-auto max-w-4xl p-8')">
             @yield('content')
         </main>
     </div>

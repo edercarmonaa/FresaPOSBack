@@ -8,8 +8,9 @@ Actualizado: 26/11/2026. Este índice continúa el registro histórico de UI-00 
 | UI-01 | Aceptada por el responsable al responder «si» a la solicitud de iniciar UI-02 | [Propuesta visual](04-propuesta-visual.md), [informe histórico](entregas/UI-01.md), [QA](qa/ui-01/README.md); conservan su estado original de entrega |
 | UI-02 | Aceptada por el responsable mediante «adelanyte continua» al solicitar inicio de UI-03 | [Design System](05-design-system.md), [informe histórico](entregas/UI-02.md), [catálogo](catalogo/ui-02/README.md); conservan su estado original de entrega |
 | UI-03 | Aceptada por el responsable mediante «si continua» al autorizar UI-04 | [Layouts y navegación](08-layouts-navegacion.md), [informe](entregas/UI-03.md), [excepción autorizada](qa/ui-03/authorization.md) |
-| UI-04 | Pendiente de aceptación: interfaces y regresión de Auth finalizadas | [Informe](entregas/UI-04.md), [Auth](autenticacion-ui04.md), [QA](qa/ui-04/README.md) |
-| UI-05 y siguientes | Sin iniciar; requieren autorización | No se avanza automáticamente |
+| UI-04 | Aceptada por el responsable mediante «continua» al autorizar UI-05 | [Informe](entregas/UI-04.md), [Auth](autenticacion-ui04.md), [QA](qa/ui-04/README.md) |
+| UI-05 | Pendiente de aceptación: indicadores y regresión de Reportes finalizados | [Informe](entregas/UI-05.md), [Indicadores](dashboard-ui05.md), [QA](qa/ui-05/README.md) |
+| UI-06 y siguientes | Sin iniciar; requieren autorización | No se avanza automáticamente |
 
 Revisión local de UI-01: [abrir prototipo](http://127.0.0.1:8091). La aplicación operativa continúa en http://127.0.0.1:8080.
 

@@ -1,0 +1,16 @@
+﻿{
+    "http":  {
+                 "http://127.0.0.1:8080/up":  200,
+                 "http://127.0.0.1:8080/reports":  302,
+                 "http://127.0.0.1:8080/login":  200
+             },
+    "syntax":  {
+                   "docs/ui-ux/qa/ui-05/export-views.php":  0,
+                   "docs/ui-ux/qa/ui-05/router.php":  0,
+                   "tests/Feature/ReportPresentationTest.php":  0,
+                   "docs/ui-ux/qa/ui-05/additional-checks.cjs":  0,
+                   "docs/ui-ux/qa/ui-05/browser-check.cjs":  0,
+                   "tests/Fixtures/UI05/ReportFixture.php":  0
+               },
+    "diff_check":  0
+}

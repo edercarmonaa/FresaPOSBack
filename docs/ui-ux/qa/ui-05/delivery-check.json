@@ -1,0 +1,30 @@
+{
+  "report_sections": 22,
+  "local_links_missing": [],
+  "manifest_entries": 180,
+  "initial_files_verified": 3130,
+  "allowed_existing_changes": 4,
+  "new_files_before_manifest_and_check": 177,
+  "local_APP_KEY_present": false,
+  "fixture_tokens_scrubbed": true,
+  "historical_docs_unchanged": true,
+  "staged": 0,
+  "syntax_and_health": {
+    "http": {
+      "http://127.0.0.1:8080/up": 200,
+      "http://127.0.0.1:8080/reports": 302,
+      "http://127.0.0.1:8080/login": 200
+    },
+    "syntax": {
+      "docs/ui-ux/qa/ui-05/export-views.php": 0,
+      "docs/ui-ux/qa/ui-05/router.php": 0,
+      "tests/Feature/ReportPresentationTest.php": 0,
+      "docs/ui-ux/qa/ui-05/additional-checks.cjs": 0,
+      "docs/ui-ux/qa/ui-05/browser-check.cjs": 0,
+      "tests/Fixtures/UI05/ReportFixture.php": 0
+    },
+    "diff_check": 0
+  },
+  "post_review_pint": 0,
+  "accepted_by_user": false
+}

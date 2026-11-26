@@ -1,0 +1,40 @@
+{
+  "head_initial": "ee90df77c54261903d1e4972045225e4bcc2c402",
+  "head_final": "ee90df77c54261903d1e4972045225e4bcc2c402",
+  "initial_tracked_files": 3130,
+  "changed": [
+    "Modules/Reports/resources/views/error.blade.php",
+    "Modules/Reports/resources/views/index.blade.php",
+    "docs/ui-ux/ESTADO.md",
+    "resources/views/layouts/app.blade.php"
+  ],
+  "existing_test_files_checked": 168,
+  "existing_test_files_changed": [],
+  "protected_files": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "protected_files_changed": [],
+  "source_contracts": [
+    {
+      "file": "Modules/Reports/resources/views/index.blade.php",
+      "can_disabled_selected_csrf_routes_scripts_unchanged": true
+    },
+    {
+      "file": "Modules/Reports/resources/views/error.blade.php",
+      "can_disabled_selected_csrf_routes_scripts_unchanged": true
+    }
+  ],
+  "layout_only_removes_reports_light_boundary": true,
+  "historical_document_files_changed": [],
+  "operational_row_hashes_verified": false,
+  "staged_files": []
+}
