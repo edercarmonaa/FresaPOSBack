@@ -1,31 +1,45 @@
 @extends('layouts.app')
+@section('mainClass', 'ui-auth-page')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/ui/auth.css') }}">
+@endpush
 @section('content')
-    <h1 class="text-2xl font-semibold">Tu acceso</h1>
-    <p class="my-3">Empleado activo: <strong>{{ $identity->name }}</strong> ({{ $identity->username }})</p>
+    <header class="ui-auth-card">
+    <h1 class="ui-auth-title">Tu acceso</h1>
+    <p>Empleado activo: <strong>{{ $identity->name }}</strong> ({{ $identity->username }})</p>
     <p>Roles: {{ implode(', ', $identity->roles) }}</p>
-    @if (session('status'))<p role="status">{{ session('status') }}</p>@endif
-    @if ($errors->any())<ul role="alert">@foreach ($errors->all() as $message)<li>{{ $message }}</li>@endforeach</ul>@endif
-    @can('users.view')<a href="{{ route('auth.admin') }}" class="underline">Acceso administrativo</a>@endcan
-    <a href="{{ route('auth.password') }}" class="underline ml-3">Cambiar contraseña</a>
-    <h2 class="text-xl mt-6 mb-3">PIN personal</h2>
-    <form method="POST" action="{{ route('auth.pin') }}" class="space-y-2 max-w-md">@csrf
-        <label class="block">Confirma tu contraseña<input name="current_password" type="password" autocomplete="current-password" required class="border block p-2 w-full"></label>
-        <label class="block">PIN nuevo (4 a 6 dígitos)<input name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,6}" autocomplete="off" required class="border block p-2 w-full"></label>
-        <label class="block">Confirma el PIN<input name="pin_confirmation" type="password" inputmode="numeric" autocomplete="off" required class="border block p-2 w-full"></label>
-        <button class="border rounded px-3 py-2">Guardar PIN</button>
+    @if (session('status'))<p class="ui-auth-status" role="status">{{ session('status') }}</p>@endif
+    @if ($errors->any())<ul class="ui-auth-errors" role="alert">@foreach ($errors->all() as $message)<li>{{ $message }}</li>@endforeach</ul>@endif
+    @can('users.view')<a href="{{ route('auth.admin') }}">Acceso administrativo</a>@endcan
+    <a href="{{ route('auth.password') }}">Cambiar contraseña</a>
+    </header>
+    <div class="ui-auth-sections">
+    <section class="ui-auth-card">
+    <h2 class="ui-auth-subtitle">PIN personal</h2>
+    <form class="ui-auth-form" method="POST" action="{{ route('auth.pin') }}">@csrf
+        <label>Confirma tu contraseña<input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label>
+        <label>PIN nuevo (4 a 6 dígitos)<input class="ui-auth-input" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,6}" autocomplete="off" required></label>
+        <label>Confirma el PIN<input class="ui-auth-input" name="pin_confirmation" type="password" inputmode="numeric" autocomplete="off" required></label>
+        <button type="submit" class="ui-button ui-button--primary">Guardar PIN</button>
     </form>
-    <form method="POST" action="{{ route('auth.pin.disable') }}" class="my-3">@csrf<label>Confirma tu contraseña para deshabilitar el PIN <input name="current_password" type="password" autocomplete="current-password" required class="border p-2"></label><button class="border px-3 py-2">Deshabilitar PIN</button></form>
+    <form class="ui-auth-form" method="POST" action="{{ route('auth.pin.disable') }}">@csrf<label>Confirma tu contraseña para deshabilitar el PIN <input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label><button type="submit" class="ui-button ui-button--primary">Deshabilitar PIN</button></form>
+    </section>
     @can('cash.open')
-        <h2 class="text-xl mt-6 mb-3">Autorizar esta sesión como terminal</h2>
-        <form method="POST" action="{{ route('auth.terminal') }}">@csrf<label>Contraseña <input name="current_password" type="password" autocomplete="current-password" required class="border p-2"></label><button class="border px-3 py-2">Autorizar terminal</button></form>
+    <section class="ui-auth-card">
+        <h2 class="ui-auth-subtitle">Autorizar esta sesión como terminal</h2>
+        <form class="ui-auth-form" method="POST" action="{{ route('auth.terminal') }}">@csrf<label>Contraseña <input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label><button type="submit" class="ui-button ui-button--primary">Autorizar terminal</button></form>
+    </section>
     @endcan
-    <h2 class="text-xl mt-6 mb-3">Cambiar empleado</h2>
+    <section class="ui-auth-card">
+    <h2 class="ui-auth-subtitle">Cambiar empleado</h2>
     <p>Requiere una sesión de terminal autorizada. El acceso administrativo requiere contraseña completa.</p>
-    <form method="POST" action="{{ route('auth.employee') }}" class="my-3 space-y-2">@csrf
-        <label>Usuario entrante <input name="username" autocomplete="off" required class="border p-2"></label>
-        <label>PIN <input name="pin" type="password" inputmode="numeric" autocomplete="off" required class="border p-2"></label>
-        <button class="border px-3 py-2">Cambiar empleado</button>
+    <form class="ui-auth-form" method="POST" action="{{ route('auth.employee') }}">@csrf
+        <label>Usuario entrante <input class="ui-auth-input" name="username" autocomplete="off" required></label>
+        <label>PIN <input class="ui-auth-input" name="pin" type="password" inputmode="numeric" autocomplete="off" required></label>
+        <button type="submit" class="ui-button ui-button--primary">Cambiar empleado</button>
     </form>
+    </section>
+    </div>
     <livewire:auth.sessions />
-    <form method="POST" action="{{ route('auth.web.logout') }}" class="mt-6">@csrf<button class="bg-slate-900 text-white rounded px-4 py-2">Cerrar sesión</button></form>
+    <form class="ui-auth-form" method="POST" action="{{ route('auth.web.logout') }}">@csrf<button type="submit" class="ui-button ui-button--primary">Cerrar sesión</button></form>
 @endsection

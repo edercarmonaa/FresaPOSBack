@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/ui/layouts.css') }}">
     <script src="{{ asset('js/ui/layout.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+    @stack('styles')
     @livewireStyles
 </head>
 @php

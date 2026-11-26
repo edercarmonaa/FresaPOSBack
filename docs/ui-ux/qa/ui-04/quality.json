@@ -1,0 +1,43 @@
+{
+  "baseline": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "baseline_junit": {
+    "name": "CLI Arguments",
+    "tests": "277",
+    "assertions": "1073",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "18.186420"
+  },
+  "final": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "final_junit": {
+    "name": "CLI Arguments",
+    "tests": "285",
+    "assertions": "1167",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "45.713087"
+  },
+  "auth_integration": {
+    "name": "CLI Arguments",
+    "tests": "48",
+    "assertions": "450",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "115.546988"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "recorded_from_previous_executed_command": true,
+  "php_lint": {
+    "tests/Feature/AuthPresentationTest.php": 0,
+    "docs/ui-ux/qa/ui-04/export-views.php": 0,
+    "docs/ui-ux/qa/ui-04/router.php": 0
+  },
+  "node_check": {
+    "browser-check.cjs": 0,
+    "additional-checks.cjs": 0
+  },
+  "git_diff_check": 0,
+  "http": {
+    "http://127.0.0.1:8080/login": 200,
+    "http://127.0.0.1:8080/up": 200
+  }
+}

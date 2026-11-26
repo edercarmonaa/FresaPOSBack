@@ -1,0 +1,288 @@
+{
+  "checks": [
+    {
+      "name": "login-error light no overflow",
+      "passed": true
+    },
+    {
+      "name": "light error is associated",
+      "passed": true
+    },
+    {
+      "name": "light password has no value attribute",
+      "passed": true
+    },
+    {
+      "name": "account-empty light no overflow",
+      "passed": true
+    },
+    {
+      "name": "light session empty state",
+      "passed": true
+    },
+    {
+      "name": "login-error dark no overflow",
+      "passed": true
+    },
+    {
+      "name": "dark error is associated",
+      "passed": true
+    },
+    {
+      "name": "dark password has no value attribute",
+      "passed": true
+    },
+    {
+      "name": "account-empty dark no overflow",
+      "passed": true
+    },
+    {
+      "name": "dark session empty state",
+      "passed": true
+    },
+    {
+      "name": "200 percent root font reflows at 320",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "name": "login-error",
+      "pairs": [
+        {
+          "selector": "main h1",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main label",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main input:not([type=hidden])",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "input border",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.485130093589804,
+          "minimum": 3
+        },
+        {
+          "selector": "main .ui-button--primary",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(29, 78, 216)",
+          "ratio": 6.701618401398807,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-error",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.485130093589804,
+          "minimum": 4.5
+        }
+      ]
+    },
+    {
+      "theme": "light",
+      "name": "account-empty",
+      "pairs": [
+        {
+          "selector": "main h1",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main label",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main input:not([type=hidden])",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "input border",
+          "foreground": "rgb(127, 143, 165)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 3.2942664921806943,
+          "minimum": 3
+        },
+        {
+          "selector": "main .ui-button--primary",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(29, 78, 216)",
+          "ratio": 6.701618401398807,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-button--secondary",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-errors",
+          "foreground": "rgb(180, 35, 56)",
+          "background": "rgb(255, 240, 241)",
+          "ratio": 5.863240091705818,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-status",
+          "foreground": "rgb(22, 101, 52)",
+          "background": "rgb(233, 247, 239)",
+          "ratio": 6.456472807649506,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main caption",
+          "foreground": "rgb(82, 97, 120)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.287691490602022,
+          "minimum": 4.5
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "name": "login-error",
+      "pairs": [
+        {
+          "selector": "main h1",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main label",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main input:not([type=hidden])",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "input border",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 10.31795643399342,
+          "minimum": 3
+        },
+        {
+          "selector": "main .ui-button--primary",
+          "foreground": "rgb(16, 36, 72)",
+          "background": "rgb(167, 198, 255)",
+          "ratio": 8.892618902078969,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-error",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 10.31795643399342,
+          "minimum": 4.5
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "name": "account-empty",
+      "pairs": [
+        {
+          "selector": "main h1",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main label",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main input:not([type=hidden])",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "input border",
+          "foreground": "rgb(101, 123, 151)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 3.8041453230264386,
+          "minimum": 3
+        },
+        {
+          "selector": "main .ui-button--primary",
+          "foreground": "rgb(16, 36, 72)",
+          "background": "rgb(167, 198, 255)",
+          "ratio": 8.892618902078969,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-button--secondary",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-errors",
+          "foreground": "rgb(255, 186, 200)",
+          "background": "rgb(65, 37, 46)",
+          "ratio": 8.574848480333031,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main .ui-auth-status",
+          "foreground": "rgb(155, 227, 181)",
+          "background": "rgb(21, 56, 43)",
+          "ratio": 8.605887827578451,
+          "minimum": 4.5
+        },
+        {
+          "selector": "main caption",
+          "foreground": "rgb(177, 191, 210)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 8.856226215398179,
+          "minimum": 4.5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "root_font_scale": 2,
+  "real_browser_zoom": false,
+  "browser": "158.0.8127.37"
+}

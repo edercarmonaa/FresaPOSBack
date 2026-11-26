@@ -1,26 +1,32 @@
-<section>
-    <h2 class="text-xl mt-6 mb-3">Administración de sesiones</h2>
+<section class="ui-auth-card ui-auth-sessions">
+    <h2 class="ui-auth-subtitle">Administración de sesiones</h2>
     @can('users.status')
-        <form wire:submit="consult" class="my-3">
+        <form class="ui-auth-form" wire:submit="consult">
             <label>ULID del usuario (vacío para tus accesos)
-                <input wire:model="userId" class="border p-2" maxlength="26">
+                <input class="ui-auth-input" wire:model="userId"  maxlength="26">
             </label>
-            <button class="border px-3 py-2">Consultar</button>
+            <button type="submit" class="ui-button ui-button--primary">Consultar</button>
         </form>
     @endcan
     <p>Usuario: {{ $identity?->name ?? 'Usuario inactivo o eliminado' }}</p>
     @error('userId')<p role="alert">{{ $message }}</p>@enderror
-    @if ($status)<p role="status">{{ $status }}</p>@endif
-    <table class="my-3 w-full text-left">
-        <thead><tr><th>Acceso</th><th>Inicio UTC</th><th>Última actividad UTC</th><th>Vigencia UTC</th><th>Estado</th><th>Acción</th></tr></thead>
-        <tbody>@foreach ($sessions as $access)
+    @if ($status)<p class="ui-auth-status" role="status">{{ $status }}</p>@endif
+    <div class="ui-auth-table" role="region" aria-label="Sesiones de acceso" tabindex="0">
+    <table><caption>Accesos del usuario consultado · Fechas en UTC</caption>
+        <thead><tr><th scope="col">Acceso</th><th scope="col">Inicio UTC</th><th scope="col">Última actividad UTC</th><th scope="col">Vigencia UTC</th><th scope="col">Estado</th><th scope="col">Acción</th></tr></thead>
+        <tbody>@forelse ($sessions as $access)
             <tr wire:key="{{ $access['id'] }}">
                 <td>{{ $access['channel'] }} @if ($access['client_name'])· {{ $access['client_name'] }}@endif</td><td>{{ $access['created_at'] }}</td>
                 <td>{{ $access['last_activity_at'] }}</td><td>{{ $access['expires_at'] }}</td><td>{{ ['active' => 'Activo', 'expired' => 'Expirado', 'revoked' => 'Revocado'][$access['state']] }}</td>
-                <td>@if ($access['state'] === 'active')<button wire:click="revoke('{{ $access['id'] }}')" wire:confirm="¿Revocar este acceso?" class="underline">Revocar</button>@endif</td>
+                <td>@if ($access['state'] === 'active')<button type="button" class="ui-button ui-button--secondary" wire:click="revoke('{{ $access['id'] }}')" wire:confirm="¿Revocar este acceso?">Revocar</button>@endif</td>
             </tr>
-        @endforeach</tbody>
+        @empty
+            <tr><td colspan="6">No hay accesos para mostrar.</td></tr>
+        @endforelse</tbody>
     </table>
-    <button wire:click="revokeOthers" wire:confirm="¿Cerrar tus demás accesos?" class="border px-3 py-2">Cerrar mis otros accesos</button>
-    <button wire:click="revokeAll" wire:confirm="¿Revocar todos los accesos del usuario consultado? Deberá autenticarse nuevamente." class="border px-3 py-2">Revocar todos</button>
+    </div>
+    <div class="ui-auth-actions">
+    <button type="button" class="ui-button ui-button--secondary" wire:click="revokeOthers" wire:confirm="¿Cerrar tus demás accesos?">Cerrar mis otros accesos</button>
+    <button type="button" class="ui-button ui-button--secondary" wire:click="revokeAll" wire:confirm="¿Revocar todos los accesos del usuario consultado? Deberá autenticarse nuevamente.">Revocar todos</button>
+    </div>
 </section>

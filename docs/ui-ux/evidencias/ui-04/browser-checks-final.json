@@ -1,0 +1,124 @@
+{
+  "started_at": "2026-11-26T19:54:45.993Z",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    }
+  ],
+  "screens": [],
+  "checks": [
+    {
+      "name": "native required validation",
+      "passed": true
+    },
+    {
+      "name": "keyboard reaches password",
+      "passed": true
+    },
+    {
+      "name": "keyboard focus visible",
+      "passed": true,
+      "detail": {
+        "style": "solid",
+        "width": "2px"
+      }
+    },
+    {
+      "name": "password remains masked",
+      "passed": true
+    },
+    {
+      "name": "automatic theme follows OS dark",
+      "passed": true
+    },
+    {
+      "name": "session table keyboard scroll",
+      "passed": true
+    },
+    {
+      "name": "large text no page overflow",
+      "passed": true
+    },
+    {
+      "name": "table density preference",
+      "passed": true
+    },
+    {
+      "name": "system reduced motion retained",
+      "passed": true
+    },
+    {
+      "name": "blocked storage fallback",
+      "passed": true
+    }
+  ],
+  "violations": [],
+  "errors": [],
+  "performance": [
+    {
+      "phase": "before",
+      "iteration": 1,
+      "cls": 0,
+      "lcp": 260
+    },
+    {
+      "phase": "before",
+      "iteration": 2,
+      "cls": 0,
+      "lcp": 156
+    },
+    {
+      "phase": "before",
+      "iteration": 3,
+      "cls": 0,
+      "lcp": 128
+    },
+    {
+      "phase": "before",
+      "iteration": 4,
+      "cls": 0,
+      "lcp": 136
+    },
+    {
+      "phase": "before",
+      "iteration": 5,
+      "cls": 0,
+      "lcp": 192
+    },
+    {
+      "phase": "after",
+      "iteration": 1,
+      "cls": 0,
+      "lcp": 164
+    },
+    {
+      "phase": "after",
+      "iteration": 2,
+      "cls": 0,
+      "lcp": 192
+    },
+    {
+      "phase": "after",
+      "iteration": 3,
+      "cls": 0,
+      "lcp": 180
+    },
+    {
+      "phase": "after",
+      "iteration": 4,
+      "cls": 0,
+      "lcp": 292
+    },
+    {
+      "phase": "after",
+      "iteration": 5,
+      "cls": 0,
+      "lcp": 312
+    }
+  ],
+  "authenticated_browser_e2e": false,
+  "axe": false,
+  "screen_reader": false,
+  "completed_at": "2026-11-26T19:55:01.207Z"
+}

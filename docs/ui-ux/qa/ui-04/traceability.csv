@@ -1,0 +1,7 @@
+requisito,cambio,riesgo,prueba,evidencia,resultado,limite
+Acceso,Tarjeta y campos DS,Bindings y CSRF,LayoutNavigationTest + AuthPresentationTest + AuthenticationTest,quality.json,Pasa,Navegador real solo GET
+Cuenta y contraseña,Tarjetas y jerarquía,Acciones y permisos,Comparación antigua/actual y Auth SQL,auth-integration.xml,Pasa,Vistas protegidas como fixtures
+Sesiones,Tabla enfocable y estado vacío,Revocación y confirmaciones,AuthPresentationTest + AdvancedSecurityTest,quality.json,Pasa,Sin operación real de navegador
+Temas y responsive,CSS scoped con tokens existentes,Contraste y reflujo,90 capturas + 21 comprobaciones finales,browser-summary.json,Pasa,Chrome/Edge headless
+Integridad,Ningún cambio de backend,Regresión no autorizada,Hashes 2957 archivos + contratos fuente,source-integrity.json,Pasa,Sin hashes de filas operativas
+Accesibilidad,"Nombres, error asociado, caption y foco",Teclado y contraste,30 pares + teclado + tamaño raíz,additional-results.json,Parcial validado,"AT, tacto y zoom nativo pendientes"

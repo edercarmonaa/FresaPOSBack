@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI04_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8094/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8094/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8094/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8094/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8094/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8094/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8094/css/ui/auth.css">
+    
+</head>
+<body class="ui-page" data-ui-context="admin">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8094">FresaPOS</a>
+        <span class="ui-workspace-label">Espacio de trabajo</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegación principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8094/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8094/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8094/admin" aria-label="Administración" title="Administración" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Administración</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8094/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+        <nav aria-label="Catálogo" class="mb-6 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-4">
+            <span class="ui-nav-heading">Catálogo</span>
+                                                <a href="http://127.0.0.1:8094/admin/catalog/products" aria-label="Productos" title="Productos" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Productos</span></a>
+                                                        <a href="http://127.0.0.1:8094/admin/catalog/categories" aria-label="Categorías" title="Categorías" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Categorías</span></a>
+                        <a href="http://127.0.0.1:8094/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link ml-auto px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+        </nav>
+        <nav aria-label="Administración de ventas" class="mb-6 flex flex-wrap gap-4 border-b pb-4"><a class="ui-nav-link rounded px-3 py-3 text-blue-700 underline" href="http://127.0.0.1:8094/admin/sales/reasons" aria-label="Motivos autorizados de ventas" title="Motivos autorizados de ventas" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+<span class="ui-nav-label">Motivos autorizados de ventas</span></a></nav>
+                <nav aria-label="Reportes" class="mb-4"><a class="ui-nav-link inline-flex min-h-11 items-center rounded border border-slate-300 bg-white px-4 py-2" href="http://127.0.0.1:8094/reports" aria-label="Reportes" title="Reportes" aria-current="false"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Reportes</span></a></nav>
+
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden></button>
+                <main data-ui-qa="static-no-session" id="ui-main" tabindex="-1" class="ui-content  ui-auth-page"><p role="note">UI-04 · Fixture visual after. Datos ficticios; sin sesión ni operaciones reales.</p>
+                <header class="ui-auth-card">
+    <h1 class="ui-auth-title">Tu acceso</h1>
+    <p>Empleado activo: <strong>Persona de prueba UI-04</strong> (ui_fixture)</p>
+    <p>Roles: cashier</p>
+            <a href="http://127.0.0.1:8094/admin">Acceso administrativo</a>    <a href="http://127.0.0.1:8094/auth/password">Cambiar contraseña</a>
+    </header>
+    <div class="ui-auth-sections">
+    <section class="ui-auth-card">
+    <h2 class="ui-auth-subtitle">PIN personal</h2>
+    <form class="ui-auth-form" method="POST" action="http://127.0.0.1:8094/auth/pin"><input type="hidden" name="_token" value="UI04_STATIC_NO_SESSION" autocomplete="off">        <label>Confirma tu contraseña<input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label>
+        <label>PIN nuevo (4 a 6 dígitos)<input class="ui-auth-input" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4,6}" autocomplete="off" required></label>
+        <label>Confirma el PIN<input class="ui-auth-input" name="pin_confirmation" type="password" inputmode="numeric" autocomplete="off" required></label>
+        <button type="submit" class="ui-button ui-button--primary">Guardar PIN</button>
+    </form>
+    <form class="ui-auth-form" method="POST" action="http://127.0.0.1:8094/auth/pin/disable"><input type="hidden" name="_token" value="UI04_STATIC_NO_SESSION" autocomplete="off"><label>Confirma tu contraseña para deshabilitar el PIN <input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label><button type="submit" class="ui-button ui-button--primary">Deshabilitar PIN</button></form>
+    </section>
+        <section class="ui-auth-card">
+        <h2 class="ui-auth-subtitle">Autorizar esta sesión como terminal</h2>
+        <form class="ui-auth-form" method="POST" action="http://127.0.0.1:8094/auth/terminal"><input type="hidden" name="_token" value="UI04_STATIC_NO_SESSION" autocomplete="off"><label>Contraseña <input class="ui-auth-input" name="current_password" type="password" autocomplete="current-password" required></label><button type="submit" class="ui-button ui-button--primary">Autorizar terminal</button></form>
+    </section>
+        <section class="ui-auth-card">
+    <h2 class="ui-auth-subtitle">Cambiar empleado</h2>
+    <p>Requiere una sesión de terminal autorizada. El acceso administrativo requiere contraseña completa.</p>
+    <form class="ui-auth-form" method="POST" action="http://127.0.0.1:8094/auth/employee"><input type="hidden" name="_token" value="UI04_STATIC_NO_SESSION" autocomplete="off">        <label>Usuario entrante <input class="ui-auth-input" name="username" autocomplete="off" required></label>
+        <label>PIN <input class="ui-auth-input" name="pin" type="password" inputmode="numeric" autocomplete="off" required></label>
+        <button type="submit" class="ui-button ui-button--primary">Cambiar empleado</button>
+    </form>
+    </section>
+    </div>
+    <section class="ui-auth-card ui-auth-sessions">
+    <h2 class="ui-auth-subtitle">Administración de sesiones</h2>
+            <form class="ui-auth-form" wire:submit="consult">
+            <label>ULID del usuario (vacío para tus accesos)
+                <input class="ui-auth-input" wire:model="userId"  maxlength="26">
+            </label>
+            <button type="submit" class="ui-button ui-button--primary">Consultar</button>
+        </form>
+        <p>Usuario: Persona de prueba UI-04</p>
+            <div class="ui-auth-table" role="region" aria-label="Sesiones de acceso" tabindex="0">
+    <table><caption>Accesos del usuario consultado · Fechas en UTC</caption>
+        <thead><tr><th scope="col">Acceso</th><th scope="col">Inicio UTC</th><th scope="col">Última actividad UTC</th><th scope="col">Vigencia UTC</th><th scope="col">Estado</th><th scope="col">Acción</th></tr></thead>
+        <tbody>            <tr wire:key="01ARZ3NDEKTSV4RRFFQ69G5FAV">
+                <td>web · Terminal de prueba</td><td>2026-11-26 12:00:00</td>
+                <td>2026-11-26 12:05:00</td><td>2026-11-26 20:00:00</td><td>Activo</td>
+                <td><button type="button" class="ui-button ui-button--secondary" wire:click="revoke('01ARZ3NDEKTSV4RRFFQ69G5FAV')" wire:confirm="¿Revocar este acceso?">Revocar</button></td>
+            </tr>
+                    <tr wire:key="01ARZ3NDEKTSV4RRFFQ69G5FAV">
+                <td>web · Terminal de prueba</td><td>2026-11-26 12:00:00</td>
+                <td>2026-11-26 12:05:00</td><td>2026-11-26 20:00:00</td><td>Expirado</td>
+                <td></td>
+            </tr>
+                    <tr wire:key="01ARZ3NDEKTSV4RRFFQ69G5FAV">
+                <td>web · Terminal de prueba</td><td>2026-11-26 12:00:00</td>
+                <td>2026-11-26 12:05:00</td><td>2026-11-26 20:00:00</td><td>Revocado</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="ui-auth-actions">
+    <button type="button" class="ui-button ui-button--secondary" wire:click="revokeOthers" wire:confirm="¿Cerrar tus demás accesos?">Cerrar mis otros accesos</button>
+    <button type="button" class="ui-button ui-button--secondary" wire:click="revokeAll" wire:confirm="¿Revocar todos los accesos del usuario consultado? Deberá autenticarse nuevamente.">Revocar todos</button>
+    </div>
+</section>
+
+    <form class="ui-auth-form" method="POST" action="http://127.0.0.1:8094/logout"><input type="hidden" name="_token" value="UI04_STATIC_NO_SESSION" autocomplete="off"><button type="submit" class="ui-button ui-button--primary">Cerrar sesión</button></form>
+        </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tamaño de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Según sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Menú lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+</body>
+</html>

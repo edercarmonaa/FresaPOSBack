@@ -1,0 +1,23 @@
+{
+  "geometry_screens": 90,
+  "before_images": 8,
+  "extra_images": 5,
+  "png_total": 103,
+  "initial_interactions": 10,
+  "initial_failed_check": "QA expected reduce instead of existing reduced; corrected, not a product failure",
+  "corrected_interactions": 10,
+  "corrected_violations": [],
+  "additional_checks": 11,
+  "contrast_pairs": 30,
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ],
+  "authenticated_browser_e2e": false
+}

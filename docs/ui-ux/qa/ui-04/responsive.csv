@@ -1,0 +1,91 @@
+engine,view,theme,width,height,screenshot,page_overflow,small_controls,scope
+chrome,real-login,light,2560,1440,../../evidencias/ui-04/chrome-real-login-light-2560x1440.png,False,0,real public GET
+chrome,login,light,2560,1440,../../evidencias/ui-04/chrome-login-light-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,2560,1440,../../evidencias/ui-04/chrome-password-light-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,2560,1440,../../evidencias/ui-04/chrome-account-light-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,2560,1440,../../evidencias/ui-04/chrome-admin-light-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,1920,1080,../../evidencias/ui-04/chrome-real-login-light-1920x1080.png,False,0,real public GET
+chrome,login,light,1920,1080,../../evidencias/ui-04/chrome-login-light-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,1920,1080,../../evidencias/ui-04/chrome-password-light-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,1920,1080,../../evidencias/ui-04/chrome-account-light-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,1920,1080,../../evidencias/ui-04/chrome-admin-light-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,1366,768,../../evidencias/ui-04/chrome-real-login-light-1366x768.png,False,0,real public GET
+chrome,login,light,1366,768,../../evidencias/ui-04/chrome-login-light-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,1366,768,../../evidencias/ui-04/chrome-password-light-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,1366,768,../../evidencias/ui-04/chrome-account-light-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,1366,768,../../evidencias/ui-04/chrome-admin-light-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,1024,768,../../evidencias/ui-04/chrome-real-login-light-1024x768.png,False,0,real public GET
+chrome,login,light,1024,768,../../evidencias/ui-04/chrome-login-light-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,1024,768,../../evidencias/ui-04/chrome-password-light-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,1024,768,../../evidencias/ui-04/chrome-account-light-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,1024,768,../../evidencias/ui-04/chrome-admin-light-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,768,1024,../../evidencias/ui-04/chrome-real-login-light-768x1024.png,False,0,real public GET
+chrome,login,light,768,1024,../../evidencias/ui-04/chrome-login-light-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,768,1024,../../evidencias/ui-04/chrome-password-light-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,768,1024,../../evidencias/ui-04/chrome-account-light-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,768,1024,../../evidencias/ui-04/chrome-admin-light-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,390,844,../../evidencias/ui-04/chrome-real-login-light-390x844.png,False,0,real public GET
+chrome,login,light,390,844,../../evidencias/ui-04/chrome-login-light-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,390,844,../../evidencias/ui-04/chrome-password-light-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,390,844,../../evidencias/ui-04/chrome-account-light-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,390,844,../../evidencias/ui-04/chrome-admin-light-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,light,320,844,../../evidencias/ui-04/chrome-real-login-light-320x844.png,False,0,real public GET
+chrome,login,light,320,844,../../evidencias/ui-04/chrome-login-light-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,password,light,320,844,../../evidencias/ui-04/chrome-password-light-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,account,light,320,844,../../evidencias/ui-04/chrome-account-light-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,admin,light,320,844,../../evidencias/ui-04/chrome-admin-light-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,2560,1440,../../evidencias/ui-04/chrome-real-login-dark-2560x1440.png,False,0,real public GET
+chrome,login,dark,2560,1440,../../evidencias/ui-04/chrome-login-dark-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,2560,1440,../../evidencias/ui-04/chrome-password-dark-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,2560,1440,../../evidencias/ui-04/chrome-account-dark-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,2560,1440,../../evidencias/ui-04/chrome-admin-dark-2560x1440.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,1920,1080,../../evidencias/ui-04/chrome-real-login-dark-1920x1080.png,False,0,real public GET
+chrome,login,dark,1920,1080,../../evidencias/ui-04/chrome-login-dark-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,1920,1080,../../evidencias/ui-04/chrome-password-dark-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,1920,1080,../../evidencias/ui-04/chrome-account-dark-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,1920,1080,../../evidencias/ui-04/chrome-admin-dark-1920x1080.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,1366,768,../../evidencias/ui-04/chrome-real-login-dark-1366x768.png,False,0,real public GET
+chrome,login,dark,1366,768,../../evidencias/ui-04/chrome-login-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,1366,768,../../evidencias/ui-04/chrome-password-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,1366,768,../../evidencias/ui-04/chrome-account-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,1366,768,../../evidencias/ui-04/chrome-admin-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,1024,768,../../evidencias/ui-04/chrome-real-login-dark-1024x768.png,False,0,real public GET
+chrome,login,dark,1024,768,../../evidencias/ui-04/chrome-login-dark-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,1024,768,../../evidencias/ui-04/chrome-password-dark-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,1024,768,../../evidencias/ui-04/chrome-account-dark-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,1024,768,../../evidencias/ui-04/chrome-admin-dark-1024x768.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,768,1024,../../evidencias/ui-04/chrome-real-login-dark-768x1024.png,False,0,real public GET
+chrome,login,dark,768,1024,../../evidencias/ui-04/chrome-login-dark-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,768,1024,../../evidencias/ui-04/chrome-password-dark-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,768,1024,../../evidencias/ui-04/chrome-account-dark-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,768,1024,../../evidencias/ui-04/chrome-admin-dark-768x1024.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,390,844,../../evidencias/ui-04/chrome-real-login-dark-390x844.png,False,0,real public GET
+chrome,login,dark,390,844,../../evidencias/ui-04/chrome-login-dark-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,390,844,../../evidencias/ui-04/chrome-password-dark-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,390,844,../../evidencias/ui-04/chrome-account-dark-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,390,844,../../evidencias/ui-04/chrome-admin-dark-390x844.png,False,0,"static fixture, no SQL/session"
+chrome,real-login,dark,320,844,../../evidencias/ui-04/chrome-real-login-dark-320x844.png,False,0,real public GET
+chrome,login,dark,320,844,../../evidencias/ui-04/chrome-login-dark-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,password,dark,320,844,../../evidencias/ui-04/chrome-password-dark-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,account,dark,320,844,../../evidencias/ui-04/chrome-account-dark-320x844.png,False,0,"static fixture, no SQL/session"
+chrome,admin,dark,320,844,../../evidencias/ui-04/chrome-admin-dark-320x844.png,False,0,"static fixture, no SQL/session"
+edge,real-login,light,1366,768,../../evidencias/ui-04/edge-real-login-light-1366x768.png,False,0,real public GET
+edge,login,light,1366,768,../../evidencias/ui-04/edge-login-light-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,password,light,1366,768,../../evidencias/ui-04/edge-password-light-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,account,light,1366,768,../../evidencias/ui-04/edge-account-light-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,admin,light,1366,768,../../evidencias/ui-04/edge-admin-light-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,real-login,light,390,844,../../evidencias/ui-04/edge-real-login-light-390x844.png,False,0,real public GET
+edge,login,light,390,844,../../evidencias/ui-04/edge-login-light-390x844.png,False,0,"static fixture, no SQL/session"
+edge,password,light,390,844,../../evidencias/ui-04/edge-password-light-390x844.png,False,0,"static fixture, no SQL/session"
+edge,account,light,390,844,../../evidencias/ui-04/edge-account-light-390x844.png,False,0,"static fixture, no SQL/session"
+edge,admin,light,390,844,../../evidencias/ui-04/edge-admin-light-390x844.png,False,0,"static fixture, no SQL/session"
+edge,real-login,dark,1366,768,../../evidencias/ui-04/edge-real-login-dark-1366x768.png,False,0,real public GET
+edge,login,dark,1366,768,../../evidencias/ui-04/edge-login-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,password,dark,1366,768,../../evidencias/ui-04/edge-password-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,account,dark,1366,768,../../evidencias/ui-04/edge-account-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,admin,dark,1366,768,../../evidencias/ui-04/edge-admin-dark-1366x768.png,False,0,"static fixture, no SQL/session"
+edge,real-login,dark,390,844,../../evidencias/ui-04/edge-real-login-dark-390x844.png,False,0,real public GET
+edge,login,dark,390,844,../../evidencias/ui-04/edge-login-dark-390x844.png,False,0,"static fixture, no SQL/session"
+edge,password,dark,390,844,../../evidencias/ui-04/edge-password-dark-390x844.png,False,0,"static fixture, no SQL/session"
+edge,account,dark,390,844,../../evidencias/ui-04/edge-account-dark-390x844.png,False,0,"static fixture, no SQL/session"
+edge,admin,dark,390,844,../../evidencias/ui-04/edge-admin-dark-390x844.png,False,0,"static fixture, no SQL/session"

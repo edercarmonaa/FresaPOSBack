@@ -1,0 +1,84 @@
+{
+  "head_initial": "ced8d601a6d1ca9ad9d9ebf3cab70b70c74a191c",
+  "head_final": "ced8d601a6d1ca9ad9d9ebf3cab70b70c74a191c",
+  "initial_tracked_files": 2957,
+  "changed": [
+    "Modules/Auth/resources/views/login.blade.php",
+    "Modules/Auth/resources/views/livewire-login.blade.php",
+    "Modules/Auth/resources/views/password.blade.php",
+    "Modules/Auth/resources/views/account.blade.php",
+    "resources/views/layouts/app.blade.php",
+    "Modules/Auth/resources/views/admin.blade.php",
+    "docs/ui-ux/ESTADO.md",
+    "Modules/Auth/resources/views/livewire-sessions.blade.php"
+  ],
+  "existing_tests_checked": 160,
+  "existing_tests_changed": [],
+  "protected_files_checked": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "protected_files_changed": [],
+  "auth_source_contract_checks": [
+    {
+      "file": "Modules/Auth/resources/views/login.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    },
+    {
+      "file": "Modules/Auth/resources/views/password.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    },
+    {
+      "file": "Modules/Auth/resources/views/account.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    },
+    {
+      "file": "Modules/Auth/resources/views/admin.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    },
+    {
+      "file": "Modules/Auth/resources/views/livewire-login.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    },
+    {
+      "file": "Modules/Auth/resources/views/livewire-sessions.blade.php",
+      "can": true,
+      "csrf": true,
+      "routes": true,
+      "wire": true,
+      "children": true
+    }
+  ],
+  "historical_files_unchanged": true,
+  "staged_files": [],
+  "operational_database_hashes_verified": false,
+  "note": "Comparación de todos los archivos inicialmente versionados; no se calcularon hashes de datos operativos."
+}
