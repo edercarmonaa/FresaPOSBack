@@ -1,0 +1,10 @@
+{
+  "phase": "inspection and baseline only",
+  "application_and_existing_tests_changed": false,
+  "tracked_checked": 2778,
+  "changed": [
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "test_patch_applied": false,
+  "required_approval": "update only the UI-02 isolation assertion for UI-03 integration"
+}

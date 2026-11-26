@@ -1,0 +1,4 @@
+﻿{
+    "exit_code":  0,
+    "command":  ".\\scripts\\local.cmd composer test -- --testsuite Feature,Architecture,Modules --log-junit .tools/ui03-post-review.xml"
+}

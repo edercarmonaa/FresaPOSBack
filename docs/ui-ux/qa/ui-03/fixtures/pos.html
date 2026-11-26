@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI03_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8093/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8093/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8093/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8093/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8093/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8093/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+    
+</head>
+<body class="ui-page" data-ui-context="pos">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8093">FresaPOS</a>
+        <span class="ui-workspace-label">Punto de venta</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegación principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8093/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2"  aria-current="page" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8093/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8093/admin" aria-label="Administración" title="Administración" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Administración</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8093/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+    
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden></button>
+                <main id="ui-main" tabindex="-1" class="ui-content ui-legacy-light mx-auto max-w-4xl p-8">
+             <div class="ui-alert ui-alert--info" role="note">UI-03 · Fixture estática de QA. Sin sesión, base de datos u operaciones reales.</div><h1 class="ui-heading" style="margin-top:24px">Revisión del layout pos</h1><p class="ui-muted" style="margin-top:16px">Se comprueban navegación y preferencias del layout real. No es una pantalla operativa ni añade funciones al sistema.</p>         </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tamaño de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Según sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Menú lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+</body>
+</html>

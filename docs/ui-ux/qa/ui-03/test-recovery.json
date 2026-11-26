@@ -1,0 +1,110 @@
+{
+    "reason": "Composer interrupted test teardown",
+    "database": "fresapos_test",
+    "owned_create_window": "2026-11-26 11:03:47..11:03:49",
+    "before": [
+        {
+            "name": "audit_security_events",
+            "created_at": "2026-11-26T11:03:48.070"
+        },
+        {
+            "name": "auth_access_sessions",
+            "created_at": "2026-11-26T11:03:48.047"
+        },
+        {
+            "name": "auth_employee_pins",
+            "created_at": "2026-11-26T11:03:48.063"
+        },
+        {
+            "name": "cash_movements",
+            "created_at": "2026-11-26T11:03:48.560"
+        },
+        {
+            "name": "cash_payment_methods",
+            "created_at": "2026-11-26T11:03:48.550"
+        },
+        {
+            "name": "cash_registers",
+            "created_at": "2026-11-26T11:03:48.517"
+        },
+        {
+            "name": "cash_sessions",
+            "created_at": "2026-11-26T11:03:48.527"
+        },
+        {
+            "name": "catalog_categories",
+            "created_at": "2026-11-26T11:03:48.447"
+        },
+        {
+            "name": "catalog_products",
+            "created_at": "2026-11-26T11:03:48.453"
+        },
+        {
+            "name": "idempotency_records",
+            "created_at": "2026-11-26T11:03:48.507"
+        },
+        {
+            "name": "model_has_permissions",
+            "created_at": "2026-11-26T11:03:47.997"
+        },
+        {
+            "name": "model_has_roles",
+            "created_at": "2026-11-26T11:03:47.990"
+        },
+        {
+            "name": "permissions",
+            "created_at": "2026-11-26T11:03:47.983"
+        },
+        {
+            "name": "personal_access_tokens",
+            "created_at": "2026-11-26T11:03:48.033"
+        },
+        {
+            "name": "probe_3b0e3ed54e46_children",
+            "created_at": "2026-11-26T11:03:47.953"
+        },
+        {
+            "name": "probe_3b0e3ed54e46_parents",
+            "created_at": "2026-11-26T11:03:47.947"
+        },
+        {
+            "name": "role_has_permissions",
+            "created_at": "2026-11-26T11:03:48.003"
+        },
+        {
+            "name": "roles",
+            "created_at": "2026-11-26T11:03:47.977"
+        },
+        {
+            "name": "sales_items",
+            "created_at": "2026-11-26T11:03:48.483"
+        },
+        {
+            "name": "sales_payments",
+            "created_at": "2026-11-26T11:03:48.577"
+        },
+        {
+            "name": "sales_sales",
+            "created_at": "2026-11-26T11:03:48.473"
+        },
+        {
+            "name": "sales_tables",
+            "created_at": "2026-11-26T11:03:48.467"
+        },
+        {
+            "name": "user_password_histories",
+            "created_at": "2026-11-26T11:03:48.013"
+        },
+        {
+            "name": "user_security_locks",
+            "created_at": "2026-11-26T11:03:48.020"
+        },
+        {
+            "name": "users",
+            "created_at": "2026-11-26T11:03:47.970"
+        }
+    ],
+    "after": [],
+    "operational_database_accessed": false,
+    "runtime_processes_verified_stopped": true
+}

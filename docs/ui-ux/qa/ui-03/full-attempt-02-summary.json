@@ -1,0 +1,14 @@
+{
+  "junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "927",
+    "assertions": "1202",
+    "errors": "633",
+    "failures": "0",
+    "skipped": "0",
+    "time": "21.450443"
+  },
+  "error_message_counts": {
+    "RuntimeException: Ya existe una tabla de seguridad; revisar e integrar mediante otra migraci\u00f3n, sin sobrescribirla.": 633
+  }
+}

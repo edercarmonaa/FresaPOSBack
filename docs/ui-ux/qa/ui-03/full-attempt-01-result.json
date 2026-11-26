@@ -1,0 +1,4 @@
+﻿{
+    "exit_code":  1,
+    "command":  ".\\scripts\\local.cmd composer test -- --log-junit .tools/ui03-full.xml"
+}

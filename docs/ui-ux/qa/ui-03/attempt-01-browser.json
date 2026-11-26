@@ -1,0 +1,1654 @@
+{
+  "started_at_utc": "2026-11-26T16:57:55.143Z",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33"
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-inicio-light-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-acceso-light-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-admin-fixture-light-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-pos-fixture-light-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-inicio-light-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-acceso-light-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-admin-fixture-light-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-pos-fixture-light-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-inicio-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-acceso-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-admin-fixture-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-pos-fixture-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-inicio-light-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-acceso-light-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-admin-fixture-light-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-pos-fixture-light-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-inicio-light-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-acceso-light-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-admin-fixture-light-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-pos-fixture-light-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-inicio-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-acceso-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-admin-fixture-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-pos-fixture-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-inicio-light-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-acceso-light-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 256,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 256,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-admin-fixture-light-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-pos-fixture-light-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-inicio-dark-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-acceso-dark-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-admin-fixture-dark-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-pos-fixture-dark-2560x1440.png",
+      "overflow": false,
+      "document_width": 2560,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-inicio-dark-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-acceso-dark-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-admin-fixture-dark-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-pos-fixture-dark-1920x1080.png",
+      "overflow": false,
+      "document_width": 1920,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-inicio-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-acceso-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-admin-fixture-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-pos-fixture-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-inicio-dark-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-acceso-dark-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-admin-fixture-dark-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-pos-fixture-dark-1024x768.png",
+      "overflow": false,
+      "document_width": 1024,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-inicio-dark-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-acceso-dark-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-admin-fixture-dark-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-pos-fixture-dark-768x1024.png",
+      "overflow": false,
+      "document_width": 768,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-inicio-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-acceso-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-admin-fixture-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-pos-fixture-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-inicio-dark-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-acceso-dark-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 256,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 256,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-admin-fixture-dark-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "chrome",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-pos-fixture-dark-320x844.png",
+      "overflow": false,
+      "document_width": 320,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "inicio",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-inicio-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-acceso-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-admin-fixture-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-pos-fixture-light-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "inicio",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-inicio-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-acceso-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "admin-fixture",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-admin-fixture-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "pos-fixture",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-pos-fixture-light-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-inicio-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-acceso-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 392,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-admin-fixture-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-pos-fixture-dark-1366x768.png",
+      "overflow": false,
+      "document_width": 1366,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "inicio",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-inicio-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-acceso-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [
+        {
+          "id": "username",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "password",
+          "tag": "INPUT",
+          "cls": "block border rounded p-2 w-full",
+          "width": 326,
+          "height": 37
+        },
+        {
+          "id": "",
+          "tag": "BUTTON",
+          "cls": "bg-slate-900 text-white rounded px-4 py-2",
+          "width": 67.671875,
+          "height": 35
+        }
+      ],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "admin-fixture",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-admin-fixture-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    },
+    {
+      "engine": "edge",
+      "view": "pos-fixture",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-pos-fixture-dark-390x844.png",
+      "overflow": false,
+      "document_width": 390,
+      "visible_h1": 1,
+      "duplicate_ids": [],
+      "unnamed": [],
+      "new_controls_small": [],
+      "legacy_controls_small": [],
+      "font": true
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Automático sigue SO oscuro",
+      "passed": true
+    },
+    {
+      "name": "Tema manual prevalece",
+      "passed": true
+    },
+    {
+      "name": "Menú colapsa en escritorio",
+      "passed": true
+    },
+    {
+      "name": "Preferencia de menú persiste",
+      "passed": true
+    },
+    {
+      "name": "Preferencias abre diálogo nativo",
+      "passed": true
+    },
+    {
+      "name": "Preferencias contiene Tab",
+      "passed": true
+    },
+    {
+      "name": "Escape devuelve foco",
+      "passed": true
+    },
+    {
+      "name": "Movimiento del SO respetado",
+      "passed": true
+    },
+    {
+      "name": "Solo cinco preferencias visuales",
+      "passed": true
+    },
+    {
+      "name": "Texto ampliado a 320 sin overflow",
+      "passed": true
+    },
+    {
+      "name": "Drawer abre con semántica e inert",
+      "passed": true
+    },
+    {
+      "name": "Drawer contiene Tab",
+      "passed": true
+    },
+    {
+      "name": "Drawer cierra y devuelve foco",
+      "passed": true
+    },
+    {
+      "name": "Resize libera inert",
+      "passed": true
+    },
+    {
+      "name": "Restablecer valores seguros",
+      "passed": true
+    },
+    {
+      "name": "JSON inválido normalizado",
+      "passed": true
+    },
+    {
+      "name": "Claves ajenas eliminadas y defaults",
+      "passed": true
+    },
+    {
+      "name": "Formulario conserva contrato",
+      "passed": true
+    },
+    {
+      "name": "Storage bloqueado funciona en memoria",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "console_errors": [],
+  "unexpected_requests": [],
+  "violations": [],
+  "headless": true,
+  "device_scale_factor": 1,
+  "throttling": "none",
+  "authenticated_business_e2e": false,
+  "fixture_note": "Static layout rendered with in-memory Gate; no authenticated session or operational data",
+  "axe": false,
+  "lighthouse": false,
+  "screen_reader": false,
+  "completed_at_utc": "2026-11-26T16:59:28.548Z"
+}

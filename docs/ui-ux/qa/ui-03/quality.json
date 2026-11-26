@@ -1,0 +1,64 @@
+{
+  "baseline": [
+    {
+      "task": "test -- --testsuite Feature,Architecture,Modules --log-junit .tools/ui03-baseline.xml",
+      "exit": 0
+    },
+    {
+      "task": "lint",
+      "exit": 0
+    },
+    {
+      "task": "analyse",
+      "exit": 0
+    },
+    {
+      "task": "validate --strict",
+      "exit": 0
+    },
+    {
+      "task": "check-platform-reqs",
+      "exit": 0
+    }
+  ],
+  "baseline_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "267",
+    "assertions": "1085",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "19.958822"
+  },
+  "final": [
+    {
+      "task": "test -- --testsuite Feature,Architecture,Modules --log-junit .tools/ui03-final.xml",
+      "exit": 0
+    },
+    {
+      "task": "lint",
+      "exit": 0
+    },
+    {
+      "task": "analyse",
+      "exit": 0
+    },
+    {
+      "task": "validate --strict",
+      "exit": 0
+    },
+    {
+      "task": "check-platform-reqs",
+      "exit": 0
+    }
+  ],
+  "final_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "282",
+    "assertions": "1144",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "18.642281"
+  }
+}

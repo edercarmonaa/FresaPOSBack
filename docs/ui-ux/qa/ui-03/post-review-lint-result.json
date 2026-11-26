@@ -1,0 +1,4 @@
+﻿{
+    "command":  "composer lint",
+    "exit_code":  0
+}

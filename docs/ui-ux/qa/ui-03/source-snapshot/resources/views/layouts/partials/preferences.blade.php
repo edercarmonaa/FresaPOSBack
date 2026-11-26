@@ -1,0 +1,11 @@
+<dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><x-ui.icon name="close" /></button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tamaño de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Según sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Menú lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>

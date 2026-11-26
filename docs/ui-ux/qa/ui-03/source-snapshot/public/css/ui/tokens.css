@@ -1,0 +1,38 @@
+/* FresaPOS UI — tokens compartidos, activación explícita mediante .ui-root. */
+@layer theme, base, components, utilities, ui.tokens, ui.base, ui.components;
+@layer ui.tokens {
+  .ui-root {
+    /* Primitivos: colores, escala 4/8 px, geometría y capas. */
+    --ui-blue-50:#eff6ff;--ui-blue-100:#dbeafe;--ui-blue-600:#2563eb;--ui-blue-700:#1d4ed8;--ui-navy-950:#0f172a;
+    --ui-space-1:4px;--ui-space-2:8px;--ui-space-3:12px;--ui-space-4:16px;--ui-space-5:20px;--ui-space-6:24px;--ui-space-8:32px;--ui-space-10:40px;
+    --ui-radius-sm:7px;--ui-radius-md:12px;--ui-radius-full:999px;--ui-border-width:1px;
+    --ui-font-body:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+    --ui-font-xs:.857rem;--ui-font-sm:.929rem;--ui-font-md:1rem;--ui-font-lg:1.143rem;--ui-font-xl:1.429rem;--ui-font-2xl:1.714rem;--ui-font-3xl:2.143rem;
+    --ui-leading:1.5;--ui-weight-normal:400;--ui-weight-medium:550;--ui-weight-strong:650;
+    --ui-z-base:0;--ui-z-sticky:20;--ui-z-overlay:40;--ui-z-dialog:60;--ui-z-notice:80;
+    --ui-duration:160ms;--ui-ease:cubic-bezier(.2,0,0,1);--ui-control-size:44px;--ui-table-row-padding:16px;
+  }
+  .ui-root, .ui-root[data-ui-theme=dark] .ui-legacy-light {
+    /* Una sola paleta clara: raíz y ámbitos heredados que aún no adoptan tema. */
+    --ui-bg:#f3f5f9;--ui-surface:#fff;--ui-surface-soft:#f8fafc;--ui-text:#142137;--ui-muted:#526178;
+    --ui-line:#dce3ed;--ui-control-border:#7f8fa5;--ui-primary:var(--ui-blue-700);--ui-primary-hover:#1e40af;--ui-on-primary:#fff;
+    --ui-selected:#eaf1ff;--ui-selected-text:#1e40af;--ui-focus:var(--ui-blue-600);
+    --ui-success:#166534;--ui-success-bg:#e9f7ef;--ui-warning:#854d0e;--ui-warning-bg:#fff5df;
+    --ui-error:#b42338;--ui-error-bg:#fff0f1;--ui-info:#1e40af;--ui-info-bg:#eaf1ff;
+    --ui-disabled-bg:#e8edf4;--ui-disabled-text:#617087;--ui-shadow:0 12px 42px #0f172a12;
+    /* Tokens de componentes: desacoplan consumidores de la paleta. */
+    --ui-button-bg:var(--ui-primary);--ui-button-text:var(--ui-on-primary);--ui-button-radius:var(--ui-radius-sm);
+    --ui-field-bg:var(--ui-surface);--ui-field-border:var(--ui-control-border);--ui-card-bg:var(--ui-surface);--ui-card-radius:var(--ui-radius-md);
+    color-scheme:light;
+  }
+  .ui-root[data-ui-theme=dark] {
+    --ui-bg:#0d1421;--ui-surface:#151f30;--ui-surface-soft:#1b283b;--ui-text:#edf2fa;--ui-muted:#b1bfd2;
+    --ui-line:#2d3d54;--ui-control-border:#657b97;--ui-primary:#a7c6ff;--ui-primary-hover:#c4d9ff;--ui-on-primary:#102448;
+    --ui-selected:#233b63;--ui-selected-text:#bcd4ff;--ui-focus:#b6d1ff;
+    --ui-success:#9be3b5;--ui-success-bg:#15382b;--ui-warning:#f2cf83;--ui-warning-bg:#3f321a;
+    --ui-error:#ffbac8;--ui-error-bg:#41252e;--ui-info:#bcd4ff;--ui-info-bg:#233b63;
+    --ui-disabled-bg:#29364a;--ui-disabled-text:#a7b4c7;--ui-shadow:0 16px 44px #0003;color-scheme:dark;
+  }
+  .ui-root[data-ui-density=compact]{--ui-table-row-padding:10px}
+  .ui-root[data-ui-density=comfortable]{--ui-table-row-padding:22px}
+}

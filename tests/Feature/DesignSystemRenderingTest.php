@@ -57,8 +57,14 @@ class DesignSystemRenderingTest extends TestCase
         }
     }
 
-    public function test_existing_application_does_not_load_the_new_system_yet(): void
+    public function test_existing_application_loads_the_local_design_system_in_ui03(): void
     {
-        $this->get('/')->assertOk()->assertDontSee('/css/ui/tokens.css', false)->assertDontSee('/js/ui/theme.js', false);
+        $this->get('/')->assertOk()
+            ->assertSee('/css/ui/tokens.css', false)
+            ->assertSee('/css/ui/components.css', false)
+            ->assertSee('/css/ui/layouts.css', false)
+            ->assertSee('/js/ui/theme.js', false)
+            ->assertSee('/js/ui/layout.js', false)
+            ->assertSee('ui-root', false);
     }
 }

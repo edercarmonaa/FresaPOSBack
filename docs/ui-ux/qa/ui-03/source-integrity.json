@@ -1,0 +1,67 @@
+{
+  "initial_head": "8c755f35edff47afe98946bcc35154acef0b526e",
+  "final_head": "8c755f35edff47afe98946bcc35154acef0b526e",
+  "branch": "main",
+  "initial_status": [],
+  "tracked_checked": 2778,
+  "changed": [
+    "Modules/Reports/resources/views/navigation.blade.php",
+    "Modules/Cash/resources/views/navigation.blade.php",
+    "Modules/Catalog/resources/views/navigation.blade.php",
+    "Modules/Sales/resources/views/navigation.blade.php",
+    "resources/views/layouts/app.blade.php",
+    "docs/ui-ux/ESTADO.md",
+    "tests/Feature/DesignSystemRenderingTest.php",
+    "Modules/Sales/resources/views/reasons-navigation.blade.php",
+    "public/css/ui/tokens.css",
+    "public/js/ui/theme.js"
+  ],
+  "protected_checked": 10,
+  "protected_changed": [],
+  "only_authorized_existing_test_change": true,
+  "other_existing_tests_unchanged": true,
+  "navigation_guard_directives": [
+    {
+      "file": "Modules/Cash/resources/views/navigation.blade.php",
+      "guard_directives_unchanged": true
+    },
+    {
+      "file": "Modules/Catalog/resources/views/navigation.blade.php",
+      "guard_directives_unchanged": true
+    },
+    {
+      "file": "Modules/Reports/resources/views/navigation.blade.php",
+      "guard_directives_unchanged": true
+    },
+    {
+      "file": "Modules/Sales/resources/views/navigation.blade.php",
+      "guard_directives_unchanged": true
+    },
+    {
+      "file": "Modules/Sales/resources/views/reasons-navigation.blade.php",
+      "guard_directives_unchanged": true
+    }
+  ],
+  "history": [
+    {
+      "stage": "ui-00",
+      "historical_document_entries_verified": 48,
+      "changed": [],
+      "product_sources_may_evolve_under_ui03_authorization": false
+    },
+    {
+      "stage": "ui-01",
+      "historical_document_entries_verified": 117,
+      "changed": [],
+      "product_sources_may_evolve_under_ui03_authorization": false
+    },
+    {
+      "stage": "ui-02",
+      "historical_document_entries_verified": 55,
+      "changed": [],
+      "product_sources_may_evolve_under_ui03_authorization": true
+    }
+  ],
+  "staged_files": [],
+  "operational_database_row_hashes_checked": false
+}

@@ -1,0 +1,5 @@
+﻿{"task":"test -- --testsuite Feature,Architecture,Modules --log-junit .tools/ui03-baseline.xml","exit":0}
+{"task":"lint","exit":0}
+{"task":"analyse","exit":0}
+{"task":"validate --strict","exit":0}
+{"task":"check-platform-reqs","exit":0}

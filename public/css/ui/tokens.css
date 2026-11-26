@@ -1,5 +1,5 @@
-/* FresaPOS UI 1.0 — opt-in mediante .ui-root. Sin estilos sobre páginas existentes. */
-@layer ui.tokens, ui.base, ui.components;
+/* FresaPOS UI — tokens compartidos, activación explícita mediante .ui-root. */
+@layer theme, base, components, utilities, ui.tokens, ui.base, ui.components;
 @layer ui.tokens {
   .ui-root {
     /* Primitivos: colores, escala 4/8 px, geometría y capas. */
@@ -11,7 +11,9 @@
     --ui-leading:1.5;--ui-weight-normal:400;--ui-weight-medium:550;--ui-weight-strong:650;
     --ui-z-base:0;--ui-z-sticky:20;--ui-z-overlay:40;--ui-z-dialog:60;--ui-z-notice:80;
     --ui-duration:160ms;--ui-ease:cubic-bezier(.2,0,0,1);--ui-control-size:44px;--ui-table-row-padding:16px;
-    /* Semánticos: tema claro predeterminado. */
+  }
+  .ui-root, .ui-root[data-ui-theme=dark] .ui-legacy-light {
+    /* Una sola paleta clara: raíz y ámbitos heredados que aún no adoptan tema. */
     --ui-bg:#f3f5f9;--ui-surface:#fff;--ui-surface-soft:#f8fafc;--ui-text:#142137;--ui-muted:#526178;
     --ui-line:#dce3ed;--ui-control-border:#7f8fa5;--ui-primary:var(--ui-blue-700);--ui-primary-hover:#1e40af;--ui-on-primary:#fff;
     --ui-selected:#eaf1ff;--ui-selected-text:#1e40af;--ui-focus:var(--ui-blue-600);

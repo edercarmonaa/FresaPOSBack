@@ -1,0 +1,91 @@
+engine,view,theme,width,height,evidence,overflow,new_controls_small,legacy_controls_small,scope
+chrome,inicio,light,2560,1440,../../evidencias/ui-03/chrome-inicio-light-2560x1440.png,False,0,0,real anonymous page
+chrome,acceso,light,2560,1440,../../evidencias/ui-03/chrome-acceso-light-2560x1440.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,2560,1440,../../evidencias/ui-03/chrome-admin-fixture-light-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,2560,1440,../../evidencias/ui-03/chrome-pos-fixture-light-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,2560,1440,../../evidencias/ui-03/chrome-reports-fixture-light-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,1920,1080,../../evidencias/ui-03/chrome-inicio-light-1920x1080.png,False,0,0,real anonymous page
+chrome,acceso,light,1920,1080,../../evidencias/ui-03/chrome-acceso-light-1920x1080.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,1920,1080,../../evidencias/ui-03/chrome-admin-fixture-light-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,1920,1080,../../evidencias/ui-03/chrome-pos-fixture-light-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,1920,1080,../../evidencias/ui-03/chrome-reports-fixture-light-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,1366,768,../../evidencias/ui-03/chrome-inicio-light-1366x768.png,False,0,0,real anonymous page
+chrome,acceso,light,1366,768,../../evidencias/ui-03/chrome-acceso-light-1366x768.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,1366,768,../../evidencias/ui-03/chrome-admin-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,1366,768,../../evidencias/ui-03/chrome-pos-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,1366,768,../../evidencias/ui-03/chrome-reports-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,1024,768,../../evidencias/ui-03/chrome-inicio-light-1024x768.png,False,0,0,real anonymous page
+chrome,acceso,light,1024,768,../../evidencias/ui-03/chrome-acceso-light-1024x768.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,1024,768,../../evidencias/ui-03/chrome-admin-fixture-light-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,1024,768,../../evidencias/ui-03/chrome-pos-fixture-light-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,1024,768,../../evidencias/ui-03/chrome-reports-fixture-light-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,768,1024,../../evidencias/ui-03/chrome-inicio-light-768x1024.png,False,0,0,real anonymous page
+chrome,acceso,light,768,1024,../../evidencias/ui-03/chrome-acceso-light-768x1024.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,768,1024,../../evidencias/ui-03/chrome-admin-fixture-light-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,768,1024,../../evidencias/ui-03/chrome-pos-fixture-light-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,768,1024,../../evidencias/ui-03/chrome-reports-fixture-light-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,390,844,../../evidencias/ui-03/chrome-inicio-light-390x844.png,False,0,0,real anonymous page
+chrome,acceso,light,390,844,../../evidencias/ui-03/chrome-acceso-light-390x844.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,390,844,../../evidencias/ui-03/chrome-admin-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,390,844,../../evidencias/ui-03/chrome-pos-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,390,844,../../evidencias/ui-03/chrome-reports-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,light,320,844,../../evidencias/ui-03/chrome-inicio-light-320x844.png,False,0,0,real anonymous page
+chrome,acceso,light,320,844,../../evidencias/ui-03/chrome-acceso-light-320x844.png,False,0,0,real anonymous page
+chrome,admin-fixture,light,320,844,../../evidencias/ui-03/chrome-admin-fixture-light-320x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,light,320,844,../../evidencias/ui-03/chrome-pos-fixture-light-320x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,light,320,844,../../evidencias/ui-03/chrome-reports-fixture-light-320x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,2560,1440,../../evidencias/ui-03/chrome-inicio-dark-2560x1440.png,False,0,0,real anonymous page
+chrome,acceso,dark,2560,1440,../../evidencias/ui-03/chrome-acceso-dark-2560x1440.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,2560,1440,../../evidencias/ui-03/chrome-admin-fixture-dark-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,2560,1440,../../evidencias/ui-03/chrome-pos-fixture-dark-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,2560,1440,../../evidencias/ui-03/chrome-reports-fixture-dark-2560x1440.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,1920,1080,../../evidencias/ui-03/chrome-inicio-dark-1920x1080.png,False,0,0,real anonymous page
+chrome,acceso,dark,1920,1080,../../evidencias/ui-03/chrome-acceso-dark-1920x1080.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,1920,1080,../../evidencias/ui-03/chrome-admin-fixture-dark-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,1920,1080,../../evidencias/ui-03/chrome-pos-fixture-dark-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,1920,1080,../../evidencias/ui-03/chrome-reports-fixture-dark-1920x1080.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,1366,768,../../evidencias/ui-03/chrome-inicio-dark-1366x768.png,False,0,0,real anonymous page
+chrome,acceso,dark,1366,768,../../evidencias/ui-03/chrome-acceso-dark-1366x768.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,1366,768,../../evidencias/ui-03/chrome-admin-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,1366,768,../../evidencias/ui-03/chrome-pos-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,1366,768,../../evidencias/ui-03/chrome-reports-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,1024,768,../../evidencias/ui-03/chrome-inicio-dark-1024x768.png,False,0,0,real anonymous page
+chrome,acceso,dark,1024,768,../../evidencias/ui-03/chrome-acceso-dark-1024x768.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,1024,768,../../evidencias/ui-03/chrome-admin-fixture-dark-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,1024,768,../../evidencias/ui-03/chrome-pos-fixture-dark-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,1024,768,../../evidencias/ui-03/chrome-reports-fixture-dark-1024x768.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,768,1024,../../evidencias/ui-03/chrome-inicio-dark-768x1024.png,False,0,0,real anonymous page
+chrome,acceso,dark,768,1024,../../evidencias/ui-03/chrome-acceso-dark-768x1024.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,768,1024,../../evidencias/ui-03/chrome-admin-fixture-dark-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,768,1024,../../evidencias/ui-03/chrome-pos-fixture-dark-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,768,1024,../../evidencias/ui-03/chrome-reports-fixture-dark-768x1024.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,390,844,../../evidencias/ui-03/chrome-inicio-dark-390x844.png,False,0,0,real anonymous page
+chrome,acceso,dark,390,844,../../evidencias/ui-03/chrome-acceso-dark-390x844.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,390,844,../../evidencias/ui-03/chrome-admin-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,390,844,../../evidencias/ui-03/chrome-pos-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,390,844,../../evidencias/ui-03/chrome-reports-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,inicio,dark,320,844,../../evidencias/ui-03/chrome-inicio-dark-320x844.png,False,0,0,real anonymous page
+chrome,acceso,dark,320,844,../../evidencias/ui-03/chrome-acceso-dark-320x844.png,False,0,0,real anonymous page
+chrome,admin-fixture,dark,320,844,../../evidencias/ui-03/chrome-admin-fixture-dark-320x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,pos-fixture,dark,320,844,../../evidencias/ui-03/chrome-pos-fixture-dark-320x844.png,False,0,0,static fixture; no authenticated business E2E
+chrome,reports-fixture,dark,320,844,../../evidencias/ui-03/chrome-reports-fixture-dark-320x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,inicio,light,1366,768,../../evidencias/ui-03/edge-inicio-light-1366x768.png,False,0,0,real anonymous page
+edge,acceso,light,1366,768,../../evidencias/ui-03/edge-acceso-light-1366x768.png,False,0,0,real anonymous page
+edge,admin-fixture,light,1366,768,../../evidencias/ui-03/edge-admin-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,pos-fixture,light,1366,768,../../evidencias/ui-03/edge-pos-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,reports-fixture,light,1366,768,../../evidencias/ui-03/edge-reports-fixture-light-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,inicio,light,390,844,../../evidencias/ui-03/edge-inicio-light-390x844.png,False,0,0,real anonymous page
+edge,acceso,light,390,844,../../evidencias/ui-03/edge-acceso-light-390x844.png,False,0,0,real anonymous page
+edge,admin-fixture,light,390,844,../../evidencias/ui-03/edge-admin-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,pos-fixture,light,390,844,../../evidencias/ui-03/edge-pos-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,reports-fixture,light,390,844,../../evidencias/ui-03/edge-reports-fixture-light-390x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,inicio,dark,1366,768,../../evidencias/ui-03/edge-inicio-dark-1366x768.png,False,0,0,real anonymous page
+edge,acceso,dark,1366,768,../../evidencias/ui-03/edge-acceso-dark-1366x768.png,False,0,0,real anonymous page
+edge,admin-fixture,dark,1366,768,../../evidencias/ui-03/edge-admin-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,pos-fixture,dark,1366,768,../../evidencias/ui-03/edge-pos-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,reports-fixture,dark,1366,768,../../evidencias/ui-03/edge-reports-fixture-dark-1366x768.png,False,0,0,static fixture; no authenticated business E2E
+edge,inicio,dark,390,844,../../evidencias/ui-03/edge-inicio-dark-390x844.png,False,0,0,real anonymous page
+edge,acceso,dark,390,844,../../evidencias/ui-03/edge-acceso-dark-390x844.png,False,0,0,real anonymous page
+edge,admin-fixture,dark,390,844,../../evidencias/ui-03/edge-admin-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,pos-fixture,dark,390,844,../../evidencias/ui-03/edge-pos-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E
+edge,reports-fixture,dark,390,844,../../evidencias/ui-03/edge-reports-fixture-dark-390x844.png,False,0,0,static fixture; no authenticated business E2E

@@ -1,0 +1,118 @@
+{
+  "recorded_at_utc": "2026-11-26T17:12:27.924Z",
+  "conditions": {
+    "browser": "Chrome installed, headless",
+    "viewport": "1366x768",
+    "scale": 1,
+    "throttling": "none",
+    "sql_suite_running": true,
+    "scope": "public login laboratory, warm session n=5; no real INP or Lighthouse"
+  },
+  "performance": [
+    {
+      "lcp": 456,
+      "cls": 0,
+      "dom_content_loaded": 408
+    },
+    {
+      "lcp": 756,
+      "cls": 0,
+      "dom_content_loaded": 664.4000000059605
+    },
+    {
+      "lcp": 492,
+      "cls": 0,
+      "dom_content_loaded": 454.7000000178814
+    },
+    {
+      "lcp": 428,
+      "cls": 0,
+      "dom_content_loaded": 372.80000001192093
+    },
+    {
+      "lcp": 424,
+      "cls": 0,
+      "dom_content_loaded": 386.59999999403954
+    }
+  ],
+  "contrast": [
+    {
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "Navegación",
+          "foreground": "rgb(219, 228, 244)",
+          "background": "rgb(15, 23, 42)",
+          "ratio": 13.955331309567999,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Navegación activa",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(41, 75, 145)",
+          "ratio": 8.3679309150568,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Marca",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "Navegación",
+          "foreground": "rgb(219, 228, 244)",
+          "background": "rgb(15, 23, 42)",
+          "ratio": 13.955331309567999,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Navegación activa",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(41, 75, 145)",
+          "ratio": 8.3679309150568,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Marca",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Saltar al contenido enfoca main",
+      "passed": true
+    },
+    {
+      "name": "Foco main visible",
+      "passed": true
+    },
+    {
+      "name": "Enlace de salto no queda oculto por header",
+      "passed": true
+    }
+  ],
+  "browser_version": "158.0.8127.37",
+  "lcp_summary": {
+    "min": 424,
+    "median": 456,
+    "max": 756
+  }
+}

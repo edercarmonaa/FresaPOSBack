@@ -1,0 +1,18 @@
+const fs=require('node:fs'),path=require('node:path');
+const {chromium}=require(path.resolve('.tools/node_modules/playwright'));
+const result={recorded_at_utc:new Date().toISOString(),scope:'Legacy CSS injected only into clearly labeled static QA fixtures; no operational data, session or business E2E',checks:[],pairs:[]};
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});try{
+ for(const context of ['pos','reports']){
+  const page=await browser.newPage({viewport:{width:1366,height:768}});await page.goto('http://127.0.0.1:8093/'+context+'.html',{waitUntil:'networkidle'});await page.selectOption('[data-ui-theme-select]','dark');
+  const source=fs.readFileSync(context==='pos'?'Modules/Sales/resources/views/partials/styles.blade.php':'Modules/Reports/resources/views/index.blade.php','utf8');const style=source.match(/<style>([\s\S]*?)<\/style>/)[1];await page.addStyleTag({content:style});
+  await page.locator('#ui-main').evaluate((main,context)=>{const probe=document.createElement('section');probe.id='ui03-color-probe';probe.className=context==='pos'?'pos':'report-kpi';probe.innerHTML=context==='pos'?'<h2>Texto de prueba</h2><div class="pos-card"><button type="button">Control de muestra</button><label for="ui03-probe-input">Campo de muestra</label><input id="ui03-probe-input" readonly value="Texto de muestra"><p class="pos-muted">Texto secundario</p></div>':'<dt>Etiqueta de muestra</dt><dd>Texto de prueba</dd><button class="report-action" type="button">Control de muestra</button>';main.append(probe)},context);
+  const data=await page.evaluate(()=>{
+   const main=document.getElementById('ui-main'),root=getComputedStyle(document.documentElement),local=getComputedStyle(main),canvas=document.createElement('canvas');canvas.width=canvas.height=1;const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   const rgb=v=>{ctx.clearRect(0,0,1,1);ctx.fillStyle=v;ctx.fillRect(0,0,1,1);return [...ctx.getImageData(0,0,1,1).data].slice(0,3)};const lum=rgb=>rgb.map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+   const background=e=>{for(let n=e;n;n=n.parentElement){const bg=getComputedStyle(n).backgroundColor;if(bg!=='rgba(0, 0, 0, 0)'&&bg!=='transparent')return bg}return '#fff'};
+   const pairs=[...document.querySelectorAll('#ui03-color-probe h2,#ui03-color-probe button,#ui03-color-probe input,#ui03-color-probe p,#ui03-color-probe dt,#ui03-color-probe dd')].map(e=>{const foreground=getComputedStyle(e).color,bg=background(e),ls=[lum(rgb(foreground)),lum(rgb(bg))].sort((a,b)=>b-a),ratio=(ls[0]+.05)/(ls[1]+.05);return {tag:e.tagName,foreground,background:bg,ratio,minimum:4.5,passed:ratio>=4.5}});
+   return {root_theme:document.documentElement.dataset.uiTheme,root_surface:root.getPropertyValue('--ui-surface').trim(),local_surface:local.getPropertyValue('--ui-surface').trim(),main_background:local.backgroundColor,pairs};
+  });result.checks.push({context,name:'Dark frame retains isolated light palette for unconverted content',passed:data.root_theme==='dark'&&data.root_surface==='#151f30'&&data.local_surface==='#fff',...data});result.pairs.push(...data.pairs.map(p=>({context,...p})));await page.close();
+ }
+ fs.writeFileSync('docs/ui-ux/qa/ui-03/compatibility-results.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({checks:result.checks.length,pairs:result.pairs.length,failed:result.pairs.filter(p=>!p.passed)}));if(result.checks.some(p=>!p.passed)||result.pairs.some(p=>!p.passed))process.exitCode=1;
+}finally{await browser.close()}})().catch(e=>{console.error(e.message);process.exitCode=1});

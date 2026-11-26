@@ -1,0 +1,149 @@
+{
+  "recorded_at_utc": "2026-11-26T17:27:03.383Z",
+  "scope": "Legacy CSS injected only into clearly labeled static QA fixtures; no operational data, session or business E2E",
+  "checks": [
+    {
+      "context": "pos",
+      "name": "Dark frame retains isolated light palette for unconverted content",
+      "passed": true,
+      "root_theme": "dark",
+      "root_surface": "#151f30",
+      "local_surface": "#fff",
+      "main_background": "rgb(243, 245, 249)",
+      "pairs": [
+        {
+          "tag": "H2",
+          "foreground": "rgb(15, 23, 42)",
+          "background": "rgb(243, 245, 249)",
+          "ratio": 16.356161874261584,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "tag": "BUTTON",
+          "foreground": "rgb(15, 23, 42)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 17.85253496299567,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "tag": "INPUT",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "tag": "P",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.577663953533317,
+          "minimum": 4.5,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "context": "reports",
+      "name": "Dark frame retains isolated light palette for unconverted content",
+      "passed": true,
+      "root_theme": "dark",
+      "root_surface": "#151f30",
+      "local_surface": "#fff",
+      "main_background": "rgb(243, 245, 249)",
+      "pairs": [
+        {
+          "tag": "DT",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.577663953533317,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "tag": "DD",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "tag": "BUTTON",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "context": "pos",
+      "tag": "H2",
+      "foreground": "rgb(15, 23, 42)",
+      "background": "rgb(243, 245, 249)",
+      "ratio": 16.356161874261584,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "pos",
+      "tag": "BUTTON",
+      "foreground": "rgb(15, 23, 42)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 17.85253496299567,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "pos",
+      "tag": "INPUT",
+      "foreground": "rgb(20, 33, 55)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 16.123407801609634,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "pos",
+      "tag": "P",
+      "foreground": "rgb(71, 85, 105)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.577663953533317,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "reports",
+      "tag": "DT",
+      "foreground": "rgb(71, 85, 105)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 7.577663953533317,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "reports",
+      "tag": "DD",
+      "foreground": "rgb(20, 33, 55)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 16.123407801609634,
+      "minimum": 4.5,
+      "passed": true
+    },
+    {
+      "context": "reports",
+      "tag": "BUTTON",
+      "foreground": "rgb(20, 33, 55)",
+      "background": "rgb(255, 255, 255)",
+      "ratio": 16.123407801609634,
+      "minimum": 4.5,
+      "passed": true
+    }
+  ]
+}

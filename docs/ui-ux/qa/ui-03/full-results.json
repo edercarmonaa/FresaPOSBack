@@ -1,0 +1,30 @@
+{
+  "exit_code": 0,
+  "command": ".\\scripts\\local.cmd php -d memory_limit=1536M vendor/phpunit/phpunit/phpunit --log-junit .tools/ui03-full-final.xml",
+  "junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "927",
+    "assertions": "11741",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "1779.706680"
+  },
+  "console_time": "29:39.993",
+  "peak_memory_mb": 384.0,
+  "database": "fresapos_test",
+  "composer_timeout_bypassed_by_direct_php": true,
+  "runtime_memory_limit": "1536M (process only)",
+  "previous_attempts": [
+    {
+      "status": "timeout",
+      "exit_code": 1
+    },
+    {
+      "status": "test schema collision after timeout",
+      "exit_code": 2,
+      "errors": 633
+    }
+  ],
+  "test_database_recovery": "test-recovery.json"
+}

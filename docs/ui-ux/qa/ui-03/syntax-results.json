@@ -1,0 +1,47 @@
+﻿[
+    {
+        "tool":  "node --check",
+        "file":  "public/js/ui/theme.js",
+        "exit":  0
+    },
+    {
+        "tool":  "node --check",
+        "file":  "public/js/ui/layout.js",
+        "exit":  0
+    },
+    {
+        "tool":  "node --check",
+        "file":  "docs/ui-ux/qa/ui-03/browser-check.cjs",
+        "exit":  0
+    },
+    {
+        "tool":  "node --check",
+        "file":  "docs/ui-ux/qa/ui-03/additional-checks.cjs",
+        "exit":  0
+    },
+    {
+        "tool":  "node --check",
+        "file":  "docs/ui-ux/qa/ui-03/compatibility-check.cjs",
+        "exit":  0
+    },
+    {
+        "tool":  "php -l",
+        "file":  "tests/Feature/LayoutNavigationTest.php",
+        "exit":  0
+    },
+    {
+        "tool":  "php -l",
+        "file":  "tests/Feature/DesignSystemRenderingTest.php",
+        "exit":  0
+    },
+    {
+        "tool":  "php -l",
+        "file":  "docs/ui-ux/qa/ui-03/export-layouts.php",
+        "exit":  0
+    },
+    {
+        "tool":  "php -l",
+        "file":  "docs/ui-ux/qa/ui-03/router.php",
+        "exit":  0
+    }
+]

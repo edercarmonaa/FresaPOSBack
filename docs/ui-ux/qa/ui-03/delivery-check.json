@@ -1,0 +1,16 @@
+{
+  "numbered_delivery_items": 22,
+  "final_pngs": 91,
+  "browser_cases": 90,
+  "interaction_checks": 20,
+  "contrast_frame_pairs": 6,
+  "compatibility_pairs": 7,
+  "markdown_missing_links": [],
+  "syntax_exit_codes_zero": true,
+  "test_database_after_empty": true,
+  "full_suite_exit_code": 0,
+  "actual_environment_secrets_absent": true,
+  "actual_secret_values_checked": 1,
+  "live_index_excluded": "docs/ui-ux/ESTADO.md",
+  "source_integrity": "source-integrity.json"
+}

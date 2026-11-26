@@ -1,0 +1,4 @@
+﻿{
+    "exit_code":  2,
+    "command":  ".\\scripts\\local.cmd php vendor/phpunit/phpunit/phpunit --log-junit .tools/ui03-full-retry.xml"
+}
