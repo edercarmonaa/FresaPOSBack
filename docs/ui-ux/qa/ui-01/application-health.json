@@ -1,0 +1,9 @@
+{
+  "origin": "http://127.0.0.1:8080",
+  "method": "GET",
+  "checks": [
+    {"path": "/up", "status": 200},
+    {"path": "/api/v1/ping", "status": 200}
+  ],
+  "scope": "Disponibilidad HTTP; no valida flujos autenticados ni contenido de negocio"
+}

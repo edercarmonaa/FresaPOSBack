@@ -1,0 +1,2276 @@
+{
+  "started_at_utc": "2026-11-26T15:51:42.447Z",
+  "prototype_origin": "http://127.0.0.1:8091",
+  "device_scale_factor": 1,
+  "throttling": "none",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37",
+      "headless": true
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.33",
+      "headless": true
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-reportes-light-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-productos-light-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-pos-light-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-acceso-light-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-componentes-light-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-reportes-light-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-productos-light-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-pos-light-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-acceso-light-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-componentes-light-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-reportes-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-productos-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-pos-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-acceso-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-componentes-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-reportes-light-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-productos-light-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-pos-light-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-acceso-light-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-componentes-light-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-reportes-light-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-productos-light-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-pos-light-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-acceso-light-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-componentes-light-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-reportes-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-productos-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-pos-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-acceso-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-componentes-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-reportes-light-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-productos-light-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-pos-light-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-acceso-light-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-componentes-light-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-reportes-dark-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-productos-dark-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-pos-dark-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-acceso-dark-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-componentes-dark-2560x1440.png",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "document_width": 2560,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-reportes-dark-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-productos-dark-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-pos-dark-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-acceso-dark-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-componentes-dark-1920x1080.png",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "document_width": 1920,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-reportes-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-productos-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-pos-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-acceso-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-componentes-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-reportes-dark-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-productos-dark-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-pos-dark-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-acceso-dark-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-componentes-dark-1024x768.png",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "document_width": 1024,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-reportes-dark-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-productos-dark-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-pos-dark-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-acceso-dark-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-componentes-dark-768x1024.png",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "document_width": 768,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-reportes-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-productos-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-pos-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-acceso-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-componentes-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-reportes-dark-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "productos",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-productos-dark-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "pos",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-pos-dark-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-acceso-dark-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "chrome",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-componentes-dark-320x844.png",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "document_width": 320,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "reportes",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-reportes-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "productos",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-productos-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "pos",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-pos-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-acceso-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "componentes",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-componentes-light-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "reportes",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-reportes-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "productos",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-productos-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "pos",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-pos-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-acceso-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "componentes",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-componentes-light-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-reportes-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "productos",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-productos-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "pos",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-pos-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-acceso-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-componentes-dark-1366x768.png",
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "document_width": 1366,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "reportes",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-reportes-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Reportes · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "productos",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-productos-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Productos · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "pos",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-pos-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Punto de venta · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "acceso",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-acceso-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Autenticación · Prototipo UI-01"
+    },
+    {
+      "engine": "edge",
+      "view": "componentes",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-componentes-dark-390x844.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document_width": 390,
+      "overflow": false,
+      "visible_h1": 1,
+      "unnamed_controls": [],
+      "duplicate_ids": [],
+      "font": true,
+      "undersized_controls": [],
+      "title": "FresaPOS · Componentes · Prototipo UI-01"
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Automático sigue SO oscuro",
+      "passed": false
+    },
+    {
+      "name": "Automático sigue cambio SO claro",
+      "passed": true
+    },
+    {
+      "name": "Elección explícita prevalece al SO",
+      "passed": true
+    },
+    {
+      "name": "Menú colapsado persiste",
+      "passed": true
+    },
+    {
+      "name": "Preferencias abre dialog nativo",
+      "passed": true
+    },
+    {
+      "name": "Densidad cambia solo geometría",
+      "passed": true,
+      "compact": 66,
+      "comfortable": 90
+    },
+    {
+      "name": "Reducción del SO respetada",
+      "passed": false
+    },
+    {
+      "name": "Texto ampliado a 320 sin overflow",
+      "passed": true
+    },
+    {
+      "name": "Drawer conserva foco",
+      "passed": false
+    },
+    {
+      "name": "Escape devuelve foco al disparador",
+      "passed": true
+    },
+    {
+      "name": "Resumen móvil abre dialog",
+      "passed": true
+    },
+    {
+      "name": "Resumen móvil conserva foco",
+      "passed": false
+    },
+    {
+      "name": "Resumen devuelve foco y aria-expanded",
+      "passed": true
+    },
+    {
+      "name": "Confirmación crítica no ejecutable",
+      "passed": true
+    },
+    {
+      "name": "Storage contiene solo seis preferencias visuales",
+      "passed": true
+    },
+    {
+      "name": "JSON inválido usa defaults",
+      "passed": true
+    },
+    {
+      "name": "Valores inválidos y claves ajenas descartados",
+      "passed": true
+    },
+    {
+      "name": "Pestañas permiten flechas y estado vacío",
+      "passed": true
+    },
+    {
+      "name": "Acceso solo lectura",
+      "passed": true
+    },
+    {
+      "name": "Formulario no navega",
+      "passed": true
+    },
+    {
+      "name": "Storage bloqueado permite tema en memoria",
+      "passed": true
+    }
+  ],
+  "violations": [
+    {
+      "name": "Automático sigue SO oscuro"
+    },
+    {
+      "name": "Reducción del SO respetada"
+    },
+    {
+      "name": "Drawer conserva foco"
+    },
+    {
+      "name": "Resumen móvil conserva foco"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "unexpected_requests": [],
+  "contrast": [
+    {
+      "engine": "chrome",
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#142137",
+          "background": "#fff",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#526178",
+          "background": "#fff",
+          "ratio": 6.287691490602022,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario suave",
+          "foreground": "#526178",
+          "background": "#f8fafc",
+          "ratio": 6.009592752992061,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#fff",
+          "background": "#1d4ed8",
+          "ratio": 6.701618401398807,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Seleccionado",
+          "foreground": "#1e40af",
+          "background": "#eaf1ff",
+          "ratio": 7.694247805196307,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#166534",
+          "background": "#e9f7ef",
+          "ratio": 6.456472807649506,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#854d0e",
+          "background": "#fff5df",
+          "ratio": 6.322099099738203,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#b42338",
+          "background": "#fff0f1",
+          "ratio": 5.863240091705818,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Borde control",
+          "foreground": "#7f8fa5",
+          "background": "#fff",
+          "ratio": 3.2942664921806943,
+          "minimum": 3,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#2563eb",
+          "background": "#fff",
+          "ratio": 5.168555560022562,
+          "minimum": 3,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "chrome",
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#edf2fa",
+          "background": "#151f30",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#b1bfd2",
+          "background": "#151f30",
+          "ratio": 8.856226215398179,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario suave",
+          "foreground": "#b1bfd2",
+          "background": "#1b283b",
+          "ratio": 7.961926825294613,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#102448",
+          "background": "#a7c6ff",
+          "ratio": 8.892618902078969,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Seleccionado",
+          "foreground": "#bcd4ff",
+          "background": "#233b63",
+          "ratio": 7.457653725394572,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#9be3b5",
+          "background": "#15382b",
+          "ratio": 8.605887827578451,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#f2cf83",
+          "background": "#3f321a",
+          "ratio": 8.33773465205967,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#ffbac8",
+          "background": "#41252e",
+          "ratio": 8.574848480333031,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Borde control",
+          "foreground": "#657b97",
+          "background": "#151f30",
+          "ratio": 3.8041453230264386,
+          "minimum": 3,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#b6d1ff",
+          "background": "#151f30",
+          "ratio": 10.667104685759428,
+          "minimum": 3,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "edge",
+      "theme": "light",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#142137",
+          "background": "#fff",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#526178",
+          "background": "#fff",
+          "ratio": 6.287691490602022,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario suave",
+          "foreground": "#526178",
+          "background": "#f8fafc",
+          "ratio": 6.009592752992061,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#fff",
+          "background": "#1d4ed8",
+          "ratio": 6.701618401398807,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Seleccionado",
+          "foreground": "#1e40af",
+          "background": "#eaf1ff",
+          "ratio": 7.694247805196307,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#166534",
+          "background": "#e9f7ef",
+          "ratio": 6.456472807649506,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#854d0e",
+          "background": "#fff5df",
+          "ratio": 6.322099099738203,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#b42338",
+          "background": "#fff0f1",
+          "ratio": 5.863240091705818,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Borde control",
+          "foreground": "#7f8fa5",
+          "background": "#fff",
+          "ratio": 3.2942664921806943,
+          "minimum": 3,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#2563eb",
+          "background": "#fff",
+          "ratio": 5.168555560022562,
+          "minimum": 3,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "engine": "edge",
+      "theme": "dark",
+      "pairs": [
+        {
+          "name": "Texto",
+          "foreground": "#edf2fa",
+          "background": "#151f30",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario",
+          "foreground": "#b1bfd2",
+          "background": "#151f30",
+          "ratio": 8.856226215398179,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Secundario suave",
+          "foreground": "#b1bfd2",
+          "background": "#1b283b",
+          "ratio": 7.961926825294613,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Acción",
+          "foreground": "#102448",
+          "background": "#a7c6ff",
+          "ratio": 8.892618902078969,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Seleccionado",
+          "foreground": "#bcd4ff",
+          "background": "#233b63",
+          "ratio": 7.457653725394572,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Éxito",
+          "foreground": "#9be3b5",
+          "background": "#15382b",
+          "ratio": 8.605887827578451,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Advertencia",
+          "foreground": "#f2cf83",
+          "background": "#3f321a",
+          "ratio": 8.33773465205967,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Error",
+          "foreground": "#ffbac8",
+          "background": "#41252e",
+          "ratio": 8.574848480333031,
+          "minimum": 4.5,
+          "passed": true
+        },
+        {
+          "name": "Borde control",
+          "foreground": "#657b97",
+          "background": "#151f30",
+          "ratio": 3.8041453230264386,
+          "minimum": 3,
+          "passed": true
+        },
+        {
+          "name": "Foco",
+          "foreground": "#b6d1ff",
+          "background": "#151f30",
+          "ratio": 10.667104685759428,
+          "minimum": 3,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "field_metrics": false,
+  "axe_executed": false,
+  "lighthouse_executed": false,
+  "screen_reader_tested": false,
+  "completed_at_utc": "2026-11-26T15:52:03.901Z"
+}

@@ -1,0 +1,18 @@
+{
+  "command": ".\\scripts\\local.cmd composer test -- --testsuite Feature,Architecture,Modules --log-junit .tools/ui01-regression.xml",
+  "exit_code": 0,
+  "junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "261",
+    "assertions": "1056",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "29.876137"
+  },
+  "console_time": "00:29.926",
+  "memory_mb": 84,
+  "full_sql_suite_executed_ui01": false,
+  "historical_ui00_tests": 906,
+  "historical_ui00_assertions": 11653
+}
