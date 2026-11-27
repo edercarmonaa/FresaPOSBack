@@ -1,4 +1,4 @@
-<section class="pos" x-data="{ ticket: false, mobile: innerWidth < 1024 }" @resize.window="mobile = innerWidth < 1024" @keydown.escape.window="ticket = false" @pos-error.window="if (ticket && mobile) $nextTick(() => $refs.ticketPanel.scrollTop = 0)" aria-labelledby="pos-title">
+<section class="pos ui-pos-module" x-data="{ ticket: false, mobile: innerWidth < 1024 }" @resize.window="mobile = innerWidth < 1024" @keydown.escape.window="ticket = false" @pos-error.window="if (ticket && mobile) $nextTick(() => $refs.ticketPanel.scrollTop = 0)" aria-labelledby="pos-title">
     @include('sales::partials.styles')
     <header class="pos-heading">
         <div><p class="pos-eyebrow">FresaPOS · Punto de venta</p><h1 id="pos-title">Tu espacio de venta</h1><p class="pos-muted">Catálogo, mesas y ventas en un solo lugar.</p></div>
@@ -88,6 +88,7 @@
             @else
                 <div class="pos-ticket-empty"><span aria-hidden="true">＋</span><h3>Selecciona una venta</h3><p>Consulta una venta de mostrador o elige una mesa ocupada. Aquí verás sus productos e importes.</p></div>
             @endif
+            <div class="ui-pos-financial ui-legacy-light">
             @if($saleId && in_array('sales.close', $actor->permissions, true) && in_array('cash.view', $actor->permissions, true) && \Illuminate\Support\Facades\Schema::hasTable('sales_daily_sequences'))
                 <livewire:sales.checkout :sale-id="$saleId" :key="'checkout-'.$saleId" />
             @endif
@@ -103,10 +104,11 @@
             @if($saleId && ($currentSale['state'] ?? null)==='closed' && in_array('tickets.view', $actor->permissions, true))
                 <section class="pos-spaced pos-editor" aria-label="Comprobante de venta"><h3>Ticket de 80 mm</h3><p class="pos-muted pos-small">Vista histórica confirmada. Una corrección activa impide emitir el comprobante.</p><a href="{{ route('tickets.preview', ['id'=>$saleId]) }}" style="display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid #334155;border-radius:6px;color:#172554;background:#fff">Ver ticket / preparar impresión</a></section>
             @endif
+            </div>
             <div class="pos-future pos-spaced"><p class="pos-muted pos-small">Retirar o cancelar requiere motivos autorizados. Las devoluciones permanecen bloqueadas.</p></div>
         </aside>
     </div>
-    <button type="button" class="pos-mobile-ticket" x-ref="ticketButton" @click="ticket = true; $nextTick(() => $refs.panelHeading?.focus())" :aria-expanded="ticket" aria-controls="pos-sale-title">Ver venta actual <strong>${{ $currentSale['total'] ?? '0.0000' }}</strong></button>
+    <button type="button" class="pos-mobile-ticket" x-ref="ticketButton" @click="ticket = true; $nextTick(() => setTimeout(() => $refs.panelHeading?.focus(), 30))" :aria-expanded="ticket" aria-controls="pos-sale-title">Ver venta actual <strong>${{ $currentSale['total'] ?? '0.0000' }}</strong></button>
     <div class="pos-connection" wire:offline role="alert">Sin conexión. Conserva tus notas y actualiza la venta al recuperar la conexión. Si la sesión expiró, <a href="{{ route('login') }}">inicia sesión de nuevo</a>.</div>
 </section>
 @script

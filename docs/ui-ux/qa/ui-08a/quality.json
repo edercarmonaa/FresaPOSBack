@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "commands": {
+      "composer": 0,
+      "phpunit": 0,
+      "platform": 0,
+      "pint": 0,
+      "larastan": 0
+    },
+    "junit": {
+      "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+      "tests": "378",
+      "assertions": "1765",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "46.047693"
+    }
+  },
+  "final": {
+    "commands": {
+      "composer": 0,
+      "phpunit": 0,
+      "platform": 0,
+      "pint": 0,
+      "larastan": 0
+    },
+    "junit": {
+      "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+      "tests": "396",
+      "assertions": "1900",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "77.629474"
+    }
+  },
+  "sql": {
+    "name": "CLI Arguments",
+    "tests": "49",
+    "assertions": "656",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "248.684437"
+  }
+}

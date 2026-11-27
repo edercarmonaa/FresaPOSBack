@@ -1,0 +1,30 @@
+{
+  "concurrent_with_sql": {
+    "before": {
+      "min": 244,
+      "median": 292,
+      "max": 480,
+      "cls_max": 0
+    },
+    "after": {
+      "min": 320,
+      "median": 344,
+      "max": 588,
+      "cls_max": 0
+    }
+  },
+  "isolated_alternated": {
+    "before": {
+      "min": 112,
+      "median": 128.0,
+      "max": 144,
+      "cls_max": 0
+    },
+    "after": {
+      "min": 160,
+      "median": 176.0,
+      "max": 228,
+      "cls_max": 0
+    }
+  }
+}

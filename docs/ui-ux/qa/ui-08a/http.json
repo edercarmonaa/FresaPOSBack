@@ -1,0 +1,14 @@
+﻿{
+    "/login":  {
+                   "status":  200,
+                   "location":  ""
+               },
+    "/up":  {
+                "status":  200,
+                "location":  ""
+            },
+    "/pos":  {
+                 "status":  302,
+                 "location":  "http://127.0.0.1:8080/login"
+             }
+}

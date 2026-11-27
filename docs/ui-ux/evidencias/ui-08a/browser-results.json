@@ -1,0 +1,1079 @@
+{
+  "scope": "Fixtures Blade ficticias, sin SQL ni hidrataci?n Livewire; Alpine real para el panel m?vil; no se ejecutan acciones de negocio.",
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "screens": [
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-open-light-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-open-dark-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-tables-light-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-tables-dark-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-empty-light-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 2560,
+      "height": 1440,
+      "screenshot": "chrome-empty-dark-2560.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-open-light-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-open-dark-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-tables-light-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-tables-dark-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-empty-light-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "chrome-empty-dark-1920.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-open-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-open-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-tables-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-tables-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-empty-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "chrome-empty-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-open-light-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-open-dark-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-tables-light-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-tables-dark-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-empty-light-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "screenshot": "chrome-empty-dark-1024.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-open-light-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-open-dark-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-tables-light-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-tables-dark-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-empty-light-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "screenshot": "chrome-empty-dark-768.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-open-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-open-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-tables-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-tables-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-empty-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "chrome-empty-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-open-light-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "open",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-open-dark-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-tables-light-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "tables",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-tables-dark-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "light",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-empty-light-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "chrome",
+      "state": "empty",
+      "theme": "dark",
+      "width": 320,
+      "height": 844,
+      "screenshot": "chrome-empty-dark-320.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "open",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-open-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "open",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-open-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "tables",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-tables-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "tables",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-tables-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "empty",
+      "theme": "light",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-empty-light-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "empty",
+      "theme": "dark",
+      "width": 1366,
+      "height": 768,
+      "screenshot": "edge-empty-dark-1366.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "open",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-open-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "open",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-open-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "tables",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-tables-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "tables",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-tables-dark-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "empty",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-empty-light-390.png",
+      "overflow": false,
+      "small": []
+    },
+    {
+      "engine": "edge",
+      "state": "empty",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "screenshot": "edge-empty-dark-390.png",
+      "overflow": false,
+      "small": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "chrome light 768 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome light 768 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome light 768 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome light 768 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 768 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 768 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 768 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 390 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 390 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome light 320 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 heading focus",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "chrome dark 320 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "light financial frame retains light background",
+      "passed": true
+    },
+    {
+      "name": "light catalog inherits selected theme",
+      "passed": true
+    },
+    {
+      "name": "dark financial frame retains light background",
+      "passed": true
+    },
+    {
+      "name": "dark catalog inherits selected theme",
+      "passed": true
+    },
+    {
+      "name": "inactive table remains disabled",
+      "passed": true
+    },
+    {
+      "name": "table-selected light reflow",
+      "passed": true
+    },
+    {
+      "name": "table-selected dark reflow",
+      "passed": true
+    },
+    {
+      "name": "paused light reflow",
+      "passed": true
+    },
+    {
+      "name": "paused dark reflow",
+      "passed": true
+    },
+    {
+      "name": "closed light reflow",
+      "passed": true
+    },
+    {
+      "name": "closed dark reflow",
+      "passed": true
+    },
+    {
+      "name": "cancelled light reflow",
+      "passed": true
+    },
+    {
+      "name": "cancelled dark reflow",
+      "passed": true
+    },
+    {
+      "name": "pending light reflow",
+      "passed": true
+    },
+    {
+      "name": "pending dark reflow",
+      "passed": true
+    },
+    {
+      "name": "stale light reflow",
+      "passed": true
+    },
+    {
+      "name": "stale dark reflow",
+      "passed": true
+    },
+    {
+      "name": "no-cash light reflow",
+      "passed": true
+    },
+    {
+      "name": "no-cash dark reflow",
+      "passed": true
+    },
+    {
+      "name": "no-critical light reflow",
+      "passed": true
+    },
+    {
+      "name": "no-critical dark reflow",
+      "passed": true
+    },
+    {
+      "name": "read-only light reflow",
+      "passed": true
+    },
+    {
+      "name": "read-only dark reflow",
+      "passed": true
+    },
+    {
+      "name": "add-editor light reflow",
+      "passed": true
+    },
+    {
+      "name": "add-editor dark reflow",
+      "passed": true
+    },
+    {
+      "name": "item-editor light reflow",
+      "passed": true
+    },
+    {
+      "name": "item-editor dark reflow",
+      "passed": true
+    },
+    {
+      "name": "error light reflow",
+      "passed": true
+    },
+    {
+      "name": "error dark reflow",
+      "passed": true
+    },
+    {
+      "name": "long light reflow",
+      "passed": true
+    },
+    {
+      "name": "long dark reflow",
+      "passed": true
+    },
+    {
+      "name": "200 percent text at 320 reflows",
+      "passed": true
+    },
+    {
+      "name": "automatic dark theme",
+      "passed": true
+    },
+    {
+      "name": "reduced motion",
+      "passed": true
+    },
+    {
+      "name": "blocked storage remains usable",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 heading focus",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "edge light 390 close returns focus",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 mobile opens dialog",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 heading focus",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 panel geometry",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 focus stays in panel",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 Escape closes panel",
+      "passed": true
+    },
+    {
+      "name": "edge dark 390 close returns focus",
+      "passed": true
+    }
+  ],
+  "contrast": [
+    {
+      "state": "open",
+      "theme": "light",
+      "pairs": [
+        {
+          "selector": "h1",
+          "property": "color",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(243, 245, 249)",
+          "ratio": 14.771967595329517,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-muted",
+          "property": "color",
+          "foreground": "rgb(82, 97, 120)",
+          "background": "rgb(243, 245, 249)",
+          "ratio": 5.7606664851167295,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-tabs [aria-pressed=true]",
+          "property": "color",
+          "foreground": "rgb(30, 64, 175)",
+          "background": "rgb(234, 241, 255)",
+          "ratio": 7.694247805196307,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-product button:not(:disabled)",
+          "property": "color",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-total",
+          "property": "color",
+          "foreground": "rgb(30, 64, 175)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 8.722410784954462,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-label",
+          "property": "color",
+          "foreground": "rgb(20, 33, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.123407801609634,
+          "minimum": 4.5
+        },
+        {
+          "selector": "#pos-search",
+          "property": "borderTopColor",
+          "foreground": "rgb(127, 143, 165)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 3.2942664921806943,
+          "minimum": 3
+        }
+      ]
+    },
+    {
+      "state": "open",
+      "theme": "dark",
+      "pairs": [
+        {
+          "selector": "h1",
+          "property": "color",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(13, 20, 33)",
+          "ratio": 16.400301581551453,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-muted",
+          "property": "color",
+          "foreground": "rgb(177, 191, 210)",
+          "background": "rgb(13, 20, 33)",
+          "ratio": 9.877983243202067,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-tabs [aria-pressed=true]",
+          "property": "color",
+          "foreground": "rgb(188, 212, 255)",
+          "background": "rgb(35, 59, 99)",
+          "ratio": 7.457653725394572,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-product button:not(:disabled)",
+          "property": "color",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-total",
+          "property": "color",
+          "foreground": "rgb(188, 212, 255)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 11.018496218860228,
+          "minimum": 4.5
+        },
+        {
+          "selector": ".pos-label",
+          "property": "color",
+          "foreground": "rgb(237, 242, 250)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 14.703890179903702,
+          "minimum": 4.5
+        },
+        {
+          "selector": "#pos-search",
+          "property": "borderTopColor",
+          "foreground": "rgb(101, 123, 151)",
+          "background": "rgb(21, 31, 48)",
+          "ratio": 3.8041453230264386,
+          "minimum": 3
+        }
+      ]
+    }
+  ],
+  "performance": [
+    {
+      "phase": "before",
+      "iteration": 1,
+      "lcp": 272,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 2,
+      "lcp": 244,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 3,
+      "lcp": 292,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 4,
+      "lcp": 480,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 5,
+      "lcp": 304,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 1,
+      "lcp": 344,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 2,
+      "lcp": 588,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 3,
+      "lcp": 336,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 4,
+      "lcp": 320,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 5,
+      "lcp": 372,
+      "cls": 0
+    }
+  ],
+  "errors": [],
+  "violations": []
+}

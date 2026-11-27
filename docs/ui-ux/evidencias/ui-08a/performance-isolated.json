@@ -1,0 +1,130 @@
+{
+  "scope": "Fixture local, diez muestras calientes alternadas por fase, sin suite SQL concurrente; no representa tráfico autenticado.",
+  "engine": "158.0.8127.37",
+  "viewport": [
+    1366,
+    768
+  ],
+  "samples": [
+    {
+      "phase": "after",
+      "iteration": 1,
+      "lcp": 228,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 1,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 2,
+      "lcp": 128,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 2,
+      "lcp": 160,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 3,
+      "lcp": 192,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 3,
+      "lcp": 128,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 4,
+      "lcp": 140,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 4,
+      "lcp": 176,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 5,
+      "lcp": 192,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 5,
+      "lcp": 140,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 6,
+      "lcp": 128,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 6,
+      "lcp": 212,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 7,
+      "lcp": 160,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 7,
+      "lcp": 144,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 8,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 8,
+      "lcp": 160,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 9,
+      "lcp": 160,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 9,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "before",
+      "iteration": 10,
+      "lcp": 112,
+      "cls": 0
+    },
+    {
+      "phase": "after",
+      "iteration": 10,
+      "lcp": 176,
+      "cls": 0
+    }
+  ]
+}

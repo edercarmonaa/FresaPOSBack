@@ -1,0 +1,47 @@
+[
+  {
+    "issue": "Copias de referencia con saltos LF distintos de la fuente inicial Windows",
+    "resolution": "Copias reconstruidas y verificadas contra hashes iniciales; vistas conservan formato inicial.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Botones de cantidad menores de 44 px de ancho",
+    "resolution": "CSS local min-width 44px; matriz final sin controles pequeños detectados.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Fixture Blade anidada no incluía bundle Alpine",
+    "resolution": "Exportador QA añade el bundle Livewire instalado sin snapshots ni acciones SQL.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Secuencia QA intentaba abrir un diálogo que ya estaba abierto",
+    "resolution": "Comprobar aria-expanded antes de pulsar el botón cubierto.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Retorno de foco al body tras cerrar el panel",
+    "resolution": "Enfoque visual del encabezado después de activarse la trampa; Escape y cierre regresan al botón.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Comparación DOM inicial incluía la diferencia visual de temporización del foco",
+    "resolution": "Normalizar solo esa diferencia y agregar prueba de fuente completa que enumera todos los cambios permitidos.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Sonda de contraste elegía Iniciar venta deshabilitado",
+    "resolution": "Medir control activo; los controles deshabilitados conservan los tokens compartidos y no se contabilizan como texto activo.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Rutas supuestas y un patrón con llaves no válidos en PowerShell durante inspección",
+    "resolution": "Se localizaron los nombres reales con rg --files y se utilizó rg -g; no hubo mutaciones en esos intentos.",
+    "status": "resuelto"
+  },
+  {
+    "issue": "Marcadores de merge comprometidos previamente en ESTADO.md",
+    "resolution": "Índice vivo reconciliado con las aceptaciones registradas; informes históricos intactos.",
+    "status": "resuelto"
+  }
+]

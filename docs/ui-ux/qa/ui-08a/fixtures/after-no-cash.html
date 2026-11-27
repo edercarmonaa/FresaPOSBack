@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI08A_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8101/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8101/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8101/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8101/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8101/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8101/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8101/css/ui/pos.css">
+    
+</head>
+<body class="ui-page" data-ui-context="pos">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8101">FresaPOS</a>
+        <span class="ui-workspace-label">Punto de venta</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegación principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8101/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2"  aria-current="page" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8101/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8101/admin" aria-label="Administración" title="Administración" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Administración</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8101/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+    
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden></button>
+                <main id="ui-main" tabindex="-1" class="ui-content ui-legacy-light ui-pos-page"><p role="note">UI-08A · Fixture visual after. Datos ficticios, sin SQL ni operaciones reales. Paneles financieros sustituidos solo en esta fixture.</p><style>[wire\:loading],[wire\:loading\.delay],[wire\:offline]{display:none!important}</style>
+                <section class="pos ui-pos-module" x-data="{ ticket: false, mobile: innerWidth < 1024 }" @resize.window="mobile = innerWidth < 1024" @keydown.escape.window="ticket = false" @pos-error.window="if (ticket && mobile) $nextTick(() => $refs.ticketPanel.scrollTop = 0)" aria-labelledby="pos-title">
+    <style>
+.pos-tabs button{min-width:110px;white-space:nowrap}
+.pos-search button{flex-shrink:0;white-space:nowrap}
+@media(max-width:480px){.pos-navigation{display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;margin-bottom:10px;padding-bottom:8px}.pos-navigation a{font-size:12px;padding:10px 6px;min-height:44px;display:flex;align-items:center}.pos-heading{margin-top:5px!important}.pos-employee{padding-top:7px!important}.pos-heading h1{font-size:1.5rem}.pos-heading>div>p.pos-muted{font-size:.85rem}}
+.pos{font-family:ui-sans-serif,system-ui,sans-serif;color:#0f172a;padding-bottom:85px}.pos *{box-sizing:border-box}.pos h1{font-size:clamp(1.6rem,3vw,2rem);font-weight:750;margin:.2rem 0}.pos h2{font-size:1.15rem;font-weight:700}.pos h3{font-weight:650}.pos p{margin:.35rem 0}.pos button,.pos input,.pos textarea,.pos a{font:inherit}.pos button{min-height:44px;padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font-weight:600;cursor:pointer;max-width:100%;overflow-wrap:anywhere}.pos button:hover:not(:disabled){background:#eff6ff;border-color:#1d4ed8}.pos button:disabled{background:#f1f5f9;color:#475569;cursor:not-allowed}.pos :is(button,input,textarea,a):focus-visible{outline:3px solid #2563eb;outline-offset:3px}.pos input,.pos textarea{width:100%;padding:12px;border:1px solid #94a3b8;border-radius:10px;background:#fff}.pos textarea{resize:vertical}.pos input:disabled,.pos textarea:disabled{background:#f1f5f9;color:#475569}.pos a{color:#1e40af;text-decoration:underline}.pos-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin:12px 0 20px}.pos-eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#1d4ed8;font-weight:700;font-size:.72rem}.pos-muted{color:#475569}.pos-small{font-size:.82rem}.pos-employee{display:flex;gap:10px;align-items:center}.pos-employee strong,.pos-employee span,.pos-employee a{display:block}.pos-dot{width:10px;height:10px;border-radius:50%;background:#047857}.pos-notice{background:#fffbeb;border:1px solid #fcd34d;border-radius:12px;padding:15px 18px;color:#78350f}.pos-workspace{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:20px;align-items:start}.pos-main{display:grid;gap:20px;min-width:0}.pos-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;min-width:0;box-shadow:0 2px 5px #0f172a05}.pos-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.pos-spaced{margin-top:18px!important}.pos-tabs,.pos-categories{display:flex;gap:8px;flex-wrap:wrap}.pos-tabs button[aria-pressed=true],.pos-categories button[aria-pressed=true]{background:#1e40af;color:#fff;border-color:#1e40af}.pos-tabs button{flex:1}.pos-categories{margin:16px 0}.pos-categories button{font-size:.85rem}.pos .pos-primary{background:#1e40af;color:#fff;border-color:#1e40af}.pos .pos-primary:disabled{background:#e2e8f0;color:#475569;border-color:#cbd5e1}.pos-empty{color:#475569;padding:22px 10px;text-align:center;border:1px dashed #cbd5e1;border-radius:12px;width:100%}.pos-sale-list{display:grid;gap:8px;margin-top:12px;max-height:260px;overflow-y:auto}.pos-sale-choice{text-align:left;display:flex;gap:10px;justify-content:space-between;align-items:center}.pos-sale-choice small{display:block;color:#475569;font-size:.75rem;overflow-wrap:anywhere}.pos-table-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:14px}.pos-table{display:flex;flex-direction:column;gap:7px;text-align:left}.pos-table span{font-size:.8rem}.pos .pos-free{border-left:5px solid #047857}.pos .pos-occupied{border-left:5px solid #1d4ed8;background:#eff6ff}.pos .pos-inactive{border-left:5px solid #64748b}.pos-label{display:block;font-size:.85rem;font-weight:650;margin-bottom:6px}.pos-search{display:flex;gap:8px}.pos-search input{min-width:0}.pos-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px;margin-top:16px}.pos-product{border:1px solid #e2e8f0;border-radius:13px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.pos-product img,.pos-product-placeholder{height:125px;width:100%;object-fit:cover;background:#eff6ff}.pos-product-placeholder{display:grid;place-items:center;padding:15px;text-align:center;font-size:.85rem;font-weight:600;color:#1e3a8a}.pos-product-body{padding:12px;display:flex;flex-direction:column;gap:10px;flex:1}.pos-product h3{font-size:.95rem;overflow-wrap:anywhere}.pos-product-body button{margin-top:auto}.pos-money{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.pos-pager{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:18px;font-size:.82rem}.pos-ticket{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto}.pos-id{font-size:.72rem;overflow-wrap:anywhere;color:#475569;margin:12px 0!important}.pos-badge{border-radius:20px;padding:5px 10px;background:#dbeafe;color:#1e3a8a;font-weight:600;font-size:.8rem}.pos-lines{margin-top:16px}.pos-line{border-top:1px solid #e2e8f0;padding:15px 0;overflow-wrap:anywhere}.pos-line-note{font-size:.85rem;background:#f8fafc;padding:8px;border-radius:7px}.pos-quantity-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}.pos-quantity-controls button{font-size:.82rem}.pos-totals{padding:16px 0;border-top:1px solid #cbd5e1;border-bottom:1px solid #cbd5e1;font-variant-numeric:tabular-nums}.pos-totals div{display:flex;justify-content:space-between;gap:15px;margin:7px 0}.pos-totals dd{overflow-wrap:anywhere;text-align:right;min-width:0}.pos-total{font-size:1.4rem;font-weight:750;color:#1e3a8a}.pos-ticket-empty{padding:35px 10px;text-align:center;color:#475569}.pos-ticket-empty>span{display:inline-grid;place-items:center;background:#eff6ff;color:#1d4ed8;font-size:2rem;border-radius:50%;width:65px;height:65px;margin-bottom:15px}.pos-ticket-empty h3{color:#0f172a;margin-bottom:10px}.pos-editor{padding:12px;border-radius:12px;background:#eff6ff}.pos-future{border-top:1px solid #e2e8f0;padding-top:16px}.pos-future-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.pos-future-buttons button{font-size:.75rem}.pos-feedback{margin:12px 0}.pos-success{padding:12px;background:#ecfdf5;color:#065f46;border-radius:10px}.pos-error{padding:12px;background:#fff1f2;color:#9f1239;border:1px solid #fda4af;border-radius:10px}.pos-error ul{list-style:disc;padding-left:20px}.pos-field-error{font-size:.85rem;color:#9f1239}.pos-mobile-ticket,.pos-mobile-only{display:none!important}.pos-connection{background:#fff1f2;color:#9f1239;padding:15px;border:1px solid #fda4af;border-radius:10px}
+@media(min-width:1024px) and (max-width:1199px){.pos-workspace{grid-template-columns:minmax(0,1fr) 330px;gap:14px}.pos-card{padding:15px}.pos-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1023px){.pos-workspace{grid-template-columns:minmax(0,1fr)}.pos-ticket{display:none;position:fixed;inset:12px;max-height:none;z-index:50;box-shadow:0 0 0 20px #0f172acc;overflow-y:auto}.pos-ticket.pos-ticket-open{display:block}.pos-mobile-only{display:inline-block!important}.pos-mobile-ticket{display:flex!important;justify-content:space-between;align-items:center;gap:16px;position:fixed;bottom:12px;left:12px;right:12px;z-index:30;background:#1e40af!important;color:#fff!important;box-shadow:0 5px 15px #0f172a33}.pos-heading{align-items:start}.pos-employee{font-size:.85rem}.pos-total{font-size:1.25rem}}
+@media(max-width:480px){.pos-card{padding:14px}.pos-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pos-product-body{padding:10px}.pos-product h3{font-size:.85rem}.pos-product-placeholder,.pos-product img{height:110px}.pos-row{align-items:stretch}.pos-heading{gap:12px}.pos-notice{padding:12px}.pos-employee{border-top:1px solid #e2e8f0;padding-top:12px;width:100%}.pos-future-buttons{grid-template-columns:1fr 1fr}}
+.pos-product-placeholder{flex-shrink:0;overflow:hidden}
+.pos-product-placeholder span{min-width:0;max-width:100%;overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3}
+</style>
+    <header class="pos-heading">
+        <div><p class="pos-eyebrow">FresaPOS · Punto de venta</p><h1 id="pos-title">Tu espacio de venta</h1><p class="pos-muted">Catálogo, mesas y ventas en un solo lugar.</p></div>
+        <div class="pos-employee"><span class="pos-dot"></span><div><span class="pos-muted">Empleado activo</span><strong>Empleado ficticio UI-08A</strong><a href="http://127.0.0.1:8101/account">Cambiar empleado</a></div></div>
+    </header>
+            <div class="pos-notice" role="status"><strong>No hay sesión de caja abierta válida para esta operación.</strong><p>Puedes consultar productos, mesas y ventas. La escritura requiere una sesión de caja real vigente.</p><a href="http://127.0.0.1:8101/cash">Consultar caja</a></div>
+            <div class="pos-feedback" aria-live="polite" aria-atomic="true">
+        <div class="pos-error" data-pos-network hidden role="alert"><p data-pos-network-message></p><a href="http://127.0.0.1:8101/login">Volver a iniciar sesión</a></div>
+                                <p wire:loading.delay role="status" class="pos-muted">Actualizando… Espera un momento.</p>
+    </div>
+    <div class="pos-workspace">
+        <div class="pos-main">
+            <section class="pos-card" aria-label="Selección de venta">
+                <div class="pos-row"><div class="pos-tabs" aria-label="Tipo de venta"><button type="button" wire:click="selectMode('counter')" aria-pressed="true" wire:loading.attr="disabled">Mostrador</button><button type="button" wire:click="selectMode('table')" aria-pressed="false" wire:loading.attr="disabled">Mesas</button></div><button type="button" wire:click="refreshSale" wire:loading.attr="disabled">Actualizar vista</button></div>
+                                    <div class="pos-row pos-spaced"><h2>Ventas de mostrador</h2><button type="button" class="pos-primary" wire:click="startSale" disabled wire:loading.attr="disabled" aria-describedby="pos-opening-help">Iniciar venta</button></div>
+                    <div class="pos-tabs pos-small" aria-label="Estado de mostrador"><button type="button" wire:click="selectCounterState('open')" aria-pressed="true">Abiertas</button><button type="button" wire:click="selectCounterState('paused')" aria-pressed="false">Pausadas</button><button type="button" wire:click="selectCounterState('closed')" aria-pressed="false">Pagadas y correcciones</button></div>
+                                        <div class="pos-sale-list">
+                                                    <button type="button" class="pos-sale-choice" wire:key="sale-01ARZ3NDEKTSV4RRFFQ69G5FAV" wire:click="selectSale('01ARZ3NDEKTSV4RRFFQ69G5FAV')" @click="if(innerWidth < 1024) ticket = true" wire:loading.attr="disabled"><span><strong>Abierta</strong><small>01ARZ3NDEKTSV4RRFFQ69G5FAV</small><small>2026-11-27 12:00 UTC</small></span><strong class="pos-money">$90.0000</strong></button>
+                                            </div>
+                     <nav class="pos-pager" aria-label="Páginas de ventas">
+        <button type="button" wire:click="gotoPage('salesPage', 1)" disabled wire:loading.attr="disabled">Anterior</button>
+        <span>Página 1 de 2</span>
+        <button type="button" wire:click="gotoPage('salesPage', 2)"  wire:loading.attr="disabled">Siguiente</button>
+    </nav>
+                                 <p id="pos-opening-help" class="pos-muted pos-small pos-spaced">Apertura deshabilitada: no hay una sesión de caja válida.</p>
+            </section>
+            <section class="pos-card" aria-labelledby="pos-catalog-title">
+                <div class="pos-row"><div><p class="pos-eyebrow">Elige lo que necesitas</p><h2 id="pos-catalog-title">Productos</h2></div><span class="pos-muted">26 disponibles</span></div>
+                <label for="pos-search" class="pos-label pos-spaced">Buscar producto</label><div class="pos-search"><input id="pos-search" type="search" wire:model.live.debounce.350ms="search" maxlength="100" placeholder="Nombre del producto…" aria-describedby="pos-search-help"><button type="button" wire:click="clearSearch" wire:loading.attr="disabled">Limpiar</button></div><p id="pos-search-help" class="pos-muted pos-small">Busca por nombre; no necesitas escribir acentos ni mayúsculas.</p>
+                <div class="pos-categories" aria-label="Filtrar por categoría"><button type="button" wire:click="selectCategory" aria-pressed="true">Todas</button><button type="button" wire:key="category-01ARZ3NDEKTSV4RRFFQ69G5FAV" wire:click="selectCategory('01ARZ3NDEKTSV4RRFFQ69G5FAV')" aria-pressed="false">Bebidas de prueba</button></div>
+                                                 <nav class="pos-pager" aria-label="Páginas de categorías">
+        <button type="button" wire:click="gotoPage('categoryPage', 1)" disabled wire:loading.attr="disabled">Anterior</button>
+        <span>Página 1 de 2</span>
+        <button type="button" wire:click="gotoPage('categoryPage', 2)"  wire:loading.attr="disabled">Siguiente</button>
+    </nav>
+                 <div class="pos-products">
+                                            <article class="pos-product" wire:key="product-01ARZ3NDEKTSV4RRFFQ69G5FAV">
+                            <img src="/qa-image.svg" alt="Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;" loading="lazy" width="240" height="160">                            <div class="pos-product-body"><h3>Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;</h3><strong class="pos-money">$45.0000</strong><button type="button" wire:click="chooseProduct('01ARZ3NDEKTSV4RRFFQ69G5FAV')" @click="ticket = true" disabled wire:loading.attr="disabled" aria-label="Seleccionar Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;" aria-describedby="pos-product-help">Seleccionar</button></div>
+                        </article>
+                                            <article class="pos-product" wire:key="product-product-2">
+                            <div class="pos-product-placeholder" role="img" aria-label="Producto sin imagen · sin imagen"><span>Producto sin imagen</span></div>                            <div class="pos-product-body"><h3>Producto sin imagen</h3><strong class="pos-money">$30.0000</strong><button type="button" wire:click="chooseProduct('product-2')" @click="ticket = true" disabled wire:loading.attr="disabled" aria-label="Seleccionar Producto sin imagen" aria-describedby="pos-product-help">Seleccionar</button></div>
+                        </article>
+                                    </div>
+                <p id="pos-product-help" class="pos-muted pos-small pos-spaced">Agregar productos requiere una venta abierta y una caja real.</p>
+                 <nav class="pos-pager" aria-label="Páginas de productos">
+        <button type="button" wire:click="gotoPage('productPage', 1)" disabled wire:loading.attr="disabled">Anterior</button>
+        <span>Página 1 de 3</span>
+        <button type="button" wire:click="gotoPage('productPage', 2)"  wire:loading.attr="disabled">Siguiente</button>
+    </nav>
+             </section>
+        </div>
+        <aside class="pos-ticket pos-card" x-ref="ticketPanel" :class="{ 'pos-ticket-open': ticket }" x-trap.inert.noscroll="ticket && mobile" :role="mobile ? 'dialog' : 'complementary'" :aria-modal="ticket && mobile ? 'true' : null" aria-labelledby="pos-sale-title" @keydown.escape="ticket = false">
+            <div class="pos-row"><div><p class="pos-eyebrow">Venta actual</p><h2 id="pos-sale-title" tabindex="-1" x-ref="panelHeading">Mostrador</h2></div><button type="button" class="pos-mobile-only" @click="ticket = false; $refs.ticketButton.focus()">Cerrar panel</button></div>
+            <div class="pos-error" data-pos-network hidden role="alert"><p data-pos-network-message></p><a href="http://127.0.0.1:8101/login">Volver a iniciar sesión</a></div>
+                                        <p class="pos-id">01ARZ3NDEKTSV4RRFFQ69G5FAV</p><div class="pos-row"><span class="pos-badge">Abierta</span><button type="button" wire:click="clearSale" wire:loading.attr="disabled">Cambiar venta</button></div>
+                                <p class="pos-muted pos-small">Empleado activo: Empleado ficticio UI-08A</p>
+                <div class="pos-lines">
+                                            <article class="pos-line" wire:key="item-item-1"><div class="pos-row"><strong>Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;</strong><strong class="pos-money">$90.0000</strong></div><p class="pos-muted pos-small">2 × $45.0000 · Precio aplicado</p><p class="pos-line-note">Nota ficticia conservada</p>                        <div class="pos-quantity-controls"><button type="button" wire:click="adjustQuantity('item-1', -1)" disabled wire:loading.attr="disabled" aria-label="Disminuir cantidad de Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;">−</button><span>2</span><button type="button" wire:click="adjustQuantity('item-1', 1)" disabled wire:loading.attr="disabled" aria-label="Aumentar cantidad de Café de prueba &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;">+</button><button type="button" wire:click="editItem('item-1')" disabled wire:loading.attr="disabled">Cantidad / nota</button></div></article>
+                                            <article class="pos-line" wire:key="item-item-2"><div class="pos-row"><strong>Línea retirada</strong><strong class="pos-money">$30.0000</strong></div><p class="pos-muted pos-small">1 × $30.0000 · Precio aplicado</p>                        <span class="pos-muted">Línea retirada · Conservada en historial</span></article>
+                                    </div>
+                <dl class="pos-totals"><div><dt>Subtotal</dt><dd>$90.0000</dd></div><div><dt>Descuento registrado</dt><dd>$0.0000</dd></div><div class="pos-total"><dt>Total</dt><dd>$90.0000</dd></div></dl>
+                                <form wire:submit="saveSaleNote" class="pos-spaced"><label class="pos-label" for="pos-sale-note">Nota general</label><textarea id="pos-sale-note" wire:model="saleNote" maxlength="150" rows="2" disabled aria-describedby="pos-sale-note-help pos-sale-note-error"></textarea><p id="pos-sale-note-help" class="pos-muted pos-small">Hasta 150 caracteres. 21/150 guardados en el formulario.</p><button type="submit" disabled wire:loading.attr="disabled">Guardar nota general</button></form>
+                                <div class="pos-row pos-spaced"><button type="button" wire:click="pauseSale" disabled wire:loading.attr="disabled">Pausar venta</button><button type="button" wire:click="resumeSale" disabled wire:loading.attr="disabled">Recuperar venta</button></div>                        <div class="ui-pos-financial ui-legacy-light">
+                            <div data-ui08a-child="checkout">Panel financiero fuera del alcance visual UI-08A</div>
+                                        <div data-ui08a-child="operations">Panel financiero fuera del alcance visual UI-08A</div>
+                                        <div data-ui08a-child="discounts">Panel financiero fuera del alcance visual UI-08A</div>
+                                                </div>
+            <div class="pos-future pos-spaced"><p class="pos-muted pos-small">Retirar o cancelar requiere motivos autorizados. Las devoluciones permanecen bloqueadas.</p></div>
+        </aside>
+    </div>
+    <button type="button" class="pos-mobile-ticket" x-ref="ticketButton" @click="ticket = true; $nextTick(() => setTimeout(() => $refs.panelHeading?.focus(), 30))" :aria-expanded="ticket" aria-controls="pos-sale-title">Ver venta actual <strong>$90.0000</strong></button>
+    <div class="pos-connection" wire:offline role="alert">Sin conexión. Conserva tus notas y actualiza la venta al recuperar la conexión. Si la sesión expiró, <a href="http://127.0.0.1:8101/login">inicia sesión de nuevo</a>.</div>
+</section>
+
+
+        </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tamaño de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Según sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Menú lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+    <script src="/livewire-00000000/livewire.js" data-csrf="UI08A_STATIC_NO_SESSION" data-update-uri="/qa-no-post"></script></body>
+</html>

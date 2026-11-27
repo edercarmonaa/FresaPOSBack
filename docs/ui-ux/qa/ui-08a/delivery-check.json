@@ -1,0 +1,23 @@
+{
+  "manifest_entries": 167,
+  "new_files_including_manifest_and_check": 167,
+  "changed_existing_files": [
+    "Modules/Sales/resources/views/livewire/point-of-sale.blade.php",
+    "Modules/Sales/resources/views/pos.blade.php",
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "head_unchanged": true,
+  "index_unchanged": true,
+  "staged_files": [],
+  "existing_tests_unchanged": true,
+  "protected_files_unchanged_using_documented_hash_bases": true,
+  "previous_deliveries_unchanged_from_stage_start": true,
+  "report_sections": 22,
+  "missing_markdown_links": [],
+  "local_app_key_leaks": [],
+  "browser_checks": 83,
+  "browser_violations": [],
+  "selected_tests": 445,
+  "selected_assertions": 2556,
+  "full_global_suite_executed": false
+}

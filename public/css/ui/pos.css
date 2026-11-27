@@ -1,0 +1,60 @@
+/* UI-08A: catálogo, mesas y resumen. Los paneles financieros conservan su ámbito claro. */
+.ui-root .ui-content.ui-pos-page{
+ --ui-bg:inherit;--ui-surface:inherit;--ui-surface-soft:inherit;--ui-text:inherit;--ui-muted:inherit;
+ --ui-line:inherit;--ui-control-border:inherit;--ui-primary:inherit;--ui-primary-hover:inherit;--ui-on-primary:inherit;
+ --ui-selected:inherit;--ui-selected-text:inherit;--ui-focus:inherit;--ui-success:inherit;--ui-success-bg:inherit;
+ --ui-warning:inherit;--ui-warning-bg:inherit;--ui-error:inherit;--ui-error-bg:inherit;--ui-info:inherit;--ui-info-bg:inherit;
+ --ui-disabled-bg:inherit;--ui-disabled-text:inherit;--ui-shadow:inherit;--ui-button-bg:inherit;--ui-button-text:inherit;
+ --ui-button-radius:inherit;--ui-field-bg:inherit;--ui-field-border:inherit;--ui-card-bg:inherit;--ui-card-radius:inherit;
+ color-scheme:inherit;max-width:1600px;padding:24px;background:var(--ui-bg);color:var(--ui-text)
+}
+.ui-root .ui-pos-module{font-family:var(--ui-font-body);color:var(--ui-text);padding-bottom:88px;min-width:0}
+.ui-root .ui-pos-module .pos-heading{margin:0 0 24px;gap:24px}
+.ui-root .ui-pos-module h1{font-size:var(--ui-font-3xl);font-weight:var(--ui-weight-strong);letter-spacing:-.025em;line-height:1.2}
+.ui-root .ui-pos-module :is(.pos-eyebrow,.pos-muted,.pos-small,.pos-id,.pos-card,.pos-editor,.pos-line,.pos-totals,.pos-total,.pos-empty,.pos-badge,.pos-future,.pos-ticket-empty,.pos-field-error,.pos-success,.pos-error,.pos-notice,.pos-connection):not(.ui-pos-financial *){overflow-wrap:anywhere}
+.ui-root .ui-pos-module .pos-eyebrow:not(.ui-pos-financial *){color:var(--ui-info);font-weight:var(--ui-weight-medium)}
+.ui-root .ui-pos-module :is(.pos-muted,.pos-id,.pos-sale-choice small,.pos-ticket-empty):not(.ui-pos-financial *){color:var(--ui-muted)}
+.ui-root .ui-pos-module .pos-dot{background:var(--ui-success);flex-shrink:0}
+.ui-root .ui-pos-module a:not(.ui-pos-financial *){color:var(--ui-info);display:inline-flex;align-items:center;min-height:44px;max-width:100%;text-underline-offset:3px}
+.ui-root .ui-pos-module button:not(.ui-pos-financial *){background:var(--ui-surface);color:var(--ui-text);border-color:var(--ui-control-border);border-radius:var(--ui-radius-sm);min-height:44px;white-space:normal;font-weight:var(--ui-weight-medium)}
+.ui-root .ui-pos-module button:hover:not(:disabled):not(.ui-pos-financial *){background:var(--ui-surface-soft);border-color:var(--ui-primary)}
+.ui-root .ui-pos-module button:disabled:not(.ui-pos-financial *){background:var(--ui-disabled-bg);color:var(--ui-disabled-text);border-color:var(--ui-line)}
+.ui-root .ui-pos-module :is(input,textarea):not(.ui-pos-financial *){background:var(--ui-surface);color:var(--ui-text);border-color:var(--ui-control-border);border-radius:var(--ui-radius-sm);min-height:44px}
+.ui-root .ui-pos-module :is(input,textarea):disabled:not(.ui-pos-financial *){background:var(--ui-disabled-bg);color:var(--ui-disabled-text)}
+.ui-root .ui-pos-module :is(button,input,textarea,a):focus-visible:not(.ui-pos-financial *){outline:3px solid var(--ui-focus);outline-offset:3px}
+.ui-root .ui-pos-module .pos-card:not(.ui-pos-financial *){background:var(--ui-surface);border-color:var(--ui-line);border-radius:var(--ui-radius-md);box-shadow:none;padding:24px}
+.ui-root .ui-pos-module .pos-workspace{gap:24px}
+.ui-root .ui-pos-module .pos-main{gap:24px}
+.ui-root .ui-pos-module :is(.pos-tabs,.pos-categories) button[aria-pressed=true]{background:var(--ui-selected);color:var(--ui-selected-text);border-color:var(--ui-primary)}
+.ui-root .ui-pos-module .pos-tabs button{min-width:min(110px,100%)}
+.ui-root .ui-pos-module .pos-primary:not(.ui-pos-financial *){background:var(--ui-primary);color:var(--ui-on-primary);border-color:var(--ui-primary)}
+.ui-root .ui-pos-module .pos-primary:hover:not(:disabled):not(.ui-pos-financial *){background:var(--ui-primary-hover)}
+.ui-root .ui-pos-module .pos-primary:disabled:not(.ui-pos-financial *){background:var(--ui-disabled-bg);color:var(--ui-disabled-text);border-color:var(--ui-line)}
+.ui-root .ui-pos-module .pos-empty:not(.ui-pos-financial *){color:var(--ui-muted);border-color:var(--ui-control-border)}
+.ui-root .ui-pos-module .pos-products{grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:16px}
+.ui-root .ui-pos-module .pos-product{border-color:var(--ui-line);border-radius:var(--ui-radius-md);background:var(--ui-surface)}
+.ui-root .ui-pos-module :is(.pos-product-placeholder,.pos-product img){background:var(--ui-surface-soft)}
+.ui-root .ui-pos-module .pos-product-placeholder{color:var(--ui-info)}
+.ui-root .ui-pos-module .pos-product-body{padding:16px;gap:12px}
+.ui-root .ui-pos-module .pos-table{border-left-width:4px}
+.ui-root .ui-pos-module .pos-free{border-left-color:var(--ui-success)}
+.ui-root .ui-pos-module .pos-occupied{border-left-color:var(--ui-primary);background:var(--ui-selected);color:var(--ui-selected-text)}
+.ui-root .ui-pos-module .pos-inactive{border-left-color:var(--ui-disabled-text)}
+.ui-root .ui-pos-module .pos-ticket{top:16px}
+.ui-root .ui-pos-module .pos-quantity-controls button{min-width:44px}
+.ui-root .ui-pos-module .pos-badge:not(.ui-pos-financial *){color:var(--ui-selected-text);background:var(--ui-selected)}
+.ui-root .ui-pos-module :is(.pos-line,.pos-totals,.pos-future):not(.ui-pos-financial *){border-color:var(--ui-line)}
+.ui-root .ui-pos-module .pos-line-note:not(.ui-pos-financial *){color:var(--ui-text);background:var(--ui-surface-soft)}
+.ui-root .ui-pos-module .pos-total:not(.ui-pos-financial *){color:var(--ui-info)}
+.ui-root .ui-pos-module .pos-ticket-empty>span{color:var(--ui-info);background:var(--ui-info-bg)}
+.ui-root .ui-pos-module .pos-ticket-empty h3{color:var(--ui-text)}
+.ui-root .ui-pos-module .pos-editor:not(.ui-pos-financial *){background:var(--ui-surface-soft)}
+.ui-root .ui-pos-module .pos-field-error:not(.ui-pos-financial *){color:var(--ui-error)}
+.ui-root .ui-pos-module .pos-success:not(.ui-pos-financial *){color:var(--ui-info);background:var(--ui-info-bg)}
+.ui-root .ui-pos-module :is(.pos-error,.pos-connection):not(.ui-pos-financial *){color:var(--ui-error);background:var(--ui-error-bg);border-color:var(--ui-error)}
+.ui-root .ui-pos-module .pos-notice:not(.ui-pos-financial *){color:var(--ui-warning);background:var(--ui-warning-bg);border-color:var(--ui-warning)}
+.ui-root .ui-pos-module .ui-pos-financial{color:var(--ui-text);background:var(--ui-surface);font-family:ui-sans-serif,system-ui,sans-serif;border-radius:12px;min-width:0}
+@media(min-width:1024px) and (max-width:1199px){.ui-root .ui-pos-module .pos-workspace{gap:16px}.ui-root .ui-pos-module .pos-card{padding:20px}.ui-root .ui-pos-module .pos-products{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1023px){.ui-root .ui-pos-module .pos-ticket{inset:12px;top:12px;z-index:var(--ui-z-dialog);box-shadow:0 0 0 100vmax #030b1dc2}.ui-root .ui-pos-module .pos-mobile-ticket{background:var(--ui-primary)!important;color:var(--ui-on-primary)!important}}
+@media(max-width:767px){.ui-root .ui-content.ui-pos-page{padding:18px 16px}.ui-root .ui-pos-module h1{font-size:var(--ui-font-2xl)}.ui-root .ui-pos-module .pos-card{padding:20px}.ui-root .ui-pos-module .pos-heading{gap:16px}.ui-root .ui-pos-module .pos-employee{border-color:var(--ui-line)}}
+@media(max-width:480px){.ui-root .ui-pos-module .pos-card{padding:16px}.ui-root .ui-pos-module .pos-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ui-root .ui-pos-module .pos-product-body{padding:10px}}

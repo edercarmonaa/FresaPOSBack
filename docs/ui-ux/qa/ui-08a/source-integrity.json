@@ -1,0 +1,107 @@
+{
+  "head": "299c69a862e75494431411ab9b20cd7779502b23",
+  "initial_files": 4440,
+  "initial_status": [],
+  "changes_from_stage_start": [
+    "Modules/Sales/resources/views/livewire/point-of-sale.blade.php",
+    "Modules/Sales/resources/views/pos.blade.php",
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "existing_files_under_tests_preserved": 204,
+  "protected_files_preserved": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "protected_hash_basis": {
+    "config/session.php": "UI-08A initial inventory",
+    ".env": "Historical UI-03 protected hash, still identical",
+    ".env.testing": "Historical UI-03 protected hash, still identical",
+    "phpstan.neon": "UI-08A initial inventory",
+    "phpunit.xml": "UI-08A initial inventory",
+    "Modules/Users/config/security.php": "UI-08A initial inventory",
+    "config/filesystems.php": "UI-08A initial inventory",
+    "composer.lock": "UI-08A initial inventory",
+    "config/database.php": "UI-08A initial inventory",
+    "composer.json": "UI-08A initial inventory"
+  },
+  "previous_deliveries": {
+    "ui-00": {
+      "entries": 48,
+      "root": "docs\\ui-ux",
+      "mismatches": []
+    },
+    "ui-01": {
+      "entries": 117,
+      "root": "docs\\ui-ux",
+      "mismatches": []
+    },
+    "ui-02": {
+      "entries": 70,
+      "root": ".",
+      "mismatches": [
+        "public/css/ui/tokens.css",
+        "public/js/ui/theme.js",
+        "tests/Feature/DesignSystemRenderingTest.php"
+      ]
+    },
+    "ui-03": {
+      "entries": 187,
+      "root": ".",
+      "mismatches": [
+        "resources/views/layouts/app.blade.php"
+      ]
+    },
+    "ui-04": {
+      "entries": 178,
+      "root": ".",
+      "mismatches": [
+        "resources/views/layouts/app.blade.php"
+      ]
+    },
+    "ui-05": {
+      "entries": 180,
+      "root": ".",
+      "mismatches": [
+        "Modules/Reports/resources/views/error.blade.php",
+        "Modules/Reports/resources/views/index.blade.php",
+        "resources/views/layouts/app.blade.php"
+      ]
+    },
+    "ui-06": {
+      "entries": 126,
+      "root": ".",
+      "mismatches": []
+    },
+    "ui-07a": {
+      "entries": 246,
+      "root": ".",
+      "mismatches": []
+    },
+    "ui-07b": {
+      "entries": 229,
+      "root": ".",
+      "mismatches": []
+    },
+    "ui-07c": {
+      "entries": 264,
+      "root": ".",
+      "mismatches": []
+    },
+    "ui-07d": {
+      "entries": 271,
+      "root": ".",
+      "mismatches": []
+    }
+  },
+  "index_unchanged": true,
+  "staging_unchanged": true,
+  "operational_database_row_hashes": "No ejecutados: no se accedió a filas para esta comprobación de integridad."
+}

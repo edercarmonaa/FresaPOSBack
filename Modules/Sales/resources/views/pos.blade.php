@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('mainClass', 'mx-auto max-w-[1600px] p-3 sm:p-5')
+@section('mainClass', 'ui-pos-page')
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/ui/pos.css') }}">
+@endpush
 @section('content')
     <livewire:sales.pos />
 @endsection

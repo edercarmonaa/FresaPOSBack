@@ -1,0 +1,18 @@
+{
+  "matrix_combinations": 54,
+  "checks": 83,
+  "screenshots": 91,
+  "engines": [
+    {
+      "engine": "chrome",
+      "version": "158.0.8127.37"
+    },
+    {
+      "engine": "edge",
+      "version": "158.0.4370.45"
+    }
+  ],
+  "violations": [],
+  "text_contrast_min": 5.7606664851167295,
+  "border_contrast_min": 3.2942664921806943
+}
