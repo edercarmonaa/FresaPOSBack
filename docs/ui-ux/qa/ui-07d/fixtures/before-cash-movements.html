@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" class="ui-root">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="UI07D_STATIC_NO_SESSION">
+    <title>FresaPOS</title>
+    <script src="http://127.0.0.1:8100/js/ui/theme.js"></script>
+    <link rel="preload" href="http://127.0.0.1:8100/fonts/ui/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="http://127.0.0.1:8100/css/ui/tokens.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8100/css/ui/components.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8100/css/ui/layouts.css">
+    <script src="http://127.0.0.1:8100/js/ui/layout.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.18"></script>
+        <link rel="stylesheet" href="http://127.0.0.1:8100/css/ui/reports.css">
+    
+</head>
+<body class="ui-page" data-ui-context="admin">
+    <a class="ui-skip-link" href="#ui-main">Saltar al contenido</a>
+    <header class="ui-app-header" id="ui-app-header">
+    <div class="ui-header-start">
+                    <button type="button" class="ui-shell-button" data-ui-menu-toggle aria-controls="ui-navigation" aria-expanded="true" aria-label="Contraer menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+</button>
+                <a class="ui-brand" href="http://127.0.0.1:8100">FresaPOS</a>
+        <span class="ui-workspace-label">Espacio de trabajo</span>
+    </div>
+    <div class="ui-header-actions">
+        <label class="ui-header-theme"><span class="ui-sr-only">Apariencia</span><select class="ui-select" data-ui-theme-select><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+        <button type="button" class="ui-shell-button" data-ui-open-preferences aria-controls="ui-preferences" aria-haspopup="dialog" aria-label="Preferencias visuales"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5m-3 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0" /></svg>
+</button>
+    </div>
+</header>
+    <div class="ui-shell ui-shell--with-navigation">
+                    <aside class="ui-navigation" id="ui-navigation" aria-label="Navegación principal">
+                <div class="ui-navigation-heading"><span>Espacio de trabajo</span><button type="button" class="ui-shell-button" data-ui-nav-close aria-label="Cerrar menú"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+                <nav aria-label="Punto de venta" class="pos-navigation mb-4 flex flex-wrap items-center gap-3 border-b border-slate-200 pb-3">
+                <a href="http://127.0.0.1:8100/pos" aria-label="Punto de venta" title="Punto de venta" class="ui-nav-link rounded px-3 py-3 font-semibold text-blue-800 underline focus-visible:outline-2" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Punto de venta</span></a>
+                <a href="http://127.0.0.1:8100/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+                <a href="http://127.0.0.1:8100/admin" aria-label="Administración" title="Administración" class="ui-nav-link rounded px-3 py-3 text-blue-800 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Administración</span></a>            </nav>
+            <nav aria-label="Caja" class="mb-4 border-b border-slate-200 pb-3">
+            <a href="http://127.0.0.1:8100/cash" aria-label="Caja" title="Caja" class="ui-nav-link inline-flex min-h-11 items-center rounded px-3 py-3 font-semibold text-blue-800 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" /></svg>
+<span class="ui-nav-label">Caja</span></a>
+        </nav>
+        <nav aria-label="Catálogo" class="mb-6 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-4">
+            <span class="ui-nav-heading">Catálogo</span>
+                                                <a href="http://127.0.0.1:8100/admin/catalog/products" aria-label="Productos" title="Productos" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Productos</span></a>
+                                                        <a href="http://127.0.0.1:8100/admin/catalog/categories" aria-label="Categorías" title="Categorías" class="ui-nav-link rounded px-2 py-2 text-blue-700 underline" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+<span class="ui-nav-label">Categorías</span></a>
+                        <a href="http://127.0.0.1:8100/account" aria-label="Mi cuenta" title="Mi cuenta" class="ui-nav-link ml-auto px-2 py-2 text-blue-700 underline"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Mi cuenta</span></a>
+        </nav>
+        <nav aria-label="Administración de ventas" class="mb-6 flex flex-wrap gap-4 border-b pb-4"><a class="ui-nav-link rounded px-3 py-3 text-blue-700 underline" href="http://127.0.0.1:8100/admin/sales/reasons" aria-label="Motivos autorizados de ventas" title="Motivos autorizados de ventas" ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 10 18H2L12 3m0 6v5m0 3v.01" /></svg>
+<span class="ui-nav-label">Motivos autorizados de ventas</span></a></nav>
+                <nav aria-label="Reportes" class="mb-4"><a class="ui-nav-link inline-flex min-h-11 items-center rounded border border-slate-300 bg-white px-4 py-2" href="http://127.0.0.1:8100/reports" aria-label="Reportes" title="Reportes" aria-current="page"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 11v6m0-10v.01M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0" /></svg>
+<span class="ui-nav-label">Reportes</span></a></nav>
+
+            </aside>
+            <button type="button" class="ui-nav-backdrop" data-ui-nav-close aria-label="Cerrar menú" tabindex="-1" hidden></button>
+                <main id="ui-main" tabindex="-1" class="ui-content  ui-report-page"><p role="note" style="margin-bottom:24px">UI-07D · Fixture visual before. Datos ficticios; sin sesión ni operaciones reales.</p>
+            <header class="ui-report-heading mb-5"><p class="text-sm text-slate-600">Información operativa y financiera</p><h1 class="ui-report-title">Reportes</h1><p class="mt-2 text-sm text-slate-600">2026-11-25 al 2026-11-26 · America/Mexico_City · Generado 26/11/2026 12:00:00</p></header>
+<nav class="report-nav mb-6" aria-label="Elegir reporte"><a href="http://127.0.0.1:8100/reports/summary?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Resumen</a><a href="http://127.0.0.1:8100/reports/sales?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Ventas</a><a href="http://127.0.0.1:8100/reports/products?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Productos vendidos</a><a href="http://127.0.0.1:8100/reports/payments?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Métodos de pago</a><a href="http://127.0.0.1:8100/reports/cash-movements?range=custom&amp;from=2026-11-25&amp;until=2026-11-26"  aria-current="page" >Movimientos de efectivo</a><a href="http://127.0.0.1:8100/reports/cash-sessions?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Sesiones Cash</a><a href="http://127.0.0.1:8100/reports/cash-reconciliations?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Arqueos y cierres</a><a href="http://127.0.0.1:8100/reports/discounts?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Descuentos</a><a href="http://127.0.0.1:8100/reports/corrections?range=custom&amp;from=2026-11-25&amp;until=2026-11-26" >Correcciones</a></nav>
+<section class="ui-report-card rounded-xl border border-slate-200 bg-white p-4 mb-6" aria-labelledby="filters-heading"><h2 id="filters-heading" class="text-xl font-semibold mb-4">Movimientos de efectivo</h2>
+<form method="get" action="http://127.0.0.1:8100/reports/cash-movements" class="report-filters">
+<label>Período<select name="range" data-report-range><option value="today" >Hoy</option><option value="yesterday" >Ayer</option><option value="last_seven_days" >Últimos siete días</option><option value="current_month" >Mes actual</option><option value="previous_month" >Mes anterior</option><option value="custom" selected>Personalizado</option></select></label>
+<label>Desde<input type="date" name="from" value="2026-11-25" data-report-date required></label><label>Hasta<input type="date" name="until" value="2026-11-26" data-report-date required></label>
+<label>Empleado (ID)<input name="employee_id" value="" maxlength="26" placeholder="Opcional"></label><label>Sesión Cash (ID)<input name="cash_session_id" value="" maxlength="26" placeholder="Opcional"></label><label>Tipo de movimiento<select name="movement_type"><option value="">Todos</option><option value="cash_in" >Entrada</option><option value="cash_out" >Salida</option></select></label>
+<label>Ordenar<select name="sort"><option value="occurred_at" selected>Fecha comercial</option><option value="amount" >Importe</option></select></label>
+<label>Dirección<select name="direction"><option value="desc" selected>Descendente</option><option value="asc" >Ascendente</option></select></label>
+<label>Filas por página<select name="per_page"><option value="10" >10</option><option value="25" selected>25</option><option value="50" >50</option><option value="100" >100</option></select></label>
+<div class="flex flex-wrap gap-2 items-end"><button class="report-action primary" type="submit">Consultar</button><a class="report-action" href="http://127.0.0.1:8100/reports/cash-movements">Hoy / limpiar</a></div>
+</form><p class="mt-3 text-sm text-slate-600">Hasta 366 días. Los identificadores permiten elegir exactamente empleado, sesión o versión histórica. El filtro de método conserva todos los pagos mixtos de las ventas seleccionadas.</p></section>
+<section aria-label="Indicadores del conjunto filtrado" class="report-kpis mb-6"><dl class="report-kpi"><dt>Movimientos manuales</dt><dd>2</dd></dl><dl class="report-kpi"><dt>Entradas manuales</dt><dd>1200.5000</dd></dl><dl class="report-kpi"><dt>Salidas manuales</dt><dd>0.0000</dd></dl></section>
+<section class="ui-report-card rounded-xl border bg-white p-4 mb-6"><h2 class="text-lg font-semibold mb-3">Criterios del reporte</h2><ul class="list-disc pl-5 text-sm space-y-2"><li>Fixture UI-07D: datos ficticios para revisión visual, sin operaciones reales.</li></ul></section>
+<section class="ui-report-card rounded-xl border bg-white p-4" aria-labelledby="results-heading"><div class="flex flex-wrap justify-between gap-4 mb-4"><div><h2 id="results-heading" class="text-xl font-semibold">Resultados</h2><p class="text-sm text-slate-600">2 filas en el conjunto filtrado. Los indicadores incluyen todas las páginas.</p></div>
+<div class="flex gap-2 flex-wrap"><form method="post" action="http://127.0.0.1:8100/reports/cash-movements/exports/pdf"><input type="hidden" name="_token" value="UI07D_STATIC_NO_SESSION" autocomplete="off"> <input type="hidden" name="range" value="custom"><input type="hidden" name="from" value="2026-11-25"><input type="hidden" name="until" value="2026-11-26"><input type="hidden" name="sort" value="occurred_at"><input type="hidden" name="direction" value="desc"><button type="submit" class="report-action" >Exportar PDF</button></form><form method="post" action="http://127.0.0.1:8100/reports/cash-movements/exports/xlsx"><input type="hidden" name="_token" value="UI07D_STATIC_NO_SESSION" autocomplete="off"> <input type="hidden" name="range" value="custom"><input type="hidden" name="from" value="2026-11-25"><input type="hidden" name="until" value="2026-11-26"><input type="hidden" name="sort" value="occurred_at"><input type="hidden" name="direction" value="desc"><button type="submit" class="report-action" >Exportar Excel</button></form></div></div>
+<p class="text-sm text-slate-600 mb-4">Exporta el conjunto completo: PDF hasta 300 filas; Excel hasta 1000. Cada generación autorizada queda registrada.</p>
+<div class="ui-report-table-scroll" role="region" aria-label="Resultados del reporte" tabindex="0"><table class="report-table"><caption class="sr-only">Movimientos de efectivo</caption><thead><tr><th scope="col">Fecha comercial</th><th scope="col">Sesión Cash</th><th scope="col">Tipo</th><th scope="col">Motivo / referencia registrada</th><th scope="col">Importe</th><th scope="col">Actor</th><th scope="col">Detalle autorizado</th></tr></thead><tbody>
+<tr><td data-label="Fecha comercial" class=" ">26/11/2026 12:00:00</td><td data-label="Sesión Cash" class=" identifier">01ARZ3NDEKTSV4RRFFQ69G5FAV</td><td data-label="Tipo" class=" ">Dato ficticio UI-05</td><td data-label="Motivo / referencia registrada" class=" ">Dato ficticio UI-07D &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;</td><td data-label="Importe" class="money ">$1200.5000</td><td data-label="Actor" class=" ">Dato ficticio UI-07D &lt;script&gt;alert(&quot;escaped&quot;)&lt;/script&gt;</td><td data-label="Detalle" class="report-links"><a href="http://127.0.0.1:8100/cash">Abrir Cash</a></td></tr>
+</tbody></table></div>
+<nav class="report-pager mt-5" aria-label="Paginación de reportes"><span>Página 1 de 1</span></nav></section>
+<script>document.querySelectorAll('[data-report-range]').forEach(function(select){function sync(){select.form.querySelectorAll('[data-report-date]').forEach(function(input){input.disabled=select.value!=='custom';});}select.addEventListener('change',sync);sync();});document.querySelectorAll('.report-filters').forEach(function(form){form.addEventListener('submit',function(){form.querySelectorAll('input:not([type=date]),select:not([name=range])').forEach(function(input){if(input.value===''){input.disabled=true;}});});});</script>
+        </main>
+    </div>
+    <dialog class="ui-preferences" id="ui-preferences" aria-labelledby="ui-preferences-title">
+    <div class="ui-preferences-heading"><h2 id="ui-preferences-title">Preferencias visuales</h2><button type="button" class="ui-shell-button" data-ui-close-preferences aria-label="Cerrar preferencias"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6" /></svg>
+</button></div>
+    <p class="ui-muted">Se guardan solo en este navegador. No modifican tu cuenta ni tus permisos.</p>
+    <div class="ui-preference-row"><label for="ui-preference-theme">Apariencia</label><select id="ui-preference-theme" class="ui-select" data-ui-preference="theme"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-density">Densidad de tablas</label><select id="ui-preference-density" class="ui-select" data-ui-preference="density"><option value="standard">Estándar</option><option value="compact">Compacta</option><option value="comfortable">Amplia</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-text">Tamaño de texto</label><select id="ui-preference-text" class="ui-select" data-ui-preference="text"><option value="normal">Normal</option><option value="large">Ampliado</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-motion">Movimiento</label><select id="ui-preference-motion" class="ui-select" data-ui-preference="motion"><option value="auto">Según sistema</option><option value="reduce">Reducido</option></select></div>
+    <div class="ui-preference-row"><label for="ui-preference-sidebar">Menú lateral</label><select id="ui-preference-sidebar" class="ui-select" data-ui-preference="sidebar"><option value="expanded">Expandido</option><option value="collapsed">Colapsado</option></select></div>
+    <p class="ui-help">La densidad se aplica a tablas que adopten el Design System; los listados existentes se integran en sus etapas.</p>
+    <div class="ui-preferences-footer"><button type="button" class="ui-button ui-button--secondary" data-ui-reset-preferences>Restablecer</button><button type="button" class="ui-button" data-ui-close-preferences>Listo</button></div>
+</dialog>
+    
+    </body>
+</html>

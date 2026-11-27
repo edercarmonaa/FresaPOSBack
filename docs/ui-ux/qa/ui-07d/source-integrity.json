@@ -1,0 +1,87 @@
+{
+  "head": "6e837359751a00f356ffb6a24bd3234cd951c24e",
+  "initial_files_tracked_and_untracked": 4169,
+  "initial_status": [],
+  "existing_files_under_tests_preserved": 198,
+  "protected_files_preserved": [
+    "config/session.php",
+    ".env",
+    ".env.testing",
+    "phpstan.neon",
+    "phpunit.xml",
+    "Modules/Users/config/security.php",
+    "config/filesystems.php",
+    "composer.lock",
+    "config/database.php",
+    "composer.json"
+  ],
+  "changes_from_stage_start": [
+    "Modules/Reports/resources/views/error.blade.php",
+    "Modules/Reports/resources/views/index.blade.php",
+    "docs/ui-ux/ESTADO.md"
+  ],
+  "previous_deliveries": {
+    "ui-05": {
+      "entries": 180,
+      "mismatches": [
+        "resources/views/layouts/app.blade.php"
+      ],
+      "new_authorized_live_view_changes": [
+        "Modules/Reports/resources/views/index.blade.php",
+        "Modules/Reports/resources/views/error.blade.php"
+      ],
+      "other_manifest_entries_unchanged": true
+    },
+    "ui-06": {
+      "entries": 126,
+      "mismatches": [],
+      "new_authorized_live_view_changes": [],
+      "other_manifest_entries_unchanged": true
+    },
+    "ui-07a": {
+      "entries": 246,
+      "mismatches": [],
+      "new_authorized_live_view_changes": [],
+      "other_manifest_entries_unchanged": true
+    },
+    "ui-07b": {
+      "entries": 229,
+      "mismatches": [],
+      "new_authorized_live_view_changes": [],
+      "other_manifest_entries_unchanged": true
+    },
+    "ui-07c": {
+      "entries": 264,
+      "mismatches": [],
+      "new_authorized_live_view_changes": [],
+      "other_manifest_entries_unchanged": true
+    }
+  },
+  "source_contracts": [
+    {
+      "file": "Modules/Reports/resources/views/index.blade.php",
+      "source_unchanged_except_classes_css_loader_and_whitespace": true
+    },
+    {
+      "file": "Modules/Reports/resources/views/error.blade.php",
+      "source_unchanged_except_classes_css_loader_and_whitespace": true
+    }
+  ],
+  "backend_files_changed": [],
+  "staged_files": [],
+  "index_entries_unchanged": true,
+  "operational_row_hashes_verified": false,
+  "final_status": [
+    " M Modules/Reports/resources/views/error.blade.php",
+    " M Modules/Reports/resources/views/index.blade.php",
+    " M docs/ui-ux/ESTADO.md",
+    "?? docs/ui-ux/entregas/UI-07D.md",
+    "?? docs/ui-ux/evidencias/ui-07d/",
+    "?? docs/ui-ux/qa/ui-07d/",
+    "?? docs/ui-ux/reportes-ui07d.md",
+    "?? public/css/ui/report-admin.css",
+    "?? tests/Feature/ReportAdministrationPresentationTest.php",
+    "?? tests/Fixtures/UI07D/",
+    "?? tests/Integration/ReportAdministrationPresentationHttpTest.php"
+  ]
+}

@@ -1,0 +1,17 @@
+﻿[
+    {
+        "path":  "/up",
+        "status":  200,
+        "location":  null
+    },
+    {
+        "path":  "/login",
+        "status":  200,
+        "location":  null
+    },
+    {
+        "path":  "/reports",
+        "status":  302,
+        "location":  "http://127.0.0.1:8080/login"
+    }
+]

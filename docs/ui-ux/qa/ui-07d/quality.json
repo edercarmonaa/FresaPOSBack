@@ -1,0 +1,43 @@
+{
+  "baseline": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "baseline_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "358",
+    "assertions": "1433",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "48.590199"
+  },
+  "final": {
+    "composer": 0,
+    "phpunit": 0,
+    "platform": 0,
+    "pint": 0,
+    "larastan": 0
+  },
+  "final_junit": {
+    "name": "C:\\Repos\\FresaPOSBack\\phpunit.xml",
+    "tests": "378",
+    "assertions": "1765",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "86.730288"
+  },
+  "integration": {
+    "name": "CLI Arguments",
+    "tests": "50",
+    "assertions": "784",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "236.058008"
+  }
+}

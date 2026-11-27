@@ -1,0 +1,24 @@
+{
+  "ui-05": {
+    "entries": 180,
+    "mismatches": [
+      "resources/views/layouts/app.blade.php"
+    ]
+  },
+  "ui-06": {
+    "entries": 126,
+    "mismatches": []
+  },
+  "ui-07a": {
+    "entries": 246,
+    "mismatches": []
+  },
+  "ui-07b": {
+    "entries": 229,
+    "mismatches": []
+  },
+  "ui-07c": {
+    "entries": 264,
+    "mismatches": []
+  }
+}

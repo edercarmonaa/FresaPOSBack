@@ -1,0 +1,38 @@
+/* UI-07D: refinamiento administrativo; conserva los estilos y fuentes de UI-05. */
+.ui-root .ui-report-admin-page :is(.ui-report-card,.report-nav a,.report-action,.report-kpi,.report-filters input,.report-filters select,.report-chart){box-sizing:border-box}
+.ui-root .ui-report-admin-page .ui-report-heading{display:grid;gap:8px;margin-bottom:24px}
+.ui-root .ui-report-admin-page .ui-report-heading :is(h1,p){margin:0}
+.ui-root .ui-report-admin-page .ui-report-heading p{color:var(--ui-muted)}
+.ui-root .ui-report-admin-page .report-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ui-root .ui-report-admin-page .report-nav a{justify-content:center;text-align:center;overflow-wrap:anywhere}
+.ui-root .ui-report-admin-page .report-filters{align-items:start}
+.ui-root .ui-report-admin-page .report-filters>div{align-self:end}
+.ui-root .ui-report-admin-page .report-filters :is(input,select){margin:0}
+.ui-root .ui-report-admin-page .ui-report-card{overflow-wrap:anywhere}
+.ui-root .ui-report-admin-page .ui-report-card>p{color:var(--ui-muted)}
+.ui-root .ui-report-admin-page .ui-report-card>h2{margin-bottom:16px}
+.ui-root .ui-report-admin-page .ui-report-card>.report-filters+p{margin-top:16px}
+.ui-root .ui-report-admin-page .ui-report-card ul{padding-left:20px}
+.ui-root .ui-report-admin-page .ui-report-card li+li{margin-top:8px}
+.ui-root .ui-report-admin-page .report-action{max-width:100%;transition:border-color var(--ui-duration) var(--ui-ease)}
+.ui-root .ui-report-admin-page .report-links a{min-width:44px;justify-content:center}
+.ui-root .ui-report-admin-page .report-kpi dd{font-size:clamp(1.5rem,2.5vw,2rem)}
+.ui-root .ui-report-admin-page .report-chart-row{padding-block:4px}
+.ui-root .ui-report-admin-page .report-chart svg{border-radius:var(--ui-radius-sm)}
+.ui-root .ui-report-admin-page .report-table caption{padding:0}
+.ui-root .ui-report-admin-page .report-table .identifier{font-family:ui-monospace,monospace;font-size:var(--ui-font-xs)}
+.ui-root .ui-report-admin-page :is(a,button,input,select,.ui-report-table-scroll,.report-chart):focus-visible{outline:3px solid var(--ui-focus);outline-offset:3px}
+.ui-root .ui-report-admin-page .ui-report-error{display:grid;gap:20px;max-width:900px}
+.ui-root .ui-report-admin-page .ui-report-error :is(h1,p,ul){margin:0}
+.ui-root .ui-report-admin-page .ui-report-error>a{justify-self:start}
+.ui-root .ui-report-admin-page .ui-report-error>.ui-report-warning{color:var(--ui-warning)}
+@media(min-width:1101px){
+ .ui-root .ui-report-admin-page .report-table{min-width:900px;table-layout:auto}
+ .ui-root .ui-report-admin-page .report-table:has(colgroup){min-width:1800px}
+ .ui-root .ui-report-admin-page .report-table :is(th,td){min-width:100px;max-width:260px}
+ .ui-root .ui-report-admin-page .report-table .money{white-space:nowrap}
+ .ui-root .ui-report-admin-page .report-table .identifier{min-width:180px}
+}
+@media(max-width:1100px){.ui-root .ui-report-admin-page .report-table colgroup{display:none}.ui-root .ui-report-admin-page .report-table td{box-sizing:border-box}.ui-root .ui-report-admin-page .report-table td::before{overflow-wrap:anywhere}}
+@media(min-width:1920px){.ui-root .ui-report-admin-page .report-nav{grid-template-columns:repeat(9,minmax(0,1fr))}}
+@media(max-width:767px){.ui-root .ui-report-admin-page .report-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.ui-root .ui-report-admin-page .report-nav a:last-child{grid-column:1/-1}}
